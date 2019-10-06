@@ -1,4 +1,5 @@
 import json
+import time
 
 import arrow
 
@@ -12,6 +13,7 @@ class WebsiteMonitor:
     def __init__(self, url, name):
         self.url = url
         self.name = name
+        self.timestamp = time.localtime()
 
         self.startTimes = []
         self.endTimes = []
@@ -48,6 +50,8 @@ class WebsiteMonitor:
         return self.request_entry
 
     def run(self):
+        self.timestamp = time.localtime()
+
         DockerRunURLClient(self.url).run()
         self.process_json()
         self.calculate_total_time()
@@ -58,7 +62,17 @@ class WebsiteMonitor:
         print("End time: %s" % self.end)
         print("Total time: %.3f" % self.total_time_seconds)
 
+    def get_timestamp(self):
+        """Return the timestamp corresponding to the execution time of the command"""
+        return self.timestamp
+
+    def get_total_time_seconds(self):
+        """Return the total time for all requests processing"""
+        return self.total_time_seconds
+
 
 monitor = WebsiteMonitor(sample_url, sample_name)
 monitor.run()
 print(monitor.get_metrics())
+print(monitor.get_timestamp())
+print(monitor.get_total_time_seconds())
