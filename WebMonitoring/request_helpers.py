@@ -8,8 +8,11 @@ def parse_request(entry):
     bodySize = get_body_size(entry)
 
     timing = get_timing(entry)
-    RequestEntry(serverIPAddress, pageRef, startedDateTime, time,
-                 responseStatus, headersSize, bodySize, timing).verbose()
+    request_entry = RequestEntry(serverIPAddress, pageRef, startedDateTime,
+                                 time, responseStatus, headersSize, bodySize,
+                                 timing)
+    request_entry.verbose()
+    return request_entry
 
 
 def get_timing(entry):

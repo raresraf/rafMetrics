@@ -1,7 +1,8 @@
 import requests
 
 from constants import MonitoringStatus, RequestTypes
-from constants import url
+from constants import sample_url
+import time
 
 
 class ResourceMonitor:
@@ -19,8 +20,10 @@ class ResourceMonitor:
         """Metrics returned"""
         self.responseTime = 0
         self.responseSize = 0
+        self.timestamp = time.localtime()
 
     def execute_request(self):
+        self.timestamp = time.localtime()
         if self.requestType == RequestTypes.GET:
             return requests.get(self.url,
                                 timeout=self.timeout,
@@ -33,6 +36,14 @@ class ResourceMonitor:
     def update_metrics(self, responseTime, responseSize):
         self.responseTime = responseTime
         self.responseSize = responseSize
+
+    def get_metrics(self):
+        """Return a tuple (responseTime, responseSize)"""
+        return (self.responseTime, self.responseSize)
+
+    def get_timestamp(self):
+        """Return the timestamp corresponding to the execution time of the command"""
+        return self.timestamp
 
     def run(self):
         try:
@@ -60,4 +71,6 @@ class ResourceMonitor:
             print("Request size: %.2f KBytes" % (self.responseSize / 1024.0))
 
 
-ResourceMonitor(url).run()
+monitor = ResourceMonitor(sample_url)
+monitor.run()
+print(monitor.get_metrics())

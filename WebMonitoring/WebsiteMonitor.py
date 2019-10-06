@@ -20,6 +20,8 @@ class WebsiteMonitor:
         self.total_time = None
         self.total_time_seconds = 0.0
 
+        self.request_entry = []
+
     def calculate_total_time(self):
         self.start = min(self.startTimes)
         self.end = max(self.endTimes)
@@ -37,8 +39,13 @@ class WebsiteMonitor:
         with open(json_path) as json_file:
             data = json.load(json_file)
             for entry in data['log']['entries']:
-                parse_request(entry)
                 self.add_times(entry)
+                request_entry = parse_request(entry)
+                self.request_entry.append(request_entry)
+
+    def get_metrics(self):
+        """Return a RequestEntry structure containing metrics"""
+        return self.request_entry
 
     def run(self):
         DockerRunURLClient(self.url).run()
@@ -52,4 +59,6 @@ class WebsiteMonitor:
         print("Total time: %.3f" % self.total_time_seconds)
 
 
-WebsiteMonitor(sample_url, sample_name).run()
+monitor = WebsiteMonitor(sample_url, sample_name)
+monitor.run()
+print(monitor.get_metrics())
