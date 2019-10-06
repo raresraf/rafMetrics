@@ -1,4 +1,5 @@
-url = 'https://github.com/raresraf/rafMetrics/projects/1'
+sample_url = 'https://github.com/raresraf/rafMetrics/projects/1'
+sample_name = 'GitHub'
 json_path = 'output/har.json'
 
 
