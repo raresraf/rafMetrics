@@ -1,0 +1,2136 @@
+{
+  "log": {
+    "comment": "",
+    "creator": {
+      "comment": "",
+      "version": "2.1.2",
+      "name": "BrowserMob Proxy"
+    },
+    "version": "1.2",
+    "entries": [
+      {
+        "comment": "",
+        "serverIPAddress": "109.103.170.75",
+        "pageref": "http://109.103.170.75:8001/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/#/deployment?namespace=kubernetes-dashboard",
+        "startedDateTime": "2019-10-04T17:05:29.798Z",
+        "cache": {},
+        "request": {
+          "comment": "",
+          "cookies": [],
+          "url": "http://109.103.170.75:8001/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/",
+          "queryString": [],
+          "headers": [
+            {
+              "name": "Host",
+              "value": "109.103.170.75:8001"
+            },
+            {
+              "name": "Proxy-Connection",
+              "value": "keep-alive"
+            },
+            {
+              "name": "Upgrade-Insecure-Requests",
+              "value": "1"
+            },
+            {
+              "name": "User-Agent",
+              "value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.90 Safari/537.36"
+            },
+            {
+              "name": "Accept",
+              "value": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8"
+            },
+            {
+              "name": "Accept-Encoding",
+              "value": "gzip, deflate, sdch"
+            },
+            {
+              "name": "Accept-Language",
+              "value": "en-US,en;q=0.8"
+            }
+          ],
+          "headersSize": 487,
+          "bodySize": 0,
+          "method": "GET",
+          "httpVersion": "HTTP/1.1"
+        },
+        "timings": {
+          "comment": "",
+          "receive": 7,
+          "send": 4,
+          "ssl": -1,
+          "connect": 16,
+          "dns": 2,
+          "wait": 14,
+          "blocked": 0
+        },
+        "time": 45,
+        "response": {
+          "status": 200,
+          "comment": "",
+          "cookies": [],
+          "statusText": "OK",
+          "content": {
+            "mimeType": "text/html; charset=utf-8",
+            "comment": "",
+            "size": 0
+          },
+          "headers": [
+            {
+              "name": "Accept-Ranges",
+              "value": "bytes"
+            },
+            {
+              "name": "Cache-Control",
+              "value": "no-cache, private"
+            },
+            {
+              "name": "Cache-Control",
+              "value": "no-store"
+            },
+            {
+              "name": "Content-Encoding",
+              "value": "gzip"
+            },
+            {
+              "name": "Content-Length",
+              "value": "738"
+            },
+            {
+              "name": "Content-Type",
+              "value": "text/html; charset=utf-8"
+            },
+            {
+              "name": "Date",
+              "value": "Fri, 04 Oct 2019 17:05:29 GMT"
+            },
+            {
+              "name": "Last-Modified",
+              "value": "Thu, 29 Aug 2019 09:14:59 GMT"
+            }
+          ],
+          "headersSize": 270,
+          "redirectURL": "",
+          "bodySize": 738,
+          "httpVersion": "HTTP/1.1"
+        }
+      },
+      {
+        "comment": "",
+        "serverIPAddress": "109.103.170.75",
+        "pageref": "http://109.103.170.75:8001/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/#/deployment?namespace=kubernetes-dashboard",
+        "startedDateTime": "2019-10-04T17:05:29.929Z",
+        "cache": {},
+        "request": {
+          "comment": "",
+          "cookies": [],
+          "url": "http://109.103.170.75:8001/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/styles.091eb6c35947fb31b457.css",
+          "queryString": [],
+          "headers": [
+            {
+              "name": "Host",
+              "value": "109.103.170.75:8001"
+            },
+            {
+              "name": "Proxy-Connection",
+              "value": "keep-alive"
+            },
+            {
+              "name": "User-Agent",
+              "value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.90 Safari/537.36"
+            },
+            {
+              "name": "Accept",
+              "value": "text/css,*/*;q=0.1"
+            },
+            {
+              "name": "Referer",
+              "value": "http://109.103.170.75:8001/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/"
+            },
+            {
+              "name": "Accept-Encoding",
+              "value": "gzip, deflate, sdch"
+            },
+            {
+              "name": "Accept-Language",
+              "value": "en-US,en;q=0.8"
+            }
+          ],
+          "headersSize": 551,
+          "bodySize": 0,
+          "method": "GET",
+          "httpVersion": "HTTP/1.1"
+        },
+        "timings": {
+          "comment": "",
+          "receive": 5,
+          "send": 4,
+          "ssl": -1,
+          "connect": -1,
+          "dns": -1,
+          "wait": 23,
+          "blocked": -1
+        },
+        "time": 33,
+        "response": {
+          "status": 200,
+          "comment": "",
+          "cookies": [],
+          "statusText": "OK",
+          "content": {
+            "mimeType": "text/css; charset=utf-8",
+            "comment": "",
+            "size": 0
+          },
+          "headers": [
+            {
+              "name": "Accept-Ranges",
+              "value": "bytes"
+            },
+            {
+              "name": "Cache-Control",
+              "value": "no-cache, private"
+            },
+            {
+              "name": "Content-Encoding",
+              "value": "gzip"
+            },
+            {
+              "name": "Content-Type",
+              "value": "text/css; charset=utf-8"
+            },
+            {
+              "name": "Date",
+              "value": "Fri, 04 Oct 2019 17:05:29 GMT"
+            },
+            {
+              "name": "Last-Modified",
+              "value": "Thu, 29 Aug 2019 09:14:59 GMT"
+            },
+            {
+              "name": "Transfer-Encoding",
+              "value": "chunked"
+            }
+          ],
+          "headersSize": 251,
+          "redirectURL": "",
+          "bodySize": 23988,
+          "httpVersion": "HTTP/1.1"
+        }
+      },
+      {
+        "comment": "",
+        "serverIPAddress": "109.103.170.75",
+        "pageref": "http://109.103.170.75:8001/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/#/deployment?namespace=kubernetes-dashboard",
+        "startedDateTime": "2019-10-04T17:05:29.931Z",
+        "cache": {},
+        "request": {
+          "comment": "",
+          "cookies": [],
+          "url": "http://109.103.170.75:8001/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/runtime.3c37eeed2119f000b256.js",
+          "queryString": [],
+          "headers": [
+            {
+              "name": "Host",
+              "value": "109.103.170.75:8001"
+            },
+            {
+              "name": "Proxy-Connection",
+              "value": "keep-alive"
+            },
+            {
+              "name": "User-Agent",
+              "value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.90 Safari/537.36"
+            },
+            {
+              "name": "Accept",
+              "value": "*/*"
+            },
+            {
+              "name": "Referer",
+              "value": "http://109.103.170.75:8001/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/"
+            },
+            {
+              "name": "Accept-Encoding",
+              "value": "gzip, deflate, sdch"
+            },
+            {
+              "name": "Accept-Language",
+              "value": "en-US,en;q=0.8"
+            }
+          ],
+          "headersSize": 536,
+          "bodySize": 0,
+          "method": "GET",
+          "httpVersion": "HTTP/1.1"
+        },
+        "timings": {
+          "comment": "",
+          "receive": 1,
+          "send": 3,
+          "ssl": -1,
+          "connect": 2,
+          "dns": 3,
+          "wait": 8,
+          "blocked": 0
+        },
+        "time": 18,
+        "response": {
+          "status": 200,
+          "comment": "",
+          "cookies": [],
+          "statusText": "OK",
+          "content": {
+            "mimeType": "application/javascript",
+            "comment": "",
+            "size": 0
+          },
+          "headers": [
+            {
+              "name": "Accept-Ranges",
+              "value": "bytes"
+            },
+            {
+              "name": "Cache-Control",
+              "value": "no-cache, private"
+            },
+            {
+              "name": "Content-Encoding",
+              "value": "gzip"
+            },
+            {
+              "name": "Content-Length",
+              "value": "1958"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/javascript"
+            },
+            {
+              "name": "Date",
+              "value": "Fri, 04 Oct 2019 17:05:29 GMT"
+            },
+            {
+              "name": "Last-Modified",
+              "value": "Thu, 29 Aug 2019 09:14:59 GMT"
+            }
+          ],
+          "headersSize": 244,
+          "redirectURL": "",
+          "bodySize": 1958,
+          "httpVersion": "HTTP/1.1"
+        }
+      },
+      {
+        "comment": "",
+        "serverIPAddress": "109.103.170.75",
+        "pageref": "http://109.103.170.75:8001/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/#/deployment?namespace=kubernetes-dashboard",
+        "startedDateTime": "2019-10-04T17:05:29.959Z",
+        "cache": {},
+        "request": {
+          "comment": "",
+          "cookies": [],
+          "url": "http://109.103.170.75:8001/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/polyfills-es5.fbc7b8163a3af6d5e025.js",
+          "queryString": [],
+          "headers": [
+            {
+              "name": "Host",
+              "value": "109.103.170.75:8001"
+            },
+            {
+              "name": "Proxy-Connection",
+              "value": "keep-alive"
+            },
+            {
+              "name": "User-Agent",
+              "value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.90 Safari/537.36"
+            },
+            {
+              "name": "Accept",
+              "value": "*/*"
+            },
+            {
+              "name": "Referer",
+              "value": "http://109.103.170.75:8001/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/"
+            },
+            {
+              "name": "Accept-Encoding",
+              "value": "gzip, deflate, sdch"
+            },
+            {
+              "name": "Accept-Language",
+              "value": "en-US,en;q=0.8"
+            }
+          ],
+          "headersSize": 542,
+          "bodySize": 0,
+          "method": "GET",
+          "httpVersion": "HTTP/1.1"
+        },
+        "timings": {
+          "comment": "",
+          "receive": 50,
+          "send": 5,
+          "ssl": -1,
+          "connect": -1,
+          "dns": -1,
+          "wait": 38,
+          "blocked": -1
+        },
+        "time": 94,
+        "response": {
+          "status": 200,
+          "comment": "",
+          "cookies": [],
+          "statusText": "OK",
+          "content": {
+            "mimeType": "application/javascript",
+            "comment": "",
+            "size": 0
+          },
+          "headers": [
+            {
+              "name": "Accept-Ranges",
+              "value": "bytes"
+            },
+            {
+              "name": "Cache-Control",
+              "value": "no-cache, private"
+            },
+            {
+              "name": "Content-Encoding",
+              "value": "gzip"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/javascript"
+            },
+            {
+              "name": "Date",
+              "value": "Fri, 04 Oct 2019 17:05:29 GMT"
+            },
+            {
+              "name": "Last-Modified",
+              "value": "Thu, 29 Aug 2019 09:14:59 GMT"
+            },
+            {
+              "name": "Transfer-Encoding",
+              "value": "chunked"
+            }
+          ],
+          "headersSize": 250,
+          "redirectURL": "",
+          "bodySize": 101839,
+          "httpVersion": "HTTP/1.1"
+        }
+      },
+      {
+        "comment": "",
+        "serverIPAddress": "109.103.170.75",
+        "pageref": "http://109.103.170.75:8001/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/#/deployment?namespace=kubernetes-dashboard",
+        "startedDateTime": "2019-10-04T17:05:29.973Z",
+        "cache": {},
+        "request": {
+          "comment": "",
+          "cookies": [],
+          "url": "http://109.103.170.75:8001/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/polyfills.8fbdb061b9fee8b5a878.js",
+          "queryString": [],
+          "headers": [
+            {
+              "name": "Host",
+              "value": "109.103.170.75:8001"
+            },
+            {
+              "name": "Proxy-Connection",
+              "value": "keep-alive"
+            },
+            {
+              "name": "User-Agent",
+              "value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.90 Safari/537.36"
+            },
+            {
+              "name": "Accept",
+              "value": "*/*"
+            },
+            {
+              "name": "Referer",
+              "value": "http://109.103.170.75:8001/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/"
+            },
+            {
+              "name": "Accept-Encoding",
+              "value": "gzip, deflate, sdch"
+            },
+            {
+              "name": "Accept-Language",
+              "value": "en-US,en;q=0.8"
+            }
+          ],
+          "headersSize": 538,
+          "bodySize": 0,
+          "method": "GET",
+          "httpVersion": "HTTP/1.1"
+        },
+        "timings": {
+          "comment": "",
+          "receive": 35,
+          "send": 4,
+          "ssl": -1,
+          "connect": -1,
+          "dns": -1,
+          "wait": 28,
+          "blocked": -1
+        },
+        "time": 69,
+        "response": {
+          "status": 200,
+          "comment": "",
+          "cookies": [],
+          "statusText": "OK",
+          "content": {
+            "mimeType": "application/javascript",
+            "comment": "",
+            "size": 0
+          },
+          "headers": [
+            {
+              "name": "Accept-Ranges",
+              "value": "bytes"
+            },
+            {
+              "name": "Cache-Control",
+              "value": "no-cache, private"
+            },
+            {
+              "name": "Content-Encoding",
+              "value": "gzip"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/javascript"
+            },
+            {
+              "name": "Date",
+              "value": "Fri, 04 Oct 2019 17:05:29 GMT"
+            },
+            {
+              "name": "Last-Modified",
+              "value": "Thu, 29 Aug 2019 09:14:59 GMT"
+            },
+            {
+              "name": "Transfer-Encoding",
+              "value": "chunked"
+            }
+          ],
+          "headersSize": 250,
+          "redirectURL": "",
+          "bodySize": 74787,
+          "httpVersion": "HTTP/1.1"
+        }
+      },
+      {
+        "comment": "",
+        "serverIPAddress": "109.103.170.75",
+        "pageref": "http://109.103.170.75:8001/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/#/deployment?namespace=kubernetes-dashboard",
+        "startedDateTime": "2019-10-04T17:05:29.999Z",
+        "cache": {},
+        "request": {
+          "comment": "",
+          "cookies": [],
+          "url": "http://109.103.170.75:8001/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/main.dba02aeed05a3f2a5a0c.js",
+          "queryString": [],
+          "headers": [
+            {
+              "name": "Host",
+              "value": "109.103.170.75:8001"
+            },
+            {
+              "name": "Proxy-Connection",
+              "value": "keep-alive"
+            },
+            {
+              "name": "User-Agent",
+              "value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.90 Safari/537.36"
+            },
+            {
+              "name": "Accept",
+              "value": "*/*"
+            },
+            {
+              "name": "Referer",
+              "value": "http://109.103.170.75:8001/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/"
+            },
+            {
+              "name": "Accept-Encoding",
+              "value": "gzip, deflate, sdch"
+            },
+            {
+              "name": "Accept-Language",
+              "value": "en-US,en;q=0.8"
+            }
+          ],
+          "headersSize": 533,
+          "bodySize": 0,
+          "method": "GET",
+          "httpVersion": "HTTP/1.1"
+        },
+        "timings": {
+          "comment": "",
+          "receive": 218,
+          "send": 20,
+          "ssl": -1,
+          "connect": 13,
+          "dns": 0,
+          "wait": 11,
+          "blocked": 0
+        },
+        "time": 265,
+        "response": {
+          "status": 200,
+          "comment": "",
+          "cookies": [],
+          "statusText": "OK",
+          "content": {
+            "mimeType": "application/javascript",
+            "comment": "",
+            "size": 0
+          },
+          "headers": [
+            {
+              "name": "Accept-Ranges",
+              "value": "bytes"
+            },
+            {
+              "name": "Cache-Control",
+              "value": "no-cache, private"
+            },
+            {
+              "name": "Content-Encoding",
+              "value": "gzip"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/javascript"
+            },
+            {
+              "name": "Date",
+              "value": "Fri, 04 Oct 2019 17:05:29 GMT"
+            },
+            {
+              "name": "Last-Modified",
+              "value": "Thu, 29 Aug 2019 09:14:59 GMT"
+            },
+            {
+              "name": "Transfer-Encoding",
+              "value": "chunked"
+            }
+          ],
+          "headersSize": 250,
+          "redirectURL": "",
+          "bodySize": 591162,
+          "httpVersion": "HTTP/1.1"
+        }
+      },
+      {
+        "comment": "",
+        "serverIPAddress": "109.103.170.75",
+        "pageref": "http://109.103.170.75:8001/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/#/deployment?namespace=kubernetes-dashboard",
+        "startedDateTime": "2019-10-04T17:05:30Z",
+        "cache": {},
+        "request": {
+          "comment": "",
+          "cookies": [],
+          "url": "http://109.103.170.75:8001/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/scripts.f72393e836125e26b85a.js",
+          "queryString": [],
+          "headers": [
+            {
+              "name": "Host",
+              "value": "109.103.170.75:8001"
+            },
+            {
+              "name": "Proxy-Connection",
+              "value": "keep-alive"
+            },
+            {
+              "name": "User-Agent",
+              "value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.90 Safari/537.36"
+            },
+            {
+              "name": "Accept",
+              "value": "*/*"
+            },
+            {
+              "name": "Referer",
+              "value": "http://109.103.170.75:8001/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/"
+            },
+            {
+              "name": "Accept-Encoding",
+              "value": "gzip, deflate, sdch"
+            },
+            {
+              "name": "Accept-Language",
+              "value": "en-US,en;q=0.8"
+            }
+          ],
+          "headersSize": 536,
+          "bodySize": 0,
+          "method": "GET",
+          "httpVersion": "HTTP/1.1"
+        },
+        "timings": {
+          "comment": "",
+          "receive": 8,
+          "send": 10,
+          "ssl": -1,
+          "connect": 62,
+          "dns": 0,
+          "wait": 16,
+          "blocked": 0
+        },
+        "time": 98,
+        "response": {
+          "status": 200,
+          "comment": "",
+          "cookies": [],
+          "statusText": "OK",
+          "content": {
+            "mimeType": "application/javascript",
+            "comment": "",
+            "size": 0
+          },
+          "headers": [
+            {
+              "name": "Accept-Ranges",
+              "value": "bytes"
+            },
+            {
+              "name": "Cache-Control",
+              "value": "no-cache, private"
+            },
+            {
+              "name": "Content-Encoding",
+              "value": "gzip"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/javascript"
+            },
+            {
+              "name": "Date",
+              "value": "Fri, 04 Oct 2019 17:05:30 GMT"
+            },
+            {
+              "name": "Last-Modified",
+              "value": "Thu, 29 Aug 2019 09:14:59 GMT"
+            },
+            {
+              "name": "Transfer-Encoding",
+              "value": "chunked"
+            }
+          ],
+          "headersSize": 250,
+          "redirectURL": "",
+          "bodySize": 18693,
+          "httpVersion": "HTTP/1.1"
+        }
+      },
+      {
+        "comment": "",
+        "serverIPAddress": "109.103.170.75",
+        "pageref": "http://109.103.170.75:8001/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/#/deployment?namespace=kubernetes-dashboard",
+        "startedDateTime": "2019-10-04T17:05:31.242Z",
+        "cache": {},
+        "request": {
+          "comment": "",
+          "cookies": [],
+          "url": "http://109.103.170.75:8001/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/api/v1/settings/global/cani",
+          "queryString": [],
+          "headers": [
+            {
+              "name": "Host",
+              "value": "109.103.170.75:8001"
+            },
+            {
+              "name": "Proxy-Connection",
+              "value": "keep-alive"
+            },
+            {
+              "name": "Accept",
+              "value": "application/json, text/plain, */*"
+            },
+            {
+              "name": "User-Agent",
+              "value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.90 Safari/537.36"
+            },
+            {
+              "name": "Referer",
+              "value": "http://109.103.170.75:8001/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/"
+            },
+            {
+              "name": "Accept-Encoding",
+              "value": "gzip, deflate, sdch"
+            },
+            {
+              "name": "Accept-Language",
+              "value": "en-US,en;q=0.8"
+            }
+          ],
+          "headersSize": 562,
+          "bodySize": 0,
+          "method": "GET",
+          "httpVersion": "HTTP/1.1"
+        },
+        "timings": {
+          "comment": "",
+          "receive": 0,
+          "send": 1,
+          "ssl": -1,
+          "connect": -1,
+          "dns": -1,
+          "wait": 20,
+          "blocked": -1
+        },
+        "time": 22,
+        "response": {
+          "status": 200,
+          "comment": "",
+          "cookies": [],
+          "statusText": "OK",
+          "content": {
+            "mimeType": "application/json",
+            "comment": "",
+            "size": 0
+          },
+          "headers": [
+            {
+              "name": "Cache-Control",
+              "value": "no-cache, private"
+            },
+            {
+              "name": "Content-Encoding",
+              "value": "gzip"
+            },
+            {
+              "name": "Content-Length",
+              "value": "48"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "name": "Date",
+              "value": "Fri, 04 Oct 2019 17:05:31 GMT"
+            }
+          ],
+          "headersSize": 168,
+          "redirectURL": "",
+          "bodySize": 48,
+          "httpVersion": "HTTP/1.1"
+        }
+      },
+      {
+        "comment": "",
+        "serverIPAddress": "109.103.170.75",
+        "pageref": "http://109.103.170.75:8001/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/#/deployment?namespace=kubernetes-dashboard",
+        "startedDateTime": "2019-10-04T17:05:31.245Z",
+        "cache": {},
+        "request": {
+          "comment": "",
+          "cookies": [],
+          "url": "http://109.103.170.75:8001/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/api/v1/settings/pinner",
+          "queryString": [],
+          "headers": [
+            {
+              "name": "Host",
+              "value": "109.103.170.75:8001"
+            },
+            {
+              "name": "Proxy-Connection",
+              "value": "keep-alive"
+            },
+            {
+              "name": "Accept",
+              "value": "application/json, text/plain, */*"
+            },
+            {
+              "name": "User-Agent",
+              "value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.90 Safari/537.36"
+            },
+            {
+              "name": "Referer",
+              "value": "http://109.103.170.75:8001/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/"
+            },
+            {
+              "name": "Accept-Encoding",
+              "value": "gzip, deflate, sdch"
+            },
+            {
+              "name": "Accept-Language",
+              "value": "en-US,en;q=0.8"
+            }
+          ],
+          "headersSize": 557,
+          "bodySize": 0,
+          "method": "GET",
+          "httpVersion": "HTTP/1.1"
+        },
+        "timings": {
+          "comment": "",
+          "receive": 0,
+          "send": 2,
+          "ssl": -1,
+          "connect": -1,
+          "dns": -1,
+          "wait": 25,
+          "blocked": -1
+        },
+        "time": 28,
+        "response": {
+          "status": 200,
+          "comment": "",
+          "cookies": [],
+          "statusText": "OK",
+          "content": {
+            "mimeType": "application/json",
+            "comment": "",
+            "size": 0
+          },
+          "headers": [
+            {
+              "name": "Cache-Control",
+              "value": "no-cache, private"
+            },
+            {
+              "name": "Content-Encoding",
+              "value": "gzip"
+            },
+            {
+              "name": "Content-Length",
+              "value": "30"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "name": "Date",
+              "value": "Fri, 04 Oct 2019 17:05:31 GMT"
+            }
+          ],
+          "headersSize": 168,
+          "redirectURL": "",
+          "bodySize": 30,
+          "httpVersion": "HTTP/1.1"
+        }
+      },
+      {
+        "comment": "",
+        "serverIPAddress": "109.103.170.75",
+        "pageref": "http://109.103.170.75:8001/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/#/deployment?namespace=kubernetes-dashboard",
+        "startedDateTime": "2019-10-04T17:05:31.252Z",
+        "cache": {},
+        "request": {
+          "comment": "",
+          "cookies": [],
+          "url": "http://109.103.170.75:8001/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/config",
+          "queryString": [],
+          "headers": [
+            {
+              "name": "Host",
+              "value": "109.103.170.75:8001"
+            },
+            {
+              "name": "Proxy-Connection",
+              "value": "keep-alive"
+            },
+            {
+              "name": "Accept",
+              "value": "application/json, text/plain, */*"
+            },
+            {
+              "name": "User-Agent",
+              "value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.90 Safari/537.36"
+            },
+            {
+              "name": "Referer",
+              "value": "http://109.103.170.75:8001/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/"
+            },
+            {
+              "name": "Accept-Encoding",
+              "value": "gzip, deflate, sdch"
+            },
+            {
+              "name": "Accept-Language",
+              "value": "en-US,en;q=0.8"
+            }
+          ],
+          "headersSize": 541,
+          "bodySize": 0,
+          "method": "GET",
+          "httpVersion": "HTTP/1.1"
+        },
+        "timings": {
+          "comment": "",
+          "receive": 0,
+          "send": 2,
+          "ssl": -1,
+          "connect": -1,
+          "dns": -1,
+          "wait": 18,
+          "blocked": -1
+        },
+        "time": 20,
+        "response": {
+          "status": 200,
+          "comment": "",
+          "cookies": [],
+          "statusText": "OK",
+          "content": {
+            "mimeType": "application/json",
+            "comment": "",
+            "size": 0
+          },
+          "headers": [
+            {
+              "name": "Cache-Control",
+              "value": "no-cache, private"
+            },
+            {
+              "name": "Content-Length",
+              "value": "28"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "name": "Date",
+              "value": "Fri, 04 Oct 2019 17:05:31 GMT"
+            }
+          ],
+          "headersSize": 144,
+          "redirectURL": "",
+          "bodySize": 28,
+          "httpVersion": "HTTP/1.1"
+        }
+      },
+      {
+        "comment": "",
+        "serverIPAddress": "109.103.170.75",
+        "pageref": "http://109.103.170.75:8001/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/#/deployment?namespace=kubernetes-dashboard",
+        "startedDateTime": "2019-10-04T17:05:31.281Z",
+        "cache": {},
+        "request": {
+          "comment": "",
+          "cookies": [],
+          "url": "http://109.103.170.75:8001/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/api/v1/settings/global/cani",
+          "queryString": [],
+          "headers": [
+            {
+              "name": "Host",
+              "value": "109.103.170.75:8001"
+            },
+            {
+              "name": "Proxy-Connection",
+              "value": "keep-alive"
+            },
+            {
+              "name": "Accept",
+              "value": "application/json, text/plain, */*"
+            },
+            {
+              "name": "User-Agent",
+              "value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.90 Safari/537.36"
+            },
+            {
+              "name": "Referer",
+              "value": "http://109.103.170.75:8001/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/"
+            },
+            {
+              "name": "Accept-Encoding",
+              "value": "gzip, deflate, sdch"
+            },
+            {
+              "name": "Accept-Language",
+              "value": "en-US,en;q=0.8"
+            }
+          ],
+          "headersSize": 562,
+          "bodySize": 0,
+          "method": "GET",
+          "httpVersion": "HTTP/1.1"
+        },
+        "timings": {
+          "comment": "",
+          "receive": 0,
+          "send": 1,
+          "ssl": -1,
+          "connect": -1,
+          "dns": -1,
+          "wait": 15,
+          "blocked": -1
+        },
+        "time": 17,
+        "response": {
+          "status": 200,
+          "comment": "",
+          "cookies": [],
+          "statusText": "OK",
+          "content": {
+            "mimeType": "application/json",
+            "comment": "",
+            "size": 0
+          },
+          "headers": [
+            {
+              "name": "Cache-Control",
+              "value": "no-cache, private"
+            },
+            {
+              "name": "Content-Encoding",
+              "value": "gzip"
+            },
+            {
+              "name": "Content-Length",
+              "value": "48"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "name": "Date",
+              "value": "Fri, 04 Oct 2019 17:05:31 GMT"
+            }
+          ],
+          "headersSize": 168,
+          "redirectURL": "",
+          "bodySize": 48,
+          "httpVersion": "HTTP/1.1"
+        }
+      },
+      {
+        "comment": "",
+        "serverIPAddress": "109.103.170.75",
+        "pageref": "http://109.103.170.75:8001/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/#/deployment?namespace=kubernetes-dashboard",
+        "startedDateTime": "2019-10-04T17:05:31.318Z",
+        "cache": {},
+        "request": {
+          "comment": "",
+          "cookies": [],
+          "url": "http://109.103.170.75:8001/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/0.888bbd74dc77b34831c6.js",
+          "queryString": [],
+          "headers": [
+            {
+              "name": "Host",
+              "value": "109.103.170.75:8001"
+            },
+            {
+              "name": "Proxy-Connection",
+              "value": "keep-alive"
+            },
+            {
+              "name": "User-Agent",
+              "value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.90 Safari/537.36"
+            },
+            {
+              "name": "Accept",
+              "value": "*/*"
+            },
+            {
+              "name": "Referer",
+              "value": "http://109.103.170.75:8001/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/"
+            },
+            {
+              "name": "Accept-Encoding",
+              "value": "gzip, deflate, sdch"
+            },
+            {
+              "name": "Accept-Language",
+              "value": "en-US,en;q=0.8"
+            }
+          ],
+          "headersSize": 530,
+          "bodySize": 0,
+          "method": "GET",
+          "httpVersion": "HTTP/1.1"
+        },
+        "timings": {
+          "comment": "",
+          "receive": 3,
+          "send": 1,
+          "ssl": -1,
+          "connect": -1,
+          "dns": -1,
+          "wait": 30,
+          "blocked": -1
+        },
+        "time": 36,
+        "response": {
+          "status": 200,
+          "comment": "",
+          "cookies": [],
+          "statusText": "OK",
+          "content": {
+            "mimeType": "application/javascript",
+            "comment": "",
+            "size": 0
+          },
+          "headers": [
+            {
+              "name": "Accept-Ranges",
+              "value": "bytes"
+            },
+            {
+              "name": "Cache-Control",
+              "value": "no-cache, private"
+            },
+            {
+              "name": "Content-Encoding",
+              "value": "gzip"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/javascript"
+            },
+            {
+              "name": "Date",
+              "value": "Fri, 04 Oct 2019 17:05:31 GMT"
+            },
+            {
+              "name": "Last-Modified",
+              "value": "Thu, 29 Aug 2019 09:14:59 GMT"
+            },
+            {
+              "name": "Transfer-Encoding",
+              "value": "chunked"
+            }
+          ],
+          "headersSize": 250,
+          "redirectURL": "",
+          "bodySize": 7976,
+          "httpVersion": "HTTP/1.1"
+        }
+      },
+      {
+        "comment": "",
+        "serverIPAddress": "109.103.170.75",
+        "pageref": "http://109.103.170.75:8001/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/#/deployment?namespace=kubernetes-dashboard",
+        "startedDateTime": "2019-10-04T17:05:31.319Z",
+        "cache": {},
+        "request": {
+          "comment": "",
+          "cookies": [],
+          "url": "http://109.103.170.75:8001/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/2.e60b51705ace9eb1ba73.js",
+          "queryString": [],
+          "headers": [
+            {
+              "name": "Host",
+              "value": "109.103.170.75:8001"
+            },
+            {
+              "name": "Proxy-Connection",
+              "value": "keep-alive"
+            },
+            {
+              "name": "User-Agent",
+              "value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.90 Safari/537.36"
+            },
+            {
+              "name": "Accept",
+              "value": "*/*"
+            },
+            {
+              "name": "Referer",
+              "value": "http://109.103.170.75:8001/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/"
+            },
+            {
+              "name": "Accept-Encoding",
+              "value": "gzip, deflate, sdch"
+            },
+            {
+              "name": "Accept-Language",
+              "value": "en-US,en;q=0.8"
+            }
+          ],
+          "headersSize": 530,
+          "bodySize": 0,
+          "method": "GET",
+          "httpVersion": "HTTP/1.1"
+        },
+        "timings": {
+          "comment": "",
+          "receive": 1,
+          "send": 1,
+          "ssl": -1,
+          "connect": -1,
+          "dns": -1,
+          "wait": 18,
+          "blocked": -1
+        },
+        "time": 20,
+        "response": {
+          "status": 200,
+          "comment": "",
+          "cookies": [],
+          "statusText": "OK",
+          "content": {
+            "mimeType": "application/javascript",
+            "comment": "",
+            "size": 0
+          },
+          "headers": [
+            {
+              "name": "Accept-Ranges",
+              "value": "bytes"
+            },
+            {
+              "name": "Cache-Control",
+              "value": "no-cache, private"
+            },
+            {
+              "name": "Content-Encoding",
+              "value": "gzip"
+            },
+            {
+              "name": "Content-Length",
+              "value": "2543"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/javascript"
+            },
+            {
+              "name": "Date",
+              "value": "Fri, 04 Oct 2019 17:05:31 GMT"
+            },
+            {
+              "name": "Last-Modified",
+              "value": "Thu, 29 Aug 2019 09:14:59 GMT"
+            }
+          ],
+          "headersSize": 244,
+          "redirectURL": "",
+          "bodySize": 2543,
+          "httpVersion": "HTTP/1.1"
+        }
+      },
+      {
+        "comment": "",
+        "serverIPAddress": "109.103.170.75",
+        "pageref": "http://109.103.170.75:8001/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/#/deployment?namespace=kubernetes-dashboard",
+        "startedDateTime": "2019-10-04T17:05:31.329Z",
+        "cache": {},
+        "request": {
+          "comment": "",
+          "cookies": [],
+          "url": "http://109.103.170.75:8001/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/11.c2b30dce86959335594d.js",
+          "queryString": [],
+          "headers": [
+            {
+              "name": "Host",
+              "value": "109.103.170.75:8001"
+            },
+            {
+              "name": "Proxy-Connection",
+              "value": "keep-alive"
+            },
+            {
+              "name": "User-Agent",
+              "value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.90 Safari/537.36"
+            },
+            {
+              "name": "Accept",
+              "value": "*/*"
+            },
+            {
+              "name": "Referer",
+              "value": "http://109.103.170.75:8001/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/"
+            },
+            {
+              "name": "Accept-Encoding",
+              "value": "gzip, deflate, sdch"
+            },
+            {
+              "name": "Accept-Language",
+              "value": "en-US,en;q=0.8"
+            }
+          ],
+          "headersSize": 531,
+          "bodySize": 0,
+          "method": "GET",
+          "httpVersion": "HTTP/1.1"
+        },
+        "timings": {
+          "comment": "",
+          "receive": 0,
+          "send": 1,
+          "ssl": -1,
+          "connect": -1,
+          "dns": -1,
+          "wait": 18,
+          "blocked": -1
+        },
+        "time": 21,
+        "response": {
+          "status": 200,
+          "comment": "",
+          "cookies": [],
+          "statusText": "OK",
+          "content": {
+            "mimeType": "application/javascript",
+            "comment": "",
+            "size": 0
+          },
+          "headers": [
+            {
+              "name": "Accept-Ranges",
+              "value": "bytes"
+            },
+            {
+              "name": "Cache-Control",
+              "value": "no-cache, private"
+            },
+            {
+              "name": "Content-Encoding",
+              "value": "gzip"
+            },
+            {
+              "name": "Content-Length",
+              "value": "3664"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/javascript"
+            },
+            {
+              "name": "Date",
+              "value": "Fri, 04 Oct 2019 17:05:31 GMT"
+            },
+            {
+              "name": "Last-Modified",
+              "value": "Thu, 29 Aug 2019 09:14:59 GMT"
+            }
+          ],
+          "headersSize": 244,
+          "redirectURL": "",
+          "bodySize": 3664,
+          "httpVersion": "HTTP/1.1"
+        }
+      },
+      {
+        "comment": "",
+        "serverIPAddress": "109.103.170.75",
+        "pageref": "http://109.103.170.75:8001/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/#/deployment?namespace=kubernetes-dashboard",
+        "startedDateTime": "2019-10-04T17:05:31.330Z",
+        "cache": {},
+        "request": {
+          "comment": "",
+          "cookies": [],
+          "url": "http://109.103.170.75:8001/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/7.538a962619ceddcb73f7.js",
+          "queryString": [],
+          "headers": [
+            {
+              "name": "Host",
+              "value": "109.103.170.75:8001"
+            },
+            {
+              "name": "Proxy-Connection",
+              "value": "keep-alive"
+            },
+            {
+              "name": "User-Agent",
+              "value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.90 Safari/537.36"
+            },
+            {
+              "name": "Accept",
+              "value": "*/*"
+            },
+            {
+              "name": "Referer",
+              "value": "http://109.103.170.75:8001/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/"
+            },
+            {
+              "name": "Accept-Encoding",
+              "value": "gzip, deflate, sdch"
+            },
+            {
+              "name": "Accept-Language",
+              "value": "en-US,en;q=0.8"
+            }
+          ],
+          "headersSize": 530,
+          "bodySize": 0,
+          "method": "GET",
+          "httpVersion": "HTTP/1.1"
+        },
+        "timings": {
+          "comment": "",
+          "receive": 0,
+          "send": 1,
+          "ssl": -1,
+          "connect": -1,
+          "dns": -1,
+          "wait": 27,
+          "blocked": -1
+        },
+        "time": 29,
+        "response": {
+          "status": 200,
+          "comment": "",
+          "cookies": [],
+          "statusText": "OK",
+          "content": {
+            "mimeType": "application/javascript",
+            "comment": "",
+            "size": 0
+          },
+          "headers": [
+            {
+              "name": "Accept-Ranges",
+              "value": "bytes"
+            },
+            {
+              "name": "Cache-Control",
+              "value": "no-cache, private"
+            },
+            {
+              "name": "Content-Encoding",
+              "value": "gzip"
+            },
+            {
+              "name": "Content-Length",
+              "value": "3707"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/javascript"
+            },
+            {
+              "name": "Date",
+              "value": "Fri, 04 Oct 2019 17:05:31 GMT"
+            },
+            {
+              "name": "Last-Modified",
+              "value": "Thu, 29 Aug 2019 09:14:59 GMT"
+            }
+          ],
+          "headersSize": 244,
+          "redirectURL": "",
+          "bodySize": 3707,
+          "httpVersion": "HTTP/1.1"
+        }
+      },
+      {
+        "comment": "",
+        "serverIPAddress": "109.103.170.75",
+        "pageref": "http://109.103.170.75:8001/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/#/deployment?namespace=kubernetes-dashboard",
+        "startedDateTime": "2019-10-04T17:05:31.355Z",
+        "cache": {},
+        "request": {
+          "comment": "",
+          "cookies": [],
+          "url": "http://109.103.170.75:8001/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/common.c8ae1d31d263d6562086.js",
+          "queryString": [],
+          "headers": [
+            {
+              "name": "Host",
+              "value": "109.103.170.75:8001"
+            },
+            {
+              "name": "Proxy-Connection",
+              "value": "keep-alive"
+            },
+            {
+              "name": "User-Agent",
+              "value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.90 Safari/537.36"
+            },
+            {
+              "name": "Accept",
+              "value": "*/*"
+            },
+            {
+              "name": "Referer",
+              "value": "http://109.103.170.75:8001/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/"
+            },
+            {
+              "name": "Accept-Encoding",
+              "value": "gzip, deflate, sdch"
+            },
+            {
+              "name": "Accept-Language",
+              "value": "en-US,en;q=0.8"
+            }
+          ],
+          "headersSize": 535,
+          "bodySize": 0,
+          "method": "GET",
+          "httpVersion": "HTTP/1.1"
+        },
+        "timings": {
+          "comment": "",
+          "receive": 0,
+          "send": 1,
+          "ssl": -1,
+          "connect": -1,
+          "dns": -1,
+          "wait": 34,
+          "blocked": -1
+        },
+        "time": 36,
+        "response": {
+          "status": 200,
+          "comment": "",
+          "cookies": [],
+          "statusText": "OK",
+          "content": {
+            "mimeType": "application/javascript",
+            "comment": "",
+            "size": 0
+          },
+          "headers": [
+            {
+              "name": "Accept-Ranges",
+              "value": "bytes"
+            },
+            {
+              "name": "Cache-Control",
+              "value": "no-cache, private"
+            },
+            {
+              "name": "Content-Encoding",
+              "value": "gzip"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/javascript"
+            },
+            {
+              "name": "Date",
+              "value": "Fri, 04 Oct 2019 17:05:31 GMT"
+            },
+            {
+              "name": "Last-Modified",
+              "value": "Thu, 29 Aug 2019 09:14:59 GMT"
+            },
+            {
+              "name": "Transfer-Encoding",
+              "value": "chunked"
+            }
+          ],
+          "headersSize": 250,
+          "redirectURL": "",
+          "bodySize": 11502,
+          "httpVersion": "HTTP/1.1"
+        }
+      },
+      {
+        "comment": "",
+        "serverIPAddress": "109.103.170.75",
+        "pageref": "http://109.103.170.75:8001/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/#/deployment?namespace=kubernetes-dashboard",
+        "startedDateTime": "2019-10-04T17:05:31.375Z",
+        "cache": {},
+        "request": {
+          "comment": "",
+          "cookies": [],
+          "url": "http://109.103.170.75:8001/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/30.41c683c5fc3d8bcd8a1f.js",
+          "queryString": [],
+          "headers": [
+            {
+              "name": "Host",
+              "value": "109.103.170.75:8001"
+            },
+            {
+              "name": "Proxy-Connection",
+              "value": "keep-alive"
+            },
+            {
+              "name": "User-Agent",
+              "value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.90 Safari/537.36"
+            },
+            {
+              "name": "Accept",
+              "value": "*/*"
+            },
+            {
+              "name": "Referer",
+              "value": "http://109.103.170.75:8001/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/"
+            },
+            {
+              "name": "Accept-Encoding",
+              "value": "gzip, deflate, sdch"
+            },
+            {
+              "name": "Accept-Language",
+              "value": "en-US,en;q=0.8"
+            }
+          ],
+          "headersSize": 531,
+          "bodySize": 0,
+          "method": "GET",
+          "httpVersion": "HTTP/1.1"
+        },
+        "timings": {
+          "comment": "",
+          "receive": 10,
+          "send": 3,
+          "ssl": -1,
+          "connect": 22,
+          "dns": 0,
+          "wait": 13,
+          "blocked": 0
+        },
+        "time": 50,
+        "response": {
+          "status": 200,
+          "comment": "",
+          "cookies": [],
+          "statusText": "OK",
+          "content": {
+            "mimeType": "application/javascript",
+            "comment": "",
+            "size": 0
+          },
+          "headers": [
+            {
+              "name": "Accept-Ranges",
+              "value": "bytes"
+            },
+            {
+              "name": "Cache-Control",
+              "value": "no-cache, private"
+            },
+            {
+              "name": "Content-Encoding",
+              "value": "gzip"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/javascript"
+            },
+            {
+              "name": "Date",
+              "value": "Fri, 04 Oct 2019 17:05:31 GMT"
+            },
+            {
+              "name": "Last-Modified",
+              "value": "Thu, 29 Aug 2019 09:14:59 GMT"
+            },
+            {
+              "name": "Transfer-Encoding",
+              "value": "chunked"
+            }
+          ],
+          "headersSize": 250,
+          "redirectURL": "",
+          "bodySize": 7037,
+          "httpVersion": "HTTP/1.1"
+        }
+      },
+      {
+        "comment": "",
+        "serverIPAddress": "109.103.170.75",
+        "pageref": "http://109.103.170.75:8001/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/#/deployment?namespace=kubernetes-dashboard",
+        "startedDateTime": "2019-10-04T17:05:31.383Z",
+        "cache": {},
+        "request": {
+          "comment": "",
+          "cookies": [],
+          "url": "http://109.103.170.75:8001/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/api/v1/settings/global",
+          "queryString": [],
+          "headers": [
+            {
+              "name": "Host",
+              "value": "109.103.170.75:8001"
+            },
+            {
+              "name": "Proxy-Connection",
+              "value": "keep-alive"
+            },
+            {
+              "name": "Accept",
+              "value": "application/json, text/plain, */*"
+            },
+            {
+              "name": "User-Agent",
+              "value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.90 Safari/537.36"
+            },
+            {
+              "name": "Referer",
+              "value": "http://109.103.170.75:8001/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/"
+            },
+            {
+              "name": "Accept-Encoding",
+              "value": "gzip, deflate, sdch"
+            },
+            {
+              "name": "Accept-Language",
+              "value": "en-US,en;q=0.8"
+            }
+          ],
+          "headersSize": 557,
+          "bodySize": 0,
+          "method": "GET",
+          "httpVersion": "HTTP/1.1"
+        },
+        "timings": {
+          "comment": "",
+          "receive": 1,
+          "send": 2,
+          "ssl": -1,
+          "connect": 16,
+          "dns": 0,
+          "wait": 14,
+          "blocked": 0
+        },
+        "time": 36,
+        "response": {
+          "status": 200,
+          "comment": "",
+          "cookies": [],
+          "statusText": "OK",
+          "content": {
+            "mimeType": "application/json",
+            "comment": "",
+            "size": 0
+          },
+          "headers": [
+            {
+              "name": "Cache-Control",
+              "value": "no-cache, private"
+            },
+            {
+              "name": "Content-Encoding",
+              "value": "gzip"
+            },
+            {
+              "name": "Content-Length",
+              "value": "127"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "name": "Date",
+              "value": "Fri, 04 Oct 2019 17:05:31 GMT"
+            }
+          ],
+          "headersSize": 169,
+          "redirectURL": "",
+          "bodySize": 127,
+          "httpVersion": "HTTP/1.1"
+        }
+      },
+      {
+        "comment": "",
+        "serverIPAddress": "109.103.170.75",
+        "pageref": "http://109.103.170.75:8001/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/#/deployment?namespace=kubernetes-dashboard",
+        "startedDateTime": "2019-10-04T17:05:31.422Z",
+        "cache": {},
+        "request": {
+          "comment": "",
+          "cookies": [],
+          "url": "http://109.103.170.75:8001/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/api/v1/settings/global",
+          "queryString": [],
+          "headers": [
+            {
+              "name": "Host",
+              "value": "109.103.170.75:8001"
+            },
+            {
+              "name": "Proxy-Connection",
+              "value": "keep-alive"
+            },
+            {
+              "name": "Accept",
+              "value": "application/json, text/plain, */*"
+            },
+            {
+              "name": "User-Agent",
+              "value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.90 Safari/537.36"
+            },
+            {
+              "name": "Referer",
+              "value": "http://109.103.170.75:8001/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/"
+            },
+            {
+              "name": "Accept-Encoding",
+              "value": "gzip, deflate, sdch"
+            },
+            {
+              "name": "Accept-Language",
+              "value": "en-US,en;q=0.8"
+            }
+          ],
+          "headersSize": 557,
+          "bodySize": 0,
+          "method": "GET",
+          "httpVersion": "HTTP/1.1"
+        },
+        "timings": {
+          "comment": "",
+          "receive": 0,
+          "send": 0,
+          "ssl": -1,
+          "connect": -1,
+          "dns": -1,
+          "wait": 10,
+          "blocked": -1
+        },
+        "time": 11,
+        "response": {
+          "status": 200,
+          "comment": "",
+          "cookies": [],
+          "statusText": "OK",
+          "content": {
+            "mimeType": "application/json",
+            "comment": "",
+            "size": 0
+          },
+          "headers": [
+            {
+              "name": "Cache-Control",
+              "value": "no-cache, private"
+            },
+            {
+              "name": "Content-Encoding",
+              "value": "gzip"
+            },
+            {
+              "name": "Content-Length",
+              "value": "127"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "name": "Date",
+              "value": "Fri, 04 Oct 2019 17:05:31 GMT"
+            }
+          ],
+          "headersSize": 169,
+          "redirectURL": "",
+          "bodySize": 127,
+          "httpVersion": "HTTP/1.1"
+        }
+      },
+      {
+        "comment": "",
+        "serverIPAddress": "109.103.170.75",
+        "pageref": "http://109.103.170.75:8001/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/#/deployment?namespace=kubernetes-dashboard",
+        "startedDateTime": "2019-10-04T17:05:31.479Z",
+        "cache": {},
+        "request": {
+          "comment": "",
+          "cookies": [],
+          "url": "http://109.103.170.75:8001/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/api/v1/login/status",
+          "queryString": [],
+          "headers": [
+            {
+              "name": "Host",
+              "value": "109.103.170.75:8001"
+            },
+            {
+              "name": "Proxy-Connection",
+              "value": "keep-alive"
+            },
+            {
+              "name": "Accept",
+              "value": "application/json, text/plain, */*"
+            },
+            {
+              "name": "User-Agent",
+              "value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.90 Safari/537.36"
+            },
+            {
+              "name": "Referer",
+              "value": "http://109.103.170.75:8001/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/"
+            },
+            {
+              "name": "Accept-Encoding",
+              "value": "gzip, deflate, sdch"
+            },
+            {
+              "name": "Accept-Language",
+              "value": "en-US,en;q=0.8"
+            }
+          ],
+          "headersSize": 554,
+          "bodySize": 0,
+          "method": "GET",
+          "httpVersion": "HTTP/1.1"
+        },
+        "timings": {
+          "comment": "",
+          "receive": 1,
+          "send": 1,
+          "ssl": -1,
+          "connect": -1,
+          "dns": -1,
+          "wait": 9,
+          "blocked": -1
+        },
+        "time": 11,
+        "response": {
+          "status": 200,
+          "comment": "",
+          "cookies": [],
+          "statusText": "OK",
+          "content": {
+            "mimeType": "application/json",
+            "comment": "",
+            "size": 0
+          },
+          "headers": [
+            {
+              "name": "Cache-Control",
+              "value": "no-cache, private"
+            },
+            {
+              "name": "Content-Encoding",
+              "value": "gzip"
+            },
+            {
+              "name": "Content-Length",
+              "value": "101"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "name": "Date",
+              "value": "Fri, 04 Oct 2019 17:05:31 GMT"
+            }
+          ],
+          "headersSize": 169,
+          "redirectURL": "",
+          "bodySize": 101,
+          "httpVersion": "HTTP/1.1"
+        }
+      },
+      {
+        "comment": "",
+        "serverIPAddress": "109.103.170.75",
+        "pageref": "http://109.103.170.75:8001/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/#/deployment?namespace=kubernetes-dashboard",
+        "startedDateTime": "2019-10-04T17:05:31.486Z",
+        "cache": {},
+        "request": {
+          "comment": "",
+          "cookies": [],
+          "url": "http://109.103.170.75:8001/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/assets/images/kubernetes-logo.png",
+          "queryString": [],
+          "headers": [
+            {
+              "name": "Host",
+              "value": "109.103.170.75:8001"
+            },
+            {
+              "name": "Proxy-Connection",
+              "value": "keep-alive"
+            },
+            {
+              "name": "User-Agent",
+              "value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.90 Safari/537.36"
+            },
+            {
+              "name": "Accept",
+              "value": "*/*"
+            },
+            {
+              "name": "Referer",
+              "value": "http://109.103.170.75:8001/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/"
+            },
+            {
+              "name": "Accept-Encoding",
+              "value": "gzip, deflate, sdch"
+            },
+            {
+              "name": "Accept-Language",
+              "value": "en-US,en;q=0.8"
+            }
+          ],
+          "headersSize": 538,
+          "bodySize": 0,
+          "method": "GET",
+          "httpVersion": "HTTP/1.1"
+        },
+        "timings": {
+          "comment": "",
+          "receive": 1,
+          "send": 0,
+          "ssl": -1,
+          "connect": -1,
+          "dns": -1,
+          "wait": 21,
+          "blocked": -1
+        },
+        "time": 23,
+        "response": {
+          "status": 200,
+          "comment": "",
+          "cookies": [],
+          "statusText": "OK",
+          "content": {
+            "mimeType": "image/png",
+            "comment": "",
+            "size": 0
+          },
+          "headers": [
+            {
+              "name": "Accept-Ranges",
+              "value": "bytes"
+            },
+            {
+              "name": "Cache-Control",
+              "value": "no-cache, private"
+            },
+            {
+              "name": "Content-Encoding",
+              "value": "gzip"
+            },
+            {
+              "name": "Content-Type",
+              "value": "image/png"
+            },
+            {
+              "name": "Date",
+              "value": "Fri, 04 Oct 2019 17:05:31 GMT"
+            },
+            {
+              "name": "Last-Modified",
+              "value": "Thu, 29 Aug 2019 09:14:59 GMT"
+            },
+            {
+              "name": "Transfer-Encoding",
+              "value": "chunked"
+            }
+          ],
+          "headersSize": 237,
+          "redirectURL": "",
+          "bodySize": 8919,
+          "httpVersion": "HTTP/1.1"
+        }
+      }
+    ],
+    "pages": [
+      {
+        "pageTimings": {
+          "comment": ""
+        },
+        "comment": "",
+        "title": "http://109.103.170.75:8001/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/#/deployment?namespace=kubernetes-dashboard",
+        "id": "http://109.103.170.75:8001/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/#/deployment?namespace=kubernetes-dashboard",
+        "startedDateTime": "2019-10-04T17:05:29.632Z"
+      }
+    ],
+    "browser": {
+      "comment": "",
+      "version": "54.0.2840.90",
+      "name": "Chrome"
+    }
+  }
+}
