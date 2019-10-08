@@ -71,6 +71,12 @@ class ResourceMonitor:
             print("Request size: %.2f KBytes" % (self.responseSize / 1024.0))
 
 
-monitor = ResourceMonitor(sample_url)
-monitor.run()
-print(monitor.get_metrics())
+"""
+Sample driver for ResourceMonitor class
+
+class DriverResourceMonitor:
+    def run():
+        monitor = ResourceMonitor(sample_url)
+        monitor.run()
+        print(monitor.get_metrics())
+"""
