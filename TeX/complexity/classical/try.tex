@@ -1,0 +1,53 @@
+\documentclass{article}
+\usepackage{amsfonts} 
+\usepackage{algorithmicx}
+\usepackage[ruled]{algorithm}
+\usepackage{algpseudocode}
+\usepackage{algpascal}
+\usepackage{algc}
+%\algdisablelines
+
+
+\newcommand{\alg}{\texttt{algorithmicx}}
+\newcommand{\old}{\texttt{algorithmic}}
+\newcommand{\euk}{Euclid}
+\newcommand\ASTART{\bigskip\noindent\begin{minipage}[b]{0.5\linewidth}}
+\newcommand\ACONTINUE{\end{minipage}\begin{minipage}[b]{0.5\linewidth}}
+\newcommand\AENDSKIP{\end{minipage}\bigskip}
+\newcommand\AEND{\end{minipage}}
+
+
+
+\title{Classical Computational Complexity Calculus }
+\author{Rares Folea}
+
+
+
+\begin{document}
+\maketitle
+\begin{abstract}
+This chapter will present the traditional methodology of calculus in the field of algorithm's computational complexity. The complexity will be expressed as a function $f:\mathbb{N}\longrightarrow\mathbb{R}$, where the function is characterized by the size of the input, while the evaluated value $f(n)$, for a given input size $n$, represents the amount of resources needed in order to compute the result. While the most often analyzed resource is time, expressed in elemental compute operations, the mathematical model is self-reliant for others natures of resources, including space reasoning or hybrid metrics. All the results of this chapter are well known in the literature and they represent the reference standard in calculating algorithm complexity in Computer Science. 
+\end{abstract}
+\tableofcontents
+
+
+
+
+\section{Introduction}
+Because of the difficulty of having a rigorous calculus of the complexity, an asymptotic computation approach for an algorithm's complexity offers a valuable insight about the real computational cost without requiring a precisely, flawless calculus.
+
+
+
+\section{Family of Bachmann–Landau notations}
+We will use the following notations and names for the asymptotic computation of a algorithm's complexity defined by a continuous, derivable function, $f:\mathbb{N}\longrightarrow\mathbb{R}$. \\
+We define the set of all complexity calculus $\mathcal{F}= \lbrace f:\mathbb{N}\longrightarrow\mathbb{R} \rbrace$
+\\We assume $n, n_{0}\in\mathbb{N}$. Also, we will consider an arbitrary complexity function $g \in \mathcal{F}$. 
+\begin{itemize}
+  \item Big Theta: \[\Theta= \lbrace f \in \mathcal{F} | \rbrace\]
+  \item Big O: $\mathcal{O}$
+  \item Big Omega:
+  \item Small O:
+  \item Small Omega:
+\end{itemize}
+
+\end{document}
