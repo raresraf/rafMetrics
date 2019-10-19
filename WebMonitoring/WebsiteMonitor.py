@@ -3,7 +3,7 @@ import time
 
 import arrow
 
-from constants import sample_name, sample_url, json_path
+from constants import sample_name, sample_url, json_path, DockerResults
 from DockerClient import DockerRunURLClient
 from request_helpers import parse_request
 """Run advanced monitoring on websites including total response time."""
@@ -74,7 +74,9 @@ class WebsiteMonitor:
 
         self.process_json()
         self.calculate_total_time()
-        self.verbose()
+        # self.verbose()
+
+        return self.docker.status
 
     def verbose(self):
         print("Start time: %s" % self.start)
@@ -91,7 +93,10 @@ class WebsiteMonitor:
 
 
 monitor = WebsiteMonitor(sample_url, sample_name)
-monitor.run()
-print(monitor.get_metrics())
-print(monitor.get_timestamp())
-print(monitor.get_total_time_seconds())
+monitor_result = monitor.run()
+
+# Check docker exit code
+if monitor_result == DockerResults.SUCCESS:
+    print(monitor.get_metrics())
+    print(monitor.get_timestamp())
+    print(monitor.get_total_time_seconds())

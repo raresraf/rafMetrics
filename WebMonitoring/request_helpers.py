@@ -11,7 +11,7 @@ def parse_request(entry):
     request_entry = RequestEntry(serverIPAddress, pageRef, startedDateTime,
                                  time, responseStatus, headersSize, bodySize,
                                  timing)
-    request_entry.verbose()
+    # request_entry.verbose()
     return request_entry
 
 
@@ -70,7 +70,7 @@ class RequestEntry():
         print("responseStatus: %d" % self.responseStatus)
         print("headersSize: %d" % self.headersSize)
         print("bodySize: %d" % self.bodySize)
-        self.timing.verbose()
+        # self.timing.verbose()
 
 
 class TimingEntry():
