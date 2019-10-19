@@ -7,6 +7,13 @@ class MonitoringStatus:
     FAILED = 'failed'
 
 
+class DockerResults:
+    FAILED = 'failed'
+    SUCCESS = 'success'
+    STARTED = 'started'
+    FINISHED = 'finished'
+
+
 class RequestTypes:
     GET = 'GET'
     POST = 'POST'

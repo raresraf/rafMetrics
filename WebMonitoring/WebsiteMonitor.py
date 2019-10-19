@@ -24,6 +24,8 @@ class WebsiteMonitor:
         """List of RequestEntry structures, containing metrics"""
         self.request_entry = []
 
+        self.docker = None
+
     def calculate_total_time(self):
         """Calculate total requests time as difference between last recorded response and
         first request recorded time"""
@@ -65,7 +67,11 @@ class WebsiteMonitor:
         """Generate timestamp at beginning of script"""
         self.timestamp = time.localtime()
         """Run the docker client containing the Chrome browser and export the HAR file"""
-        DockerRunURLClient(self.url).run()
+        self.docker = DockerRunURLClient(self.url)
+        self.docker.run()
+
+        print("Docker run status: " + self.docker.status)
+
         self.process_json()
         self.calculate_total_time()
         self.verbose()
