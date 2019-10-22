@@ -1,0 +1,10 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: marks-dummy-pod
+spec:
+  containers:
+    - name: marks-dummy-pod
+      image: ubuntu
+      command: ["/bin/bash", "-ec", "while :; do echo '.'; sleep 5 ; done"]
+  restartPolicy: Never
