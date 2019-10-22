@@ -74,7 +74,7 @@ class WebsiteMonitor:
 
         self.process_json()
         self.calculate_total_time()
-        # self.verbose()
+        self.verbose()
 
         return self.docker.status
 
