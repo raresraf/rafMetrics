@@ -13,6 +13,8 @@ class WebsiteMonitor:
     def __init__(self, url, name):
         self.url = url
         self.name = name
+
+        # Get current timestamp
         self.timestamp = time.localtime()
 
         self.startTimes = []
@@ -21,7 +23,8 @@ class WebsiteMonitor:
         self.end = None
         self.total_time = None
         self.total_time_seconds = 0.0
-        """List of RequestEntry structures, containing metrics"""
+
+        # List of RequestEntry structures, containing metrics
         self.request_entry = []
 
         self.docker = None
@@ -31,14 +34,14 @@ class WebsiteMonitor:
         first request recorded time"""
 
         if not self.startTimes or not self.request_entry:
-            """Return -1 if there are no start times recorded or requests entries"""
+            # Return -1 if there are no start times recorded or requests entries
             self.total_time_seconds = -1
             return
 
         self.start = min(self.startTimes)
         self.end = max(self.endTimes)
         self.total_time = self.end - self.start
-        """Assure that any loading time for a website is under 1 day"""
+
         self.total_time_seconds = (self.total_time.microseconds / 1000000.0 +
                                    self.total_time.seconds +
                                    self.total_time.days * 86400)
@@ -66,7 +69,8 @@ class WebsiteMonitor:
     def run(self):
         """Generate timestamp at beginning of script"""
         self.timestamp = time.localtime()
-        """Run the docker client containing the Chrome browser and export the HAR file"""
+
+        # Run the docker client containing the Chrome browser and export the HAR file
         self.docker = DockerRunURLClient(self.url)
         self.docker.run()
 

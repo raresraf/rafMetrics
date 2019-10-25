@@ -40,27 +40,31 @@ class ResourceManager:
             self.cnx.commit()
 
     def start(self):
-
+        # Connect to DB
         self.cnx = mysql.connector.connect(user='root',
                                            password='password',
                                            host='10.96.0.2',
                                            database='WebMonitoring')
-        cursor = self.cnx.cursor(buffered=True)
-        query = ('SELECT ResourceName, Command from RESOURCE where Userid = 1')
-        cursor.execute(query)
-
-        for (resouce_name, command) in cursor:
-            if command == RequestTypes.GET:
-                self.resources.append(
-                    ResourceEntry(resouce_name, resouce_name, RequestTypes.GET,
-                                  None))
-            elif command.contains(RequestTypes.POST):
-                self.resources.append(
-                    # TODO : Parse payload
-                    ResourceEntry(resouce_name, resouce_name,
-                                  RequestTypes.POST, None))
 
         while True:
+
+            # Check for any update in the list of resources
+            cursor = self.cnx.cursor(buffered=True)
+            query = (
+                'SELECT ResourceName, Command from RESOURCE where Userid = 1')
+            cursor.execute(query)
+
+            for (resouce_name, command) in cursor:
+                if command == RequestTypes.GET:
+                    self.resources.append(
+                        ResourceEntry(resouce_name, resouce_name,
+                                      RequestTypes.GET, None))
+                elif command.contains(RequestTypes.POST):
+                    self.resources.append(
+                        # TODO : Parse payload
+                        ResourceEntry(resouce_name, resouce_name,
+                                      RequestTypes.POST, None))
+
             self.run()
             time.sleep(self.sample_time)
 

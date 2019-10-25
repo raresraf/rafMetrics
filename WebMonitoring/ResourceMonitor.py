@@ -17,7 +17,8 @@ class ResourceMonitor:
         self.status = MonitoringStatus.WAITING
         self.requestType = requestType
         self.requestPayload = requestPayload
-        """Metrics returned"""
+
+        # Metrics returned
         self.responseTime = 0
         self.responseSize = 0
         self.timestamp = time.localtime()
