@@ -26,18 +26,16 @@ class ResourceManager:
                 resource.resource_url)
             cursor.execute(query)
 
-            resourceId = 1
             for resource_id in cursor:
                 resourceId = resource_id[0]
 
-            query = (
-                ('INSERT INTO PING(Resourceid, ResponseTime, ResponseSize) '
-                 'VALUES (%d, %lf, %d)') %
-                (resourceId, monitor.get_metrics()[0],
-                 monitor.get_metrics()[1]))
-
-            cursor.execute(query)
-            self.cnx.commit()
+                query = ((
+                    'INSERT INTO PING(Resourceid, ResponseTime, ResponseSize) '
+                    'VALUES (%d, %lf, %d)') %
+                         (resourceId, monitor.get_metrics()[0],
+                          monitor.get_metrics()[1]))
+                cursor.execute(query)
+                self.cnx.commit()
 
     def start(self):
         # Connect to DB
@@ -47,26 +45,26 @@ class ResourceManager:
                                            database='WebMonitoring')
 
         while True:
+            self.resources = []
 
             # Check for any update in the list of resources
             cursor = self.cnx.cursor(buffered=True)
-            query = (
-                'SELECT ResourceName, Command from RESOURCE where Userid = 1')
+            query = ('SELECT ResourceName, Command from RESOURCE')
             cursor.execute(query)
 
-            for (resouce_name, command) in cursor:
+            for (resource_name, command) in cursor:
                 if command == RequestTypes.GET:
                     self.resources.append(
-                        ResourceEntry(resouce_name, resouce_name,
+                        ResourceEntry(resource_name, resource_name,
                                       RequestTypes.GET, None))
                 elif command.contains(RequestTypes.POST):
                     self.resources.append(
                         # TODO : Parse payload
-                        ResourceEntry(resouce_name, resouce_name,
+                        ResourceEntry(resource_name, resource_name,
                                       RequestTypes.POST, None))
 
             self.run()
             time.sleep(self.sample_time)
 
 
-ResourceManager(1200).start()
+ResourceManager(86400).start()
