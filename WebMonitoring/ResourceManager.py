@@ -14,6 +14,7 @@ class ResourceManager:
 
     def run(self):
         for resource in self.resources:
+
             monitor = ResourceMonitor(resource.resource_url,
                                       requestType=resource.resource_command,
                                       requestPayload=resource.resource_payload)
@@ -22,19 +23,18 @@ class ResourceManager:
 
             cursor = self.cnx.cursor(buffered=True)
             query = (
-                'SELECT ResourceId from RESOURCE where ResourceName = \'%s\'' %
-                resource.resource_url)
+                'SELECT Resourceid, ResourceName from RESOURCE where ResourceName = \'%s\''
+                % resource.resource_url)
             cursor.execute(query)
 
-            for resource_id in cursor:
-                resourceId = resource_id[0]
-
+            for (resource_id, resource_name) in cursor:
                 query = ((
                     'INSERT INTO PING(Resourceid, ResponseTime, ResponseSize) '
                     'VALUES (%d, %lf, %d)') %
-                         (resourceId, monitor.get_metrics()[0],
+                         (resource_id, monitor.get_metrics()[0],
                           monitor.get_metrics()[1]))
-                cursor.execute(query)
+                cursor_insert = self.cnx.cursor(buffered=True)
+                cursor_insert.execute(query)
                 self.cnx.commit()
 
     def start(self):
