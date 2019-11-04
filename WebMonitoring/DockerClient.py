@@ -23,9 +23,11 @@ class DockerRunURLClient():
 
         # Set timeout for docker run command
         with self.timeout(self.TIMEOUT):
-            os.system(
-                "docker run -v $(pwd)/output:/output ccarpita/speedprofile-chrome \"$@\" %s"
-                % self.url)
+            #os.system(
+            #    "docker run -v $(pwd)/output:/output ccarpita/speedprofile-chrome \"$@\" %s"
+            #    % self.url)
+            os.system("./WebsiteMonitorHelpers/entrypoint.sh %s" % self.url)
+
             # If docker run command success within timeout time, set current status to SUCCESS
             self.status = DockerResults.SUCCESS
 

@@ -14,6 +14,9 @@ ADD . /home/WebMonitoring
 
 WORKDIR /home/WebMonitoring
 
+CMD cp /speedprofile.py /home/WebMonitoring/WebsiteMonitorHelpers/speedprofile.py
+CMD chmod u+x /home/WebMonitoring/WebsiteMonitorHelpers/entrypoint.sh
+
 # CMD python3 ResourceManager.py
 
 ENTRYPOINT ["tail", "-f", "/dev/null"]
