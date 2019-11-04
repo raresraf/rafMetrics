@@ -8,14 +8,15 @@ RUN apt-get install -y python3-pip
 RUN apt-get install -y mysql-server
 RUN pip3 install mysql-connector-python
 RUN pip3 install requests
+RUN pip3 install arrow
 
 RUN mkdir -p /home/WebMonitoring
 ADD . /home/WebMonitoring
 
 WORKDIR /home/WebMonitoring
 
-CMD cp /speedprofile.py /home/WebMonitoring/WebsiteMonitorHelpers/speedprofile.py
-CMD chmod u+x /home/WebMonitoring/WebsiteMonitorHelpers/entrypoint.sh
+RUN cp /speedprofile.py /home/WebMonitoring/WebsiteMonitorHelpers/speedprofile.py
+RUN chmod u+x /home/WebMonitoring/WebsiteMonitorHelpers/entrypoint.sh
 
 # CMD python3 ResourceManager.py
 
