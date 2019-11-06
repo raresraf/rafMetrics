@@ -24,7 +24,7 @@ class WebsiteManager:
 
                 cursor = self.cnx.cursor(buffered=True)
                 query = (
-                    'SELECT Websiteid, WebsiteName from WEBSITE where WebsiteUrl = \'%s\''
+                    'SELECT Websiteid, WebsiteName from WEBSITES where WebsiteUrl = \'%s\''
                     % website_url)
                 cursor.execute(query)
 

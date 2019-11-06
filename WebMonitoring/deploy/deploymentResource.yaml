@@ -14,4 +14,4 @@ spec:
     spec:
       containers:
       - name: resourcemonitor
-        image: raresraf/resourcemonitor:20191103204900
+        image: raresraf/resourcemonitor:20191106224500
