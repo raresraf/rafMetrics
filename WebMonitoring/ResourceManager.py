@@ -67,4 +67,4 @@ class ResourceManager:
             time.sleep(self.sample_time)
 
 
-ResourceManager(86400).start()
+ResourceManager(3600).start()

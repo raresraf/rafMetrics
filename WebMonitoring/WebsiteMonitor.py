@@ -96,6 +96,11 @@ class WebsiteMonitor:
         return self.total_time_seconds
 
 
+"""
+
+Driver for WebsiteMonitor class
+
+
 monitor = WebsiteMonitor(sample_url, sample_name)
 monitor_result = monitor.run()
 
@@ -104,3 +109,5 @@ if monitor_result == DockerResults.SUCCESS:
     print(monitor.get_metrics())
     print(monitor.get_timestamp())
     print(monitor.get_total_time_seconds())
+
+"""
