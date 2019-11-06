@@ -47,15 +47,33 @@ class WebsiteManager:
                         for request in monitor.request_entry:
                             query = ((
                                 'INSERT INTO REQUESTS(Metricid, serverIPAddress, pageRef, startedDateTime, time, responseStatus, headersSize, bodySize) '
-                                'VALUES (%d, \'%s\', \'%s\', \'%s\', %d, %d, %d, %d )') %
-                                     (metric_id, request.serverIPAddress,
-                                      request.pageRef, request.startedDateTime,
-                                      request.time, request.responseStatus,
-                                      request.headersSize, request.bodySize))
+                                'VALUES (%d, \'%s\', \'%s\', \'%s\', %d, %d, %d, %d )'
+                            ) % (metric_id, request.serverIPAddress,
+                                 request.pageRef, request.startedDateTime,
+                                 request.time, request.responseStatus,
+                                 request.headersSize, request.bodySize))
                             cursor_insert_request = self.cnx.cursor(
                                 buffered=True)
                             cursor_insert_request.execute(query)
                             self.cnx.commit()
+
+                            cursor_request_id = self.cnx.cursor(buffered=True)
+                            query = (
+                                'select Requestid, max(Timestamp) from REQUESTS where Metricid = %d group by Requestid'
+                                % metric_id)
+                            cursor_request_id.execute(query)
+                            for (request_id, timestamp) in cursor_request_id:
+                                for timing in request.timing:
+                                    cursor_insert_timing = self.cnx.cursor(
+                                        buffered=True)
+                                    query = (
+                                        'INSERT INTO TIMINGS(Requestid, Receive, Send, SSLTime, Connect, DNS, Blocked, Wait) VALUES (%d, %d, %d, %d, %d, %d, %d, %d)'
+                                        % (request_id, request.timing.receive,
+                                           timing.send, timing.ssl,
+                                           timing.connect, timing.dns,
+                                           timing.blocked, timing.wait))
+                                    cursor_insert_timing.execute(query)
+                                    self.cnx.commit()
 
     def start(self):
         # Connect to DB
