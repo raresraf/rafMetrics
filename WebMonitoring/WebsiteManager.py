@@ -47,7 +47,7 @@ class WebsiteManager:
                         for request in monitor.request_entry:
                             query = ((
                                 'INSERT INTO REQUESTS(Metricid, serverIPAddress, pageRef, startedDateTime, time, responseStatus, headersSize, bodySize) '
-                                'VALUES (%d, %s, %s, %s, %d, %d, %d, %d )') %
+                                'VALUES (%d, \'%s\', \'%s\', \'%s\', %d, %d, %d, %d )') %
                                      (metric_id, request.serverIPAddress,
                                       request.pageRef, request.startedDateTime,
                                       request.time, request.responseStatus,
