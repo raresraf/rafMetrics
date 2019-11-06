@@ -37,26 +37,47 @@ class WebsiteManager:
                     cursor_insert.execute(query)
                     self.cnx.commit()
 
-    def start(self):
-        # Connect to DB
-        self.cnx = mysql.connector.connect(user='root',
-                                           password='password',
-                                           host='10.96.0.2',
-                                           database='WebMonitoring')
+                    cursor_metric_id = self.cnx.cursor(buffered=True)
+                    query = (
+                        'select Metricid, max(Timestamp) from WEBSITES_METRICS where Websiteid = %d group by Metricid'
+                        % website_id)
+                    cursor_metric_id.execute(query)
 
-        while True:
-            self.websites = []
+                    for (metric_id, timestamp) in cursor_metric_id:
+                        for request in monitor.request_entry:
+                            query = ((
+                                'INSERT INTO REQUESTS(Metricid, serverIPAddress, pageRef, startedDateTime, time, responseStatus, headersSize, bodySize) '
+                                'VALUES (%d, %s, %s, %s, %d, %d, %d, %d )') %
+                                     (metric_id, request.serverIPAddress,
+                                      request.pageRef, request.startedDateTime,
+                                      request.time, request.responseStatus,
+                                      request.headersSize, request.bodySize))
+                            cursor_insert_request = self.cnx.cursor(
+                                buffered=True)
+                            cursor_insert_request.execute(query)
+                            self.cnx.commit()
 
-            # Check for any update in the list of websites
-            cursor = self.cnx.cursor(buffered=True)
-            query = ('SELECT WebsiteUrl, WebsiteName from WEBSITES')
-            cursor.execute(query)
 
-            for (website_url, website_name) in cursor:
-                self.websites.append((website_url, website_name))
+def start(self):
+    # Connect to DB
+    self.cnx = mysql.connector.connect(user='root',
+                                       password='password',
+                                       host='10.96.0.2',
+                                       database='WebMonitoring')
 
-            self.run()
-            time.sleep(self.sample_time)
+    while True:
+        self.websites = []
+
+        # Check for any update in the list of websites
+        cursor = self.cnx.cursor(buffered=True)
+        query = ('SELECT WebsiteUrl, WebsiteName from WEBSITES')
+        cursor.execute(query)
+
+        for (website_url, website_name) in cursor:
+            self.websites.append((website_url, website_name))
+
+        self.run()
+        time.sleep(self.sample_time)
 
 
 WebsiteManager(3600).start()
