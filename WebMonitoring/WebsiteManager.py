@@ -39,7 +39,7 @@ class WebsiteManager:
 
                     cursor_metric_id = self.cnx.cursor(buffered=True)
                     query = (
-                        'select Metricid, max(Timestamp) from WEBSITES_METRICS where Websiteid = %d group by Metricid'
+                        'select Metricid, max(Timestamp) from WEBSITES_METRICS where Websiteid = %d group by Websiteid'
                         % website_id)
                     cursor_metric_id.execute(query)
 
@@ -59,7 +59,7 @@ class WebsiteManager:
 
                             cursor_request_id = self.cnx.cursor(buffered=True)
                             query = (
-                                'select Requestid, max(Timestamp) from REQUESTS where Metricid = %d group by Requestid'
+                                'select Requestid, max(Timestamp) from REQUESTS where Metricid = %d group by MetricId'
                                 % metric_id)
                             cursor_request_id.execute(query)
                             for (request_id, timestamp) in cursor_request_id:
