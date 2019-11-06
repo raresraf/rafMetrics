@@ -14,4 +14,4 @@ spec:
     spec:
       containers:
       - name: website
-        image: raresraf/websitemonitor:20191106232400
+        image: raresraf/websitemonitor:20191106235500
