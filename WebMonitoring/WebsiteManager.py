@@ -37,13 +37,12 @@ class WebsiteManager:
                     cursor_insert.execute(query)
                     self.cnx.commit()
 
-
-def start(self):
-    # Connect to DB
-    self.cnx = mysql.connector.connect(user='root',
-                                       password='password',
-                                       host='10.96.0.2',
-                                       database='WebMonitoring')
+    def start(self):
+        # Connect to DB
+        self.cnx = mysql.connector.connect(user='root',
+                                           password='password',
+                                           host='10.96.0.2',
+                                           database='WebMonitoring')
 
     while True:
         self.websites = []
