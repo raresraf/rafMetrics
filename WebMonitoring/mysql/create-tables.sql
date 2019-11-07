@@ -80,7 +80,6 @@ CREATE table REQUESTS (
                                   responseStatus int,
                                   headersSize int,
                                   bodySize int,
-                                  Timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
                                   PRIMARY KEY (Requestid),
                                   FOREIGN KEY (Metricid) REFERENCES WEBSITES_METRICS(Metricid)
 );
