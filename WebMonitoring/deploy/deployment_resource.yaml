@@ -1,17 +1,17 @@
 apiVersion: apps/v1 
 kind: Deployment
 metadata:
-  name: websitemonitor
+  name: resourcemonitor
 spec:
   selector:
     matchLabels:
-      app: websitemonitor
+      app: resourcemonitor
   replicas: 1
   template:
     metadata:
       labels:
-        app: websitemonitor
+        app: resourcemonitor
     spec:
       containers:
-      - name: website
-        image: raresraf/websitemonitor:20191106235500
+      - name: resourcemonitor
+        image: raresraf/resourcemonitor:20191107104308
