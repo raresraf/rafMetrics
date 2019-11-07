@@ -39,11 +39,11 @@ class WebsiteManager:
 
                     cursor_metric_id = self.cnx.cursor(buffered=True)
                     query = (
-                        'select Metricid, max(Timestamp) from WEBSITES_METRICS where Websiteid = %d group by Websiteid'
-                        % website_id)
+                        'select max(Metricid) from WEBSITES_METRICS where Websiteid = %d;'
+                        % (website_id))
                     cursor_metric_id.execute(query)
 
-                    for (metric_id, timestamp) in cursor_metric_id:
+                    for (metric_id, ) in cursor_metric_id:
                         for request in monitor.request_entry:
                             query = ((
                                 'INSERT INTO REQUESTS(Metricid, serverIPAddress, pageRef, startedDateTime, time, responseStatus, headersSize, bodySize) '
@@ -59,10 +59,10 @@ class WebsiteManager:
 
                             cursor_request_id = self.cnx.cursor(buffered=True)
                             query = (
-                                'select Requestid, max(Timestamp) from REQUESTS where Metricid = %d group by MetricId'
+                                'select max(Requestid) from REQUESTS where Metricid = %d '
                                 % metric_id)
                             cursor_request_id.execute(query)
-                            for (request_id, timestamp) in cursor_request_id:
+                            for (request_id, ) in cursor_request_id:
                                 timing = request.timing
                                 cursor_insert_timing = self.cnx.cursor(
                                     buffered=True)
