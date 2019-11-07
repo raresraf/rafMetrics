@@ -1,8 +1,9 @@
 import time
 
-from constants import ResourceEntry, RequestTypes, resources, DockerResults
-from WebsiteMonitor import WebsiteMonitor
 import mysql.connector
+
+from WebsiteMonitor import WebsiteMonitor
+from constants import DockerResults
 
 
 class WebsiteManager:
@@ -28,12 +29,14 @@ class WebsiteManager:
                     % website_url)
                 cursor.execute(query)
 
+                # Get Websiteid
                 for (website_id, website_name) in cursor:
                     query = (
                         ('INSERT INTO WEBSITES_METRICS(Websiteid, TotalTime) '
                          'VALUES (%d, %lf)') %
                         (website_id, monitor.get_total_time_seconds()))
                     cursor_insert = self.cnx.cursor(buffered=True)
+                    # Insert new Website Metric Entry in DB
                     cursor_insert.execute(query)
                     self.cnx.commit()
 
@@ -43,6 +46,7 @@ class WebsiteManager:
                         % (website_id))
                     cursor_metric_id.execute(query)
 
+                    # Get Metricid
                     for (metric_id, ) in cursor_metric_id:
                         for request in monitor.request_entry:
                             query = ((
@@ -54,6 +58,7 @@ class WebsiteManager:
                                  request.headersSize, request.bodySize))
                             cursor_insert_request = self.cnx.cursor(
                                 buffered=True)
+                            # Insert new timing in DB
                             cursor_insert_request.execute(query)
                             self.cnx.commit()
 
@@ -62,6 +67,8 @@ class WebsiteManager:
                                 'select max(Requestid) from REQUESTS where Metricid = %d '
                                 % metric_id)
                             cursor_request_id.execute(query)
+
+                            # Get Requestid
                             for (request_id, ) in cursor_request_id:
                                 timing = request.timing
                                 cursor_insert_timing = self.cnx.cursor(
@@ -72,6 +79,7 @@ class WebsiteManager:
                                     (request_id, request.timing.receive,
                                      timing.send, timing.ssl, timing.connect,
                                      timing.dns, timing.blocked, timing.wait))
+                                # Insert new timing in DB
                                 cursor_insert_timing.execute(query)
                                 self.cnx.commit()
 

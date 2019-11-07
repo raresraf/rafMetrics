@@ -1,9 +1,9 @@
 import time
 
-from ResourceMonitor import ResourceMonitor
-from constants import ResourceEntry, RequestTypes, resources
-
 import mysql.connector
+
+from ResourceMonitor import ResourceMonitor
+from constants import ResourceEntry, RequestTypes
 
 
 class ResourceManager:

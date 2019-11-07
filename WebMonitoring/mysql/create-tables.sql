@@ -9,10 +9,6 @@ CREATE table USERS (
     PRIMARY KEY (Userid)
 );
 
-INSERT INTO USERS(LastName, FirstName, Username, Email, hashedpassword)
-    values ('TestLastName', 'TestFirstName', 'TestUsername', 'TestEmail', 'Testhashedpassword');
-
-
 CREATE table RESOURCE (
                           Resourceid int NOT NULL AUTO_INCREMENT,
                           Userid int NOT NULL,
@@ -22,9 +18,6 @@ CREATE table RESOURCE (
                           PRIMARY KEY (Resourceid),
                           FOREIGN KEY (Userid) REFERENCES USERS(Userid)
 );
-
-INSERT INTO RESOURCE(Userid, ResourceName, Command)
-    values (1, 'https://github.com/raresraf/rafMetrics/projects/1', 'GET');
 
 
 CREATE table PING (
@@ -37,8 +30,6 @@ CREATE table PING (
                           FOREIGN KEY (Resourceid) REFERENCES RESOURCE(Resourceid)
 );
 
-INSERT INTO PING(Resourceid, ResponseTime, ResponseSize)
-    values (1, 0.906846, 86217);
 
 
 CREATE table WEBSITES (
@@ -51,11 +42,6 @@ CREATE table WEBSITES (
                           FOREIGN KEY (Userid) REFERENCES USERS(Userid)
 );
 
-INSERT INTO WEBSITES(Userid, WebsiteName, WebsiteUrl)
-    values (1, 'GitHub: rafMetrics Projects/1', 'https://github.com/raresraf/rafMetrics/projects/1');
-INSERT INTO WEBSITES(Userid, WebsiteName, WebsiteUrl)
-    values (1, 'Google: default website', 'https://google.com');
-
 
 CREATE table WEBSITES_METRICS (
                           Metricid int NOT NULL AUTO_INCREMENT,
@@ -66,8 +52,6 @@ CREATE table WEBSITES_METRICS (
                           FOREIGN KEY (Websiteid) REFERENCES WEBSITES(Websiteid)
 );
 
-INSERT INTO WEBSITES_METRICS(Websiteid, TotalTime)
-    values (1, 2.198);
 
 
 CREATE table REQUESTS (
@@ -84,8 +68,6 @@ CREATE table REQUESTS (
                                   FOREIGN KEY (Metricid) REFERENCES WEBSITES_METRICS(Metricid)
 );
 
-INSERT INTO REQUESTS(Metricid, serverIPAddress, pageRef, startedDateTime, time, responseStatus, headersSize, bodySize)
-VALUES (1, '185.199.111.154', 'https://github.com/raresraf/rafMetrics/projects/1', '2019-10-22T13:38:31.878Z',178, 200, 671, 462);
 
 
 CREATE table TIMINGS (
@@ -101,7 +83,3 @@ CREATE table TIMINGS (
                           PRIMARY KEY (TimingID),
                           FOREIGN KEY (Requestid) REFERENCES REQUESTS(Requestid)
 );
-
-
-INSERT INTO TIMINGS(Requestid, Receive, Send, SSLTime, Connect, DNS, Blocked, Wait)
-VALUES (1, 0, 2, 99, 141, 0, 0, 32);

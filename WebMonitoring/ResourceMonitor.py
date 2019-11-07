@@ -1,8 +1,8 @@
+import time
+
 import requests
 
 from constants import MonitoringStatus, RequestTypes
-from constants import sample_url
-import time
 
 
 class ResourceMonitor:

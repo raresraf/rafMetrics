@@ -3,8 +3,8 @@ import time
 
 import arrow
 
-from constants import sample_name, sample_url, json_path, DockerResults
 from DockerClient import DockerRunURLClient
+from constants import json_path
 from request_helpers import parse_request
 """Run advanced monitoring on websites including total response time."""
 
