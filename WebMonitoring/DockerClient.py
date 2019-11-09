@@ -6,13 +6,19 @@ from constants import DockerResults
 
 
 class DockerRunURLClient():
-    """DockerRunURLClient class receives a URL and runs a new docker
+    """
+    ACTUAL:
+    DockerRunURLClient executes entrypoint.sh script
+
+    DEPRECATED:
+    DockerRunURLClient class receives a URL and runs a new docker
     with https://github.com/parasdahal/speedprofile image
     and helps capture HTTP Archive (HAR) and additional performance data
-    using Navigation Timing API from either Chrome or Firefox headlessly."""
+    using Navigation Timing API from either Chrome or Firefox headlessly.
+    """
 
     # Default timeout for docker run command
-    TIMEOUT = 60
+    TIMEOUT = 90
 
     def __init__(self, url):
         self.url = url
@@ -24,7 +30,8 @@ class DockerRunURLClient():
 
         # Set timeout for docker run command
         with self.timeout(self.TIMEOUT):
-            #os.system(
+            # Deprecated:
+            #    os.system(
             #    "docker run -v $(pwd)/output:/output ccarpita/speedprofile-chrome \"$@\" %s"
             #    % self.url)
             os.system("./WebsiteMonitorHelpers/entrypoint.sh %s" % self.url)
@@ -36,7 +43,7 @@ class DockerRunURLClient():
     def timeout(self, time):
         # Register a function to raise a TimeoutError on the signal.
         signal.signal(signal.SIGALRM, self.raise_timeout)
-        # Schedule the signal to be sent after ``time``.
+        # Schedule the signal to be sent after time.
         signal.alarm(time)
 
         try:
@@ -44,8 +51,7 @@ class DockerRunURLClient():
         except TimeoutError:
             pass
         finally:
-            # Unregister the signal so it won't be triggered
-            # if the timeout is not reached.
+            # Unregister the signal so it won't be triggered if the timeout is not reached.
             signal.signal(signal.SIGALRM, signal.SIG_IGN)
 
     def raise_timeout(self, signum, frame):
