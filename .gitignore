@@ -67,3 +67,6 @@ xcuserdata/
 *.pdf
 *.gz
 *.toc
+
+# Pycache
+__pycache__/

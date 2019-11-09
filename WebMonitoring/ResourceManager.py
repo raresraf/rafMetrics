@@ -19,7 +19,6 @@ class ResourceManager:
                                       requestType=resource.resource_command,
                                       requestPayload=resource.resource_payload)
             monitor.run()
-            print(monitor.get_metrics())
 
             cursor = self.cnx.cursor(buffered=True)
             query = (

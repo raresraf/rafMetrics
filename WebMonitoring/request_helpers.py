@@ -1,3 +1,6 @@
+from settings import SHOW_VERBOSE_MESSAGE
+
+
 def parse_request(entry):
     serverIPAddress = get_server_ip(entry)
     pageRef = get_page_ref(entry)
@@ -63,14 +66,15 @@ class RequestEntry():
         return self
 
     def verbose(self):
-        print("serverIPAddress: %s" % self.serverIPAddress)
-        print("pageRef: %s" % self.pageRef)
-        print("startedDateTime: %s" % self.startedDateTime)
-        print("time: %d" % self.time)
-        print("responseStatus: %d" % self.responseStatus)
-        print("headersSize: %d" % self.headersSize)
-        print("bodySize: %d" % self.bodySize)
-        self.timing.verbose()
+        if SHOW_VERBOSE_MESSAGE:
+            print("serverIPAddress: %s" % self.serverIPAddress)
+            print("pageRef: %s" % self.pageRef)
+            print("startedDateTime: %s" % self.startedDateTime)
+            print("time: %d" % self.time)
+            print("responseStatus: %d" % self.responseStatus)
+            print("headersSize: %d" % self.headersSize)
+            print("bodySize: %d" % self.bodySize)
+            self.timing.verbose()
 
 
 class TimingEntry():
@@ -90,10 +94,11 @@ class TimingEntry():
         return self
 
     def verbose(self):
-        print("receive: %d" % self.receive)
-        print("send: %d" % self.send)
-        print("ssl: %d" % self.ssl)
-        print("connect: %d" % self.connect)
-        print("dns: %d" % self.dns)
-        print("blocked: %d" % self.blocked)
-        print("wait: %d" % self.wait)
+        if SHOW_VERBOSE_MESSAGE:
+            print("receive: %d" % self.receive)
+            print("send: %d" % self.send)
+            print("ssl: %d" % self.ssl)
+            print("connect: %d" % self.connect)
+            print("dns: %d" % self.dns)
+            print("blocked: %d" % self.blocked)
+            print("wait: %d" % self.wait)

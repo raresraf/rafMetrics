@@ -6,6 +6,7 @@ import arrow
 from DockerClient import DockerRunURLClient
 from constants import json_path
 from request_helpers import parse_request
+from settings import SHOW_VERBOSE_MESSAGE
 """Run advanced monitoring on websites including total response time."""
 
 
@@ -83,9 +84,10 @@ class WebsiteMonitor:
         return self.docker.status
 
     def verbose(self):
-        print("Start time: %s" % self.start)
-        print("End time: %s" % self.end)
-        print("Total time: %.3f" % self.total_time_seconds)
+        if SHOW_VERBOSE_MESSAGE:
+            print("Start time: %s" % self.start)
+            print("End time: %s" % self.end)
+            print("Total time: %.3f" % self.total_time_seconds)
 
     def get_timestamp(self):
         """Return the timestamp corresponding to the execution time of the command"""

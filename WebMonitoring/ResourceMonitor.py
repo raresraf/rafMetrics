@@ -3,6 +3,7 @@ import time
 import requests
 
 from constants import MonitoringStatus, RequestTypes
+from settings import SHOW_VERBOSE_MESSAGE
 
 
 class ResourceMonitor:
@@ -65,11 +66,13 @@ class ResourceMonitor:
         self.verbose()
 
     def verbose(self):
-        print("%s request status: %s" % (self.requestType, self.status))
-        print("URL: %s" % self.url)
-        if self.status == MonitoringStatus.DONE:
-            print("Request total elapsed time: %.3f s" % self.responseTime)
-            print("Request size: %.2f KBytes" % (self.responseSize / 1024.0))
+        if SHOW_VERBOSE_MESSAGE:
+            print("%s request status: %s" % (self.requestType, self.status))
+            print("URL: %s" % self.url)
+            if self.status == MonitoringStatus.DONE:
+                print("Request total elapsed time: %.3f s" % self.responseTime)
+                print("Request size: %.2f KBytes" %
+                      (self.responseSize / 1024.0))
 
 
 """

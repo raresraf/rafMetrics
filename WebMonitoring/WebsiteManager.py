@@ -42,8 +42,8 @@ class WebsiteManager:
 
                     cursor_metric_id = self.cnx.cursor(buffered=True)
                     query = (
-                        'select max(Metricid) from WEBSITES_METRICS where Websiteid = %d;'
-                        % (website_id))
+                        'select max(Metricid) from WEBSITES_METRICS where Websiteid = %d'
+                        % website_id)
                     cursor_metric_id.execute(query)
 
                     # Get Metricid
