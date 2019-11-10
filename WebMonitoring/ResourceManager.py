@@ -2,8 +2,9 @@ import time
 
 import mysql.connector
 
-from ResourceMonitor import ResourceMonitor
-from constants import ResourceEntry, RequestTypes
+from configs.constants import ResourceEntry, RequestTypes
+from configs.settings import SAMPLE_TIME
+from monitors.ResourceMonitor import ResourceMonitor
 
 
 class ResourceManager:
@@ -66,4 +67,4 @@ class ResourceManager:
             time.sleep(self.sample_time)
 
 
-ResourceManager(3600).start()
+ResourceManager(SAMPLE_TIME).start()

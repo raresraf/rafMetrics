@@ -1,4 +1,4 @@
-from settings import SHOW_VERBOSE_MESSAGE
+from configs.settings import SHOW_VERBOSE_MESSAGE
 
 
 def parse_request(entry):

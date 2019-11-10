@@ -2,8 +2,8 @@ import time
 
 import requests
 
-from constants import MonitoringStatus, RequestTypes
-from settings import SHOW_VERBOSE_MESSAGE
+from configs.constants import MonitoringStatus, RequestTypes
+from configs.settings import SHOW_VERBOSE_MESSAGE
 
 
 class ResourceMonitor:

@@ -17,9 +17,9 @@ WORKDIR /home/WebMonitoring
 
 RUN chmod u+x /home/WebMonitoring/WebsiteMonitorHelpers/entrypoint.sh
 
+# Execute Website management
 ENTRYPOINT ["python3", "WebsiteManager.py"]
 
-
-# For development purpose
+# For development purpose only
 # ENTRYPOINT ["tail", "-f", "/dev/null"]
 

@@ -1,14 +1,14 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+import argparse
+import json
+import os
+
+import urlparse
 from browsermobproxy import Server
 from selenium import webdriver
 from xvfbwrapper import Xvfb
-import json
-import argparse
-import urlparse
-import sys
-import os
 
 
 class performance(object):

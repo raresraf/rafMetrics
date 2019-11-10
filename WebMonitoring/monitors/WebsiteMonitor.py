@@ -3,10 +3,10 @@ import time
 
 import arrow
 
-from DockerClient import DockerRunURLClient
-from constants import json_path
-from request_helpers import parse_request
-from settings import SHOW_VERBOSE_MESSAGE
+from WebsiteMonitorHelpers.request_helpers import parse_request
+from clients.SpeedprofileClient import SpeedprofileClient
+from configs.constants import json_path
+from configs.settings import SHOW_VERBOSE_MESSAGE
 """Run advanced monitoring on websites including total response time."""
 
 
@@ -72,7 +72,7 @@ class WebsiteMonitor:
         self.timestamp = time.localtime()
 
         # Run the docker client containing the Chrome browser and export the HAR file
-        self.docker = DockerRunURLClient(self.url)
+        self.docker = SpeedprofileClient(self.url)
         self.docker.run()
 
         print("Docker run status: " + self.docker.status)

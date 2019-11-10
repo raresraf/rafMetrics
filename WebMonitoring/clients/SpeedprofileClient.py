@@ -2,16 +2,17 @@ import os
 import signal
 from contextlib import contextmanager
 
-from constants import DockerResults
+from configs.constants import DockerResults
+from configs.settings import SPEEDPROFILE_LOCATION
 
 
-class DockerRunURLClient():
+class SpeedprofileClient():
     """
     ACTUAL:
-    DockerRunURLClient executes entrypoint.sh script
+    SpeedprofileClient executes entrypoint.sh script
 
     DEPRECATED:
-    DockerRunURLClient class receives a URL and runs a new docker
+    SpeedprofileClient class receives a URL and runs a new docker
     with https://github.com/parasdahal/speedprofile image
     and helps capture HTTP Archive (HAR) and additional performance data
     using Navigation Timing API from either Chrome or Firefox headlessly.
@@ -34,7 +35,7 @@ class DockerRunURLClient():
             #    os.system(
             #    "docker run -v $(pwd)/output:/output ccarpita/speedprofile-chrome \"$@\" %s"
             #    % self.url)
-            os.system("./WebsiteMonitorHelpers/entrypoint.sh %s" % self.url)
+            os.system("%s %s" % (SPEEDPROFILE_LOCATION, self.url))
 
             # If docker run command success within timeout time, set current status to SUCCESS
             self.status = DockerResults.SUCCESS

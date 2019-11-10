@@ -2,8 +2,9 @@ import time
 
 import mysql.connector
 
-from WebsiteMonitor import WebsiteMonitor
-from constants import DockerResults
+from configs.constants import DockerResults
+from configs.settings import SAMPLE_TIME
+from monitors.WebsiteMonitor import WebsiteMonitor
 
 
 class WebsiteManager:
@@ -105,4 +106,4 @@ class WebsiteManager:
             time.sleep(self.sample_time)
 
 
-WebsiteManager(3600).start()
+WebsiteManager(SAMPLE_TIME).start()
