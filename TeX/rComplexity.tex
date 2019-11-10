@@ -1,40 +1,13 @@
-\documentclass{article}
-\usepackage{amsfonts} 
-\usepackage{algorithmicx}
-\usepackage[ruled]{algorithm}
-\usepackage{algpseudocode}
-\usepackage{algpascal}
-\usepackage{algc}
-%\algdisablelines
 
-
-\newcommand{\alg}{\texttt{algorithmicx}}
-\newcommand{\old}{\texttt{algorithmic}}
-\newcommand{\euk}{Euclid}
-\newcommand\ASTART{\bigskip\noindent\begin{minipage}[b]{0.5\linewidth}}
-\newcommand\ACONTINUE{\end{minipage}\begin{minipage}[b]{0.5\linewidth}}
-\newcommand\AENDSKIP{\end{minipage}\bigskip}
-\newcommand\AEND{\end{minipage}}
-
-
-
-\title{A refined complexity calculus model: \textbf{\textit{rComplexity}} }
-\author{Rares Folea}
-
-
-
-\begin{document}
-\maketitle
-\begin{abstract}
-This chapter will present a new approach in the field of algorithm's computational complexity. Similar to the conventional asymptotic notations proposed in the literature,  \textit{rComplexity} will be expressed as a function $f:\mathbb{N}\longrightarrow\mathbb{R}$, where the function is characterized by the size of the input, while the evaluated value $f(n)$, for a given input size $n$, represents the amount of resources needed in order to compute the result. 
-This new calculus model aims to produce new asymptotic notations that offer better complexity feedback for similar algorithms, providing subtle insights even for algorithms that are part of the same conventional complexity class $\Theta(g(n))$ denoted by an arbitrary function $g:\mathbb{N}\longrightarrow\mathbb{R}$, in the definition of \textit{Bachmann–Landau} notations .
-\end{abstract}
-\tableofcontents
+\chapter{A refined complexity calculus model:\newline \textbf{\textit{r-Complexity}} }
 
 
 
 
 \section{Introduction}
+This chapter will present a new approach in the field of algorithm's computational complexity. Similar to the conventional asymptotic notations proposed in the literature,  \textit{rComplexity} will be expressed as a function $f:\mathbb{N}\longrightarrow\mathbb{R}$, where the function is characterized by the size of the input, while the evaluated value $f(n)$, for a given input size $n$, represents the amount of resources needed in order to compute the result. 
+This new calculus model aims to produce new asymptotic notations that offer better complexity feedback for similar algorithms, providing subtle insights even for algorithms that are part of the same conventional complexity class $\Theta(g(n))$ denoted by an arbitrary function $g:\mathbb{N}\longrightarrow\mathbb{R}$, in the definition of \textit{Bachmann–Landau} notations .
+\section{Motivation}
 The classical complexity calculus model is a long-established, verified metric of evaluating an algorithm's performance and a valuable measurement in estimating feasibility of computing a considerable algorithm. However, the model has a shortfall in making discrepancy between similar algorithms with two similar complexity functions, $v,w:\mathbb{N}\longrightarrow\mathbb{R}$, with $v(n),w(n) \in \Theta(g(n))$. In order to highlight the lack of distinction, suppose two algorithms $Alg1$ and $Alg2$ that solve exactly the same problem, with the following complexity functions:
 $f_{1},f_{2}:\mathbb{N}\longrightarrow\mathbb{R}$ where $f_{1} = x \cdot f_{2}$, with $x \in \mathbb{R}_{+}, \ x > 1$.
 If \[ f_{2} \in \Theta(g(n)) \Rightarrow \exists c_{1}, c_{2} \in \mathbb{R}^{*}_{+}, \exists n_{0} \in \mathbb{N}_{*}\ s.t.\ \ c_{1} \cdot g(n) \leq f_{2}(n) \leq c_{2} \cdot g(n)\ ,\  \forall n \geq n_{0} \]
@@ -75,30 +48,6 @@ Acknowledge the following notations
 \end{itemize}
 
 \section{Common properties}
-We will study few aspects with impact on defining equivalence relations over classes defined in $Bachmann–Landau$ notations$.$
- \hfill\break
- \hfill\break
- \textbf{Reflexivity:}  \\  $ f \in \Theta(f(n)) $ \\$ f \in \mathcal{O}(f(n)) $ \\$ f \in \Omega(f(n)) $
- \\$ f \notin \theta(f(n)) $ \\$ f \notin \omega(f(n)) $ 
- \hfill\break
-
- \textbf{Transitivity:}  \\  $ f \in \Theta(g(n)),  g \in \Theta(h(n)) \Rightarrow  f \in \Theta(h(n))$ \\
- $ f \in \mathcal{O}(g(n)),  g \in \mathcal{O}(h(n)) \Rightarrow  f \in \mathcal{O}(h(n))$ \\
- $ f \in \Omega(g(n)),  g \in \Omega(h(n)) \Rightarrow  f \in \Omega(h(n))$ \\
- $ f \in o(g(n)),  g \in o(h(n)) \Rightarrow  f \in o(h(n))$ \\
- $ f \in \omega(g(n)),  g \in \omega(h(n)) \Rightarrow  f \in \omega(h(n))$
-  \hfill\break
-
- \textbf{Symmetry:}  \\  $ f \in \Theta(g(n)) \Rightarrow g \in \Theta(f(n)) $
- \hfill\break
-
- \textbf{Transpose symmetry:}  \\  $ f \in \mathcal{O}(g(n)) \Leftrightarrow g \in \Omega(f(n)) $
- \\  $ f \in o(g(n)) \Leftrightarrow g \in \omega(f(n)) $
- \hfill\break
- 
-  \textbf{Projection:}  \\  $ f \in \Theta(g(n)) \Leftrightarrow f \in \mathcal{O}(g(n)), f \in \Omega(g(n)) $
- \hfill\break
- 
+TODO 
 \section{Addition properties}
- 
-\end{document}
+TODO
