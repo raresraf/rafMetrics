@@ -15,10 +15,11 @@ ADD . /home/WebMonitoring
 
 WORKDIR /home/WebMonitoring
 
-RUN cp /speedprofile.py /home/WebMonitoring/WebsiteMonitorHelpers/speedprofile.py
 RUN chmod u+x /home/WebMonitoring/WebsiteMonitorHelpers/entrypoint.sh
 
+ENTRYPOINT ["python3", "WebsiteManager.py"]
 
+
+# For development purpose
 # ENTRYPOINT ["tail", "-f", "/dev/null"]
 
-ENTRYPOINT ["python3", "WebsiteManager.py"]

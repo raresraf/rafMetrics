@@ -56,7 +56,7 @@ class WebsiteMonitor:
         self.endTimes.append(requestEndTime)
 
     def process_json(self):
-        with open(json_path) as json_file:
+        with open(json_path, encoding='utf-8') as json_file:
             data = json.load(json_file)
             for entry in data['log']['entries']:
                 self.add_times(entry)
