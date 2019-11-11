@@ -1,0 +1,21 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: metricsui
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: metricsui
+  template:
+    metadata:
+      labels:
+        app: metricsui
+    spec:
+      containers:
+        - name: metricsui
+          image: raresraf/metricsui:20191111165000
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
+      restartPolicy: Always
