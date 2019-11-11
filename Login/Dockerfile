@@ -6,14 +6,17 @@ RUN apt-get clean \
 RUN apt-get -y install \
     nginx \
     python3-dev \
-    build-essential
+    build-essential 
 
 WORKDIR /app
 
+RUN pip3 install pymysql
+RUN pip3 install flask
+RUN pip3 install flask-mysql
+
 COPY app.py /app/app.py
-COPY startup.sh /app/startup.sh
 
-RUN chmod +x ./startup.sh
+EXPOSE 5000:5000
 
-EXPOSE 80
-CMD [ "./startup.sh" ]
+ENTRYPOINT ["python3", "app.py"]
+#ENTRYPOINT ["tail", "-f", "/dev/null"]
