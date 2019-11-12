@@ -1,0 +1,18 @@
+In [1]: import requests
+
+In [2]: import json
+
+In [3]: url = 'http://10.96.0.3:5000/addresource'
+
+In [4]: data = {
+   ...:   "username": "flask_test_username",
+   ...:   "resource": "https://cs.pub.ro/",
+   ...:   "command": "GET"
+   ...: }
+
+In [5]: headers = {'Content-type': 'application/json', 'Accept': 'text/plain'}
+
+In [6]: r = requests.post(url, data=json.dumps(data), headers=headers)
+
+In [7]: print(r.text)
+"Resource added successfully!"
