@@ -23,118 +23,117 @@ mysql.init_app(app)
 
 @app.route('/')
 def index():
-	return "Hello, world!"
+    return "Hello, world!"
 
 @app.route('/add', methods=['POST'])
 def add_user():
-	try:
-		_json = request.json
-		_last_name = _json['last_name']
-		_first_name = _json['first_name']
-		_username = _json['username']
-		_email = _json['email']
-		_password = _json['pwd']
-		# validate the received values
-		if _last_name and _first_name and _username and _email and _password and request.method == 'POST':
-			#do not save password as a plain text
-			_hashed_password = generate_password_hash(_password)
-			# save edits
-			sql = "INSERT INTO USERS(LastName, FirstName, Username, Email, hashedpassword) VALUES(%s, %s, %s, %s, %s)"
-			data = (_last_name, _first_name, _username , _email, _hashed_password)
-			conn = mysql.connect()
-			cursor = conn.cursor()
-			cursor.execute(sql, data)
-			conn.commit()
-			resp = jsonify('User added successfully!')
-			resp.status_code = 200
-			return resp
-		else:
-			return not_found()
-	except Exception as e:
-		print(e)
-	finally:
-		cursor.close() 
-		conn.close()
-		
+    try:
+        _json = request.json
+        _last_name = _json['last_name']
+        _first_name = _json['first_name']
+        _username = _json['username']
+        _email = _json['email']
+        _password = _json['pwd']
+        # validate the received values
+        if _last_name and _first_name and _username and _email and _password and request.method == 'POST':
+            #do not save password as a plain text
+            _hashed_password = generate_password_hash(_password)
+            # save edits
+            sql = "INSERT INTO USERS(LastName, FirstName, Username, Email, hashedpassword) VALUES(%s, %s, %s, %s, %s)"
+            data = (_last_name, _first_name, _username , _email, _hashed_password)
+            conn = mysql.connect()
+            cursor = conn.cursor()
+            cursor.execute(sql, data)
+            conn.commit()
+            resp = jsonify('User added successfully!')
+            resp.status_code = 200
+            return resp
+        else:
+            return not_found()
+    except Exception as e:
+        print(e)
+    finally:
+        cursor.close()
+        conn.close()
+
 @app.route('/users')
 def users():
-	try:
-		conn = mysql.connect()
-		cursor = conn.cursor(pymysql.cursors.DictCursor)
-		cursor.execute("SELECT * FROM USERS")
-		rows = cursor.fetchall()
-		resp = jsonify(rows)
-		resp.status_code = 200
-		return resp
-	except Exception as e:
-		print(e)
-	finally:
-		cursor.close() 
-		conn.close()
-		
-@app.route('/user/')
-def user(id):
-	try:
-		conn = mysql.connect()
-		cursor = conn.cursor(pymysql.cursors.DictCursor)
-		cursor.execute("SELECT * FROM USERS WHERE Username=%s", id)
-		row = cursor.fetchone()
-		resp = jsonify(row)
-		resp.status_code = 200
-		return resp
-	except Exception as e:
-		print(e)
-	finally:
-		cursor.close() 
-		conn.close()
+    try:
+        conn = mysql.connect()
+        cursor = conn.cursor(pymysql.cursors.DictCursor)
+        cursor.execute("SELECT * FROM USERS")
+        rows = cursor.fetchall()
+        resp = jsonify(rows)
+        resp.status_code = 200
+        return resp
+    except Exception as e:
+        print(e)
+    finally:
+        cursor.close()
+        conn.close()
 
-@app.route('/update', methods=['POST'])
-def update_user():
-	try:
-		_json = request.json
-		_username = _json['username']
-		_last_name = _json['last_name']
-		_first_name = _json['first_name']
-		_email = _json['email']
-		_password = _json['pwd']
-		# validate the received values
-		if _last_name and _first_name and _username and _email and _password and request.method == 'POST':
-			#do not save password as a plain text
-			_hashed_password = generate_password_hash(_password)
-			# save edits
-			sql = "UPDATE USERS SET LastName=%s, FirstName=%s, Email=%s, hashedpassword=%s WHERE Username=%s"
-			data = (_last_name ,_first_name, _email, _password, _username)
-			conn = mysql.connect()
-			cursor = conn.cursor()
-			cursor.execute(sql, data)
-			conn.commit()
-			resp = jsonify('User updated successfully!')
-			resp.status_code = 200
-			return resp
-		else:
-			return not_found()
-	except Exception as e:
-		print(e)
-	finally:
-		cursor.close() 
-		conn.close()
-		
-@app.route('/delete/')
+@app.route('/user/<id>')
+def user(id):
+    try:
+        conn = mysql.connect()
+        cursor = conn.cursor(pymysql.cursors.DictCursor)
+        cursor.execute("SELECT * FROM USERS WHERE Username=%s", id)
+        row = cursor.fetchone()
+        resp = jsonify(row)
+        resp.status_code = 200
+        return resp
+    except Exception as e:
+        print(e)
+    finally:
+        cursor.close()
+        conn.close()
+
+@app.route('/update<id>', methods=['POST'])
+def update_user(id):
+    try:
+        _json = request.json
+        _last_name = _json['last_name']
+        _first_name = _json['first_name']
+        _email = _json['email']
+        _password = _json['pwd']
+        # validate the received values
+        if _last_name and _first_name  and _email and _password and request.method == 'POST':
+            #do not save password as a plain text
+            _hashed_password = generate_password_hash(_password)
+            # save edits
+            sql = "UPDATE USERS SET LastName=%s, FirstName=%s, Email=%s, hashedpassword=%s WHERE Username=%s"
+            data = (_last_name ,_first_name, _email, _password, id)
+            conn = mysql.connect()
+            cursor = conn.cursor()
+            cursor.execute(sql, data)
+            conn.commit()
+            resp = jsonify('User updated successfully!')
+            resp.status_code = 200
+            return resp
+        else:
+            return not_found()
+    except Exception as e:
+        print(e)
+    finally:
+        cursor.close()
+        conn.close()
+
+@app.route('/delete/<id>')
 def delete_user(id):
-	try:
-		conn = mysql.connect()
-		cursor = conn.cursor()
-		cursor.execute("DELETE FROM USERS WHERE Username=%s", (id,))
-		conn.commit()
-		resp = jsonify('User deleted successfully!')
-		resp.status_code = 200
-		return resp
-	except Exception as e:
-		print(e)
-	finally:
-		cursor.close() 
-		conn.close()
-		
+    try:
+        conn = mysql.connect()
+        cursor = conn.cursor()
+        cursor.execute("DELETE FROM USERS WHERE Username=%s", (id,))
+        conn.commit()
+        resp = jsonify('User deleted successfully!')
+        resp.status_code = 200
+        return resp
+    except Exception as e:
+        print(e)
+    finally:
+        cursor.close()
+        conn.close()
+
 @app.errorhandler(404)
 def not_found(error=None):
     message = {
@@ -145,6 +144,6 @@ def not_found(error=None):
     resp.status_code = 404
 
     return resp
-		
+
 if __name__ == "__main__":
     app.run(host="0.0.0.0", debug=True)
