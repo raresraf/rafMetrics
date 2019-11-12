@@ -39,7 +39,7 @@ def add_user():
 			#do not save password as a plain text
 			_hashed_password = generate_password_hash(_password)
 			# save edits
-			sql = "USERS(LastName, FirstName, Username, Email, hashedpassword) VALUES(%s, %s, %s, %s, %s)"
+			sql = "INSERT INTO USERS(LastName, FirstName, Username, Email, hashedpassword) VALUES(%s, %s, %s, %s, %s)"
 			data = (_last_name, _first_name, _username , _email, _hashed_password)
 			conn = mysql.connect()
 			cursor = conn.cursor()
