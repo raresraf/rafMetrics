@@ -88,7 +88,7 @@ def user(id):
         cursor.close()
         conn.close()
 
-@app.route('/update<id>', methods=['POST'])
+@app.route('/update/<id>', methods=['POST'])
 def update_user(id):
     try:
         _json = request.json
@@ -147,3 +147,35 @@ def not_found(error=None):
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", debug=True)
+
+
+@app.route('/addresource', methods=['POST'])
+def add_resource():
+    try:
+        _json = request.json
+        _username = _json['username']
+        _resource = _json['resource']
+        _command = _json['command']
+        # validate the received values
+        if _username and _resource and _command and request.method == 'POST':
+            # save edits
+            get_user_info = user(_username)
+            if not get_user_info:
+                return not_found()
+            _userid = get_user_info.get('Userid', 1)
+            sql = "INSERT INTO RESOURCE(Userid, ResourceName, Command) VALUES(%d, %s, %s)"
+            data = (_userid, _resource, _command)
+            conn = mysql.connect()
+            cursor = conn.cursor()
+            cursor.execute(sql, data)
+            conn.commit()
+            resp = jsonify('Resource added successfully!')
+            resp.status_code = 200
+            return resp
+        else:
+            return not_found()
+    except Exception as e:
+        print(e)
+    finally:
+        cursor.close()
+        conn.close()
