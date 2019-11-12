@@ -134,6 +134,19 @@ def delete_user(id):
         cursor.close()
         conn.close()
 
+def get_userid(id):
+    try:
+        conn = mysql.connect()
+        cursor = conn.cursor(pymysql.cursors.DictCursor)
+        cursor.execute("SELECT * FROM USERS WHERE Username=%s", id)
+        row = cursor.fetchone()
+        return row
+    except Exception as e:
+        print(e)
+    finally:
+        cursor.close()
+        conn.close()
+
 @app.route('/addresource', methods=['POST'])
 def add_resource():
     try:
@@ -144,7 +157,7 @@ def add_resource():
         # validate the received values
         if _username and _resource and _command and request.method == 'POST':
             # save edits
-            get_user_info = user(_username)
+            get_user_info = get_userid(_username)
             if not get_user_info:
                 return not_found()
             _userid = get_user_info.get('Userid', 1)
