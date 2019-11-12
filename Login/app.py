@@ -161,7 +161,7 @@ def add_resource():
             if not get_user_info:
                 return not_found()
             _userid = get_user_info.get('Userid', 1)
-            sql = "INSERT INTO RESOURCE(Userid, ResourceName, Command) VALUES(%d, %s, %s)"
+            sql = "INSERT INTO RESOURCE(Userid, ResourceName, Command) VALUES(%s, %s, %s)"
             data = (_userid, _resource, _command)
             conn = mysql.connect()
             cursor = conn.cursor()
