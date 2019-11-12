@@ -2,22 +2,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: flaskapi-deployment
+  name: login-deployment
   labels:
-    app: flaskapi
+    app: login
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: flaskapi
+      app: login
   template:
     metadata:
       labels:
-        app: flaskapi
+        app: login
     spec:
       containers:
-        - name: flaskapi
-          image: raresraf/login:20191112144625
+        - name: login
+          image: raresraf/login:20191112150052
           #         env:
           #  - name: WERKZEUG_DEBUG_PIN
           #    value: "off"
@@ -28,11 +28,11 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: flaskapi
+  name: login
 spec:
   ports:
     - port: 5000
   selector:
-    app: flaskapi
+    app: login
   clusterIP: 10.96.0.3
 
