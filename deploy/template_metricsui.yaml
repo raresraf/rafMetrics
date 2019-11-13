@@ -14,8 +14,24 @@ spec:
     spec:
       containers:
         - name: metricsui
-          image: raresraf/metricsui:20191111165000
+          image: raresraf/metricsui
           imagePullPolicy: Always
           ports:
             - containerPort: 80
       restartPolicy: Always
+
+---
+
+kind: Service
+apiVersion: v1
+metadata:
+  name: metricsui
+spec:
+  type: NodePort
+  ports:
+    - port: 80
+      targetPort: 80
+      protocol: TCP
+      nodePort: 31000
+  selector:
+    app: metricsui
