@@ -13,6 +13,7 @@ WORKDIR /app
 RUN pip3 install pymysql
 RUN pip3 install flask
 RUN pip3 install flask-mysql
+RUN pip3 install flask-cors
 
 COPY app.py /app/app.py
 
