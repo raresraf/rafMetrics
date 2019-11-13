@@ -53,6 +53,22 @@ function loginUser(dispatch, login, password, history, setIsLoading, setError) {
   setError(false);
   setIsLoading(true);
 
+
+  console.log(login);
+  console.log(password);
+
+  const auth_url = 'http://109.103.170.75:31001/user/' + login;
+  fetch(auth_url)
+      .then(function(response) {
+        return response.json();
+      })
+      .then(function(jsonResponse) {
+        // do something with jsonResponse
+        console.log(jsonResponse)
+      });
+
+
+
   if (!!login && !!password) {
     setTimeout(() => {
       localStorage.setItem("id_token", "1");

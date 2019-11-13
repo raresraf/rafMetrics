@@ -40,7 +40,7 @@ function Login(props) {
     <Grid container className={classes.container}>
       <div className={classes.logotypeContainer}>
         <img src={logo} alt="logo" className={classes.logotypeImage} />
-        <Typography className={classes.logotypeText}>Material Admin</Typography>
+        <Typography className={classes.logotypeText}>rafMetrics</Typography>
       </div>
       <div className={classes.formContainer}>
         <div className={classes.form}>
@@ -57,15 +57,11 @@ function Login(props) {
           {activeTabId === 0 && (
             <React.Fragment>
               <Typography variant="h1" className={classes.greeting}>
-                Good Morning, User
+                Hello!
               </Typography>
-              <Button size="large" className={classes.googleButton}>
-                <img src={google} alt="google" className={classes.googleIcon} />
-                &nbsp;Sign in with Google
-              </Button>
               <div className={classes.formDividerContainer}>
                 <div className={classes.formDivider} />
-                <Typography className={classes.formDividerWord}>or</Typography>
+                <Typography className={classes.formDividerWord}>Welcome to rafMetrics</Typography>
                 <div className={classes.formDivider} />
               </div>
               <Fade in={error}>
@@ -74,7 +70,7 @@ function Login(props) {
                 </Typography>
               </Fade>
               <TextField
-                id="email"
+                id="username"
                 InputProps={{
                   classes: {
                     underline: classes.textFieldUnderline,
@@ -84,8 +80,8 @@ function Login(props) {
                 value={loginValue}
                 onChange={e => setLoginValue(e.target.value)}
                 margin="normal"
-                placeholder="Email Adress"
-                type="email"
+                placeholder="Username"
+                type="username"
                 fullWidth
               />
               <TextField
@@ -163,11 +159,11 @@ function Login(props) {
                 onChange={e => setNameValue(e.target.value)}
                 margin="normal"
                 placeholder="Full Name"
-                type="email"
+                type="username"
                 fullWidth
               />
               <TextField
-                id="email"
+                id="username"
                 InputProps={{
                   classes: {
                     underline: classes.textFieldUnderline,
@@ -177,8 +173,8 @@ function Login(props) {
                 value={loginValue}
                 onChange={e => setLoginValue(e.target.value)}
                 margin="normal"
-                placeholder="Email Adress"
-                type="email"
+                placeholder="Username"
+                type="username"
                 fullWidth
               />
               <TextField
@@ -226,27 +222,9 @@ function Login(props) {
                   </Button>
                 )}
               </div>
-              <div className={classes.formDividerContainer}>
-                <div className={classes.formDivider} />
-                <Typography className={classes.formDividerWord}>or</Typography>
-                <div className={classes.formDivider} />
-              </div>
-              <Button
-                size="large"
-                className={classnames(
-                  classes.googleButton,
-                  classes.googleButtonCreating,
-                )}
-              >
-                <img src={google} alt="google" className={classes.googleIcon} />
-                &nbsp;Sign in with Google
-              </Button>
             </React.Fragment>
           )}
         </div>
-        <Typography color="primary" className={classes.copyright}>
-          © 2014-2019 Flatlogic, LLC. All rights reserved.
-        </Typography>
       </div>
     </Grid>
   );
