@@ -91,6 +91,23 @@ def user(id):
         cursor.close()
         conn.close()
 
+
+@app.route('/user/<id>/<passwd>')
+def auth_user(id, passwd):
+    try:
+        row = get_userid(id)
+        ref_passwd = row.get('hashedpassword', '')
+        if check_password_hash(ref_passwd, passwd):
+            resp = jsonify(authenticated=True)
+            resp.status_code = 200
+            return resp
+        else:
+            resp = jsonify(authenticated=False)
+            resp.status_code = 200
+            return resp
+    except Exception as e:
+        print(e)
+
 @app.route('/update/<id>', methods=['POST'])
 def update_user(id):
     try:
@@ -149,6 +166,7 @@ def get_userid(id):
     finally:
         cursor.close()
         conn.close()
+
 
 @app.route('/addresource', methods=['POST'])
 def add_resource():
