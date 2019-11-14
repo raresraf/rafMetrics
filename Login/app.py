@@ -96,7 +96,9 @@ def user(id):
 def auth_user(id, passwd):
     try:
         row = get_userid(id)
-        ref_passwd = row.get('hashedpassword', '')
+        ref_passwd = ''
+        if row:
+            ref_passwd = row.get('hashedpassword', '')
         if check_password_hash(ref_passwd, passwd):
             resp = jsonify(authenticated=True)
             resp.status_code = 200
