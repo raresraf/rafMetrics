@@ -32,7 +32,10 @@ metadata:
 spec:
   ports:
     - port: 5000
+      targetPort: 5000
+      protocol: TCP
+      nodePort: 31001
   selector:
     app: login
   clusterIP: 10.96.0.3
-
+  type: NodePort
