@@ -56,6 +56,8 @@ function Layout(props) {
               <Route path="/app/ui/maps" component={Maps} />
               <Route path="/app/ui/icons" component={Icons} />
               <Route path="/app/ui/charts" component={Charts} />
+              <Route path="/app/ui/resourcemanager" component={Charts} />
+              <Route path="/app/ui/websitemanager" component={Charts} />
             </Switch>
           </div>
         </>
