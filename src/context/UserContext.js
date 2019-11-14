@@ -9,6 +9,9 @@ function userReducer(state, action) {
       return { ...state, isAuthenticated: true };
     case "SIGN_OUT_SUCCESS":
       return { ...state, isAuthenticated: false };
+    case "LOGIN_FAILURE":
+      // TODO(RaresF): Show LOGIN ERROR MESSAGE
+      return { ...state, isAuthenticated: false };
     default: {
       throw new Error(`Unhandled action type: ${action.type}`);
     }
@@ -49,37 +52,36 @@ export { UserProvider, useUserState, useUserDispatch, loginUser, signOut };
 
 // ###########################################################
 
-function loginUser(dispatch, login, password, history, setIsLoading, setError) {
+async function loginUser(dispatch, login, password, history, setIsLoading, setError) {
   setError(false);
   setIsLoading(true);
 
+  const authUrl = 'http://109.103.170.75:31001/user/' + login + '/' + password;
 
-  console.log(login);
-  console.log(password);
-
-  const auth_url = 'http://109.103.170.75:31001/user/' + login;
-  fetch(auth_url)
-      .then(function(response) {
+  var authValid;
+  await fetch(authUrl)
+      .then(function (response) {
         return response.json();
       })
-      .then(function(jsonResponse) {
-        // do something with jsonResponse
-        console.log(jsonResponse)
+      .then(function (jsonResponse) {
+        authValid = jsonResponse['authenticated'];
+        console.log(jsonResponse['authenticated']);
+        console.log(authValid);
       });
 
 
-
-  if (!!login && !!password) {
+  console.log(!!login && !!password && authValid === true)
+  if (!!login && !!password && authValid === true) {
     setTimeout(() => {
       localStorage.setItem("id_token", "1");
-      dispatch({ type: "LOGIN_SUCCESS" });
+      dispatch({type: "LOGIN_SUCCESS"});
       setError(null);
       setIsLoading(false);
 
       history.push("/app/dashboard");
     }, 2000);
   } else {
-    dispatch({ type: "LOGIN_FAILURE" });
+    dispatch({type: "LOGIN_FAILURE"});
     setError(true);
     setIsLoading(false);
   }
