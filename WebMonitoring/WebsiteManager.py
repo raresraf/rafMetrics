@@ -3,26 +3,30 @@ import time
 import mysql.connector
 
 from configs.constants import DockerResults
-from configs.settings import SAMPLE_TIME
+from configs.settings import SAMPLE_TIME, SHOW_VERBOSE_MESSAGE
 from monitors.WebsiteMonitor import WebsiteMonitor
 
 
 class WebsiteManager:
-    def __init__(self, sample_time=86400):
+    def __init__(self, sample_time=3600):
         self.sample_time = sample_time
         self.websites = []
         self.cnx = None
 
     def run(self):
+        # Show TODO-list: debug only
+        print("RUN: ", self.websites)
+
         for (website_url, website_name) in self.websites:
             monitor = WebsiteMonitor(website_url, website_name)
             monitor_result = monitor.run()
 
             # Check docker exit code
             if monitor_result == DockerResults.SUCCESS:
-                print(monitor.get_metrics())
-                print(monitor.get_timestamp())
-                print(monitor.get_total_time_seconds())
+                if SHOW_VERBOSE_MESSAGE:
+                    print(monitor.get_metrics())
+                    print(monitor.get_timestamp())
+                    print(monitor.get_total_time_seconds())
 
                 cursor = self.cnx.cursor(buffered=True)
                 query = (
@@ -31,7 +35,7 @@ class WebsiteManager:
                 cursor.execute(query)
 
                 # Get Websiteid
-                for (website_id, website_name) in cursor:
+                for (website_id, _) in cursor:
                     query = (
                         ('INSERT INTO WEBSITES_METRICS(Websiteid, TotalTime) '
                          'VALUES (%d, %lf)') %

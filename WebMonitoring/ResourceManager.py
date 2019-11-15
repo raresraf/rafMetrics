@@ -8,7 +8,7 @@ from monitors.ResourceMonitor import ResourceMonitor
 
 
 class ResourceManager:
-    def __init__(self, sample_time=86400):
+    def __init__(self, sample_time=3600):
         self.sample_time = sample_time
         self.resources = []
         self.cnx = None
