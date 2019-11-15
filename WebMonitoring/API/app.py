@@ -42,10 +42,10 @@ def available_resources(username):
         for row in cursor:
             return_values.append({
                 'id': curr_id,
-                'name': cursor['ResourceName'],
-                'command': cursor['Command'],
-                'firstadded': cursor['FirstAdded'],
-                'status': cursor['Availability']
+                'name': row['ResourceName'],
+                'command': row['Command'],
+                'firstadded': row['FirstAdded'],
+                'status': row['Availability']
             })
             curr_id = curr_id + 1
 
