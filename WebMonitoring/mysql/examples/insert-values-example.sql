@@ -21,3 +21,9 @@ VALUES (1, '185.199.111.154', 'https://github.com/raresraf/rafMetrics/projects/1
 
 INSERT INTO TIMINGS(Requestid, Receive, Send, SSLTime, Connect, DNS, Blocked, Wait)
 VALUES (1, 0, 2, 99, 141, 0, 0, 32);
+
+
+
+-- unknown
+INSERT INTO RESOURCE(Userid, ResourceName, Command)
+VALUES (1, 'https://g1thub.com/raresraf/rafMetrics', 'GET');

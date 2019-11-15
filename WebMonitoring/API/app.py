@@ -6,10 +6,8 @@ from werkzeug import generate_password_hash, check_password_hash
 from flaskext.mysql import MySQL
 import os
 
-
 from flask import Flask
 from flask_cors import CORS
-
 
 app = Flask(__name__)
 CORS(app)
@@ -29,6 +27,25 @@ def index():
     return "Hello, world!"
 
 
+@app.route('/availableResources/<username>')
+def index(username):
+    try:
+        conn = mysql.connect()
+        cursor = conn.cursor(pymysql.cursors.DictCursor)
+        cursor.execute(
+            "select r.ResourceName, r.Command, r.FirstAdded, resource_get_availability(Resourceid) from RESOURCE r, USERS u where u.Userid = r.Userid AND Username=%s",
+            username)
+        row = cursor.fetchone()
+        resp = jsonify(row)
+        resp.status_code = 200
+        return resp
+    except Exception as e:
+        print(e)
+    finally:
+        cursor.close()
+        conn.close()
+
+
 @app.errorhandler(404)
 def not_found(error=None):
     message = {
@@ -43,4 +60,3 @@ def not_found(error=None):
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", debug=True)
-
