@@ -28,7 +28,7 @@ def index():
 
 
 @app.route('/availableResources/<username>')
-def index(username):
+def available_resources(username):
     try:
         conn = mysql.connect()
         cursor = conn.cursor(pymysql.cursors.DictCursor)
