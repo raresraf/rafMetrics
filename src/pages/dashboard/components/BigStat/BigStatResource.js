@@ -13,7 +13,7 @@ import Widget from "../../../../components/Widget";
 import { Typography } from "../../../../components/Wrappers";
 
 export default function BigStatResource(props) {
-  var { product, total, color, lowest, median, highest } = props;
+  var { product, total, color, lowest, median, highest, samples } = props;
   var classes = useStyles();
   var theme = useTheme();
 
@@ -55,7 +55,7 @@ export default function BigStatResource(props) {
             {total.percent.value}%
           </Typography>
         </div>
-        <BarChart width={150} height={70} data={getRandomData()}>
+        <BarChart width={150} height={70} data={getDataBars(samples)}>
           <Bar
             dataKey="value"
             fill={theme.palette[color].main}
@@ -115,6 +115,15 @@ export default function BigStatResource(props) {
 
 function getRandomData() {
   return Array(7)
-    .fill()
-    .map(() => ({ value: Math.floor(Math.random() * 10) + 1 }));
+      .fill()
+      .map(() => ({ value: Math.floor(Math.random() * 10) + 1 }));
+}
+// #######################################################################
+
+function getDataBars(sample) {
+  var ret_arr = new Array(7);
+  for (var i = 0; i < 7; i++){
+    ret_arr[i] = {value : sample[i]};
+  }
+  return ret_arr;
 }

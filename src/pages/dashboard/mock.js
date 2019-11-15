@@ -111,7 +111,8 @@ export default {
         monthly: { value: 830, profit: false },
         weekly: { value: 215, profit: true },
         daily: { value: 33, profit: true }
-      }
+      },
+      samples: [1, 2, 3, 4, 5, 6, 7]
     },
     {
       product: "Response size",
@@ -136,7 +137,8 @@ export default {
         monthly: { value: 830, profit: false },
         weekly: { value: 215, profit: true },
         daily: { value: 33, profit: true }
-      }
+      },
+      samples: [1, 2, 3, 4, 5, 6, 7]
     },
     {
       product: "Efficiency",
@@ -161,7 +163,8 @@ export default {
         monthly: { value: 830, profit: false },
         weekly: { value: 215, profit: true },
         daily: { value: 33, profit: true }
-      }
+      },
+      samples: [10, 20, 30, 40, 50, 60, 70]
     }
   ],
   notifications: [
