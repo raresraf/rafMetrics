@@ -32,24 +32,10 @@ def available_resources(username):
     try:
         conn = mysql.connect()
         cursor = conn.cursor(pymysql.cursors.DictCursor)
-        cursor.execute(
-            "select r.ResourceName, r.Command, r.FirstAdded, resource_get_availability(Resourceid) Availability"
-            "from RESOURCE r, USERS u "
-            "where u.Userid = r.Userid AND Username=%s", username)
+        cursor.execute("select r.ResourceName name, r.Command command, r.FirstAdded firstadded, resource_get_availability(r.Resourceid) status from RESOURCE r, USERS u where u.Userid = r.Userid AND u.Username='%s'" % (username))
 
-        curr_id = 0
-        return_values = []
-        for row in cursor:
-            return_values.append({
-                'id': curr_id,
-                'name': row['ResourceName'],
-                'command': row['Command'],
-                'firstadded': row['FirstAdded'],
-                'status': row['Availability']
-            })
-            curr_id = curr_id + 1
-
-        resp = jsonify(return_values)
+        row=cursor.fetchall()
+        resp = jsonify(row)
         resp.status_code = 200
         return resp
     except Exception as e:
