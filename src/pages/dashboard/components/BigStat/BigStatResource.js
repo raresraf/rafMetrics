@@ -113,13 +113,6 @@ export default function BigStatResource(props) {
 
 // #######################################################################
 
-function getRandomData() {
-  return Array(7)
-      .fill()
-      .map(() => ({ value: Math.floor(Math.random() * 10) + 1 }));
-}
-// #######################################################################
-
 function getDataBars(sample) {
   var ret_arr = new Array(7);
   for (var i = 0; i < 7; i++){
