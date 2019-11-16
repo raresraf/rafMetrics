@@ -18,6 +18,7 @@ class WebsiteManager:
         print("RUN: ", self.websites)
 
         for (website_url, website_name) in self.websites:
+
             monitor = WebsiteMonitor(website_url, website_name)
             monitor_result = monitor.run()
 
