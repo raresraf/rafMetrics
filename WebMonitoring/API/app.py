@@ -37,10 +37,11 @@ def available_resources(username):
             % (username))
         rows = cursor.fetchall()
 
-        # Put ID: 0,1...
+        resp = []
         count_id = 0
         for row in rows:
-            row[0] = count_id
+            resp.append(row)
+            resp[-1]['id'] = count_id
             count_id = count_id + 1
 
         resp = jsonify(rows)
