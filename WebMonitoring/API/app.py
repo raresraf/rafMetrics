@@ -33,11 +33,17 @@ def available_resources(username):
         conn = mysql.connect()
         cursor = conn.cursor(pymysql.cursors.DictCursor)
         cursor.execute(
-            "select r.ResourceName name, r.Command command, r.FirstAdded firstadded, resource_get_availability(r.Resourceid) status from RESOURCE r, USERS u where u.Userid = r.Userid AND u.Username='%s'"
+            "select r.Resourceid id, r.ResourceName name, r.Command command, r.FirstAdded firstadded, resource_get_availability(r.Resourceid) status from RESOURCE r, USERS u where u.Userid = r.Userid AND u.Username='%s'"
             % (username))
+        rows = cursor.fetchall()
 
-        row = cursor.fetchall()
-        resp = jsonify(row)
+        # Put ID: 0,1...
+        count_id = 0
+        for row in rows:
+            row[0] = count_id
+            count_id = count_id + 1
+
+        resp = jsonify(rows)
         resp.status_code = 200
         return resp
     except Exception as e:
