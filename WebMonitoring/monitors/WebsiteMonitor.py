@@ -75,7 +75,8 @@ class WebsiteMonitor:
         self.docker = SpeedprofileClient(self.url)
         self.docker.run()
 
-        print("Docker run status: " + self.docker.status)
+        if SHOW_VERBOSE_MESSAGE:
+            print("Docker run status: " + self.docker.status)
 
         self.process_json()
         self.calculate_total_time()
