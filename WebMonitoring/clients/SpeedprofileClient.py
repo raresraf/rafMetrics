@@ -4,6 +4,7 @@ from contextlib import contextmanager
 
 from configs.constants import DockerResults
 from configs.settings import SPEEDPROFILE_LOCATION
+import subprocess
 
 
 class SpeedprofileClient():
@@ -35,7 +36,9 @@ class SpeedprofileClient():
             #    os.system(
             #    "docker run -v $(pwd)/output:/output ccarpita/speedprofile-chrome \"$@\" %s"
             #    % self.url)
-            os.system("%s %s" % (SPEEDPROFILE_LOCATION, self.url))
+            subprocess.call("%s %s" % (SPEEDPROFILE_LOCATION, self.url),
+                            shell=True,
+                            timeout=90)
 
             # If docker run command success within timeout time, set current status to SUCCESS
             self.status = DockerResults.SUCCESS
