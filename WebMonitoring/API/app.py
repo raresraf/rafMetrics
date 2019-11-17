@@ -61,14 +61,14 @@ def request_time(resource_name):
         cursor = conn.cursor()
 
         args = [resource_name, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-        cursor.callproc('resource_get_time', args)
+        result_args = cursor.callproc('resource_get_time', args)
 
         resp = jsonify({
             "product": "Response size",
             "total": {
-                "monthly": args[3],
-                "weekly": args[2],
-                "daily": args[1],
+                "monthly": result_args[3],
+                "weekly": result_args[2],
+                "daily": result_args[1],
                 "percent": {
                     "value": 2.5,
                     "profit": True
@@ -77,43 +77,43 @@ def request_time(resource_name):
             "color": "warning",
             "lowest": {
                 "monthly": {
-                    "value": args[6],
+                    "value": result_args[6],
                     "profit": True
                 },
                 "weekly": {
-                    "value": args[5],
+                    "value": result_args[5],
                     "profit": True
                 },
                 "daily": {
-                    "value": args[4],
+                    "value": result_args[4],
                     "profit": False
                 }
             },
             "median": {
                 "monthly": {
-                    "value": args[9],
+                    "value": result_args[9],
                     "profit": True
                 },
                 "weekly": {
-                    "value": args[8],
+                    "value": result_args[8],
                     "profit": False
                 },
                 "daily": {
-                    "value": args[7],
+                    "value": result_args[7],
                     "profit": False
                 }
             },
             "highest": {
                 "monthly": {
-                    "value": args[12],
+                    "value": result_args[12],
                     "profit": False
                 },
                 "weekly": {
-                    "value": args[11],
+                    "value": result_args[11],
                     "profit": True
                 },
                 "daily": {
-                    "value": args[10],
+                    "value": result_args[10],
                     "profit": True
                 }
             },
