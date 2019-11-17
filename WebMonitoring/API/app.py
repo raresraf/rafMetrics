@@ -75,7 +75,7 @@ def request_time(resource_name):
                        "@_resource_get_time_10, "
                        "@_resource_get_time_11, "
                        "@_resource_get_time_12 ")
-        result_args = cursor.fetchall()
+        result_args = cursor.fetchone()
 
         resp = jsonify({
             "product": "Response size",
