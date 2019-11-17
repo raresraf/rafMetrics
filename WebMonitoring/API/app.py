@@ -66,9 +66,9 @@ def request_time(resource_name):
         resp = jsonify({
             "product": "Response size",
             "total": {
-                "monthly": 754,
-                "weekly": 180,
-                "daily": 27,
+                "monthly": args[3],
+                "weekly": args[2],
+                "daily": args[1],
                 "percent": {
                     "value": 2.5,
                     "profit": True
@@ -77,43 +77,43 @@ def request_time(resource_name):
             "color": "warning",
             "lowest": {
                 "monthly": {
-                    "value": 32,
+                    "value": args[6],
                     "profit": True
                 },
                 "weekly": {
-                    "value": 8,
+                    "value": args[5],
                     "profit": True
                 },
                 "daily": {
-                    "value": 2,
+                    "value": args[4],
                     "profit": False
                 }
             },
             "median": {
                 "monthly": {
-                    "value": 2.5,
+                    "value": args[9],
                     "profit": True
                 },
                 "weekly": {
-                    "value": 4,
+                    "value": args[8],
                     "profit": False
                 },
                 "daily": {
-                    "value": 4.5,
+                    "value": args[7],
                     "profit": False
                 }
             },
             "highest": {
                 "monthly": {
-                    "value": 830,
+                    "value": args[12],
                     "profit": False
                 },
                 "weekly": {
-                    "value": 215,
+                    "value": args[11],
                     "profit": True
                 },
                 "daily": {
-                    "value": 33,
+                    "value": args[10],
                     "profit": True
                 }
             },
