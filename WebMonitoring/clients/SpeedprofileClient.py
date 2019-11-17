@@ -30,33 +30,16 @@ class SpeedprofileClient():
         # Set current status to FAILED
         self.status = DockerResults.FAILED
 
-        # Set timeout for docker run command
-        with self.timeout(self.TIMEOUT):
-            # Deprecated:
-            #    os.system(
-            #    "docker run -v $(pwd)/output:/output ccarpita/speedprofile-chrome \"$@\" %s"
-            #    % self.url)
+        # Deprecated:
+        #    os.system(
+        #    "docker run -v $(pwd)/output:/output ccarpita/speedprofile-chrome \"$@\" %s"
+        #    % self.url)
+        try:
             subprocess.call("%s %s" % (SPEEDPROFILE_LOCATION, self.url),
                             shell=True,
                             timeout=90)
-
-            # If docker run command success within timeout time, set current status to SUCCESS
             self.status = DockerResults.SUCCESS
-
-    @contextmanager
-    def timeout(self, time):
-        # Register a function to raise a TimeoutError on the signal.
-        signal.signal(signal.SIGALRM, self.raise_timeout)
-        # Schedule the signal to be sent after time.
-        signal.alarm(time)
-
-        try:
-            yield
-        except TimeoutError:
-            pass
+        except subprocess.TimeoutExpired:
+            self.status = DockerResults.FAILED
         finally:
-            # Unregister the signal so it won't be triggered if the timeout is not reached.
-            signal.signal(signal.SIGALRM, signal.SIG_IGN)
-
-    def raise_timeout(self, signum, frame):
-        raise TimeoutError
+            pass
