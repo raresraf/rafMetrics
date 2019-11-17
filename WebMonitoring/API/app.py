@@ -54,6 +54,94 @@ def available_resources(username):
         conn.close()
 
 
+@app.route('/request_time/<resource_name>')
+def request_time(resource_name):
+    try:
+        conn = mysql.connect()
+        cursor = conn.cursor()
+
+        args = [resource_name, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        ret_args = cursor.callproc('resource_get_time', args)
+        cursor.execute("SELECT @_resource_get_time_0, "
+                       "@_resource_get_time_1, "
+                       "@_resource_get_time_2, "
+                       "@_resource_get_time_3, "
+                       "@_resource_get_time_4, "
+                       "@_resource_get_time_5, "
+                       "@_resource_get_time_6, "
+                       "@_resource_get_time_7, "
+                       "@_resource_get_time_8, "
+                       "@_resource_get_time_9, "
+                       "@_resource_get_time_10, "
+                       "@_resource_get_time_11, "
+                       "@_resource_get_time_12 ")
+        result_args = cursor.fetchone()
+
+        resp = jsonify({
+            "product": "Response size",
+            "total": {
+                "monthly": result_args[3],
+                "weekly": result_args[2],
+                "daily": result_args[1],
+                "percent": {
+                    "value": 2.5,
+                    "profit": True
+                }
+            },
+            "color": "warning",
+            "lowest": {
+                "monthly": {
+                    "value": result_args[6],
+                    "profit": True
+                },
+                "weekly": {
+                    "value": result_args[5],
+                    "profit": True
+                },
+                "daily": {
+                    "value": result_args[4],
+                    "profit": False
+                }
+            },
+            "median": {
+                "monthly": {
+                    "value": result_args[9],
+                    "profit": True
+                },
+                "weekly": {
+                    "value": result_args[8],
+                    "profit": False
+                },
+                "daily": {
+                    "value": result_args[7],
+                    "profit": False
+                }
+            },
+            "highest": {
+                "monthly": {
+                    "value": result_args[12],
+                    "profit": False
+                },
+                "weekly": {
+                    "value": result_args[11],
+                    "profit": True
+                },
+                "daily": {
+                    "value": result_args[10],
+                    "profit": True
+                }
+            },
+            "sample": [1, 2, 3, 4, 5, 6, 7]
+        })
+        resp.status_code = 200
+        return resp
+    except Exception as e:
+        print(e)
+    finally:
+        cursor.close()
+        conn.close()
+
+
 @app.errorhandler(404)
 def not_found(error=None):
     message = {
