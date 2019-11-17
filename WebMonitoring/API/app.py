@@ -61,9 +61,21 @@ def request_time(resource_name):
         cursor = conn.cursor()
 
         args = [resource_name, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-        result_args = cursor.callproc('resource_get_time', args)
-        cursor.execute("SELECT @_resource_get_time_0")
-        rows = cursor.fetchall()
+        ret_args = cursor.callproc('resource_get_time', args)
+        cursor.execute("SELECT @_resource_get_time_0, "
+                       "@_resource_get_time_1, "
+                       "@_resource_get_time_2, "
+                       "@_resource_get_time_3, "
+                       "@_resource_get_time_4, "
+                       "@_resource_get_time_5, "
+                       "@_resource_get_time_6, "
+                       "@_resource_get_time_7, "
+                       "@_resource_get_time_8, "
+                       "@_resource_get_time_9, "
+                       "@_resource_get_time_10, "
+                       "@_resource_get_time_11, "
+                       "@_resource_get_time_12 ")
+        result_args = cursor.fetchall()
 
         resp = jsonify({
             "product": "Response size",
