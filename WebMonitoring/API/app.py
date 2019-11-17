@@ -55,7 +55,7 @@ def available_resources(username):
 
 
 @app.route('/request_time/<resource_name>')
-def available_resources(resource_name):
+def request_time(resource_name):
     try:
         conn = mysql.connect()
         cursor = conn.cursor()
