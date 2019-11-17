@@ -54,6 +54,80 @@ def available_resources(username):
         conn.close()
 
 
+@app.route('/request_time/<resource_name>')
+def available_resources(resource_name):
+    try:
+        conn = mysql.connect()
+        cursor = conn.cursor()
+
+        args = [resource_name, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        cursor.callproc('resource_get_time', args)
+
+        resp = jsonify({
+            "product": "Response size",
+            "total": {
+                "monthly": 754,
+                "weekly": 180,
+                "daily": 27,
+                "percent": {
+                    "value": 2.5,
+                    "profit": True
+                }
+            },
+            "color": "warning",
+            "lowest": {
+                "monthly": {
+                    "value": 32,
+                    "profit": True
+                },
+                "weekly": {
+                    "value": 8,
+                    "profit": True
+                },
+                "daily": {
+                    "value": 2,
+                    "profit": False
+                }
+            },
+            "median": {
+                "monthly": {
+                    "value": 2.5,
+                    "profit": True
+                },
+                "weekly": {
+                    "value": 4,
+                    "profit": False
+                },
+                "daily": {
+                    "value": 4.5,
+                    "profit": False
+                }
+            },
+            "highest": {
+                "monthly": {
+                    "value": 830,
+                    "profit": False
+                },
+                "weekly": {
+                    "value": 215,
+                    "profit": True
+                },
+                "daily": {
+                    "value": 33,
+                    "profit": True
+                }
+            },
+            "sample": [1, 2, 3, 4, 5, 6, 7]
+        })
+        resp.status_code = 200
+        return resp
+    except Exception as e:
+        print(e)
+    finally:
+        cursor.close()
+        conn.close()
+
+
 @app.errorhandler(404)
 def not_found(error=None):
     message = {
