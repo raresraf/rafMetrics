@@ -58,15 +58,13 @@ def available_resources(username):
 def request_time(resource_name):
     try:
         conn = mysql.connect()
-        cursor = conn.cursor(pymysql.cursors.DictCursor)
+        cursor = conn.cursor()
 
-        cursor.execute(
-            'CALL resource_get_time(1,@a,@b,@c,@d,@e,@f,@g,@h,@i,@j,@k,@l); SELECT @a,@b,@c,@d,@e,@f,@g,@h,@i,@j,@k,@l;'
-        )
+        args = [resource_name, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        result_args = cursor.callproc('resource_get_time', args)
+        cursor.execute("SELECT @_resource_get_time_0")
         rows = cursor.fetchall()
 
-        resp = jsonify(rows)
-        """
         resp = jsonify({
             "product": "Response size",
             "total": {
@@ -125,10 +123,6 @@ def request_time(resource_name):
         })
         resp.status_code = 200
         return resp
-        """
-        resp.status_code = 200
-        return resp
-
     except Exception as e:
         print(e)
     finally:
