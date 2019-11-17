@@ -47,6 +47,7 @@ CREATE PROCEDURE resource_get_time
      OUT highest_time_monthly FLOAT)
 
 BEGIN
+
     select avg(ResponseTime) into average_time_daily from PING where Resourceid = id and Timestamp > DATE_SUB(now(), INTERVAL 1 DAY);
     select avg(ResponseTime) into average_time_weekly from PING where Resourceid = id and Timestamp > DATE_SUB(now(), INTERVAL 1 WEEK);
     select avg(ResponseTime) into average_time_monthly from PING where Resourceid = id and Timestamp > DATE_SUB(now(), INTERVAL 1 MONTH);
@@ -59,6 +60,7 @@ BEGIN
     select max(ResponseTime) into highest_time_daily from PING where Resourceid = id and Timestamp > DATE_SUB(now(), INTERVAL 1 DAY);
     select max(ResponseTime) into highest_time_weekly from PING where Resourceid = id and Timestamp > DATE_SUB(now(), INTERVAL 1 WEEK);
     select max(ResponseTime) into highest_time_monthly from PING where Resourceid = id and Timestamp > DATE_SUB(now(), INTERVAL 1 MONTH);
-    END//
+
+END//
 
 delimiter ;
