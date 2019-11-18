@@ -93,9 +93,9 @@ def request_time_dict(result_args_get_time, result_args_old_get_time,
     return {
         "product": "Response size",
         "total": {
-            "monthly": result_args_get_time[3],
-            "weekly": result_args_get_time[2],
-            "daily": result_args_get_time[1],
+            "monthly": round(result_args_get_time[3], 2),
+            "weekly": round(result_args_get_time[2], 2),
+            "daily": round(result_args_get_time[1], 2),
             "percent": {
                 "value":
                 get_percent_w_none(result_args_old_get_time[2],
@@ -108,19 +108,19 @@ def request_time_dict(result_args_get_time, result_args_old_get_time,
         "lowest": {
             "monthly": {
                 "value":
-                result_args_get_time[6],
+                round(result_args_get_time[6], 2),
                 "profit":
                 lt_w_none(result_args_old_get_time[6], result_args_get_time[6])
             },
             "weekly": {
                 "value":
-                result_args_get_time[5],
+                round(result_args_get_time[5], 2),
                 "profit":
                 lt_w_none(result_args_old_get_time[5], result_args_get_time[5])
             },
             "daily": {
                 "value":
-                result_args_get_time[4],
+                round(result_args_get_time[4], 2),
                 "profit":
                 lt_w_none(result_args_old_get_time[4], result_args_get_time[4])
             }
@@ -128,19 +128,19 @@ def request_time_dict(result_args_get_time, result_args_old_get_time,
         "median": {
             "monthly": {
                 "value":
-                result_args_get_time[9],
+                round(result_args_get_time[9], 2),
                 "profit":
                 lt_w_none(result_args_old_get_time[9], result_args_get_time[9])
             },
             "weekly": {
                 "value":
-                result_args_get_time[8],
+                round(result_args_get_time[8], 2),
                 "profit":
                 lt_w_none(result_args_old_get_time[8], result_args_get_time[8])
             },
             "daily": {
                 "value":
-                result_args_get_time[7],
+                round(result_args_get_time[7], 2),
                 "profit":
                 lt_w_none(result_args_old_get_time[7], result_args_get_time[7])
             }
@@ -148,21 +148,21 @@ def request_time_dict(result_args_get_time, result_args_old_get_time,
         "highest": {
             "monthly": {
                 "value":
-                result_args_get_time[12],
+                round(result_args_get_time[12], 2),
                 "profit":
                 lt_w_none(result_args_old_get_time[12],
                           result_args_get_time[12])
             },
             "weekly": {
                 "value":
-                result_args_get_time[11],
+                round(result_args_get_time[11], 2),
                 "profit":
                 lt_w_none(result_args_old_get_time[11],
                           result_args_get_time[11])
             },
             "daily": {
                 "value":
-                result_args_get_time[10],
+                round(result_args_get_time[10], 2),
                 "profit":
                 lt_w_none(result_args_old_get_time[10],
                           result_args_get_time[10])
@@ -227,7 +227,7 @@ def request_time(resource_name):
         list_sample = []
         samples = get_last7(resource_name)
         for sample in samples:
-            list_sample.append(sample['ResponseTime'])
+            list_sample.append(int(1000 * sample['ResponseTime'] + 1))
 
         resp = jsonify(
             request_time_dict(result_args_get_time, result_args_old_get_time,
