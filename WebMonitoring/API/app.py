@@ -8,6 +8,7 @@ import os
 
 from flask import Flask
 from flask_cors import CORS
+import math
 
 app = Flask(__name__)
 CORS(app)
@@ -123,6 +124,12 @@ def request_time(resource_name):
                        "@_resource_get_old_time_12 ")
         result_args_old = cursor.fetchone()
 
+        cursor_last7 = conn.cursor(pymysql.cursors.DictCursor)
+        cursor_last7.execute(
+            "select ResponseTime from PING where Resourceid = %d order by Timestamp desc limit 7;"
+            % (resource_name))
+        rows = cursor_last7.fetchall()
+
         resp = jsonify({
             "product": "Response size",
             "total": {
@@ -178,7 +185,7 @@ def request_time(resource_name):
                     "profit": lt_w_none(result_args_old[10], result_args[10])
                 }
             },
-            "sample": [1, 2, 3, 4, 5, 6, 7]
+            "sample": rows
         })
         resp.status_code = 200
         return resp
