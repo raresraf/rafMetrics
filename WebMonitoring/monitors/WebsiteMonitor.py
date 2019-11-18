@@ -3,7 +3,6 @@ import time
 
 import arrow
 
-from WebsiteMonitorHelpers.timeout import timeout
 from WebsiteMonitorHelpers.request_helpers import parse_request
 from clients.SpeedprofileClient import SpeedprofileClient
 from configs.constants import json_path
@@ -68,7 +67,6 @@ class WebsiteMonitor:
         """Return a list of RequestEntry structures containing metrics"""
         return self.request_entry
 
-    @timeout(90)
     def run(self):
         """Generate timestamp at beginning of script"""
         self.timestamp = time.localtime()
