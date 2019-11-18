@@ -140,7 +140,10 @@ def request_time(resource_name):
                        "@_resource_get_old_time_12 ")
         result_args_old = cursor.fetchone()
 
+        list_sample = []
         samples = get_last7(resource_name)
+        for sample in samples:
+            list_sample.append(sample['ResponseTime'])
 
         resp = jsonify({
             "product": "Response size",
@@ -197,7 +200,7 @@ def request_time(resource_name):
                     "profit": lt_w_none(result_args_old[10], result_args[10])
                 }
             },
-            "sample": samples
+            "sample": list_sample
         })
         resp.status_code = 200
         return resp
