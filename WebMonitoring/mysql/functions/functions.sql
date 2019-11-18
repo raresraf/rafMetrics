@@ -64,3 +64,42 @@ BEGIN
 END//
 
 delimiter ;
+
+
+delimiter //
+
+DROP PROCEDURE IF EXISTS resource_get_old_time;
+
+CREATE PROCEDURE resource_get_old_time
+(IN id INT,
+ OUT average_time_daily FLOAT,
+ OUT average_time_weekly FLOAT,
+ OUT average_time_monthly FLOAT,
+ OUT lowest_time_daily FLOAT,
+ OUT lowest_time_weekly FLOAT,
+ OUT lowest_time_monthly FLOAT,
+ OUT median_time_daily FLOAT,
+ OUT median_time_weekly FLOAT,
+ OUT median_time_monthly FLOAT,
+ OUT highest_time_daily FLOAT,
+ OUT highest_time_weekly FLOAT,
+ OUT highest_time_monthly FLOAT)
+
+BEGIN
+
+    select avg(ResponseTime) into average_time_daily from PING where Resourceid = id and Timestamp < DATE_SUB(now(), INTERVAL 1 DAY) and Timestamp > DATE_SUB(now(), INTERVAL 2 DAY);
+    select avg(ResponseTime) into average_time_weekly from PING where Resourceid = id and Timestamp < DATE_SUB(now(), INTERVAL 1 WEEK) and Timestamp > DATE_SUB(now(), INTERVAL 2 WEEK);
+    select avg(ResponseTime) into average_time_monthly from PING where Resourceid = id and Timestamp < DATE_SUB(now(), INTERVAL 1 MONTH) and Timestamp > DATE_SUB(now(), INTERVAL 2 MONTH );
+    select min(ResponseTime) into lowest_time_daily from PING where Resourceid = id and Timestamp < DATE_SUB(now(), INTERVAL 1 DAY) and Timestamp > DATE_SUB(now(), INTERVAL 2 DAY);
+    select min(ResponseTime) into lowest_time_weekly from PING where Resourceid = id and Timestamp < DATE_SUB(now(), INTERVAL 1 WEEK) and Timestamp > DATE_SUB(now(), INTERVAL 2 WEEK);
+    select min(ResponseTime) into lowest_time_monthly from PING where Resourceid = id and Timestamp < DATE_SUB(now(), INTERVAL 1 MONTH) and Timestamp > DATE_SUB(now(), INTERVAL 2 MONTH);
+    select x.ResponseTime into median_time_daily from PING x, PING y where x.Resourceid = id and y.Resourceid = id and x.Timestamp < DATE_SUB(now(), INTERVAL 1 DAY) and x.Timestamp > DATE_SUB(now(), INTERVAL 2 DAY) and y.Timestamp < DATE_SUB(now(), INTERVAL 1 DAY) and y.Timestamp > DATE_SUB(now(), INTERVAL 2 DAY) GROUP BY x.ResponseTime HAVING SUM(SIGN(1-SIGN(y.ResponseTime-x.ResponseTime)))/COUNT(*) > .5 limit 1;
+    select x.ResponseTime into median_time_weekly from PING x, PING y where x.Resourceid = id and y.Resourceid = id and x.Timestamp < DATE_SUB(now(), INTERVAL 1 WEEK) and x.Timestamp > DATE_SUB(now(), INTERVAL 2 WEEK) and y.Timestamp < DATE_SUB(now(), INTERVAL 1 WEEK) and y.Timestamp > DATE_SUB(now(), INTERVAL 2 WEEK) GROUP BY x.ResponseTime HAVING SUM(SIGN(1-SIGN(y.ResponseTime-x.ResponseTime)))/COUNT(*) > .5 limit 1;
+    select x.ResponseTime into median_time_monthly from PING x, PING y where x.Resourceid = id and y.Resourceid = id and x.Timestamp < DATE_SUB(now(), INTERVAL 1 MONTH ) and x.Timestamp > DATE_SUB(now(), INTERVAL 2 MONTH ) and y.Timestamp < DATE_SUB(now(), INTERVAL 1 MONTH ) and y.Timestamp > DATE_SUB(now(), INTERVAL 2 MONTH ) GROUP BY x.ResponseTime HAVING SUM(SIGN(1-SIGN(y.ResponseTime-x.ResponseTime)))/COUNT(*) > .5 limit 1;
+    select max(ResponseTime) into highest_time_daily from PING where Resourceid = id and Timestamp < DATE_SUB(now(), INTERVAL 1 DAY) and Timestamp > DATE_SUB(now(), INTERVAL 2 DAY);
+    select max(ResponseTime) into highest_time_weekly from PING where Resourceid = id and Timestamp < DATE_SUB(now(), INTERVAL 1 WEEK) and Timestamp > DATE_SUB(now(), INTERVAL 2 WEEK);
+    select max(ResponseTime) into highest_time_monthly from PING where Resourceid = id and Timestamp < DATE_SUB(now(), INTERVAL 1 MONTH) and Timestamp > DATE_SUB(now(), INTERVAL 2 MONTH);
+
+END//
+
+    delimiter ;
