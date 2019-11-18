@@ -149,7 +149,7 @@ def render_dict(result_args_get, result_args_old_get, list_sample,
                                     result_args_get[10])
             }
         },
-        "sample": list_sample
+        "samples": list_sample
     }
 
 
