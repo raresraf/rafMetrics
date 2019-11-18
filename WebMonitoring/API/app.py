@@ -72,6 +72,25 @@ def get_percent_w_none(val1, val2):
     return abs(val2 - val1) / val1
 
 
+@app.route('/get_last7/<resource_name>')
+def get_last7(resource_name):
+    try:
+        conn = mysql.connect()
+        cursor = conn.cursor(pymysql.cursors.DictCursor)
+        cursor.execute(
+            "select ResponseTime from PING where Resourceid = %d order by Timestamp desc limit 7;"
+            % (resource_name))
+        rows = cursor.fetchall()
+        resp = jsonify(rows)
+        resp.status_code = 200
+        return resp
+    except Exception as e:
+        print(e)
+    finally:
+        cursor.close()
+        conn.close()
+
+
 @app.route('/request_time/<resource_name>')
 def request_time(resource_name):
     try:
@@ -123,12 +142,6 @@ def request_time(resource_name):
                        "@_resource_get_old_time_11, "
                        "@_resource_get_old_time_12 ")
         result_args_old = cursor.fetchone()
-
-        cursor_last7 = conn.cursor(pymysql.cursors.DictCursor)
-        cursor_last7.execute(
-            "select ResponseTime from PING where Resourceid = %d order by Timestamp desc limit 7;"
-            % (resource_name))
-        rows = cursor_last7.fetchall()
 
         resp = jsonify({
             "product": "Response size",
@@ -185,7 +198,7 @@ def request_time(resource_name):
                     "profit": lt_w_none(result_args_old[10], result_args[10])
                 }
             },
-            "sample": rows
+            "sample": [1, 2, 3, 4, 5, 6, 7]
         })
         resp.status_code = 200
         return resp
