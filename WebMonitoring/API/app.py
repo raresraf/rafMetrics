@@ -88,6 +88,90 @@ def get_last7(resource_name):
         conn.close()
 
 
+def request_time_dict(result_args_get_time, result_args_old_get_time,
+                      list_sample):
+    return {
+        "product": "Response size",
+        "total": {
+            "monthly": result_args_get_time[3],
+            "weekly": result_args_get_time[2],
+            "daily": result_args_get_time[1],
+            "percent": {
+                "value":
+                get_percent_w_none(result_args_old_get_time[2],
+                                   result_args_get_time[2]),
+                "profit":
+                lt_w_none(result_args_old_get_time[2], result_args_get_time[2])
+            }
+        },
+        "color": "warning",
+        "lowest": {
+            "monthly": {
+                "value":
+                result_args_get_time[6],
+                "profit":
+                lt_w_none(result_args_old_get_time[6], result_args_get_time[6])
+            },
+            "weekly": {
+                "value":
+                result_args_get_time[5],
+                "profit":
+                lt_w_none(result_args_old_get_time[5], result_args_get_time[5])
+            },
+            "daily": {
+                "value":
+                result_args_get_time[4],
+                "profit":
+                lt_w_none(result_args_old_get_time[4], result_args_get_time[4])
+            }
+        },
+        "median": {
+            "monthly": {
+                "value":
+                result_args_get_time[9],
+                "profit":
+                lt_w_none(result_args_old_get_time[9], result_args_get_time[9])
+            },
+            "weekly": {
+                "value":
+                result_args_get_time[8],
+                "profit":
+                lt_w_none(result_args_old_get_time[8], result_args_get_time[8])
+            },
+            "daily": {
+                "value":
+                result_args_get_time[7],
+                "profit":
+                lt_w_none(result_args_old_get_time[7], result_args_get_time[7])
+            }
+        },
+        "highest": {
+            "monthly": {
+                "value":
+                result_args_get_time[12],
+                "profit":
+                lt_w_none(result_args_old_get_time[12],
+                          result_args_get_time[12])
+            },
+            "weekly": {
+                "value":
+                result_args_get_time[11],
+                "profit":
+                lt_w_none(result_args_old_get_time[11],
+                          result_args_get_time[11])
+            },
+            "daily": {
+                "value":
+                result_args_get_time[10],
+                "profit":
+                lt_w_none(result_args_old_get_time[10],
+                          result_args_get_time[10])
+            }
+        },
+        "sample": list_sample
+    }
+
+
 @app.route('/request_time/<resource_name>')
 def request_time(resource_name):
     try:
@@ -122,7 +206,7 @@ def request_time(resource_name):
                        "@_resource_get_time_10, "
                        "@_resource_get_time_11, "
                        "@_resource_get_time_12 ")
-        result_args = cursor.fetchone()
+        result_args_get_time = cursor.fetchone()
 
         cursor.callproc('resource_get_old_time', args)
         cursor.execute("SELECT @_resource_get_old_time_0, "
@@ -138,70 +222,16 @@ def request_time(resource_name):
                        "@_resource_get_old_time_10, "
                        "@_resource_get_old_time_11, "
                        "@_resource_get_old_time_12 ")
-        result_args_old = cursor.fetchone()
+        result_args_old_get_time = cursor.fetchone()
 
         list_sample = []
         samples = get_last7(resource_name)
         for sample in samples:
             list_sample.append(sample['ResponseTime'])
 
-        resp = jsonify({
-            "product": "Response size",
-            "total": {
-                "monthly": result_args[3],
-                "weekly": result_args[2],
-                "daily": result_args[1],
-                "percent": {
-                    "value": get_percent_w_none(result_args_old[2],
-                                                result_args[2]),
-                    "profit": lt_w_none(result_args_old[2], result_args[2])
-                }
-            },
-            "color": "warning",
-            "lowest": {
-                "monthly": {
-                    "value": result_args[6],
-                    "profit": lt_w_none(result_args_old[6], result_args[6])
-                },
-                "weekly": {
-                    "value": result_args[5],
-                    "profit": lt_w_none(result_args_old[5], result_args[5])
-                },
-                "daily": {
-                    "value": result_args[4],
-                    "profit": lt_w_none(result_args_old[4], result_args[4])
-                }
-            },
-            "median": {
-                "monthly": {
-                    "value": result_args[9],
-                    "profit": lt_w_none(result_args_old[9], result_args[9])
-                },
-                "weekly": {
-                    "value": result_args[8],
-                    "profit": lt_w_none(result_args_old[8], result_args[8])
-                },
-                "daily": {
-                    "value": result_args[7],
-                    "profit": lt_w_none(result_args_old[7], result_args[7])
-                }
-            },
-            "highest": {
-                "monthly": {
-                    "value": result_args[12],
-                    "profit": lt_w_none(result_args_old[12], result_args[12])
-                },
-                "weekly": {
-                    "value": result_args[11],
-                    "profit": lt_w_none(result_args_old[11], result_args[11])
-                },
-                "daily": {
-                    "value": result_args[10],
-                    "profit": lt_w_none(result_args_old[10], result_args[10])
-                }
-            },
-            "sample": list_sample
-        })
+        resp = jsonify(
+            request_time_dict(result_args_get_time, result_args_old_get_time,
+                              list_sample))
         resp.status_code = 200
         return resp
     except Exception as e:
