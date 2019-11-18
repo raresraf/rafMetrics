@@ -63,6 +63,14 @@ def lt_w_none(val1, val2):
     return val1 > val2
 
 
+def get_percent_w_none(val1, val2):
+    if val1 == None:
+        return 100
+    if val2 == None:
+        return 0
+    return abs(val2 - val1) / val1
+
+
 @app.route('/request_time/<resource_name>')
 def request_time(resource_name):
     try:
@@ -122,7 +130,8 @@ def request_time(resource_name):
                 "weekly": result_args[2],
                 "daily": result_args[1],
                 "percent": {
-                    "value": 0.2,
+                    "value": get_percent_w_none(result_args_old[2],
+                                                result_args[2]),
                     "profit": lt_w_none(result_args_old[2], result_args[2])
                 }
             },
