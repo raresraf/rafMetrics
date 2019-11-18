@@ -1,18 +1,25 @@
-In [1]: import requests
+-- add
 
-In [2]: import json
+import requests
+import json
+url = 'http://10.96.0.3:5000/addresource'
+data = { "username": "flask_test_username", "resource": "https://cs.pub.ro/", "command": "GET" }
+headers = {'Content-type': 'application/json', 'Accept': 'text/plain'}
+r = requests.post(url, data=json.dumps(data), headers=headers)
+print(r.text)
 
-In [3]: url = 'http://10.96.0.3:5000/addresource'
 
-In [4]: data = {
-   ...:   "username": "flask_test_username",
-   ...:   "resource": "https://cs.pub.ro/",
-   ...:   "command": "GET"
-   ...: }
 
-In [5]: headers = {'Content-type': 'application/json', 'Accept': 'text/plain'}
 
-In [6]: r = requests.post(url, data=json.dumps(data), headers=headers)
+-- update
 
-In [7]: print(r.text)
-"Resource added successfully!"
+import requests
+import json
+url = 'http://10.96.0.3:5000/update/TestUsername'
+data = {
+        'last_name' : 'test_last_name', 'first_name' : 'test_first_name', 'email' : 'test@email.com', 'pwd' : 'TestUsername'
+}
+headers = {'Content-type': 'application/json', 'Accept': 'text/plain'}
+r = requests.post(url, data=json.dumps(data), headers=headers)
+print(r.text)
+

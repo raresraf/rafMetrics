@@ -124,7 +124,7 @@ def update_user(id):
             _hashed_password = generate_password_hash(_password)
             # save edits
             sql = "UPDATE USERS SET LastName=%s, FirstName=%s, Email=%s, hashedpassword=%s WHERE Username=%s"
-            data = (_last_name ,_first_name, _email, _password, id)
+            data = (_last_name ,_first_name, _email, _hashed_password, id)
             conn = mysql.connect()
             cursor = conn.cursor()
             cursor.execute(sql, data)
