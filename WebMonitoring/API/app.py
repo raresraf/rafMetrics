@@ -8,7 +8,7 @@ import os
 
 from flask import Flask
 from flask_cors import CORS
-from math import round
+import math
 
 app = Flask(__name__)
 CORS(app)
@@ -88,20 +88,8 @@ def get_last7(resource_name):
         conn.close()
 
 
-def request_time_dict(_RAW_result_args_get_time, _RAW_result_args_old_get_time,
+def request_time_dict(result_args_get_time, result_args_old_get_time,
                       list_sample):
-    render_sample = []
-    for sample in list_sample:
-        render_sample.append(int(100 * sample + 1))
-
-    result_args_get_time = []
-    for result in _RAW_result_args_get_time:
-        result_args_get_time.append(round(result, 2))
-
-    result_args_old_get_time = []
-    for result in _RAW_result_args_old_get_time:
-        result_args_old_get_time.append(round(result, 2))
-
     return {
         "product": "Response size",
         "total": {
@@ -180,7 +168,7 @@ def request_time_dict(_RAW_result_args_get_time, _RAW_result_args_old_get_time,
                           result_args_get_time[10])
             }
         },
-        "samples": list_sample
+        "sample": list_sample
     }
 
 
