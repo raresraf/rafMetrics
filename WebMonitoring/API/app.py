@@ -89,7 +89,7 @@ def get_last7(resource_name):
 
 
 def render_dict(result_args_get, result_args_old_get, list_sample,
-                product_name):
+                product_name, color):
     return {
         "product": product_name,
         "total": {
@@ -103,7 +103,7 @@ def render_dict(result_args_get, result_args_old_get, list_sample,
                 lt_w_none(result_args_old_get[2], result_args_get[2])
             }
         },
-        "color": "warning",
+        "color": color,
         "lowest": {
             "monthly": {
                 "value": round(result_args_get[6], 2),
@@ -212,11 +212,11 @@ def request_time(resource_name):
 
         resp = jsonify([
             render_dict(result_args_get_time, result_args_old_get_time,
-                        list_sample, "Request Time"),
+                        list_sample, "Request Time", "primary"),
             render_dict(result_args_get_time, result_args_old_get_time,
-                        list_sample, "Response size"),
+                        list_sample, "Response size", "warning"),
             render_dict(result_args_get_time, result_args_old_get_time,
-                        list_sample, "Efficiency")
+                        list_sample, "Efficiency", "secondary")
         ])
         resp.status_code = 200
         return resp
