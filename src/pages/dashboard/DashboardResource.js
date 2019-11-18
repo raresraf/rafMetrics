@@ -57,25 +57,54 @@ function getAvailableResources() {
           reject(err);
         });
   })
-
 }
+
+function getRequestTime() {
+  return new Promise((resolve, reject) => {
+    let availableResourcesUrl = "http://109.103.170.75:31002/request_time/1";
+    fetch(availableResourcesUrl)
+        .then((response) => {
+          return response.json();
+        })
+        .then((jsonResponse) => {
+          resolve(jsonResponse);
+        })
+        .catch((err) => {
+          reject(err);
+        });
+  })
+}
+
+var getAvailableResourcesLoaded = false;
+var getRequestTimeLoaded = false;
 
 export default function DashboardResource(props) {
   var classes = useStyles();
   var theme = useTheme();
-
   // local
-  const [tableResource, setTableResource] = useState([]);
+  const [tableResource, setTableResource] = useState(mock.tableResource);
+  const [bigStatResource, setBigStatResource] = useState(mock.bigStatResource);
+
   var [mainChartState, setMainChartState] = useState("monthly");
 
-  getAvailableResources().then(res => {
-    setTableResource(res);
-  });
+  if(!getAvailableResourcesLoaded)
+    getAvailableResources().then(res => {
+      setTableResource(res);
+      getAvailableResourcesLoaded = true;
+      console.log(res);
+      console.log(mock.tableResource);
+    });
+
+  if(!getRequestTimeLoaded)
+    getRequestTime().then(res => {
+      setBigStatResource(res);
+      getRequestTimeLoaded = true;
+      console.log(res);
+      console.log(mock.bigStatResource);
+    });
 
 
-  if (tableResource == 0) {
-    return(<>Loading...</>)
-  } else{
+
     return (
         <>
           <PageTitle title="Dashboard Resources" button="See all resources" />
@@ -192,7 +221,7 @@ export default function DashboardResource(props) {
                 </ResponsiveContainer>
               </Widget>
             </Grid>
-            {mock.bigStatResource.map(stat => (
+            {bigStatResource.map(stat => (
                 <Grid item md={4} sm={6} xs={12} key={stat.product}>
                   <BigStatResource {...stat} />
                 </Grid>
@@ -200,7 +229,7 @@ export default function DashboardResource(props) {
           </Grid>
         </>
     );
-  }
+
 
 }
 
