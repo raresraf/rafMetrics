@@ -15,7 +15,7 @@ RUN pip3 install flask
 RUN pip3 install flask-mysql
 RUN pip3 install flask-cors
 
-COPY app.py /app/app.py
+COPY . /app
 
 EXPOSE 5000:5000
 
