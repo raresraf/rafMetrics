@@ -35,7 +35,6 @@ sample_url = 'https://github.com/raresraf/rafMetrics/projects/1'
 sample_name = 'GitHub'
 sample_resource_command = RequestTypes.GET
 sample_resource_payload = None
-json_path = 'output/har.json'
 
 sample_resource = ResourceEntry(sample_url,
                                 sample_name,

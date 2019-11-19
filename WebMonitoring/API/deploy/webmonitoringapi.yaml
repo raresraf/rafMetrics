@@ -2,22 +2,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: login-deployment
+  name: webmonitoringapi-deployment
   labels:
-    app: login
+    app: webmonitoringapi
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: login
+      app: webmonitoringapi
   template:
     metadata:
       labels:
-        app: login
+        app: webmonitoringapi
     spec:
       containers:
-        - name: login
-          image: raresraf/login:20191119140501
+        - name: webmonitoringapi
+          image: raresraf/webmonitoringapi:20191119134014
           #         env:
           #  - name: WERKZEUG_DEBUG_PIN
           #    value: "off"
@@ -28,14 +28,14 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: login
+  name: webmonitoringapi
 spec:
   ports:
     - port: 5000
       targetPort: 5000
       protocol: TCP
-      nodePort: 31001
+      nodePort: 31002
   selector:
-    app: login
-  clusterIP: 10.96.0.3
+    app: webmonitoringapi
+  clusterIP: 10.96.0.4
   type: NodePort

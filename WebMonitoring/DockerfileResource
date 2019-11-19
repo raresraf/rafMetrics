@@ -9,10 +9,14 @@ RUN apt-get install -y mysql-server
 RUN pip3 install mysql-connector-python
 RUN pip3 install requests
 
-RUN mkdir -p /home/WebMonitoring
-ADD . /home/WebMonitoring
+COPY . /rafMetrics
+WORKDIR /rafMetrics
 
-WORKDIR /home/WebMonitoring
+RUN cp ./WebMonitoring/ResourceManager.py ResourceManager.py
 
 # Execute Resource management
 ENTRYPOINT ["python3", "ResourceManager.py"]
+
+
+# For development purpose only
+# ENTRYPOINT ["tail", "-f", "/dev/null"]

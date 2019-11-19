@@ -2,9 +2,9 @@ import time
 
 import mysql.connector
 
-from configs.constants import ResourceEntry, RequestTypes
-from configs.settings import SAMPLE_TIME
-from monitors.ResourceMonitor import ResourceMonitor
+from WebMonitoring.configs.constants import ResourceEntry, RequestTypes
+from WebMonitoring.configs.settings import SAMPLE_TIME
+from WebMonitoring.monitors.ResourceMonitor import ResourceMonitor
 
 
 class ResourceManager:

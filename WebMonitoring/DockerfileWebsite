@@ -10,12 +10,11 @@ RUN pip3 install mysql-connector-python
 RUN pip3 install requests
 RUN pip3 install arrow
 
-RUN mkdir -p /home/WebMonitoring
-ADD . /home/WebMonitoring
+COPY . /rafMetrics
+WORKDIR /rafMetrics
 
-WORKDIR /home/WebMonitoring
-
-RUN chmod u+x /home/WebMonitoring/WebsiteMonitorHelpers/entrypoint.sh
+RUN cp ./WebMonitoring/WebsiteManager.py WebsiteManager.py
+RUN chmod u+x ./WebMonitoring/WebsiteMonitorHelpers/entrypoint.sh
 
 # Execute Website management
 ENTRYPOINT ["python3", "WebsiteManager.py"]

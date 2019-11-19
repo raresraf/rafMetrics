@@ -3,10 +3,10 @@ import time
 
 import arrow
 
-from WebsiteMonitorHelpers.request_helpers import parse_request
-from clients.SpeedprofileClient import SpeedprofileClient
-from configs.constants import json_path
-from configs.settings import SHOW_VERBOSE_MESSAGE
+from WebMonitoring.WebsiteMonitorHelpers.request_helpers import parse_request
+from WebMonitoring.clients.SpeedprofileClient import SpeedprofileClient
+from WebMonitoring.configs.settings import SHOW_VERBOSE_MESSAGE, json_path
+
 """Run advanced monitoring on websites including total response time."""
 
 

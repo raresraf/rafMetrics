@@ -8,10 +8,10 @@ from flask import Flask
 from flask_cors import CORS
 import math
 
-from metrics_renderer import render_dict
-from time_metrics import get_results_resource_get_time
-from size_metrics import get_results_resource_get_size
-from efficiency_metrics import get_results_resource_get_efficiency
+from WebMonitoring.API.metrics_renderer import render_dict
+from WebMonitoring.API.time_metrics import get_results_resource_get_time
+from WebMonitoring.API.size_metrics import get_results_resource_get_size
+from WebMonitoring.API.efficiency_metrics import get_results_resource_get_efficiency
 
 app = Flask(__name__)
 CORS(app)

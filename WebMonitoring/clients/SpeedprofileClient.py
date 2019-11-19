@@ -2,8 +2,8 @@ import os
 import signal
 from contextlib import contextmanager
 
-from configs.constants import DockerResults
-from configs.settings import SPEEDPROFILE_LOCATION
+from WebMonitoring.configs.constants import DockerResults
+from WebMonitoring.configs.settings import SPEEDPROFILE_LOCATION
 import subprocess
 
 
