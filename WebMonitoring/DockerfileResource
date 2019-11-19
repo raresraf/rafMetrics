@@ -16,3 +16,7 @@ RUN cp ./WebMonitoring/ResourceManager.py ResourceManager.py
 
 # Execute Resource management
 ENTRYPOINT ["python3", "ResourceManager.py"]
+
+
+# For development purpose only
+# ENTRYPOINT ["tail", "-f", "/dev/null"]

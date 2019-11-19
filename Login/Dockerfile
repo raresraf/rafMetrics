@@ -14,7 +14,9 @@ RUN pip3 install flask-mysql
 RUN pip3 install flask-cors
 
 COPY . /rafMetrics
-WORKDIR /rafMetrics/Login
+WORKDIR /rafMetrics
+
+RUN cp ./Login/app.py app.py
 
 EXPOSE 5000:5000
 

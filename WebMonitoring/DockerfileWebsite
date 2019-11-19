@@ -11,7 +11,9 @@ RUN pip3 install requests
 RUN pip3 install arrow
 
 COPY . /rafMetrics
-WORKDIR /rafMetrics/WebMonitoring
+WORKDIR /rafMetrics
+
+RUN cp ./WebMonitoring/WebsiteManager.py WebsiteManager.py
 
 RUN chmod u+x /home/WebMonitoring/WebsiteMonitorHelpers/entrypoint.sh
 
