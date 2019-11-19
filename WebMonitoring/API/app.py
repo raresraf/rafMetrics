@@ -153,8 +153,11 @@ def render_dict(result_args_get, result_args_old_get, list_sample,
     }
 
 
-@app.route('/request_time/<resource_name>')
-def request_time(resource_name):
+def get_results_resource_get_time(resource_name):
+    result_args_get_time = []
+    result_args_old_get_time = []
+    list_sample = []
+
     try:
         conn = mysql.connect()
         cursor = conn.cursor()
@@ -209,22 +212,28 @@ def request_time(resource_name):
         samples = get_last7(resource_name)
         for sample in samples:
             list_sample.append(int(1000 * sample['ResponseTime'] + 1))
-
-        resp = jsonify([
-            render_dict(result_args_get_time, result_args_old_get_time,
-                        list_sample, "Request Time", "primary"),
-            render_dict(result_args_get_time, result_args_old_get_time,
-                        list_sample, "Response size", "warning"),
-            render_dict(result_args_get_time, result_args_old_get_time,
-                        list_sample, "Efficiency", "secondary")
-        ])
-        resp.status_code = 200
-        return resp
     except Exception as e:
         print(e)
     finally:
         cursor.close()
         conn.close()
+        return (result_args_get_time, result_args_old_get_time, list_sample)
+
+
+@app.route('/request_time/<resource_name>')
+def request_time(resource_name):
+    (result_args_get_time, result_args_old_get_time,
+     list_sample) = get_results_resource_get_time(resource_name)
+    resp = jsonify([
+        render_dict(result_args_get_time, result_args_old_get_time,
+                    list_sample, "Request Time", "primary"),
+        render_dict(result_args_get_time, result_args_old_get_time,
+                    list_sample, "Response size", "warning"),
+        render_dict(result_args_get_time, result_args_old_get_time,
+                    list_sample, "Efficiency", "secondary")
+    ])
+    resp.status_code = 200
+    return resp
 
 
 @app.errorhandler(404)
