@@ -8,16 +8,17 @@ RUN apt-get -y install \
     python3-dev \
     build-essential 
 
-WORKDIR /app
-
 RUN pip3 install pymysql
 RUN pip3 install flask
 RUN pip3 install flask-mysql
 RUN pip3 install flask-cors
 
-COPY app.py /app/app.py
+COPY ../../ /rafMetrics
+WORKDIR /rafMetrics/Login
 
 EXPOSE 5000:5000
 
 ENTRYPOINT ["python3", "app.py"]
-#ENTRYPOINT ["tail", "-f", "/dev/null"]
+
+# FOR DEBUGGING USE
+# ENTRYPOINT ["tail", "-f", "/dev/null"]
