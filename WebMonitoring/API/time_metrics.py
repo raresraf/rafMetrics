@@ -1,4 +1,23 @@
-def get_results_resource_get_time(resource_name):
+import pymysql
+
+
+def get_last7(mysql, resource_name):
+    try:
+        conn = mysql.connect()
+        cursor = conn.cursor(pymysql.cursors.DictCursor)
+        cursor.execute(
+            "select ResponseTime from PING where Resourceid = %s order by Timestamp desc limit 7;"
+            % (resource_name))
+        rows = cursor.fetchall()
+        return rows
+    except Exception as e:
+        print(e)
+    finally:
+        cursor.close()
+        conn.close()
+
+
+def get_results_resource_get_time(mysql, resource_name):
     result_args_get_time = []
     result_args_old_get_time = []
     list_sample = []
@@ -54,7 +73,7 @@ def get_results_resource_get_time(resource_name):
         result_args_old_get_time = cursor.fetchone()
 
         list_sample = []
-        samples = get_last7(resource_name)
+        samples = get_last7(mysql, resource_name)
         for sample in samples:
             list_sample.append(int(1000 * sample['ResponseTime'] + 1))
     except Exception as e:

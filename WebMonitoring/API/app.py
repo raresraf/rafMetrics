@@ -56,26 +56,10 @@ def available_resources(username):
         conn.close()
 
 
-def get_last7(resource_name):
-    try:
-        conn = mysql.connect()
-        cursor = conn.cursor(pymysql.cursors.DictCursor)
-        cursor.execute(
-            "select ResponseTime from PING where Resourceid = %s order by Timestamp desc limit 7;"
-            % (resource_name))
-        rows = cursor.fetchall()
-        return rows
-    except Exception as e:
-        print(e)
-    finally:
-        cursor.close()
-        conn.close()
-
-
 @app.route('/resources/metrics/<resource_name>')
 def resources_metrics(resource_name):
     (result_args_get_time, result_args_old_get_time,
-     list_sample) = get_results_resource_get_time(resource_name)
+     list_sample) = get_results_resource_get_time(mysql, resource_name)
     resp = jsonify([
         render_dict(result_args_get_time, result_args_old_get_time,
                     list_sample, "Request Time", "primary"),
