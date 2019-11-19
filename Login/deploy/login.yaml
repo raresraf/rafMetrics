@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: login
-          image: raresraf/login:20191114132458
+          image: raresraf/login:20191119140501
           #         env:
           #  - name: WERKZEUG_DEBUG_PIN
           #    value: "off"
