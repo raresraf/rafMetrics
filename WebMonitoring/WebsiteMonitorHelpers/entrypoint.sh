@@ -1,4 +1,4 @@
 #!/bin/bash
 
-mkdir -p output/
-python ./WebsiteMonitorHelpers/speedprofile.py -p output/ -b chrome -u "$@"
+mkdir -p ./output/
+python ./WebMonitoring/WebsiteMonitorHelpers/speedprofile.py -p ./output/ -b chrome -u "$@"

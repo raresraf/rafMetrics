@@ -2,10 +2,10 @@
 SHOW_VERBOSE_MESSAGE = False
 
 # Default speedprofile script location inside repo
-SPEEDPROFILE_LOCATION = './WebsiteMonitorHelpers/entrypoint.sh'
+SPEEDPROFILE_LOCATION = './WebMonitoring/WebsiteMonitorHelpers/entrypoint.sh' 
 
 # Define the sample time between two consecutive monitorings
 SAMPLE_TIME = 3600
 
 # JSON output location
-json_path = './WebMonitoring/WebsiteMonitorHelpers/output/har.json'
+json_path = './output/har.json'

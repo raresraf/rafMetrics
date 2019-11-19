@@ -17,8 +17,8 @@ RUN cp ./WebMonitoring/WebsiteManager.py WebsiteManager.py
 RUN chmod u+x ./WebMonitoring/WebsiteMonitorHelpers/entrypoint.sh
 
 # Execute Website management
-ENTRYPOINT ["python3", "WebsiteManager.py"]
+# ENTRYPOINT ["python3", "WebsiteManager.py"]
 
 # For development purpose only
-# ENTRYPOINT ["tail", "-f", "/dev/null"]
+ ENTRYPOINT ["tail", "-f", "/dev/null"]
 
