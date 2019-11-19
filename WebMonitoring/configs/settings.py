@@ -6,3 +6,6 @@ SPEEDPROFILE_LOCATION = './WebsiteMonitorHelpers/entrypoint.sh'
 
 # Define the sample time between two consecutive monitorings
 SAMPLE_TIME = 3600
+
+# JSON output location
+json_path = './WebMonitoring/WebsiteMonitorHelpers/output/har.json'

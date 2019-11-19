@@ -5,8 +5,8 @@ import arrow
 
 from WebMonitoring.WebsiteMonitorHelpers.request_helpers import parse_request
 from WebMonitoring.clients.SpeedprofileClient import SpeedprofileClient
-from WebMonitoring.configs.constants import json_path
-from WebMonitoring.configs.settings import SHOW_VERBOSE_MESSAGE
+from WebMonitoring.configs.settings import SHOW_VERBOSE_MESSAGE, json_path
+
 """Run advanced monitoring on websites including total response time."""
 
 
