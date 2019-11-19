@@ -10,7 +10,9 @@ RUN pip3 install mysql-connector-python
 RUN pip3 install requests
 
 COPY . /rafMetrics
-WORKDIR /rafMetrics/WebMonitoring
+WORKDIR /rafMetrics
+
+RUN cp ./WebMonitoring/ResourceManager.py ResourceManager.py
 
 # Execute Resource management
 ENTRYPOINT ["python3", "ResourceManager.py"]
