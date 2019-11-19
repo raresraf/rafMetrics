@@ -10,6 +10,7 @@ import math
 
 from metrics_renderer import render_dict
 from time_metrics import get_results_resource_get_time
+from size_metrics import get_results_resource_get_size
 
 app = Flask(__name__)
 CORS(app)
@@ -59,14 +60,16 @@ def available_resources(username):
 @app.route('/resources/metrics/<resource_name>')
 def resources_metrics(resource_name):
     (result_args_get_time, result_args_old_get_time,
-     list_sample) = get_results_resource_get_time(mysql, resource_name)
+     list_sample_time) = get_results_resource_get_time(mysql, resource_name)
+    (result_args_get_size, result_args_old_get_size,
+     list_sample_size) = get_results_resource_get_size(mysql, resource_name)
     resp = jsonify([
         render_dict(result_args_get_time, result_args_old_get_time,
-                    list_sample, "Request Time", "primary"),
+                    list_sample_time, "Request Time", "primary"),
+        render_dict(result_args_get_size, result_args_old_get_size,
+                    list_sample_size, "Response Size", "warning"),
         render_dict(result_args_get_time, result_args_old_get_time,
-                    list_sample, "Response size", "warning"),
-        render_dict(result_args_get_time, result_args_old_get_time,
-                    list_sample, "Efficiency", "secondary")
+                    list_sample_time, "Efficiency", "secondary")
     ])
     resp.status_code = 200
     return resp
