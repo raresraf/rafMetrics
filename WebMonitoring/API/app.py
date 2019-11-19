@@ -220,8 +220,8 @@ def get_results_resource_get_time(resource_name):
         return (result_args_get_time, result_args_old_get_time, list_sample)
 
 
-@app.route('/request_time/<resource_name>')
-def request_time(resource_name):
+@app.route('/resources/metrics/<resource_name>')
+def resources_metrics(resource_name):
     (result_args_get_time, result_args_old_get_time,
      list_sample) = get_results_resource_get_time(resource_name)
     resp = jsonify([
