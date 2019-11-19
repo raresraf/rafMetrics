@@ -61,7 +61,7 @@ function getAvailableResources() {
 
 function getRequestTime() {
   return new Promise((resolve, reject) => {
-    let availableResourcesUrl = "http://109.103.170.75:31002/request_time/1";
+    let availableResourcesUrl = "http://109.103.170.75:31002/resources/metrics/1";
     fetch(availableResourcesUrl)
         .then((response) => {
           return response.json();

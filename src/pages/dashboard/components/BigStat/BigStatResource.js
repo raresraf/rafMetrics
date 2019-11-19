@@ -75,12 +75,12 @@ export default function BigStatResource(props) {
             />
           </Grid>
           <Typography size="sm" color="text" colorBrightness="secondary">
-            Lowest response time
+            Lowest metric
           </Typography>
         </div>
         <div className={classes.statCell}>
           <Grid container alignItems="center">
-            <Typography variant="h6">{median[value].value}%</Typography>
+            <Typography variant="h6">{median[value].value}</Typography>
             <ArrowForwardIcon
               className={classnames(classes.profitArrow, {
                 [!lowest[value].profit]: classes.profitArrowDanger,
@@ -88,7 +88,7 @@ export default function BigStatResource(props) {
             />
           </Grid>
           <Typography size="sm" color="text" colorBrightness="secondary">
-             Median response time
+             Median metric
           </Typography>
         </div>
         <div className={classnames(classes.statCell, classes.borderRight)}>
@@ -103,7 +103,7 @@ export default function BigStatResource(props) {
             />
           </Grid>
           <Typography size="sm" color="text" colorBrightness="secondary">
-            Highest response time
+            Highest metric
           </Typography>
         </div>
       </div>
