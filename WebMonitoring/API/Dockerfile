@@ -8,14 +8,13 @@ RUN apt-get -y install \
     python3-dev \
     build-essential 
 
-WORKDIR /app
-
 RUN pip3 install pymysql
 RUN pip3 install flask
 RUN pip3 install flask-mysql
 RUN pip3 install flask-cors
 
-COPY . /app
+COPY . /rafMetrics
+WORKDIR /rafMetrics/WebMonitoring/API
 
 EXPOSE 5000:5000
 

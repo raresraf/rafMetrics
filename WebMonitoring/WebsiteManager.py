@@ -2,9 +2,9 @@ import time
 
 import mysql.connector
 
-from configs.constants import DockerResults
-from configs.settings import SAMPLE_TIME, SHOW_VERBOSE_MESSAGE
-from monitors.WebsiteMonitor import WebsiteMonitor
+from WebMonitoring.configs.constants import DockerResults
+from WebMonitoring.configs.settings import SAMPLE_TIME, SHOW_VERBOSE_MESSAGE
+from WebMonitoring.monitors.WebsiteMonitor import WebsiteMonitor
 
 
 class WebsiteManager:
