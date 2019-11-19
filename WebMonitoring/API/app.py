@@ -11,6 +11,7 @@ import math
 from metrics_renderer import render_dict
 from time_metrics import get_results_resource_get_time
 from size_metrics import get_results_resource_get_size
+from efficiency_metrics import get_results_resource_get_efficiency
 
 app = Flask(__name__)
 CORS(app)
@@ -63,13 +64,29 @@ def resources_metrics(resource_name):
      list_sample_time) = get_results_resource_get_time(mysql, resource_name)
     (result_args_get_size, result_args_old_get_size,
      list_sample_size) = get_results_resource_get_size(mysql, resource_name)
+    (result_args_get_efficiency, result_args_old_get_efficiency,
+     list_sample_efficiency) = get_results_resource_get_efficiency(
+         result_args_get_time, result_args_old_get_time, list_sample_time,
+         result_args_get_size, result_args_old_get_size, list_sample_size)
     resp = jsonify([
-        render_dict(result_args_get_time, result_args_old_get_time,
-                    list_sample_time, "Request Time", "primary"),
-        render_dict(result_args_get_size, result_args_old_get_size,
-                    list_sample_size, "Response Size", "warning"),
-        render_dict(result_args_get_time, result_args_old_get_time,
-                    list_sample_time, "Efficiency", "secondary")
+        render_dict(result_args_get_time,
+                    result_args_old_get_time,
+                    list_sample_time,
+                    "Request Time",
+                    "primary",
+                    roundDecimal=2),
+        render_dict(result_args_get_size,
+                    result_args_old_get_size,
+                    list_sample_size,
+                    "Response Size",
+                    "warning",
+                    roundDecimal=0),
+        render_dict(result_args_get_efficiency,
+                    result_args_old_get_efficiency,
+                    list_sample_efficiency,
+                    "Efficiency",
+                    "secondary",
+                    roundDecimal=0)
     ])
     resp.status_code = 200
     return resp
