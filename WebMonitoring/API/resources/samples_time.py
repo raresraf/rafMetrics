@@ -54,27 +54,22 @@ def resources_get_samples_time_daily(mysql, resource_name):
         result = []
         for i in range(len(rows) - 2):
             result.append({'custom_data': rows[i + 1]})
-        return rows
+        return result
     except Exception as e:
         print(e)
     finally:
         cursor.close()
         conn.close()
 
-    result = []
-    for i in range(24):
-        result.append({'custom_data': i})
-    return result
 
-
-def resources_get_samples_time_weekly(mysql):
+def resources_get_samples_time_weekly(mysql, resource_name):
     result = []
     for i in range(7):
         result.append({'custom_data': i})
     return result
 
 
-def resources_get_samples_time_monthly(mysql):
+def resources_get_samples_time_monthly(mysql, resource_name):
     result = []
     for i in range(30):
         result.append({'custom_data': i})

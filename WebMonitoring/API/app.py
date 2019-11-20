@@ -95,15 +95,15 @@ def resources_metrics(resource_name):
     return resp
 
 
-@app.route('/resources/samples/time/<period>')
-def resources_get_samples_time(period):
+@app.route('/resources/samples/time/<resource_id>/<period>')
+def resources_get_samples_time(resource_id, period):
     samples = {}
     if period.lower() == PERIOD.DAILY:
-        samples = resources_get_samples_time_daily(mysql)
+        samples = resources_get_samples_time_daily(mysql, resource_id)
     if period.lower() == PERIOD.WEEKLY:
-        samples = resources_get_samples_time_weekly(mysql)
+        samples = resources_get_samples_time_weekly(mysql, resource_id)
     if period.lower() == PERIOD.MONTHLY:
-        samples = resources_get_samples_time_monthly(mysql)
+        samples = resources_get_samples_time_monthly(mysql, resource_id)
 
     resp = jsonify(samples)
     resp.status_code = 200
