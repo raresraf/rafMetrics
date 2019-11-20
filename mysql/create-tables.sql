@@ -31,7 +31,6 @@ CREATE table PING (
 );
 
 
-
 CREATE table WEBSITES (
     Websiteid int NOT NULL AUTO_INCREMENT,
     Userid int NOT NULL,
@@ -53,7 +52,6 @@ CREATE table WEBSITES_METRICS (
 );
 
 
-
 CREATE table REQUESTS (
     Requestid int NOT NULL AUTO_INCREMENT,
     Metricid int NOT NULL,
@@ -67,7 +65,6 @@ CREATE table REQUESTS (
     PRIMARY KEY (Requestid),
     FOREIGN KEY (Metricid) REFERENCES WEBSITES_METRICS(Metricid)
 );
-
 
 
 CREATE table TIMINGS (
