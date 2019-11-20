@@ -49,11 +49,10 @@ def resources_get_samples_time_daily(mysql, resource_name):
                        "@_get_daily_samples_24, "
                        "@_get_daily_samples_25 ")
         result_args_get_time = cursor.fetchone()
-        rows = cursor.fetchall()
 
         result = []
-        for i in range(len(rows) - 2):
-            result.append({'custom_data': rows[i + 1]})
+        for i in range(len(result_args_get_time) - 2):
+            result.append({'custom_data': result_args_get_time[i + 1]})
         return result
     except Exception as e:
         print(e)
