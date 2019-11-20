@@ -9,8 +9,9 @@ from flask_cors import CORS
 from WebMonitoring.API.constants import PERIOD
 
 from WebMonitoring.API.resources.metrics_renderer import render_dict
-from WebMonitoring.API.resources.samples_time import (resources_get_samples_time_daily,
-    resources_get_samples_time_monthly, resources_get_samples_time_weekly)
+from WebMonitoring.API.resources.samples_time import (
+    resources_get_samples_time_daily, resources_get_samples_time_monthly,
+    resources_get_samples_time_weekly)
 from WebMonitoring.API.resources.time_metrics import get_results_resource_get_time
 from WebMonitoring.API.resources.size_metrics import get_results_resource_get_size
 from WebMonitoring.API.resources.efficiency_metrics import get_results_resource_get_efficiency
@@ -39,7 +40,7 @@ def available_resources(username):
         conn = mysql.connect()
         cursor = conn.cursor(pymysql.cursors.DictCursor)
         cursor.execute(
-            "select r.Resourceid id, r.ResourceName name, r.Command command, r.FirstAdded firstadded, resource_get_availability(r.Resourceid) status from RESOURCE r, USERS u where u.Userid = r.Userid AND u.Username='%s'"
+            "select r.Resourceid id ,r.Resourceid id_resource, r.ResourceName name, r.Command command, r.FirstAdded firstadded, resource_get_availability(r.Resourceid) status from RESOURCE r, USERS u where u.Userid = r.Userid AND u.Username='%s'"
             % (username))
         rows = cursor.fetchall()
 
@@ -92,6 +93,7 @@ def resources_metrics(resource_name):
     ])
     resp.status_code = 200
     return resp
+
 
 @app.route('/resources/samples/time/<period>')
 def resources_get_samples_time(period):
