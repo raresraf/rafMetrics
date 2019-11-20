@@ -30,12 +30,9 @@ import Widget from "../../components/Widget";
 import PageTitle from "../../components/PageTitle";
 import { Typography } from "../../components/Wrappers";
 import Dot from "../../components/Sidebar/components/Dot";
-import Table from "./components/Table/Table";
 import TableResource from "./components/Table/TableResource";
-import BigStat from "./components/BigStat/BigStat";
 import BigStatResource from "./components/BigStat/BigStatResource";
 
-const mainChartData = getMainChartData();
 const PieChartData = [
   { name: "Group A", value: 400, color: "primary" },
   { name: "Group B", value: 300, color: "secondary" },
@@ -75,34 +72,57 @@ function getRequestTime() {
   })
 }
 
+function getSamplesTime(period) {
+    return new Promise((resolve, reject) => {
+        let availableResourcesUrl = "http://109.103.170.75:31002/resources/samples/time/" + period;
+        fetch(availableResourcesUrl)
+            .then((response) => {
+                return response.json();
+            })
+            .then((jsonResponse) => {
+                resolve(jsonResponse);
+            })
+            .catch((err) => {
+                reject(err);
+            });
+    })
+}
+
 var getAvailableResourcesLoaded = false;
 var getRequestTimeLoaded = false;
+var getSamplesTimeLoaded = false;
 
 export default function DashboardResource(props) {
   var classes = useStyles();
   var theme = useTheme();
-  // local
+
+    // local
   const [tableResource, setTableResource] = useState(mock.tableResource);
   const [bigStatResource, setBigStatResource] = useState(mock.bigStatResource);
+  const [samplesTime, setSamplesTime] = useState(mock.samples_time);
 
   var [mainChartState, setMainChartState] = useState("monthly");
 
-  if(!getAvailableResourcesLoaded)
+  if(!getAvailableResourcesLoaded) {
+    getAvailableResourcesLoaded = true;
     getAvailableResources().then(res => {
       setTableResource(res);
-      getAvailableResourcesLoaded = true;
-      console.log(res);
-      console.log(mock.tableResource);
     });
+  }
 
-  if(!getRequestTimeLoaded)
+  if(!getRequestTimeLoaded){
+    getRequestTimeLoaded = true;
     getRequestTime().then(res => {
       setBigStatResource(res);
-      getRequestTimeLoaded = true;
-      console.log(res);
-      console.log(mock.bigStatResource);
     });
+  }
 
+  if(!getSamplesTimeLoaded) {
+    getSamplesTimeLoaded = true;
+    getSamplesTime(mainChartState).then(res => {
+      setSamplesTime(res);
+    });
+  }
 
 
     return (
@@ -131,31 +151,21 @@ export default function DashboardResource(props) {
                           color="text"
                           colorBrightness="secondary"
                       >
-                        Daily Line Chart
+                        Response Time
                       </Typography>
                       <div className={classes.mainChartHeaderLabels}>
                         <div className={classes.mainChartHeaderLabel}>
                           <Dot color="warning" />
                           <Typography className={classes.mainChartLegentElement}>
-                            Tablet
-                          </Typography>
-                        </div>
-                        <div className={classes.mainChartHeaderLabel}>
-                          <Dot color="primary" />
-                          <Typography className={classes.mainChartLegentElement}>
-                            Mobile
-                          </Typography>
-                        </div>
-                        <div className={classes.mainChartHeaderLabel}>
-                          <Dot color="primary" />
-                          <Typography className={classes.mainChartLegentElement}>
-                            Desktop
+                            Response Time
                           </Typography>
                         </div>
                       </div>
                       <Select
                           value={mainChartState}
-                          onChange={e => setMainChartState(e.target.value)}
+                          onChange={e => {
+                            setMainChartState(e.target.value);
+                            getSamplesTimeLoaded = false;}}
                           input={
                             <OutlinedInput
                                 labelWidth={0}
@@ -177,10 +187,9 @@ export default function DashboardResource(props) {
                 <ResponsiveContainer width="100%" minWidth={500} height={350}>
                   <ComposedChart
                       margin={{ top: 0, right: -15, left: -15, bottom: 0 }}
-                      data={mainChartData}
+                      data={samplesTime}
                   >
                     <YAxis
-                        ticks={[0, 2500, 5000, 7500]}
                         tick={{ fill: theme.palette.text.hint + "80", fontSize: 14 }}
                         stroke={theme.palette.text.hint + "80"}
                         tickLine={false}
@@ -193,22 +202,14 @@ export default function DashboardResource(props) {
                     />
                     <Area
                         type="natural"
-                        dataKey="desktop"
+                        dataKey="custom_data"
                         fill={theme.palette.background.light}
                         strokeWidth={0}
                         activeDot={false}
                     />
                     <Line
                         type="natural"
-                        dataKey="mobile"
-                        stroke={theme.palette.primary.main}
-                        strokeWidth={2}
-                        dot={false}
-                        activeDot={false}
-                    />
-                    <Line
-                        type="linear"
-                        dataKey="tablet"
+                        dataKey="custom_data"
                         stroke={theme.palette.warning.main}
                         strokeWidth={2}
                         dot={{
@@ -231,43 +232,4 @@ export default function DashboardResource(props) {
     );
 
 
-}
-
-// #######################################################################
-function getRandomData(length, min, max, multiplier = 10, maxDiff = 10) {
-  var array = new Array(length).fill();
-  let lastValue;
-
-  return array.map((item, index) => {
-    let randomValue = Math.floor(Math.random() * multiplier + 1);
-
-    while (
-        randomValue <= min ||
-        randomValue >= max ||
-        (lastValue && randomValue - lastValue > maxDiff)
-        ) {
-      randomValue = Math.floor(Math.random() * multiplier + 1);
-    }
-
-    lastValue = randomValue;
-
-    return { value: randomValue };
-  });
-}
-
-function getMainChartData() {
-  var resultArray = [];
-  var tablet = getRandomData(31, 3500, 6500, 7500, 1000);
-  var desktop = getRandomData(31, 1500, 7500, 7500, 1500);
-  var mobile = getRandomData(31, 1500, 7500, 7500, 1500);
-
-  for (let i = 0; i < tablet.length; i++) {
-    resultArray.push({
-      tablet: tablet[i].value,
-      desktop: desktop[i].value,
-      mobile: mobile[i].value,
-    });
-  }
-
-  return resultArray;
 }

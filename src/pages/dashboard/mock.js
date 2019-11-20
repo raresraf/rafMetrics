@@ -1,4 +1,97 @@
 export default {
+  samples_time:
+      [
+        {
+          "custom_data": 0
+        },
+        {
+          "custom_data": 1
+        },
+        {
+          "custom_data": 2
+        },
+        {
+          "custom_data": 3
+        },
+        {
+          "custom_data": 4
+        },
+        {
+          "custom_data": 5
+        },
+        {
+          "custom_data": 6
+        },
+        {
+          "custom_data": 7
+        },
+        {
+          "custom_data": 8
+        },
+        {
+          "custom_data": 9
+        },
+        {
+          "custom_data": 10
+        },
+        {
+          "custom_data": 11
+        },
+        {
+          "custom_data": 12
+        },
+        {
+          "custom_data": 13
+        },
+        {
+          "custom_data": 14
+        },
+        {
+          "custom_data": 15
+        },
+        {
+          "custom_data": 16
+        },
+        {
+          "custom_data": 17
+        },
+        {
+          "custom_data": 18
+        },
+        {
+          "custom_data": 19
+        },
+        {
+          "custom_data": 20
+        },
+        {
+          "custom_data": 21
+        },
+        {
+          "custom_data": 22
+        },
+        {
+          "custom_data": 23
+        },
+        {
+          "custom_data": 24
+        },
+        {
+          "custom_data": 25
+        },
+        {
+          "custom_data": 26
+        },
+        {
+          "custom_data": 27
+        },
+        {
+          "custom_data": 28
+        },
+        {
+          "custom_data": 29
+        }
+      ],
   tasks: [
     {
       id: 0,

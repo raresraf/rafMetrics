@@ -24,14 +24,17 @@ export default function TableComponentResource({ data }) {
     <Table className="mb-0">
       <TableHead>
         <TableRow>
-          {keys.map(key => (
-            <TableCell key={key}>{key}</TableCell>
-          ))}
+          <TableCell key={0}>{'ID'}</TableCell>
+          <TableCell key={1}>{'ResourceURL'}</TableCell>
+          <TableCell key={2}>{'Command'}</TableCell>
+          <TableCell key={3}>{'First Added'}</TableCell>
+          <TableCell key={4}>{'Status'}</TableCell>
         </TableRow>
       </TableHead>
       <TableBody>
-        {data.map(({ id, name, command, firstadded, status }) => (
+        {data.map(({ id, id_resource, name, command, firstadded, status }) => (
           <TableRow key={id}>
+            <TableCell>{id_resource}</TableCell>
             <TableCell className="pl-3 fw-normal">{name}</TableCell>
             <TableCell>{command}</TableCell>
             <TableCell>{firstadded}</TableCell>
