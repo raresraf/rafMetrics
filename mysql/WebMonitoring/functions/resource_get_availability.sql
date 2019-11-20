@@ -21,7 +21,3 @@ CREATE FUNCTION resource_get_availability(RID INT) RETURNS VARCHAR(20)
 
 delimiter ;
 
-
-select resource_get_availability(12) from dual;
-select resource_get_availability(15) from dual;
-
