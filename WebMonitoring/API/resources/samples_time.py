@@ -147,7 +147,7 @@ def resources_get_samples_time_monthly(mysql, resource_name):
         """
         args = [
             resource_name, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
         ]
 
         cursor.callproc('get_monthly_samples', args)
@@ -183,7 +183,8 @@ def resources_get_samples_time_monthly(mysql, resource_name):
                        "@_get_monthly_samples_28, "
                        "@_get_monthly_samples_29, "
                        "@_get_monthly_samples_30, "
-                       "@_get_monthly_samples_31")
+                       "@_get_monthly_samples_31, "
+                       "@_get_monthly_samples_32")
         result_args_get_time = cursor.fetchone()
 
         result = []

@@ -37,7 +37,7 @@ def generate_samples_queries(period):
             "    if EXISTS(SELECT ResponseTime FROM PING WHERE TIMESTAMP >= DATE_SUB(NOW(), INTERVAL %d %s) AND TIMESTAMP <= DATE_SUB(NOW(), INTERVAL %d %s) AND Resourceid = id)"
             % (COEF * (howmany - i), GOBACK, COEF * (howmany - 1 - i), GOBACK))
         print(
-            "        then SELECT ResponseTime INTO entry%d FROM PING WHERE TIMESTAMP >= DATE_SUB(NOW(), INTERVAL %d %s) AND TIMESTAMP <= DATE_SUB(NOW(), INTERVAL %d %s) AND Resourceid = id;"
+            "        then SELECT ResponseTime INTO entry%d FROM PING WHERE TIMESTAMP >= DATE_SUB(NOW(), INTERVAL %d %s) AND TIMESTAMP <= DATE_SUB(NOW(), INTERVAL %d %s) AND Resourceid = id limit 1;"
             % (i, COEF * (howmany - i), GOBACK, COEF *
                (howmany - 1 - i), GOBACK))
         print("        else SET entry%d := 0;" % i)
