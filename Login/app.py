@@ -1,15 +1,13 @@
 import pymysql
+from flask import Flask
 from flask import jsonify
-from flask import flash, request
+from flask import request
+from flask_cors import CORS
+from flaskext.mysql import MySQL
 from werkzeug import generate_password_hash, check_password_hash
 
-from flaskext.mysql import MySQL
-import os
-
-
-from flask import Flask
-from flask_cors import CORS
-
+from Login.settings import (MYSQL_DATABASE_USER, MYSQL_DATABASE_PASSWORD,
+                            MYSQL_DATABASE_DB, MYSQL_DATABASE_HOST)
 
 app = Flask(__name__)
 CORS(app)
@@ -17,16 +15,17 @@ CORS(app)
 mysql = MySQL()
 
 # MySQL configurations
-app.config['MYSQL_DATABASE_USER'] = 'root'
-app.config['MYSQL_DATABASE_PASSWORD'] = 'password'
-app.config['MYSQL_DATABASE_DB'] = 'WebMonitoring'
-app.config['MYSQL_DATABASE_HOST'] = '10.96.0.2'
+app.config['MYSQL_DATABASE_USER'] = MYSQL_DATABASE_USER
+app.config['MYSQL_DATABASE_PASSWORD'] = MYSQL_DATABASE_PASSWORD
+app.config['MYSQL_DATABASE_DB'] = MYSQL_DATABASE_DB
+app.config['MYSQL_DATABASE_HOST'] = MYSQL_DATABASE_HOST
 mysql.init_app(app)
 
 
 @app.route('/')
 def index():
     return "Hello, world!"
+
 
 @app.route('/add', methods=['POST'])
 def add_user():
@@ -43,7 +42,8 @@ def add_user():
             _hashed_password = generate_password_hash(_password)
             # save edits
             sql = "INSERT INTO USERS(LastName, FirstName, Username, Email, hashedpassword) VALUES(%s, %s, %s, %s, %s)"
-            data = (_last_name, _first_name, _username , _email, _hashed_password)
+            data = (_last_name, _first_name, _username, _email,
+                    _hashed_password)
             conn = mysql.connect()
             cursor = conn.cursor()
             cursor.execute(sql, data)
@@ -58,6 +58,7 @@ def add_user():
     finally:
         cursor.close()
         conn.close()
+
 
 @app.route('/users')
 def users():
@@ -74,6 +75,7 @@ def users():
     finally:
         cursor.close()
         conn.close()
+
 
 @app.route('/user/<id>')
 def user(id):
@@ -110,6 +112,7 @@ def auth_user(id, passwd):
     except Exception as e:
         print(e)
 
+
 @app.route('/update/<id>', methods=['POST'])
 def update_user(id):
     try:
@@ -119,12 +122,12 @@ def update_user(id):
         _email = _json['email']
         _password = _json['pwd']
         # validate the received values
-        if _last_name and _first_name  and _email and _password and request.method == 'POST':
+        if _last_name and _first_name and _email and _password and request.method == 'POST':
             #do not save password as a plain text
             _hashed_password = generate_password_hash(_password)
             # save edits
             sql = "UPDATE USERS SET LastName=%s, FirstName=%s, Email=%s, hashedpassword=%s WHERE Username=%s"
-            data = (_last_name ,_first_name, _email, _hashed_password, id)
+            data = (_last_name, _first_name, _email, _hashed_password, id)
             conn = mysql.connect()
             cursor = conn.cursor()
             cursor.execute(sql, data)
@@ -140,12 +143,13 @@ def update_user(id):
         cursor.close()
         conn.close()
 
+
 @app.route('/delete/<id>')
 def delete_user(id):
     try:
         conn = mysql.connect()
         cursor = conn.cursor()
-        cursor.execute("DELETE FROM USERS WHERE Username=%s", (id,))
+        cursor.execute("DELETE FROM USERS WHERE Username=%s", (id, ))
         conn.commit()
         resp = jsonify('User deleted successfully!')
         resp.status_code = 200
@@ -155,6 +159,7 @@ def delete_user(id):
     finally:
         cursor.close()
         conn.close()
+
 
 def get_userid(id):
     try:
@@ -233,6 +238,7 @@ def add_website():
         cursor.close()
         conn.close()
 
+
 @app.errorhandler(404)
 def not_found(error=None):
     message = {
@@ -247,4 +253,3 @@ def not_found(error=None):
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", debug=True)
-

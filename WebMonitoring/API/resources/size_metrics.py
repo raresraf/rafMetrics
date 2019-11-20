@@ -1,20 +1,4 @@
-import pymysql
-
-
-def get_last7_time(mysql, resource_name):
-    try:
-        conn = mysql.connect()
-        cursor = conn.cursor(pymysql.cursors.DictCursor)
-        cursor.execute(
-            "select ResponseSize from PING where Resourceid = %s order by Timestamp desc limit 7;"
-            % (resource_name))
-        rows = cursor.fetchall()
-        return rows
-    except Exception as e:
-        print(e)
-    finally:
-        cursor.close()
-        conn.close()
+from WebMonitoring.API.resources.last7 import get_last7_size
 
 
 def get_results_resource_get_size(mysql, resource_name):
@@ -73,7 +57,7 @@ def get_results_resource_get_size(mysql, resource_name):
         result_args_old_get_size = cursor.fetchone()
 
         list_sample = []
-        samples = get_last7_time(mysql, resource_name)
+        samples = get_last7_size(mysql, resource_name)
         for sample in samples:
             list_sample.append(sample['ResponseSize'])
     except Exception as e:

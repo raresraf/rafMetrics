@@ -1,10 +1,7 @@
-import os
-import signal
-from contextlib import contextmanager
+import subprocess
 
 from WebMonitoring.configs.constants import DockerResults
 from WebMonitoring.configs.settings import SPEEDPROFILE_LOCATION
-import subprocess
 
 
 class SpeedprofileClient():

@@ -1,20 +1,22 @@
 import pymysql
+from flask import Flask
 from flask import jsonify
 from flask import request
-
+from flask_cors import CORS
 from flaskext.mysql import MySQL
 
-from flask import Flask
-from flask_cors import CORS
 from WebMonitoring.API.constants import PERIOD
-
+from WebMonitoring.API.resources.efficiency_metrics import get_results_resource_get_efficiency
 from WebMonitoring.API.resources.metrics_renderer import render_dict
 from WebMonitoring.API.resources.samples_time import (
     resources_get_samples_time_daily, resources_get_samples_time_monthly,
     resources_get_samples_time_weekly)
-from WebMonitoring.API.resources.time_metrics import get_results_resource_get_time
 from WebMonitoring.API.resources.size_metrics import get_results_resource_get_size
-from WebMonitoring.API.resources.efficiency_metrics import get_results_resource_get_efficiency
+from WebMonitoring.API.resources.time_metrics import get_results_resource_get_time
+from WebMonitoring.API.settings import (MYSQL_DATABASE_HOST,
+                                        MYSQL_DATABASE_USER,
+                                        MYSQL_DATABASE_PASSWORD,
+                                        MYSQL_DATABASE_DB)
 
 app = Flask(__name__)
 CORS(app)
@@ -22,10 +24,10 @@ CORS(app)
 mysql = MySQL()
 
 # MySQL configurations
-app.config['MYSQL_DATABASE_USER'] = 'root'
-app.config['MYSQL_DATABASE_PASSWORD'] = 'password'
-app.config['MYSQL_DATABASE_DB'] = 'WebMonitoring'
-app.config['MYSQL_DATABASE_HOST'] = '10.96.0.2'
+app.config['MYSQL_DATABASE_USER'] = MYSQL_DATABASE_USER
+app.config['MYSQL_DATABASE_PASSWORD'] = MYSQL_DATABASE_PASSWORD
+app.config['MYSQL_DATABASE_DB'] = MYSQL_DATABASE_DB
+app.config['MYSQL_DATABASE_HOST'] = MYSQL_DATABASE_HOST
 mysql.init_app(app)
 
 

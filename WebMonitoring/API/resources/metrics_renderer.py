@@ -1,18 +1,5 @@
 # Less than implementation with None < Anything
-def lt_w_none(val1, val2):
-    if val1 == None:
-        return True
-    if val2 == None:
-        return True
-    return val1 > val2
-
-
-def get_percent_w_none(val1, val2):
-    if val1 == None:
-        return 100
-    if val2 == None:
-        return 0
-    return round(abs(val2 - val1) / val1, 2)
+from WebMonitoring.API.resources.helpers import lt_w_none, get_percent_w_none
 
 
 def render_dict(result_args_get,

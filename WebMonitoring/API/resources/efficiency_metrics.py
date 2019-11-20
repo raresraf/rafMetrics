@@ -1,16 +1,4 @@
-import pymysql
-
-
-def div_0(x, y):
-    if not y:
-        return 0
-    if not x:
-        return 0
-    xx = float(x)
-    yy = float(y)
-    if yy == 0:
-        return 987654321
-    return xx / yy
+from WebMonitoring.API.resources.helpers import div_0
 
 
 def get_results_resource_get_efficiency(result_args_get_time,
