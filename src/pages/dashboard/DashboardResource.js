@@ -74,7 +74,7 @@ function getRequestTime() {
 
 function getSamplesTime(period) {
     return new Promise((resolve, reject) => {
-        let availableResourcesUrl = "http://109.103.170.75:31002/resources/samples/time/" + period;
+        let availableResourcesUrl = "http://109.103.170.75:31002/resources/samples/time/1/" + period;
         fetch(availableResourcesUrl)
             .then((response) => {
                 return response.json();

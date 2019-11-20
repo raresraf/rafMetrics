@@ -356,6 +356,7 @@ export default {
   tableResource: [
     {
       id: 0,
+      resource_id: 1,
       name: "https://github.com/raresraf/rafMetrics",
       command: "GET",
       firstadded: "2019-11-07 08:46:20",
@@ -363,6 +364,7 @@ export default {
     },
     {
       id: 1,
+      resource_id: 2,
       name: "https://google.com",
       command: "GET",
       firstadded: "2019-11-07 08:46:20",
@@ -370,12 +372,14 @@ export default {
     },
     {
       id: 2,
+      resource_id: 3,
       name: "https://www.aliexpress.com/",
       command: "GET",
       firstadded: "2019-11-07 08:46:20",
       status: "Pending"
     },    {
       id: 3,
+      resource_id: 5,
       name: "https://www.amazon.com/",
       command: "GET",
       firstadded: "2019-11-07 08:46:20",
