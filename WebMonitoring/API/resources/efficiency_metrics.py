@@ -1,4 +1,4 @@
-from WebMonitoring.API.resources.helpers import div_0
+from WebMonitoring.API.resources.numerical_helpers import div_0
 
 
 def get_results_resource_get_efficiency(result_args_get_time,

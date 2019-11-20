@@ -1,5 +1,5 @@
 # Less than implementation with None < Anything
-from WebMonitoring.API.resources.helpers import lt_w_none, get_percent_w_none
+from WebMonitoring.API.resources.numerical_helpers import lt_w_none, get_percent_w_none
 
 
 def render_dict(result_args_get,
