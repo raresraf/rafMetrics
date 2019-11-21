@@ -66,15 +66,14 @@ async function loginUser(dispatch, login, password, history, setIsLoading, setEr
       })
       .then(function (jsonResponse) {
         authValid = jsonResponse['authenticated'];
-        console.log(jsonResponse['authenticated']);
-        console.log(authValid);
       });
 
 
-  console.log(!!login && !!password && authValid === true)
   if (!!login && !!password && authValid === true) {
     setTimeout(() => {
       localStorage.setItem("id_token", "1");
+      localStorage.setItem("username", login);
+      console.log(localStorage.getItem("username"));
       dispatch({type: "LOGIN_SUCCESS"});
       setError(null);
       setIsLoading(false);

@@ -13,9 +13,9 @@ import Dot from "../../components/Sidebar/components/Dot";
 import TableResource from "./components/Table/TableResource";
 import BigStatResource from "./components/BigStat/BigStatResource";
 
-function getAvailableResources() {
+function getAvailableResources(username) {
   return new Promise((resolve, reject) => {
-    let availableResourcesUrl = "http://109.103.170.75:31002/availableResources/TestUsername";
+    let availableResourcesUrl = "http://109.103.170.75:31002/availableResources/" + username;
     fetch(availableResourcesUrl)
         .then((response) => {
           return response.json();
@@ -82,13 +82,17 @@ export default function DashboardResource(props) {
   var [mainChartState, setMainChartState] = useState("daily");
 
   let resourceid;
+
   if(!!localStorage.getItem("isDefinedResourceid"))
     resourceid = (localStorage.getItem("resourceid"));
   else resourceid = 1;
 
+  let username = localStorage.getItem('username');
+
+
   if(!getAvailableResourcesLoaded) {
     getAvailableResourcesLoaded = true;
-    getAvailableResources().then(res => {
+    getAvailableResources(username).then(res => {
       setTableResource(res);
     });
   }
