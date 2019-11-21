@@ -1,13 +1,20 @@
+import calendar
+import datetime
+
 from WebMonitoring.API.constants import PERIOD
 
 
-def get_timestamp_query(period, i, hour):
+def get_timestamp_query(period, i, start):
     if period.lower() == PERIOD.DAILY:
-        return (hour + i) % 24
+        return (start + i) % 24
     if period.lower() == PERIOD.WEEKLY:
-        return (hour + 6 * i) % 24
+        return (start + 6 * i) % 24
     if period.lower() == PERIOD.MONTHLY:
-        return (hour + i) % 31
+        today = datetime.date.today()
+        first = today.replace(day=1)
+        lastMonth = first - datetime.timedelta(days=1)
+        modulo = calendar.monthrange(lastMonth.year, lastMonth.month)[1]
+        return (start + i) % modulo + 1
 
 
 def resources_get_samples_time_daily(mysql, resource_name):
@@ -141,7 +148,7 @@ def resources_get_samples_time_weekly(mysql, resource_name):
                 'custom_data':
                 result_args_get_time[i + 1],
                 'label':
-                get_timestamp_query(PERIOD.DAILY, i, result_args_get_time[-1])
+                get_timestamp_query(PERIOD.WEEKLY, i, result_args_get_time[-1])
             })
         return result
     except Exception as e:
