@@ -34,6 +34,9 @@ function Login(props) {
   var [activeTabId, setActiveTabId] = useState(0);
   var [nameValue, setNameValue] = useState("");
   var [loginValue, setLoginValue] = useState("");
+  var [firstNameValue, setFirstNameValue] = useState("");
+  var [lastNameValue, setLastNameValue] = useState("");
+  var [emailValue, setEmailValue] = useState("");
   var [passwordValue, setPasswordValue] = useState("");
 
   return (
@@ -148,20 +151,51 @@ function Login(props) {
                 </Typography>
               </Fade>
               <TextField
-                id="name"
+                id="FirstName"
                 InputProps={{
                   classes: {
                     underline: classes.textFieldUnderline,
                     input: classes.textField,
                   },
                 }}
-                value={nameValue}
+                value={firstNameValue}
                 onChange={e => setNameValue(e.target.value)}
                 margin="normal"
-                placeholder="Full Name"
-                type="username"
+                placeholder="First Name"
+                type="FirstName"
                 fullWidth
               />
+              <TextField
+                id="LastName"
+                InputProps={{
+                  classes: {
+                    underline: classes.textFieldUnderline,
+                    input: classes.textField,
+                  },
+                }}
+                value={lastNameValue}
+                onChange={e => setNameValue(e.target.value)}
+                margin="normal"
+                placeholder="Last Name"
+                type="LastName"
+                fullWidth
+              />
+              <TextField
+                id="Email"
+                InputProps={{
+                  classes: {
+                    underline: classes.textFieldUnderline,
+                    input: classes.textField,
+                  },
+                }}
+                value={emailValue}
+                onChange={e => setNameValue(e.target.value)}
+                margin="normal"
+                placeholder="email@example.com"
+                type="Email"
+                fullWidth
+              />
+
               <TextField
                 id="username"
                 InputProps={{

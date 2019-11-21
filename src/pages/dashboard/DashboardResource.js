@@ -33,13 +33,6 @@ import Dot from "../../components/Sidebar/components/Dot";
 import TableResource from "./components/Table/TableResource";
 import BigStatResource from "./components/BigStat/BigStatResource";
 
-const PieChartData = [
-  { name: "Group A", value: 400, color: "primary" },
-  { name: "Group B", value: 300, color: "secondary" },
-  { name: "Group C", value: 300, color: "warning" },
-  { name: "Group D", value: 200, color: "success" },
-];
-
 function getAvailableResources() {
   return new Promise((resolve, reject) => {
     let availableResourcesUrl = "http://109.103.170.75:31002/availableResources/TestUsername";
@@ -56,9 +49,9 @@ function getAvailableResources() {
   })
 }
 
-function getRequestTime() {
+function getRequestTime(resourceid) {
   return new Promise((resolve, reject) => {
-    let availableResourcesUrl = "http://109.103.170.75:31002/resources/metrics/1";
+    let availableResourcesUrl = "http://109.103.170.75:31002/resources/metrics/" + resourceid;
     fetch(availableResourcesUrl)
         .then((response) => {
           return response.json();
@@ -72,9 +65,9 @@ function getRequestTime() {
   })
 }
 
-function getSamplesTime(period) {
+function getSamplesTime(period, resourceid) {
     return new Promise((resolve, reject) => {
-        let availableResourcesUrl = "http://109.103.170.75:31002/resources/samples/time/1/" + period;
+        let availableResourcesUrl = "http://109.103.170.75:31002/resources/samples/time/" + resourceid + '/' + period;
         fetch(availableResourcesUrl)
             .then((response) => {
                 return response.json();
@@ -93,6 +86,9 @@ var getRequestTimeLoaded = false;
 var getSamplesTimeLoaded = false;
 
 export default function DashboardResource(props) {
+
+  let resourceid = 1;
+
   var classes = useStyles();
   var theme = useTheme();
 
@@ -112,14 +108,14 @@ export default function DashboardResource(props) {
 
   if(!getRequestTimeLoaded){
     getRequestTimeLoaded = true;
-    getRequestTime().then(res => {
+    getRequestTime(resourceid).then(res => {
       setBigStatResource(res);
     });
   }
 
   if(!getSamplesTimeLoaded) {
     getSamplesTimeLoaded = true;
-    getSamplesTime(mainChartState).then(res => {
+    getSamplesTime(mainChartState, resourceid).then(res => {
       setSamplesTime(res);
     });
   }
@@ -195,7 +191,7 @@ export default function DashboardResource(props) {
                         tickLine={false}
                     />
                     <XAxis
-                        tickFormatter={i => i + 1}
+                        tickFormatter={i => samplesTime[i]['label']}
                         tick={{ fill: theme.palette.text.hint + "80", fontSize: 14 }}
                         stroke={theme.palette.text.hint + "80"}
                         tickLine={false}

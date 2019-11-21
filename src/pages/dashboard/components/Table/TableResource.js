@@ -16,9 +16,13 @@ const states = {
   unavailable: "secondary",
 };
 
+
+
 export default function TableComponentResource({ data }) {
   var keys = Object.keys(data[0]).map(i => i.toUpperCase());
   keys.shift(); // delete "id" key
+
+  let resourceid = 1;
 
   return (
     <Table className="mb-0">
@@ -44,6 +48,7 @@ export default function TableComponentResource({ data }) {
                 size="small"
                 className="px-2"
                 variant="contained"
+                onClick={(e) => resourceid = id_resource}
               >
                 {status}
               </Button>
