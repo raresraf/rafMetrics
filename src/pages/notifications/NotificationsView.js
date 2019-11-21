@@ -1,17 +1,17 @@
 import React from 'react';
-import { Grid, withStyles } from '@material-ui/core';
-import { Close as CloseIcon } from '@material-ui/icons';
+import {Grid, withStyles} from '@material-ui/core';
+import {Close as CloseIcon} from '@material-ui/icons';
 import classnames from 'classnames';
-import { ToastContainer } from 'react-toastify';
+import {ToastContainer} from 'react-toastify';
 import SyntaxHighlighter from 'react-syntax-highlighter';
-import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import {docco} from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import tinycolor from 'tinycolor2';
 import 'react-toastify/dist/ReactToastify.css';
 
 import Widget from '../../components/Widget';
 import PageTitle from '../../components/PageTitle';
 import NotificationCustomComponent from '../../components/Notification';
-import { Typography, Button } from '../../components/Wrappers';
+import {Button, Typography} from '../../components/Wrappers';
 
 const CloseButton = ({ closeToast, className }) => (
   <CloseIcon

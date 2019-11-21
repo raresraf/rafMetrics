@@ -1,13 +1,7 @@
 import React from "react";
 import classnames from "classnames";
-import {
-  Paper,
-  IconButton,
-  Menu,
-  MenuItem,
-  withStyles
-} from "@material-ui/core";
-import { MoreVert as MoreIcon } from "@material-ui/icons";
+import {IconButton, Menu, MenuItem, Paper, withStyles} from "@material-ui/core";
+import {MoreVert as MoreIcon} from "@material-ui/icons";
 import Typography from "@material-ui/core/es/Typography/Typography";
 
 const Widget = ({

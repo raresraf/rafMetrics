@@ -1,39 +1,24 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
+import {AppBar, Fab, IconButton, InputBase, Menu, MenuItem, Toolbar,} from "@material-ui/core";
 import {
-  AppBar,
-  Toolbar,
-  IconButton,
-  InputBase,
-  Menu,
-  MenuItem,
-  Fab,
-} from "@material-ui/core";
-import {
-  Menu as MenuIcon,
+  ArrowBack as ArrowBackIcon,
   MailOutline as MailIcon,
+  Menu as MenuIcon,
   NotificationsNone as NotificationsIcon,
   Person as AccountIcon,
   Search as SearchIcon,
   Send as SendIcon,
-  ArrowBack as ArrowBackIcon,
 } from "@material-ui/icons";
 import classNames from "classnames";
-
 // styles
 import useStyles from "./styles";
-
 // components
-import { Badge, Typography } from "../Wrappers/Wrappers";
+import {Badge, Typography} from "../Wrappers/Wrappers";
 import Notification from "../Notification/Notification";
 import UserAvatar from "../UserAvatar/UserAvatar";
-
 // context
-import {
-  useLayoutState,
-  useLayoutDispatch,
-  toggleSidebar,
-} from "../../context/LayoutContext";
-import { useUserDispatch, signOut } from "../../context/UserContext";
+import {toggleSidebar, useLayoutDispatch, useLayoutState,} from "../../context/LayoutContext";
+import {signOut, useUserDispatch} from "../../context/UserContext";
 
 const messages = [
   {

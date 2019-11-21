@@ -1,20 +1,10 @@
-import React, { useState } from "react";
-import {
-  Typography,
-  Grid,
-  Tabs,
-  Tab,
-  Paper,
-} from "@material-ui/core";
+import React, {useState} from "react";
+import {Grid, Paper, Tab, Tabs, Typography,} from "@material-ui/core";
 import * as Icons from "@material-ui/icons";
-
 // styles
 import useStyles from "./styles";
-
 // components
 import PageTitle from "../../components/PageTitle/PageTitle";
-
-
 // icons sets
 import "font-awesome/css/font-awesome.min.css";
 

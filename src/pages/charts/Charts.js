@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import { Grid } from "@material-ui/core";
-import { useTheme } from "@material-ui/styles";
+import React, {useState} from "react";
+import {Grid} from "@material-ui/core";
+import {useTheme} from "@material-ui/styles";
 import {
   CartesianGrid,
   Legend,
@@ -14,7 +14,6 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
-
 // components
 import Widget from "../../components/Widget/Widget";
 import ApexLineChart from "./components/ApexLineChart";

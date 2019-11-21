@@ -1,34 +1,26 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
+import {Grid, LinearProgress, MenuItem, OutlinedInput, Select,} from "@material-ui/core";
+import {useTheme} from "@material-ui/styles";
 import {
-  Grid,
-  LinearProgress,
-  Select,
-  OutlinedInput,
-  MenuItem,
-} from "@material-ui/core";
-import { useTheme } from "@material-ui/styles";
-import {
-  ResponsiveContainer,
-  ComposedChart,
-  AreaChart,
-  LineChart,
-  Line,
   Area,
-  PieChart,
-  Pie,
+  AreaChart,
   Cell,
-  YAxis,
+  ComposedChart,
+  Line,
+  LineChart,
+  Pie,
+  PieChart,
+  ResponsiveContainer,
   XAxis,
+  YAxis,
 } from "recharts";
-
 // styles
 import useStyles from "./styles";
-
 // components
 import mock from "./mock";
 import Widget from "../../components/Widget";
 import PageTitle from "../../components/PageTitle";
-import { Typography } from "../../components/Wrappers";
+import {Typography} from "../../components/Wrappers";
 import Dot from "../../components/Sidebar/components/Dot";
 import Table from "./components/Table/Table";
 import BigStat from "./components/BigStat/BigStat";

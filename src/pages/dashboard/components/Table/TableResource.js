@@ -1,14 +1,7 @@
 import React from "react";
-import {
-  Table,
-  TableRow,
-  TableHead,
-  TableBody,
-  TableCell,
-} from "@material-ui/core";
-
+import {Table, TableBody, TableCell, TableHead, TableRow,} from "@material-ui/core";
 // components
-import { Button } from "../../../../components/Wrappers";
+import {Button} from "../../../../components/Wrappers";
 
 const states = {
   working: "success",
@@ -17,12 +10,15 @@ const states = {
 };
 
 
+function refreshPage(){
+  window.location.reload();
+}
 
 export default function TableComponentResource({ data }) {
+
   var keys = Object.keys(data[0]).map(i => i.toUpperCase());
   keys.shift(); // delete "id" key
 
-  let resourceid = 1;
 
   return (
     <Table className="mb-0">
@@ -48,7 +44,7 @@ export default function TableComponentResource({ data }) {
                 size="small"
                 className="px-2"
                 variant="contained"
-                onClick={(e) => resourceid = id_resource}
+                onClick={(e) =>{localStorage.setItem("isDefinedResourceid", true); localStorage.setItem("resourceid", id_resource); refreshPage();}}
               >
                 {status}
               </Button>

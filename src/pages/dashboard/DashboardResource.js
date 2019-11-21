@@ -1,34 +1,14 @@
-import React, { useState } from "react";
-import {
-  Grid,
-  LinearProgress,
-  Select,
-  OutlinedInput,
-  MenuItem,
-} from "@material-ui/core";
-import { useTheme } from "@material-ui/styles";
-import {
-  ResponsiveContainer,
-  ComposedChart,
-  AreaChart,
-  LineChart,
-  Line,
-  Area,
-  PieChart,
-  Pie,
-  Cell,
-  YAxis,
-  XAxis,
-} from "recharts";
-
+import React, {useState} from "react";
+import {Grid, MenuItem, OutlinedInput, Select,} from "@material-ui/core";
+import {useTheme} from "@material-ui/styles";
+import {Area, ComposedChart, Line, ResponsiveContainer, XAxis, YAxis,} from "recharts";
 // styles
 import useStyles from "./styles";
-
 // components
 import mock from "./mock";
 import Widget from "../../components/Widget";
 import PageTitle from "../../components/PageTitle";
-import { Typography } from "../../components/Wrappers";
+import {Typography} from "../../components/Wrappers";
 import Dot from "../../components/Sidebar/components/Dot";
 import TableResource from "./components/Table/TableResource";
 import BigStatResource from "./components/BigStat/BigStatResource";
@@ -81,23 +61,30 @@ function getSamplesTime(period, resourceid) {
     })
 }
 
+
 var getAvailableResourcesLoaded = false;
 var getRequestTimeLoaded = false;
 var getSamplesTimeLoaded = false;
 
+
+
 export default function DashboardResource(props) {
 
-  let resourceid = 1;
 
   var classes = useStyles();
   var theme = useTheme();
 
-    // local
+  // local
   const [tableResource, setTableResource] = useState(mock.tableResource);
   const [bigStatResource, setBigStatResource] = useState(mock.bigStatResource);
   const [samplesTime, setSamplesTime] = useState(mock.samples_time);
 
-  var [mainChartState, setMainChartState] = useState("monthly");
+  var [mainChartState, setMainChartState] = useState("daily");
+
+  let resourceid;
+  if(!!localStorage.getItem("isDefinedResourceid"))
+    resourceid = (localStorage.getItem("resourceid"));
+  else resourceid = 1;
 
   if(!getAvailableResourcesLoaded) {
     getAvailableResourcesLoaded = true;
@@ -123,7 +110,8 @@ export default function DashboardResource(props) {
 
     return (
         <>
-          <PageTitle title="Dashboard Resources" button="See all resources" />
+          <PageTitle title="Dashboard Resources" button="See all resources"
+          />
           <Grid container spacing={4}>
             <Grid item xs={12}>
               <Widget
@@ -131,8 +119,9 @@ export default function DashboardResource(props) {
                   upperTitle
                   noBodyPadding
                   bodyClass={classes.tableWidget}
+
               >
-                <TableResource data={tableResource} />
+                <TableResource data={tableResource}/>
               </Widget>
             </Grid>
 

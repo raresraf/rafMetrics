@@ -1,97 +1,103 @@
 export default {
   samples_time:
-      [
-        {
-          "custom_data": 0
-        },
-        {
-          "custom_data": 1
-        },
-        {
-          "custom_data": 2
-        },
-        {
-          "custom_data": 3
-        },
-        {
-          "custom_data": 4
-        },
-        {
-          "custom_data": 5
-        },
-        {
-          "custom_data": 6
-        },
-        {
-          "custom_data": 7
-        },
-        {
-          "custom_data": 8
-        },
-        {
-          "custom_data": 9
-        },
-        {
-          "custom_data": 10
-        },
-        {
-          "custom_data": 11
-        },
-        {
-          "custom_data": 12
-        },
-        {
-          "custom_data": 13
-        },
-        {
-          "custom_data": 14
-        },
-        {
-          "custom_data": 15
-        },
-        {
-          "custom_data": 16
-        },
-        {
-          "custom_data": 17
-        },
-        {
-          "custom_data": 18
-        },
-        {
-          "custom_data": 19
-        },
-        {
-          "custom_data": 20
-        },
-        {
-          "custom_data": 21
-        },
-        {
-          "custom_data": 22
-        },
-        {
-          "custom_data": 23
-        },
-        {
-          "custom_data": 24
-        },
-        {
-          "custom_data": 25
-        },
-        {
-          "custom_data": 26
-        },
-        {
-          "custom_data": 27
-        },
-        {
-          "custom_data": 28
-        },
-        {
-          "custom_data": 29
-        }
-      ],
+    [
+      {
+        "custom_data": 0.9448909759521484,
+        "label": 12
+      },
+      {
+        "custom_data": 0.7286670207977295,
+        "label": 13
+      },
+      {
+        "custom_data": 1.3207800388336182,
+        "label": 14
+      },
+      {
+        "custom_data": 1.0319509506225586,
+        "label": 15
+      },
+      {
+        "custom_data": 0.9170349836349487,
+        "label": 16
+      },
+      {
+        "custom_data": 0.93299400806427,
+        "label": 17
+      },
+      {
+        "custom_data": 0.6229060292243958,
+        "label": 18
+      },
+      {
+        "custom_data": 0.5726969838142395,
+        "label": 19
+      },
+      {
+        "custom_data": 0.6090959906578064,
+        "label": 20
+      },
+      {
+        "custom_data": 0.6300489902496338,
+        "label": 21
+      },
+      {
+        "custom_data": 0,
+        "label": 22
+      },
+      {
+        "custom_data": 0,
+        "label": 23
+      },
+      {
+        "custom_data": 0,
+        "label": 0
+      },
+      {
+        "custom_data": 0,
+        "label": 1
+      },
+      {
+        "custom_data": 0,
+        "label": 2
+      },
+      {
+        "custom_data": 0,
+        "label": 3
+      },
+      {
+        "custom_data": 0,
+        "label": 4
+      },
+      {
+        "custom_data": 0,
+        "label": 5
+      },
+      {
+        "custom_data": 0,
+        "label": 6
+      },
+      {
+        "custom_data": 0,
+        "label": 7
+      },
+      {
+        "custom_data": 0.8018800020217896,
+        "label": 8
+      },
+      {
+        "custom_data": 1.026350975036621,
+        "label": 9
+      },
+      {
+        "custom_data": 0.9282580018043518,
+        "label": 10
+      },
+      {
+        "custom_data": 0.5712950229644775,
+        "label": 11
+      }
+    ],
   tasks: [
     {
       id: 0,

@@ -1,19 +1,15 @@
 import React from 'react';
+import {Drawer, IconButton, List, withStyles} from "@material-ui/core";
 import {
-  Drawer,
-  IconButton,
-  List,
-  withStyles } from "@material-ui/core";
-import {
-  Home as HomeIcon,
-  NotificationsNone as NotificationsIcon,
-  FormatSize as TypographyIcon,
-  FilterNone as UIElementsIcon,
-  BorderAll as TableIcon,
-  QuestionAnswer as SupportIcon,
-  LibraryBooks as LibraryIcon,
-  HelpOutline as FAQIcon,
   ArrowBack as ArrowBackIcon,
+  BorderAll as TableIcon,
+  FilterNone as UIElementsIcon,
+  FormatSize as TypographyIcon,
+  HelpOutline as FAQIcon,
+  Home as HomeIcon,
+  LibraryBooks as LibraryIcon,
+  NotificationsNone as NotificationsIcon,
+  QuestionAnswer as SupportIcon,
 } from "@material-ui/icons";
 import classNames from 'classnames';
 

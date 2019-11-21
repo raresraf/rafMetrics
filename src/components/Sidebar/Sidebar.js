@@ -1,34 +1,27 @@
-import React, { useState, useEffect } from "react";
-import { Drawer, IconButton, List } from "@material-ui/core";
+import React, {useEffect, useState} from "react";
+import {Drawer, IconButton, List} from "@material-ui/core";
 import {
-  Home as HomeIcon,
-  NotificationsNone as NotificationsIcon,
-  FormatSize as TypographyIcon,
-  FilterNone as UIElementsIcon,
-  Web as WebMonitoringIcon,
-  BorderAll as TableIcon,
-  QuestionAnswer as SupportIcon,
-  LibraryBooks as LibraryIcon,
-  HelpOutline as FAQIcon,
   ArrowBack as ArrowBackIcon,
+  BorderAll as TableIcon,
+  FilterNone as UIElementsIcon,
+  FormatSize as TypographyIcon,
+  HelpOutline as FAQIcon,
+  Home as HomeIcon,
+  LibraryBooks as LibraryIcon,
+  NotificationsNone as NotificationsIcon,
+  QuestionAnswer as SupportIcon,
+  Web as WebMonitoringIcon,
 } from "@material-ui/icons";
-import { useTheme } from "@material-ui/styles";
-import { withRouter } from "react-router-dom";
+import {useTheme} from "@material-ui/styles";
+import {withRouter} from "react-router-dom";
 import classNames from "classnames";
-
 // styles
 import useStyles from "./styles";
-
 // components
 import SidebarLink from "./components/SidebarLink/SidebarLink";
 import Dot from "./components/Dot";
-
 // context
-import {
-  useLayoutState,
-  useLayoutDispatch,
-  toggleSidebar,
-} from "../../context/LayoutContext";
+import {toggleSidebar, useLayoutDispatch, useLayoutState,} from "../../context/LayoutContext";
 
 const structure = [
   { id: 0, label: "Dashboard", link: "/app/dashboard", icon: <HomeIcon /> },

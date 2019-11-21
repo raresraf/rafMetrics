@@ -1,14 +1,7 @@
-import React, { useState } from "react";
-import {
-  Paper,
-  IconButton,
-  Menu,
-  MenuItem,
-  Typography,
-} from "@material-ui/core";
-import { MoreVert as MoreIcon } from "@material-ui/icons";
+import React, {useState} from "react";
+import {IconButton, Menu, MenuItem, Paper, Typography,} from "@material-ui/core";
+import {MoreVert as MoreIcon} from "@material-ui/icons";
 import classnames from "classnames";
-
 // styles
 import useStyles from "./styles";
 

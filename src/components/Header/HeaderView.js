@@ -1,27 +1,18 @@
 import React from "react";
+import {AppBar, Fab, IconButton, InputBase, Menu, MenuItem, Toolbar, withStyles} from "@material-ui/core";
 import {
-  AppBar,
-  Toolbar,
-  IconButton,
-  InputBase,
-  Menu,
-  MenuItem,
-  Fab,
-  withStyles
-} from "@material-ui/core";
-import {
-  Menu as MenuIcon,
+  ArrowBack as ArrowBackIcon,
   MailOutline as MailIcon,
+  Menu as MenuIcon,
   NotificationsNone as NotificationsIcon,
   Person as AccountIcon,
   Search as SearchIcon,
-  Send as SendIcon,
-  ArrowBack as ArrowBackIcon
+  Send as SendIcon
 } from "@material-ui/icons";
-import { fade } from "@material-ui/core/styles/colorManipulator";
+import {fade} from "@material-ui/core/styles/colorManipulator";
 import classNames from "classnames";
 
-import { Badge, Typography } from "../Wrappers";
+import {Badge, Typography} from "../Wrappers";
 import Notification from "../Notification";
 import UserAvatar from "../UserAvatar";
 

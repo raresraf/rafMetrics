@@ -1,29 +1,27 @@
 import React from "react";
-import { Button } from "@material-ui/core";
+import {Button} from "@material-ui/core";
 import {
-  NotificationsNone as NotificationsIcon,
-  ThumbUp as ThumbUpIcon,
-  ShoppingCart as ShoppingCartIcon,
-  LocalOffer as TicketIcon,
-  BusinessCenter as DeliveredIcon,
-  SmsFailed as FeedbackIcon,
-  DiscFull as DiscIcon,
-  Email as MessageIcon,
-  Report as ReportIcon,
-  Error as DefenceIcon,
   AccountBox as CustomerIcon,
+  BusinessCenter as DeliveredIcon,
+  DiscFull as DiscIcon,
   Done as ShippedIcon,
+  Email as MessageIcon,
+  Error as DefenceIcon,
+  LocalOffer as TicketIcon,
+  NotificationsNone as NotificationsIcon,
   Publish as UploadIcon,
+  Report as ReportIcon,
+  ShoppingCart as ShoppingCartIcon,
+  SmsFailed as FeedbackIcon,
+  ThumbUp as ThumbUpIcon,
 } from "@material-ui/icons";
-import { useTheme } from "@material-ui/styles";
+import {useTheme} from "@material-ui/styles";
 import classnames from "classnames";
 import tinycolor from "tinycolor2";
-
 // styles
 import useStyles from "./styles";
-
 // components
-import { Typography } from "../Wrappers";
+import {Typography} from "../Wrappers";
 
 const typesIcons = {
   "e-commerce": <ShoppingCartIcon />,

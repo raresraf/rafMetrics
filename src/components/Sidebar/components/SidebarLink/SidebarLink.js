@@ -1,20 +1,10 @@
-import React, { useState } from "react";
-import {
-  Collapse,
-  Divider,
-  List,
-  ListItem,
-  ListItemIcon,
-  ListItemText,
-  Typography,
-} from "@material-ui/core";
-import { Inbox as InboxIcon } from "@material-ui/icons";
-import { Link } from "react-router-dom";
+import React, {useState} from "react";
+import {Collapse, Divider, List, ListItem, ListItemIcon, ListItemText, Typography,} from "@material-ui/core";
+import {Inbox as InboxIcon} from "@material-ui/icons";
+import {Link} from "react-router-dom";
 import classnames from "classnames";
-
 // styles
 import useStyles from "./styles";
-
 // components
 import Dot from "../Dot";
 
