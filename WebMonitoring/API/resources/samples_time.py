@@ -1,3 +1,15 @@
+from WebMonitoring.API.constants import PERIOD
+
+
+def get_timestamp_query(period, i, hour):
+    if period.lower() == PERIOD.DAILY:
+        return (hour + i) % 24
+    if period.lower() == PERIOD.WEEKLY:
+        return (hour + 6 * i) % 24
+    if period.lower() == PERIOD.MONTHLY:
+        return (hour + i) % 31
+
+
 def resources_get_samples_time_daily(mysql, resource_name):
     try:
         conn = mysql.connect()
@@ -52,7 +64,13 @@ def resources_get_samples_time_daily(mysql, resource_name):
 
         result = []
         for i in range(len(result_args_get_time) - 2):
-            result.append({'custom_data': result_args_get_time[i + 1]})
+            result.append({
+                'custom_data':
+                result_args_get_time[i + 1],
+                'label':
+                get_timestamp_query(PERIOD.DAILY, i, result_args_get_time[-1])
+            })
+
         return result
     except Exception as e:
         print(e)
@@ -119,7 +137,12 @@ def resources_get_samples_time_weekly(mysql, resource_name):
 
         result = []
         for i in range(len(result_args_get_time) - 2):
-            result.append({'custom_data': result_args_get_time[i + 1]})
+            result.append({
+                'custom_data':
+                result_args_get_time[i + 1],
+                'label':
+                get_timestamp_query(PERIOD.DAILY, i, result_args_get_time[-1])
+            })
         return result
     except Exception as e:
         print(e)
@@ -189,7 +212,13 @@ def resources_get_samples_time_monthly(mysql, resource_name):
 
         result = []
         for i in range(len(result_args_get_time) - 2):
-            result.append({'custom_data': result_args_get_time[i + 1]})
+            result.append({
+                'custom_data':
+                result_args_get_time[i + 1],
+                'label':
+                get_timestamp_query(PERIOD.MONTHLY, i,
+                                    result_args_get_time[-1])
+            })
         return result
     except Exception as e:
         print(e)
