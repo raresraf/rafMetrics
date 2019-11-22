@@ -12,11 +12,9 @@ RUN pip3 install requests
 COPY . /rafMetrics
 WORKDIR /rafMetrics
 
-RUN cp ./WebMonitoring/ResourceManager.py ResourceManager.py
-
 # Execute Resource management
-ENTRYPOINT ["python3", "ResourceManager.py"]
-
+ENV PYTHONPATH="/rafMetrics"
+ENTRYPOINT ["python3", "./WebMonitoring/ResourceManager.py"]
 
 # For development purpose only
 # ENTRYPOINT ["tail", "-f", "/dev/null"]

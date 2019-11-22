@@ -22,5 +22,5 @@ EXPOSE 5000:5000
 ENV PYTHONPATH="/rafMetrics"
 ENTRYPOINT ["python3", "./WebMonitoring/API/app.py"]
 
-# For development porpose
+# For development purpose only
 # ENTRYPOINT ["tail", "-f", "/dev/null"]

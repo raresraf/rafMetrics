@@ -16,11 +16,11 @@ RUN pip3 install flask-cors
 COPY . /rafMetrics
 WORKDIR /rafMetrics
 
-RUN cp ./Login/app.py app.py
-
 EXPOSE 5000:5000
 
-ENTRYPOINT ["python3", "app.py"]
+ENV PYTHONPATH="/rafMetrics"
+ENTRYPOINT ["python3", "./Login/app.py"]
 
-# FOR DEBUGGING USE
+# For development purpose only
 # ENTRYPOINT ["tail", "-f", "/dev/null"]
+

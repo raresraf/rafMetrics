@@ -13,11 +13,11 @@ RUN pip3 install arrow
 COPY . /rafMetrics
 WORKDIR /rafMetrics
 
-RUN cp ./WebMonitoring/WebsiteManager.py WebsiteManager.py
 RUN chmod u+x ./WebMonitoring/WebsiteMonitorHelpers/entrypoint.sh
 
 # Execute Website management
-ENTRYPOINT ["python3", "WebsiteManager.py"]
+ENV PYTHONPATH="/rafMetrics"
+ENTRYPOINT ["python3", "./WebMonitoring/WebsiteManager.py"]
 
 # For development purpose only
 # ENTRYPOINT ["tail", "-f", "/dev/null"]
