@@ -6,12 +6,12 @@ var UserDispatchContext = React.createContext();
 function userReducer(state, action) {
   switch (action.type) {
     case "LOGIN_SUCCESS":
-      return { ...state, isAuthenticated: true };
+      return { ...state, isAuthenticated: true, username: localStorage.getItem("username")};
     case "SIGN_OUT_SUCCESS":
-      return { ...state, isAuthenticated: false };
+      return { ...state, isAuthenticated: false, username: localStorage.getItem("username") };
     case "LOGIN_FAILURE":
       // TODO(RaresF): Show LOGIN ERROR MESSAGE
-      return { ...state, isAuthenticated: false };
+      return { ...state, isAuthenticated: false, username: localStorage.getItem("username") };
     default: {
       throw new Error(`Unhandled action type: ${action.type}`);
     }
@@ -21,6 +21,7 @@ function userReducer(state, action) {
 function UserProvider({ children }) {
   var [state, dispatch] = React.useReducer(userReducer, {
     isAuthenticated: !!localStorage.getItem("id_token"),
+    username: localStorage.getItem("username"),
   });
 
   return (
@@ -73,7 +74,6 @@ async function loginUser(dispatch, login, password, history, setIsLoading, setEr
     setTimeout(() => {
       localStorage.setItem("id_token", "1");
       localStorage.setItem("username", login);
-      console.log(localStorage.getItem("username"));
       dispatch({type: "LOGIN_SUCCESS"});
       setError(null);
       setIsLoading(false);

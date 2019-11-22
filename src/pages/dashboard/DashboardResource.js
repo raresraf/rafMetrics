@@ -12,6 +12,8 @@ import {Typography} from "../../components/Wrappers";
 import Dot from "../../components/Sidebar/components/Dot";
 import TableResource from "./components/Table/TableResource";
 import BigStatResource from "./components/BigStat/BigStatResource";
+import {useUserState} from "../../context/UserContext";
+import {useResourceState} from "../../context/ResourceContext";
 
 function getAvailableResources(username) {
   return new Promise((resolve, reject) => {
@@ -61,12 +63,11 @@ function getSamplesTime(period, resourceid) {
     })
 }
 
-
-var getAvailableResourcesLoaded = false;
-var getRequestTimeLoaded = false;
-var getSamplesTimeLoaded = false;
-
-
+function refresh_DashboardResource(setAvailableResourcesLoaded, setRequestTimeLoaded, setSamplesTimeLoaded){
+  setAvailableResourcesLoaded(false);
+  setRequestTimeLoaded(false);
+  setSamplesTimeLoaded(false);
+}
 
 export default function DashboardResource(props) {
 
@@ -81,31 +82,31 @@ export default function DashboardResource(props) {
 
   var [mainChartState, setMainChartState] = useState("daily");
 
-  let resourceid;
+  const [getAvailableResourcesLoaded, setAvailableResourcesLoaded] = useState(false);
+  const [getRequestTimeLoaded, setRequestTimeLoaded] = useState(false);
+  const [getSamplesTimeLoaded, setSamplesTimeLoaded] = useState(false);
 
-  if(!!localStorage.getItem("isDefinedResourceid"))
-    resourceid = (localStorage.getItem("resourceid"));
-  else resourceid = 1;
+  var { username } = useUserState();
 
-  let username = localStorage.getItem('username');
-
+  var { resourceid } = useResourceState();
+  console.log(useResourceState());
 
   if(!getAvailableResourcesLoaded) {
-    getAvailableResourcesLoaded = true;
+    setAvailableResourcesLoaded(true);
     getAvailableResources(username).then(res => {
       setTableResource(res);
     });
   }
 
   if(!getRequestTimeLoaded){
-    getRequestTimeLoaded = true;
+    setRequestTimeLoaded(true);
     getRequestTime(resourceid).then(res => {
       setBigStatResource(res);
     });
   }
 
   if(!getSamplesTimeLoaded) {
-    getSamplesTimeLoaded = true;
+    setSamplesTimeLoaded(true);
     getSamplesTime(mainChartState, resourceid).then(res => {
       setSamplesTime(res);
     });
@@ -154,7 +155,7 @@ export default function DashboardResource(props) {
                           value={mainChartState}
                           onChange={e => {
                             setMainChartState(e.target.value);
-                            getSamplesTimeLoaded = false;}}
+                            refresh_DashboardResource(setAvailableResourcesLoaded, setRequestTimeLoaded, setSamplesTimeLoaded);}}
                           input={
                             <OutlinedInput
                                 labelWidth={0}

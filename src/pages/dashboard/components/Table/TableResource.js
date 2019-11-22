@@ -2,6 +2,7 @@ import React from "react";
 import {Table, TableBody, TableCell, TableHead, TableRow,} from "@material-ui/core";
 // components
 import {Button} from "../../../../components/Wrappers";
+import {updateResource, useResourceDispatch} from "../../../../context/ResourceContext";
 
 const states = {
   working: "success",
@@ -10,15 +11,12 @@ const states = {
 };
 
 
-function refreshPage(){
-  window.location.reload();
-}
+export default function TableComponentResource({ data }, method) {
 
-export default function TableComponentResource({ data }) {
+  var resourceDispatch = useResourceDispatch();
 
   var keys = Object.keys(data[0]).map(i => i.toUpperCase());
   keys.shift(); // delete "id" key
-
 
   return (
     <Table className="mb-0">
@@ -44,7 +42,8 @@ export default function TableComponentResource({ data }) {
                 size="small"
                 className="px-2"
                 variant="contained"
-                onClick={(e) =>{localStorage.setItem("isDefinedResourceid", true); localStorage.setItem("resourceid", id_resource); refreshPage();}}
+                onClick={(e) =>{
+                  updateResource(id_resource, resourceDispatch);}}
               >
                 {status}
               </Button>
