@@ -1,7 +1,7 @@
 import React, {useState} from "react";
-import {Grid, MenuItem, OutlinedInput, Select,} from "@material-ui/core";
+import {Grid, LinearProgress, MenuItem, OutlinedInput, Select,} from "@material-ui/core";
 import {useTheme} from "@material-ui/styles";
-import {Area, ComposedChart, Line, ResponsiveContainer, XAxis, YAxis,} from "recharts";
+import {Area, AreaChart, ComposedChart, Line, LineChart, ResponsiveContainer, XAxis, YAxis,} from "recharts";
 // styles
 import useStyles from "./styles";
 // components
@@ -115,7 +115,8 @@ export default function DashboardResource(props) {
 
     return (
         <>
-          <PageTitle title="Dashboard Resources" button="See all resources"
+
+            <PageTitle title="Dashboard Resources" button="See all resources"
           />
           <Grid container spacing={4}>
             <Grid item xs={12}>
@@ -124,7 +125,6 @@ export default function DashboardResource(props) {
                   upperTitle
                   noBodyPadding
                   bodyClass={classes.tableWidget}
-
               >
                 <TableResource data={tableResource}/>
               </Widget>
