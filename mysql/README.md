@@ -3,7 +3,7 @@ Follow the following steps to setup the DB
 ## MySQL docker image
 [mysql:5.6](https://hub.docker.com/_/mysql)
 ## MySQL deployment in Kubernetes
-[Deployment config file](../mysql/deploy/mysql-deployment.yaml)
+[Deployment config file](../kubernetes_config/database/mysql-deployment.yaml)
 
 ## MySQL init
 ### Create tables
