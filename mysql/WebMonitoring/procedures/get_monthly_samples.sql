@@ -33,10 +33,10 @@ CREATE PROCEDURE get_monthly_samples (
     OUT entry28 FLOAT,
     OUT entry29 FLOAT,
     OUT entry30 FLOAT,
-    OUT start_hour FLOAT
+    OUT start_day FLOAT
  )
 BEGIN
-    select HOUR(now()) INTO start_hour;
+    select DAY(now()) INTO start_day;
     if EXISTS(SELECT ResponseTime FROM PING WHERE TIMESTAMP >= DATE_SUB(NOW(), INTERVAL 31 DAY) AND TIMESTAMP <= DATE_SUB(NOW(), INTERVAL 30 DAY) AND Resourceid = id)
         then SELECT ResponseTime INTO entry0 FROM PING WHERE TIMESTAMP >= DATE_SUB(NOW(), INTERVAL 31 DAY) AND TIMESTAMP <= DATE_SUB(NOW(), INTERVAL 30 DAY) AND Resourceid = id limit 1;
         else SET entry0 := 0;

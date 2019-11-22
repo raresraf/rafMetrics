@@ -13,12 +13,14 @@ RUN pip3 install flask
 RUN pip3 install flask-mysql
 RUN pip3 install flask-cors
 
+
 COPY . /rafMetrics
 WORKDIR /rafMetrics
 
-RUN cp ./WebMonitoring/API/app.py app.py
-
 EXPOSE 5000:5000
 
-ENTRYPOINT ["python3", "app.py"]
-#ENTRYPOINT ["tail", "-f", "/dev/null"]
+ENV PYTHONPATH="/rafMetrics"
+ENTRYPOINT ["python3", "./WebMonitoring/API/app.py"]
+
+# For development porpose
+# ENTRYPOINT ["tail", "-f", "/dev/null"]
