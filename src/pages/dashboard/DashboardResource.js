@@ -87,9 +87,7 @@ export default function DashboardResource(props) {
   const [getSamplesTimeLoaded, setSamplesTimeLoaded] = useState(false);
 
   var { username } = useUserState();
-
   var { resourceid } = useResourceState();
-  console.log(useResourceState());
 
   if(!getAvailableResourcesLoaded) {
     setAvailableResourcesLoaded(true);
