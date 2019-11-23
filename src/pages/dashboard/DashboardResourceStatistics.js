@@ -36,7 +36,7 @@ export default function DashboardResourceStatistics(props) {
   var theme = useTheme();
 
   const [DashboardResourceStatistics, setDashboardResourceStatistics] = useState(mock.resourcestatistics);
-  const [getDashboardResourceStatisticsLoaded, setDashboardResourceStatisticsLoaded] = useState(true);
+  const [getDashboardResourceStatisticsLoaded, setDashboardResourceStatisticsLoaded] = useState(false );
 
   if(!getDashboardResourceStatisticsLoaded){
     setDashboardResourceStatisticsLoaded(true);
@@ -178,8 +178,8 @@ export default function DashboardResourceStatistics(props) {
                 className={classes.card}
               >
                 <div className={classes.visitsNumberContainer}>
-                  <Typography size="xl" weight="medium">
-                    <Typography size="md">{DashboardResourceStatistics['size_all']}</Typography>
+                  <Typography size="xl" component={'span'} weight="medium">
+                    <Typography size="md">Bytes: {DashboardResourceStatistics['size_all']}</Typography>
                   </Typography>
                   <LineChart
                     width={55}
@@ -231,8 +231,8 @@ export default function DashboardResourceStatistics(props) {
                 className={classes.card}
               >
                 <div className={classes.visitsNumberContainer}>
-                  <Typography size="xl" weight="medium">
-                    <Typography size="md">{DashboardResourceStatistics['size_all']}</Typography>
+                  <Typography size="xl" component={'span'} weight="medium">
+                    <Typography size="md">Bytes: {DashboardResourceStatistics['size_all']}</Typography>
                   </Typography>
                   <LineChart
                     width={55}
