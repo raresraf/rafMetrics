@@ -121,13 +121,13 @@ def resources_statistics():
             "select resource_statistic_requests() requests_all, resource_statistic_time() time_all from DUAL"
         )
         fetch = cursor.fetchone()
-        (requests_all, time_all) = fetch
+        (requests_all) = fetch
 
         statistics = {
             'requests_24': 12345,
             'requests_all': requests_all['requests_all'],
             'time_24': 567,
-            'time_all': time_all['time_all'],
+            'time_all': requests_all['time_all'],
             'average_time_24': 1.23,
             'average_time_all': 1.2345,
             'sd_time_24': 1,
