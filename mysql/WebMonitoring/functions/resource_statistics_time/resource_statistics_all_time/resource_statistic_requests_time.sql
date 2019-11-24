@@ -1,8 +1,8 @@
 delimiter //
 
-DROP FUNCTION IF EXISTS resource_statistic_requests;
+DROP FUNCTION IF EXISTS resource_statistic_requests_time;
 
-CREATE FUNCTION resource_statistic_requests() RETURNS INT
+CREATE FUNCTION resource_statistic_requests_time() RETURNS INT
 BEGIN
     DECLARE COUNT_REQUESTS INT;
     select count(*) total into COUNT_REQUESTS from PING;

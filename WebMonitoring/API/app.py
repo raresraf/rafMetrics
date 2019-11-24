@@ -118,20 +118,20 @@ def resources_statistics():
         conn = mysql.connect()
         cursor_all = conn.cursor(pymysql.cursors.DictCursor)
         cursor_all.execute(
-            "select resource_statistic_requests() requests_all, "
+            "select resource_statistic_requests_time() requests_all, "
             "resource_statistic_time() time_all, "
             "resource_statistic_average_time() average_time_all, "
-            "resource_statistic_standard_deviation() standard_deviation_all "
+            "resource_statistic_standard_deviation_time() standard_deviation_all "
             "from DUAL")
         fetch = cursor_all.fetchone()
         (requests_all) = fetch
 
         cursor_24 = conn.cursor(pymysql.cursors.DictCursor)
         cursor_24.execute(
-            "select resource_statistic_requests_24() requests_24, "
+            "select resource_statistic_requests_time_24() requests_24, "
             "resource_statistic_time_24() time_24, "
             "resource_statistic_average_time_24() average_time_24, "
-            "resource_statistic_standard_deviation_24() standard_deviation_24 "
+            "resource_statistic_standard_deviation_time_24() standard_deviation_24 "
             "from DUAL")
         fetch = cursor_24.fetchone()
         (requests_24) = fetch
