@@ -120,8 +120,8 @@ def resources_statistics():
         cursor.execute(
             "select resource_statistic_requests() requests_all, "
             "resource_statistic_time() time_all, "
-            "resource_statistic_average_time() average_time_all "
-            "resource_statistic_standard_deviation() standard_deviation_all"
+            "resource_statistic_average_time() average_time_all, "
+            "resource_statistic_standard_deviation() standard_deviation_all "
             "from DUAL")
         fetch = cursor.fetchone()
         (requests_all) = fetch
