@@ -179,7 +179,7 @@ export default function DashboardResourceStatistics(props) {
               >
                 <div className={classes.visitsNumberContainer}>
                   <Typography size="xl" component={'span'} weight="medium">
-                    <Typography size="md">Bytes: {DashboardResourceStatistics['size_all']}</Typography>
+                    <Typography size="md">Bytes: {DashboardResourceStatistics['size_24']}</Typography>
                   </Typography>
                   <LineChart
                     width={55}
@@ -212,7 +212,7 @@ export default function DashboardResourceStatistics(props) {
                     <Typography color="text" colorBrightness="secondary">
                       Average Size
                     </Typography>
-                    <Typography size="md">{DashboardResourceStatistics['size_24']}</Typography>
+                    <Typography size="md">{DashboardResourceStatistics['average_size_24']}</Typography>
                   </Grid>
                   <Grid item>
                     <Typography color="text" colorBrightness="secondary">
@@ -265,7 +265,7 @@ export default function DashboardResourceStatistics(props) {
                     <Typography color="text" colorBrightness="secondary">
                       Average Size
                     </Typography>
-                    <Typography size="md">{DashboardResourceStatistics['average_time_all']}</Typography>
+                    <Typography size="md">{DashboardResourceStatistics['average_size_all']}</Typography>
                   </Grid>
                   <Grid item>
                     <Typography color="text" colorBrightness="secondary">
