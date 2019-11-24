@@ -160,20 +160,22 @@ def resources_statistics():
         (requests_24_size) = fetch
 
         statistics = {
-            'requests_24': requests_24['requests_24'],
-            'requests_all': requests_all['requests_all'],
-            'time_24': requests_24['time_24'],
-            'time_all': requests_all['time_all'],
-            'average_time_24': requests_24['average_time_24'],
-            'average_time_all': requests_all['average_time_all'],
-            'sd_time_24': requests_24['standard_deviation_24'],
-            'sd_time_all': requests_all['standard_deviation_all'],
-            'size_24': requests_24_size['size_24'],
-            'size_all': requests_all_size['size_all'],
-            'average_size_24': requests_24_size['average_size_24'],
-            'average_size_all': requests_all_size['average_size_all'],
-            'sd_size_24': requests_24_size['standard_deviation_24'],
-            'sd_size_all': requests_all_size['standard_deviation_all']
+            'requests_24': round(requests_24['requests_24'], 2),
+            'requests_all': round(requests_all['requests_all'], 2),
+            'time_24': round(requests_24['time_24'], 2),
+            'time_all': round(requests_all['time_all'], 2),
+            'average_time_24': round(requests_24['average_time_24'], 2),
+            'average_time_all': round(requests_all['average_time_all'], 2),
+            'sd_time_24': round(requests_24['standard_deviation_24'], 2),
+            'sd_time_all': round(requests_all['standard_deviation_all'], 2),
+            'size_24': round(requests_24_size['size_24'], 2),
+            'size_all': round(requests_all_size['size_all'], 2),
+            'average_size_24': round(requests_24_size['average_size_24'], 2),
+            'average_size_all': round(requests_all_size['average_size_all'],
+                                      2),
+            'sd_size_24': round(requests_24_size['standard_deviation_24'], 2),
+            'sd_size_all': round(requests_all_size['standard_deviation_all'],
+                                 2)
         }
         resp = jsonify(statistics)
         resp.status_code = 200
