@@ -118,7 +118,7 @@ def resources_statistics():
         conn = mysql.connect()
         cursor = conn.cursor(pymysql.cursors.DictCursor)
         cursor.execute(
-            "select resource_statistic_requests() requests_all, resource_statistic_time() time_all from PING"
+            "select resource_statistic_requests() requests_all, resource_statistic_time() time_all from DUAL"
         )
         fetch = cursor.fetchone()
         (requests_all, time_all) = fetch

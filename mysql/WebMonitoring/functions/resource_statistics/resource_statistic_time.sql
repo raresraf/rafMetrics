@@ -1,10 +1,10 @@
 delimiter //
 
-DROP FUNCTION IF EXISTS resource_statistic_requests;
+DROP FUNCTION IF EXISTS resource_statistic_time;
 
-CREATE FUNCTION resource_statistic_requests() RETURNS INT
+CREATE FUNCTION resource_statistic_time() RETURNS FLOAT
 BEGIN
-    DECLARE TIME_ALL INT;
+    DECLARE TIME_ALL FLOAT;
     select SUM(ResponseTime) into TIME_ALL from PING;
     RETURN TIME_ALL;
 END//
