@@ -117,14 +117,17 @@ def resources_statistics():
     try:
         conn = mysql.connect()
         cursor = conn.cursor(pymysql.cursors.DictCursor)
-        cursor.execute("select resource_statistic_requests() requests")
+        cursor.execute(
+            "select resource_statistic_requests() requests_all, resource_statistic_time() time_all from PING"
+        )
         fetch = cursor.fetchone()
-        (requests) = fetch
+        (requests_all, time_all) = fetch
 
         statistics = {
-            'requests': requests["requests"],
+            'requests_24': 12345,
+            'requests_all': requests_all['requests_all'],
             'time_24': 567,
-            'time_all': 890,
+            'time_all': time_all['time_all'],
             'average_time_24': 1.23,
             'average_time_all': 1.2345,
             'sd_time_24': 1,
