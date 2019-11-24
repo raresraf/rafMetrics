@@ -92,7 +92,7 @@ export default function DashboardResourceStatistics(props) {
                     <Typography color="text" colorBrightness="secondary">
                       Requests
                     </Typography>
-                    <Typography size="md">{DashboardResourceStatistics['requests']}</Typography>
+                    <Typography size="md">{DashboardResourceStatistics['requests_24']}</Typography>
                   </Grid>
                   <Grid item>
                     <Typography color="text" colorBrightness="secondary">
@@ -151,7 +151,7 @@ export default function DashboardResourceStatistics(props) {
                     <Typography color="text" colorBrightness="secondary">
                       Requests
                     </Typography>
-                    <Typography size="md">{DashboardResourceStatistics['requests']}</Typography>
+                    <Typography size="md">{DashboardResourceStatistics['requests_all']}</Typography>
                   </Grid>
                   <Grid item>
                     <Typography color="text" colorBrightness="secondary">

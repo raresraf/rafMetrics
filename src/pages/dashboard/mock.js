@@ -393,7 +393,8 @@ export default {
     },
   ],
   resourcestatistics : {
-    requests: 12345,
+    requests_24: 12345,
+    requests_all: 123450,
     time_24: 567,
     time_all: 890,
     average_time_24: 1.23,
