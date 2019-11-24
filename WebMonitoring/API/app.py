@@ -116,25 +116,48 @@ def resources_get_samples_time(resource_id, period):
 def resources_statistics():
     try:
         conn = mysql.connect()
-        cursor_all = conn.cursor(pymysql.cursors.DictCursor)
-        cursor_all.execute(
+
+        # Time
+        cursor_all_time = conn.cursor(pymysql.cursors.DictCursor)
+        cursor_all_time.execute(
             "select resource_statistic_requests_time() requests_all, "
             "resource_statistic_time() time_all, "
             "resource_statistic_average_time() average_time_all, "
             "resource_statistic_standard_deviation_time() standard_deviation_all "
             "from DUAL")
-        fetch = cursor_all.fetchone()
+        fetch = cursor_all_time.fetchone()
         (requests_all) = fetch
 
-        cursor_24 = conn.cursor(pymysql.cursors.DictCursor)
-        cursor_24.execute(
+        cursor_24_time = conn.cursor(pymysql.cursors.DictCursor)
+        cursor_24_time.execute(
             "select resource_statistic_requests_time_24() requests_24, "
             "resource_statistic_time_24() time_24, "
             "resource_statistic_average_time_24() average_time_24, "
             "resource_statistic_standard_deviation_time_24() standard_deviation_24 "
             "from DUAL")
-        fetch = cursor_24.fetchone()
+        fetch = cursor_24_time.fetchone()
         (requests_24) = fetch
+
+        # Size
+        cursor_all_size = conn.cursor(pymysql.cursors.DictCursor)
+        cursor_all_size.execute(
+            "select "
+            "resource_statistic_size() size_all, "
+            "resource_statistic_average_size() average_size_all, "
+            "resource_statistic_standard_deviation_size() standard_deviation_all "
+            "from DUAL")
+        fetch = cursor_all_size.fetchone()
+        (requests_all_size) = fetch
+
+        cursor_24_size = conn.cursor(pymysql.cursors.DictCursor)
+        cursor_24_size.execute(
+            "select "
+            "resource_statistic_size_24() size_24, "
+            "resource_statistic_average_size_24() average_size_24, "
+            "resource_statistic_standard_deviation_size_24() standard_deviation_24 "
+            "from DUAL")
+        fetch = cursor_24_size.fetchone()
+        (requests_24_size) = fetch
 
         statistics = {
             'requests_24': requests_24['requests_24'],
@@ -145,12 +168,12 @@ def resources_statistics():
             'average_time_all': requests_all['average_time_all'],
             'sd_time_24': requests_24['standard_deviation_24'],
             'sd_time_all': requests_all['standard_deviation_all'],
-            'size_24': 111567,
-            'size_all': 111890,
-            'average_size_24': 1111.23,
-            'average_size_all': 1111.2345,
-            'sd_size_24': 1111,
-            'sd_size_all': 1112
+            'size_24': requests_24_size['size_24'],
+            'size_all': requests_all_size['size_all'],
+            'average_size_24': requests_24_size['average_size_24'],
+            'average_size_all': requests_all_size['average_size_all'],
+            'sd_size_24': requests_24_size['standard_deviation_24'],
+            'sd_size_all': requests_24_size['standard_deviation_all']
         }
         resp = jsonify(statistics)
         resp.status_code = 200
@@ -158,8 +181,10 @@ def resources_statistics():
     except Exception as e:
         print(e)
     finally:
-        cursor_all.close()
-        cursor_24.close()
+        cursor_all_time.close()
+        cursor_24_time.close()
+        cursor_all_size.close()
+        cursor_24_size.close()
         conn.close()
 
 
