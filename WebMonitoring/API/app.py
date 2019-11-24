@@ -137,7 +137,7 @@ def resources_statistics():
         (requests_24) = fetch
 
         statistics = {
-            'requests_24': requests_24['requests_all'],
+            'requests_24': requests_24['requests_24'],
             'requests_all': requests_all['requests_all'],
             'time_24': requests_24['time_24'],
             'time_all': requests_all['time_all'],
