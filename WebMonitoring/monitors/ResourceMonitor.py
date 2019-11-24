@@ -63,6 +63,14 @@ class ResourceMonitor:
             self.status = MonitoringStatus.FAILED
             self.update_metrics(-1, 0)
 
+        except requests.exceptions.ConnectionError:
+            self.status = MonitoringStatus.FAILED
+            self.update_metrics(-1, 0)
+
+        except Exception:
+            self.status = MonitoringStatus.FAILED
+            self.update_metrics(-1, 0)
+
         self.verbose()
 
     def verbose(self):
