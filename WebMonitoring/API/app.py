@@ -116,24 +116,34 @@ def resources_get_samples_time(resource_id, period):
 def resources_statistics():
     try:
         conn = mysql.connect()
-        cursor = conn.cursor(pymysql.cursors.DictCursor)
-        cursor.execute(
+        cursor_all = conn.cursor(pymysql.cursors.DictCursor)
+        cursor_all.execute(
             "select resource_statistic_requests() requests_all, "
             "resource_statistic_time() time_all, "
             "resource_statistic_average_time() average_time_all, "
             "resource_statistic_standard_deviation() standard_deviation_all "
             "from DUAL")
-        fetch = cursor.fetchone()
+        fetch = cursor_all.fetchone()
         (requests_all) = fetch
 
+        cursor_24 = conn.cursor(pymysql.cursors.DictCursor)
+        cursor_24.execute(
+            "select resource_statistic_requests_24() requests_24, "
+            "resource_statistic_time_24() time_24, "
+            "resource_statistic_average_time_24() average_time_24, "
+            "resource_statistic_standard_deviation_24() standard_deviation_24 "
+            "from DUAL")
+        fetch = cursor_24.fetchone()
+        (requests_24) = fetch
+
         statistics = {
-            'requests_24': 12345,
+            'requests_24': requests_24['requests_all'],
             'requests_all': requests_all['requests_all'],
-            'time_24': 567,
+            'time_24': requests_24['time_24'],
             'time_all': requests_all['time_all'],
-            'average_time_24': 1.23,
+            'average_time_24': requests_24['average_time_24'],
             'average_time_all': requests_all['average_time_all'],
-            'sd_time_24': 1,
+            'sd_time_24': requests_24['standard_deviation_24'],
             'sd_time_all': requests_all['standard_deviation_all'],
             'size_24': 111567,
             'size_all': 111890,
@@ -148,7 +158,8 @@ def resources_statistics():
     except Exception as e:
         print(e)
     finally:
-        cursor.close()
+        cursor_all.close()
+        cursor_24.close()
         conn.close()
 
 
