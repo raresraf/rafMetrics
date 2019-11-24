@@ -10,6 +10,9 @@ The following steps have to be followed in order to successfully setup the DB:
 ## MySQL init
 ### Create tables
 #### For Platform:
+
+##### USERS
+Stores data for all active users registered in the platform
 ```sql
 CREATE table USERS (
     Userid int NOT NULL AUTO_INCREMENT,
@@ -24,6 +27,9 @@ CREATE table USERS (
 
 ```
 #### For Login & Audit:
+##### AUDIT_USERS
+Audit table used by `before_user_delete` and `before_user_update` triggers.
+
 ```sql
 CREATE table AUDIT_USERS (
     Userid int NOT NULL AUTO_INCREMENT,
@@ -40,6 +46,8 @@ CREATE table AUDIT_USERS (
 
 
 #### For WebMonitoring:
+##### RESOURCE
+Stores all users' resources to be managed.
 ```sql
 CREATE table RESOURCE (
     Resourceid int NOT NULL AUTO_INCREMENT,
@@ -50,8 +58,12 @@ CREATE table RESOURCE (
     PRIMARY KEY (Resourceid),
     FOREIGN KEY (Userid) REFERENCES USERS(Userid)
 );
+```
 
+##### PING
+Stores all monitoring results for all resources.
 
+```sql
 CREATE table PING (
     Pingid int NOT NULL AUTO_INCREMENT,
     Resourceid int NOT NULL,
@@ -61,8 +73,12 @@ CREATE table PING (
     PRIMARY KEY (Pingid),
     FOREIGN KEY (Resourceid) REFERENCES RESOURCE(Resourceid)
 );
+```
 
+##### WEBSITES
+Stores all users' websites to be managed.
 
+```sql
 CREATE table WEBSITES (
     Websiteid int NOT NULL AUTO_INCREMENT,
     Userid int NOT NULL,
@@ -72,8 +88,11 @@ CREATE table WEBSITES (
     PRIMARY KEY (Websiteid),
     FOREIGN KEY (Userid) REFERENCES USERS(Userid)
 );
+```
+##### WEBSITES_METRICS
+Stores all monitoring results for all websites.
 
-
+```sql
 CREATE table WEBSITES_METRICS (
     Metricid int NOT NULL AUTO_INCREMENT,
     Websiteid int NOT NULL,
@@ -82,8 +101,13 @@ CREATE table WEBSITES_METRICS (
     PRIMARY KEY (Metricid),
     FOREIGN KEY (Websiteid) REFERENCES WEBSITES(Websiteid)
 );
+```
+
+##### REQUESTS
+Stores all data regarding all requests for all websites.
 
 
+```sql
 CREATE table REQUESTS (
     Requestid int NOT NULL AUTO_INCREMENT,
     Metricid int NOT NULL,
@@ -97,8 +121,12 @@ CREATE table REQUESTS (
     PRIMARY KEY (Requestid),
     FOREIGN KEY (Metricid) REFERENCES WEBSITES_METRICS(Metricid)
 );
+```
 
+##### TIMINGS
+Stores all data regarding all timings for all requests.
 
+```sql
 CREATE table TIMINGS (
     TimingID int NOT NULL AUTO_INCREMENT,
     Requestid int NOT NULL,
@@ -115,6 +143,7 @@ CREATE table TIMINGS (
 ```
 
 ### Populate tables
+Sample simulation to manually populate the DB.
 ```sql
 INSERT INTO USERS(LastName, FirstName, Username, Email, hashedpassword)
 values ('TestLastName', 'TestFirstName', 'TestUsername', 'TestEmail', 'Testhashedpassword');
@@ -662,9 +691,216 @@ CREATE FUNCTION resource_get_availability(RID INT) RETURNS VARCHAR(20)
     END//
 
 delimiter ;
-
-
 ```
+
+#### resource_statistic_average_size
+Returns average response size for ResourceMonitor.
+```sql
+delimiter //
+
+DROP FUNCTION IF EXISTS resource_statistic_average_size;
+
+CREATE FUNCTION resource_statistic_average_size() RETURNS FLOAT
+BEGIN
+    DECLARE AVERAGE_SIZE_ALL FLOAT;
+    select AVG(ResponseSize) into AVERAGE_SIZE_ALL from PING;
+    RETURN AVERAGE_SIZE_ALL;
+END//
+
+delimiter ;
+```
+
+#### resource_statistic_average_size_24
+Returns average response size for ResourceMonitor for all records in the last 24 hours.
+```sql
+delimiter //
+
+DROP FUNCTION IF EXISTS resource_statistic_average_size_24;
+
+CREATE FUNCTION resource_statistic_average_size_24() RETURNS FLOAT
+BEGIN
+    DECLARE AVERAGE_TIME_SIZE_24 FLOAT;
+    select AVG(ResponseSize) into AVERAGE_TIME_SIZE_24 from PING  WHERE TIMESTAMP >= DATE_SUB(NOW(), INTERVAL 24 HOUR);
+    RETURN AVERAGE_TIME_SIZE_24;
+END//
+
+delimiter ;
+```
+
+#### resource_statistic_size
+Returns the sum of all response size for ResourceMonitor.
+```sql
+delimiter //
+
+DROP FUNCTION IF EXISTS resource_statistic_size;
+
+CREATE FUNCTION resource_statistic_size() RETURNS FLOAT
+BEGIN
+    DECLARE SIZE_ALL FLOAT;
+    select SUM(ResponseSize) into SIZE_ALL from PING;
+    RETURN SIZE_ALL;
+END//
+
+delimiter ;
+```
+
+#### resource_statistic_size_24
+Returns the sum of all response size for ResourceMonitor for all records in the last 24 hours.
+```sql
+delimiter //
+
+DROP FUNCTION IF EXISTS resource_statistic_size_24;
+
+CREATE FUNCTION resource_statistic_size_24() RETURNS FLOAT
+BEGIN
+    DECLARE SIZE_24 FLOAT;
+    select SUM(ResponseSize) into SIZE_24 from PING  WHERE TIMESTAMP >= DATE_SUB(NOW(), INTERVAL 24 HOUR);
+    RETURN SIZE_24;
+END//
+
+delimiter ;
+```
+
+#### resource_statistic_standard_deviation_size
+Returns the population standard deviation of the recorded sizes for ResourceMonitor.
+
+```sql
+delimiter //
+
+DROP FUNCTION IF EXISTS resource_statistic_standard_deviation_size;
+
+CREATE FUNCTION resource_statistic_standard_deviation_size() RETURNS FLOAT
+BEGIN
+    DECLARE STD_DEV FLOAT;
+    select STD(ResponseSize) into STD_DEV from PING;
+    RETURN STD_DEV;
+END//
+
+delimiter ;
+```
+
+#### resource_statistic_standard_deviation_size_24
+Returns the population standard deviation of the recorded sizes for ResourceMonitor  for all records in the last 24 hours.
+
+```sql
+delimiter //
+
+DROP FUNCTION IF EXISTS resource_statistic_standard_deviation_size_24;
+
+CREATE FUNCTION resource_statistic_standard_deviation_size_24() RETURNS FLOAT
+BEGIN
+    DECLARE STD_DEV_24 FLOAT;
+    select STD(ResponseSize) into STD_DEV_24 from PING  WHERE TIMESTAMP >= DATE_SUB(NOW(), INTERVAL 24 HOUR);
+    RETURN STD_DEV_24;
+END//
+
+delimiter ;
+```
+
+#### resource_statistic_average_time
+Returns average response time for ResourceMonitor for all records.
+```sql
+delimiter //
+
+DROP FUNCTION IF EXISTS resource_statistic_average_time;
+
+CREATE FUNCTION resource_statistic_average_time() RETURNS FLOAT
+BEGIN
+    DECLARE AVERAGE_TIME_ALL FLOAT;
+    select AVG(ResponseTime) into AVERAGE_TIME_ALL from PING;
+    RETURN AVERAGE_TIME_ALL;
+END//
+
+delimiter ;
+```
+
+#### resource_statistic_average_time_24
+Returns average response time for ResourceMonitor for all records in the last 24 hours.
+```sql
+delimiter //
+
+DROP FUNCTION IF EXISTS resource_statistic_average_time_24;
+
+CREATE FUNCTION resource_statistic_average_time_24() RETURNS FLOAT
+BEGIN
+    DECLARE AVERAGE_TIME_ALL_24 FLOAT;
+    select AVG(ResponseTime) into AVERAGE_TIME_ALL_24 from PING  WHERE TIMESTAMP >= DATE_SUB(NOW(), INTERVAL 24 HOUR);
+    RETURN AVERAGE_TIME_ALL_24;
+END//
+
+delimiter ;
+```
+
+#### resource_statistic_requests_time
+Returns total number of requests stored in WebMonitoring.
+```sql
+delimiter //
+
+DROP FUNCTION IF EXISTS resource_statistic_requests_time;
+
+CREATE FUNCTION resource_statistic_requests_time() RETURNS INT
+BEGIN
+    DECLARE COUNT_REQUESTS INT;
+    select count(*) total into COUNT_REQUESTS from PING;
+    RETURN COUNT_REQUESTS;
+END//
+
+delimiter ;
+```
+
+#### resource_statistic_requests_time_24
+Returns total number of requests stored in WebMonitoring in the last 24 hours.
+```sql
+delimiter //
+
+DROP FUNCTION IF EXISTS resource_statistic_requests_time_24;
+
+CREATE FUNCTION resource_statistic_requests_time_24() RETURNS INT
+BEGIN
+    DECLARE COUNT_REQUESTS_24 INT;
+    select count(*) total into COUNT_REQUESTS_24 from PING  WHERE TIMESTAMP >= DATE_SUB(NOW(), INTERVAL 24 HOUR);
+    RETURN COUNT_REQUESTS_24;
+END//
+
+delimiter ;
+```
+
+
+#### resource_statistic_time
+Returns the sum of all response time for ResourceMonitor for all records.
+```sql
+delimiter //
+
+DROP FUNCTION IF EXISTS resource_statistic_time;
+
+CREATE FUNCTION resource_statistic_time() RETURNS FLOAT
+BEGIN
+    DECLARE TIME_ALL FLOAT;
+    select SUM(ResponseTime) into TIME_ALL from PING;
+    RETURN TIME_ALL;
+END//
+
+delimiter ;
+```
+
+#### resource_statistic_time_24
+Returns the sum of all response time for ResourceMonitor for all records in the last 24 hours.
+```sql
+delimiter //
+
+DROP FUNCTION IF EXISTS resource_statistic_time_24;
+
+CREATE FUNCTION resource_statistic_time_24() RETURNS FLOAT
+BEGIN
+    DECLARE TIME_24 FLOAT;
+    select SUM(ResponseTime) into TIME_24 from PING  WHERE TIMESTAMP >= DATE_SUB(NOW(), INTERVAL 24 HOUR);
+    RETURN TIME_24;
+END//
+
+delimiter ;
+```
+
+
 
 ### Triggers definition
 All triggers definition can be found [here](./Login/triggers)
@@ -683,6 +919,42 @@ CREATE TRIGGER before_users_update
         Username = OLD.Username,
         Email = OLD.Email,
         hashedpassword = OLD.hashedpassword;
+```
+
+#### resource_statistic_standard_deviation_time
+Returns the population standard deviation of the recorded times for ResourceMonitor for all records.
+
+```sql
+delimiter //
+
+DROP FUNCTION IF EXISTS resource_statistic_standard_deviation_time;
+
+CREATE FUNCTION resource_statistic_standard_deviation_time() RETURNS FLOAT
+BEGIN
+    DECLARE STD_DEV FLOAT;
+    select STD(ResponseTime) into STD_DEV from PING;
+    RETURN STD_DEV;
+END//
+
+delimiter ;
+```
+
+#### resource_statistic_standard_deviation_time_24
+Returns the population standard deviation of the recorded times for ResourceMonitor for all records in the last 24 hours.
+
+```sql
+delimiter //
+
+DROP FUNCTION IF EXISTS resource_statistic_standard_deviation_time_24;
+
+CREATE FUNCTION resource_statistic_standard_deviation_time_24() RETURNS FLOAT
+BEGIN
+    DECLARE STD_DEV_24 FLOAT;
+    select STD(ResponseTime) into STD_DEV_24 from PING  WHERE TIMESTAMP >= DATE_SUB(NOW(), INTERVAL 24 HOUR);
+    RETURN STD_DEV_24;
+END//
+
+delimiter ;
 ```
 
 #### before_users_delete
