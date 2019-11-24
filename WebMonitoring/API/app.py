@@ -173,7 +173,7 @@ def resources_statistics():
             'average_size_24': requests_24_size['average_size_24'],
             'average_size_all': requests_all_size['average_size_all'],
             'sd_size_24': requests_24_size['standard_deviation_24'],
-            'sd_size_all': requests_24_size['standard_deviation_all']
+            'sd_size_all': requests_all_size['standard_deviation_all']
         }
         resp = jsonify(statistics)
         resp.status_code = 200
