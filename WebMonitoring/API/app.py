@@ -114,24 +114,36 @@ def resources_get_samples_time(resource_id, period):
 
 @app.route('/resources/statistics')
 def resources_statistics():
-    statistics = {
-        'requests': 12345,
-        'time_24': 567,
-        'time_all': 890,
-        'average_time_24': 1.23,
-        'average_time_all': 1.2345,
-        'sd_time_24': 1,
-        'sd_time_all': 2,
-        'size_24': 111567,
-        'size_all': 111890,
-        'average_size_24': 1111.23,
-        'average_size_all': 1111.2345,
-        'sd_size_24': 1111,
-        'sd_size_all': 1112
-    }
-    resp = jsonify(statistics)
-    resp.status_code = 200
-    return resp
+    try:
+        conn = mysql.connect()
+        cursor = conn.cursor(pymysql.cursors.DictCursor)
+        cursor.execute("select resource_statistic_requests()")
+        fetch = cursor.fetchone()
+        (requests) = fetch
+
+        statistics = {
+            'requests': requests,
+            'time_24': 567,
+            'time_all': 890,
+            'average_time_24': 1.23,
+            'average_time_all': 1.2345,
+            'sd_time_24': 1,
+            'sd_time_all': 2,
+            'size_24': 111567,
+            'size_all': 111890,
+            'average_size_24': 1111.23,
+            'average_size_all': 1111.2345,
+            'sd_size_24': 1111,
+            'sd_size_all': 1112
+        }
+        resp = jsonify(statistics)
+        resp.status_code = 200
+        return resp
+    except Exception as e:
+        print(e)
+    finally:
+        cursor.close()
+        conn.close()
 
 
 @app.errorhandler(404)
