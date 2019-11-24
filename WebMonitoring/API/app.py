@@ -117,12 +117,12 @@ def resources_statistics():
     try:
         conn = mysql.connect()
         cursor = conn.cursor(pymysql.cursors.DictCursor)
-        cursor.execute("select resource_statistic_requests()")
+        cursor.execute("select resource_statistic_requests() requests")
         fetch = cursor.fetchone()
         (requests) = fetch
 
         statistics = {
-            'requests': requests,
+            'requests': requests["requests"],
             'time_24': 567,
             'time_all': 890,
             'average_time_24': 1.23,
