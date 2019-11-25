@@ -50,7 +50,7 @@ export default function BigStatResource(props) {
           </Typography>
           <Typography color={total.percent.profit ? "success" : "secondary"}>
             &nbsp;{total.percent.profit ? "+" : "-"}
-            {100 * total.percent.value}%
+            {Math.floor(100 * total.percent.value)}%
           </Typography>
         </div>
         <BarChart width={150} height={70} data={getDataBars(samples)}>
