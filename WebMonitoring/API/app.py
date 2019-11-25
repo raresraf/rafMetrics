@@ -11,6 +11,9 @@ from WebMonitoring.API.resources.metrics_renderer import render_dict
 from WebMonitoring.API.resources.samples_time import (
     resources_get_samples_time_daily, resources_get_samples_time_monthly,
     resources_get_samples_time_weekly)
+from WebMonitoring.API.resources.samples_size import (
+    resources_get_samples_size_daily, resources_get_samples_size_monthly,
+    resources_get_samples_size_weekly)
 from WebMonitoring.API.resources.size_metrics import get_results_resource_get_size
 from WebMonitoring.API.resources.time_metrics import get_results_resource_get_time
 from WebMonitoring.API.settings import (MYSQL_DATABASE_HOST,
@@ -106,6 +109,21 @@ def resources_get_samples_time(resource_id, period):
         samples = resources_get_samples_time_weekly(mysql, resource_id)
     if period.lower() == PERIOD.MONTHLY:
         samples = resources_get_samples_time_monthly(mysql, resource_id)
+
+    resp = jsonify(samples)
+    resp.status_code = 200
+    return resp
+
+
+@app.route('/resources/samples/size/<resource_id>/<period>')
+def resources_get_samples_size(resource_id, period):
+    samples = {}
+    if period.lower() == PERIOD.DAILY:
+        samples = resources_get_samples_size_daily(mysql, resource_id)
+    if period.lower() == PERIOD.WEEKLY:
+        samples = resources_get_samples_size_weekly(mysql, resource_id)
+    if period.lower() == PERIOD.MONTHLY:
+        samples = resources_get_samples_size_monthly(mysql, resource_id)
 
     resp = jsonify(samples)
     resp.status_code = 200
