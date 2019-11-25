@@ -44,6 +44,6 @@ export { ResourceProvider, useResourceState, useResourceDispatch, updateResource
 function updateResource(resourceid, dispatch){
   localStorage.setItem("resourceid", resourceid);
 
-  //window.location.reload();
   dispatch();
+  window.location.reload();
 }

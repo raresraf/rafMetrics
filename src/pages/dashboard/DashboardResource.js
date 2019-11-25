@@ -88,7 +88,6 @@ function refresh_DashboardResource(setAvailableResourcesLoaded, setRequestTimeLo
 
 export default function DashboardResource(props) {
 
-
   var classes = useStyles();
   var theme = useTheme();
 
@@ -101,7 +100,6 @@ export default function DashboardResource(props) {
 
   var [timeChartState, setTimeChartState] = useState("daily");
   var [sizeChartState, setSizeChartState] = useState("daily");
-
 
   const [getAvailableResourcesLoaded, setAvailableResourcesLoaded] = useState(false);
   const [getRequestTimeLoaded, setRequestTimeLoaded] = useState(false);
