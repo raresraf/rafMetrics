@@ -12,20 +12,18 @@ from WebMonitoring.API.delete.delete_resource import delete_resource_wrapper
 from WebMonitoring.API.delete.delete_website import delete_website_wrapper
 from WebMonitoring.API.resources.efficiency_metrics import get_results_resource_get_efficiency
 from WebMonitoring.API.resources.metrics_renderer import render_dict
-from WebMonitoring.API.resources.samples_time import (
-    resources_get_samples_time_daily, resources_get_samples_time_monthly,
-    resources_get_samples_time_weekly)
 from WebMonitoring.API.resources.samples_size import (
     resources_get_samples_size_daily, resources_get_samples_size_monthly,
     resources_get_samples_size_weekly)
+from WebMonitoring.API.resources.samples_time import (
+    resources_get_samples_time_daily, resources_get_samples_time_monthly,
+    resources_get_samples_time_weekly)
 from WebMonitoring.API.resources.size_metrics import get_results_resource_get_size
 from WebMonitoring.API.resources.time_metrics import get_results_resource_get_time
 from WebMonitoring.API.settings import (MYSQL_DATABASE_HOST,
                                         MYSQL_DATABASE_USER,
                                         MYSQL_DATABASE_PASSWORD,
                                         MYSQL_DATABASE_DB)
-
-from Login.app import get_userid
 
 app = Flask(__name__)
 CORS(app)

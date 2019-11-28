@@ -1,6 +1,3 @@
-import calendar
-import datetime
-
 from WebMonitoring.API.constants import PERIOD
 from WebMonitoring.API.resources.helpers import get_timestamp_query
 
