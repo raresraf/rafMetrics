@@ -1,7 +1,7 @@
 from flask import jsonify
 
 from Login.app import get_userid
-from WebMonitoring.API.app import not_found
+from Login.app import not_found
 
 
 def add_resource_wrapper(mysql, request):

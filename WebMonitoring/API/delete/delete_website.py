@@ -1,7 +1,7 @@
 from flask import jsonify
 
 from Login.app import get_userid
-from WebMonitoring.API.app import not_found
+from Login.app import not_found
 
 
 def delete_website_wrapper(mysql, request):
