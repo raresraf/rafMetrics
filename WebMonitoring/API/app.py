@@ -5,7 +5,11 @@ from flask import request
 from flask_cors import CORS
 from flaskext.mysql import MySQL
 
+from WebMonitoring.API.add.add_resource import add_resource_wrapper
+from WebMonitoring.API.add.add_website import add_website_wrapper
 from WebMonitoring.API.constants import PERIOD
+from WebMonitoring.API.delete.delete_resource import delete_resource_wrapper
+from WebMonitoring.API.delete.delete_website import delete_website_wrapper
 from WebMonitoring.API.resources.efficiency_metrics import get_results_resource_get_efficiency
 from WebMonitoring.API.resources.metrics_renderer import render_dict
 from WebMonitoring.API.resources.samples_time import (
@@ -20,6 +24,8 @@ from WebMonitoring.API.settings import (MYSQL_DATABASE_HOST,
                                         MYSQL_DATABASE_USER,
                                         MYSQL_DATABASE_PASSWORD,
                                         MYSQL_DATABASE_DB)
+
+from Login.app import get_userid
 
 app = Flask(__name__)
 CORS(app)
@@ -206,6 +212,26 @@ def resources_statistics():
         cursor_all_size.close()
         cursor_24_size.close()
         conn.close()
+
+
+@app.route('/addresource', methods=['POST'])
+def add_resource():
+    return add_resource_wrapper(mysql, request)
+
+
+@app.route('/addwebsite', methods=['POST'])
+def add_website():
+    return add_website_wrapper(mysql, request)
+
+
+@app.route('/deleteresource', methods=['POST'])
+def delete_resource():
+    return delete_resource_wrapper(mysql, request)
+
+
+@app.route('/deletewebsite', methods=['POST'])
+def delete_website():
+    return delete_website_wrapper(mysql, request)
 
 
 @app.errorhandler(404)
