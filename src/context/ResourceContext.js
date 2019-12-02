@@ -45,5 +45,4 @@ function updateResource(resourceid, dispatch){
   localStorage.setItem("resourceid", resourceid);
 
   dispatch();
-  window.location.reload();
 }
