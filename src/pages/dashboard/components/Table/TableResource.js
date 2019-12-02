@@ -1,8 +1,10 @@
-import React from "react";
+import React, {useState} from "react";
 import {Table, TableBody, TableCell, TableHead, TableRow,} from "@material-ui/core";
 // components
 import {Button} from "../../../../components/Wrappers";
 import {updateResource, useResourceDispatch} from "../../../../context/ResourceContext";
+import mock from "../../mock";
+
 
 const states = {
   working: "success",
@@ -11,7 +13,7 @@ const states = {
 };
 
 
-export default function TableComponentResource({ data }, method) {
+export default function TableComponentResource({ data , p1, p2, p3}) {
 
   var resourceDispatch = useResourceDispatch();
 
@@ -43,7 +45,11 @@ export default function TableComponentResource({ data }, method) {
                 className="px-2"
                 variant="contained"
                 onClick={(e) =>{
-                  updateResource(id_resource, resourceDispatch);}}
+                  updateResource(id_resource, resourceDispatch);
+                  p1(false);
+                  p2(false);
+                  p3(false);
+                }}
               >
                 {status}
               </Button>

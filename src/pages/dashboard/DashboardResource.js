@@ -15,6 +15,7 @@ import BigStatResource from "./components/BigStat/BigStatResource";
 import {useUserState} from "../../context/UserContext";
 import {useResourceState} from "../../context/ResourceContext";
 
+
 function getAvailableResources(username) {
   return new Promise((resolve, reject) => {
     let availableResourcesUrl = "http://109.103.170.75:31002/availableResources/" + username;
@@ -88,6 +89,7 @@ function refresh_DashboardResource(setAvailableResourcesLoaded, setRequestTimeLo
 
 export default function DashboardResource(props) {
 
+  console.log(props);
   var classes = useStyles();
   var theme = useTheme();
 
@@ -136,8 +138,6 @@ export default function DashboardResource(props) {
       setSamplesSize(res);
     });
   }
-
-
     return (
         <>
 
@@ -151,7 +151,7 @@ export default function DashboardResource(props) {
                   noBodyPadding
                   bodyClass={classes.tableWidget}
               >
-                <TableResource data={tableResource}/>
+                <TableResource data={tableResource} p1 = {setRequestTimeLoaded} p2 = {setSamplesTimeLoaded} p3 = {setSamplesSizeLoaded}/>
               </Widget>
             </Grid>
 
