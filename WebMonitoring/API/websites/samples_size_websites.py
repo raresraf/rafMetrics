@@ -1,4 +1,4 @@
-from WebMonitoring.API.constants import PERIOD
+from WebMonitoring.API.constants import PERIOD, BYTES_TO_MBYTES
 from WebMonitoring.API.resources.helpers import get_timestamp_query
 
 
@@ -59,7 +59,7 @@ def websites_get_samples_size_daily(mysql, resource_name):
             if result_args_get_time[i + 1]:
                 result.append({
                     'custom_data':
-                    result_args_get_time[i + 1],
+                    result_args_get_time[i + 1] / BYTES_TO_MBYTES,
                     'label':
                     get_timestamp_query(PERIOD.DAILY, i,
                                         result_args_get_time[-1])
@@ -142,7 +142,7 @@ def websites_get_samples_size_weekly(mysql, resource_name):
             if result_args_get_time[i + 1]:
                 result.append({
                     'custom_data':
-                    result_args_get_time[i + 1],
+                    result_args_get_time[i + 1] / BYTES_TO_MBYTES,
                     'label':
                     get_timestamp_query(PERIOD.WEEKLY, i,
                                         result_args_get_time[-1])
@@ -228,7 +228,7 @@ def websites_get_samples_size_monthly(mysql, resource_name):
             if result_args_get_time[i + 1]:
                 result.append({
                     'custom_data':
-                    result_args_get_time[i + 1],
+                    result_args_get_time[i + 1] / BYTES_TO_MBYTES,
                     'label':
                     get_timestamp_query(PERIOD.MONTHLY, i,
                                         result_args_get_time[-1])
