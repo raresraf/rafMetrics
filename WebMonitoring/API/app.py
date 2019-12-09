@@ -71,7 +71,7 @@ def available_resources(username):
 
 
 @app.route('/availableWebsites/<username>')
-def available_resources(username):
+def available_websites(username):
     try:
         conn = mysql.connect()
         cursor = conn.cursor(pymysql.cursors.DictCursor)

@@ -8,6 +8,10 @@ Sample function for checking the availability of server. Returns "Hello, world!"
 #### available_resources(username)
 Returns all available Resources from DB for a given user
 
+### /availableWebsites/<username>
+#### available_websites(username)
+Returns all available Websites from DB for a given user
+
 ### /resources/metrics/<resource_name>
 #### resources_metrics(resource_name)
 Returns statistics for minimum, average, maximum and median values recorded for Time, Size and Efficiency metrics.
