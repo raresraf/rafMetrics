@@ -196,7 +196,7 @@ All procedures definition can be found [here](./WebMonitoring/procedures)
 
 #### get_daily_samples
 Get samples out of each hour, for the last 24 hours.
-This procedure has been generated with [this script](./WebMonitoring/generators/generate_samples_queries.py)
+This procedure has been generated with [this script](WebMonitoring/generators/resource/generate_samples_queries.py)
 ```sql
 delimiter //
 DROP PROCEDURE IF EXISTS get_daily_samples;
@@ -334,7 +334,7 @@ delimiter ;
 
 #### get_monthly_samples
 Get samples each day, for the last 31 days.
-This procedure has been generated with [this script](./WebMonitoring/generators/generate_samples_queries.py)
+This procedure has been generated with [this script](WebMonitoring/generators/resource/generate_samples_queries.py)
 ```sql
 delimiter //
 DROP PROCEDURE IF EXISTS get_monthly_samples;
@@ -507,7 +507,7 @@ delimiter ;
 
 #### get_weekly_samples
 Get samples each 6 hours, for the last 7 days.
-This procedure has been generated with [this script](./WebMonitoring/generators/generate_samples_queries.py)
+This procedure has been generated with [this script](WebMonitoring/generators/resource/generate_samples_queries.py)
 ```sql
 delimiter //
 DROP PROCEDURE IF EXISTS get_weekly_samples;
@@ -666,7 +666,7 @@ delimiter ;
 
 #### get_daily_samples_size
 Get samples of size for each hour, for the last 24 hours.
-This procedure has been generated with [this script](./WebMonitoring/generators/generate_samples_queries_size.py)
+This procedure has been generated with [this script](WebMonitoring/generators/resource/generate_samples_queries_size.py)
 ```sql
 delimiter //
 DROP PROCEDURE IF EXISTS get_daily_samples_size;
@@ -803,7 +803,7 @@ delimiter ;
 
 #### get_monthly_samples_size
 Get samples of size for each day, for the last 31 days.
-This procedure has been generated with [this script](./WebMonitoring/generators/generate_samples_queries_size.py)
+This procedure has been generated with [this script](WebMonitoring/generators/resource/generate_samples_queries_size.py)
 ```sql
 delimiter //
 DROP PROCEDURE IF EXISTS get_monthly_samples_size;
@@ -976,7 +976,7 @@ delimiter ;
 
 #### get_weekly_samples_size
 Get samples of size each 6 hours, for the last 7 days.
-This procedure has been generated with [this script](./WebMonitoring/generators/generate_samples_queries_size.py)
+This procedure has been generated with [this script](WebMonitoring/generators/resource/generate_samples_queries_size.py)
 ```sql
 delimiter //
 DROP PROCEDURE IF EXISTS get_weekly_samples_size;
