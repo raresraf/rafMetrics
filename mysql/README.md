@@ -796,27 +796,6 @@ END//
 delimiter ;
 ```
 
-
-
-### Triggers definition
-All triggers definition can be found [here](./Login/triggers)
-
-#### before_users_update
-Audit all updates to USERS table inside DB
-
-```sql
-CREATE TRIGGER before_users_update
-    BEFORE UPDATE ON USERS
-    FOR EACH ROW
-    INSERT INTO AUDIT_USERS
-    SET action = 'update',
-        LastName = OLD.LastName,
-        FirstName = OLD.FirstName,
-        Username = OLD.Username,
-        Email = OLD.Email,
-        hashedpassword = OLD.hashedpassword;
-```
-
 #### resource_statistic_standard_deviation_time
 Returns the population standard deviation of the recorded times for ResourceMonitor for all records.
 
@@ -851,6 +830,25 @@ BEGIN
 END//
 
 delimiter ;
+```
+
+### Triggers definition
+All triggers definition can be found [here](./Login/triggers)
+
+#### before_users_update
+Audit all updates to USERS table inside DB
+
+```sql
+CREATE TRIGGER before_users_update
+    BEFORE UPDATE ON USERS
+    FOR EACH ROW
+    INSERT INTO AUDIT_USERS
+    SET action = 'update',
+        LastName = OLD.LastName,
+        FirstName = OLD.FirstName,
+        Username = OLD.Username,
+        Email = OLD.Email,
+        hashedpassword = OLD.hashedpassword;
 ```
 
 #### before_users_delete

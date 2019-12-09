@@ -1,4 +1,4 @@
-#Usage:
+# Usage of scripts to generate samples_query (metric: time/size) for websites:
 
 ## generate_samples_queries.py
 `python3 generate_samples_queries.py daily > get_daily_samples_websites.sql`

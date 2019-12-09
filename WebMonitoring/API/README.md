@@ -102,3 +102,32 @@ e.g.
     "url": "https://cs.pub.ro/"
   }
 ```
+
+
+## Testing functionality
+### Add user
+```python
+import requests
+import json
+
+
+url = 'http://10.96.0.4:5000/addresource'
+data = { "username": "flask_test_username", "resource": "https://www.youtube.com/", "command": "GET" }
+headers = {'Content-type': 'application/json', 'Accept': 'text/plain'}
+r = requests.post(url, data=json.dumps(data), headers=headers)
+print(r.text)
+```
+
+
+### Delete user
+```python
+import requests
+import json
+
+
+url = 'http://10.96.0.4:5000/deleteresource'
+data = { "username": "flask_test_username", "resource": "https://www.youtube.com/", "command": "GET" }
+headers = {'Content-type': 'application/json', 'Accept': 'text/plain'}
+r = requests.post(url, data=json.dumps(data), headers=headers)
+print(r.text)
+```
