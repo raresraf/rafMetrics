@@ -231,7 +231,7 @@ def websites_get_samples_size_monthly(mysql, resource_name):
                     result_args_get_time[i + 1] / BYTES_TO_MBYTES,
                     'label':
                     get_timestamp_query(PERIOD.MONTHLY, i,
-                                        result_args_get_time[-1])
+                                        result_args_get_time[-1]) - 1
                 })
             else:
                 result.append({
@@ -239,7 +239,7 @@ def websites_get_samples_size_monthly(mysql, resource_name):
                     0,
                     'label':
                     get_timestamp_query(PERIOD.MONTHLY, i,
-                                        result_args_get_time[-1])
+                                        result_args_get_time[-1]) - 1
                 })
 
         return result
