@@ -14,4 +14,4 @@ def get_timestamp_query(period, i, start):
         first = today.replace(day=1)
         lastMonth = first - datetime.timedelta(days=1)
         modulo = calendar.monthrange(lastMonth.year, lastMonth.month)[1]
-        return (start + i) % modulo + 1
+        return (start + i - 1) % modulo + 1

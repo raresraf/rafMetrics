@@ -209,7 +209,7 @@ def resources_get_samples_size_monthly(mysql, resource_name):
                 result_args_get_time[i + 1],
                 'label':
                 get_timestamp_query(PERIOD.MONTHLY, i,
-                                    result_args_get_time[-1]) - 1
+                                    result_args_get_time[-1])
             })
         return result
     except Exception as e:
