@@ -50,7 +50,7 @@ function getSamplesTime(period, resourceid) {
 
 function getSamplesSize(period, resourceid) {
   return new Promise((resolve, reject) => {
-    let availableResourcesUrl = "http://109.103.170.75:31002/resources/samples/size/" + resourceid + '/' + period;
+    let availableResourcesUrl = "http://109.103.170.75:31002/websites/samples/size/" + resourceid + '/' + period;
     fetch(availableResourcesUrl)
       .then((response) => {
         return response.json();
@@ -139,13 +139,13 @@ export default function DashboardWebsite(props) {
                           color="text"
                           colorBrightness="secondary"
                       >
-                        Response Time
+                        Loading Time
                       </Typography>
                       <div className={classes.mainChartHeaderLabels}>
                         <div className={classes.mainChartHeaderLabel}>
                           <Dot color="primary" />
                           <Typography className={classes.mainChartLegentElement}>
-                            Response Time
+                            Loading Time (seconds)
                           </Typography>
                         </div>
                       </div>
@@ -222,13 +222,13 @@ export default function DashboardWebsite(props) {
                       color="text"
                       colorBrightness="secondary"
                     >
-                      Response Size
+                      Loaded Size
                     </Typography>
                     <div className={classes.mainChartHeaderLabels}>
                       <div className={classes.mainChartHeaderLabel}>
                         <Dot color="warning" />
                         <Typography className={classes.mainChartLegentElement}>
-                          Response Size
+                          Loaded Size(MB)
                         </Typography>
                       </div>
                     </div>
