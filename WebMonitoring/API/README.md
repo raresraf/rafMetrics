@@ -21,13 +21,16 @@ Returns statistics for minimum, average, maximum and median values recorded for 
 Returns sample values recorded for a resource(Time metrics), for a given period of time (daily, weekly, monthly).
 
 ### /websites/samples/time/<resource_id>/<period>
-#### websites_get_samples_time(resource_id, period)
+#### websites_get_samples_time(website_id, period)
 Returns sample values recorded for a website(Total time metric), for a given period of time (daily, weekly, monthly).
-
 
 ### /resources/samples/size/<resource_id>/<period>
 #### resources_get_samples_size(resource_id, period)
 Returns sample values recorded for a resource(Size metrics), for a given period of time (daily, weekly, monthly).
+
+### /websites/samples/size/<resource_id>/<period>
+#### websites_get_samples_size(website_id, period)
+Returns sample values recorded for a website(Size metrics), for a given period of time (daily, weekly, monthly).
 
 
 ### /resources/statistics

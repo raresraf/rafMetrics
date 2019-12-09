@@ -24,7 +24,7 @@ from WebMonitoring.API.settings import (MYSQL_DATABASE_HOST,
                                         MYSQL_DATABASE_USER,
                                         MYSQL_DATABASE_PASSWORD,
                                         MYSQL_DATABASE_DB)
-from WebMonitoring.API.websites.samples_time_resource import websites_get_samples_time_daily, \
+from WebMonitoring.API.websites.samples_time_websites import websites_get_samples_time_daily, \
     websites_get_samples_time_weekly, websites_get_samples_time_monthly
 
 app = Flask(__name__)
@@ -148,15 +148,15 @@ def resources_get_samples_time(resource_id, period):
     return resp
 
 
-@app.route('/websites/samples/time/<resource_id>/<period>')
-def websites_get_samples_time(resource_id, period):
+@app.route('/websites/samples/time/<website_id>/<period>')
+def websites_get_samples_time(website_id, period):
     samples = {}
     if period.lower() == PERIOD.DAILY:
-        samples = websites_get_samples_time_daily(mysql, resource_id)
+        samples = websites_get_samples_time_daily(mysql, website_id)
     if period.lower() == PERIOD.WEEKLY:
-        samples = websites_get_samples_time_weekly(mysql, resource_id)
+        samples = websites_get_samples_time_weekly(mysql, website_id)
     if period.lower() == PERIOD.MONTHLY:
-        samples = websites_get_samples_time_monthly(mysql, resource_id)
+        samples = websites_get_samples_time_monthly(mysql, website_id)
 
     resp = jsonify(samples)
     resp.status_code = 200
@@ -172,6 +172,21 @@ def resources_get_samples_size(resource_id, period):
         samples = resources_get_samples_size_weekly(mysql, resource_id)
     if period.lower() == PERIOD.MONTHLY:
         samples = resources_get_samples_size_monthly(mysql, resource_id)
+
+    resp = jsonify(samples)
+    resp.status_code = 200
+    return resp
+
+
+@app.route('/websites/samples/size/<resource_id>/<period>')
+def websites_get_samples_size(resource_id, period):
+    samples = {}
+    if period.lower() == PERIOD.DAILY:
+        samples = websites_get_samples_size_daily(mysql, resource_id)
+    if period.lower() == PERIOD.WEEKLY:
+        samples = websites_get_samples_size_weekly(mysql, resource_id)
+    if period.lower() == PERIOD.MONTHLY:
+        samples = websites_get_samples_size_monthly(mysql, resource_id)
 
     resp = jsonify(samples)
     resp.status_code = 200
