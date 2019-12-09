@@ -70,6 +70,33 @@ def available_resources(username):
         conn.close()
 
 
+@app.route('/availableWebsites/<username>')
+def available_resources(username):
+    try:
+        conn = mysql.connect()
+        cursor = conn.cursor(pymysql.cursors.DictCursor)
+        cursor.execute(
+            "select r.Websiteid id ,r.Websiteid id_resource, r.WebsiteName name, r.WebsiteUrl command, r.FirstAdded firstadded, \"WORKING\" status from WEBSITES r, USERS u where u.Userid = r.Userid AND u.Username='%s'"
+            % (username))
+        rows = cursor.fetchall()
+
+        resp = []
+        count_id = 0
+        for row in rows:
+            resp.append(row)
+            resp[-1]['id'] = count_id
+            count_id = count_id + 1
+
+        resp = jsonify(rows)
+        resp.status_code = 200
+        return resp
+    except Exception as e:
+        print(e)
+    finally:
+        cursor.close()
+        conn.close()
+
+
 @app.route('/resources/metrics/<resource_name>')
 def resources_metrics(resource_name):
     (result_args_get_time, result_args_old_get_time,
