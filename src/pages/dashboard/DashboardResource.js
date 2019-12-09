@@ -172,7 +172,7 @@ export default function DashboardResource(props) {
                         <div className={classes.mainChartHeaderLabel}>
                           <Dot color="primary" />
                           <Typography className={classes.mainChartLegentElement}>
-                            Response Time
+                            Response Time (seconds)
                           </Typography>
                         </div>
                       </div>
@@ -249,7 +249,7 @@ export default function DashboardResource(props) {
                       color="text"
                       colorBrightness="secondary"
                     >
-                      Response Size
+                      Response Size (kB)
                     </Typography>
                     <div className={classes.mainChartHeaderLabels}>
                       <div className={classes.mainChartHeaderLabel}>
