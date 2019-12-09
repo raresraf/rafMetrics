@@ -24,6 +24,8 @@ from WebMonitoring.API.settings import (MYSQL_DATABASE_HOST,
                                         MYSQL_DATABASE_USER,
                                         MYSQL_DATABASE_PASSWORD,
                                         MYSQL_DATABASE_DB)
+from WebMonitoring.API.websites.samples_size_websites import websites_get_samples_size_daily, \
+    websites_get_samples_size_weekly, websites_get_samples_size_monthly
 from WebMonitoring.API.websites.samples_time_websites import websites_get_samples_time_daily, \
     websites_get_samples_time_weekly, websites_get_samples_time_monthly
 

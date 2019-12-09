@@ -2,7 +2,7 @@ from WebMonitoring.API.constants import PERIOD
 from WebMonitoring.API.resources.helpers import get_timestamp_query
 
 
-def resources_get_samples_size_daily(mysql, resource_name):
+def websites_get_samples_size_daily(mysql, resource_name):
     try:
         conn = mysql.connect()
         cursor = conn.cursor()
@@ -71,7 +71,7 @@ def resources_get_samples_size_daily(mysql, resource_name):
         conn.close()
 
 
-def resources_get_samples_size_weekly(mysql, resource_name):
+def websites_get_samples_size_weekly(mysql, resource_name):
     try:
         conn = mysql.connect()
         cursor = conn.cursor()
@@ -143,7 +143,7 @@ def resources_get_samples_size_weekly(mysql, resource_name):
         conn.close()
 
 
-def resources_get_samples_size_monthly(mysql, resource_name):
+def websites_get_samples_size_monthly(mysql, resource_name):
     try:
         conn = mysql.connect()
         cursor = conn.cursor()
