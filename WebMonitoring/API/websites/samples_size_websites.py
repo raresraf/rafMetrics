@@ -56,12 +56,22 @@ def websites_get_samples_size_daily(mysql, resource_name):
 
         result = []
         for i in range(len(result_args_get_time) - 2):
-            result.append({
-                'custom_data':
-                result_args_get_time[i + 1],
-                'label':
-                get_timestamp_query(PERIOD.DAILY, i, result_args_get_time[-1])
-            })
+            if result_args_get_time[i + 1]:
+                result.append({
+                    'custom_data':
+                    result_args_get_time[i + 1],
+                    'label':
+                    get_timestamp_query(PERIOD.DAILY, i,
+                                        result_args_get_time[-1])
+                })
+            else:
+                result.append({
+                    'custom_data':
+                    0,
+                    'label':
+                    get_timestamp_query(PERIOD.DAILY, i,
+                                        result_args_get_time[-1])
+                })
 
         return result
     except Exception as e:
@@ -129,12 +139,23 @@ def websites_get_samples_size_weekly(mysql, resource_name):
 
         result = []
         for i in range(len(result_args_get_time) - 2):
-            result.append({
-                'custom_data':
-                result_args_get_time[i + 1],
-                'label':
-                get_timestamp_query(PERIOD.WEEKLY, i, result_args_get_time[-1])
-            })
+            if result_args_get_time[i + 1]:
+                result.append({
+                    'custom_data':
+                    result_args_get_time[i + 1],
+                    'label':
+                    get_timestamp_query(PERIOD.WEEKLY, i,
+                                        result_args_get_time[-1])
+                })
+            else:
+                result.append({
+                    'custom_data':
+                    0,
+                    'label':
+                    get_timestamp_query(PERIOD.WEEKLY, i,
+                                        result_args_get_time[-1])
+                })
+
         return result
     except Exception as e:
         print(e)
@@ -204,13 +225,23 @@ def websites_get_samples_size_monthly(mysql, resource_name):
 
         result = []
         for i in range(len(result_args_get_time) - 2):
-            result.append({
-                'custom_data':
-                result_args_get_time[i + 1],
-                'label':
-                get_timestamp_query(PERIOD.MONTHLY, i,
-                                    result_args_get_time[-1])
-            })
+            if result_args_get_time[i + 1]:
+                result.append({
+                    'custom_data':
+                    result_args_get_time[i + 1],
+                    'label':
+                    get_timestamp_query(PERIOD.MONTHLY, i,
+                                        result_args_get_time[-1])
+                })
+            else:
+                result.append({
+                    'custom_data':
+                    0,
+                    'label':
+                    get_timestamp_query(PERIOD.MONTHLY, i,
+                                        result_args_get_time[-1])
+                })
+
         return result
     except Exception as e:
         print(e)

@@ -180,15 +180,15 @@ def resources_get_samples_size(resource_id, period):
     return resp
 
 
-@app.route('/websites/samples/size/<resource_id>/<period>')
-def websites_get_samples_size(resource_id, period):
+@app.route('/websites/samples/size/<website_id>/<period>')
+def websites_get_samples_size(website_id, period):
     samples = {}
     if period.lower() == PERIOD.DAILY:
-        samples = websites_get_samples_size_daily(mysql, resource_id)
+        samples = websites_get_samples_size_daily(mysql, website_id)
     if period.lower() == PERIOD.WEEKLY:
-        samples = websites_get_samples_size_weekly(mysql, resource_id)
+        samples = websites_get_samples_size_weekly(mysql, website_id)
     if period.lower() == PERIOD.MONTHLY:
-        samples = websites_get_samples_size_monthly(mysql, resource_id)
+        samples = websites_get_samples_size_monthly(mysql, website_id)
 
     resp = jsonify(samples)
     resp.status_code = 200
