@@ -16,6 +16,7 @@ The following steps have to be followed in order to successfully setup the DB:
 A relation is in Boyce-Codd Normal Form(BCNF) iff in every non-trivial functional dependency `X –> Y`, `X` is a super key.
 The current relation is in **Boyce-Codd Normal Form**.
 
+
 ### Create tables
 #### For Platform:
 

@@ -3,12 +3,12 @@ Keeps track of all k8s settings
 
 
 ## Deployments
-- `mysql`
-- `resourcemonitor` : Manage and monitor resources, recording crawled data in DB
-- `websitemonitor` : Manage and monitor websites, recording crawled data in DB
-- `login-deployment` : Ensure smooth login procedure
-- `webmonitoringapi-deployment` : Expose an API for WebMonitoring Tool
-- `metricsui` : FE deploy for rafMetrics project
+- `mysql` : An open-source relational database management system 📙
+- `resourcemonitor` : Manage and monitor resources, recording crawled data in DB 🐦
+- `websitemonitor` : Manage and monitor websites, recording crawled data in DB 🐦
+- `login-deployment` : Ensure smooth login procedure 🔒
+- `webmonitoringapi-deployment` : Expose an API for WebMonitoring Tool 🛠️
+- `metricsui` : FE deploy for rafMetrics project - Powered by React ❤️
 
 ## Services
 
