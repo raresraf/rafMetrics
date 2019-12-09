@@ -9,6 +9,7 @@ import Sidebar from "../Sidebar";
 // pages
 import Dashboard from "../../pages/dashboard";
 import DashboardResource from "../../pages/dashboard/DashboardResource";
+import DashboardWebsite from "../../pages/dashboard/DashboardWebsite";
 import DashboardResourceStatistics from "../../pages/dashboard/DashboardResourceStatistics";
 import Typography from "../../pages/typography";
 import Notifications from "../../pages/notifications";
@@ -51,7 +52,7 @@ function Layout(props) {
               <Route path="/app/ui/charts" component={Charts} />
               <Route path="/app/ui/resourcemanager" component={DashboardResource} />
               <Route path="/app/ui/resourcemanagerstatistics" component={DashboardResourceStatistics} />
-              <Route path="/app/ui/websitemanager" component={Dashboard} />
+              <Route path="/app/ui/websitemanager" component={DashboardWebsite} />
               <Route path="/app/ui/websitemanagerstatistics" component={DashboardResourceStatistics} />
 
             </Switch>
