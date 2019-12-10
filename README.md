@@ -35,3 +35,8 @@ Simple script to ensure dockerize and deployment in Kubernetes for all backend c
 Frontend implementation of rafMetrics platform based on Flatboard template
 
 
+## Class Diagram
+![alt text]("https://github.com/raresraf/rafMetrics/raw/master/classes.png")
+
+## Packages Diagram
+![alt text]("https://github.com/raresraf/rafMetrics/raw/master/packages.png")
