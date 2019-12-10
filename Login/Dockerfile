@@ -13,6 +13,14 @@ RUN pip3 install flask
 RUN pip3 install flask-mysql
 RUN pip3 install flask-cors
 
+# jsonify a Decimal
+RUN pip3 install simplejson
+
+# Debugging
+RUN pip3 install ipython
+RUN pip3 install flask-shell-ipython
+
+
 COPY . /rafMetrics
 WORKDIR /rafMetrics
 
