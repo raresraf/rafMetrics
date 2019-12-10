@@ -105,7 +105,7 @@ e.g.
 
 
 ## Testing functionality
-### Add user
+### Add resource
 ```python
 import requests
 import json
@@ -119,7 +119,7 @@ print(r.text)
 ```
 
 
-### Delete user
+### Delete resource
 ```python
 import requests
 import json

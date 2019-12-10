@@ -1,3 +1,6 @@
+# Login
+Backend implementation to provide a simple authentication, registration and management for users inside rafMetrics platform.
+
 # API Login
 ## ROUTES
 ### /
@@ -93,3 +96,40 @@ e.g.
 #### delete_user(id)
 
 Simple API to delete a existing user.
+
+
+
+## Testing functionality
+
+
+### Add user
+e.g. POST Payload
+
+```json
+  {
+    "last_name": "flask_test_last_name",
+    "first_name": "flask_test_first_name",
+    "username": "flask_test_username",
+    "email": "flask_test_email",
+    "pwd" : "flask_test_password"
+  }
+```
+
+### Delete user
+GET /delete/\<userid\>
+
+
+### Update user
+```python
+import requests
+import json
+
+
+url = 'http://10.96.0.3:5000/update/TestUsername'
+data = {
+        'last_name' : 'test_last_name', 'first_name' : 'test_first_name', 'email' : 'test@email.com', 'pwd' : 'TestUsername'
+}
+headers = {'Content-type': 'application/json', 'Accept': 'text/plain'}
+r = requests.post(url, data=json.dumps(data), headers=headers)
+print(r.text)
+```
