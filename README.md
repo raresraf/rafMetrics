@@ -32,11 +32,4 @@ All relations are kept in **Boyce-Codd Normal Form**.
 Simple script to ensure dockerize and deployment in Kubernetes for all backend components
 
 ### metricsUI
-Frontend implementation of rafMetrics platform based on Flatboard template
-
-
-## Class Diagram
-![alt text]("https://github.com/raresraf/rafMetrics/raw/master/classes.png")
-
-## Packages Diagram
-![alt text]("https://github.com/raresraf/rafMetrics/raw/master/packages.png")
+Frontend implementation of rafMetrics platform based on Flatlogic Template: React Material Admin — Material-UI Dashboard
