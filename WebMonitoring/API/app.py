@@ -296,21 +296,15 @@ def websites_statistics():
         # Size
         cursor_all_size = conn.cursor(pymysql.cursors.DictCursor)
         cursor_all_size.execute(
-            "select "
-            "resource_statistic_size() size_all, "
-            "resource_statistic_average_size() average_size_all, "
-            "resource_statistic_standard_deviation_size() standard_deviation_all "
-            "from DUAL")
+            "select SUM(bodySize) size_all, AVG(bodySize) average_size_all, STD(bodySize) standard_deviation_all from REQUESTS"
+        )
         fetch = cursor_all_size.fetchone()
         (requests_all_size) = fetch
 
         cursor_24_size = conn.cursor(pymysql.cursors.DictCursor)
         cursor_24_size.execute(
-            "select "
-            "resource_statistic_size_24() size_24, "
-            "resource_statistic_average_size_24() average_size_24, "
-            "resource_statistic_standard_deviation_size_24() standard_deviation_24 "
-            "from DUAL")
+            "select SUM(bodySize) size_24, AVG(bodySize) average_size_24, STD(bodySize) standard_deviation_24 from REQUESTS WHERE startedDateTime >= DATE_SUB(NOW(), INTERVAL 24 HOUR)"
+        )
         fetch = cursor_24_size.fetchone()
         (requests_24_size) = fetch
 
