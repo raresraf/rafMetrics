@@ -273,6 +273,84 @@ def resources_statistics():
         conn.close()
 
 
+@app.route('/websites/statistics')
+def websites_statistics():
+    try:
+        conn = mysql.connect()
+
+        # Time
+        cursor_all_time = conn.cursor(pymysql.cursors.DictCursor)
+        cursor_all_time.execute(
+            "select resource_statistic_requests_time() requests_all, "
+            "resource_statistic_time() time_all, "
+            "resource_statistic_average_time() average_time_all, "
+            "resource_statistic_standard_deviation_time() standard_deviation_all "
+            "from DUAL")
+        fetch = cursor_all_time.fetchone()
+        (requests_all) = fetch
+
+        cursor_24_time = conn.cursor(pymysql.cursors.DictCursor)
+        cursor_24_time.execute(
+            "select resource_statistic_requests_time_24() requests_24, "
+            "resource_statistic_time_24() time_24, "
+            "resource_statistic_average_time_24() average_time_24, "
+            "resource_statistic_standard_deviation_time_24() standard_deviation_24 "
+            "from DUAL")
+        fetch = cursor_24_time.fetchone()
+        (requests_24) = fetch
+
+        # Size
+        cursor_all_size = conn.cursor(pymysql.cursors.DictCursor)
+        cursor_all_size.execute(
+            "select "
+            "resource_statistic_size() size_all, "
+            "resource_statistic_average_size() average_size_all, "
+            "resource_statistic_standard_deviation_size() standard_deviation_all "
+            "from DUAL")
+        fetch = cursor_all_size.fetchone()
+        (requests_all_size) = fetch
+
+        cursor_24_size = conn.cursor(pymysql.cursors.DictCursor)
+        cursor_24_size.execute(
+            "select "
+            "resource_statistic_size_24() size_24, "
+            "resource_statistic_average_size_24() average_size_24, "
+            "resource_statistic_standard_deviation_size_24() standard_deviation_24 "
+            "from DUAL")
+        fetch = cursor_24_size.fetchone()
+        (requests_24_size) = fetch
+
+        statistics = {
+            'requests_24': round(requests_24['requests_24'], 2),
+            'requests_all': round(requests_all['requests_all'], 2),
+            'time_24': round(requests_24['time_24'], 2),
+            'time_all': round(requests_all['time_all'], 2),
+            'average_time_24': round(requests_24['average_time_24'], 2),
+            'average_time_all': round(requests_all['average_time_all'], 2),
+            'sd_time_24': round(requests_24['standard_deviation_24'], 2),
+            'sd_time_all': round(requests_all['standard_deviation_all'], 2),
+            'size_24': round(requests_24_size['size_24'], 2),
+            'size_all': round(requests_all_size['size_all'], 2),
+            'average_size_24': round(requests_24_size['average_size_24'], 2),
+            'average_size_all': round(requests_all_size['average_size_all'],
+                                      2),
+            'sd_size_24': round(requests_24_size['standard_deviation_24'], 2),
+            'sd_size_all': round(requests_all_size['standard_deviation_all'],
+                                 2)
+        }
+        resp = jsonify(statistics)
+        resp.status_code = 200
+        return resp
+    except Exception as e:
+        print(e)
+    finally:
+        cursor_all_time.close()
+        cursor_24_time.close()
+        cursor_all_size.close()
+        cursor_24_size.close()
+        conn.close()
+
+
 @app.route('/addresource', methods=['POST'])
 def add_resource():
     return add_resource_wrapper(mysql, request)

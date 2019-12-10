@@ -37,6 +37,10 @@ Returns sample values recorded for a website(Size metrics), for a given period o
 #### resources_statistics()
 Returns statistics for all ResourceMonitoring Tools recorded all-time, with tailored results for records from the last 24 hours.
 
+### /websites/statistics
+#### websites_statistics()
+Returns statistics for all WebsiteMonitoring Tools recorded all-time, with tailored results for records from the last 24 hours.
+
 ### /addresource
 - POST REQUESTS
 #### add_resource()
