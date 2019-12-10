@@ -281,14 +281,14 @@ def websites_statistics():
         # Time
         cursor_all_time = conn.cursor(pymysql.cursors.DictCursor)
         cursor_all_time.execute(
-            "select FLOOR(SUM(TotalTime)) time_all, count(*) requests_all, AVG(TotalTime) average_time_all, STD(TotalTime) from WEBSITES_METRICS"
+            "select FLOOR(SUM(TotalTime)) time_all, count(*) requests_all, AVG(TotalTime) average_time_all, STD(TotalTime) standard_deviation_all from WEBSITES_METRICS"
         )
         fetch = cursor_all_time.fetchone()
         (requests_all) = fetch
 
         cursor_24_time = conn.cursor(pymysql.cursors.DictCursor)
         cursor_24_time.execute(
-            "select FLOOR(SUM(TotalTime)) time_all, count(*) requests_all, AVG(TotalTime) average_time_all, STD(TotalTime) from WEBSITES_METRICS WHERE TIMESTAMP >= DATE_SUB(NOW(), INTERVAL 24 HOUR)"
+            "select FLOOR(SUM(TotalTime)) time_24, count(*) requests_24, AVG(TotalTime) average_time_24, STD(TotalTime) standard_deviation_24 from WEBSITES_METRICS WHERE TIMESTAMP >= DATE_SUB(NOW(), INTERVAL 24 HOUR)"
         )
         fetch = cursor_24_time.fetchone()
         (requests_24) = fetch
