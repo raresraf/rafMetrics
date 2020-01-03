@@ -2,10 +2,16 @@
 SHOW_VERBOSE_MESSAGE = False
 
 # Default speedprofile script location inside repo
-SPEEDPROFILE_LOCATION = './WebMonitoring/WebsiteMonitorHelpers/entrypoint.sh' 
+SPEEDPROFILE_LOCATION = './WebMonitoring/WebsiteMonitorHelpers/entrypoint.sh'
 
 # Define the sample time between two consecutive monitorings
 SAMPLE_TIME = 3600
 
 # JSON output location
 json_path = './output/har.json'
+
+# MySQL DB configs
+MYSQL_DATABASE_USER = 'root'
+MYSQL_DATABASE_PASSWORD = 'password'
+MYSQL_DATABASE_DB = 'WebMonitoring'
+MYSQL_DATABASE_HOST = '10.96.0.2'

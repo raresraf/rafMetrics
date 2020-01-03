@@ -3,7 +3,8 @@ import time
 import mysql.connector
 
 from WebMonitoring.configs.constants import DockerResults
-from WebMonitoring.configs.settings import SAMPLE_TIME, SHOW_VERBOSE_MESSAGE
+from WebMonitoring.configs.settings import SAMPLE_TIME, SHOW_VERBOSE_MESSAGE, MYSQL_DATABASE_USER, \
+    MYSQL_DATABASE_PASSWORD, MYSQL_DATABASE_DB, MYSQL_DATABASE_HOST
 from WebMonitoring.monitors.WebsiteMonitor import WebsiteMonitor
 
 
@@ -14,8 +15,9 @@ class WebsiteManager:
         self.cnx = None
 
     def run(self):
-        # Show TODO-list: debug only
-        print("RUN: ", self.websites)
+        # Show Websites to be monitored
+        if SHOW_VERBOSE_MESSAGE:
+            print("RUN: ", self.websites)
 
         for (website_url, website_name) in self.websites:
 
@@ -91,10 +93,10 @@ class WebsiteManager:
 
     def start(self):
         # Connect to DB
-        self.cnx = mysql.connector.connect(user='root',
-                                           password='password',
-                                           host='10.96.0.2',
-                                           database='WebMonitoring')
+        self.cnx = mysql.connector.connect(user=MYSQL_DATABASE_USER,
+                                           password=MYSQL_DATABASE_PASSWORD,
+                                           host=MYSQL_DATABASE_HOST,
+                                           database=MYSQL_DATABASE_DB)
 
         while True:
             self.websites = []

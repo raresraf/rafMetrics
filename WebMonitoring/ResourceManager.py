@@ -3,7 +3,8 @@ import time
 import mysql.connector
 
 from WebMonitoring.configs.constants import ResourceEntry, RequestTypes
-from WebMonitoring.configs.settings import SAMPLE_TIME
+from WebMonitoring.configs.settings import SAMPLE_TIME, MYSQL_DATABASE_USER, MYSQL_DATABASE_PASSWORD, \
+    MYSQL_DATABASE_HOST, MYSQL_DATABASE_DB
 from WebMonitoring.monitors.ResourceMonitor import ResourceMonitor
 
 
@@ -39,10 +40,10 @@ class ResourceManager:
 
     def start(self):
         # Connect to DB
-        self.cnx = mysql.connector.connect(user='root',
-                                           password='password',
-                                           host='10.96.0.2',
-                                           database='WebMonitoring')
+        self.cnx = mysql.connector.connect(user=MYSQL_DATABASE_USER,
+                                           password=MYSQL_DATABASE_PASSWORD,
+                                           host=MYSQL_DATABASE_HOST,
+                                           database=MYSQL_DATABASE_DB)
 
         while True:
             self.resources = []

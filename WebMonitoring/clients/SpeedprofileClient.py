@@ -6,6 +6,9 @@ from WebMonitoring.configs.settings import SPEEDPROFILE_LOCATION
 
 class SpeedprofileClient():
     """
+    Client for https://github.com/parasdahal/speedprofile
+
+
     ACTUAL:
     SpeedprofileClient executes entrypoint.sh script
 
