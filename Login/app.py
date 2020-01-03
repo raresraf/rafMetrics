@@ -94,10 +94,24 @@ def user(id):
         conn.close()
 
 
+def get_user_id(id):
+    try:
+        conn = mysql.connect()
+        cursor = conn.cursor(pymysql.cursors.DictCursor)
+        cursor.execute("SELECT * FROM USERS WHERE Username=%s", id)
+        row = cursor.fetchone()
+        return row
+    except Exception as e:
+        print(e)
+    finally:
+        cursor.close()
+        conn.close()
+
+
 @app.route('/user/<id>/<passwd>')
 def auth_user(id, passwd):
     try:
-        row = get_userid(id)
+        row = get_user_id(id)
         ref_passwd = ''
         if row:
             ref_passwd = row.get('hashedpassword', '')
@@ -154,20 +168,6 @@ def delete_user(id):
         resp = jsonify('User deleted successfully!')
         resp.status_code = 200
         return resp
-    except Exception as e:
-        print(e)
-    finally:
-        cursor.close()
-        conn.close()
-
-
-def get_userid(id):
-    try:
-        conn = mysql.connect()
-        cursor = conn.cursor(pymysql.cursors.DictCursor)
-        cursor.execute("SELECT * FROM USERS WHERE Username=%s", id)
-        row = cursor.fetchone()
-        return row
     except Exception as e:
         print(e)
     finally:

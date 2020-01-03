@@ -1,6 +1,6 @@
 from flask import jsonify
 
-from Login.app import get_userid
+from Login.app import get_user_id
 from Login.app import not_found
 
 
@@ -13,7 +13,7 @@ def delete_website_wrapper(mysql, request):
         # validate the received values
         if _username and _website_name and _url and request.method == 'POST':
             # save edits
-            get_user_info = get_userid(_username)
+            get_user_info = get_user_id(_username)
             if not get_user_info:
                 return not_found()
             _userid = get_user_info.get('Userid', 1)
