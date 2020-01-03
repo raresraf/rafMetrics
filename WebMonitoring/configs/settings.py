@@ -2,6 +2,7 @@
 SHOW_VERBOSE_MESSAGE = False
 
 # Default speedprofile script location inside repo
+# Original speedprofile code: https://github.com/parasdahal/speedprofile
 SPEEDPROFILE_LOCATION = './WebMonitoring/WebsiteMonitorHelpers/entrypoint.sh'
 
 # Define the sample time between two consecutive monitorings

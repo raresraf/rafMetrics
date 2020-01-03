@@ -1,4 +1,4 @@
-from WebMonitoring.API.resources.last7 import get_last7_size
+from WebMonitoring.API.resources.last_seven_entries_metrics import get_last_seven_entries_size
 
 
 def get_results_resource_get_size(mysql, resource_name):
@@ -57,7 +57,7 @@ def get_results_resource_get_size(mysql, resource_name):
         result_args_old_get_size = cursor.fetchone()
 
         list_sample = []
-        samples = get_last7_size(mysql, resource_name)
+        samples = get_last_seven_entries_size(mysql, resource_name)
         for sample in samples:
             list_sample.append(sample['ResponseSize'])
     except Exception as e:

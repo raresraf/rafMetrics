@@ -1,4 +1,4 @@
-from WebMonitoring.API.resources.last7 import get_last7_time
+from WebMonitoring.API.resources.last_seven_entries_metrics import get_last_seven_entries_time
 
 
 def get_results_resource_get_time(mysql, resource_name):
@@ -57,7 +57,7 @@ def get_results_resource_get_time(mysql, resource_name):
         result_args_old_get_time = cursor.fetchone()
 
         list_sample = []
-        samples = get_last7_time(mysql, resource_name)
+        samples = get_last_seven_entries_time(mysql, resource_name)
         for sample in samples:
             list_sample.append(int(1000 * sample['ResponseTime'] + 1))
     except Exception as e:

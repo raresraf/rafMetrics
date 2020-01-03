@@ -1,13 +1,8 @@
-import json
-
 import mock
 import pymysql
-
-from Login.app import index, add_user, app, users, user, get_user_id, auth_user, update_user, delete_user
-
 from mock import MagicMock
 
-from Login.settings import MYSQL_DATABASE_USER, MYSQL_DATABASE_PASSWORD, MYSQL_DATABASE_DB, MYSQL_DATABASE_HOST
+from Login.app import index, add_user, app, users, user, get_user_id, auth_user, update_user, delete_user
 from Login.tests.mocks import users_dict
 
 

@@ -1,6 +1,7 @@
 # Helpers for rendering metrics
 
 
+# Wrapper avoiding div by ZERO
 def div_0(x, y):
     if not y:
         return 0
@@ -9,21 +10,22 @@ def div_0(x, y):
     xx = float(x)
     yy = float(y)
     if yy == 0:
-        return 987654321
+        return 2147483647
     return xx / yy
 
 
+# Less than implementation with None < Anything
 def lt_w_none(val1, val2):
-    if val1 == None:
+    if val1 is None:
         return True
-    if val2 == None:
+    if val2 is None:
         return True
     return val1 > val2
 
 
 def get_percent_w_none(val1, val2):
-    if val1 == None:
+    if val1 is None:
         return 100
-    if val2 == None:
+    if val2 is None:
         return 0
     return round(abs(val2 - val1) / val1, 2)

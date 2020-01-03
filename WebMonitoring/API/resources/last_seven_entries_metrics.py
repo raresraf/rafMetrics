@@ -1,7 +1,7 @@
 import pymysql
 
 
-def get_last7_time(mysql, resource_name):
+def get_last_seven_entries_time(mysql, resource_name):
     try:
         conn = mysql.connect()
         cursor = conn.cursor(pymysql.cursors.DictCursor)
@@ -17,7 +17,7 @@ def get_last7_time(mysql, resource_name):
         conn.close()
 
 
-def get_last7_size(mysql, resource_name):
+def get_last_seven_entries_size(mysql, resource_name):
     try:
         conn = mysql.connect()
         cursor = conn.cursor(pymysql.cursors.DictCursor)
