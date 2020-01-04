@@ -43,7 +43,6 @@ log/
 *.DS_Store
 .DS_Store?
 ehthumbs.db
-Icon?
 Thumbs.db
 
 # VCS #
@@ -72,7 +71,7 @@ xcuserdata/
 __pycache__/
 
 # dependencies
-/node_modules
+*/node_modules
 /.pnp
 .pnp.js
 .idea/
