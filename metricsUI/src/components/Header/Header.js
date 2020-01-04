@@ -13,9 +13,9 @@ import classNames from "classnames";
 // styles
 import useStyles from "./styles";
 // components
-import {Badge, Typography} from "../Wrappers";
-import Notification from "../Notification";
-import UserAvatar from "../UserAvatar";
+import {Badge, Typography} from "../Wrappers/Wrappers";
+import Notification from "../Notification/Notification";
+import UserAvatar from "../UserAvatar/UserAvatar";
 // context
 import {toggleSidebar, useLayoutDispatch, useLayoutState,} from "../../context/LayoutContext";
 import {signOut, useUserDispatch} from "../../context/UserContext";

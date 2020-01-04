@@ -9,10 +9,10 @@ import classnames from "classnames";
 import "react-toastify/dist/ReactToastify.css";
 import useStyles from "./styles";
 // components
-import Widget from "../../components/Widget";
-import PageTitle from "../../components/PageTitle";
+import Widget from "../../components/Widget/Widget";
+import PageTitle from "../../components/PageTitle/PageTitle";
 import Notification from "../../components/Notification";
-import {Button, Typography} from "../../components/Wrappers";
+import {Button, Typography} from "../../components/Wrappers/Wrappers";
 
 const positions = [
   toast.POSITION.TOP_LEFT,
