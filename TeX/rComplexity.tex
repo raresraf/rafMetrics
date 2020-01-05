@@ -47,6 +47,29 @@ Acknowledge the following notations $\forall r \neq 0$:
     This set is defined for symmetry of the model and it is equal with the set defined by \textbf{Small Omega} notation in \textit{Bachmann–Landau notations}, as the definition is independent on $r$.
 \end{itemize}
 
+\section{Asymptotic Analysis}
+Calculus in $rComplexity$ can be performed either using limits of sequences or limits of functions. Consider any two complexity functions $f,g:\mathbb{N}_{+}\longrightarrow\mathbb{R}_{+}$.
+
+\begin{itemize}
+  \item \textbf{Big \textit{r-}Theta}: 
+  \[ f \in \Theta_{r}(g(n)) \Leftrightarrow \lim_{n\to\infty} \dfrac{f(n)}{g(n)} = r \]
+
+  \item \textbf{Big \textit{r-}O}: 
+    \[ f \in \mathcal{O}_{r}(g(n)) \Leftrightarrow \lim_{n\to\infty} \dfrac{f(n)}{g(n)} = l,\ l \in \left[ 0, r \right] \]
+  
+  \item \textbf{Big \textit{r-}Omega}: 
+      \[ f \in \Omega_{r}(g(n)) \Leftrightarrow \lim_{n\to\infty} \dfrac{f(n)}{g(n)} = l,\ l \in \left[ r, \infty \right) \]
+
+  \item \textbf{Small \textit{r-}O}:
+    \[ f \in o_{r}(g(n)) \Leftrightarrow \lim_{n\to\infty} \dfrac{f(n)}{g(n)} = 0 \]
+
+  \item \textbf{Small \textit{r-}Omega}:
+    \[ f \in \omega_{r}(g(n)) \Leftrightarrow \lim_{n\to\infty} \dfrac{f(n)}{g(n)} = \infty \]
+    
+\end{itemize}
+
+
+
 \section{Common properties}
 This chapter will present new implications in terms of reflexivity, transitivity, symmetry and projections compared with conventional \textit{Bachmann–Landau notations}
  \hfill\break
@@ -92,7 +115,7 @@ If $r>c$ and $x \leq \dfrac{1}{r}$, then $c \cdot x \leq 1, \forall r,c,x\ \ r \
 
 The reflexivity does not hold for Small \textit{r-}o and Small \textit{r-}Omega, as these two sets are equal with the classical sets defined in \textit{Bachmann–Landau notations}:
  
-$ f \notin \o_{r}(f(n)) $ \\$ f \notin \omega_{r}(f(n)) $ 
+$ f \notin o_{r}(f(n)) $ \\$ f \notin \omega_{r}(f(n)) $ 
  \hfill\break
 
  \textbf{Transitivity in $rComplexity$:}  \\  $ f \in \Theta_{r}(g(n)),  g \in \Theta_{r'}(h(n)) \Rightarrow  f \in \Theta_{r \cdot r'}(h(n))$    \\\textit{Proof}:
@@ -124,7 +147,8 @@ All other Transitivity properties hold as well in $rComplexity$ Calculus. Proof 
   \textbf{Projection in $rComplexity$:}  \\  $ f \in \Theta(g(n)) \Leftrightarrow f \in \mathcal{O}(g(n)), f \in \Omega(g(n)) $
  \hfill\break
 
-
+ 
+ 
  
 \section{Addition properties}
 TODO
