@@ -3,6 +3,7 @@ import pymysql
 from mock import MagicMock
 
 from Login.app import index, add_user, app, users, user, get_user_id, auth_user, update_user, delete_user
+from Login.settings import MYSQL_DATABASE_USER, MYSQL_DATABASE_DB, MYSQL_DATABASE_HOST, MYSQL_DATABASE_PASSWORD
 from Login.tests.mocks import users_dict
 
 
@@ -304,3 +305,10 @@ def test_delete(mocked_mysql_var, ):
         assert resp.json == 'User deleted successfully!'
         cursor.close.assert_called_once_with()
         conn.close.assert_called_once_with()
+
+
+def test_db_configs():
+    assert MYSQL_DATABASE_USER == 'root'
+    assert MYSQL_DATABASE_PASSWORD == 'password'
+    assert MYSQL_DATABASE_DB == 'WebMonitoring'
+    assert MYSQL_DATABASE_HOST == '10.96.0.2'
