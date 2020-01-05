@@ -90,23 +90,35 @@ If $r>c$ and $x \leq \dfrac{1}{r}$, then $c \cdot x \leq 1, \forall r,c,x\ \ r \
  \[ f \in \Omega_{r} \left( x \cdot f(n) \right)\ \forall x \leq \dfrac{1}{r} \]
 \qedsymbol
 
-The reflexivity does not hold for Small \textit{r-}Theta and Small \textit{r-}Omega, as these two sets are equal with the classical sets defined in \textit{Bachmann–Landau notations}:
+The reflexivity does not hold for Small \textit{r-}o and Small \textit{r-}Omega, as these two sets are equal with the classical sets defined in \textit{Bachmann–Landau notations}:
  
-$ f \notin \theta_{r}(f(n)) $ \\$ f \notin \omega_{r}(f(n)) $ 
+$ f \notin \o_{r}(f(n)) $ \\$ f \notin \omega_{r}(f(n)) $ 
  \hfill\break
 
- \textbf{Transitivity in $rComplexity$:}  \\  $ f \in \Theta(g(n)),  g \in \Theta(h(n)) \Rightarrow  f \in \Theta(h(n))$ \\
- $ f \in \mathcal{O}(g(n)),  g \in \mathcal{O}(h(n)) \Rightarrow  f \in \mathcal{O}(h(n))$ \\
- $ f \in \Omega(g(n)),  g \in \Omega(h(n)) \Rightarrow  f \in \Omega(h(n))$ \\
- $ f \in o(g(n)),  g \in o(h(n)) \Rightarrow  f \in o(h(n))$ \\
- $ f \in \omega(g(n)),  g \in \omega(h(n)) \Rightarrow  f \in \omega(h(n))$
+ \textbf{Transitivity in $rComplexity$:}  \\  $ f \in \Theta_{r}(g(n)),  g \in \Theta_{r'}(h(n)) \Rightarrow  f \in \Theta_{r \cdot r'}(h(n))$    \\\textit{Proof}:
+
+	If $ f \in \Theta_{r}(g(n)) \Rightarrow \forall c_{1}, c_{2} \in \mathbb{R}^{*}_{+} \ s.t.  c_{1}< r < c_{2} , \exists n_{0} \in \mathbb{N}^{*}\ \\ s.t.\ \ c_{1} \cdot g(n) \leq f(n) \leq c_{2} \cdot g(n)\ ,\  \forall n \geq n_{0} $ \\
+	If $ g \in \Theta_{r'}(h(n)) \Rightarrow \forall c_{1}, c_{2} \in \mathbb{R}^{*}_{+} \ s.t.  c_{1} < r' < c_{2} , \exists n_{0}' \in \mathbb{N}^{*}\ \\ s.t.\ \ c_{1} \cdot h(n) \leq g(n) \leq c_{2} \cdot h(n)\ ,\  \forall n \geq n_{0}' $ \\
+	Thus, if $ f \in \Theta_{r}(g(n))$ and $ g \in \Theta_{r'}(h(n))$ \\ $\Rightarrow \forall c_{1}, c_{2}, c_{1}', c_{2}' \in \mathbb{R}^{*}_{+} \ s.t.  c_{1} < r < c_{2}, c_{1}' < r' < c_{2}' , \exists n''_{0}=max(n_{0}, n'_{0}) \in \mathbb{N}^{*}\ \\ s.t.\ \ c_{1}' \cdot c_{1} \cdot h(n) \leq c_{1} \cdot g(n) \leq f(n) \leq c_{2} \cdot g(n) \leq c_{2}' \cdot c_{2} \cdot h(n)\ ,\  \forall n \geq n''_{0} $ \\
+	Let $c_{1}'' = c_{1} \cdot c_{1}' , c_{2}'' = c_{2} \cdot c_{2}'$. \\
+	Then, $c_{1}'' < r \cdot r' < c_{2}''$ \\ 
+	Therefore, $\forall c_{1}'', c_{2}'' \in \mathbb{R}^{*}_{+} \ s.t.  c_{1}'' < r \cdot r' < c_{2}'' \ \ \exists n''_{0}=max(n_{0}, n'_{0}) \in \mathbb{N}^{*}\ \\ s.t.\ \ c_{1}'' \cdot h(n) \leq f(n) \leq c_{2}'' \cdot h(n)\ ,\  \forall n \geq n''_{0} \Rightarrow f \in \Theta_{r \cdot r'}(h(n))$ \\
+
+\qedsymbol
+
+All other Transitivity properties hold as well in $rComplexity$ Calculus. Proof is similar with the above.
+
+ $ f \in \mathcal{O}_{r}(g(n)),  g \in \mathcal{O}_{r}(h(n)) \Rightarrow  f \in \mathcal{O}_{r \cdot r'}(h(n))$ \\
+ $ f \in \Omega_{r}(g(n)),  g \in \Omega_{r}(h(n)) \Rightarrow  f \in \Omega_{r \cdot r'}(h(n))$ \\
+ $ f \in o_{r}(g(n)),  g \in o_{r'}(h(n)) \Rightarrow  f \in o_{r \cdot r'}(h(n))$ \\
+ $ f \in \omega_{r}(g(n)),  g \in \omega_{r'}(h(n)) \Rightarrow  f \in \omega_{r \cdot r'}(h(n))$
   \hfill\break
 
- \textbf{Symmetry in $rComplexity$:}  \\  $ f \in \Theta(g(n)) \Rightarrow g \in \Theta(f(n)) $
+ \textbf{Symmetry in $rComplexity$:}  \\  $ f \in \Theta_{r}(g(n)) \Rightarrow g \in \Theta_{\frac{1}{r}}(f(n)) $
  \hfill\break
 
- \textbf{Transpose symmetry in $rComplexity$:}  \\  $ f \in \mathcal{O}(g(n)) \Leftrightarrow g \in \Omega(f(n)) $
- \\  $ f \in o(g(n)) \Leftrightarrow g \in \omega(f(n)) $
+ \textbf{Transpose symmetry in $rComplexity$:}  \\  $ f \in \mathcal{O}_{r}(g(n)) \Leftrightarrow g \in \Omega_{\frac{1}{r}}(f(n)) $
+ \\  $ f \in o_{r}(g(n)) \Leftrightarrow g \in \omega_{\frac{1}{r}}(f(n)) $
  \hfill\break
  
   \textbf{Projection in $rComplexity$:}  \\  $ f \in \Theta(g(n)) \Leftrightarrow f \in \mathcal{O}(g(n)), f \in \Omega(g(n)) $
