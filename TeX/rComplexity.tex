@@ -22,7 +22,7 @@ that if for a given input $n$, if $Alg2$ ends execution in 1 \textit{attosecond}
 The following notations and names will be used for describing the asymptotic behavior of a algorithm's complexity characterized by a function, $f:\mathbb{N}\longrightarrow\mathbb{R}$. \\
 We define the set of all complexity calculus $\mathcal{F}= \lbrace f:\mathbb{N}\longrightarrow\mathbb{R} \rbrace$
 \\Assume that $n, n_{0}\in\mathbb{N}$. Also, we will consider an arbitrary complexity function $g \in \mathcal{F}$. 
-Acknowledge the following notations
+Acknowledge the following notations $\forall r \neq 0$:
 \begin{itemize}
   \item \textbf{Big \textit{r-}Theta}: This set defines the group of mathematical functions similar in magnitude with  $g(n)$ in the study of asymptotic behavior. A set-based description of this group can be expressed as:
   \[\begin{split} \Theta_{r}(g(n)) = \lbrace f \in \mathcal{F}\ |\ \forall c_{1}, c_{2} \in \mathbb{R}^{*}_{+} \ s.t.  c_{1}< r < c_{2} , \exists n_{0} \in \mathbb{N}^{*}\ \\ s.t.\ \ c_{1} \cdot g(n) \leq f(n) \leq c_{2} \cdot g(n)\ ,\  \forall n \geq n_{0} \rbrace \end{split} \]
@@ -59,14 +59,40 @@ This chapter will present new implications in terms of reflexivity, transitivity
     By choosing $c_{1}' = \frac{1}{r} \cdot c_{1}, c_{2}' = \frac{1}{r} \cdot c_{2}$
    \[\begin{split} \Theta_{r} \left( \frac{1}{r} \cdot f(n) \right) = \lbrace f' \in \mathcal{F}\ |\ \forall c_{1}', c_{2}' \in \mathbb{R}^{*}_{+} \ s.t.  c_{1}'< 1 < c_{2}' , \exists n_{0} \in \mathbb{N}^{*}\ \\ s.t.\  \ c_{1}' \cdot f(n) \leq  f'(n) \leq c_{2}' \cdot f(n)\ ,\  \forall n \geq n_{0} \rbrace \end{split} \]
 	For any $x \in \mathbb{R}^{*}$,  $\forall c_{1}, c_{2}\ \ s.t.  c_{1} \leq 1 \leq c_{2}$, we have $ x \cdot c_{1} \leq x \leq x \cdot c_{2} $. \\
-   	Thus, if $f:\mathbb{N}\longrightarrow\mathbb{R}$, $\forall c_{1}, c_{2}\ \  s.t.  c_{1} \leq 1 \leq c_{2}$, we have $f(n) \cdot c_{1} \leq f(n) \leq f(n) \cdot c_{2}\ \ \forall n \in \mathbb{N}^{*}$ \\
+   	Thus, if $f:\mathbb{N}\longrightarrow\mathbb{R}$, $\forall c_{1}, c_{2}\ \  s.t.  c_{1} \leq 1 \leq c_{2}$, we have $f(n) \cdot c_{1} \leq f(n) \leq f(n) \cdot c_{2}\ \ \forall n \in \mathbb{N}^{*}$ or $f(n) \cdot c_{1} \geq f(n) \geq f(n) \cdot c_{2}\ \ \forall n \in \mathbb{N}^{*}$\\
    	Therefore:
    	\[\forall c_{1}', c_{2}' \in \mathbb{R}^{*}_{+} \ s.t.  c_{1}'< 1 < c_{2}' , \exists n_{0} = 1  s.t.\  \ c_{1}' \cdot f(n) \leq  f(n) \leq c_{2}' \cdot f(n)\ ,\  \forall n \geq n_{0}=1 \Rightarrow \]
    	\[ f \in \Theta_{r} \left( \frac{1}{r} \cdot f(n) \right)\ \forall r \neq 0 \]
 \qedsymbol
  
- $ f \in \mathcal{O}(f(n)) $ \\$ f \in \Omega(f(n)) $
- \\$ f \notin \theta(f(n)) $ \\$ f \notin \omega(f(n)) $ 
+ 
+ \[ f \in \mathcal{O}_{r} \left( x \cdot f(n) \right)\ \forall x \geq \dfrac{1}{r} \]
+   \\\textit{Proof}:
+    Using the definition of $ \mathcal{O}_{r}(f(n))$
+  \[\mathcal{O}_{r}(f(n)) = \lbrace f' \in \mathcal{F}\ |\ \forall c  \in \mathbb{R}^{*}_{+} \ s.t.\  r<c, \exists n_{0} \in \mathbb{N}^{*}\ s.t.\  f'(n) \leq c \cdot f(n),\  \forall n \geq n_{0} \rbrace\]
+    Using substitution $ f(n) \longleftarrow x \cdot f(n), \forall x \geq \dfrac{1}{r}, \forall r \neq 0$
+  \[\mathcal{O}_{r}(x \cdot f(n)) = \lbrace f' \in \mathcal{F}\ |\ \forall c  \in \mathbb{R}^{*}_{+} \ s.t.\  r<c, \exists n_{0} \in \mathbb{N}^{*}\ s.t.\  f'(n) \leq c \cdot x \cdot f(n),\  \forall n \geq n_{0} \rbrace\]
+If $r<c$ and $x \geq \dfrac{1}{r}$, then $c \cdot x \geq 1, \forall r,c,x\ \ r \neq 0$
+   	Thus, if $f:\mathbb{N}\longrightarrow\mathbb{R}$, we have $ f(n) \leq 1 \cdot f(n) \leq  c \cdot x\cdot f(n) \ \ \forall n \in \mathbb{N}^{*}$. 
+   	Therefore:
+   	\[\forall x \geq \dfrac{1}{r}, \ \forall c \in \mathbb{R}^{*}_{+} \ s.t.\  r<c , \exists n_{0} = 1  s.t.\  \  f(n) \leq  c \cdot x\cdot f(n) \ \ \forall n \in \mathbb{N}^{*} ,\  \forall n \geq n_{0}=1 \Rightarrow \]
+ \[ f \in \mathcal{O}_{r} \left( x \cdot f(n) \right)\ \forall x \geq \dfrac{1}{r} \]
+\qedsymbol
+
+ \[ f \in \Omega_{r} \left( x \cdot f(n) \right)\ \forall x \leq \dfrac{1}{r} \]
+    Using the definition of $\Omega_{r}(f(n))$
+  \[\Omega_{r}(f(n)) = \lbrace f' \in \mathcal{F}\ |\ \forall c  \in \mathbb{R}^{*}_{+} \ s.t.\  c<r, \exists n_{0} \in \mathbb{N}^{*}\ s.t.\  f'(n) \geq c \cdot f(n),\  \forall n \geq n_{0} \rbrace\]
+    Using substitution $ f(n) \longleftarrow x \cdot f(n), \forall x \leq \dfrac{1}{r}, \forall r \neq 0$
+  \[\Omega_{r}(x \cdot f(n)) = \lbrace f' \in \mathcal{F}\ |\ \forall c  \in \mathbb{R}^{*}_{+} \ s.t.\  c<r, \exists n_{0} \in \mathbb{N}^{*}\ s.t.\  f'(n) \geq x \cdot c \cdot f(n),\  \forall n \geq n_{0} \rbrace\]
+If $r>c$ and $x \leq \dfrac{1}{r}$, then $c \cdot x \leq 1, \forall r,c,x\ \ r \neq 0$
+   	Therefore:
+   	\[\forall x \leq \dfrac{1}{r}, \ \forall c \in \mathbb{R}^{*}_{+} \ s.t.\  c<r , \exists n_{0} = 1  s.t.\  \  f(n) \geq  c \cdot x\cdot f(n) \ \ \forall n \in \mathbb{N}^{*} ,\  \forall n \geq n_{0}=1 \Rightarrow \]
+ \[ f \in \Omega_{r} \left( x \cdot f(n) \right)\ \forall x \leq \dfrac{1}{r} \]
+\qedsymbol
+
+The reflexivity does not hold for Small \textit{r-}Theta and Small \textit{r-}Omega, as these two sets are equal with the classical sets defined in \textit{Bachmann–Landau notations}:
+ 
+$ f \notin \theta_{r}(f(n)) $ \\$ f \notin \omega_{r}(f(n)) $ 
  \hfill\break
 
  \textbf{Transitivity in $rComplexity$:}  \\  $ f \in \Theta(g(n)),  g \in \Theta(h(n)) \Rightarrow  f \in \Theta(h(n))$ \\
