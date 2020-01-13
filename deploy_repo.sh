@@ -52,7 +52,7 @@ do
   # MetricsUI deploy
   if [[ $var == "metricsui" ]]
   then
-    npm install metricsUI/
+    npm install --prefix metricsUI/ metricsUI/
     npm run-script --prefix metricsUI/ build
     sudo docker build -f metricsUI/Dockerfile -t raresraf/metricsui:$curr_time metricsUI/
     sudo docker push raresraf/metricsui:$curr_time
