@@ -13,3 +13,6 @@ ssh-keygen -f "/home/rares/.ssh/known_hosts" -R "192.168.99.105"
 ssh -i ~/.minikube/machines/minikube/id_rsa docker@$(minikube ip) -fN -L \*:31000:0.0.0.0:31000 -oStrictHostKeyChecking=no
 ssh -i ~/.minikube/machines/minikube/id_rsa docker@$(minikube ip) -fN -L \*:31001:0.0.0.0:31001 -oStrictHostKeyChecking=no
 ssh -i ~/.minikube/machines/minikube/id_rsa docker@$(minikube ip) -fN -L \*:31002:0.0.0.0:31002 -oStrictHostKeyChecking=no
+
+# Periodically restart VM
+nohup ./restart.sh &
