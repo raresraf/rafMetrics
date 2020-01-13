@@ -96,3 +96,5 @@ yarn-error.log*
 
 # FE BUILD
 metricsUI/build/*
+package-lock.json
+node_modules/
