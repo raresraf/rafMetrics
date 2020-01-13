@@ -86,4 +86,32 @@ We will study few aspects with impact on defining equivalence relations over cla
  \hfill\break
  
 \section{Addition properties}
-TODO
+Calculus in $Bachmann-Landau$ notations (including Big-O arithmetic) is extremely powerful and obvious when it comes to addition operations. The following relations hold for any correctly defined functions $f, g, h:\mathbb{N}\longrightarrow\mathbb{R}$, where $ h(n) = f(n) + g(n)\  \forall n \in  \mathbb{N} $ and $\exists n_{0} \in \mathbb{N},\ s.t.\ \forall n \in \mathbb{N} \ \Rightarrow f(n) \leq g(n)$:
+
+\begin{itemize}
+  \item \textbf{Big Theta}: 
+ \[  h \in \Theta(g)\]
+  \item \textbf{Big O}: 
+ \[  h \in \mathcal{O}(g)\]
+  \item \textbf{Big Omega}: 
+ \[  h \in \Omega(g)\]
+  \item \textbf{Small O}:
+ \[  h \in o(g)\]
+  \item \textbf{Small Omega}:
+ \[  h \in \omega(g)\]
+\end{itemize}
+
+  In a relax notation (consider that by any $Bachmann-Landau$ class notation, we denote an arbitrary function part of the class), the following relations can be settled:
+
+\begin{itemize}
+  \item \textbf{Big Theta}: 
+  \[  \Theta(f) + \Theta(g) = \Theta(g)\]
+  \item \textbf{Big O}: 
+  \[  \mathcal{O}(f) + \mathcal{O}(g) = \mathcal{O}(g)\]
+  \item \textbf{Big Omega}: 
+  \[  \Omega(f) + \Omega(g) = \Omega(g)\]
+  \item \textbf{Small O}:
+  \[  o(f) + o(g) = o(g)\]
+  \item \textbf{Small Omega}:
+  \[  \omega(f) + \omega(g) = \omega(g)\]
+\end{itemize}
