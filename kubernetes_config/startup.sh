@@ -1,4 +1,4 @@
-#/bin/bash
+#!/bin/bash
 
 # Start minikube VM
 minikube start
