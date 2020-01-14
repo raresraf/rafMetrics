@@ -205,11 +205,101 @@ Therefore $f \in \Theta_{r}(g(n))$
  \hfill\break
 
  
+\section{Other notable properties}
+An interesting property of the \textbf{Big \textit{r-}Theta},  \textbf{Big \textit{r-}O} and \textbf{Big \textit{r-}Omega} classes is the simple technique of conversion between various $r$s. The following results arise:
+\begin{itemize}
+  \item \textbf{Big Theta}: 
+ \[  f \in \Theta_{r}(g) \Rightarrow f \in \Theta_{q} \left( \frac{q}{r} \cdot g \right) \ \forall r,q \in \mathbb{R}_{+}\]
+\textit{Proof}:
+$ f \in \Theta_{r}(g(n)) \Rightarrow \forall c_{1}, c_{2} \in \mathbb{R}^{*}_{+} \ s.t.  c_{1}< r < c_{2} , \exists n_{0} \in \mathbb{N}^{*}\ \\ s.t.\ \ c_{1} \cdot g(n) \leq f(n) \leq c_{2} \cdot g(n)\ ,\  \forall n \geq n_{0} $ \\
+Therefore, $\forall c_{1}, c_{2} \in \mathbb{R}^{*}_{+} \ s.t.  c_{1} < q < c_{2} , \exists n_{0} \in \mathbb{N}^{*}\ \\ s.t.\ \ \frac{r}{q} \cdot c_{1} \cdot g(n) \leq f(n) \leq \frac{r}{q} \cdot c_{2} \cdot g(n)\ ,\  \forall n \geq n_{0}$. \\
+Thus, $f \in \Theta_{q} \left( \frac{q}{r} \cdot g \right)$.
+\qed
+\hfill\break
+\\ \\
+Another interesting result is obtained by multiplying the last equation by $\frac{q}{r}$: \\
+$\forall c_{1}, c_{2} \in \mathbb{R}^{*}_{+} \ s.t.  c_{1} < q < c_{2} , \exists n_{0}' = n_{0} \in \mathbb{N}^{*}\ \\ s.t.\ \ c_{1} \cdot g(n) \leq \frac{q}{r} \cdot f(n) \leq \frac{r}{q} \cdot g(n)\ ,\  \forall n \geq n_{0}$ \\
+Thus, \[ \frac{q}{r} \cdot f \in \Theta_{q} \left( g \right)\]. \\
+
+
+
+  \item \textbf{Big O}:  
+  \[  f \in \mathcal{O}_{r}(g) \Rightarrow f \in \mathcal{O}_{q} \left( \frac{q}{r} \cdot g \right) \ \forall r,q \in \mathbb{R}_{+}\]
+\textit{Proof}:
+Is similar with the proof for Big Theta, with the inequalities becoming $f(n) \leq c \cdot g(n)$.
+\qed
+\hfill\break
+ \\
+Also, 
+  \[  f \in \mathcal{O}_{r}(g) \Rightarrow \frac{q}{r} \cdot f \in \mathcal{O}_{q} \left(  g \right) \ \forall r,q \in \mathbb{R}_{+}\]
+
+  \item \textbf{Big Omega}: 
+ \[  f \in \Omega_{r}(g) \Rightarrow f \in \Omega_{q} \left( \frac{q}{r} \cdot g \right) \ \forall r,q \in \mathbb{R}_{+}\]
+\textit{Proof}:
+Is similar with the proof for Big Theta, with the inequalities becoming $f(n) \geq c \cdot g(n)$.
+\qed
+\hfill\break
+ \\
+ Also, 
+  \[  f \in \Omega_{r}(g) \Rightarrow \frac{q}{r} \cdot f \in \Omega_{q} \left( g \right) \ \forall r,q \in \mathbb{R}_{+}\]
+
+\end{itemize}
  
  
 \section{Addition properties}
-TODO
+Similar to the calculus in $Bachmann-Landau$ notations (including Big-O arithmetic), a useful observation is the behavior of $r-$Complexity classes in regards to addition exercises. 
+
+The following relations hold for any correctly defined functions $f, g, f', g', h:\mathbb{N}\longrightarrow\mathbb{R}$, where $ h(n) = f'(n) + g'(n)\  \forall n \in  \mathbb{N} $, where $f',g'$ are two arbitrary functions such that $ f' \in \Theta_{r}(f),  g' \in \Theta_{q}(g) $ and $r,q \in \mathbb{R}_{+}$:
+
+\begin{itemize}
+  \item \textbf{Big Theta}:  \\
+  If $ \lim_{n\to\infty} \dfrac{f(n)}{g(n)} = 0 \Rightarrow  h \in \Theta_{q}(g) $. \\
+
+\textit{Proof}:
+$ \lim_{n\to\infty} \dfrac{f(n)}{g(n)} = 0 \Rightarrow \lim_{n\to\infty} \dfrac{f'(n)}{g'(n)} = 0 \Rightarrow \lim_{n\to\infty} \dfrac{g'(n) + f'(n)}{g'(n)} = 1 $ and using the result from asymptotic analysis section, we have $ g'(n) + f'(n) = h(n) \in \Theta_{1}(g')$. \\ Using reflexivity property, $ h(n) \in \Theta_{q}(g)$.
+\qed
+\hfill\break
+
+  If $ \lim_{n\to\infty} \dfrac{f(n)}{g(n)} = \infty \Rightarrow  h \in \Theta_{r}(f) $. \\
+\textit{Proof}:
+Using the last result, by swapping $f \leftarrow g, g \leftarrow f$ and considering the commutativity of addition, we obtain the proof for this statement.
+\qed
+\hfill\break
 
 
-\section{Other notable properties}
-TODO
+  If $ \lim_{n\to\infty} \dfrac{f(n)}{g(n)} = t, \ t \in \mathbb{R}_{+} \Rightarrow  h \in \Theta_{r} \left( f + \dfrac{r}{q} \cdot g \right) $. \\
+\textit{Proof}:
+$ \lim_{n\to\infty} \dfrac{f(n)}{g(n)} = t \Rightarrow \lim_{n\to\infty} \dfrac{f'(n)}{g'(n)} = t \cdot \dfrac{r}{q} = t' \Rightarrow \lim_{n\to\infty} \dfrac{g'(n) + f'(n)}{g'(n)} = t' + 1 $ and using the result from asymptotic analysis section, we have $ g'(n) + f'(n) = h(n) \in \Theta_{t' + 1}(g')$. \\ 
+Using reflexivity property, $ h(n) \in \Theta_{t' + 1} (q \cdot g)$. \\
+Using the conversion technique, we have $ h(n) \in \Theta_{r}( \dfrac{1}{r} \cdot t \cdot \dfrac{r}{q} + 1) \cdot q \cdot g)$. \\
+By swapping back $t$, asymptotically, we can establish: $ h(n) \in \Theta_{r}( \dfrac{1}{r} \cdot ( \dfrac{f(n)}{g(n)} \cdot \dfrac{r}{q} + 1) \cdot q \cdot g)$ \\
+Therefore $ h \in \Theta_{r} \left( f + \dfrac{r}{q} \cdot g \right) $.
+\qed
+\hfill\break
+
+
+  \item \textbf{Big O}: 
+ \[  h \in \mathcal{O}_{1}(g)\]
+  \item \textbf{Big Omega}: 
+ \[  h \in \Omega_{1}(g)\]
+  \item \textbf{Small O}:
+ \[  h \in o_{1}(g)\]
+  \item \textbf{Small Omega}:
+ \[  h \in \omega_{1}(g)\]
+\end{itemize}
+
+
+In a relax notation (consider that by any  $r-$Complexity class notation, we denote an arbitrary function part of the class), the following relations can be settled:
+
+\begin{itemize}
+  \item \textbf{Big Theta}: 
+  \[  \Theta(f) + \Theta(g) = \Theta(g)\]
+  \item \textbf{Big O}: 
+  \[  \mathcal{O}(f) + \mathcal{O}(g) = \mathcal{O}(g)\]
+  \item \textbf{Big Omega}: 
+  \[  \Omega(f) + \Omega(g) = \Omega(g)\]
+  \item \textbf{Small O}:
+  \[  o(f) + o(g) = o(g)\]
+  \item \textbf{Small Omega}:
+  \[  \omega(f) + \omega(g) = \omega(g)\]
+\end{itemize}
