@@ -226,7 +226,7 @@ Thus, \[ \frac{q}{r} \cdot f \in \Theta_{q} \left( g \right)\]. \\
   \item \textbf{Big O}:  
   \[  f \in \mathcal{O}_{r}(g) \Rightarrow f \in \mathcal{O}_{q} \left( \frac{q}{r} \cdot g \right) \ \forall r,q \in \mathbb{R}_{+}\]
 \textit{Proof}:
-Is similar with the proof for Big Theta, with the inequalities becoming $f(n) \leq c \cdot g(n)$.
+Is similar with the proof for Big r-Theta, with the inequalities becoming $f(n) \leq c \cdot g(n)$.
 \qed
 \hfill\break
  \\
@@ -236,7 +236,7 @@ Also,
   \item \textbf{Big Omega}: 
  \[  f \in \Omega_{r}(g) \Rightarrow f \in \Omega_{q} \left( \frac{q}{r} \cdot g \right) \ \forall r,q \in \mathbb{R}_{+}\]
 \textit{Proof}:
-Is similar with the proof for Big Theta, with the inequalities becoming $f(n) \geq c \cdot g(n)$.
+Is similar with the proof for Big r-Theta, with the inequalities becoming $f(n) \geq c \cdot g(n)$.
 \qed
 \hfill\break
  \\
@@ -249,25 +249,27 @@ Is similar with the proof for Big Theta, with the inequalities becoming $f(n) \g
 \section{Addition properties}
 Similar to the calculus in $Bachmann-Landau$ notations (including Big-O arithmetic), a useful observation is the behavior of $r-$Complexity classes in regards to addition exercises. 
 
-The following relations hold for any correctly defined functions $f, g, f', g', h:\mathbb{N}\longrightarrow\mathbb{R}$, where $ h(n) = f'(n) + g'(n)\  \forall n \in  \mathbb{N} $, where $f',g'$ are two arbitrary functions such that $ f' \in \Theta_{r}(f),  g' \in \Theta_{q}(g) $ and $r,q \in \mathbb{R}_{+}$:
+
 
 \begin{itemize}
-  \item \textbf{Big Theta}:  \\
-  If $ \lim_{n\to\infty} \dfrac{f(n)}{g(n)} = 0 \Rightarrow  h \in \Theta_{q}(g) $. \\
+  \item \textbf{Big r-Theta}:  \\
+The following relations hold for any correctly defined functions $f, g, f', g', h:\mathbb{N}\longrightarrow\mathbb{R}$, where $ h(n) = f'(n) + g'(n)\  \forall n \in  \mathbb{N} $, where $f',g'$ are two arbitrary functions such that $ f' \in \Theta_{r}(f),  g' \in \Theta_{q}(g) $ and $r,q \in \mathbb{R}_{+}$:  
+  \\ \\ \\
+  \textbf{If} $ \lim_{n\to\infty} \dfrac{f(n)}{g(n)} = 0 \Rightarrow  h \in \Theta_{q}(g) $. \\
 
 \textit{Proof}:
 $ \lim_{n\to\infty} \dfrac{f(n)}{g(n)} = 0 \Rightarrow \lim_{n\to\infty} \dfrac{f'(n)}{g'(n)} = 0 \Rightarrow \lim_{n\to\infty} \dfrac{g'(n) + f'(n)}{g'(n)} = 1 $ and using the result from asymptotic analysis section, we have $ g'(n) + f'(n) = h(n) \in \Theta_{1}(g')$. \\ Using reflexivity property, $ h(n) \in \Theta_{q}(g)$.
 \qed
 \hfill\break
 
-  If $ \lim_{n\to\infty} \dfrac{f(n)}{g(n)} = \infty \Rightarrow  h \in \Theta_{r}(f) $. \\
+  \textbf{If} $ \lim_{n\to\infty} \dfrac{f(n)}{g(n)} = \infty \Rightarrow  h \in \Theta_{r}(f) $. \\
 \textit{Proof}:
 Using the last result, by swapping $f \leftarrow g, g \leftarrow f$ and considering the commutativity of addition, we obtain the proof for this statement.
 \qed
 \hfill\break
 
 
-  If $ \lim_{n\to\infty} \dfrac{f(n)}{g(n)} = t, \ t \in \mathbb{R}_{+} \Rightarrow  h \in \Theta_{r} \left( f + \dfrac{r}{q} \cdot g \right) $. \\
+  \textbf{If} $ \lim_{n\to\infty} \dfrac{f(n)}{g(n)} = t, \ t \in \mathbb{R}_{+} \Rightarrow  h \in \Theta_{r} \left( f + \dfrac{r}{q} \cdot g \right) $. \\
 \textit{Proof}:
 $ \lim_{n\to\infty} \dfrac{f(n)}{g(n)} = t \Rightarrow \lim_{n\to\infty} \dfrac{f'(n)}{g'(n)} = t \cdot \dfrac{r}{q} = t' \Rightarrow \lim_{n\to\infty} \dfrac{g'(n) + f'(n)}{g'(n)} = t' + 1 $ and using the result from asymptotic analysis section, we have $ g'(n) + f'(n) = h(n) \in \Theta_{t' + 1}(g')$. \\ 
 Using reflexivity property, $ h(n) \in \Theta_{t' + 1} (q \cdot g)$. \\
@@ -278,28 +280,79 @@ Therefore $ h \in \Theta_{r} \left( f + \dfrac{r}{q} \cdot g \right) $.
 \hfill\break
 
 
-  \item \textbf{Big O}: 
- \[  h \in \mathcal{O}_{1}(g)\]
-  \item \textbf{Big Omega}: 
- \[  h \in \Omega_{1}(g)\]
-  \item \textbf{Small O}:
- \[  h \in o_{1}(g)\]
-  \item \textbf{Small Omega}:
- \[  h \in \omega_{1}(g)\]
+  \item \textbf{Big r-O}: \\
+The following relations hold for any correctly defined functions $f, g, f', g', h:\mathbb{N}\longrightarrow\mathbb{R}$, where $ h(n) = f'(n) + g'(n)\  \forall n \in \mathbb{N} $, where $f',g'$ are two arbitrary functions such that $ f' \in \mathcal{O}_{r}(f),  g' \in \mathcal{O}_{q}(g) $ and $r,q \in \mathbb{R}_{+}$:  
+  \\ \\ \\
+
+    \textbf{If} $ \lim_{n\to\infty} \dfrac{f(n)}{g(n)} = 0 \Rightarrow  h \in \mathcal{O}_{q}(g) $. \\
+\textit{Proof}: 
+Is similar with the proof for addition in Big Theta, using conversion presented for Big r-O class.
+\hfill\break
+
+  \textbf{If} $ \lim_{n\to\infty} \dfrac{f(n)}{g(n)} = \infty \Rightarrow  h \in \mathcal{O}_{r}(f) $. \\
+  \textit{Proof}:
+Is similar with the proof for addition in Big Theta, using conversion presented for Big r-O class.
+\hfill\break
+  \textbf{If} $ \lim_{n\to\infty} \dfrac{f(n)}{g(n)} = t, \ t \in \mathbb{R}_{+} \Rightarrow  h \in \mathcal{O}_{r} \left( f + \dfrac{r}{q} \cdot g \right) $. \\
+  \textit{Proof}:
+Is similar with the proof for addition in Big Theta, using conversion presented for Big r-O class.
+\hfill\break
+
+
+  \item \textbf{Big r-Omega}: 
+  The following relations hold for any correctly defined functions $f, g, f', g', h:\mathbb{N}\longrightarrow\mathbb{R}$, where $ h(n) = f'(n) + g'(n)\  \forall n \in \mathbb{N} $, where $f',g'$ are two arbitrary functions such that $ f' \in \Omega_{r}(f),  g' \in \Omega_{q}(g) $ and $r,q \in \mathbb{R}_{+}$:  
+
+    \textbf{If} $ \lim_{n\to\infty} \dfrac{f(n)}{g(n)} = 0 \Rightarrow  h \in \Omega_{q}(g) $. \\
+\textit{Proof}:
+Is similar with the proof for addition in Big Theta, using conversion presented for Big r-O class.
+\hfill\break
+
+  \textbf{If} $ \lim_{n\to\infty} \dfrac{f(n)}{g(n)} = \infty \Rightarrow  h \in \Omega_{r}(f) $. \\
+  \textit{Proof}:
+Is similar with the proof for addition in Big Theta, using conversion presented for Big r-Omega class.
+\hfill\break
+  \textbf{If} $ \lim_{n\to\infty} \dfrac{f(n)}{g(n)} = t, \ t \in \mathbb{R}_{+} \Rightarrow  h \in \Omega_{r} \left( f + \dfrac{r}{q} \cdot g \right) $. \\
+  \textit{Proof}:
+Is similar with the proof for addition in Big Theta, using conversion presented for Big r-Omega class.
+\hfill\break
+
+  \item \textbf{Small r-O}:
+  Same property as in $Bachmann-Landau$ notations.
+  \item \textbf{Small r-Omega}:
+  Same property as in $Bachmann-Landau$ notations.
 \end{itemize}
 
 
 In a relax notation (consider that by any  $r-$Complexity class notation, we denote an arbitrary function part of the class), the following relations can be settled:
 
+
+If $\lim_{n\to\infty} \dfrac{f(n)}{g(n)} = 0$:
 \begin{itemize}
-  \item \textbf{Big Theta}: 
-  \[  \Theta(f) + \Theta(g) = \Theta(g)\]
-  \item \textbf{Big O}: 
-  \[  \mathcal{O}(f) + \mathcal{O}(g) = \mathcal{O}(g)\]
-  \item \textbf{Big Omega}: 
-  \[  \Omega(f) + \Omega(g) = \Omega(g)\]
-  \item \textbf{Small O}:
-  \[  o(f) + o(g) = o(g)\]
-  \item \textbf{Small Omega}:
-  \[  \omega(f) + \omega(g) = \omega(g)\]
+  \item \textbf{Big r-Theta}: 
+  \[  \Theta_{r}(f) + \Theta_{q}(g) = \Theta_{q}(g)\]
+  \item \textbf{Big r-O}: 
+  \[  \mathcal{O}_{r}(f) + \mathcal{O}_{q}(g) = \mathcal{O}_{q}(g)\]
+  \item \textbf{Big r-Omega}: 
+  \[  \Omega_{r}(f) + \Omega_{q}(g) = \Omega_{q}(g)\]
+\end{itemize}
+
+
+If $\lim_{n\to\infty} \dfrac{f(n)}{g(n)} = \infty$:
+\begin{itemize}
+  \item \textbf{Big r-Theta}: 
+  \[  \Theta_{r}(f) + \Theta_{q}(g) = \Theta_{r}(f)\]
+  \item \textbf{Big r-O}: 
+  \[  \mathcal{O}_{r}(f) + \mathcal{O}_{q}(g) = \mathcal{O}_{r}(f)\]
+  \item \textbf{Big r-Omega}: 
+  \[  \Omega_{r}(f) + \Omega_{q}(g) = \Omega_{r}(f)\]
+\end{itemize}
+
+If $\lim_{n\to\infty} \dfrac{f(n)}{g(n)} = t, \ t \in \mathbb{R}_{+}$:
+\begin{itemize}
+  \item \textbf{Big r-Theta}: 
+  \[  \Theta_{r}(f) + \Theta_{q}(g) = \Theta_{r}(f + \dfrac{r}{q} \cdot g)\]
+  \item \textbf{Big r-O}: 
+  \[  \mathcal{O}_{r}(f) + \mathcal{O}_{q}(g) = \mathcal{O}_{r}(f + \dfrac{r}{q} \cdot g)\]
+  \item \textbf{Big r-Omega}: 
+  \[  \Omega_{r}(f) + \Omega_{q}(g) = \Omega_{r}(f + \dfrac{r}{q} \cdot g)\]
 \end{itemize}
