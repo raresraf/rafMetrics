@@ -2,11 +2,11 @@
 
 while :
 do
-	sleep 6h
-
-  # Periodically restart VM
-	minikube stop
-
 	# Startup
 	./startup.sh
+
+	sleep 6h
+
+	# Periodically restart VM
+	minikube stop
 done

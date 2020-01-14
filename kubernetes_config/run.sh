@@ -1,3 +1,3 @@
 #!/bin/bash
 
-nohup ./restart.sh &
+nohup ./minikube_restart.sh &
