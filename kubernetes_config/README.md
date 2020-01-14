@@ -3,10 +3,14 @@ Keeps track of all k8s settings
 
 # Quick deploy in minikube
 ```
-chmod u+x startup.sh
 ./startup.sh
 ```
 
+# Fault-tolerant minikube deploy
+Periodic restarts - 6 hours
+```
+./run.sh
+```
 
 ## Deployments
 - `mysql` : An open-source relational database management system 📙
