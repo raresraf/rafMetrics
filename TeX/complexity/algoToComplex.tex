@@ -11,7 +11,40 @@ TODO
 TODO
 
 \section{Estimating computational time based on Normalized rComplexity}
-TODO
+Let an arbitrary algorithm $Alg$ characterized by the complexity function $f$ with a variable input dimension $n \in \mathcal{N}^{*}$. Consider that the input size is bounded such that $n \in [n_{min}, n_{max}]$. \\
+We aim to define various metrics for approximation an average computational time required based on the size of the input and the algorithm's complexity function  $T(n_{min}, n_{max})$.\\
+
+\begin{definition} Metric for time estimation based on arithmetic mean in Normalized rComplexity model is defined as follows:
+\[  T(n_{min}, n_{max}) = \dfrac{\sum\limits_{n=n_{min}}^{n_{max}} g_{1}(n)}{n_{max} - n_{min} + 1}  \]
+\end{definition}
+
+\begin{definition} Metric for time estimation based on Mean-Value Theorem(Lagrange) using integrals in Normalized rComplexity model is defined as follows:
+\[  T(n_{min}, n_{max}) = \dfrac{\int\limits_{n_{min}}^{n_{max}} g_{1}(n) dn}{n_{max} - n_{min}}  \]
+\end{definition}
+
+The previous two metrics are tailored for systems where the input size is bounded but there is no additional knowledge regarding the weights and probabilities of occurrence. If this information is available, we can redefine the previous metrics using the acquisition data.
+
+\begin{definition} Enhanced metric for time estimation based on arithmetic mean in Normalized rComplexity model is defined as follows:
+\[  T(n_{min}, n_{max}) = \sum\limits_{n=0}^{f} p_{n} \cdot g_{1}(n + n_{min})  \]
+where:
+\begin{itemize}
+	\item $p_{0}$ is the weight associated with $n_{0} = n_{min}$
+	\item $p_{1}$ is the weight associated with $n_{1} = n_{min + 1}$
+	\item $p_{f}$ is the weight associated with $n_{f} = n_{max}$
+\end{itemize}
+and $f = max - min + 1$.
+\end{definition}
+
+\begin{definition} Enhanced metric for time estimation based on Mean-Value Theorem(Lagrange) using integrals in Normalized rComplexity model is defined as follows:
+\[  T(n_{min}, n_{max}) =\sum\limits_{k=0}^{f-1} p_{k} \cdot \int\limits_{n_{k}}^{n_{k+1}} g_{1}(n) dn  \]
+where:
+\begin{itemize}
+	\item $p_{0}$ is the weight associated with the probability of the input to be bounded in the interval $[n_{0}, n_{1}]$
+	\item $p_{1}$ is the weight associated with the probability of the input to be bounded in the interval $[n_{1}, n_{2}]$
+	\item $p_{f-1}$ is the weight associated with the probability of the input to be bounded in the interval $[n_{f-1}, n_{f}]$
+\end{itemize}
+and $f = max - min + 1$, and $n_{0} = n_{min}, n_{f} = n_{max}$.
+\end{definition}
 
 \section{Comparing algorithms asymptotic performances based on Normalized rComplexity}
 TODO
