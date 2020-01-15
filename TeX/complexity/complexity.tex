@@ -21,10 +21,10 @@ Assume that two continuous and derivable functions $v,w:\mathbb{R}\longrightarro
   \[\lim_{x\to\infty} \frac{v(x)}{w(x)} = c \in (-\infty, 0) \cup (0,\infty) \]
 \end{definition}
 
-\begin{corollary}
+\begin{lemma}
   Consider that if we analyses asymptotic behavior of functions defined over $\mathbb{N}$ the functions $v,w:\mathbb{N}\longrightarrow\mathbb{R}$ are similar iff there exists a function $r:\mathbb{N}\longrightarrow\mathbb{R}$, with $r(x) = \frac{v(x)}{w(x)}\ \forall\ x\in\mathbb{N}$, such that
   \[\lim_{x\to\infty} r(x) = \lim_{x\to\infty} \frac{v(x)}{w(x)} = C \in (-\infty, 0) \cup (0,\infty) \]
-\end{corollary}
+\end{lemma}
 
 The following function classes can be therefore defined for any function $g:\mathbb{N}\longrightarrow\mathbb{R}$ that describes a convergent sequence or a divergent sequence with a limit that tends to infinity:
 \begin{definition}   
@@ -32,10 +32,10 @@ The following function classes can be therefore defined for any function $g:\mat
   \[\Theta(g(n))= \lbrace f \in \mathcal{F}\ |\ \exists c_{1}, c_{2} \in \mathbb{R}^{*}_{+}, \exists n_{0} \in \mathbb{N}^{*}\ s.t.\ \ c_{1} \cdot g(n) \leq f(n) \leq c_{2} \cdot g(n)\ ,\  \forall n \geq n_{0} \rbrace\]
 \end{definition}  
 
-\begin{corollary}
+\begin{lemma}
   Another useful method of establishing a Big-Theta relationship, if the composed sequence defined by the ratio of the two functions exists and also $ \lim_{x\to\infty} \frac{f(x)}{g(x)}$ exists, is by applying the sufficient condition:
     \[ f \in \Theta(g(n))\ \Leftrightarrow\ \lim_{x\to\infty} \frac{f(x)}{g(x)} = C \in (-\infty, 0) \cup (0,\infty) \]
-\end{corollary}
+\end{lemma}
 
 Remark that  both $f,g$ can define divergent sequence with limits that tend to infinity, while the sequence $r(x) = \frac{f(x)}{g(x)}\ \forall\ x\in\mathbb{N}$ can be convergent and can have a nonzero limit. \\
 Iff $ r(x) = \frac{f(x)}{g(x)}\ $ exists, a sufficient condition can be defined using the formal limit definition for an arbitrary sequence if the following condition holds:
@@ -48,10 +48,10 @@ Iff $ r(x) = \frac{f(x)}{g(x)}\ $ exists, a sufficient condition can be defined 
  asymptotic performance in comparison with  $g(n)$. The set of such functions is defined as it follows:
   \[\mathcal{O}(g(n)) = \lbrace f \in \mathcal{F}\ |\ \exists c \in \mathbb{R}^{*}_{+}, \exists n_{0} \in \mathbb{N}^{*}\ s.t.\  f(n) \leq c \cdot g(n),\  \forall n \geq n_{0} \rbrace\]
   \end{definition}  
-  \begin{corollary}
+  \begin{lemma}
   In order to establish a Big-O relationship, the sufficient condition is that the $ \lim_{x\to\infty} \frac{f(x)}{g(x)}$ exists and it is finite. 
   \[ f \in \mathcal{O}(g(n))\ \Leftrightarrow\ \lim_{x\to\infty} \frac{f(x)}{g(x)} = C \in (-\infty, \infty) \]
-  \end{corollary}
+  \end{lemma}
 
   
 \begin{definition}   
@@ -59,12 +59,12 @@ Iff $ r(x) = \frac{f(x)}{g(x)}\ $ exists, a sufficient condition can be defined 
     \[\Omega(g(n)) = \lbrace f \in \mathcal{F}\ |\ \exists c \in \mathbb{R}^{*}_{+}, \exists n_{0} \in \mathbb{N}^{*}\ s.t.\  f(n) \geq c \cdot g(n),\  \forall n \geq n_{0} \rbrace\]
 \end{definition}  
 
-  \begin{corollary}
+  \begin{lemma}
   In order to establish a Big-Omega relationship, a sufficient condition is one of the following:
     \[  \lim_{x\to\infty} \frac{f(x)}{g(x)} = -\infty \Rightarrow f \in \Omega(g(n))\ \]
     \[ \lim_{x\to\infty} \frac{f(x)}{g(x)} = \infty \Rightarrow f \in \Omega(g(n))\  \]
      \[ \lim_{x\to\infty} \frac{f(x)}{g(x)} = C \in (-\infty, 0) \cup (0,\infty) \Rightarrow f \in \Omega(g(n))\ \]
-   \end{corollary}
+   \end{lemma}
    
 \begin{definition}   
  \textbf{Small O}:
@@ -72,10 +72,10 @@ Iff $ r(x) = \frac{f(x)}{g(x)}\ $ exists, a sufficient condition can be defined 
  asymptotic performance in comparison with  $g(n)$. The set of such functions is defined as it follows:
   \[o(g(n)) = \lbrace f \in \mathcal{F}\ |\ \forall c \in \mathbb{R}^{*}_{+}, \exists n_{0} \in \mathbb{N}^{*}\ s.t.\  f(n) < c \cdot g(n),\  \forall n \geq n_{0} \rbrace\]
   \end{definition}  
-  \begin{corollary}
+  \begin{lemma}
 In order to establish a Small-O relationship, the sufficient condition is that the $ \lim_{x\to\infty} \frac{f(x)}{g(x)}$ exists and it is finite. 
   \[ f \in o(g(n))\ \Leftrightarrow\ \lim_{x\to\infty} \frac{f(x)}{g(x)} = 0 \]  
-  \end{corollary}
+  \end{lemma}
   
 \begin{definition}   
  \textbf{Small Omega}:
@@ -83,11 +83,11 @@ In order to establish a Small-O relationship, the sufficient condition is that t
   The set of such functions is defined as it follows:
   \[\omega(g(n)) = \lbrace f \in \mathcal{F}\ |\ \forall c \in \mathbb{R}^{*}_{+}, \exists n_{0} \in \mathbb{N}^{*}\ s.t.\  f(n) > c \cdot g(n),\  \forall n \geq n_{0} \rbrace\]
   \end{definition}  
-  \begin{corollary}
+  \begin{lemma}
 In order to establish a Small-Omega relationship, the sufficient condition is that the $ \lim_{x\to\infty} \frac{f(x)}{g(x)}$ exists and one of the following occurs:
   \[  \lim_{x\to\infty} \frac{f(x)}{g(x)} = +\infty \Rightarrow f \in \omega(g(n))\ \]   
   \[  \lim_{x\to\infty} \frac{f(x)}{g(x)} = -\infty \Rightarrow f \in \omega(g(n))\ \]  
-  \end{corollary}
+  \end{lemma}
 
 \section{Common properties}
 We will study few aspects with impact on defining equivalence relations over classes defined in \textit{Bachmann–Landau} notations.
