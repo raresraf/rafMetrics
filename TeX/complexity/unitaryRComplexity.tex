@@ -147,4 +147,68 @@ $ f \notin o_{1}(f(n)) $ \\$ f \notin \omega_{1}(f(n)) $
  
  
 \section{Addition properties}
-TODO
+Addition properties are obtained by assuming $r = 1$ in the $r$Complexity model.
+\begin{itemize}
+  \item \textbf{Big 1-Theta}:  \\
+The following relations hold for any correctly defined functions $f, g, f', g', h:\mathbb{N}\longrightarrow\mathbb{R}$, where $ h(n) = f'(n) + g'(n)\  \forall n \in  \mathbb{N} $, where $f',g'$ are two arbitrary functions such that $ f' \in \Theta_{1}(f),  g' \in \Theta_{1}(g) $:  
+  \\ \\
+  \textbf{If} $ \lim_{n\to\infty} \dfrac{f(n)}{g(n)} = 0 \Rightarrow  h \in \Theta_{1}(g) $. \\
+
+  \textbf{If} $ \lim_{n\to\infty} \dfrac{f(n)}{g(n)} = \infty \Rightarrow  h \in \Theta_{1}(f) $. \\
+
+  \textbf{If} $ \lim_{n\to\infty} \dfrac{f(n)}{g(n)} = t, \ t \in \mathbb{R}_{+} \Rightarrow  h \in \Theta_{1} \left( f + g \right) $. \\
+
+  \item \textbf{Big 1-O}: \\
+The following relations hold for any correctly defined functions $f, g, f', g', h:\mathbb{N}\longrightarrow\mathbb{R}$, where $ h(n) = f'(n) + g'(n)\  \forall n \in \mathbb{N} $, where $f',g'$ are two arbitrary functions such that $ f' \in \mathcal{O}_{1}(f),  g' \in \mathcal{O}_{1}(g) $:  
+  \\ \\
+
+  \textbf{If} $ \lim_{n\to\infty} \dfrac{f(n)}{g(n)} = 0 \Rightarrow  h \in \mathcal{O}_{1}(g) $. \\
+  \textbf{If} $ \lim_{n\to\infty} \dfrac{f(n)}{g(n)} = \infty \Rightarrow  h \in \mathcal{O}_{1}(f) $. \\
+  \textbf{If} $ \lim_{n\to\infty} \dfrac{f(n)}{g(n)} = t, \ t \in \mathbb{R}_{+} \Rightarrow  h \in \mathcal{O}_{1} \left( f + g \right) $. \\
+
+
+  \item \textbf{Big 1-Omega}: 
+  The following relations hold for any correctly defined functions $f, g, f', g', h:\mathbb{N}\longrightarrow\mathbb{R}$, where $ h(n) = f'(n) + g'(n)\  \forall n \in \mathbb{N} $, where $f',g'$ are two arbitrary functions such that $ f' \in \Omega_{1}(f),  g' \in \Omega_{1}(g) $:  
+  \\ \\
+  \textbf{If} $ \lim_{n\to\infty} \dfrac{f(n)}{g(n)} = 0 \Rightarrow  h \in \Omega_{1}(g) $. \\
+
+  \textbf{If} $ \lim_{n\to\infty} \dfrac{f(n)}{g(n)} = \infty \Rightarrow  h \in \Omega_{1}(f) $. \\
+  \textbf{If} $ \lim_{n\to\infty} \dfrac{f(n)}{g(n)} = t, \ t \in \mathbb{R}_{+} \Rightarrow  h \in \Omega_{r} \left( f + g \right) $. \\
+
+\end{itemize}
+
+
+In a relax notation (consider that by any  $1-$Complexity class notation, we denote an arbitrary function part of the class), the following relations can be settled:
+
+
+If $\lim_{n\to\infty} \dfrac{f(n)}{g(n)} = 0$:
+\begin{itemize}
+  \item \textbf{Big 1-Theta}: 
+  \[  \Theta_{1}(f) + \Theta_{1}(g) = \Theta_{1}(g)\]
+  \item \textbf{Big 1-O}: 
+  \[  \mathcal{O}_{1}(f) + \mathcal{O}_{1}(g) = \mathcal{O}_{1}(g)\]
+  \item \textbf{Big 1-Omega}: 
+  \[  \Omega_{1}(f) + \Omega_{1}(g) = \Omega_{1}(g)\]
+\end{itemize}
+
+
+If $\lim_{n\to\infty} \dfrac{f(n)}{g(n)} = \infty$:
+\begin{itemize}
+  \item \textbf{Big 1-Theta}: 
+  \[  \Theta_{1}(f) + \Theta_{1}(g) = \Theta_{1}(f)\]
+  \item \textbf{Big 1-O}: 
+  \[  \mathcal{O}_{1}(f) + \mathcal{O}_{1}(g) = \mathcal{O}_{1}(f)\]
+  \item \textbf{Big 1-Omega}: 
+  \[  \Omega_{1}(f) + \Omega_{1}(g) = \Omega_{1}(f)\]
+\end{itemize}
+
+If $\lim_{n\to\infty} \dfrac{f(n)}{g(n)} = t, \ t \in \mathbb{R}_{+}$:
+\begin{itemize}
+  \item \textbf{Big 1-Theta}: 
+  \[  \Theta_{1}(f) + \Theta_{1}(g) = \Theta_{1}(f + g)\]
+  \item \textbf{Big 1-O}: 
+  \[  \mathcal{O}_{1}(f) + \mathcal{O}_{1}(g) = \mathcal{O}_{1}(f + g)\]
+  \item \textbf{Big 1-Omega}: 
+  \[  \Omega_{1}(f) + \Omega_{1}(g) = \Omega_{1}(f + g)\]
+\end{itemize}
+
