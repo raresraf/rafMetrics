@@ -47,7 +47,65 @@ and $f = max - min + 1$, and $n_{0} = n_{min}, n_{f} = n_{max}$.
 \end{definition}
 
 \section{Comparing algorithms asymptotic performances based on Normalized rComplexity}
-TODO
+
+
+
+This section aims to compare two Algorithms ($Alg1$, $Alg2$) time-based performances based on associated Big r-Theta class from Normalized rComplexity model, by asymptotically correlating the characterized complexity functions $f, f'$. \\
+Let $f \in \Theta_{1}(g_{1}(n))$ and $f' \in \Theta_{1}(g'_{1}(n))$.
+We can therefore compare the time-based performances of the two algorithms by evaluating:  \[\lim_{n\to\infty} \dfrac{g_{1}(n)}{g'_{1}(n)}\]
+
+\begin{remark}
+\[\lim_{n\to\infty} \dfrac{g_{1}(n)}{g'_{1}(n)} = \lim_{n\to\infty} \dfrac{f(n)}{f'(n)}\]
+\end{remark}
+
+\begin{definition}
+Let $f \in \Theta_{1}(g_{1}(n))$ and $f' \in \Theta_{1}(g'_{1}(n))$. $f$ is part of a smaller class than $f'$ iff $\lim_{n\to\infty} \dfrac{g_{1}(n)}{g'_{1}(n)} = 0$.
+\end{definition}
+\begin{lemma}
+If  $ \lim_{n\to\infty} \dfrac{g_{1}(n)}{g'_{1}(n)} = 0 $ , then $Alg1$ will terminate faster than $Alg2$ for any input size $n \geq n_{0}$, with the possibility of computing $n_{0} \in \mathcal{N}^{*}$.
+\end{lemma}
+\begin{proof}
+$\lim_{n\to\infty} \dfrac{g_{1}(n)}{g'_{1}(n)} = 0 \Rightarrow g_{1}(n) < g'_{1}(n)\ \forall n \geq n_{0} \Rightarrow f(n) < f'(n) \ \forall n \geq n_{0}'$
+\end{proof}
+
+\begin{definition}
+Let $f \in \Theta_{1}(g_{1}(n))$ and $f' \in \Theta_{1}(g'_{1}(n))$. $f$ is part of the same class as $f'$ iff $\lim_{n\to\infty} \dfrac{g_{1}(n)}{g'_{1}(n)} = r$ and $r \in \mathcal{R}_{+}$.
+If $f is part of the same class as f'$, we can distinguish the following cases:
+$$
+\lim_{n\to\infty} \dfrac{g_{1}(n)}{g'_{1}(n)} = 
+\begin{cases}
+x \in (0,1), f\ has\ a\ smaller\ constant\ than\ f' \\
+1, f\ has\ the\ same\ constant\ as\ f'\\
+y, \in (1,\infty) f\ has\ a\ bigger\ constant\ than\ f'
+\end{cases}
+$$
+\end{definition}
+
+\begin{lemma}
+If  $ \lim_{n\to\infty} \dfrac{g_{1}(n)}{g'_{1}(n)} = r \in (0,1) $ , then $Alg1$ will terminate faster than $Alg2$ for any input size $n \geq n_{0}$, with the possibility of computing $n_{0} \in \mathcal{N}^{*}$.
+\end{lemma}
+\begin{proof}
+$\lim_{n\to\infty} \dfrac{g_{1}(n)}{g'_{1}(n)} < 1 \Rightarrow g_{1}(n) < g'_{1}(n)\ \forall n \geq n_{0} \Rightarrow f(n) < f'(n) \ \forall n \geq n_{0}'$
+\end{proof}
+
+\begin{lemma}
+If  $ \lim_{n\to\infty} \dfrac{g_{1}(n)}{g'_{1}(n)} = r \in (1,\infty) $ , then $Alg1$ will terminate slower than $Alg2$ for any input size $n \geq n_{0}$, with the possibility of computing $n_{0} \in \mathcal{N}^{*}$.
+\end{lemma}
+\begin{proof}
+$\lim_{n\to\infty} \dfrac{g_{1}(n)}{g'_{1}(n)} > 1 \Rightarrow g_{1}(n) > g'_{1}(n)\ \forall n \geq n_{0} \Rightarrow f(n) > f'(n) \ \forall n \geq n_{0}'$
+\end{proof}
+
+
+
+\begin{definition}
+Let $f \in \Theta_{1}(g_{1}(n))$ and $f' \in \Theta_{1}(g'_{1}(n))$. $f$ is part of a bigger class than $f'$ iff $\lim_{n\to\infty} \dfrac{g_{1}(n)}{g'_{1}(n)} = \infty$.
+\end{definition}
+\begin{lemma}
+If  $ \lim_{n\to\infty} \dfrac{g_{1}(n)}{g'_{1}(n)} = \infty $ , then $Alg1$ will terminate slower than $Alg2$ for any input size $n \geq n_{0}$, with the possibility of computing $n_{0} \in \mathcal{N}^{*}$.
+\end{lemma}
+\begin{proof}
+$\lim_{n\to\infty} \dfrac{g_{1}(n)}{g'_{1}(n)} = \infty \Rightarrow g_{1}(n) > g'_{1}(n)\ \forall n \geq n_{0} \Rightarrow f(n) > f'(n) \ \forall n \geq n_{0}'$
+\end{proof}
 
 \section{Comparing algorithms interval-based performances based on Normalized rComplexity}
 TODO
