@@ -36,7 +36,7 @@ CREATE PROCEDURE get_monthly_samples_size (
     OUT start_hour FLOAT
 )
 BEGIN
-    select HOUR(now()) INTO start_hour;
+    select DAY(now()) INTO start_hour;
     if EXISTS(SELECT ResponseSize FROM PING WHERE TIMESTAMP >= DATE_SUB(NOW(), INTERVAL 31 DAY) AND TIMESTAMP <= DATE_SUB(NOW(), INTERVAL 30 DAY) AND Resourceid = id)
     then SELECT ResponseSize INTO entry0 FROM PING WHERE TIMESTAMP >= DATE_SUB(NOW(), INTERVAL 31 DAY) AND TIMESTAMP <= DATE_SUB(NOW(), INTERVAL 30 DAY) AND Resourceid = id limit 1;
     else SET entry0 := 0;

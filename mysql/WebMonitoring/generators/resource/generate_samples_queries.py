@@ -30,6 +30,8 @@ def generate_samples_queries(period):
     print(" )")
 
     print("BEGIN")
+    if period.lower() == 'monthly':
+        print("    select DAY(now()) INTO start_hour;")
     print("    select HOUR(now()) INTO start_hour;")
 
     for i in range(howmany):

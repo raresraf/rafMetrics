@@ -36,7 +36,7 @@ CREATE PROCEDURE get_monthly_samples_websites (
     OUT start_hour FLOAT
  )
 BEGIN
-    select HOUR(now()) INTO start_hour;
+    select DAY(now()) INTO start_hour;
     if EXISTS(SELECT TotalTime FROM WEBSITES_METRICS WHERE TIMESTAMP >= DATE_SUB(NOW(), INTERVAL 31 DAY) AND TIMESTAMP <= DATE_SUB(NOW(), INTERVAL 30 DAY) AND Websiteid = id)
         then SELECT TotalTime INTO entry0 FROM WEBSITES_METRICS WHERE TIMESTAMP >= DATE_SUB(NOW(), INTERVAL 31 DAY) AND TIMESTAMP <= DATE_SUB(NOW(), INTERVAL 30 DAY) AND Websiteid = id limit 1;
         else SET entry0 := 0;

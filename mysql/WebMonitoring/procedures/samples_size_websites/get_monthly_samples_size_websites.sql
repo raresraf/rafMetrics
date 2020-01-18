@@ -36,7 +36,7 @@ CREATE PROCEDURE get_monthly_samples_size_websites (
     OUT start_hour FLOAT
  )
 BEGIN
-    select HOUR(now()) INTO start_hour;
+    select DAY(now()) INTO start_hour;
     if EXISTS(SELECT SUM(bodySize) from REQUESTS where Metricid = (SELECT Metricid FROM WEBSITES_METRICS WHERE TIMESTAMP >= DATE_SUB(NOW(), INTERVAL 31 DAY) AND TIMESTAMP <= DATE_SUB(NOW(), INTERVAL 30 DAY) AND Websiteid = id limit 1))
         then SELECT SUM(bodySize) INTO entry0 from REQUESTS where Metricid = (SELECT Metricid FROM WEBSITES_METRICS WHERE TIMESTAMP >= DATE_SUB(NOW(), INTERVAL 31 DAY) AND TIMESTAMP <= DATE_SUB(NOW(), INTERVAL 30 DAY) AND Websiteid = id limit 1);
         else SET entry0 := 0;
