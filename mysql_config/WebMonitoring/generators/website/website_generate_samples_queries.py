@@ -1,6 +1,3 @@
-import sys
-
-
 def website_generate_samples_queries(period):
     procedure_name = "get_" + period.lower() + "_samples_websites"
 
@@ -50,4 +47,5 @@ def website_generate_samples_queries(period):
     print("delimiter ;")
 
 
-website_generate_samples_queries(sys.argv[1])
+# Driver:
+# website_generate_samples_queries(sys.argv[1])
