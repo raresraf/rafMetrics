@@ -1,8 +1,8 @@
 import sys
 
 
-def generate_samples_queries_size(period):
-    procedure_name = "get_" + period.lower() + "_samples_size_websites"
+def resource_generate_samples_queries(period):
+    procedure_name = "get_" + period.lower() + "_samples"
 
     howmany = 24
     GOBACK = 'HOUR'
@@ -37,10 +37,10 @@ def generate_samples_queries_size(period):
 
     for i in range(howmany):
         print(
-            "    if EXISTS(SELECT SUM(bodySize) from REQUESTS where Metricid = (SELECT Metricid FROM WEBSITES_METRICS WHERE TIMESTAMP >= DATE_SUB(NOW(), INTERVAL %d %s) AND TIMESTAMP <= DATE_SUB(NOW(), INTERVAL %d %s) AND Websiteid = id limit 1))"
+            "    if EXISTS(SELECT ResponseTime FROM PING WHERE TIMESTAMP >= DATE_SUB(NOW(), INTERVAL %d %s) AND TIMESTAMP <= DATE_SUB(NOW(), INTERVAL %d %s) AND Resourceid = id)"
             % (COEF * (howmany - i), GOBACK, COEF * (howmany - 1 - i), GOBACK))
         print(
-            "        then SELECT SUM(bodySize) INTO entry%d from REQUESTS where Metricid = (SELECT Metricid FROM WEBSITES_METRICS WHERE TIMESTAMP >= DATE_SUB(NOW(), INTERVAL %d %s) AND TIMESTAMP <= DATE_SUB(NOW(), INTERVAL %d %s) AND Websiteid = id limit 1);"
+            "        then SELECT ResponseTime INTO entry%d FROM PING WHERE TIMESTAMP >= DATE_SUB(NOW(), INTERVAL %d %s) AND TIMESTAMP <= DATE_SUB(NOW(), INTERVAL %d %s) AND Resourceid = id limit 1;"
             % (i, COEF * (howmany - i), GOBACK, COEF *
                (howmany - 1 - i), GOBACK))
         print("        else SET entry%d := 0;" % i)
@@ -50,4 +50,4 @@ def generate_samples_queries_size(period):
     print("delimiter ;")
 
 
-generate_samples_queries_size(sys.argv[1])
+resource_generate_samples_queries(sys.argv[1])

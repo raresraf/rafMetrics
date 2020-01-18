@@ -1,8 +1,8 @@
 import sys
 
 
-def generate_samples_queries(period):
-    procedure_name = "get_" + period.lower() + "_samples"
+def resource_generate_samples_queries_size(period):
+    procedure_name = "get_" + period.lower() + "_samples_size"
 
     howmany = 24
     GOBACK = 'HOUR'
@@ -37,10 +37,10 @@ def generate_samples_queries(period):
 
     for i in range(howmany):
         print(
-            "    if EXISTS(SELECT ResponseTime FROM PING WHERE TIMESTAMP >= DATE_SUB(NOW(), INTERVAL %d %s) AND TIMESTAMP <= DATE_SUB(NOW(), INTERVAL %d %s) AND Resourceid = id)"
+            "    if EXISTS(SELECT ResponseSize FROM PING WHERE TIMESTAMP >= DATE_SUB(NOW(), INTERVAL %d %s) AND TIMESTAMP <= DATE_SUB(NOW(), INTERVAL %d %s) AND Resourceid = id)"
             % (COEF * (howmany - i), GOBACK, COEF * (howmany - 1 - i), GOBACK))
         print(
-            "        then SELECT ResponseTime INTO entry%d FROM PING WHERE TIMESTAMP >= DATE_SUB(NOW(), INTERVAL %d %s) AND TIMESTAMP <= DATE_SUB(NOW(), INTERVAL %d %s) AND Resourceid = id limit 1;"
+            "        then SELECT ResponseSize INTO entry%d FROM PING WHERE TIMESTAMP >= DATE_SUB(NOW(), INTERVAL %d %s) AND TIMESTAMP <= DATE_SUB(NOW(), INTERVAL %d %s) AND Resourceid = id limit 1;"
             % (i, COEF * (howmany - i), GOBACK, COEF *
                (howmany - 1 - i), GOBACK))
         print("        else SET entry%d := 0;" % i)
@@ -50,4 +50,4 @@ def generate_samples_queries(period):
     print("delimiter ;")
 
 
-generate_samples_queries(sys.argv[1])
+resource_generate_samples_queries_size(sys.argv[1])
