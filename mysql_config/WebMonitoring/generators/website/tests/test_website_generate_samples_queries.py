@@ -23,6 +23,7 @@ def test_website_generate_samples_queries(capfd):
     out, err = capfd.readouterr()
     assert out == EXPECTED_MONTHLY_WEBSITE_GENERATE_SAMPLES_QUERIES
 
+
 def test_website_generate_samples_queries_size(capfd):
     website_generate_samples_queries_size('daily')
     out, err = capfd.readouterr()

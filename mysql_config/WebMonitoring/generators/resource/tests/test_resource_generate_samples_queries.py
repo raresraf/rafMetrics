@@ -1,5 +1,3 @@
-import mock
-
 from mysql_config.WebMonitoring.generators.resource.resource_generate_samples_queries import resource_generate_samples_queries
 from mysql_config.WebMonitoring.generators.resource.resource_generate_samples_queries_size import \
     resource_generate_samples_queries_size

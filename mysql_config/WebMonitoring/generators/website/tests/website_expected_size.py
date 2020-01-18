@@ -1,4 +1,4 @@
-EXPECTED_DAILY_WEBSITE_GENERATE_SAMPLES_QUERIES_SIZE ="""delimiter //
+EXPECTED_DAILY_WEBSITE_GENERATE_SAMPLES_QUERIES_SIZE = """delimiter //
 DROP PROCEDURE IF EXISTS get_daily_samples_size_websites;
 CREATE PROCEDURE get_daily_samples_size_websites (
     IN id INT,
