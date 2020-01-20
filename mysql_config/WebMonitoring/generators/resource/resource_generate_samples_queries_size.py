@@ -1,3 +1,6 @@
+import sys
+
+
 def resource_generate_samples_queries_size(period):
     procedure_name = "get_" + period.lower() + "_samples_size"
 
@@ -47,5 +50,5 @@ def resource_generate_samples_queries_size(period):
     print("delimiter ;")
 
 
-# Driver:
-# resource_generate_samples_queries_size(sys.argv[1])
+if __name__ == "__main__":
+    resource_generate_samples_queries_size(sys.argv[1])

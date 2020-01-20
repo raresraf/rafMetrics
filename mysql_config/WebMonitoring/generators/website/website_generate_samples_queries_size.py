@@ -1,3 +1,6 @@
+import sys
+
+
 def website_generate_samples_queries_size(period):
     procedure_name = "get_" + period.lower() + "_samples_size_websites"
 
@@ -47,5 +50,5 @@ def website_generate_samples_queries_size(period):
     print("delimiter ;")
 
 
-# Driver:
-# website_generate_samples_queries_size(sys.argv[1])
+if __name__ == "__main__":
+    website_generate_samples_queries_size(sys.argv[1])
