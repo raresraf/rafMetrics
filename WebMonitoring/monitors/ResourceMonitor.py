@@ -2,7 +2,7 @@ import time
 
 import requests
 
-from WebMonitoring.configs.constants import MonitoringStatus, RequestTypes
+from WebMonitoring.configs.constants import MonitoringStatus, RequestTypes, sample_url
 from WebMonitoring.configs.settings import SHOW_VERBOSE_MESSAGE
 
 
@@ -83,12 +83,12 @@ class ResourceMonitor:
                       (self.responseSize / 1024.0))
 
 
-"""
-Sample driver for ResourceMonitor class
-
+# Sample driver for ResourceMonitor class
 class DriverResourceMonitor:
-    def run():
+    def __init__(self):
+        self.sample_url = sample_url
+
+    def run(self):
         monitor = ResourceMonitor(sample_url)
         monitor.run()
         print(monitor.get_metrics())
-"""

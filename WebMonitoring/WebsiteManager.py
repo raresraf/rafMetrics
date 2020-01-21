@@ -113,4 +113,5 @@ class WebsiteManager:
             time.sleep(self.sample_time)
 
 
-WebsiteManager(SAMPLE_TIME).start()
+if __name__ == "__main__":
+    WebsiteManager(SAMPLE_TIME).start()

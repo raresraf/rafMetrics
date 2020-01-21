@@ -68,4 +68,5 @@ class ResourceManager:
             time.sleep(self.sample_time)
 
 
-ResourceManager(SAMPLE_TIME).start()
+if __name__ == "__main__":
+    ResourceManager(SAMPLE_TIME).start()

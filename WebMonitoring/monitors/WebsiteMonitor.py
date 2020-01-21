@@ -5,8 +5,8 @@ import arrow
 
 from WebMonitoring.WebsiteMonitorHelpers.request_helpers import parse_request
 from WebMonitoring.clients.SpeedprofileClient import SpeedprofileClient
+from WebMonitoring.configs.constants import sample_url, sample_name, DockerResults
 from WebMonitoring.configs.settings import SHOW_VERBOSE_MESSAGE, json_path
-
 """Run advanced monitoring on websites including total response time."""
 
 
@@ -99,18 +99,13 @@ class WebsiteMonitor:
         return self.total_time_seconds
 
 
-"""
+# Driver for WebsiteMonitor class
+if __name__ == "__main__":
+    monitor = WebsiteMonitor(sample_url, sample_name)
+    monitor_result = monitor.run()
 
-Driver for WebsiteMonitor class
-
-
-monitor = WebsiteMonitor(sample_url, sample_name)
-monitor_result = monitor.run()
-
-# Check docker exit code
-if monitor_result == DockerResults.SUCCESS:
-    print(monitor.get_metrics())
-    print(monitor.get_timestamp())
-    print(monitor.get_total_time_seconds())
-
-"""
+    # Check docker exit code
+    if monitor_result == DockerResults.SUCCESS:
+        print(monitor.get_metrics())
+        print(monitor.get_timestamp())
+        print(monitor.get_total_time_seconds())
