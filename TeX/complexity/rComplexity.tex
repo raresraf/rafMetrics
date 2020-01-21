@@ -13,8 +13,9 @@ $f_{1},f_{2}:\mathbb{N}\longrightarrow\mathbb{R}$ where $f_{1} = x \cdot f_{2}$,
 If \[ f_{2} \in \Theta(g(n)) \Rightarrow \exists c_{1}, c_{2} \in \mathbb{R}^{*}_{+}, \exists n_{0} \in \mathbb{N}^{*}\ s.t.\ \ c_{1} \cdot g(n) \leq f_{2}(n) \leq c_{2} \cdot g(n)\ ,\  \forall n \geq n_{0} \]
 Therefore, $f_{1} \in \Theta(g(n))$, as there exists $ c_{1}^{'}, c_{2}^{'} \in \mathbb{R}^{*}_{+},  n_{0}^{'} \in \mathbb{N}^{*}$ such that $ c_{1}^{'} =  x \cdot c_{1} $, $ c_{2}^{'} =  x \cdot c_{2} $ and $n_{0}^{'} = n_{0}$ and  $\forall n \geq n_{0}^{'} $ :  $c_{1}^{'} \cdot g(n) \leq f_{1}(n) \leq c_{2}^{'} \cdot g(n)$.
 \\ \\ 
-Remark that even if $f_{1} > f_{2}$, both complexity functions are part of the same complexity class. This observation implies that two algorithms, whose complexity functions can differ by a constant, assume equal with $2020^{2020}$, are part of the same complexity class, even if the actual run-time might differ by over $6676$ orders of magnitude. For comparison, only a $30$ magnitude order between the two complexity functions $f_{1} = 10^{30} \cdot f_{2}$, signify
-that if for a given input $n$, if $Alg2$ ends execution in 1 \textit{attosecond} ($0.000000001$ part of a nanosecond), then $Alg1$ is expected to end execution in about 3 \textit{millenniums}. Despite of the colossal difference in time, classical complexity model is not perceptive between algorithms whose complexity functions differs only through constants. \\ \\ 
+Remark that even if $f_{1} > f_{2}$, both complexity functions are part of the same complexity class. This observation implies that two algorithms, whose complexity functions can differ by a constant, assume equal with $2020^{2020}$, are part of the same complexity class, even if the actual run-time might differ by over $6676$ orders of magnitude. 
+\\ For comparison, only a $30$ magnitude order between the two complexity functions $f_{1} = 10^{30} \cdot f_{2}$, signify
+that if for a given input $n$, if $Alg2$ ends execution in 1 \textit{attosecond} ($10^{-9}$ part of a nanosecond), then $Alg1$ is expected to end execution in about 3 \textit{millenniums}. Despite of the colossal difference in time, classical complexity model is not perceptive between algorithms whose complexity functions differs only through constants. \\ \\ 
 \textbf{\textit{rComplexity}} calculus aims to clarify this issue by taking into deep analysis the preeminent constants that can state major improvements in an algorithm's complexity and can have tremendous effect over total execution time. 
 
 
@@ -58,23 +59,23 @@ Acknowledge the following notations $\forall r \neq 0$:
 \section{Asymptotic Analysis}
 Calculus in $rComplexity$ can be performed either using limits of sequences or limits of functions. Consider any two complexity functions $f,g:\mathbb{N}_{+}\longrightarrow\mathbb{R}_{+}$.
 
-\begin{theorem} \textbf{Big \textit{r-}Theta}: 
+\begin{theorem} Admittance of a function $f$ in \textbf{Big \textit{r-}Theta} class defined by a function $g$: 
   \[ f \in \Theta_{r}(g(n)) \Leftrightarrow \lim_{n\to\infty} \dfrac{f(n)}{g(n)} = r \]
 \end{theorem}   
 
-\begin{theorem} \textbf{Big \textit{r-}O}: 
+\begin{theorem} Admittance of a function $f$ in \textbf{Big \textit{r-}O} class defined by a function $g$: 
     \[ f \in \mathcal{O}_{r}(g(n)) \Leftrightarrow \lim_{n\to\infty} \dfrac{f(n)}{g(n)} = l,\ l \in \left[ 0, r \right] \]
 \end{theorem}   
 
-\begin{theorem} \textbf{Big \textit{r-}Omega}: 
+\begin{theorem} Admittance of a function $f$ in \textbf{Big \textit{r-}Omega} class defined by a function $g$: 
       \[ f \in \Omega_{r}(g(n)) \Leftrightarrow \lim_{n\to\infty} \dfrac{f(n)}{g(n)} = l,\ l \in \left[ r, \infty \right) \]
 \end{theorem}   
 
-\begin{theorem} \textbf{Small \textit{r-}O}:
+\begin{theorem} Admittance of a function $f$ in \textbf{Small \textit{r-}O} class defined by a function $g$:
     \[ f \in o_{r}(g(n)) \Leftrightarrow \lim_{n\to\infty} \dfrac{f(n)}{g(n)} = 0 \]
 \end{theorem}   
 
-\begin{theorem} \textbf{Small \textit{r-}Omega}:
+\begin{theorem} Admittance of a function $f$ in \textbf{Small \textit{r-}Omega} class defined by a function $g$:
     \[ f \in \omega_{r}(g(n)) \Leftrightarrow \lim_{n\to\infty} \dfrac{f(n)}{g(n)} = \infty \]
 \end{theorem}   
 
@@ -84,7 +85,7 @@ Calculus in $rComplexity$ can be performed either using limits of sequences or l
 \section{Common properties}
 This chapter will present new implications in terms of reflexivity, transitivity, symmetry and projections compared with conventional \textit{Bachmann–Landau notations}.
 
-\begin{theorem}  \textbf{Reflexivity in $rComplexity$:} - Big r-Theta notation  \[ f \in \Theta_{r} \left( \frac{1}{r} \cdot f(n) \right)\ \forall r \neq 0 \]
+\begin{theorem}  Reflexivity in $rComplexity$: - Big r-Theta notation  \[ f \in \Theta_{r} \left( \frac{1}{r} \cdot f(n) \right)\ \forall r \neq 0 \]
 \end{theorem} 
 \begin{proof}
     Using the definition of $ \Theta_{r}(f(n))$
@@ -101,7 +102,7 @@ This chapter will present new implications in terms of reflexivity, transitivity
 \end{proof}
  
  
-\begin{theorem} 
+\begin{theorem} Reflexivity in $rComplexity$: - Big r-O notation 
  \[ f \in \mathcal{O}_{r} \left( x \cdot f(n) \right)\ \forall x \geq \dfrac{1}{r} \]
 \end{theorem}
 \begin{proof}:
@@ -115,7 +116,8 @@ If $r<c$ and $x \geq \dfrac{1}{r}$, then $c \cdot x \geq 1, \forall r,c,x\ \ r \
    	\[\forall x \geq \dfrac{1}{r}, \ \forall c \in \mathbb{R}^{*}_{+} \ s.t.\  r<c , \exists n_{0} = 1  s.t.\  \  f(n) \leq  c \cdot x\cdot f(n) \ \ \forall n \in \mathbb{N}^{*} ,\  \forall n \geq n_{0}=1 \Rightarrow \]
  \[ f \in \mathcal{O}_{r} \left( x \cdot f(n) \right)\ \forall x \geq \dfrac{1}{r} \]
 \end{proof}
-\begin{theorem} 
+
+\begin{theorem} Reflexivity in $rComplexity$: - Big r-Omega notation 
  \[ f \in \Omega_{r} \left( x \cdot f(n) \right)\ \forall x \leq \dfrac{1}{r} \]
 \end{theorem} 
 \begin{proof} 
@@ -131,16 +133,16 @@ If $r>c$ and $x \leq \dfrac{1}{r}$, then $c \cdot x \leq 1, \forall r,c,x\ \ r \
 
 
  
-\begin{theorem} 
-$ f \notin o_{r}(f(n)) $
+\begin{theorem} Reflexivity does not hold in $rComplexity$ for small r-O notation. 
+\[ f \notin o_{r}(f(n)) \]
 \end{theorem} 
 
 \begin{proof} 
 The reflexivity does not hold for Small \textit{r-}o and Small \textit{r-}Omega, as these two sets are equal with the classical sets defined in \textit{Bachmann–Landau notations}
 \end{proof} 
 
-\begin{theorem} 
-$ f \notin \omega_{r}(f(n)) $ 
+\begin{theorem} Reflexivity does not hold in $rComplexity$ for small r-Omega notation.
+\[ f \notin \omega_{r}(f(n)) \]
 \end{theorem} 
 
 \begin{proof} 
@@ -148,8 +150,7 @@ The reflexivity does not hold for Small \textit{r-}o and Small \textit{r-}Omega,
 \end{proof} 
 
 
-\begin{theorem} 
- \textbf{Transitivity in $rComplexity$:}  \\  $ f \in \Theta_{r}(g(n)),  g \in \Theta_{r'}(h(n)) \Rightarrow  f \in \Theta_{r \cdot r'}(h(n))$    
+\begin{theorem} Transitivity in $rComplexity$ - Big r-Theta notation:  \\  $ f \in \Theta_{r}(g(n)),  g \in \Theta_{r'}(h(n)) \Rightarrow  f \in \Theta_{r \cdot r'}(h(n))$    
 \end{theorem} 
 \begin{proof} 
 	If $ f \in \Theta_{r}(g(n)) \Rightarrow \forall c_{1}, c_{2} \in \mathbb{R}^{*}_{+} \ s.t.  c_{1}< r < c_{2} , \exists n_{0} \in \mathbb{N}^{*}\ \\ s.t.\ \ c_{1} \cdot g(n) \leq f(n) \leq c_{2} \cdot g(n)\ ,\  \forall n \geq n_{0} $ \\
@@ -162,16 +163,16 @@ The reflexivity does not hold for Small \textit{r-}o and Small \textit{r-}Omega,
 \end{proof}
 
 All other Transitivity properties hold as well in $rComplexity$ Calculus. The proof is similar with the above.
-\begin{theorem} 
+\begin{theorem} Transitivity in $rComplexity$ - Big r-O notation 
  $ f \in \mathcal{O}_{r}(g(n)),  g \in \mathcal{O}_{r}(h(n)) \Rightarrow  f \in \mathcal{O}_{r \cdot r'}(h(n))$
 \end{theorem}
-\begin{theorem} 
+\begin{theorem} Transitivity in $rComplexity$ - Big r-Omega notation 
  $ f \in \Omega_{r}(g(n)),  g \in \Omega_{r}(h(n)) \Rightarrow  f \in \Omega_{r \cdot r'}(h(n))$
 \end{theorem}
-\begin{theorem} 
+\begin{theorem} Transitivity in $rComplexity$ - Small r-O notation 
  $ f \in o_{r}(g(n)),  g \in o_{r'}(h(n)) \Rightarrow  f \in o_{r \cdot r'}(h(n))$
 \end{theorem}
-\begin{theorem} 
+\begin{theorem} Transitivity in $rComplexity$ - Small r-Omega notation 
  $ f \in \omega_{r}(g(n)),  g \in \omega_{r'}(h(n)) \Rightarrow  f \in \omega_{r \cdot r'}(h(n))$
 \end{theorem}
 
@@ -208,7 +209,7 @@ Using the property of $ \mathcal{O}_{r}(f(n))$ and $f \in \mathcal{O}_{r}(g(n))$
   Therefore:
   \[\Omega_{\frac{1}{r}}(f(n)) \supseteq \lbrace g \rbrace \]
 \end{proof} 
-\begin{theorem} 
+\begin{theorem} \textbf{Transpose symmetry in $rComplexity$:} 
   $ f \in o_{r}(g(n)) \Leftrightarrow g \in \omega_{\frac{1}{r}}(f(n)) $
 \end{theorem} 
 
@@ -245,8 +246,7 @@ Therefore $f \in \Theta_{r}(g(n))$
 \section{Other notable properties}
 An interesting property of the \textbf{Big \textit{r-}Theta},  \textbf{Big \textit{r-}O} and \textbf{Big \textit{r-}Omega} classes is the simple technique of conversion between various $r$s. The following results arise:
 
-\begin{theorem} 
-  \item \textbf{Big r-Theta conversion}: 
+\begin{theorem} \item \textbf{Big r-Theta conversion}: 
  \[  f \in \Theta_{r}(g) \Rightarrow f \in \Theta_{q} \left( \frac{q}{r} \cdot g \right) \ \forall r,q \in \mathbb{R}_{+}\]
 \end{theorem} 
 
@@ -286,14 +286,31 @@ Is similar with the proof for Big r-Theta, with the inequalities becoming $f(n) 
   \[  f \in \Omega_{r}(g) \Rightarrow \frac{q}{r} \cdot f \in \Omega_{q} \left( g \right) \ \forall r,q \in \mathbb{R}_{+}\]
 \end{corollary} 
  
+Furthermore, we present an interesting result regarding the connection between $rComplexity$ and $Bachmann-Landau$ notations. For Small notations, we already presented the connection in definition section. For Big notations, we present further some results:
+
+\begin{theorem} Relationship between Big r-Theta and Big Theta: 
+ \[  f \in \Theta_{r}(g) \Rightarrow f \in \Theta (g) \]
+ \[  f \in \Theta(g) \Rightarrow \exists r \in \mathbb{R}_{+}\ f \in \Theta_{r}(g) \]
+\end{theorem} 
+
+\begin{theorem} Relationship between Big r-O and Big O: 
+ \[  f \in \mathcal{O}_{r}(g) \Rightarrow f \in \mathcal{O} (g) \]
+ \[  f \in \mathcal{O}(g) \Rightarrow \exists r \in \mathbb{R}_{+}\ f \in \mathcal{O}{r}(g) \]
+\end{theorem} 
+
  
+\begin{theorem} Relationship between Big r-Omega and Big Omega: 
+ \[  f \in \Omega_{r}(g) \Rightarrow f \in \Omega (g) \]
+ \[  f \in \Omega(g) \Rightarrow \exists r \in \mathbb{R}_{+}\ f \in \Omega_{r}(g) \]
+\end{theorem} 
+
 \section{Addition properties}
 Similar to the calculus in $Bachmann-Landau$ notations (including Big-O arithmetic), a useful observation is the behavior of $r-$Complexity classes in regards to addition exercises. 
 
 
 
 \begin{itemize}
-  \item \textbf{Big r-Theta}:  \\
+  \item Addition in \textbf{Big r-Theta}:  \\
 The following relations hold for any correctly defined functions $f, g, f', g', h:\mathbb{N}\longrightarrow\mathbb{R}$, where $ h(n) = f'(n) + g'(n)\  \forall n \in  \mathbb{N} $, where $f',g'$ are two arbitrary functions such that $ f' \in \Theta_{r}(f),  g' \in \Theta_{q}(g) $ and $r,q \in \mathbb{R}_{+}$:  
 \begin{theorem} 
   \textbf{If} $ \lim_{n\to\infty} \dfrac{f(n)}{g(n)} = 0 \Rightarrow  h \in \Theta_{q}(g) $. \\
@@ -324,7 +341,7 @@ Therefore $ h \in \Theta_{r} \left( f + \dfrac{r}{q} \cdot g \right) $.
 
 
 
-  \item \textbf{Big r-O}: \\
+  \item Addition in \textbf{Big r-O}: \\
 The following relations hold for any correctly defined functions $f, g, f', g', h:\mathbb{N}\longrightarrow\mathbb{R}$, where $ h(n) = f'(n) + g'(n)\  \forall n \in \mathbb{N} $, where $f',g'$ are two arbitrary functions such that $ f' \in \mathcal{O}_{r}(f),  g' \in \mathcal{O}_{q}(g) $ and $r,q \in \mathbb{R}_{+}$:  
 \begin{theorem} 
     \textbf{If} $ \lim_{n\to\infty} \dfrac{f(n)}{g(n)} = 0 \Rightarrow  h \in \mathcal{O}_{q}(g) $. \\
@@ -350,7 +367,7 @@ Is similar with the proof for addition in Big Theta, using conversion presented 
 \hfill\break
 
 
-  \item \textbf{Big r-Omega}: 
+  \item Addition in \textbf{Big r-Omega}: 
   The following relations hold for any correctly defined functions $f, g, f', g', h:\mathbb{N}\longrightarrow\mathbb{R}$, where $ h(n) = f'(n) + g'(n)\  \forall n \in \mathbb{N} $, where $f',g'$ are two arbitrary functions such that $ f' \in \Omega_{r}(f),  g' \in \Omega_{q}(g) $ and $r,q \in \mathbb{R}_{+}$:  
 \begin{theorem} 
     \textbf{If} $ \lim_{n\to\infty} \dfrac{f(n)}{g(n)} = 0 \Rightarrow  h \in \Omega_{q}(g) $. \\
@@ -372,9 +389,9 @@ Is similar with the proof for addition in Big Theta, using conversion presented 
 Is similar with the proof for addition in Big Theta, using conversion presented for Big r-Omega class.
 \hfill\break
 
-  \item \textbf{Small r-O}:
+  \item Addition in \textbf{Small r-O}:
   Same property as in $Bachmann-Landau$ notations.
-  \item \textbf{Small r-Omega}:
+  \item Addition in \textbf{Small r-Omega}:
   Same property as in $Bachmann-Landau$ notations.
 \end{itemize}
 

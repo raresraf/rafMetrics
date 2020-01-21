@@ -37,8 +37,7 @@ The following notations are particularization ($r = 1$) of notations provided in
   \[o_{1}(g(n)) = \lbrace f \in \mathcal{F}\ |\ \forall c \in \mathbb{R}^{*}_{+}, \exists n_{0} \in \mathbb{N}^{*}\ s.t.\  f(n) < c \cdot g(n),\  \forall n \geq n_{0} \rbrace\]
 Note that $o_{r}(g(n) = o_{1}(g(n) \forall r\in  \mathbb{R}_{+}$, as Small \textit{1-}O  notation is $r$-independent.
 \end{definition}
-\begin{definition} 
-\item \textbf{Small \textit{1-}Omega}:
+\begin{definition} \textbf{Small \textit{1-}Omega}:
   This set defines the group of mathematical functions that are known to have a commanding asymptotic performance in comparison with  $g(n)$.
   The set of such functions is defined as it follows:
   \[\omega_{1}(g(n)) = \lbrace f \in \mathcal{F}\ |\ \forall c \in \mathbb{R}^{*}_{+}, \exists n_{0} \in \mathbb{N}^{*}\ s.t.\  f(n) > c \cdot g(n),\  \forall n \geq n_{0} \rbrace\]
@@ -48,24 +47,19 @@ Note that $o_{r}(g(n) = o_{1}(g(n) \forall r\in  \mathbb{R}_{+}$, as Small \text
 \section{Asymptotic Analysis}
 Calculus in $1-Complexity$ can be performed as well using either limits of sequences or limits of functions. Consider any two complexity functions $f,g:\mathbb{N}_{+}\longrightarrow\mathbb{R}_{+}$.
 
-\begin{theorem} 
-\textbf{Big \textit{1-}Theta}: 
+\begin{theorem} Admittance of a function $f$ in \textbf{Big \textit{1-}Theta} class defined by a function $g$: 
 \[ f \in \Theta_{r}(g(n)) \Leftrightarrow \lim_{n\to\infty} \dfrac{f(n)}{g(n)} = 1 \]
 \end{theorem} 
-\begin{theorem} 
-\textbf{Big \textit{1-}O}: 
+\begin{theorem} Admittance of a function $f$ in \textbf{Big \textit{1-}O} class defined by a function $g$: 
 \[ f \in \mathcal{O}_{1}(g(n)) \Leftrightarrow \lim_{n\to\infty} \dfrac{f(n)}{g(n)} = l,\ l \in \left[ 0, 1 \right] \]
 \end{theorem} 
-\begin{theorem} 
-\textbf{Big \textit{1-}Omega}: 
+\begin{theorem} Admittance of a function $f$ in \textbf{Big \textit{1-}Omega} class defined by a function $g$: 
 \[ f \in \Omega_{1}(g(n)) \Leftrightarrow \lim_{n\to\infty} \dfrac{f(n)}{g(n)} = l,\ l \in \left[ 1, \infty \right) \]
 \end{theorem} 
-\begin{theorem} 
-\textbf{Small \textit{1-}O}:
+\begin{theorem} Admittance of a function $f$ in \textbf{Small \textit{1-}O} class defined by a function $g$: 
 \[ f \in o_{r}(g(n)) \Leftrightarrow \lim_{n\to\infty} \dfrac{f(n)}{g(n)} = 0 \]
 \end{theorem} 
-\begin{theorem} 
-\textbf{Small \textit{1-}Omega}:
+\begin{theorem} Admittance of a function $f$ in \textbf{Small \textit{1-}Omega} class defined by a function $g$: 
  \[ f \in \omega_{r}(g(n)) \Leftrightarrow \lim_{n\to\infty} \dfrac{f(n)}{g(n)} = \infty \]
 \end{theorem} 
 
@@ -74,8 +68,8 @@ Calculus in $1-Complexity$ can be performed as well using either limits of seque
 
 \section{Common properties}
 This chapter will present new implications in terms of reflexivity, transitivity, symmetry and projections properties of calculus in $1-Complexity$.
-\begin{theorem} 
-\textbf{Reflexivity in $1-Complexity$:}  \[ f \in \Theta_{1} \left( f(n) \right)\ \]
+\begin{theorem} Reflexivity in $1-Complexity$ - Big 1-Omega notation: 
+\[ f \in \Theta_{1} \left( f(n) \right)\ \]
 \end{theorem} 
 \begin{proof} 
    Let $r = 1$ and use Reflexivity property described in Common properties sections for classes in $rComplexity$ calculus.
@@ -84,14 +78,14 @@ This chapter will present new implications in terms of reflexivity, transitivity
  \[ f \in \Theta_{1} \left( f(n) \right)\ \]
 \end{proof} 
  
- \begin{theorem} 
+ \begin{theorem} Reflexivity in $1-Complexity$ - Big 1-O notation:
  \[ f \in \mathcal{O}_{1} \left( x \cdot f(n) \right)\ \forall x \geq 1 \]
 \end{theorem} 
 \begin{proof} 
    Let $r = 1$ and use Reflexivity property for Big \textit{r-}O class in $rComplexity$ calculus.
 \end{proof} 
 
-\begin{theorem} 
+\begin{theorem} Reflexivity in $1-Complexity$ - Big 1-Omega notation:
  \[ f \in \Omega_{1} \left( x \cdot f(n) \right)\ \forall x \leq 1 \]
 \end{theorem} 
 \begin{proof} 
@@ -100,45 +94,38 @@ This chapter will present new implications in terms of reflexivity, transitivity
 
 
 The reflexivity does not hold \textbf{either} for Small \textit{1-}o and Small \textit{1-}Omega, as these two sets are equal with the classical sets defined in \textit{Bachmann–Landau notations}.
-\begin{theorem} 
+\begin{theorem} Reflexivity in $1-Complexity$ - Small 1-o notation:
 $ f \notin o_{1}(f(n)) $ 
 \end{theorem} 
-\begin{theorem} 
+\begin{theorem} Reflexivity in $1-Complexity$ - Small 1-Omega notation:
 $ f \notin \omega_{1}(f(n)) $ 
 \end{theorem} 
 
-\begin{theorem} 
- \textbf{Transitivity in $1-Complexity$:}  \\  $ f \in \Theta_{1}(g(n)),  g \in \Theta_{1}(h(n)) \Rightarrow  f \in \Theta_{1}(h(n))$   
+\begin{theorem} Transitivity in $1-Complexity$ - Big 1-Theta notation:  \\  $ f \in \Theta_{1}(g(n)),  g \in \Theta_{1}(h(n)) \Rightarrow  f \in \Theta_{1}(h(n))$   
  \end{theorem} 
 \begin{proof} 
    Let $r = 1$ and use Transitivity property for Big \textit{r-}Theta class in $rComplexity$ calculus.
 \end{proof} 
 
-\begin{theorem} 
+\begin{theorem} Transitivity in $1-Complexity$ - Big 1-O notation:
  $ f \in \mathcal{O}_{1}(g(n)),  g \in \mathcal{O}_{1}(h(n)) \Rightarrow  f \in \mathcal{O}_{1}(h(n))$ 
 \end{theorem} 
 \begin{proof} 
    Let $r = 1$ and use Transitivity property for Big \textit{r-}O class in $rComplexity$ calculus.
 \end{proof} 
-\begin{theorem} 
+\begin{theorem} Transitivity in $1-Complexity$ - Big 1-Omega notation:
  $ f \in \Omega_{1}(g(n)),  g \in \Omega_{1}(h(n)) \Rightarrow  f \in \Omega_{1}(h(n))$ 
 \end{theorem} 
 \begin{proof} 
    Let $r = 1$ and use Transitivity property for Big \textit{r-}Omega class in $rComplexity$ calculus.
 \end{proof} 
-\begin{theorem} 
- $ f \in o_{1}(g(n)),  g \in o_{1}(h(n)) \Rightarrow  f \in o_{1}(h(n))$ 
+\begin{theorem} Transitivity in $1-Complexity$ - small notations:
+ \[ f \in o_{1}(g(n)),  g \in o_{1}(h(n)) \Rightarrow  f \in o_{1}(h(n)) \]
+ \[ f \in \omega_{1}(g(n)),  g \in \omega_{1}(h(n)) \Rightarrow  f \in \omega_{1}(h(n)) \]
 \end{theorem} 
 \begin{proof} 
    Small \textit{1-}o and Small \textit{1-}Omega are equal with the classical sets defined in \textit{Bachmann–Landau notations} and thus they conserve transitivity properties
 \end{proof} 
-\begin{theorem} 
- $ f \in \omega_{1}(g(n)),  g \in \omega_{1}(h(n)) \Rightarrow  f \in \omega_{1}(h(n))$
-\end{theorem} 
-\begin{proof} 
-   Small \textit{1-}o and Small \textit{1-}Omega are equal with the classical sets defined in \textit{Bachmann–Landau notations} and thus they conserve transitivity properties
-\end{proof} 
-
 
 \begin{theorem} 
  \textbf{Symmetry in $1-Complexity$:}  \\  $ f \in \Theta_{1}(g(n)) \Rightarrow g \in \Theta_{1}(f(n)) $
@@ -153,7 +140,7 @@ $ f \notin \omega_{1}(f(n)) $
 \begin{proof} 
    Let $r = 1$ and use Transpose symmetry property described in $rComplexity$ calculus.
 \end{proof} 
-\begin{theorem} 
+\begin{theorem} Transpose symmetry in $1-Complexity$ in small notations:
  $ f \in o_{1}(g(n)) \Leftrightarrow g \in \omega_{1}(f(n)) $
 \end{theorem} 
 \begin{proof} 

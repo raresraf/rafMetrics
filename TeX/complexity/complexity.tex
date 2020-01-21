@@ -92,24 +92,24 @@ In order to establish a Small-Omega relationship, the sufficient condition is th
 \section{Common properties}
 We will study few aspects with impact on defining equivalence relations over classes defined in \textit{Bachmann–Landau} notations.
  \hfill\break
- \begin{theorem} Reflexivity property for Big Theta, Big O and Big Omega notations.  \\  $ f \in \Theta(f(n)) $ \\$ f \in \mathcal{O}(f(n)) $ \\$ f \in \Omega(f(n)) $
+ \begin{theorem} Reflexivity property holds for Big Theta, Big O and Big Omega notations.  \\  $ f \in \Theta(f(n)) $ \\$ f \in \mathcal{O}(f(n)) $ \\$ f \in \Omega(f(n)) $
  \end{theorem}
 
-\begin{theorem} Reflexivity property does not hold for Small O and Small Omega notations/ \\
+\begin{theorem} Reflexivity property does not hold for Small O and Small Omega notations \\
  $ f \notin \theta(f(n)) $ \\$ f \notin \omega(f(n)) $ 
 \end{theorem}
 
-\begin{theorem} Transitivity property for Bachmann–Landau notations.  \\  $ f \in \Theta(g(n)),  g \in \Theta(h(n)) \Rightarrow  f \in \Theta(h(n))$ \\
+\begin{theorem} Transitivity property holds for \textit{Bachmann–Landau} notations.  \\  $ f \in \Theta(g(n)),  g \in \Theta(h(n)) \Rightarrow  f \in \Theta(h(n))$ \\
  $ f \in \mathcal{O}(g(n)),  g \in \mathcal{O}(h(n)) \Rightarrow  f \in \mathcal{O}(h(n))$ \\
  $ f \in \Omega(g(n)),  g \in \Omega(h(n)) \Rightarrow  f \in \Omega(h(n))$ \\
  $ f \in o(g(n)),  g \in o(h(n)) \Rightarrow  f \in o(h(n))$ \\
  $ f \in \omega(g(n)),  g \in \omega(h(n)) \Rightarrow  f \in \omega(h(n))$
 \end{theorem} 
 
-\begin{theorem} Symmetry property for Big Theta notation. \\  $ f \in \Theta(g(n)) \Rightarrow g \in \Theta(f(n)) $
+\begin{theorem} Symmetry property holds for Big Theta notation. \\  $ f \in \Theta(g(n)) \Rightarrow g \in \Theta(f(n)) $
 \end{theorem} 
 
-\begin{theorem} Transpose symmetry property for Bachmann–Landau notations.  \\  $ f \in \mathcal{O}(g(n)) \Leftrightarrow g \in \Omega(f(n)) $
+\begin{theorem} Transpose symmetry property for \textit{Bachmann–Landau} notations.  \\  $ f \in \mathcal{O}(g(n)) \Leftrightarrow g \in \Omega(f(n)) $
  \\  $ f \in o(g(n)) \Leftrightarrow g \in \omega(f(n)) $
 \end{theorem} 
  
@@ -119,37 +119,42 @@ We will study few aspects with impact on defining equivalence relations over cla
 \section{Addition properties}
 Calculus in $Bachmann-Landau$ notations (including Big-O arithmetic) is extremely powerful and obvious when it comes to addition operations. The following relations hold for any correctly defined functions $f, g, h:\mathbb{N}\longrightarrow\mathbb{R}$, where $ h(n) = f(n) + g(n)\  \forall n \in  \mathbb{N} $ and $\exists n_{0} \in \mathbb{N},\ s.t.\ \forall n \in \mathbb{N} \ \Rightarrow f(n) \leq g(n)$:
 
+
  
   \begin{lemma} Addition in \textbf{Big Theta}
  \[  h \in \Theta(g)\]
   \end{lemma}
+  \begin{remark}
+  For each theorem, we will expose a corollary using a relax notation (consider that by any $Bachmann-Landau$ class notation, we denote an arbitrary function part of the class), some relations that can be settled.
+\end{remark}
+  \begin{corollary} Addition in \textbf{Big Theta} using the relaxed notation: 
+  \[  \Theta(f) + \Theta(g) = \Theta(g)\]
+  \end{corollary}
+  
   \begin{lemma} Addition in \textbf{Big O}: 
  \[  h \in \mathcal{O}(g)\]
   \end{lemma}
+   \begin{corollary} Addition in \textbf{Big O} using the relaxed notation: 
+  \[  \mathcal{O}(f) + \mathcal{O}(g) = \mathcal{O}(g)\]
+  \end{corollary}  
+  
   \begin{lemma} Addition in \textbf{Big Omega}: 
  \[  h \in \Omega(g)\]
   \end{lemma}
+   \begin{corollary} Addition in \textbf{Big Omega} using the relaxed notation: 
+  \[  \Omega(f) + \Omega(g) = \Omega(g)\]
+  \end{corollary}
+  
   \begin{lemma} Addition in \textbf{Small O}:
  \[  h \in o(g)\]
   \end{lemma}
+  \begin{corollary} Addition in \textbf{Small O} using the relaxed notation:
+  \[  o(f) + o(g) = o(g)\]
+  \end{corollary}  
+  
   \begin{lemma} Addition in \textbf{Small Omega}:
  \[  h \in \omega(g)\]
   \end{lemma}
-
-  In a relax notation (consider that by any $Bachmann-Landau$ class notation, we denote an arbitrary function part of the class), the following relations can be settled:
-
-  \begin{corollary} Addition in \textbf{Big Theta}: 
-  \[  \Theta(f) + \Theta(g) = \Theta(g)\]
-  \end{corollary}
-  \begin{corollary} Addition in \textbf{Big O}: 
-  \[  \mathcal{O}(f) + \mathcal{O}(g) = \mathcal{O}(g)\]
-  \end{corollary}  
-  \begin{corollary} Addition in \textbf{Big Omega}: 
-  \[  \Omega(f) + \Omega(g) = \Omega(g)\]
-  \end{corollary}
-  \begin{corollary} Addition in \textbf{Small O}:
-  \[  o(f) + o(g) = o(g)\]
-  \end{corollary}
-  \begin{corollary} Addition in \textbf{Small Omega}:
+  \begin{corollary} Addition in \textbf{Small Omega} using the relaxed notation:
   \[  \omega(f) + \omega(g) = \omega(g)\]
   \end{corollary}
