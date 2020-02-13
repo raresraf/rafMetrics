@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: metricsui
-          image: raresraf/metricsui:20200113185635
+          image: raresraf/metricsui:20200213120144
           imagePullPolicy: Always
           ports:
             - containerPort: 80

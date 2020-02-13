@@ -98,3 +98,6 @@ yarn-error.log*
 metricsUI/build/*
 package-lock.json
 node_modules/
+
+# K8s deploy
+nohup.out
