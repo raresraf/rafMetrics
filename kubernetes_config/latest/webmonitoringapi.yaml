@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: webmonitoringapi
-          image: raresraf/webmonitoringapi:20200213120049
+          image: raresraf/webmonitoringapi:20200218175659
           #         env:
           #  - name: WERKZEUG_DEBUG_PIN
           #    value: "off"
