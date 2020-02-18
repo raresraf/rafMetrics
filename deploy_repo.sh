@@ -29,12 +29,12 @@ main() {
   # e.g. 20191122175120
   curr_time=$(date +%Y%m%d%H%M%S)
 
-  for module in "$@"; do
+  for module in "${deploy_modules[@]}"; do
     # Login deployment
     if [[ $module == "login" ]]; then
       sudo docker build -f Login/Dockerfile -t raresraf/login:$curr_time .
       sudo docker push raresraf/login:$curr_time
-      sed "s/raresraf\/login/raresraf\/login:$curr_time/g" kubernetes_config/templates/template_login.yaml >kubernetes_config/latest/login.yaml
+      sed "s/raresraf\/login/raresraf\/login:$curr_time/g" kubernetes_config/templates/template_login.yaml > kubernetes_config/latest/login.yaml
       kubectl apply -f kubernetes_config/latest/login.yaml
     fi
 
@@ -42,7 +42,7 @@ main() {
     if [[ $module == "webmonitoringapi" ]]; then
       sudo docker build -f WebMonitoring/API/Dockerfile -t raresraf/webmonitoringapi:$curr_time .
       sudo docker push raresraf/webmonitoringapi:$curr_time
-      sed "s/raresraf\/webmonitoringapi/raresraf\/webmonitoringapi:$curr_time/g" kubernetes_config/templates/template_webmonitoringapi.yaml >kubernetes_config/latest/webmonitoringapi.yaml
+      sed "s/raresraf\/webmonitoringapi/raresraf\/webmonitoringapi:$curr_time/g" kubernetes_config/templates/template_webmonitoringapi.yaml > kubernetes_config/latest/webmonitoringapi.yaml
       kubectl apply -f kubernetes_config/latest/webmonitoringapi.yaml
     fi
 
@@ -50,15 +50,15 @@ main() {
     if [[ $module == "resource" ]]; then
       sudo docker build -f WebMonitoring/DockerfileResource -t raresraf/resourcemonitor:$curr_time .
       sudo docker push raresraf/resourcemonitor:$curr_time
-      sed "s/raresraf\/resourcemonitor/raresraf\/resourcemonitor:$curr_time/g" kubernetes_config/templates/template_deployment_resource.yaml >kubernetes_config/latest/deployment_resource.yaml
+      sed "s/raresraf\/resourcemonitor/raresraf\/resourcemonitor:$curr_time/g" kubernetes_config/templates/template_deployment_resource.yaml > kubernetes_config/latest/deployment_resource.yaml
       kubectl apply -f kubernetes_config/latest/deployment_resource.yaml
     fi
 
     # WebsiteManager deployment
     if [[ $module == "website" ]]; then
-      sudo docker build -f WebMonitoring/DockerfileWebsite -t raresraf/websmoduleonitor:$curr_time .
-      sudo docker push raresraf/websmoduleonitor:$curr_time
-      sed "s/raresraf\/websmoduleonitor/raresraf\/websmoduleonitor:$curr_time/g" kubernetes_config/templates/template_deployment_website.yaml >kubernetes_config/latest/deployment_website.yaml
+      sudo docker build -f WebMonitoring/DockerfileWebsite -t raresraf/websitemonitor:$curr_time .
+      sudo docker push raresraf/websitemonitor:$curr_time
+      sed "s/raresraf\/websitemonitor/raresraf\/websitemonitor:$curr_time/g" kubernetes_config/templates/template_deployment_website.yaml > kubernetes_config/latest/deployment_website.yaml
       kubectl apply -f kubernetes_config/latest/deployment_website.yaml
     fi
 
