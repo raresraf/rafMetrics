@@ -1,5 +1,15 @@
 #!/bin/bash
 
+deploy_metricsui () {
+  # React App
+  npm install --prefix metricsUI/ metricsUI/
+  npm run-script --prefix metricsUI/ build
+  sudo docker build -f metricsUI/Dockerfile -t raresraf/metricsui:$curr_time metricsUI/
+  sudo docker push raresraf/metricsui:$curr_time
+  sed "s/raresraf\/metricsui/raresraf\/metricsui:$curr_time/g" kubernetes_config/templates/template_metricsui.yaml > kubernetes_config/templates/metricsui.yaml
+  kubectl apply -f kubernetes_config/templates/metricsui.yaml
+}
+
 # ALL_MODULES : ['login', 'webmonitoringapi', 'resource', 'website', 'metricsui']
 
 if [ -z "$1" ]
@@ -58,13 +68,3 @@ do
 
 done
 
-
-deploy_metricsui () {
-  # React App
-  npm install --prefix metricsUI/ metricsUI/
-  npm run-script --prefix metricsUI/ build
-  sudo docker build -f metricsUI/Dockerfile -t raresraf/metricsui:$curr_time metricsUI/
-  sudo docker push raresraf/metricsui:$curr_time
-  sed "s/raresraf\/metricsui/raresraf\/metricsui:$curr_time/g" kubernetes_config/templates/template_metricsui.yaml > kubernetes_config/templates/metricsui.yaml
-  kubectl apply -f kubernetes_config/templates/metricsui.yaml
-}
