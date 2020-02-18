@@ -34,10 +34,11 @@ RUN apt-get install -y ipython3
 RUN apt-get install -y python3-pip
 RUN apt-get install -y mysql-server
 
-RUN pip3 install -r requirements.txt
-
 COPY . /rafMetrics
 WORKDIR /rafMetrics
+
+# Install requirements for Python modules
+RUN pip3 install -r requirements.txt
 
 RUN chmod u+x ./WebMonitoring/WebsiteMonitorHelpers/entrypoint.sh
 
