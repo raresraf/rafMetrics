@@ -77,8 +77,8 @@ deploy_metricsui() {
   npm run-script --prefix metricsUI/ build
   sudo docker build -f metricsUI/Dockerfile -t raresraf/metricsui:$curr_time metricsUI/
   sudo docker push raresraf/metricsui:$curr_time
-  sed "s/raresraf\/metricsui/raresraf\/metricsui:$curr_time/g" kubernetes_config/templates/template_metricsui.yaml >kubernetes_config/templates/metricsui.yaml
-  kubectl apply -f kubernetes_config/templates/metricsui.yaml
+  sed "s/raresraf\/metricsui/raresraf\/metricsui:$curr_time/g" kubernetes_config/templates/template_metricsui.yaml > kubernetes_config/latest/metricsui.yaml
+  kubectl apply -f kubernetes_config/latest/metricsui.yaml
 }
 
 
