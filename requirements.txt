@@ -1,4 +1,6 @@
 mock
+mysql-connector-python
+
 # Auto-generated requirements
 # pipreqs . --force
 
