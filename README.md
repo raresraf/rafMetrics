@@ -13,7 +13,8 @@ Store simple metrics like total time or total requests answer as entries in DB.
 
 #### WebsiteManager
 Monitors all websites by periodically (timer set default at 1 hour interval) generating a HAR (HTTP-Archieve data performance file) for loading metrics corresponding to a website, with Chrome using Browsermob-Proxy.
-Also parse and store valuable insights resulted from the HAR file into DB.
+Also parse and store valuable insights resulted from the HAR file into DB. 
+The service uses [speedprofile](https://github.com/parasdahal/speedprofile) engine.
 
 #### WebMonitoring API
 Provide an API for interrogating useful metrics from DB.
