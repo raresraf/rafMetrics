@@ -7,8 +7,6 @@ RUN apt-get update \
     && wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add - \
     && echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list
 
-# Chromedriver extra libraries
-RUN apt-get install -y chromium-browser
 
 # Install pptitude and python dependencies
 RUN apt-get update \
@@ -20,7 +18,7 @@ RUN apt-get update \
 RUN wget https://github.com/lightbody/browsermob-proxy/releases/download/browsermob-proxy-2.1.2/browsermob-proxy-2.1.2-bin.zip \
     && unzip browsermob-proxy-2.1.2-bin.zip \
     && wget http://selenium-release.storage.googleapis.com/2.41/selenium-server-standalone-2.41.0.jar \
-    && wget https://chromedriver.storage.googleapis.com/2.25/chromedriver_linux64.zip \
+    && wget https://chromedriver.storage.googleapis.com/2.35/chromedriver_linux64.zip \
     && unzip chromedriver_linux64.zip \
     && chmod +x chromedriver
 
