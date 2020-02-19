@@ -6,23 +6,13 @@ RUN apt-get clean \
 RUN apt-get -y install \
     nginx \
     python3-dev \
-    build-essential 
-
-RUN pip3 install pymysql
-RUN pip3 install flask
-RUN pip3 install flask-mysql
-RUN pip3 install flask-cors
-
-# jsonify a Decimal
-RUN pip3 install simplejson
-
-# Debugging
-RUN pip3 install ipython
-RUN pip3 install flask-shell-ipython
-
+    build-essential
 
 COPY . /rafMetrics
 WORKDIR /rafMetrics
+
+# Install requirements for Python modules
+RUN pip3 install -r requirements.txt
 
 EXPOSE 5000:5000
 
