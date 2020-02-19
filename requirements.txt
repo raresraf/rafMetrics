@@ -20,5 +20,7 @@ pytest-mock==1.13.0
 mock==4.0.1
 mysql-connector-python==8.0.19
 ipython==7.8.0
-flask-shell-ipython==0.4.1
 simplejson==3.17.0
+
+# Python 3.5 or later is required flask-shell-ipython
+# flask-shell-ipython==0.4.1
