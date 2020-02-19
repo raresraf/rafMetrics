@@ -1,7 +1,8 @@
-FROM ubuntu:trusty
+FROM ubuntu:19.10
 
 # Install Chrome debian sources
 RUN apt-get update \
+    && apt-get install -y gnupg2 \
     && apt-get install -y wget \
     && apt-get clean \
     && wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - \
@@ -10,7 +11,7 @@ RUN apt-get update \
 
 # Install pptitude and python dependencies
 RUN apt-get update \
-    && apt-get install -y xvfb python-pip unzip openjdk-7-jre google-chrome-stable \
+    && apt-get install -y xvfb python-pip unzip openjdk-8-jre google-chrome-stable \
     && apt-get clean \
     && pip install selenium browsermob-proxy xvfbwrapper --upgrade
 
