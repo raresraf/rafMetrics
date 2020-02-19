@@ -1,4 +1,6 @@
-mock
+mock==4.0.1
+mysql-connector-python==8.0.19
+
 # Auto-generated requirements
 # pipreqs . --force
 
