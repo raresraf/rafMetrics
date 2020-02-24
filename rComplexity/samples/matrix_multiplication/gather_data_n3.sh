@@ -3,10 +3,17 @@
 
 matrix_samples () {
   echo -n "$1" >> $FILENAME
+
+  # Using Classic Algorithm
   ./n3_sample0.out $1 | tr -d '\n' >> $FILENAME
   ./n3_sample1.out $1 | tr -d '\n'  >> $FILENAME
   ./n3_sample2.out $1 | tr -d '\n'  >> $FILENAME
   ./n3_sample3.out $1 | tr -d '\n'  >> $FILENAME
+
+  # Using Strassen Algorithm
+  ./n28074_sample1.out $1 | tr -d '\n'  >> $FILENAME
+
+
   echo "" >> $FILENAME
 }
 
