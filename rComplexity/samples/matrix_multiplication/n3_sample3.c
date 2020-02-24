@@ -45,9 +45,9 @@ int main(int argc, char* argv[])
     for(ii=0; ii<N; ii+=bl)
         for(jj=0; jj<N; jj+=bl)
             for(kk=0; kk<N; kk+=bl)
-                for(i=0; i<bl; i++)
-                    for(j=0; j<bl; j++)
-                        for(k=0; k<bl; k++)
+                for(i=0; i<bl && ii+i < N; i++)
+                    for(j=0; j<bl && jj + j < N; j++)
+                        for(k=0; k<bl && kk + k < N; k++)
                             c[ii+i][jj+j] += a[ii+i][kk+k]*b[kk+k][jj+j];
 	gettimeofday(&end, NULL);
 

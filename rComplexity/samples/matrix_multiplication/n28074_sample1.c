@@ -6,9 +6,9 @@
 
 void add(int **a, int **b, int size,int **c);
 void sub(int **a, int **b, int size,int **c);
-void  multiply(int **c,int **d,int size,int size2,int **new){
+void  multiply(int **c,int **d,int size,int size2,int **new_m){
     if(size == 1){
-        new[0][0] = c[0][0] *d[0][0];
+        new_m[0][0] = c[0][0] *d[0][0];
     }
     else {
         int i,j;
@@ -218,20 +218,20 @@ void  multiply(int **c,int **d,int size,int size2,int **new){
         for(i=0;i<nsize2;i++){
             for(j=0;j<nsize2;j++){
                 if(j>=0 && j<nsize && i>=0 && i<nsize){
-                    new[i][j] = te3[i][j];
+                    new_m[i][j] = te3[i][j];
                 }
                 if(j>=nsize && j<nsize2 && i>=0 && i<nsize){
                     a=j-nsize;
-                    new[i][j] = te4[i][a];
+                    new_m[i][j] = te4[i][a];
                 }
                 if(j>=0 && j<nsize && i>= nsize && i < nsize2){
                     c=i-nsize;
-                    new[i][j] = te5[c][j];
+                    new_m[i][j] = te5[c][j];
                 }
                 if(j>=nsize && j< nsize2 && i>= nsize && i< nsize2 ){
                     d=i-nsize;
                     e=j-nsize;
-                    new[i][j] =te8[d][e];
+                    new_m[i][j] =te8[d][e];
                 }
             }
         }
