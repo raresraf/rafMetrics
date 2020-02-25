@@ -22,6 +22,9 @@ values (1, 'https://www.emag.ro/resigilate/tablete/sort-discountdesc/c', 'GET');
 INSERT INTO RESOURCE(Userid, ResourceName, Command)
 values (1, 'https://istyle.ro/', 'GET');
 
+INSERT INTO RESOURCE(Userid, ResourceName, Command)
+values (1, 'https://www.piday.org/', 'GET');
+
 INSERT INTO WEBSITES(Userid, WebsiteName, WebsiteUrl)
 values (1, 'GitHub: rafMetrics', 'https://github.com/raresraf/rafMetrics');
 
@@ -42,4 +45,7 @@ values (1, 'Emag: tablets sale webpage', 'https://www.emag.ro/resigilate/tablete
 
 INSERT INTO WEBSITES(Userid, WebsiteName, WebsiteUrl)
 values (1, 'Istyle: default webpage', 'https://istyle.ro/');
+
+INSERT INTO WEBSITES(Userid, WebsiteName, WebsiteUrl)
+values (1, 'PI Day: 3.14 ', 'https://www.piday.org/');
 
