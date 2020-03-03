@@ -18,8 +18,19 @@ services:
       - ./mysql-config/init.sql:/docker-entrypoint-initdb.d
       - db-volume:/var/lib/mysql
 
+  # docker build -f WebMonitoring/DockerfileResource -t raresraf/resourcemonitor:latest .
   resourcemonitor:
     image: raresraf/resourcemonitor:latest
+    depends_on:
+      - mysql
+    environment:
+      DOCKER_COMPOSE_BUILD: 'true'
+    networks:
+      - backend
+
+  # docker build -f WebMonitoring/DockerfileWebsite -t raresraf/websitemonitor:latest .
+  websitemonitor:
+    image: raresraf/websitemonitor:latest
     depends_on:
       - mysql
     environment:

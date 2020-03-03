@@ -3,7 +3,7 @@ import time
 import requests
 
 from WebMonitoring.configs.constants import MonitoringStatus, RequestTypes, sample_url
-from WebMonitoring.configs.settings import SHOW_VERBOSE_MESSAGE
+from WebMonitoring.configs.settings import SHOW_PROGRESS_MESSAGE
 
 
 class ResourceMonitor:
@@ -74,7 +74,7 @@ class ResourceMonitor:
         self.verbose()
 
     def verbose(self):
-        if SHOW_VERBOSE_MESSAGE:
+        if SHOW_PROGRESS_MESSAGE:
             print("%s request status: %s" % (self.requestType, self.status))
             print("URL: %s" % self.url)
             if self.status == MonitoringStatus.DONE:

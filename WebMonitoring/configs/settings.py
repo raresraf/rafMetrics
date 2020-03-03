@@ -1,7 +1,10 @@
 import os
 
 # Set SHOW_VERBOSE_MESSAGE on true for multiple logs of the monitoring tools
-SHOW_VERBOSE_MESSAGE = True
+SHOW_VERBOSE_MESSAGE = False
+
+# Set SHOW_PROGRESS_MESSAGE on true for general logs about current process (used in ResourceMonitoring)
+SHOW_PROGRESS_MESSAGE = True
 
 # Default speedprofile script location inside repo
 # Original speedprofile code: https://github.com/parasdahal/speedprofile

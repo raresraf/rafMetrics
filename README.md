@@ -27,6 +27,9 @@ Provide an API for interrogating useful metrics from DB.
 ### Login
 Backend implementation to provide a simple authentication, registration and management for users inside rafMetrics platform.
 
+### DockerConfig
+Keeps track of all Docker Compose/Docker Swarm settings and configurations.
+
 ### KubernetesConfig
 Keeps track of all k8s settings
 
