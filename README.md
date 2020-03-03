@@ -3,6 +3,11 @@ Metrics for evaluating the performance and complexity of computer programs
 
 
 ## Components:
+
+
+### rafComputing
+The ML-based tool implementing the process of automatically tailoring a suitable rComplexity Class for an algorithm.
+
 ### WebMonitoring
 A tool for monitoring multiple network resources and websites. 
 Gather data by periodically monitoring specific resources and websites and stores results in database.
