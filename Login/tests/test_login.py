@@ -1,3 +1,5 @@
+import os
+
 import mock
 import pymysql
 from mock import MagicMock
@@ -311,4 +313,7 @@ def test_db_configs():
     assert MYSQL_DATABASE_USER == 'root'
     assert MYSQL_DATABASE_PASSWORD == 'password'
     assert MYSQL_DATABASE_DB == 'WebMonitoring'
-    assert MYSQL_DATABASE_HOST == '10.96.0.2'
+    if os.environ.get("DOCKER_COMPOSE_BUILD"):
+        assert MYSQL_DATABASE_HOST == 'mysql'
+    else:
+        assert MYSQL_DATABASE_HOST == '10.96.0.2'

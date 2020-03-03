@@ -1,0 +1,36 @@
+version: '3.3'
+
+services:
+  mysql:
+    image: mysql:5.6
+    restart: always
+    environment:
+      DOCKER_COMPOSE_BUILD: 'true'
+      MYSQL_DATABASE: 'WebMonitoring'
+      MYSQL_ROOT_PASSWORD: 'password'
+    ports:
+      - '3306:3306'
+    expose:
+      - '3306'
+    networks:
+      - backend
+    volumes:
+      - ./mysql-config/init.sql:/docker-entrypoint-initdb.d
+      - db-volume:/var/lib/mysql
+
+  resourcemonitor:
+    image: raresraf/resourcemonitor:latest
+    depends_on:
+      - mysql
+    environment:
+      DOCKER_COMPOSE_BUILD: 'true'
+    networks:
+      - backend
+
+
+volumes:
+  db-volume:
+
+
+networks:
+  backend:
