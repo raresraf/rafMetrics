@@ -18,7 +18,7 @@ All the code can be accessed and used via GitHub at \href{https://github.com/rar
 \\
 rafMetrics is licensed under the MIT License: a short and simple permissive license with conditions only requiring preservation of copyright and license notices. Licensed works, modifications, and larger works may be distributed under different terms and without source code.
 \\
-An easy-to-use, dockerized implementation, can be found at DockerHub within raresraf repositories.
+An easy-to-use, dockerized implementation, can be found at DockerHub within raresraf/ repositories.
 
 
 \section{Technologies}
@@ -86,6 +86,11 @@ The platform is made up of the following components:
 
 \subsubsection{rafComputing}
 The ML-based tool implementing the process of automatically tailoring a suitable rComplexity Class for an algorithm.
+
+
+A suitable rComplexity Class set is defined by the group of mathematical functions similar in magnitude with  $g(n)$ in the study of asymptotic behavior. A set-based description of this group can be expressed as:
+  \[\begin{split} \Theta_{1}(g(n)) = \lbrace f \in \mathcal{F}\ |\ \forall c_{1}, c_{2} \in \mathbb{R}^{*}_{+} \ s.t.  c_{1} < 1 < c_{2} , \exists n_{0} \in \mathbb{N}^{*}\ \\ s.t.\ \ c_{1} \cdot g(n) \leq f(n) \leq c_{2} \cdot g(n)\ ,\  \forall n \geq n_{0} \rbrace \end{split} \]
+
 
 \subsubsection{WebMonitoring}
 A tool for monitoring multiple network resources and websites. 
