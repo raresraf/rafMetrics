@@ -55,6 +55,18 @@ In order to perform a deployment of the Platform as an assembly, few orchestrati
 
 Networking is performed inside the orchestrator using an overlay network managed by Docker Swarm or Kubernetes services with static ClusterIPs and NodePorts.
 
+Docker's overlay networks implementations connect multiple Docker machines and allow swarm services to communicate with each other, facilitating communication between two containers running on
+different docker swarm nodes.
+
+In Kubernetes, there are four distinct networking problems to address ~\cite{authors2017kubernetes}:
+
+\begin{itemize}
+\item Highly-coupled container-to-container communications: this is solved by pods and localhost communications.
+\item Pod-to-Pod communications: every Pod gets its own IP address
+\item Pod-to-Service communications: this is covered by Kubernetes services.
+\item External-to-Service communications: this is covered by Kubernetes services.
+\end{itemize}
+
 The default node port range for Kubernetes is 30000 - 32767.
 
 
@@ -62,9 +74,15 @@ The default node port range for Kubernetes is 30000 - 32767.
 
 \subsection{Architecture overview}
 
-TODO
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1\textwidth]{arch}
+\caption{An overview of the architecture of the rafMetrics' platform}
+\end{figure}
 
 \subsection{Components}
+The platform is made up of the following components:
 
 \subsubsection{rafComputing}
 The ML-based tool implementing the process of automatically tailoring a suitable rComplexity Class for an algorithm.
