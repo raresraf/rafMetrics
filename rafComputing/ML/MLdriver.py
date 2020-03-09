@@ -46,8 +46,8 @@ if __name__ == "__main__":
     # printing values
     print('Slope:', regression_model.w_[0][0])
     # print('Intercept:', regression_model.intercept_)
-    print('Root mean squared error: ', rmse)
-    print('R2 score: ', r2)
+    # print('Root mean squared error: ', rmse)
+    # print('R2 score: ', r2)
 
     # plotting values
 
