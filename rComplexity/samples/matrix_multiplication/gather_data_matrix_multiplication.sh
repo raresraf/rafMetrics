@@ -29,13 +29,15 @@ FILENAME="results_$curr_time"
 touch $FILENAME
 
 
+lscpu >> $FILENAME
+
 # Small samples tests
+matrix_samples 16
 matrix_samples 32
-matrix_samples 64
-matrix_samples 128
+matrix_samples 48
 
 # Larger input tests
-for ((i = 256 ; i <= 4096 ; i = i + 256 )); do
+for ((i = 64 ; i <= 6144 ; i = i + 64 )); do
   matrix_samples $i
 done
 
