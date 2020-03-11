@@ -91,6 +91,7 @@ def LinearRegressionTraining(alpha=.1e-20,
     plt.plot(orig_x, y_predicted, color='g')
     plt.legend(['Regression line', 'Train data', 'Test data'])
     plt.title(polynomial_to_LaTeX(P(regression_model.w_.flatten())))
+
     # Return figure
     plt.savefig(output_name)
 

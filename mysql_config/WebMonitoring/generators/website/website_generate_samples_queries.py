@@ -7,6 +7,7 @@ def website_generate_samples_queries(period):
     howmany = 24
     GOBACK = 'HOUR'
     COEF = 1
+
     if period.lower() == 'daily':
         howmany = 24
         GOBACK = 'HOUR'
@@ -51,4 +52,7 @@ def website_generate_samples_queries(period):
 
 
 if __name__ == "__main__":
+    if len(sys.argv) <= 1:
+        print("Usage: python3 website_generate_samples_queries.py <period>")
+        sys.exit(-1)
     website_generate_samples_queries(sys.argv[1])

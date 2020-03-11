@@ -51,4 +51,8 @@ def website_generate_samples_queries_size(period):
 
 
 if __name__ == "__main__":
+    if len(sys.argv) <= 1:
+        print(
+            "Usage: python3 website_generate_samples_queries_size.py <period>")
+        sys.exit(-1)
     website_generate_samples_queries_size(sys.argv[1])

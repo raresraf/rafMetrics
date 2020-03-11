@@ -51,4 +51,7 @@ def resource_generate_samples_queries(period):
 
 
 if __name__ == "__main__":
+    if len(sys.argv) <= 1:
+        print("Usage: python3 resource_generate_samples_queries.py <period>")
+        sys.exit(-1)
     resource_generate_samples_queries(sys.argv[1])

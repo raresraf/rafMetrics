@@ -3,5 +3,8 @@ coverage:
     patch:
       default:
         threshold: 10%
+    project:
+      default:
+        threshold: 10%
 ignore:
   - "doc/.*"

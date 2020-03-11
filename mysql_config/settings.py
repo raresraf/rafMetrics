@@ -1,5 +1,6 @@
 # find . -name *.sql | xargs printf "\"%s\", \n"
 # Reorder file order to contain ./mysql_config/Tables/* first
+
 SQL_INIT_FILES = [
     "./mysql_config/Tables/create-tables.sql",
     "./mysql_config/Tables/audit_users_table.sql",
