@@ -1,0 +1,7 @@
+coverage:
+  status:
+    patch:
+      default:
+        threshold: 10%
+ignore:
+  - "doc/.*"
