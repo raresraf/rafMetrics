@@ -5,10 +5,13 @@ import sys
 from sklearn.linear_model import LinearRegression
 from sklearn.linear_model import Ridge
 
+from numpy.polynomial import Polynomial as P
+
 from sklearn.metrics import mean_squared_error, r2_score
 from sklearn.model_selection import train_test_split
 
 from rafComputing.ML.MLengine import LinearRegressionUsingGD
+from rafComputing.ML.polynomial_to_latex import polynomial_to_LaTeX
 
 
 def matrix_to_train_test(polynomial_features):
@@ -25,7 +28,10 @@ def matrix_to_train_test(polynomial_features):
     # Extract polynomial features
     x = extract_polynomial_features(x, polynomial_features)
 
-    X_train, X_test, y_train, y_test = train_test_split(x, y, test_size=0.2)
+    X_train, X_test, y_train, y_test = train_test_split(x,
+                                                        y,
+                                                        test_size=0.2,
+                                                        random_state=44)
 
     return (x, orig_x), (y, orig_y), X_train, X_test, y_train, y_test
 
@@ -38,16 +44,14 @@ def extract_polynomial_features(X, M):
     return phi
 
 
-if __name__ == "__main__":
-    if len(sys.argv) <= 1:
-        print("Usage: python3 MLdriver.py <file_name>")
-        sys.exit(-1)
-
+def LinearRegressionTraining(alpha=.1e-20,
+                             n_iterations=10000,
+                             output_name="result_0"):
     (x, orig_x), (
         y, orig_y), X_train, X_test, y_train, y_test = matrix_to_train_test(3)
 
     # Model initialization
-    regression_model = LinearRegressionUsingGD()
+    regression_model = LinearRegressionUsingGD(alpha, n_iterations)
     regression_model.fit(X_train, y_train)
 
     # Predict
@@ -86,4 +90,26 @@ if __name__ == "__main__":
     y_predicted = y_predicted.flatten()
     plt.plot(orig_x, y_predicted, color='g')
     plt.legend(['Regression line', 'Train data', 'Test data'])
-    plt.savefig('foo.png')
+    plt.title(polynomial_to_LaTeX(P(regression_model.w_.flatten())))
+    # Return figure
+    plt.savefig(output_name)
+
+    plt.close()
+
+
+if __name__ == "__main__":
+    if len(sys.argv) <= 1:
+        print("Usage: python3 MLdriver.py <file_name>")
+        sys.exit(-1)
+
+    MAX_ITER = 200000
+    ITER_INCREASE_STEPS_LOG = 2
+    ITER_INCREASE_STEPS = np.power(10, ITER_INCREASE_STEPS_LOG) - 1
+
+    for counter in range(ITER_INCREASE_STEPS):
+        output_name = 'result_' + str(counter +
+                                      1).zfill(ITER_INCREASE_STEPS_LOG)
+        LinearRegressionTraining(
+            alpha=1e-25,
+            n_iterations=int(MAX_ITER / ITER_INCREASE_STEPS * counter + 1),
+            output_name=output_name)

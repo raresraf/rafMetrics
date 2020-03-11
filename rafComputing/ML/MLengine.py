@@ -1,5 +1,7 @@
 import numpy as np
 
+VERBOSE = False
+
 
 class LinearRegressionUsingGD:
     """Linear Regression Using Gradient Descent.
@@ -41,7 +43,9 @@ class LinearRegressionUsingGD:
             self.w_ -= (self.alpha / m) * gradient_vector
             cost = np.sum((residuals**2)) / (2 * m)
             self.cost_.append(cost)
-            print(self.w_)
+
+            if VERBOSE:
+                print(self.w_)
         return self
 
     def predict(self, x):
