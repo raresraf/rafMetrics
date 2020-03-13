@@ -100,16 +100,25 @@ def LinearRegressionTraining(alpha=.1e-20,
 
 if __name__ == "__main__":
     if len(sys.argv) <= 1:
-        print("Usage: python3 MLdriver.py <file_name>")
+        print("Usage: python3 MLdriver.py <file_name> ")
+        print(
+            "Usage: python3 MLdriver.py <file_name> <ITER_INCREASE_STEPS_LOG = 0 default>"
+        )
         sys.exit(-1)
 
-    MAX_ITER = 200000
-    ITER_INCREASE_STEPS_LOG = 2
-    ITER_INCREASE_STEPS = np.power(10, ITER_INCREASE_STEPS_LOG) - 1
+    MAX_ITER = 10000
 
-    for counter in range(ITER_INCREASE_STEPS):
-        output_name = 'result_' + str(counter +
-                                      1).zfill(ITER_INCREASE_STEPS_LOG)
+    if len(sys.argv) == 3 and sys.argv[2]:
+        ITER_INCREASE_STEPS_LOG = int(sys.argv[2])
+        ITER_INCREASE_STEPS = np.power(10, ITER_INCREASE_STEPS_LOG)
+        range_ = range(ITER_INCREASE_STEPS)
+    else:
+        ITER_INCREASE_STEPS_LOG = 0
+        ITER_INCREASE_STEPS = 1
+        range_ = range(1, 2)
+
+    for counter in range_:
+        output_name = 'result_' + str(counter).zfill(ITER_INCREASE_STEPS_LOG)
         LinearRegressionTraining(
             alpha=1e-25,
             n_iterations=int(MAX_ITER / ITER_INCREASE_STEPS * counter + 1),
