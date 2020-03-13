@@ -2,9 +2,11 @@ coverage:
   status:
     project:
       default:
-        threshold: 5%
+        target: 5%
+        threshold: 10%
     patch:
       default:
-        threshold: 5%
+        target: 5%
+        threshold: 10%
 ignore:
   - "doc/.*"
