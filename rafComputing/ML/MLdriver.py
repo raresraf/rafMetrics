@@ -1,12 +1,8 @@
-import numpy as np
-import matplotlib.pyplot as plt
 import sys
 
-from sklearn.linear_model import LinearRegression
-from sklearn.linear_model import Ridge
-
+import matplotlib.pyplot as plt
+import numpy as np
 from numpy.polynomial import Polynomial as P
-
 from sklearn.metrics import mean_squared_error, r2_score
 from sklearn.model_selection import train_test_split
 

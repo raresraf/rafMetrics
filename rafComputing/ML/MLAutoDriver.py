@@ -1,17 +1,11 @@
-import numpy as np
-import matplotlib.pyplot as plt
 import sys
 
-from sklearn.linear_model import LinearRegression
-from sklearn.linear_model import Ridge
-
+import matplotlib.pyplot as plt
 from numpy.polynomial import Polynomial as P
-
+from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_squared_error, r2_score
-from sklearn.model_selection import train_test_split
 
 from rafComputing.ML.MLdriver import matrix_to_train_test
-from rafComputing.ML.MLengine import LinearRegressionUsingGD
 from rafComputing.ML.polynomial_to_latex import polynomial_to_LaTeX
 
 OUTPUT_NAME = 'result.png'
