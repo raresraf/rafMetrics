@@ -8,6 +8,7 @@ def generate_init_sql():
 
     f.write("# Auto-generated init SQL file.\n")
     f.write("# Do not manually edit this file.\n\n\n")
+    f.write("CREATE DATABASE IF NOT EXISTS WebMonitoring;\n\n")
     f.write("use WebMonitoring;\n\n\n")
 
     for tmpfile_name in SQL_INIT_FILES:

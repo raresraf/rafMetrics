@@ -2,6 +2,8 @@
 # Do not manually edit this file.
 
 
+CREATE DATABASE IF NOT EXISTS WebMonitoring;
+
 use WebMonitoring;
 
 

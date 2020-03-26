@@ -2,6 +2,8 @@ MOCK_SQL_INIT = """# Auto-generated init SQL file.
 # Do not manually edit this file.
 
 
+CREATE DATABASE IF NOT EXISTS WebMonitoring;
+
 use WebMonitoring;
 
 

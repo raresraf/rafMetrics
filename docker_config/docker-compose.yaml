@@ -1,13 +1,12 @@
 version: '3.3'
 
+# docker stack deploy -c docker_config/docker-compose.yaml rafMetrics
 services:
+  # docker build -f mysql_config/Dockerfile -t raresraf/rafmetricsmysql:latest .
   mysql:
-    image: mysql:5.6
-    restart: always
+    image: raresraf/rafmetricsmysql:latest
     environment:
       DOCKER_COMPOSE_BUILD: 'true'
-      MYSQL_DATABASE: 'WebMonitoring'
-      MYSQL_ROOT_PASSWORD: 'password'
     ports:
       - '3306:3306'
     expose:
@@ -15,7 +14,6 @@ services:
     networks:
       - backend
     volumes:
-      - ./mysql-config/init.sql:/docker-entrypoint-initdb.d
       - db-volume:/var/lib/mysql
 
   # docker build -f WebMonitoring/DockerfileResource -t raresraf/resourcemonitor:latest .
