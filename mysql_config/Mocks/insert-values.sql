@@ -1,5 +1,5 @@
 INSERT INTO USERS(LastName, FirstName, Username, Email, hashedpassword)
-values ('TestLastName', 'TestFirstName', 'TestUsername', 'TestEmail', 'Testhashedpassword');
+values ('TestLastName', 'TestFirstName', 'TestUsername', 'TestEmail', 'pbkdf2:sha256:150000$aLUr0Tku$b8bbd76305a65b5fde4c94a22017979c9f3918d251045b0029a07657c9c169fb');
 
 INSERT INTO RESOURCE(Userid, ResourceName, Command)
 values (1, 'https://github.com/raresraf/rafMetrics', 'GET');

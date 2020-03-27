@@ -9,8 +9,8 @@ services:
       DOCKER_COMPOSE_BUILD: 'true'
     ports:
       - '3306:3306'
-    expose:
-      - '3306'
+    # expose:
+    #  - '3306'
     networks:
       - backend
     volumes:
@@ -36,6 +36,42 @@ services:
     networks:
       - backend
 
+  login:
+    image: raresraf/login:latest
+    depends_on:
+      - mysql
+    environment:
+      DOCKER_COMPOSE_BUILD: 'true'
+    ports:
+      - '31001:5000'
+    networks:
+      - backend
+      - frontend
+
+  webmonitoringapi:
+    image: raresraf/webmonitoringapi:latest
+    depends_on:
+      - mysql
+    environment:
+      DOCKER_COMPOSE_BUILD: 'true'
+    ports:
+      - '31002:5000'
+    networks:
+      - backend
+      - frontend
+
+  metricsui:
+    image: raresraf/metricsui:latest
+    depends_on:
+      - webmonitoringapi
+      - login
+    environment:
+      DOCKER_COMPOSE_BUILD: 'true'
+    ports:
+      - '31000:80'
+    networks:
+      - frontend
+
 
 volumes:
   db-volume:
@@ -43,3 +79,4 @@ volumes:
 
 networks:
   backend:
+  frontend:
