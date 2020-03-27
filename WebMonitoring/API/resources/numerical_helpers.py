@@ -24,8 +24,8 @@ def lt_w_none(val1, val2):
 
 
 def get_percent_w_none(val1, val2):
-    if val1 is None:
+    if val1 is None or val1 == 0:
         return 100
-    if val2 is None:
+    if val2 is None or val2 == 0:
         return 0
     return round(abs(val2 - val1) / val1, 2)

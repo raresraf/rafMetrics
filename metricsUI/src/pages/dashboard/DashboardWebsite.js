@@ -13,11 +13,12 @@ import Dot from "../../components/Sidebar/components/Dot";
 import TableWebsites from "./components/Table/TableWebsites";
 import {useUserState} from "../../context/UserContext";
 import {useResourceState} from "../../context/ResourceContext";
+import {backend_login_ip, backend_webmonitoringapi_ip} from '../../config';
 
 
 function getAvailableResources(username) {
   return new Promise((resolve, reject) => {
-    let availableResourcesUrl = "http://109.103.170.75:31002/availableWebsites/" + username;
+    let availableResourcesUrl = backend_webmonitoringapi_ip + "/availableWebsites/" + username;
     fetch(availableResourcesUrl)
         .then((response) => {
           return response.json();
@@ -34,7 +35,7 @@ function getAvailableResources(username) {
 
 function getSamplesTime(period, resourceid) {
   return new Promise((resolve, reject) => {
-    let availableResourcesUrl = "http://109.103.170.75:31002/websites/samples/time/" + resourceid + '/' + period;
+    let availableResourcesUrl = backend_webmonitoringapi_ip + "/websites/samples/time/" + resourceid + '/' + period;
     fetch(availableResourcesUrl)
       .then((response) => {
         return response.json();
@@ -50,7 +51,7 @@ function getSamplesTime(period, resourceid) {
 
 function getSamplesSize(period, resourceid) {
   return new Promise((resolve, reject) => {
-    let availableResourcesUrl = "http://109.103.170.75:31002/websites/samples/size/" + resourceid + '/' + period;
+    let availableResourcesUrl = backend_webmonitoringapi_ip + "/websites/samples/size/" + resourceid + '/' + period;
     fetch(availableResourcesUrl)
       .then((response) => {
         return response.json();

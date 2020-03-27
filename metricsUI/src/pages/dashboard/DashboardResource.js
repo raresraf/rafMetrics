@@ -14,11 +14,12 @@ import TableResource from "./components/Table/TableResource";
 import BigStatResource from "./components/BigStat/BigStatResource";
 import {useUserState} from "../../context/UserContext";
 import {useResourceState} from "../../context/ResourceContext";
+import {backend_login_ip, backend_webmonitoringapi_ip} from '../../config';
 
 
 function getAvailableResources(username) {
   return new Promise((resolve, reject) => {
-    let availableResourcesUrl = "http://109.103.170.75:31002/availableResources/" + username;
+    let availableResourcesUrl = backend_webmonitoringapi_ip + "/availableResources/" + username;
     fetch(availableResourcesUrl)
         .then((response) => {
           return response.json();
@@ -34,7 +35,7 @@ function getAvailableResources(username) {
 
 function getRequestTime(resourceid) {
   return new Promise((resolve, reject) => {
-    let availableResourcesUrl = "http://109.103.170.75:31002/resources/metrics/" + resourceid;
+    let availableResourcesUrl = backend_webmonitoringapi_ip + "/resources/metrics/" + resourceid;
     fetch(availableResourcesUrl)
         .then((response) => {
           return response.json();
@@ -50,7 +51,7 @@ function getRequestTime(resourceid) {
 
 function getSamplesTime(period, resourceid) {
   return new Promise((resolve, reject) => {
-    let availableResourcesUrl = "http://109.103.170.75:31002/resources/samples/time/" + resourceid + '/' + period;
+    let availableResourcesUrl = backend_webmonitoringapi_ip + "/resources/samples/time/" + resourceid + '/' + period;
     fetch(availableResourcesUrl)
       .then((response) => {
         return response.json();
@@ -66,7 +67,7 @@ function getSamplesTime(period, resourceid) {
 
 function getSamplesSize(period, resourceid) {
   return new Promise((resolve, reject) => {
-    let availableResourcesUrl = "http://109.103.170.75:31002/resources/samples/size/" + resourceid + '/' + period;
+    let availableResourcesUrl = backend_webmonitoringapi_ip + "/resources/samples/size/" + resourceid + '/' + period;
     fetch(availableResourcesUrl)
       .then((response) => {
         return response.json();

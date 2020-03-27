@@ -1,4 +1,5 @@
 import React from "react";
+import {backend_login_ip, backend_webmonitoringapi_ip} from '../config';
 
 var UserStateContext = React.createContext();
 var UserDispatchContext = React.createContext();
@@ -58,7 +59,7 @@ async function loginUser(dispatch, login, password, history, setIsLoading, setEr
   setError(false);
   setIsLoading(true);
 
-  const authUrl = 'http://109.103.170.75:31001/user/' + login + '/' + password;
+  const authUrl = backend_login_ip + '/user/' + login + '/' + password;
 
   var authValid;
   await fetch(authUrl)
