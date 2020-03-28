@@ -230,3 +230,14 @@ The solution of this recurrence equation in rComplexity calculus (with $n \in \m
 \[ QueenProblem(n) = O_{1}(408 \cdot n^{2} \cdot n!) +  O_{1}(1418 \cdot n \cdot n!) \]
 Using the $O_{1}$ addition properties, we conclude:
 \[ QueenProblem(n) = O_{1}(408 \cdot n^{2} \cdot n!) \]
+
+\begin{remark}
+The rComplexity function associated with the algorithm $(408 \cdot n^{2} \cdot n!)$ is from the same tradition complexity class as calculated before $ O(n^2\cdot n!)$.
+\end{remark}
+
+\section{Automatic estimation of rComplexity}
+This section aims to present a solution for automation for calculating an approximate of the associated rComplexity class for any given algorithm. The prerequisites for this method implies a technique for obtaining relevant metric-specific details for diversified input dimensions. For instance, if time is the monitored metric, there must exist a collection of pertinent data linking the correspondence between input size and the total execution time for the designated input size.
+
+\subsection{Estimation for algorithms with known Bachmann–Landau Complexity}
+
+\subsection{Estimation for algorithms with unknown Bachmann–Landau Complexity}
