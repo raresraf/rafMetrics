@@ -1,7 +1,7 @@
 \chapter{rComplexity in Practice}
 
 \section{Human-driven calculus of rComplexity}
-This section aims to present a simple methodology of calculating by hand the associated rComplexity class for any given algorithm, provided a predefined instruction set architecture and the correspondence between generic instructions and required time for execution as well as enhanced hardware designs details related to the total execution time (no. of stages of pipeline, scalability degree, etc.). Even if the process of calculating an exact rComplexity class associated to a real algorithm is unpractical, the method provided can be applied with colossal endeavor. Later on, we will present an automated method of estimating the rComplexity of a given algorithm.
+This section aims to present a simple methodology of calculating by hand the associated rComplexity class for any given algorithm, provided a predefined instruction set architecture and the correspondence between generic instructions and required time for execution as well as enhanced hardware designs details related to the total execution time (no. of stages of pipeline, scalability degree, etc.)\cite{hennessy2011computer}. Even if the process of calculating an exact rComplexity class associated to a real algorithm is unpractical, the method provided can be applied with colossal endeavor. Later on, we will present an automated method of estimating the rComplexity of a given algorithm.
 
 \subsection{N-Queens’ Problem}
 We will begin to solve this by making an observation about choosing the $N$ Queens on the board with the dimensions $n$ x $n$. In order not to have attacks between two Queens, it must not have two Queens on the same line or column. We define a Queen $Q$ by the pair on points $ (x, y) $, where $ x, y \leq n $, are the coordinates corresponding to the position on the chessboard.
@@ -92,6 +92,7 @@ The matrix display operation occupies $ O (n ^ 2) $.
 Each Queen Problem function calls other $ n $ instances, through recursive calls, of a smaller order with one unit ($ n-1 $).
 The forward and backtracking operations respectively are performed in $ O (1) $. The time consuming operation is the conflict checking operation (noConflict function) that is performed in linear time $ O (n) $, because this function iterates, individually (only to the left of the created matrix), after the lines of the matrix (in $ O (n) $), after a diagonal parallel to the secondary diagonal of the matrix (in $ O (n) $) and after a diagonal parallel to the main diagonal of the matrix (in $ O (n) $).
 Therefore:
+
 \[QueenProblem(n) = n \cdot QueenProblem(n-1) + n \cdot O(n),\ O(1)=O(n^2)\] 
 \noindent\rule{16cm}{0.4pt}
 \[QueenProblem(n) = n \cdot QueenProblem(n-1) + n \cdot O(n) |\cdot\ 1\]
@@ -110,13 +111,12 @@ Therefore:
 \[QueenProblem(n) = O(n^2\cdot n!) \]
 \noindent\rule{16cm}{0.4pt}
 
-
 rComplexity calculus is similar, but it requires higher precision of class approximation and additional architectural aspects. 
 First change is that the noConflict function has it's performance dependent on the architecture, as not all CPU operations takes the same amount of CPU cycles. 
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=\textwidth]{part101_infographics_v08}
+\includegraphics[width=0.9\textwidth]{part101_infographics_v08}
 \caption{Operation Costs in CPU Clock Cycles\cite{archcost}}
 \end{figure}
 
@@ -235,9 +235,103 @@ Using the $O_{1}$ addition properties, we conclude:
 The rComplexity function associated with the algorithm $(408 \cdot n^{2} \cdot n!)$ is from the same tradition complexity class as calculated before $ O(n^2\cdot n!)$.
 \end{remark}
 
+
 \section{Automatic estimation of rComplexity}
 This section aims to present a solution for automation for calculating an approximate of the associated rComplexity class for any given algorithm. The prerequisites for this method implies a technique for obtaining relevant metric-specific details for diversified input dimensions. For instance, if time is the monitored metric, there must exist a collection of pertinent data linking the correspondence between input size and the total execution time for the designated input size.
 
 \subsection{Estimation for algorithms with known Bachmann–Landau Complexity}
+Reckoning an associated rComplexity class ($f$) for an algorithm with established Bachmann–Landau Complexity ($g$) consists in the process of tailoring an suitable constant $c$, such that $f \approx \Theta_{1}(c \cdot g)$ or in Big-O calculus, $f \leq  \mathbb{O}_{1} (c \cdot g)$. The approach presented below is a particularized version of linear regression, which attempts to model the relationship between various variables by fitting a linear equation to observed data. Even if the model generally follows the classical pattern of a Machine Learning Process (training, predicting, etc.), where a training example consists of a pair ($inputSize$, $metricValue$).
+
+A trick is used to adjust the entry values if the Bachmann–Landau relationship between the $inputSize$ and the metric is known. In order to adjust the learning set to a more knowledgeable set, we can extract new features and replace all the ($inputSize$, $metricValue$) pairs with ($g(inputSize)$, $metricValue$), where $g$ is the known Bachmann–Landau Complexity function converted into Normal form.
+
+
+The importance of this trick can be emphasized comparing the classical linear regression model with various learning datasets. For the matrix multiplication problem, a naive algorithm (with Bachmann–Landau Complexity $\mathbb{O}(n^{3})$) has been implemented. After testing, the algorithm has been deployed and executed matrix multiplications for various sizes of the matrixes. The execution has been audited and the results have been summarized in the following table, which represents the correspondance between matrix dimension and running time:
+
+\begin{table}[H]
+\begin{center}
+\scalebox{0.6}{
+\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|l|l|}
+\hline
+\begin{tabular}[c]{@{}l@{}}input\\ Size\end{tabular} & Time $(s)$     & \begin{tabular}[c]{@{}l@{}}input\\ Size\end{tabular} & Time $(s)$  & \begin{tabular}[c]{@{}l@{}}input\\ Size\end{tabular} & Time $(s)$  & \begin{tabular}[c]{@{}l@{}}input\\ Size\end{tabular} & Time $(s)$  & \begin{tabular}[c]{@{}l@{}}input\\ Size\end{tabular} & Time $(s)$   & \begin{tabular}[c]{@{}l@{}}input\\ Size\end{tabular} & Time $(s)$   \\ \hline
+16                                                   & 0.000018 & 1024                                                 & 8.52   & 2112                                                 & 123.73 & 3200                                                 & 462.71 & 4288                                                 & 999.25  & 5376                                                 & 1647.23 \\ \hline
+32                                                   & 0.000339 & 1088                                                 & 10.96  & 2176                                                 & 135.21 & 3264                                                 & 358.01 & 4352                                                 & 864.15  & 5440                                                 & 1929.46 \\ \hline
+48                                                   & 0.001123 & 1152                                                 & 13.76  & 2240                                                 & 149.43 & 3328                                                 & 540.64 & 4416                                                 & 987.71  & 5504                                                 & 1693.75 \\ \hline
+64                                                   & 0.001468 & 1216                                                 & 18.03  & 2304                                                 & 148.82 & 3392                                                 & 446.29 & 4480                                                 & 1095.01 & 5568                                                 & 1986.99 \\ \hline
+128                                                  & 0.015482 & 1280                                                 & 21.55  & 2368                                                 & 180.07 & 3456                                                 & 592.91 & 4544                                                 & 1126.39 & 5632                                                 & 2002.14 \\ \hline
+256                                                  & 0.084991 & 1344                                                 & 25.59  & 2432                                                 & 117.83 & 3520                                                 & 480.98 & 4608                                                 & 1147.28 & 5696                                                 & 2013.22 \\ \hline
+320                                                  & 0.172411 & 1408                                                 & 30.66  & 2496                                                 & 213.51 & 3584                                                 & 621.36 & 4672                                                 & 1280.23 & 5760                                                 & 2066.87 \\ \hline
+384                                                  & 0.296398 & 1472                                                 & 28.27  & 2560                                                 & 236.41 & 3648                                                 & 582.46 & 4736                                                 & 1228.73 & 5824                                                 & 2029.52 \\ \hline
+448                                                  & 0.535461 & 1536                                                 & 41.91  & 2624                                                 & 255.39 & 3712                                                 & 628.36 & 4800                                                 & 1222.14 & 5888                                                 & 2236.73 \\ \hline
+512                                                  & 0.764842 & 1600                                                 & 48.90  & 2688                                                 & 275.05 & 3776                                                 & 650.76 & 4864                                                 & 1256.73 & 5952                                                 & 2503.13 \\ \hline
+576                                                  & 1.308485 & 1664                                                 & 56.34  & 2752                                                 & 167.51 & 3840                                                 & 651.43 & 4928                                                 & 1290.35 & 6016                                                 & 2317.91 \\ \hline
+640                                                  & 1.803608 & 1728                                                 & 70.47  & 2816                                                 & 268.64 & 3904                                                 & 626.79 & 4992                                                 & 1488.43 & 6080                                                 & 2395.12 \\ \hline
+704                                                  & 2.516613 & 1792                                                 & 71.02  & 2880                                                 & 296.00 & 3968                                                 & 659.29 & 5056                                                 & 1432.41 & 6144                                                 & 2718.02 \\ \hline
+768                                                  & 3.334002 & 1856                                                 & 84.41  & 2944                                                 & 304.91 & 4032                                                 & 915.86 & 5120                                                 & 1093.62 &                                                      &         \\ \hline
+832                                                  & 4.315076 & 1920                                                 & 67.05  & 3008                                                 & 300.06 & 4096                                                 & 769.01 & 5184                                                 & 1649.00 &                                                      &         \\ \hline
+896                                                  & 5.571474 & 1984                                                 & 99.74  & 3072                                                 & 228.34 & 4160                                                 & 864.89 & 5248                                                 & 1729.42 &                                                      &         \\ \hline
+960                                                  & 7.076612 & 2048                                                 & 110.90 & 3136                                                 & 446.72 & 4224                                                 & 789.13 & 5312                                                 & 1743.26 &                                                      &         \\ \hline
+\end{tabular}
+}
+\end{center}
+\caption{Reported timings for different input size for a naive matrix multiplication algorithm in $\mathbb{O}(n^{3})$}
+\end{table}
+
+Training a linear regression model on this dataset would result in model with a linear equation to observed data, similar with the one below(a). Translation of the dataset can enhance fitting results for the regression. Examples for ($inputSize$, $metricValue$) $ \Rightarrow $ ($inputSize^{n}$, $metricValue$) are presented in (b) $n = 2$, (c) $n = 3$ and (d) $n = 4$.
+
+
+\begin{table}[H]
+\begin{center}
+\scalebox{0.6}{
+\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|l|l|}
+\hline
+\begin{tabular}[c]{@{}l@{}}input\\ Size$^3$ \end{tabular} & Time $(s)$     & \begin{tabular}[c]{@{}l@{}}input\\ Size$^3$\end{tabular} & Time $(s)$  & \begin{tabular}[c]{@{}l@{}}input\\ Size$^3$\end{tabular} & Time $(s)$  & \begin{tabular}[c]{@{}l@{}}input\\ Size$^3$\end{tabular} & Time $(s)$  & \begin{tabular}[c]{@{}l@{}}input\\ Size$^3$\end{tabular} & Time $(s)$   & \begin{tabular}[c]{@{}l@{}}input\\ Size$^3$\end{tabular} & Time $(s)$   \\ \hline
+4.10E+03  & 0.000018 & 1.07E+09  & 8.52   & 9.42E+09  & 123.73 & 3.28E+10  & 462.71 & 7.88E+10  & 999.25  & 1.55E+11  & 1647.23 \\ \hline
+3.28E+04  & 0.000339 & 1.29E+09  & 10.96  & 1.03E+10  & 135.21 & 3.48E+10  & 358.01 & 8.24E+10  & 864.15  & 1.61E+11  & 1929.46 \\ \hline
+1.11E+05  & 0.001123 & 1.53E+09  & 13.76  & 1.12E+10  & 149.43 & 3.69E+10  & 540.64 & 8.61E+10  & 987.71  & 1.67E+11  & 1693.75 \\ \hline
+2.62E+05  & 0.001468 & 1.80E+09  & 18.03  & 1.22E+10  & 148.82 & 3.90E+10  & 446.29 & 8.99E+10  & 1095.01 & 1.73E+11  & 1986.99 \\ \hline
+2.10E+06  & 0.015482 & 2.10E+09  & 21.55  & 1.33E+10  & 180.07 & 4.13E+10  & 592.91 & 9.38E+10  & 1126.39 & 1.79E+11  & 2002.14 \\ \hline
+1.68E+07  & 0.084991 & 2.43E+09  & 25.59  & 1.44E+10  & 117.83 & 4.36E+10  & 480.98 & 9.78E+10  & 1147.28 & 1.85E+11  & 2013.22 \\ \hline
+3.28E+07  & 0.172411 & 2.79E+09  & 30.66  & 1.56E+10  & 213.51 & 4.60E+10  & 621.36 & 1.02E+11  & 1280.23 & 1.91E+11  & 2066.87 \\ \hline
+5.66E+07  & 0.296398 & 3.19E+09  & 28.27  & 1.68E+10  & 236.41 & 4.85E+10  & 582.46 & 1.06E+11  & 1228.73 & 1.98E+11  & 2029.52 \\ \hline
+8.99E+07  & 0.535461 & 3.62E+09  & 41.91  & 1.81E+10  & 255.39 & 5.11E+10  & 628.36 & 1.11E+11  & 1222.14 & 2.04E+11  & 2236.73 \\ \hline
+1.34E+08  & 0.764842 & 4.10E+09  & 48.90  & 1.94E+10  & 275.05 & 5.38E+10  & 650.76 & 1.15E+11  & 1256.73 & 2.11E+11  & 2503.13 \\ \hline
+1.91E+08  & 1.308485 & 4.61E+09  & 56.34  & 2.08E+10  & 167.51 & 5.66E+10  & 651.43 & 1.20E+11  & 1290.35 & 2.18E+11  & 2317.91 \\ \hline
+2.62E+08  & 1.803608 & 5.16E+09  & 70.47  & 2.23E+10  & 268.64 & 5.95E+10  & 626.79 & 1.24E+11  & 1488.43 & 2.25E+11  & 2395.12 \\ \hline
+3.49E+08  & 2.516613 & 5.75E+09  & 71.02  & 2.39E+10  & 296.00 & 6.25E+10  & 659.29 & 1.29E+11  & 1432.41 & 2.32E+11  & 2718.02 \\ \hline
+4.53E+08  & 3.334002 & 6.39E+09  & 84.41  & 2.55E+10  & 304.91 & 6.55E+10  & 915.86 & 1.34E+11  & 1093.62 &           &         \\ \hline
+5.76E+08  & 4.315076 & 7.08E+09  & 67.05  & 2.72E+10  & 300.06 & 6.87E+10  & 769.01 & 1.39E+11  & 1649.00 &           &         \\ \hline
+7.19E+08  & 5.571474 & 7.81E+09  & 99.74  & 2.90E+10  & 228.34 & 7.20E+10  & 864.89 & 1.45E+11  & 1729.42 &           &         \\ \hline
+8.85E+08  & 7.076612 & 8.59E+09  & 110.90 & 3.08E+10  & 446.72 & 7.54E+10  & 789.13 & 1.50E+11  & 1743.26 &           &         \\ \hline
+\end{tabular}
+}
+\end{center}
+\caption{Training data for the linear regression model after mapping ($inputSize$, $metricValue$) pairs with ($inputSize^3$, $metricValue$)}
+\end{table}
+
+\begin{figure}[H]
+\makebox[\textwidth][c]{\parbox{1.2\textwidth}{%
+  \begin{subfigure}{.6\textwidth}
+      \includegraphics[width=\linewidth]{mm521_1.png}
+      \caption{Linear Regression Model trained with initial features}
+  \end{subfigure}%
+  \begin{subfigure}{.6\textwidth}
+      \includegraphics[width=\linewidth]{mm521_2.png}
+      \caption{Linear Regression Model trained with new features obtained using $g(n) = n^2 $}
+  \end{subfigure}
+  \begin{subfigure}{.6\textwidth}
+      \includegraphics[width=\linewidth]{mm521_3.png}
+      \caption{Linear Regression Model trained with new features obtained using $g(n) = n^3$}
+  \end{subfigure}%
+  \begin{subfigure}{.6\textwidth}
+      \includegraphics[width=\linewidth]{mm521_4.png}
+      \caption{Linear Regression Model trained with new features obtained using $g(n) = n^4$}
+  \end{subfigure}
+}}
+\caption{Various prediction boundaries based on accommodated training dataset  using multiple relations $g$}
+\end{figure}
+
 
 \subsection{Estimation for algorithms with unknown Bachmann–Landau Complexity}
+
+
+\section{Matrix multiplication}
