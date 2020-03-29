@@ -21,15 +21,17 @@ def matrix_to_train_test(polynomial_features):
     orig_x = x
     orig_y = y
 
+    orig_x_train, orig_x_test, y_train, y_test = train_test_split(
+        x, y, test_size=0.2, random_state=44)
+
     # Extract polynomial features
     x = extract_polynomial_features(x, polynomial_features)
 
-    X_train, X_test, y_train, y_test = train_test_split(x,
-                                                        y,
-                                                        test_size=0.2,
-                                                        random_state=44)
-
-    return (x, orig_x), (y, orig_y), X_train, X_test, y_train, y_test
+    X_train = extract_polynomial_features(orig_x_train, polynomial_features)
+    X_test = extract_polynomial_features(orig_x_test, polynomial_features)
+    return (x, orig_x), y, (X_train,
+                            orig_x_train), (X_test,
+                                            orig_x_test), y_train, y_test
 
 
 def extract_polynomial_features(X, M):
@@ -43,8 +45,8 @@ def extract_polynomial_features(X, M):
 def LinearRegressionTraining(alpha=.1e-20,
                              n_iterations=10000,
                              output_name="result_0"):
-    (x, orig_x), (
-        y, orig_y), X_train, X_test, y_train, y_test = matrix_to_train_test(3)
+    (x, orig_x), y, (X_train, orig_x_train), (
+        X_test, orig_x_test), y_train, y_test = matrix_to_train_test(3)
 
     # Model initialization
     regression_model = LinearRegressionUsingGD(alpha, n_iterations)
@@ -67,9 +69,7 @@ def LinearRegressionTraining(alpha=.1e-20,
     print('[Test Set] Root mean squared error: ', rmse)
     print('[Test Set] R2 score: ', r2)
 
-    orig_x_train = X_train[:, 1]
     orig_y_train = y_train.flatten()
-    orig_x_test = X_test[:, 1]
     orig_y_test = y_test.flatten()
 
     # data points
@@ -80,7 +80,7 @@ def LinearRegressionTraining(alpha=.1e-20,
 
     # plotting predicted values
     orig_x = orig_x.flatten()
-    orig_y = orig_y.flatten()
+    orig_y = y.flatten()
 
     # predicted values
     y_predicted = y_predicted.flatten()

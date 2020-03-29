@@ -12,8 +12,8 @@ OUTPUT_NAME = 'result.png'
 
 
 def LinearRegressionTrainingAuto():
-    (x, orig_x), (
-        y, orig_y), X_train, X_test, y_train, y_test = matrix_to_train_test(3)
+    (x, orig_x), y, (X_train, orig_x_train), (
+        X_test, orig_x_test), y_train, y_test = matrix_to_train_test(3)
 
     # Model initialization
     regression_model = LinearRegression(fit_intercept=False)
@@ -36,9 +36,7 @@ def LinearRegressionTrainingAuto():
     print('[Test Set] Root mean squared error: ', rmse)
     print('[Test Set] R2 score: ', r2)
 
-    orig_x_train = X_train[:, 1]
     orig_y_train = y_train.flatten()
-    orig_x_test = X_test[:, 1]
     orig_y_test = y_test.flatten()
 
     # data points
@@ -49,7 +47,7 @@ def LinearRegressionTrainingAuto():
 
     # plotting predicted values
     orig_x = orig_x.flatten()
-    orig_y = orig_y.flatten()
+    orig_y = y.flatten()
 
     # predicted values
     y_predicted = y_predicted.flatten()
