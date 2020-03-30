@@ -14,5 +14,5 @@ else {
 }
 */
 
-backend_login_ip = "http://localhost:31001";
-backend_webmonitoringapi_ip = "http://localhost:31002";
+backend_login_ip = "http://ec2-35-177-95-31.eu-west-2.compute.amazonaws.com:31001";
+backend_webmonitoringapi_ip = "http://ec2-35-177-95-31.eu-west-2.compute.amazonaws.com:31002";

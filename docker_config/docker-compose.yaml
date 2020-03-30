@@ -15,6 +15,9 @@ services:
       - backend
     volumes:
       - db-volume:/var/lib/mysql
+    deploy:
+      placement:
+        constraints: [node.role == manager]
 
   # docker build -f WebMonitoring/DockerfileResource -t raresraf/resourcemonitor:latest .
   resourcemonitor:
@@ -71,6 +74,17 @@ services:
       - '31000:80'
     networks:
       - frontend
+
+  visualizer:
+    image: dockersamples/visualizer:stable
+    ports:
+      - "8080:8080"
+    stop_grace_period: 1m30s
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock"
+    deploy:
+      placement:
+        constraints: [node.role == manager]
 
 
 volumes:
