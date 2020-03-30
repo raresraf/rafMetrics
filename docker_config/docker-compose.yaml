@@ -32,7 +32,7 @@ services:
     deploy:
       replicas: 1
       placement:
-        constraints: [node.role != manager]
+        constraints: [node.role == worker]
 
   # docker build -f WebMonitoring/DockerfileWebsite -t raresraf/websitemonitor:latest .
   websitemonitor:
@@ -46,7 +46,7 @@ services:
     deploy:
       replicas: 1
       placement:
-        constraints: [node.role != manager]
+        constraints: [node.role == worker]
 
   login:
     image: raresraf/login:latest
@@ -62,7 +62,7 @@ services:
     deploy:
       replicas: 1
       placement:
-        constraints: [node.role != manager]
+        constraints: [node.role == worker]
 
   webmonitoringapi:
     image: raresraf/webmonitoringapi:latest
@@ -78,7 +78,7 @@ services:
     deploy:
       replicas: 2
       placement:
-        constraints: [node.role != manager]
+        constraints: [node.role == worker]
 
   # docker build -f metricsUI/Dockerfile -t raresraf/metricsui:latest .
   metricsui:
@@ -95,7 +95,7 @@ services:
     deploy:
       replicas: 2
       placement:
-        constraints: [node.role != manager]
+        constraints: [node.role == worker]
 
   visualizer:
     image: dockersamples/visualizer:stable
@@ -108,6 +108,23 @@ services:
       replicas: 1
       placement:
         constraints: [node.role == manager]
+
+  grafana:
+    image: grafana/grafana:latest
+    ports:
+      - "32001:3000"
+    depends_on:
+      - mysql
+    environment:
+      - "GF_SECURITY_ADMIN_USER=TestUsername"
+      - "GF_SECURITY_ADMIN_PASSWORD=TestUsername"
+    user: "0"
+    networks:
+      - backend
+    deploy:
+      replicas: 1
+      placement:
+        constraints: [node.role == worker]
 
 
 volumes:
