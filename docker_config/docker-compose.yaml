@@ -28,6 +28,9 @@ services:
       DOCKER_COMPOSE_BUILD: 'true'
     networks:
       - backend
+    deploy:
+      placement:
+        constraints: [node.role != manager]
 
   # docker build -f WebMonitoring/DockerfileWebsite -t raresraf/websitemonitor:latest .
   websitemonitor:
@@ -38,6 +41,9 @@ services:
       DOCKER_COMPOSE_BUILD: 'true'
     networks:
       - backend
+    deploy:
+      placement:
+        constraints: [node.role != manager]
 
   login:
     image: raresraf/login:latest
@@ -50,6 +56,9 @@ services:
     networks:
       - backend
       - frontend
+    deploy:
+      placement:
+        constraints: [node.role != manager]
 
   webmonitoringapi:
     image: raresraf/webmonitoringapi:latest
@@ -62,7 +71,11 @@ services:
     networks:
       - backend
       - frontend
+    deploy:
+      placement:
+        constraints: [node.role != manager]
 
+  # docker build -f metricsUI/Dockerfile -t raresraf/metricsui:latest .
   metricsui:
     image: raresraf/metricsui:latest
     depends_on:
@@ -74,7 +87,10 @@ services:
       - '31000:80'
     networks:
       - frontend
-
+    deploy:
+      placement:
+        constraints: [node.role != manager]
+        
   visualizer:
     image: dockersamples/visualizer:stable
     ports:
