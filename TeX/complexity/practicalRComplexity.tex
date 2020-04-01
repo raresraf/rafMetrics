@@ -88,26 +88,29 @@ $\left[\begin{array}{ccccc}
 
 To begin with, here is a method of calculating traditional complexity using the classical model.
 To calculate the complexity of the QueenProblem algorithm, we will individually analyze the complexities of the operations in the QueenProblem function. We will note with $n$ the number of Queens to be completed at a time $ t $ of the algorithm.
+
 The matrix display operation occupies $ O (n ^ 2) $.
+
 Each Queen Problem function calls other $ n $ instances, through recursive calls, of a smaller order with one unit ($ n-1 $).
+
 The forward and backtracking operations respectively are performed in $ O (1) $. The time consuming operation is the conflict checking operation (noConflict function) that is performed in linear time $ O (n) $, because this function iterates, individually (only to the left of the created matrix), after the lines of the matrix (in $ O (n) $), after a diagonal parallel to the secondary diagonal of the matrix (in $ O (n) $) and after a diagonal parallel to the main diagonal of the matrix (in $ O (n) $).
 Therefore:
 
-\[QueenProblem(n) = n \cdot QueenProblem(n-1) + n \cdot O(n),\ O(1)=O(n^2)\] 
+$QueenProblem(n) = n \cdot QueenProblem(n-1) + n \cdot O(n),\ O(1)=O(n^2)$ \\ 
 \noindent\rule{16cm}{0.4pt}
-\[QueenProblem(n) = n \cdot QueenProblem(n-1) + n \cdot O(n) |\cdot\ 1\]
-\[QueenProblem(n-1) = (n-1) \cdot QueenProblem(n-2) + (n-1) \cdot O(n-1) |\cdot\ n-0\]
-\[QueenProblem(n-2) = (n-2) \cdot QueenProblem(n-3) + (n-2) \cdot O(n-2) |\cdot\ n\cdot (n-1)\]
-\[...\]
-\[QueenProblem(3) = 3 \cdot QueenProblem(2) + 3 \cdot O(3) |\cdot\ n\cdot (n-1) \cdot ... \cdot 3\]
-\[QueenProblem(2) = 2 \cdot QueenProblem(1) + 2 \cdot O(2) |\cdot\ n\cdot (n-1) \cdot ... \cdot 2\]
+$QueenProblem(n) = n \cdot QueenProblem(n-1) + n \cdot O(n) |\cdot\ 1$ \\
+$QueenProblem(n-1) = (n-1) \cdot QueenProblem(n-2) + (n-1) \cdot O(n-1) |\cdot\ n-0$ \\
+$QueenProblem(n-2) = (n-2) \cdot QueenProblem(n-3) + (n-2) \cdot O(n-2) |\cdot\ n\cdot (n-1)$ \\
+$...$ \\
+$QueenProblem(3) = 3 \cdot QueenProblem(2) + 3 \cdot O(3) |\cdot\ n\cdot (n-1) \cdot ... \cdot 3$ \\
+$QueenProblem(2) = 2 \cdot QueenProblem(1) + 2 \cdot O(2) |\cdot\ n\cdot (n-1) \cdot ... \cdot 2$ \\
 \noindent\rule{16cm}{0.4pt}
-\[QueenProblem(n) = n! \cdot QueenProblem(1) + \sum_{i=2}^{n} i\cdot O(i)\]
-\[QueenProblem(n) = n! \cdot O(n^2) + \sum_{i=2}^{n} O(i^2)\]
-\[QueenProblem(n) = n! \cdot O(n^2) +  O(\sum_{i=2}^{n} i^2)\]
-\[QueenProblem(n) = n! \cdot O(n^2) +  O(\dfrac{n\cdot(n+1)\cdot(2n+1)}{6} - 1)\]
-\[QueenProblem(n) = n! \cdot O(n^2) +  O(n^3)\]
-\[QueenProblem(n) = O(n! \cdot n^2 + n^3) , n^3 = n \cdot n^2 < n! \cdot n^2\]
+\[QueenProblem(n) = n! \cdot QueenProblem(1) + \sum_{i=2}^{n} i\cdot O(i) \] 
+$QueenProblem(n) = n! \cdot O(n^2) + \sum_{i=2}^{n} O(i^2)$ \\
+$QueenProblem(n) = n! \cdot O(n^2) +  O(\sum_{i=2}^{n} i^2)$ \\
+$QueenProblem(n) = n! \cdot O(n^2) +  O(\dfrac{n\cdot(n+1)\cdot(2n+1)}{6} - 1)$ \\
+$QueenProblem(n) = n! \cdot O(n^2) +  O(n^3)$ \\
+$QueenProblem(n) = O(n! \cdot n^2 + n^3) , n^3 = n \cdot n^2 < n! \cdot n^2$ \\
 \[QueenProblem(n) = O(n^2\cdot n!) \]
 \noindent\rule{16cm}{0.4pt}
 
@@ -204,27 +207,25 @@ Using addition properties, the complexity function for the procedute noConflict 
 
 
 Going deeper tracing the flow, we can evaluate the complexity of QueenProblem procedure by checking all elements involved in the procedure.
- \[QueenProblem(n) = O_{1}(recursiveCall) + O_{1}(noConflict) + O_{1}(overhead) + O_{1}(basecaseComplexity) \]
- \[QueenProblem(n) = n \cdot QueenProblem(n-1) +  O_{1}(1296 \cdot n) (c_{overheadFor} + c_{setBitsMatrix}) \cdot O_{1}(n) \]
- \[ QueenProblem_{1}(1)=O_{1}(c_{printMatrix})\]
+ \[QueenProblem(n) = O_{1}(recursiveCall) + O_{1}(noConflict) + O_{1}(overhead) + O_{1}(basecase) \]
+Therefore:
+ \[\begin{cases} QueenProblem(n) = n \cdot QueenProblem(n-1) +  O_{1}(1296 \cdot n) (c_{overheadFor} + c_{setBitsMatrix}) \cdot O_{1}(n) \\ QueenProblem_{1}(1)=O_{1}(c_{printMatrix}) \end{cases}\]
  where $O_{1}(1296 \cdot n)$ is the rComplexity for the noConflict check.
  
 Using the previous estimation, we assume $c_{overheadFor} = 14$ and $c_{setBitsMatrix} = 108$. Thus, the recurrent equation looks as follows: 
 \[QueenProblem(n) = n \cdot QueenProblem(n-1) +  O_{1}(1418 \cdot n) \]
 
 For the base case, we need to find the complexity of printMatrix method.
-\[ QueenProblem(1)=O_{1}(n^{2} \cdot  (c_{computeOffset} + c_{readMatrixElement}))\]
-\[ QueenProblem(1)=O_{1}(n^{2} \cdot  408) \]
+\[ \begin{cases} QueenProblem(1)=O_{1}(n^{2} \cdot  (c_{computeOffset} + c_{readMatrixElement})) \\ QueenProblem(1)=O_{1}(n^{2} \cdot  408) \end{cases}\]
 
 For simplicity, we can rewrite:
-\[QueenProblem(n) = n \cdot QueenProblem(n-1) +  1418 \cdot O_{1}(n) \]
-\[ QueenProblem(1)= 408 \cdot O_{1}(n^{2}) \]
+\[ \begin{cases} QueenProblem(n) = n \cdot QueenProblem(n-1) +  1418 \cdot O_{1}(n) \\ QueenProblem(1)= 408 \cdot O_{1}(n^{2}) \end{cases}\]
 
 We can model the system as an recurrence equation:
 \[ g(n) = n \cdot  g(n-1) + 1418 \cdot  n; g(0) = 408 \cdot  n^{2} \]
 with the solution:
-\[ 408 \cdot n^{3} \Gamma(n) + 1418 \cdot e \cdot  n \cdot \Gamma(n, 1)\]
-where $\Gamma$ represents the gamma function that satisfies \[ \Gamma \left( x \right) = \int\limits_0^\infty {s^{x - 1} e^{ - s} ds} \] and $ \Gamma(n,x)$ represents the incomplete gamma function that satisfies \[ \Gamma \left(x, n \right) = \int\limits_n^\infty {s^{x - 1} e^{ - s} ds}\]
+\[ 408 \cdot n^{3} \cdot \Gamma(n) + 1418 \cdot e \cdot  n \cdot \Gamma(n, 1)\]
+where $\Gamma$ represents the \textit{gamma function} that satisfies: \[ \Gamma \left( x \right) = \int\limits_0^\infty {s^{x - 1} e^{ - s} ds} \] and $ \Gamma(n,x)$ represents the \textit{incomplete gamma function} that satisfies: \[ \Gamma \left(x, n \right) = \int\limits_n^\infty {s^{x - 1} e^{ - s} ds}\]
 
 The solution of this recurrence equation in rComplexity calculus (with $n \in \mathbb{N}$) is:
 \[ QueenProblem(n) = O_{1}(408 \cdot n^{2} \cdot n!) +  O_{1}(1418 \cdot n \cdot n!) \]
@@ -273,7 +274,7 @@ The importance of this trick can be emphasized comparing the classical linear re
 \end{tabular}
 }
 \end{center}
-\caption{Reported timings for different input size for a naive matrix multiplication algorithm in $\mathbb{O}(n^{3})$}
+\caption{Reported timings for different input size for a naive matrix multiplication algorithm in $\mathbb{O}(n^{3})$. Results have been obtained on an i5 3.2GHz, x86\_64 Architecture with L1d cache: 32K, L1i cache: 32K, L2 cache: 256K, L3 cache:  6144K}
 \end{table}
 
 Training a linear regression model on this dataset would result in model with a linear equation to observed data, similar with the one below(a). Translation of the dataset can enhance fitting results for the regression. Examples for ($inputSize$, $metricValue$) $ \Rightarrow $ ($inputSize^{n}$, $metricValue$) are presented in (b) $n = 2$, (c) $n = 3$ and (d) $n = 4$.
@@ -332,6 +333,13 @@ Training a linear regression model on this dataset would result in model with a 
 
 
 \subsection{Estimation for algorithms with unknown Bachmann–Landau Complexity}
+Estimation for algorithms with unknown Bachmann–Landau Complexity becomes a lot more difficult as there are numerous possible candidates for a matching complexity function. 
+
+A general polynomial Performance model normal form is presented in Chapter 2.1 Automatic Empirical Performance Modeling of Parallel Programs \cite{calotoiu2018automatic}. An enhance model for complexity functions should contain also an exponential behavior, which is often seen as a synergy between NP-Hard problems. Thus, we propose the following general expression:
+
+\[ f(n) =\sum\limits_{t=1}^{y}  \sum\limits_{k=1}^{x} c_{k} \cdot n^{p_{k}} \cdot log_{l_{k}}^{j_{k}}(n) \cdot e_{t}^{n} \]
+This representation is, of course, not exhaustive, but it works in most practical schemes. An intuitive motivation is a consequence of how most computer algorithms are designed. \cite{calotoiu2018automatic}
+
 
 
 \section{Matrix multiplication}
