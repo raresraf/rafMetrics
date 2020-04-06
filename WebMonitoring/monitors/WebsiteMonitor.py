@@ -1,4 +1,5 @@
 import json
+import os
 
 import arrow
 import time
@@ -56,12 +57,20 @@ class WebsiteMonitor:
         self.endTimes.append(requestEndTime)
 
     def process_json(self):
+        # Check existence of output file
+        if not os.path.isfile(json_path):
+            return
+
+        # If file has been generated, proceed to parsing
         with open(json_path, encoding='utf-8') as json_file:
             data = json.load(json_file)
             for entry in data['log']['entries']:
                 self.add_times(entry)
                 request_entry = parse_request(entry)
                 self.request_entry.append(request_entry)
+
+        # Remove file after processing
+        os.remove(json_path)
 
     def get_metrics(self):
         """Return a list of RequestEntry structures containing metrics"""
