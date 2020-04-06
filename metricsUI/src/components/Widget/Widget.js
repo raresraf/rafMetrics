@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {IconButton, Menu, MenuItem, Paper, Typography,} from "@material-ui/core";
+import {IconButton, Paper, Typography,} from "@material-ui/core";
 import {MoreVert as MoreIcon} from "@material-ui/icons";
 import classnames from "classnames";
 // styles
@@ -37,8 +37,6 @@ export default function Widget({
                   classes={{ root: classes.moreButton }}
                   aria-owns="widget-menu"
                   aria-haspopup="true"
-                  onClick={() => setMoreMenuOpen(true)}
-                  buttonRef={setMoreButtonRef}
                 >
                   <MoreIcon />
                 </IconButton>
@@ -55,26 +53,6 @@ export default function Widget({
           {children}
         </div>
       </Paper>
-      <Menu
-        id="widget-menu"
-        open={isMoreMenuOpen}
-        anchorEl={moreButtonRef}
-        onClose={() => setMoreMenuOpen(false)}
-        disableAutoFocusItem
-      >
-        <MenuItem>
-          <Typography>Edit</Typography>
-        </MenuItem>
-        <MenuItem>
-          <Typography>Copy</Typography>
-        </MenuItem>
-        <MenuItem>
-          <Typography>Delete</Typography>
-        </MenuItem>
-        <MenuItem>
-          <Typography>Print</Typography>
-        </MenuItem>
-      </Menu>
     </div>
   );
 }

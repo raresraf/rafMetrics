@@ -1,5 +1,5 @@
 import React from "react";
-import {backend_login_ip, backend_webmonitoringapi_ip} from '../config';
+import {backend_login_ip} from '../config';
 
 var UserStateContext = React.createContext();
 var UserDispatchContext = React.createContext();

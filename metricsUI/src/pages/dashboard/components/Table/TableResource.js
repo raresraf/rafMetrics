@@ -1,9 +1,8 @@
-import React, {useState} from "react";
+import React from "react";
 import {Table, TableBody, TableCell, TableHead, TableRow,} from "@material-ui/core";
 // components
 import {Button} from "../../../../components/Wrappers";
 import {updateResource, useResourceDispatch} from "../../../../context/ResourceContext";
-import mock from "../../mock";
 
 
 const states = {
