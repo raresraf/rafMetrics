@@ -5,8 +5,10 @@ import {
   FilterNone as UIElementsIcon,
   HelpOutline as FAQIcon,
   Home as HomeIcon,
-  LibraryBooks as LibraryIcon, NetworkWifi as WifiIcon,
-  QuestionAnswer as SupportIcon, Web as WebMonitoringIcon,
+  LibraryBooks as LibraryIcon,
+  NetworkWifi as WifiIcon,
+  QuestionAnswer as SupportIcon,
+  Web as WebMonitoringIcon,
 } from "@material-ui/icons";
 import classNames from 'classnames';
 

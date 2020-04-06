@@ -1,6 +1,5 @@
-import time
-
 import requests
+import time
 
 from WebMonitoring.configs.constants import MonitoringStatus, RequestTypes, sample_url
 from WebMonitoring.configs.settings import SHOW_PROGRESS_MESSAGE

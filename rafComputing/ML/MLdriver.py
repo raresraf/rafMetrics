@@ -1,7 +1,6 @@
-import sys
-
 import matplotlib.pyplot as plt
 import numpy as np
+import sys
 from numpy.polynomial import Polynomial as P
 from sklearn.metrics import mean_squared_error, r2_score
 from sklearn.model_selection import train_test_split

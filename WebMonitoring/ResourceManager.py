@@ -1,6 +1,5 @@
-import time
-
 import mysql.connector
+import time
 
 from WebMonitoring.configs.constants import ResourceEntry, RequestTypes
 from WebMonitoring.configs.settings import SAMPLE_TIME, MYSQL_DATABASE_USER, MYSQL_DATABASE_PASSWORD, \

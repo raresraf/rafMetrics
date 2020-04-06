@@ -6,9 +6,9 @@ import {
   HelpOutline as FAQIcon,
   Home as HomeIcon,
   LibraryBooks as LibraryIcon,
+  NetworkWifi as WifiIcon,
   QuestionAnswer as SupportIcon,
-  Web as WebMonitoringIcon,
-  NetworkWifi as WifiIcon
+  Web as WebMonitoringIcon
 } from "@material-ui/icons";
 import {useTheme} from "@material-ui/styles";
 import {withRouter} from "react-router-dom";

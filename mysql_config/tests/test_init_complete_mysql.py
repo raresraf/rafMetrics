@@ -1,5 +1,3 @@
-import difflib
-
 from mysql_config.generate_init_sql import generate_init_sql
 from mysql_config.tests.mock_sql import MOCK_SQL_INIT
 

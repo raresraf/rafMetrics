@@ -1,6 +1,5 @@
-import sys
-
 import matplotlib.pyplot as plt
+import sys
 from numpy.polynomial import Polynomial as P
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_squared_error, r2_score

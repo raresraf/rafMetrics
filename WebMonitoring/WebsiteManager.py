@@ -1,6 +1,5 @@
-import time
-
 import mysql.connector
+import time
 
 from WebMonitoring.configs.constants import DockerResults
 from WebMonitoring.configs.settings import SAMPLE_TIME, SHOW_VERBOSE_MESSAGE, MYSQL_DATABASE_USER, \

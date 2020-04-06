@@ -1,7 +1,7 @@
 import json
-import time
 
 import arrow
+import time
 
 from WebMonitoring.WebsiteMonitorHelpers.request_helpers import parse_request
 from WebMonitoring.clients.SpeedprofileClient import SpeedprofileClient
