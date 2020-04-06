@@ -13,7 +13,6 @@ import DashboardWebsite from "../../pages/dashboard/DashboardWebsite";
 import DashboardResourceStatistics from "../../pages/dashboard/DashboardResourceStatistics";
 import DashboardWebsiteStatistics from "../../pages/dashboard/DashboardWebsiteStatistics";
 import Icons from "../../pages/icons";
-import Charts from "../../pages/charts";
 // context
 import {useLayoutState} from "../../context/LayoutContext";
 
@@ -42,7 +41,6 @@ function Layout(props) {
                 render={() => <Redirect to="/app/ui/icons" />}
               />
               <Route path="/app/ui/icons" component={Icons} />
-              <Route path="/app/ui/charts" component={Charts} />
               <Route path="/app/ui/resourcemanager" component={DashboardResource} />
               <Route path="/app/ui/resourcemanagerstatistics" component={DashboardResourceStatistics} />
               <Route path="/app/ui/websitemanager" component={DashboardWebsite} />

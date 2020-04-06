@@ -5,8 +5,8 @@ import {
   FilterNone as UIElementsIcon,
   HelpOutline as FAQIcon,
   Home as HomeIcon,
-  LibraryBooks as LibraryIcon,
-  QuestionAnswer as SupportIcon,
+  LibraryBooks as LibraryIcon, NetworkWifi as WifiIcon,
+  QuestionAnswer as SupportIcon, Web as WebMonitoringIcon,
 } from "@material-ui/icons";
 import classNames from 'classnames';
 
@@ -21,15 +21,34 @@ const structure = [
     icon: <UIElementsIcon />,
     children: [
       { label: 'Icons', link: '/app/ui/icons' },
-      { label: 'Charts', link: '/app/ui/charts' },
     ],
   },
-  { id: 5, type: 'divider' },
-  { id: 6, type: 'title', label: 'HELP' },
-  { id: 7, label: 'Library', link: '', icon: <LibraryIcon /> },
-  { id: 8, label: 'Support', link: '', icon: <SupportIcon /> },
-  { id: 9, label: 'FAQ', link: '', icon: <FAQIcon />},
-  { id: 10, type: 'divider' },
+  {
+    id: 5,
+    label: "WebMonitoring",
+    link: "/app/ui/",
+    icon: <WifiIcon/>,
+    children: [
+      { label: "Resource", link: "/app/ui/resourcemanager" },
+      { label: "Website", link: "/app/ui/websitemanager" },
+    ],
+  },
+  {
+    id: 6,
+    label: "Statistics",
+    link: "/app/ui",
+    icon: <WebMonitoringIcon/>,
+    children: [
+      { label: "Resource", link: "/app/ui/resourcemanagerstatistics" },
+      { label: "Website", link: "/app/ui/websitemanagerstatistics" },
+    ],
+  },
+  { id: 7, type: 'divider' },
+  { id: 8, type: 'title', label: 'HELP' },
+  { id: 9, label: 'Library', link: '', icon: <LibraryIcon /> },
+  { id: 10, label: 'Support', link: '', icon: <SupportIcon /> },
+  { id: 11, label: 'FAQ', link: '', icon: <FAQIcon />},
+  { id: 12, type: 'divider' },
 ];
 
 const SidebarView = ({ classes, theme, toggleSidebar, isSidebarOpened, isPermanent, location }) => {

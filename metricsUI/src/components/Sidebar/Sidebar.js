@@ -8,6 +8,7 @@ import {
   LibraryBooks as LibraryIcon,
   QuestionAnswer as SupportIcon,
   Web as WebMonitoringIcon,
+  NetworkWifi as WifiIcon
 } from "@material-ui/icons";
 import {useTheme} from "@material-ui/styles";
 import {withRouter} from "react-router-dom";
@@ -29,14 +30,13 @@ const structure = [
     icon: <UIElementsIcon />,
     children: [
       { label: "Icons", link: "/app/ui/icons" },
-      { label: "Charts", link: "/app/ui/charts" },
     ],
   },
   {
     id: 5,
     label: "WebMonitoring",
     link: "/app/ui/",
-    icon: <WebMonitoringIcon/>,
+    icon: <WifiIcon/>,
     children: [
       { label: "Resource", link: "/app/ui/resourcemanager" },
       { label: "Website", link: "/app/ui/websitemanager" },
@@ -44,7 +44,7 @@ const structure = [
   },
   {
     id: 6,
-    label: "WebMonitoring Statistics",
+    label: "Statistics",
     link: "/app/ui",
     icon: <WebMonitoringIcon/>,
     children: [
