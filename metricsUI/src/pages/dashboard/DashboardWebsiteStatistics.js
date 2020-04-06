@@ -1,7 +1,7 @@
 import React, {useState} from "react";
-import {Grid, LinearProgress, MenuItem, OutlinedInput, Select,} from "@material-ui/core";
+import {Grid,} from "@material-ui/core";
 import {useTheme} from "@material-ui/styles";
-import {Area, AreaChart, ComposedChart, Line, LineChart, ResponsiveContainer, XAxis, YAxis,} from "recharts";
+import {Line, LineChart,} from "recharts";
 // styles
 import useStyles from "./styles";
 // components
@@ -9,14 +9,9 @@ import mock from "./mock";
 import Widget from "../../components/Widget";
 import PageTitle from "../../components/PageTitle";
 import {Typography} from "../../components/Wrappers";
-import Dot from "../../components/Sidebar/components/Dot";
-import TableResource from "./components/Table/TableResource";
-import BigStatResource from "./components/BigStat/BigStatResource";
-import {useUserState} from "../../context/UserContext";
-import {useResourceState} from "../../context/ResourceContext";
 
 
-import {backend_login_ip, backend_webmonitoringapi_ip} from '../../config';
+import {backend_webmonitoringapi_ip} from '../../config';
 
 
 function getDashboardWebsiteStatistics() {

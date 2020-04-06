@@ -1,7 +1,7 @@
 import React, {useState} from "react";
-import {Grid, LinearProgress, MenuItem, OutlinedInput, Select,} from "@material-ui/core";
+import {Grid, MenuItem, OutlinedInput, Select,} from "@material-ui/core";
 import {useTheme} from "@material-ui/styles";
-import {Area, AreaChart, ComposedChart, Line, LineChart, ResponsiveContainer, XAxis, YAxis,} from "recharts";
+import {Area, ComposedChart, Line, ResponsiveContainer, XAxis, YAxis,} from "recharts";
 // styles
 import useStyles from "./styles";
 // components
@@ -14,7 +14,7 @@ import TableResource from "./components/Table/TableResource";
 import BigStatResource from "./components/BigStat/BigStatResource";
 import {useUserState} from "../../context/UserContext";
 import {useResourceState} from "../../context/ResourceContext";
-import {backend_login_ip, backend_webmonitoringapi_ip} from '../../config';
+import {backend_webmonitoringapi_ip} from '../../config';
 
 
 function getAvailableResources(username) {

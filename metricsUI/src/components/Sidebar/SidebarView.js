@@ -2,25 +2,18 @@ import React from 'react';
 import {Drawer, IconButton, List, withStyles} from "@material-ui/core";
 import {
   ArrowBack as ArrowBackIcon,
-  BorderAll as TableIcon,
   FilterNone as UIElementsIcon,
-  FormatSize as TypographyIcon,
   HelpOutline as FAQIcon,
   Home as HomeIcon,
   LibraryBooks as LibraryIcon,
-  NotificationsNone as NotificationsIcon,
   QuestionAnswer as SupportIcon,
 } from "@material-ui/icons";
 import classNames from 'classnames';
 
 import SidebarLink from './components/SidebarLink/SidebarLinkContainer';
-import Dot from './components/Dot';
 
 const structure = [
   { id: 0, label: 'Dashboard', link: '/app/dashboard', icon: <HomeIcon /> },
-  { id: 1, label: 'Typography', link: '/app/typography', icon: <TypographyIcon /> },
-  { id: 2, label: 'Tables', link: '/app/tables', icon: <TableIcon /> },
-  { id: 3, label: 'Notifications', link: '/app/notifications', icon: <NotificationsIcon />},
   {
     id: 4,
     label: 'UI Elements',
@@ -29,7 +22,6 @@ const structure = [
     children: [
       { label: 'Icons', link: '/app/ui/icons' },
       { label: 'Charts', link: '/app/ui/charts' },
-      { label: 'Maps', link: '/app/ui/maps' },
     ],
   },
   { id: 5, type: 'divider' },
@@ -38,10 +30,6 @@ const structure = [
   { id: 8, label: 'Support', link: '', icon: <SupportIcon /> },
   { id: 9, label: 'FAQ', link: '', icon: <FAQIcon />},
   { id: 10, type: 'divider' },
-  { id: 11, type: 'title', label: 'PROJECTS' },
-  { id: 12, label: 'My recent', link: '', icon: <Dot size="large" color="secondary" /> },
-  { id: 13, label: 'Starred', link: '', icon: <Dot size="large" color="primary" /> },
-  { id: 14, label: 'Background', link: '', icon: <Dot size="large" color="secondary" /> },
 ];
 
 const SidebarView = ({ classes, theme, toggleSidebar, isSidebarOpened, isPermanent, location }) => {

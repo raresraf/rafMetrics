@@ -2,13 +2,10 @@ import React, {useEffect, useState} from "react";
 import {Drawer, IconButton, List} from "@material-ui/core";
 import {
   ArrowBack as ArrowBackIcon,
-  BorderAll as TableIcon,
   FilterNone as UIElementsIcon,
-  FormatSize as TypographyIcon,
   HelpOutline as FAQIcon,
   Home as HomeIcon,
   LibraryBooks as LibraryIcon,
-  NotificationsNone as NotificationsIcon,
   QuestionAnswer as SupportIcon,
   Web as WebMonitoringIcon,
 } from "@material-ui/icons";
@@ -19,25 +16,12 @@ import classNames from "classnames";
 import useStyles from "./styles";
 // components
 import SidebarLink from "./components/SidebarLink/SidebarLink";
-import Dot from "./components/Dot";
 // context
 import {toggleSidebar, useLayoutDispatch, useLayoutState,} from "../../context/LayoutContext";
 
 const structure = [
   { id: 0, label: "Dashboard", link: "/app/dashboard", icon: <HomeIcon /> },
-  {
-    id: 1,
-    label: "Typography",
-    link: "/app/typography",
-    icon: <TypographyIcon />,
-  },
-  { id: 2, label: "Tables", link: "/app/tables", icon: <TableIcon /> },
-  {
-    id: 3,
-    label: "Notifications",
-    link: "/app/notifications",
-    icon: <NotificationsIcon />,
-  },
+
   {
     id: 4,
     label: "UI Elements",
@@ -46,13 +30,12 @@ const structure = [
     children: [
       { label: "Icons", link: "/app/ui/icons" },
       { label: "Charts", link: "/app/ui/charts" },
-      { label: "Maps", link: "/app/ui/maps" },
     ],
   },
   {
     id: 5,
     label: "WebMonitoring",
-    link: "/app/ui",
+    link: "/app/ui/",
     icon: <WebMonitoringIcon/>,
     children: [
       { label: "Resource", link: "/app/ui/resourcemanager" },
@@ -75,25 +58,6 @@ const structure = [
   { id: 10, label: "Support", link: "", icon: <SupportIcon /> },
   { id: 11, label: "FAQ", link: "", icon: <FAQIcon /> },
   { id: 12, type: "divider" },
-  { id: 13, type: "title", label: "PROJECTS" },
-  {
-    id: 14,
-    label: "My recent",
-    link: "",
-    icon: <Dot size="large" color="warning" />,
-  },
-  {
-    id: 15,
-    label: "Starred",
-    link: "",
-    icon: <Dot size="large" color="primary" />,
-  },
-  {
-    id: 16,
-    label: "Background",
-    link: "",
-    icon: <Dot size="large" color="secondary" />,
-  },
 ];
 
 function Sidebar({ location }) {
