@@ -3,52 +3,27 @@ import numpy as np
 import sys
 from numpy.polynomial import Polynomial as P
 from sklearn.metrics import mean_squared_error, r2_score
-from sklearn.model_selection import train_test_split
 
-from rafComputing.ML.MLengine import LinearRegressionUsingGD
-from rafComputing.ML.polynomial_to_latex import polynomial_to_LaTeX
-
-
-def matrix_to_train_test(polynomial_features):
-    matrix = np.loadtxt(sys.argv[1], usecols=range(2))
-
-    x = matrix[:, 0]
-    y = matrix[:, 1]
-    x = x.reshape(-1, 1)
-    y = y.reshape(-1, 1)
-
-    orig_x = x
-    orig_y = y
-
-    orig_x_train, orig_x_test, y_train, y_test = train_test_split(
-        x, y, test_size=0.2, random_state=44)
-
-    # Extract polynomial features
-    x = extract_polynomial_features(x, polynomial_features)
-
-    X_train = extract_polynomial_features(orig_x_train, polynomial_features)
-    X_test = extract_polynomial_features(orig_x_test, polynomial_features)
-    return (x, orig_x), y, (X_train,
-                            orig_x_train), (X_test,
-                                            orig_x_test), y_train, y_test
+from rafComputing.ML.RegressionEngine.LinearRegressionGD import LinearRegressionGD
+from rafComputing.ML.features.feature_types import POLYNOMIAL_FEATURE_TYPE
+from rafComputing.ML.helpers.polynomial_to_latex import polynomial_to_LaTeX
+from rafComputing.ML.helpers.load_data import matrix_to_train_test
+from rafComputing.ML.CustomSettings.settings import MAX_ITER, ALPHA, DEFAULT_ITER_INCREASE_STEPS_LOG, DEFAULT_ITER_INCREASE_STEPS, \
+    DEFAULT_RANGE_, MAX_ITER_LinearRegressionTraining, ALPHA_LinearRegressionTraining, OUTPUT_PREFIX, OUTPUT_PREFIX_0
 
 
-def extract_polynomial_features(X, M):
-    phi = np.ones((X.size, M + 1))
-    for i in range(X.size):
-        for j in range(M + 1):
-            phi[i][j] = np.power(X[i], j)
-    return phi
-
-
-def LinearRegressionTraining(alpha=.1e-20,
-                             n_iterations=10000,
-                             output_name="result_0"):
+def LinearRegressionTraining(path,
+                             alpha=ALPHA_LinearRegressionTraining,
+                             n_iterations=MAX_ITER_LinearRegressionTraining,
+                             output_name=OUTPUT_PREFIX_0,
+                             feature_type=POLYNOMIAL_FEATURE_TYPE,
+                             feature_val=3):
     (x, orig_x), y, (X_train, orig_x_train), (
-        X_test, orig_x_test), y_train, y_test = matrix_to_train_test(3)
+        X_test, orig_x_test), y_train, y_test = matrix_to_train_test(
+            path=path, feature_type=feature_type, feature_val=feature_val)
 
     # Model initialization
-    regression_model = LinearRegressionUsingGD(alpha, n_iterations)
+    regression_model = LinearRegressionGD(alpha, n_iterations)
     regression_model.fit(X_train, y_train)
 
     # Predict
@@ -71,17 +46,16 @@ def LinearRegressionTraining(alpha=.1e-20,
     orig_y_train = y_train.flatten()
     orig_y_test = y_test.flatten()
 
-    # data points
+    # Data points
     plt.scatter(orig_x_train, orig_y_train, s=20, color='b')
     plt.scatter(orig_x_test, orig_y_test, s=40, color='r')
     plt.xlabel('Input size')
     plt.ylabel('Time (seconds)')
 
-    # plotting predicted values
+    # Plotting predicted values
     orig_x = orig_x.flatten()
-    orig_y = y.flatten()
 
-    # predicted values
+    # Predicted values
     y_predicted = y_predicted.flatten()
     plt.plot(orig_x, y_predicted, color='g')
     plt.legend(['Regression line', 'Train data', 'Test data'])
@@ -95,26 +69,29 @@ def LinearRegressionTraining(alpha=.1e-20,
 
 if __name__ == "__main__":
     if len(sys.argv) <= 1:
-        print("Usage: python3 MLdriver.py <file_name> ")
+        print("Usage v1: python3 MLdriver.py <file_name> ")
         print(
-            "Usage: python3 MLdriver.py <file_name> <ITER_INCREASE_STEPS_LOG = 0 default>"
+            "Usage v2: python3 MLdriver.py <file_name> <ITER_INCREASE_STEPS_LOG = 0 default>"
         )
         sys.exit(-1)
+    path = sys.argv[1]
 
-    MAX_ITER = 10000
+    ITER_INCREASE_STEPS_LOG = DEFAULT_ITER_INCREASE_STEPS_LOG
+    ITER_INCREASE_STEPS = DEFAULT_ITER_INCREASE_STEPS
+    range_ = DEFAULT_RANGE_
 
     if len(sys.argv) == 3 and sys.argv[2]:
         ITER_INCREASE_STEPS_LOG = int(sys.argv[2])
         ITER_INCREASE_STEPS = np.power(10, ITER_INCREASE_STEPS_LOG)
         range_ = range(ITER_INCREASE_STEPS)
-    else:
-        ITER_INCREASE_STEPS_LOG = 0
-        ITER_INCREASE_STEPS = 1
-        range_ = range(1, 2)
 
     for counter in range_:
-        output_name = 'result_' + str(counter).zfill(ITER_INCREASE_STEPS_LOG)
+        output_name = OUTPUT_PREFIX + str(counter).zfill(
+            ITER_INCREASE_STEPS_LOG)
         LinearRegressionTraining(
-            alpha=1e-25,
+            path=path,
+            alpha=ALPHA,
             n_iterations=int(MAX_ITER / ITER_INCREASE_STEPS * counter + 1),
-            output_name=output_name)
+            output_name=output_name,
+            feature_type=POLYNOMIAL_FEATURE_TYPE,
+            feature_val=3)

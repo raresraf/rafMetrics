@@ -3,7 +3,7 @@ import numpy as np
 VERBOSE = False
 
 
-class LinearRegressionUsingGD:
+class LinearRegressionGD:
     """Linear Regression Using Gradient Descent.
     Parameters
     ----------

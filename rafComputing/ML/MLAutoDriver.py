@@ -4,15 +4,17 @@ from numpy.polynomial import Polynomial as P
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_squared_error, r2_score
 
-from rafComputing.ML.MLdriver import matrix_to_train_test
-from rafComputing.ML.polynomial_to_latex import polynomial_to_LaTeX
+from rafComputing.ML.features.feature_types import POLYNOMIAL_FEATURE_TYPE
+from rafComputing.ML.helpers.polynomial_to_latex import polynomial_to_LaTeX
+from rafComputing.ML.helpers.load_data import matrix_to_train_test
 
 OUTPUT_NAME = 'result.png'
 
 
-def LinearRegressionTrainingAuto():
+def LinearRegressionTrainingAuto(path):
     (x, orig_x), y, (X_train, orig_x_train), (
-        X_test, orig_x_test), y_train, y_test = matrix_to_train_test(3)
+        X_test, orig_x_test), y_train, y_test = matrix_to_train_test(
+            path=path, feature_type=POLYNOMIAL_FEATURE_TYPE, feature_val=3)
 
     # Model initialization
     regression_model = LinearRegression(fit_intercept=False)
@@ -65,4 +67,5 @@ if __name__ == "__main__":
         print("Usage: python3 MLAutoDriver.py <file_name> ")
         sys.exit(-1)
 
-    LinearRegressionTrainingAuto()
+    path = sys.argv[1]
+    LinearRegressionTrainingAuto(path)
