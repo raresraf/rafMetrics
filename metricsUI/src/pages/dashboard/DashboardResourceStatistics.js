@@ -55,7 +55,7 @@ export default function DashboardResourceStatistics(props) {
               >
                 <div className={classes.visitsNumberContainer}>
                   <Typography size="xl" weight="medium">
-                    ⌛: {DashboardResourceStatistics['time_24']}
+                    <span role="img" aria-label="time">⌛</span>: {DashboardResourceStatistics['time_24']}
                   </Typography>
                   <LineChart
                     width={55}
@@ -114,7 +114,7 @@ export default function DashboardResourceStatistics(props) {
               >
                 <div className={classes.visitsNumberContainer}>
                   <Typography size="xl" weight="medium">
-                    ⌛: {DashboardResourceStatistics['time_all']}
+                    <span role="img" aria-label="time">⌛</span>: {DashboardResourceStatistics['time_all']}
                   </Typography>
                   <LineChart
                     width={55}

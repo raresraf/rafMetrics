@@ -28,7 +28,7 @@ const structure = [
   {
     id: 5,
     label: "WebMonitoring",
-    link: "/app/ui/",
+    link: "/app/ui/resourcemanager",
     icon: <WifiIcon/>,
     children: [
       { label: "Resource", link: "/app/ui/resourcemanager" },
@@ -38,7 +38,7 @@ const structure = [
   {
     id: 6,
     label: "Statistics",
-    link: "/app/ui",
+    link: "/app/ui/resourcemanagerstatistics",
     icon: <WebMonitoringIcon/>,
     children: [
       { label: "Resource", link: "/app/ui/resourcemanagerstatistics" },

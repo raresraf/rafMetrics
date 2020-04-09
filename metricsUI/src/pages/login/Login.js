@@ -20,9 +20,16 @@ function Login(props) {
   var [activeTabId, setActiveTabId] = useState(0);
   var [nameValue, setNameValue] = useState("");
   var [loginValue, setLoginValue] = useState("");
+
+  // TODO: Implement setters for firstNameValue, lastNameValue, emailValue
+
+  // eslint-disable-next-line
   var [firstNameValue, setFirstNameValue] = useState("");
+  // eslint-disable-next-line
   var [lastNameValue, setLastNameValue] = useState("");
+  // eslint-disable-next-line
   var [emailValue, setEmailValue] = useState("");
+
   var [passwordValue, setPasswordValue] = useState("");
 
   return (

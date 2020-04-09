@@ -58,7 +58,7 @@ export default function DashboardWebsiteStatistics(props) {
               >
                 <div className={classes.visitsNumberContainer}>
                   <Typography size="xl" weight="medium">
-                    ⌛: {DashboardWebsiteStatistics['time_24']}
+                    <span role="img" aria-label="time">⌛</span>: {DashboardWebsiteStatistics['time_24']}
                   </Typography>
                   <LineChart
                     width={55}
@@ -117,7 +117,7 @@ export default function DashboardWebsiteStatistics(props) {
               >
                 <div className={classes.visitsNumberContainer}>
                   <Typography size="xl" weight="medium">
-                    ⌛: {DashboardWebsiteStatistics['time_all']}
+                    <span role="img" aria-label="time">⌛</span>: {DashboardWebsiteStatistics['time_all']}
                   </Typography>
                   <LineChart
                     width={55}
@@ -276,11 +276,6 @@ export default function DashboardWebsiteStatistics(props) {
               </Widget>
             </Grid>
           </Grid>
-
-
-
         </>
     );
-
-
 }

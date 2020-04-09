@@ -27,8 +27,6 @@ export default function Header(props) {
 
   // local
   var [mailMenu, setMailMenu] = useState(null);
-  var [isMailsUnread, setIsMailsUnread] = useState(true);
-  var [isNotificationsUnread, setIsNotificationsUnread] = useState(true);
   var [profileMenu, setProfileMenu] = useState(null);
   var [isSearchOpen, setSearchOpen] = useState(false);
 

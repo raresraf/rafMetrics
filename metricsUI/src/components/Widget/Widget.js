@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import {IconButton, Paper, Typography,} from "@material-ui/core";
 import {MoreVert as MoreIcon} from "@material-ui/icons";
 import classnames from "classnames";
@@ -15,10 +15,6 @@ export default function Widget({
   ...props
 }) {
   var classes = useStyles();
-
-  // local
-  var [moreButtonRef, setMoreButtonRef] = useState(null);
-  var [isMoreMenuOpen, setMoreMenuOpen] = useState(false);
 
   return (
     <div className={classes.widgetWrapper}>
