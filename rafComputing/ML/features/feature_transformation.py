@@ -1,6 +1,6 @@
 import numpy as np
 
-from rafComputing.ML.features.feature_types import POLYNOMIAL_FEATURE_TYPE
+from rafComputing.ML.features.feature_types import POLYNOMIAL_FEATURE_TYPE, NO_FEATURE_TYPE
 
 
 def extract_features(X=None,
@@ -10,6 +10,8 @@ def extract_features(X=None,
         return None
     if feature_type == POLYNOMIAL_FEATURE_TYPE:
         return extract_polynomial_features(X, feature_val)
+    if feature_type == NO_FEATURE_TYPE:
+        return same_features(X, feature_val)
 
 
 def extract_polynomial_features(X, M):
@@ -18,3 +20,7 @@ def extract_polynomial_features(X, M):
         for j in range(M + 1):
             phi[i][j] = np.power(X[i], j)
     return phi
+
+
+def same_features(X, M):
+    return X

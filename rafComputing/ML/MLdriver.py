@@ -5,7 +5,7 @@ from numpy.polynomial import Polynomial as P
 from sklearn.metrics import mean_squared_error, r2_score
 
 from rafComputing.ML.RegressionEngine.LinearRegressionGD import LinearRegressionGD
-from rafComputing.ML.features.feature_types import POLYNOMIAL_FEATURE_TYPE
+from rafComputing.ML.features.feature_types import POLYNOMIAL_FEATURE_TYPE, NO_FEATURE_TYPE
 from rafComputing.ML.helpers.polynomial_to_latex import polynomial_to_LaTeX
 from rafComputing.ML.helpers.load_data import matrix_to_train_test
 from rafComputing.ML.CustomSettings.settings import MAX_ITER, ALPHA, DEFAULT_ITER_INCREASE_STEPS_LOG, DEFAULT_ITER_INCREASE_STEPS, \
@@ -16,8 +16,8 @@ def LinearRegressionTraining(path,
                              alpha=ALPHA_LinearRegressionTraining,
                              n_iterations=MAX_ITER_LinearRegressionTraining,
                              output_name=OUTPUT_PREFIX_0,
-                             feature_type=POLYNOMIAL_FEATURE_TYPE,
-                             feature_val=3):
+                             feature_type=NO_FEATURE_TYPE,
+                             feature_val=1):
     (x, orig_x), y, (X_train, orig_x_train), (
         X_test, orig_x_test), y_train, y_test = matrix_to_train_test(
             path=path, feature_type=feature_type, feature_val=feature_val)

@@ -14,3 +14,6 @@ MAX_ITER_LinearRegressionTraining = 10000
 # Output prefix
 OUTPUT_PREFIX = "result_"
 OUTPUT_PREFIX_0 = "result_0"
+
+# AutoDriver
+AUTO_DRIVER_DEFAULT_OUTPUT_NAME = 'result.png'

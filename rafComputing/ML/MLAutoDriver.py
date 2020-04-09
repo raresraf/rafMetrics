@@ -4,17 +4,19 @@ from numpy.polynomial import Polynomial as P
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_squared_error, r2_score
 
-from rafComputing.ML.features.feature_types import POLYNOMIAL_FEATURE_TYPE
+from rafComputing.ML.CustomSettings.settings import AUTO_DRIVER_DEFAULT_OUTPUT_NAME
+from rafComputing.ML.features.feature_types import POLYNOMIAL_FEATURE_TYPE, NO_FEATURE_TYPE
 from rafComputing.ML.helpers.polynomial_to_latex import polynomial_to_LaTeX
 from rafComputing.ML.helpers.load_data import matrix_to_train_test
 
-OUTPUT_NAME = 'result.png'
 
-
-def LinearRegressionTrainingAuto(path):
+def LinearRegressionTrainingAuto(path,
+                                 output_name=AUTO_DRIVER_DEFAULT_OUTPUT_NAME,
+                                 feature_type=NO_FEATURE_TYPE,
+                                 feature_val=1):
     (x, orig_x), y, (X_train, orig_x_train), (
         X_test, orig_x_test), y_train, y_test = matrix_to_train_test(
-            path=path, feature_type=POLYNOMIAL_FEATURE_TYPE, feature_val=3)
+            path=path, feature_type=feature_type, feature_val=feature_val)
 
     # Model initialization
     regression_model = LinearRegression(fit_intercept=False)
@@ -40,24 +42,23 @@ def LinearRegressionTrainingAuto(path):
     orig_y_train = y_train.flatten()
     orig_y_test = y_test.flatten()
 
-    # data points
+    # Data points
     plt.scatter(orig_x_train, orig_y_train, s=20, color='b')
     plt.scatter(orig_x_test, orig_y_test, s=40, color='r')
     plt.xlabel('Input size')
     plt.ylabel('Time (seconds)')
 
-    # plotting predicted values
+    # Plotting predicted values
     orig_x = orig_x.flatten()
-    orig_y = y.flatten()
 
-    # predicted values
+    # Predicted values
     y_predicted = y_predicted.flatten()
     plt.plot(orig_x, y_predicted, color='g')
     plt.legend(['Regression line', 'Train data', 'Test data'])
     plt.title(polynomial_to_LaTeX(P(regression_model.coef_.flatten())))
 
     # Return figure
-    plt.savefig(OUTPUT_NAME)
+    plt.savefig(output_name)
 
     plt.close()
 
@@ -68,4 +69,9 @@ if __name__ == "__main__":
         sys.exit(-1)
 
     path = sys.argv[1]
-    LinearRegressionTrainingAuto(path)
+    OUTPUT_NAME = 'result.png'
+
+    LinearRegressionTrainingAuto(path,
+                                 output_name=OUTPUT_NAME,
+                                 feature_type=NO_FEATURE_TYPE,
+                                 feature_val=1)
