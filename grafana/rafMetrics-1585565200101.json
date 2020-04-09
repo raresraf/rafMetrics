@@ -88,10 +88,7 @@
           "format": "time_series",
           "group": [
             {
-              "params": [
-                "$__interval",
-                "none"
-              ],
+              "params": ["$__interval", "none"],
               "type": "time"
             }
           ],
@@ -102,21 +99,15 @@
           "select": [
             [
               {
-                "params": [
-                  "Pingid"
-                ],
+                "params": ["Pingid"],
                 "type": "column"
               },
               {
-                "params": [
-                  "count"
-                ],
+                "params": ["count"],
                 "type": "aggregate"
               },
               {
-                "params": [
-                  "Pingid"
-                ],
+                "params": ["Pingid"],
                 "type": "alias"
               }
             ]
@@ -208,10 +199,7 @@
           "format": "time_series",
           "group": [
             {
-              "params": [
-                "$__interval",
-                "none"
-              ],
+              "params": ["$__interval", "none"],
               "type": "time"
             }
           ],
@@ -222,21 +210,15 @@
           "select": [
             [
               {
-                "params": [
-                  "Metricid"
-                ],
+                "params": ["Metricid"],
                 "type": "column"
               },
               {
-                "params": [
-                  "count"
-                ],
+                "params": ["count"],
                 "type": "aggregate"
               },
               {
-                "params": [
-                  "Metricid"
-                ],
+                "params": ["Metricid"],
                 "type": "alias"
               }
             ]

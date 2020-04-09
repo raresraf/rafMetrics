@@ -4,8 +4,7 @@ var ResourceStateContext = React.createContext();
 var ResourceDispatchContext = React.createContext();
 
 function resourceReducer(state) {
-  return { ...state, resourceid: localStorage.getItem("resourceid"),
-  }
+  return { ...state, resourceid: localStorage.getItem("resourceid") };
 }
 
 function ResourceProvider({ children }) {
@@ -25,7 +24,9 @@ function ResourceProvider({ children }) {
 function useResourceState() {
   var context = React.useContext(ResourceStateContext);
   if (context === undefined) {
-    throw new Error("useResourceState must be used within a ResourceStateContext");
+    throw new Error(
+      "useResourceState must be used within a ResourceStateContext"
+    );
   }
   return context;
 }
@@ -33,15 +34,21 @@ function useResourceState() {
 function useResourceDispatch() {
   var context = React.useContext(ResourceDispatchContext);
   if (context === undefined) {
-    throw new Error("useResourceDispatch must be used within a ResourceDispatchContext");
+    throw new Error(
+      "useResourceDispatch must be used within a ResourceDispatchContext"
+    );
   }
   return context;
 }
 
+export {
+  ResourceProvider,
+  useResourceState,
+  useResourceDispatch,
+  updateResource,
+};
 
-export { ResourceProvider, useResourceState, useResourceDispatch, updateResource};
-
-function updateResource(resourceid, dispatch){
+function updateResource(resourceid, dispatch) {
   localStorage.setItem("resourceid", resourceid);
 
   dispatch();

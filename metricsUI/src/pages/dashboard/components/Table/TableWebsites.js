@@ -1,9 +1,17 @@
 import React from "react";
-import {Table, TableBody, TableCell, TableHead, TableRow,} from "@material-ui/core";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableRow,
+} from "@material-ui/core";
 // components
-import {Button} from "../../../../components/Wrappers";
-import {updateResource, useResourceDispatch} from "../../../../context/ResourceContext";
-
+import { Button } from "../../../../components/Wrappers";
+import {
+  updateResource,
+  useResourceDispatch,
+} from "../../../../context/ResourceContext";
 
 const states = {
   working: "success",
@@ -11,23 +19,21 @@ const states = {
   unavailable: "secondary",
 };
 
-
-export default function TableComponentWebsite({ data , p1, p2}) {
-
+export default function TableComponentWebsite({ data, p1, p2 }) {
   var resourceDispatch = useResourceDispatch();
 
-  var keys = Object.keys(data[0]).map(i => i.toUpperCase());
+  var keys = Object.keys(data[0]).map((i) => i.toUpperCase());
   keys.shift(); // delete "id" key
 
   return (
     <Table className="mb-0">
       <TableHead>
         <TableRow>
-          <TableCell key={0}>{'ID'}</TableCell>
-          <TableCell key={1}>{'WebsiteName'}</TableCell>
-          <TableCell key={2}>{'WebsiteUrl'}</TableCell>
-          <TableCell key={3}>{'First Added'}</TableCell>
-          <TableCell key={4}>{'Status'}</TableCell>
+          <TableCell key={0}>{"ID"}</TableCell>
+          <TableCell key={1}>{"WebsiteName"}</TableCell>
+          <TableCell key={2}>{"WebsiteUrl"}</TableCell>
+          <TableCell key={3}>{"First Added"}</TableCell>
+          <TableCell key={4}>{"Status"}</TableCell>
         </TableRow>
       </TableHead>
       <TableBody>
@@ -43,7 +49,7 @@ export default function TableComponentWebsite({ data , p1, p2}) {
                 size="small"
                 className="px-2"
                 variant="contained"
-                onClick={(e) =>{
+                onClick={(e) => {
                   updateResource(id_resource, resourceDispatch);
                   p1(false);
                   p2(false);

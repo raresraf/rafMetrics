@@ -1,9 +1,9 @@
 import React from "react";
-import {useTheme} from "@material-ui/styles";
+import { useTheme } from "@material-ui/styles";
 // styles
 import useStyles from "./styles";
 // components
-import {Typography} from "../Wrappers";
+import { Typography } from "../Wrappers";
 
 export default function UserAvatar({ color = "primary", ...props }) {
   var classes = useStyles();
@@ -11,7 +11,7 @@ export default function UserAvatar({ color = "primary", ...props }) {
 
   var letters = props.name
     .split(" ")
-    .map(word => word[0])
+    .map((word) => word[0])
     .join("");
 
   return (

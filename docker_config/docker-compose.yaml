@@ -1,4 +1,4 @@
-version: '3.3'
+version: "3.3"
 
 # docker stack deploy -c docker_config/docker-compose.yaml rafMetrics
 services:
@@ -6,9 +6,9 @@ services:
   mysql:
     image: raresraf/rafmetricsmysql:latest
     environment:
-      DOCKER_COMPOSE_BUILD: 'true'
+      DOCKER_COMPOSE_BUILD: "true"
     ports:
-      - '3306:3306'
+      - "3306:3306"
     # expose:
     #  - '3306'
     networks:
@@ -26,7 +26,7 @@ services:
     depends_on:
       - mysql
     environment:
-      DOCKER_COMPOSE_BUILD: 'true'
+      DOCKER_COMPOSE_BUILD: "true"
     networks:
       - backend
     deploy:
@@ -40,7 +40,7 @@ services:
     depends_on:
       - mysql
     environment:
-      DOCKER_COMPOSE_BUILD: 'true'
+      DOCKER_COMPOSE_BUILD: "true"
     networks:
       - backend
     deploy:
@@ -53,9 +53,9 @@ services:
     depends_on:
       - mysql
     environment:
-      DOCKER_COMPOSE_BUILD: 'true'
+      DOCKER_COMPOSE_BUILD: "true"
     ports:
-      - '31001:5000'
+      - "31001:5000"
     networks:
       - backend
       - frontend
@@ -69,9 +69,9 @@ services:
     depends_on:
       - mysql
     environment:
-      DOCKER_COMPOSE_BUILD: 'true'
+      DOCKER_COMPOSE_BUILD: "true"
     ports:
-      - '31002:5000'
+      - "31002:5000"
     networks:
       - backend
       - frontend
@@ -87,9 +87,9 @@ services:
       - webmonitoringapi
       - login
     environment:
-      DOCKER_COMPOSE_BUILD: 'true'
+      DOCKER_COMPOSE_BUILD: "true"
     ports:
-      - '31000:80'
+      - "31000:80"
     networks:
       - frontend
     deploy:
@@ -126,10 +126,8 @@ services:
       placement:
         constraints: [node.role == worker]
 
-
 volumes:
   db-volume:
-
 
 networks:
   backend:

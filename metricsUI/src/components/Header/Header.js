@@ -1,5 +1,13 @@
-import React, {useState} from "react";
-import {AppBar, Fab, IconButton, InputBase, Menu, MenuItem, Toolbar,} from "@material-ui/core";
+import React, { useState } from "react";
+import {
+  AppBar,
+  Fab,
+  IconButton,
+  InputBase,
+  Menu,
+  MenuItem,
+  Toolbar,
+} from "@material-ui/core";
 import {
   ArrowBack as ArrowBackIcon,
   Menu as MenuIcon,
@@ -11,11 +19,14 @@ import classNames from "classnames";
 // styles
 import useStyles from "./styles";
 // components
-import {Typography} from "../Wrappers/Wrappers";
+import { Typography } from "../Wrappers/Wrappers";
 // context
-import {toggleSidebar, useLayoutDispatch, useLayoutState,} from "../../context/LayoutContext";
-import {signOut, useUserDispatch} from "../../context/UserContext";
-
+import {
+  toggleSidebar,
+  useLayoutDispatch,
+  useLayoutState,
+} from "../../context/LayoutContext";
+import { signOut, useUserDispatch } from "../../context/UserContext";
 
 export default function Header(props) {
   var classes = useStyles();
@@ -38,7 +49,7 @@ export default function Header(props) {
           onClick={() => toggleSidebar(layoutDispatch)}
           className={classNames(
             classes.headerMenuButton,
-            classes.headerMenuButtonCollapse,
+            classes.headerMenuButtonCollapse
           )}
         >
           {layoutState.isSidebarOpened ? (
@@ -46,7 +57,7 @@ export default function Header(props) {
               classes={{
                 root: classNames(
                   classes.headerIcon,
-                  classes.headerIconCollapse,
+                  classes.headerIconCollapse
                 ),
               }}
             />
@@ -55,7 +66,7 @@ export default function Header(props) {
               classes={{
                 root: classNames(
                   classes.headerIcon,
-                  classes.headerIconCollapse,
+                  classes.headerIconCollapse
                 ),
               }}
             />
@@ -92,7 +103,7 @@ export default function Header(props) {
           color="inherit"
           className={classes.headerMenuButton}
           aria-controls="profile-menu"
-          onClick={e => setProfileMenu(e.currentTarget)}
+          onClick={(e) => setProfileMenu(e.currentTarget)}
         >
           <AccountIcon classes={{ root: classes.headerIcon }} />
         </IconButton>
@@ -142,7 +153,7 @@ export default function Header(props) {
           <MenuItem
             className={classNames(
               classes.profileMenuItem,
-              classes.headerMenuItem,
+              classes.headerMenuItem
             )}
           >
             <AccountIcon className={classes.profileMenuIcon} /> Profile

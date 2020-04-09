@@ -1,9 +1,9 @@
 import React from "react";
-import {makeStyles, useTheme} from "@material-ui/styles";
+import { makeStyles, useTheme } from "@material-ui/styles";
 import classnames from "classnames";
 
 // styles
-var useStyles = makeStyles(theme => ({
+var useStyles = makeStyles((theme) => ({
   dotBase: {
     width: 5,
     height: 5,

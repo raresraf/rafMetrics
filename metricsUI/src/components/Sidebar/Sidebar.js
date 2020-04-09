@@ -1,5 +1,5 @@
-import React, {useEffect, useState} from "react";
-import {Drawer, IconButton, List} from "@material-ui/core";
+import React, { useEffect, useState } from "react";
+import { Drawer, IconButton, List } from "@material-ui/core";
 import {
   ArrowBack as ArrowBackIcon,
   FilterNone as UIElementsIcon,
@@ -8,17 +8,21 @@ import {
   LibraryBooks as LibraryIcon,
   NetworkWifi as WifiIcon,
   QuestionAnswer as SupportIcon,
-  Web as WebMonitoringIcon
+  Web as WebMonitoringIcon,
 } from "@material-ui/icons";
-import {useTheme} from "@material-ui/styles";
-import {withRouter} from "react-router-dom";
+import { useTheme } from "@material-ui/styles";
+import { withRouter } from "react-router-dom";
 import classNames from "classnames";
 // styles
 import useStyles from "./styles";
 // components
 import SidebarLink from "./components/SidebarLink/SidebarLink";
 // context
-import {toggleSidebar, useLayoutDispatch, useLayoutState,} from "../../context/LayoutContext";
+import {
+  toggleSidebar,
+  useLayoutDispatch,
+  useLayoutState,
+} from "../../context/LayoutContext";
 
 const structure = [
   { id: 0, label: "Dashboard", link: "/app/dashboard", icon: <HomeIcon /> },
@@ -28,15 +32,13 @@ const structure = [
     label: "UI Elements",
     link: "/app/ui",
     icon: <UIElementsIcon />,
-    children: [
-      { label: "Icons", link: "/app/ui/icons" },
-    ],
+    children: [{ label: "Icons", link: "/app/ui/icons" }],
   },
   {
     id: 5,
     label: "WebMonitoring",
     link: "/app/ui/resourcemanager",
-    icon: <WifiIcon/>,
+    icon: <WifiIcon />,
     children: [
       { label: "Resource", link: "/app/ui/resourcemanager" },
       { label: "Website", link: "/app/ui/websitemanager" },
@@ -46,7 +48,7 @@ const structure = [
     id: 6,
     label: "Statistics",
     link: "/app/ui/resourcemanagerstatistics",
-    icon: <WebMonitoringIcon/>,
+    icon: <WebMonitoringIcon />,
     children: [
       { label: "Resource", link: "/app/ui/resourcemanagerstatistics" },
       { label: "Website", link: "/app/ui/websitemanagerstatistics" },
@@ -71,7 +73,7 @@ function Sidebar({ location }) {
   // local
   var [isPermanent, setPermanent] = useState(true);
 
-  useEffect(function() {
+  useEffect(function () {
     window.addEventListener("resize", handleWindowWidthChange);
     handleWindowWidthChange();
     return function cleanup() {
@@ -105,7 +107,7 @@ function Sidebar({ location }) {
         </IconButton>
       </div>
       <List className={classes.sidebarList}>
-        {structure.map(link => (
+        {structure.map((link) => (
           <SidebarLink
             key={link.id}
             location={location}

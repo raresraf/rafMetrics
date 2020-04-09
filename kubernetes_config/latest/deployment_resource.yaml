@@ -1,4 +1,4 @@
-apiVersion: apps/v1 
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: resourcemonitor
@@ -13,5 +13,5 @@ spec:
         app: resourcemonitor
     spec:
       containers:
-      - name: resourcemonitor
-        image: raresraf/resourcemonitor:20200225205408
+        - name: resourcemonitor
+          image: raresraf/resourcemonitor:20200225205408
