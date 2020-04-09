@@ -1,4 +1,4 @@
-apiVersion: apps/v1 
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: websitemonitor
@@ -13,6 +13,5 @@ spec:
         app: websitemonitor
     spec:
       containers:
-      - name: website
-        image: raresraf/websitemonitor 
-
+        - name: website
+          image: raresraf/websitemonitor

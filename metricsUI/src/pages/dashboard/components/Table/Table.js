@@ -1,7 +1,13 @@
 import React from "react";
-import {Table, TableBody, TableCell, TableHead, TableRow,} from "@material-ui/core";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableRow,
+} from "@material-ui/core";
 // components
-import {Button} from "../../../../components/Wrappers";
+import { Button } from "../../../../components/Wrappers";
 
 const states = {
   sent: "success",
@@ -10,14 +16,14 @@ const states = {
 };
 
 export default function TableComponent({ data }) {
-  var keys = Object.keys(data[0]).map(i => i.toUpperCase());
+  var keys = Object.keys(data[0]).map((i) => i.toUpperCase());
   keys.shift(); // delete "id" key
 
   return (
     <Table className="mb-0">
       <TableHead>
         <TableRow>
-          {keys.map(key => (
+          {keys.map((key) => (
             <TableCell key={key}>{key}</TableCell>
           ))}
         </TableRow>

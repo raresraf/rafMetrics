@@ -1,12 +1,21 @@
-import React, {useState} from "react";
-import {Button, CircularProgress, Fade, Grid, Tab, Tabs, TextField, Typography,} from "@material-ui/core";
-import {withRouter} from "react-router-dom";
+import React, { useState } from "react";
+import {
+  Button,
+  CircularProgress,
+  Fade,
+  Grid,
+  Tab,
+  Tabs,
+  TextField,
+  Typography,
+} from "@material-ui/core";
+import { withRouter } from "react-router-dom";
 // styles
 import useStyles from "./styles";
 // logo
 import logo from "./logo.svg";
 // context
-import {loginUser, useUserDispatch} from "../../context/UserContext";
+import { loginUser, useUserDispatch } from "../../context/UserContext";
 
 function Login(props) {
   var classes = useStyles();
@@ -57,7 +66,9 @@ function Login(props) {
               </Typography>
               <div className={classes.formDividerContainer}>
                 <div className={classes.formDivider} />
-                <Typography className={classes.formDividerWord}>Welcome to rafMetrics</Typography>
+                <Typography className={classes.formDividerWord}>
+                  Welcome to rafMetrics
+                </Typography>
                 <div className={classes.formDivider} />
               </div>
               <Fade in={error}>
@@ -74,7 +85,7 @@ function Login(props) {
                   },
                 }}
                 value={loginValue}
-                onChange={e => setLoginValue(e.target.value)}
+                onChange={(e) => setLoginValue(e.target.value)}
                 margin="normal"
                 placeholder="Username"
                 type="username"
@@ -89,7 +100,7 @@ function Login(props) {
                   },
                 }}
                 value={passwordValue}
-                onChange={e => setPasswordValue(e.target.value)}
+                onChange={(e) => setPasswordValue(e.target.value)}
                 margin="normal"
                 placeholder="Password"
                 type="password"
@@ -110,7 +121,7 @@ function Login(props) {
                         passwordValue,
                         props.history,
                         setIsLoading,
-                        setError,
+                        setError
                       )
                     }
                     variant="contained"
@@ -152,7 +163,7 @@ function Login(props) {
                   },
                 }}
                 value={firstNameValue}
-                onChange={e => setNameValue(e.target.value)}
+                onChange={(e) => setNameValue(e.target.value)}
                 margin="normal"
                 placeholder="First Name"
                 type="FirstName"
@@ -167,7 +178,7 @@ function Login(props) {
                   },
                 }}
                 value={lastNameValue}
-                onChange={e => setNameValue(e.target.value)}
+                onChange={(e) => setNameValue(e.target.value)}
                 margin="normal"
                 placeholder="Last Name"
                 type="LastName"
@@ -182,7 +193,7 @@ function Login(props) {
                   },
                 }}
                 value={emailValue}
-                onChange={e => setNameValue(e.target.value)}
+                onChange={(e) => setNameValue(e.target.value)}
                 margin="normal"
                 placeholder="email@example.com"
                 type="Email"
@@ -198,7 +209,7 @@ function Login(props) {
                   },
                 }}
                 value={loginValue}
-                onChange={e => setLoginValue(e.target.value)}
+                onChange={(e) => setLoginValue(e.target.value)}
                 margin="normal"
                 placeholder="Username"
                 type="username"
@@ -213,7 +224,7 @@ function Login(props) {
                   },
                 }}
                 value={passwordValue}
-                onChange={e => setPasswordValue(e.target.value)}
+                onChange={(e) => setPasswordValue(e.target.value)}
                 margin="normal"
                 placeholder="Password"
                 type="password"
@@ -231,7 +242,7 @@ function Login(props) {
                         passwordValue,
                         props.history,
                         setIsLoading,
-                        setError,
+                        setError
                       )
                     }
                     disabled={

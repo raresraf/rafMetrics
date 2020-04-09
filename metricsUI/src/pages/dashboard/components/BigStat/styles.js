@@ -1,6 +1,6 @@
-import {makeStyles} from "@material-ui/styles";
+import { makeStyles } from "@material-ui/styles";
 
-export default makeStyles(theme => ({
+export default makeStyles((theme) => ({
   title: {
     display: "flex",
     flexDirection: "row",

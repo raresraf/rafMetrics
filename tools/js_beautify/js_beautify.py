@@ -1,3 +1,6 @@
+# This is a deprecated script
+# Consult README.md
+
 import os
 import jsbeautifier
 

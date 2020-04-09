@@ -1,27 +1,34 @@
 # DB setup
+
 The following steps have to be followed in order to successfully setup the DB:
 
-
 ## MySQL docker image
+
 [mysql:5.6](https://hub.docker.com/_/mysql)
+
 ## MySQL deployment in Kubernetes
+
 [Deployment config file](../kubernetes_config/database/mysql-deployment.yaml)
 
 ## MySQL init
 
 ### Overview of DB
+
 ![alt text](https://github.com/raresraf/rafMetrics/raw/ce2bd72df127ca2bbadb6c0ac9f6ec6bac998acf/mysql/diagram.png)
 
 ### Normal Forms in DB
+
 A relation is in Boyce-Codd Normal Form(BCNF) iff in every non-trivial functional dependency `X –> Y`, `X` is a super key.
 The current relation is in **Boyce-Codd Normal Form**.
 
-
 ### Create tables
+
 #### For Platform:
 
 ##### USERS
+
 Stores data for all active users registered in the platform
+
 ```sql
 CREATE table USERS (
     Userid int NOT NULL AUTO_INCREMENT,
@@ -35,8 +42,11 @@ CREATE table USERS (
 );
 
 ```
+
 #### For Login & Audit:
+
 ##### AUDIT_USERS
+
 Audit table used by `before_user_delete` and `before_user_update` triggers.
 
 ```sql
@@ -53,10 +63,12 @@ CREATE table AUDIT_USERS (
 );
 ```
 
-
 #### For WebMonitoring:
+
 ##### RESOURCE
+
 Stores all users' resources to be managed.
+
 ```sql
 CREATE table RESOURCE (
     Resourceid int NOT NULL AUTO_INCREMENT,
@@ -70,6 +82,7 @@ CREATE table RESOURCE (
 ```
 
 ##### PING
+
 Stores all monitoring results for all resources.
 
 ```sql
@@ -85,6 +98,7 @@ CREATE table PING (
 ```
 
 ##### WEBSITES
+
 Stores all users' websites to be managed.
 
 ```sql
@@ -98,7 +112,9 @@ CREATE table WEBSITES (
     FOREIGN KEY (Userid) REFERENCES USERS(Userid)
 );
 ```
+
 ##### WEBSITES_METRICS
+
 Stores all monitoring results for all websites.
 
 ```sql
@@ -113,8 +129,8 @@ CREATE table WEBSITES_METRICS (
 ```
 
 ##### REQUESTS
-Stores all data regarding all requests for all websites.
 
+Stores all data regarding all requests for all websites.
 
 ```sql
 CREATE table REQUESTS (
@@ -133,6 +149,7 @@ CREATE table REQUESTS (
 ```
 
 ##### TIMINGS
+
 Stores all data regarding all timings for all requests.
 
 ```sql
@@ -152,7 +169,9 @@ CREATE table TIMINGS (
 ```
 
 ### Populate tables
+
 Sample simulation to manually populate the DB.
+
 ```sql
 INSERT INTO USERS(LastName, FirstName, Username, Email, hashedpassword)
 values ('TestLastName', 'TestFirstName', 'TestUsername', 'TestEmail', 'pbkdf2:sha256:150000$aLUr0Tku$b8bbd76305a65b5fde4c94a22017979c9f3918d251045b0029a07657c9c169fb');
@@ -201,11 +220,14 @@ values (1, 'Istyle: default webpage', 'https://istyle.ro/');
 ```
 
 ### Procedures definition
+
 All procedures definition can be found [here](./WebMonitoring/procedures)
 
 #### get_daily_samples
+
 Get samples out of each hour, for the last 24 hours.
 This procedure has been generated with [this script](WebMonitoring/generators/resource/resource_generate_samples_queries.py)
+
 ```sql
 delimiter //
 DROP PROCEDURE IF EXISTS get_daily_samples;
@@ -340,24 +362,25 @@ delimiter ;
 
 ```
 
-
 #### get_monthly_samples
+
 Get samples each day, for the last 31 days.
 This procedure has been generated with [this script](WebMonitoring/generators/resource/resource_generate_samples_queries.py)
 
 Code is similar to `get_daily_samples`
 
 #### get_weekly_samples
+
 Get samples each 6 hours, for the last 7 days.
 This procedure has been generated with [this script](WebMonitoring/generators/resource/resource_generate_samples_queries.py)
 
 Code is similar to `get_daily_samples`
 
-
-
 #### get_daily_samples_size
+
 Get samples of size for each hour, for the last 24 hours.
 This procedure has been generated with [this script](WebMonitoring/generators/resource/resource_generate_samples_queries_size.py)
+
 ```sql
 delimiter //
 DROP PROCEDURE IF EXISTS get_daily_samples_size;
@@ -491,28 +514,29 @@ END//
 delimiter ;
 ```
 
-
 #### get_monthly_samples_size
+
 Get samples of size for each day, for the last 31 days.
 This procedure has been generated with [this script](WebMonitoring/generators/resource/resource_generate_samples_queries_size.py)
 
 Code is similar to `get_daily_samples_size`.
 
 #### get_weekly_samples_size
+
 Get samples of size each 6 hours, for the last 7 days.
 This procedure has been generated with [this script](WebMonitoring/generators/resource/resource_generate_samples_queries_size.py)
 
 Code is similar to `get_daily_samples_size`.
 
-
-
 #### get_daily_samples_websites
+
 Get samples of loading time for each hour, for a specific website, for the last 24 hours.
 This procedure has been generated with [this script](WebMonitoring/generators/websites/generate_samples_queries.py)
 
 Code is similar to `get_daily_samples`.
 
 Sample:
+
 ```sql
     if EXISTS(SELECT TotalTime FROM WEBSITES_METRICS WHERE TIMESTAMP >= DATE_SUB(NOW(), INTERVAL 24 HOUR) AND TIMESTAMP <= DATE_SUB(NOW(), INTERVAL 23 HOUR) AND Websiteid = id)
         then SELECT TotalTime INTO entry0 FROM WEBSITES_METRICS WHERE TIMESTAMP >= DATE_SUB(NOW(), INTERVAL 24 HOUR) AND TIMESTAMP <= DATE_SUB(NOW(), INTERVAL 23 HOUR) AND Websiteid = id limit 1;
@@ -521,25 +545,28 @@ Sample:
 ```
 
 #### get_monthly_samples_websites
+
 Get samples of size for each day, for the last 31 days.
 This procedure has been generated with [this script](WebMonitoring/generators/websites/generate_samples_queries.py)
 
 Code is similar to `get_daily_samples_websites`.
 
 #### get_weekly_samples_websites
+
 Get samples of size each 6 hours, for the last 7 days.
 This procedure has been generated with [this script](WebMonitoring/generators/websites/generate_samples_queries.py)
 
 Code is similar to `get_daily_samples_websites`.
 
-
 #### get_daily_samples_size_websites
+
 Get samples of total loaded size, each hour, for a specific website, for the last 24 hours.
 This procedure has been generated with [this script](WebMonitoring/generators/websites/generate_samples_queries.py)
 
 Code is similar to `get_daily_samples`.
 
 Sample:
+
 ```sql
     if EXISTS(SELECT SUM(bodySize) from REQUESTS where Metricid = (SELECT Metricid FROM WEBSITES_METRICS WHERE TIMESTAMP >= DATE_SUB(NOW(), INTERVAL 24 HOUR) AND TIMESTAMP <= DATE_SUB(NOW(), INTERVAL 23 HOUR) AND Websiteid = id limit 1))
         then SELECT SUM(bodySize) INTO entry0 from REQUESTS where Metricid = (SELECT Metricid FROM WEBSITES_METRICS WHERE TIMESTAMP >= DATE_SUB(NOW(), INTERVAL 24 HOUR) AND TIMESTAMP <= DATE_SUB(NOW(), INTERVAL 23 HOUR) AND Websiteid = id limit 1);
@@ -547,25 +574,27 @@ Sample:
 ```
 
 #### get_monthly_samples_size_websites
+
 Get samples of total loaded size, for each day, for the last 31 days.
 This procedure has been generated with [this script](WebMonitoring/generators/websites/generate_samples_queries.py)
 
 Code is similar to `get_daily_samples_size_websites`.
 
 #### get_weekly_samples_size_websites
+
 Get samples of total loaded size, each 6 hours, for the last 7 days.
 This procedure has been generated with [this script](WebMonitoring/generators/websites/generate_samples_queries.py)
 
 Code is similar to `get_daily_samples_size_websites`.
 
-
-
-
 ### Functions definition
+
 All functions definition can be found [here](./WebMonitoring/functions)
 
 #### resource_get_availability
+
 Checks if a resource is up and running or is unavailable based on DB records.
+
 ```sql
 delimiter //
 
@@ -591,7 +620,9 @@ delimiter ;
 ```
 
 #### resource_statistic_average_size
+
 Returns average response size for ResourceMonitor.
+
 ```sql
 delimiter //
 
@@ -608,7 +639,9 @@ delimiter ;
 ```
 
 #### resource_statistic_average_size_24
+
 Returns average response size for ResourceMonitor for all records in the last 24 hours.
+
 ```sql
 delimiter //
 
@@ -625,7 +658,9 @@ delimiter ;
 ```
 
 #### resource_statistic_size
+
 Returns the sum of all response size for ResourceMonitor.
+
 ```sql
 delimiter //
 
@@ -642,7 +677,9 @@ delimiter ;
 ```
 
 #### resource_statistic_size_24
+
 Returns the sum of all response size for ResourceMonitor for all records in the last 24 hours.
+
 ```sql
 delimiter //
 
@@ -659,6 +696,7 @@ delimiter ;
 ```
 
 #### resource_statistic_standard_deviation_size
+
 Returns the population standard deviation of the recorded sizes for ResourceMonitor.
 
 ```sql
@@ -677,7 +715,8 @@ delimiter ;
 ```
 
 #### resource_statistic_standard_deviation_size_24
-Returns the population standard deviation of the recorded sizes for ResourceMonitor  for all records in the last 24 hours.
+
+Returns the population standard deviation of the recorded sizes for ResourceMonitor for all records in the last 24 hours.
 
 ```sql
 delimiter //
@@ -695,7 +734,9 @@ delimiter ;
 ```
 
 #### resource_statistic_average_time
+
 Returns average response time for ResourceMonitor for all records.
+
 ```sql
 delimiter //
 
@@ -712,7 +753,9 @@ delimiter ;
 ```
 
 #### resource_statistic_average_time_24
+
 Returns average response time for ResourceMonitor for all records in the last 24 hours.
+
 ```sql
 delimiter //
 
@@ -729,7 +772,9 @@ delimiter ;
 ```
 
 #### resource_statistic_requests_time
+
 Returns total number of requests stored in WebMonitoring.
+
 ```sql
 delimiter //
 
@@ -746,7 +791,9 @@ delimiter ;
 ```
 
 #### resource_statistic_requests_time_24
+
 Returns total number of requests stored in WebMonitoring in the last 24 hours.
+
 ```sql
 delimiter //
 
@@ -762,9 +809,10 @@ END//
 delimiter ;
 ```
 
-
 #### resource_statistic_time
+
 Returns the sum of all response time for ResourceMonitor for all records.
+
 ```sql
 delimiter //
 
@@ -781,7 +829,9 @@ delimiter ;
 ```
 
 #### resource_statistic_time_24
+
 Returns the sum of all response time for ResourceMonitor for all records in the last 24 hours.
+
 ```sql
 delimiter //
 
@@ -798,6 +848,7 @@ delimiter ;
 ```
 
 #### resource_statistic_standard_deviation_time
+
 Returns the population standard deviation of the recorded times for ResourceMonitor for all records.
 
 ```sql
@@ -816,6 +867,7 @@ delimiter ;
 ```
 
 #### resource_statistic_standard_deviation_time_24
+
 Returns the population standard deviation of the recorded times for ResourceMonitor for all records in the last 24 hours.
 
 ```sql
@@ -834,9 +886,11 @@ delimiter ;
 ```
 
 ### Triggers definition
+
 All triggers definition can be found [here](./Login/triggers)
 
 #### before_users_update
+
 Audit all updates to USERS table inside DB
 
 ```sql
@@ -853,7 +907,9 @@ CREATE TRIGGER before_users_update
 ```
 
 #### before_users_delete
+
 Audit all deletions to USERS table inside DB
+
 ```sql
 CREATE TRIGGER before_users_delete
     BEFORE DELETE ON USERS
