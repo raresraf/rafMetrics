@@ -1,2 +1,5 @@
-def test_jsbeautifier_driver(mock_os_walk):
-    assert 1 == 1
+from tools.js_beautify.js_beautify import opts
+
+
+def test_jsbeautifier_driver():
+    assert opts.indent_size == 2

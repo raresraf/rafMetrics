@@ -1,12 +1,13 @@
 import os
 import jsbeautifier
+
+opts = jsbeautifier.default_options()
+opts.indent_size = 2
 """ Simple script for beautifying JS code """
 
 
 def jsbeautifier_driver():
     # Set options
-    opts = jsbeautifier.default_options()
-    opts.indent_size = 2
 
     for root, dirs, files in os.walk("."):
         for file in files:
