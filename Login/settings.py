@@ -1,6 +1,6 @@
 import os
 
-# DB configs
+# Login DB configs
 MYSQL_DATABASE_USER = 'root'
 MYSQL_DATABASE_PASSWORD = 'password'
 MYSQL_DATABASE_DB = 'WebMonitoring'

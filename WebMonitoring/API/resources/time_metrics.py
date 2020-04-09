@@ -63,6 +63,9 @@ def get_results_resource_get_time(mysql, resource_name):
     except Exception as e:
         print(e)
     finally:
-        cursor.close()
-        conn.close()
+        try:
+            cursor.close()
+            conn.close()
+        except NameError:
+            return (None, None, None)
         return (result_args_get_time, result_args_old_get_time, list_sample)

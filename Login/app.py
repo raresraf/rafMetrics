@@ -40,11 +40,11 @@ def add_user():
         _username = _json['username']
         _email = _json['email']
         _password = _json['pwd']
-        # validate the received values
+        # Validate the received values
         if _last_name and _first_name and _username and _email and _password and request.method == 'POST':
-            #do not save password as a plain text
+            # Get password hash
             _hashed_password = generate_password_hash(_password)
-            # save edits
+            # Save edits
             sql = "INSERT INTO USERS(LastName, FirstName, Username, Email, hashedpassword) VALUES(%s, %s, %s, %s, %s)"
             data = (_last_name, _first_name, _username, _email,
                     _hashed_password)
@@ -60,8 +60,13 @@ def add_user():
     except Exception as e:
         print(e)
     finally:
-        cursor.close()
-        conn.close()
+        try:
+            cursor.close()
+            conn.close()
+        except NameError:
+            resp = jsonify("Operation failed")
+            resp.status_code = 404
+            return resp
 
 
 @app.route('/users')
@@ -77,8 +82,13 @@ def users():
     except Exception as e:
         print(e)
     finally:
-        cursor.close()
-        conn.close()
+        try:
+            cursor.close()
+            conn.close()
+        except NameError:
+            resp = jsonify("Operation failed")
+            resp.status_code = 404
+            return resp
 
 
 @app.route('/user/<id>')
@@ -94,8 +104,13 @@ def user(id):
     except Exception as e:
         print(e)
     finally:
-        cursor.close()
-        conn.close()
+        try:
+            cursor.close()
+            conn.close()
+        except NameError:
+            resp = jsonify("Operation failed")
+            resp.status_code = 404
+            return resp
 
 
 def get_user_id(id):
@@ -108,8 +123,13 @@ def get_user_id(id):
     except Exception as e:
         print(e)
     finally:
-        cursor.close()
-        conn.close()
+        try:
+            cursor.close()
+            conn.close()
+        except NameError:
+            resp = jsonify("Operation failed")
+            resp.status_code = 404
+            return resp
 
 
 @app.route('/user/<id>/<passwd>')
@@ -139,11 +159,11 @@ def update_user(id):
         _first_name = _json['first_name']
         _email = _json['email']
         _password = _json['pwd']
-        # validate the received values
+        # Validate the received values
         if _last_name and _first_name and _email and _password and request.method == 'POST':
-            #do not save password as a plain text
+            # Get password hash
             _hashed_password = generate_password_hash(_password)
-            # save edits
+            # Save edits
             sql = "UPDATE USERS SET LastName=%s, FirstName=%s, Email=%s, hashedpassword=%s WHERE Username=%s"
             data = (_last_name, _first_name, _email, _hashed_password, id)
             conn = mysql.connect()
@@ -158,8 +178,13 @@ def update_user(id):
     except Exception as e:
         print(e)
     finally:
-        cursor.close()
-        conn.close()
+        try:
+            cursor.close()
+            conn.close()
+        except NameError:
+            resp = jsonify("Operation failed")
+            resp.status_code = 404
+            return resp
 
 
 @app.route('/delete/<id>')
@@ -175,8 +200,13 @@ def delete_user(id):
     except Exception as e:
         print(e)
     finally:
-        cursor.close()
-        conn.close()
+        try:
+            cursor.close()
+            conn.close()
+        except NameError:
+            resp = jsonify("Operation failed")
+            resp.status_code = 404
+            return resp
 
 
 @app.errorhandler(404)

@@ -74,8 +74,13 @@ def available_resources(username):
     except Exception as e:
         print(e)
     finally:
-        cursor.close()
-        conn.close()
+        try:
+            cursor.close()
+            conn.close()
+        except NameError:
+            resp = jsonify("Operation failed")
+            resp.status_code = 404
+            return resp
 
 
 @app.route('/availableWebsites/<username>')
@@ -101,8 +106,13 @@ def available_websites(username):
     except Exception as e:
         print(e)
     finally:
-        cursor.close()
-        conn.close()
+        try:
+            cursor.close()
+            conn.close()
+        except NameError:
+            resp = jsonify("Operation failed")
+            resp.status_code = 404
+            return resp
 
 
 @app.route('/resources/metrics/<resource_name>')
@@ -270,11 +280,16 @@ def resources_statistics():
     except Exception as e:
         print(e)
     finally:
-        cursor_all_time.close()
-        cursor_24_time.close()
-        cursor_all_size.close()
-        cursor_24_size.close()
-        conn.close()
+        try:
+            cursor_all_time.close()
+            cursor_24_time.close()
+            cursor_all_size.close()
+            cursor_24_size.close()
+            conn.close()
+        except NameError:
+            resp = jsonify("Operation failed")
+            resp.status_code = 404
+            return resp
 
 
 @app.route('/websites/statistics')
@@ -336,11 +351,16 @@ def websites_statistics():
     except Exception as e:
         print(e)
     finally:
-        cursor_all_time.close()
-        cursor_24_time.close()
-        cursor_all_size.close()
-        cursor_24_size.close()
-        conn.close()
+        try:
+            cursor_all_time.close()
+            cursor_24_time.close()
+            cursor_all_size.close()
+            cursor_24_size.close()
+            conn.close()
+        except NameError:
+            resp = jsonify("Operation failed")
+            resp.status_code = 404
+            return resp
 
 
 @app.route('/addresource', methods=['POST'])

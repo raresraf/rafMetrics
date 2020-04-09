@@ -77,8 +77,11 @@ def websites_get_samples_size_daily(mysql, resource_name):
     except Exception as e:
         print(e)
     finally:
-        cursor.close()
-        conn.close()
+        try:
+            cursor.close()
+            conn.close()
+        except NameError:
+            return None
 
 
 def websites_get_samples_size_weekly(mysql, resource_name):
@@ -160,8 +163,11 @@ def websites_get_samples_size_weekly(mysql, resource_name):
     except Exception as e:
         print(e)
     finally:
-        cursor.close()
-        conn.close()
+        try:
+            cursor.close()
+            conn.close()
+        except NameError:
+            return None
 
 
 def websites_get_samples_size_monthly(mysql, resource_name):
@@ -246,5 +252,8 @@ def websites_get_samples_size_monthly(mysql, resource_name):
     except Exception as e:
         print(e)
     finally:
-        cursor.close()
-        conn.close()
+        try:
+            cursor.close()
+            conn.close()
+        except NameError:
+            return None

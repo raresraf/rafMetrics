@@ -31,5 +31,10 @@ def delete_website_wrapper(mysql, request):
     except Exception as e:
         print(e)
     finally:
-        cursor.close()
-        conn.close()
+        try:
+            cursor.close()
+            conn.close()
+        except NameError:
+            resp = jsonify("Operation failed")
+            resp.status_code = 404
+            return resp

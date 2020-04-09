@@ -13,8 +13,11 @@ def get_last_seven_entries_time(mysql, resource_name):
     except Exception as e:
         print(e)
     finally:
-        cursor.close()
-        conn.close()
+        try:
+            cursor.close()
+            conn.close()
+        except NameError:
+            return None
 
 
 def get_last_seven_entries_size(mysql, resource_name):
@@ -29,5 +32,8 @@ def get_last_seven_entries_size(mysql, resource_name):
     except Exception as e:
         print(e)
     finally:
-        cursor.close()
-        conn.close()
+        try:
+            cursor.close()
+            conn.close()
+        except NameError:
+            return None
