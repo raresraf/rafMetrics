@@ -1,0 +1,101 @@
+networks:
+  backend: null
+  frontend: null
+services:
+  grafana:
+    depends_on:
+    - mysql
+    deploy:
+      replicas: 1
+    environment:
+    - GF_SECURITY_ADMIN_USER=TestUsername
+    - GF_SECURITY_ADMIN_PASSWORD=TestUsername
+    image: grafana/grafana:latest
+    networks:
+    - backend
+    ports:
+    - 32001:3000
+    user: '0'
+  login:
+    depends_on:
+    - mysql
+    deploy:
+      replicas: 1
+    environment:
+      DOCKER_COMPOSE_BUILD: 'true'
+    image: raresraf/login:latest
+    networks:
+    - backend
+    - frontend
+    ports:
+    - 31001:5000
+  metricsui:
+    depends_on:
+    - webmonitoringapi
+    - login
+    deploy:
+      replicas: 2
+    environment:
+      DOCKER_COMPOSE_BUILD: 'true'
+    image: raresraf/metricsui:latest
+    networks:
+    - frontend
+    ports:
+    - 31000:80
+  mysql:
+    deploy:
+      replicas: 1
+    environment:
+      DOCKER_COMPOSE_BUILD: 'true'
+    image: raresraf/rafmetricsmysql:latest
+    networks:
+    - backend
+    ports:
+    - 3306:3306
+    volumes:
+    - db-volume:/var/lib/mysql
+  resourcemonitor:
+    depends_on:
+    - mysql
+    deploy:
+      replicas: 1
+    environment:
+      DOCKER_COMPOSE_BUILD: 'true'
+    image: raresraf/resourcemonitor:latest
+    networks:
+    - backend
+  visualizer:
+    deploy:
+      replicas: 1
+    image: dockersamples/visualizer:stable
+    ports:
+    - 8080:8080
+    stop_grace_period: 1m30s
+    volumes:
+    - /var/run/docker.sock:/var/run/docker.sock
+  webmonitoringapi:
+    depends_on:
+    - mysql
+    deploy:
+      replicas: 2
+    environment:
+      DOCKER_COMPOSE_BUILD: 'true'
+    image: raresraf/webmonitoringapi:latest
+    networks:
+    - backend
+    - frontend
+    ports:
+    - 31002:5000
+  websitemonitor:
+    depends_on:
+    - mysql
+    deploy:
+      replicas: 1
+    environment:
+      DOCKER_COMPOSE_BUILD: 'true'
+    image: raresraf/websitemonitor:latest
+    networks:
+    - backend
+version: '3.3'
+volumes:
+  db-volume: null
