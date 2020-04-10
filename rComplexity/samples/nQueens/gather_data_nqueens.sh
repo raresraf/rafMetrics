@@ -35,11 +35,12 @@ touch $FILENAME_PYTHON
 lscpu >> $FILENAME_C
 lscpu >> $FILENAME_PYTHON
 
-# Larger input tests for C
-for ((i = 1 ; i <= 20 ; i = i + 1 )); do
+# Input tests for C
+for ((i = 1 ; i <= 18 ; i = i + 1 )); do
   nqueens_samples_c $i
 done
 
+# Input tests for Python
 for ((i = 1 ; i <= 16 ; i = i + 1 )); do
   nqueens_samples_python $i
 done

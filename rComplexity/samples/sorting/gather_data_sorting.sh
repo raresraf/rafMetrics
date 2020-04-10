@@ -31,8 +31,13 @@ touch $FILENAME
 
 lscpu >> $FILENAME
 
-# Larger input tests
-for ((i = 16 ; i <= 524288 ; i = i * 2 )); do
+# Small to large input tests
+for ((i = 16 ; i <= 262144 ; i = i * 2 )); do
+  sort_samples $i
+done
+
+# "Largerer" input tests
+for ((i = 262144 ; i <= 1048576 ; i = i += 262144 )); do
   sort_samples $i
 done
 
