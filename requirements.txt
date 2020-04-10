@@ -6,7 +6,7 @@
 Flask==1.1.1
 Werkzeug==0.16.0
 PyMySQL==0.9.3
-requests==2.22.0
+requests==2.23.0
 arrow==0.15.2
 browsermob_proxy==0.8.0
 Flask_Bcrypt==0.7.1
