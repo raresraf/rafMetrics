@@ -4,7 +4,7 @@
 # pipreqs . --force
 
 Flask==1.1.1
-Werkzeug==0.16.0
+Werkzeug==1.0.1
 PyMySQL==0.9.3
 requests==2.22.0
 arrow==0.15.2
