@@ -33,7 +33,7 @@ touch $FILENAME_C
 touch $FILENAME_PYTHON
 
 lscpu >> $FILENAME_C
-lscpu >> FILENAME_PYTHON
+lscpu >> $FILENAME_PYTHON
 
 # Larger input tests for C
 for ((i = 1 ; i <= 20 ; i = i + 1 )); do
