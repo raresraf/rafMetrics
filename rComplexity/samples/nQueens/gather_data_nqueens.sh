@@ -1,12 +1,17 @@
 #!/bin/bash
 
 
-nqueens_samples () {
+nqueens_samples_c () {
   echo -n "$1 " >> $FILENAME_C
-  echo -n "$1 " >> $FILENAME_PYTHON
 
   # C implementation
   { time { ./nqueens.out $1 &> /dev/null ; } } 2>> $FILENAME_C
+}
+
+nqueens_samples_python () {
+  echo -n "$1 " >> $FILENAME_PYTHON
+
+  # Python implementation
   { time { python3 nqueens.py $1 &> /dev/null ; } } 2>> $FILENAME_PYTHON
 }
 
@@ -30,9 +35,13 @@ touch $FILENAME_PYTHON
 lscpu >> $FILENAME_C
 lscpu >> FILENAME_PYTHON
 
-# Larger input tests
+# Larger input tests for C
+for ((i = 1 ; i <= 20 ; i = i + 1 )); do
+  nqueens_samples_c $i
+done
+
 for ((i = 1 ; i <= 16 ; i = i + 1 )); do
-  nqueens_samples $i
+  nqueens_samples_python $i
 done
 
 
