@@ -1,24 +1,40 @@
 //Implementation of Quick Sort in C
+#include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <sys/time.h>
+
 #define swap(t, x, y) { t z = x; x = y; y = z; }
 typedef int TYPE;
 int partition(TYPE [], int, int);
 void quick_sort(TYPE [], int, int);
 void print_array(TYPE [], int);
 
-int main(){
-	puts("-----Quick Sort-----");
-	TYPE A[] = {2, 3, 4, 156, 12, 44, 55, 68, 11, 2673, 666};
-	int n = sizeof(A) / sizeof(TYPE);
-	
-	printf("Unsorted: ");
-	print_array(A, n);
-	
-	printf("Sorted: ");
-	quick_sort(A, 0, n - 1);
-	print_array(A, n);
-	
+TYPE* init_array(int size){
+    TYPE* v = (TYPE *) malloc(size * sizeof(TYPE));
+    for(int i = 0; i < size; i++){
+        v[i] = rand();
+    }
+    return v;
+}
+
+int main(int argc, char **argv){
+    if(argc != 2)
+    {
+        printf("Usage: %s <sortingSize>\n", argv[0]);
+        return -1;
+    }
+
+    int n = atoi(argv[1]);
+    TYPE *A = init_array(n);
+
+    struct timeval start, end;
+    gettimeofday(&start, NULL);
+	quick_sort(A, 0, n-1);
+    gettimeofday(&end, NULL);
+    float elapsed = ((end.tv_sec - start.tv_sec)*1000000.0f + end.tv_usec - start.tv_usec)/1000000.0f;
+    printf("%12f \n", elapsed);
+
 	return EXIT_SUCCESS;
 }
 int partition(TYPE A[], int p, int r) {

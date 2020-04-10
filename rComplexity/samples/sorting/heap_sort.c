@@ -1,6 +1,9 @@
 /*Heap sort implementation in C*/
+#include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <sys/time.h>
+
 typedef int TYPE;
 int left(int);
 int right(int); 
@@ -10,20 +13,35 @@ void build_max_heap(TYPE [], int);
 void heap_sort(TYPE [], int);
 void print_array(TYPE [], int);
 
-int main(){
-	puts("-----Heap Sort-----");
-	TYPE a[] = {4, 10, 3, 5, 1};
-	int length = sizeof(a) / sizeof(TYPE);
-	
-	printf("Unsorted: ");
-	print_array(a, length);
-	heap_sort(a, length);
-	
-	printf("Sorted: ");
-	print_array(a, length);
-	
+TYPE* init_array(int size){
+    TYPE* v = (TYPE *) malloc(size * sizeof(TYPE));
+    for(int i = 0; i < size; i++){
+        v[i] = rand();
+    }
+    return v;
+}
+
+int main(int argc, char **argv){
+    if(argc != 2)
+    {
+        printf("Usage: %s <sortingSize>\n", argv[0]);
+        return -1;
+    }
+
+    int n = atoi(argv[1]);
+    TYPE *A = init_array(n);
+
+    struct timeval start, end;
+    gettimeofday(&start, NULL);
+	heap_sort(A, n);
+    gettimeofday(&end, NULL);
+    float elapsed = ((end.tv_sec - start.tv_sec)*1000000.0f + end.tv_usec - start.tv_usec)/1000000.0f;
+    printf("%12f \n", elapsed);
+
 	return EXIT_SUCCESS;
 }
+
+
 void heap_sort(TYPE a[], int length){
 	build_max_heap(a, length);
 	int i = length - 1;

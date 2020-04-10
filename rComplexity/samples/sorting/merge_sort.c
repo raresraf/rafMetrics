@@ -1,23 +1,39 @@
 //Implementation of Merge Sort in C
+#include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <sys/time.h>
+
 typedef int TYPE;
 void merge(TYPE [], int, int, int);
 void merge_sort(TYPE [], int, int);
 void print_array(TYPE [], int);
 
-int main(){
-	puts("-----Merge Sort-----");
-	TYPE A[] = {7, 13, 6, 234, 2995, 1332, 3, 44};
-	int n = sizeof(A) / sizeof(TYPE);
-	
-	printf("Unsorted: ");
-	print_array(A, n);
-	
-	printf("Sorted: ");
-	merge_sort(A, 0, n - 1);
-	print_array(A, n);
-	
+TYPE* init_array(int size){
+    TYPE* v = (TYPE *) malloc(size * sizeof(TYPE));
+    for(int i = 0; i < size; i++){
+        v[i] = rand();
+    }
+    return v;
+}
+
+int main(int argc, char **argv){
+    if(argc != 2)
+    {
+        printf("Usage: %s <sortingSize>\n", argv[0]);
+        return -1;
+    }
+
+    int n = atoi(argv[1]);
+    TYPE *A = init_array(n);
+
+    struct timeval start, end;
+    gettimeofday(&start, NULL);
+	merge_sort(A, 0, n-1);
+    gettimeofday(&end, NULL);
+    float elapsed = ((end.tv_sec - start.tv_sec)*1000000.0f + end.tv_usec - start.tv_usec)/1000000.0f;
+    printf("%12f \n", elapsed);
+
 	return EXIT_SUCCESS;
 }
 void merge(TYPE A[], int p, int q, int r) {
