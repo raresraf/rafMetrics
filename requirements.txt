@@ -16,7 +16,7 @@ xvfbwrapper==0.2.9
 
 # Manually added
 flask-mysql==1.5.0
-pytest-mock==1.13.0
+pytest-mock==3.0.0
 mock==4.0.1
 mysql-connector-python==8.0.19
 ipython==7.13.0
