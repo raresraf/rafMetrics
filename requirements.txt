@@ -3,11 +3,11 @@
 # Auto-generated requirements
 # pipreqs . --force
 
-Flask==1.1.1
+Flask==1.1.2
 Werkzeug==1.0.1
 PyMySQL==0.9.3
-requests==2.22.0
-arrow==0.15.2
+requests==2.23.0
+arrow==0.15.5
 browsermob_proxy==0.8.0
 Flask_Bcrypt==0.7.1
 flask_cors==3.0.8
@@ -15,15 +15,15 @@ selenium==3.141.0
 xvfbwrapper==0.2.9
 
 # Manually added
-flask-mysql==1.5.0
-pytest-mock==1.13.0
-mock==4.0.1
+flask-mysql==1.5.1
+pytest-mock==3.0.0
+mock==4.0.2
 mysql-connector-python==8.0.19
-ipython==7.8.0
+ipython==7.13.0
 simplejson==3.17.0
 flask-shell-ipython==0.4.1
-numpy==1.17.2
-matplotlib==3.1.1
+numpy==1.18.2
+matplotlib==3.2.1
 sklearn
 jsbeautifier
 PyYAML
