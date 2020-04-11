@@ -15,7 +15,7 @@ selenium==3.141.0
 xvfbwrapper==0.2.9
 
 # Manually added
-flask-mysql==1.5.0
+flask-mysql==1.5.1
 pytest-mock==3.0.0
 mock==4.0.2
 mysql-connector-python==8.0.19
