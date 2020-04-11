@@ -3,7 +3,7 @@
 # Auto-generated requirements
 # pipreqs . --force
 
-Flask==1.1.1
+Flask==1.1.2
 Werkzeug==0.16.0
 PyMySQL==0.9.3
 requests==2.23.0
