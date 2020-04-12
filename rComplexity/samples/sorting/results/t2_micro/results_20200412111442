@@ -1,0 +1,40 @@
+Architecture:        x86_64
+CPU op-mode(s):      32-bit, 64-bit
+Byte Order:          Little Endian
+CPU(s):              1
+On-line CPU(s) list: 0
+Thread(s) per core:  1
+Core(s) per socket:  1
+Socket(s):           1
+NUMA node(s):        1
+Vendor ID:           GenuineIntel
+CPU family:          6
+Model:               63
+Model name:          Intel(R) Xeon(R) CPU E5-2676 v3 @ 2.40GHz
+Stepping:            2
+CPU MHz:             2400.100
+BogoMIPS:            4800.13
+Hypervisor vendor:   Xen
+Virtualization type: full
+L1d cache:           32K
+L1i cache:           32K
+L2 cache:            256K
+L3 cache:            30720K
+NUMA node0 CPU(s):   0
+Flags:               fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx rdtscp lm constant_tsc rep_good nopl xtopology cpuid pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm cpuid_fault invpcid_single pti fsgsbase bmi1 avx2 smep bmi2 erms invpcid xsaveopt
+16    0.000002     0.000001     0.000002     0.000003     0.000004     0.000002 
+32    0.000006     0.000003     0.000004     0.000005     0.000006     0.000004 
+64    0.000020     0.000005     0.000010     0.000010     0.000010     0.000007 
+128    0.000069     0.000017     0.000030     0.000023     0.000018     0.000013 
+256    0.000267     0.000086     0.000109     0.000050     0.000040     0.000027 
+512    0.001078     0.000245     0.000468     0.000113     0.000082     0.000057 
+1024    0.004136     0.000972     0.001556     0.000251     0.000165     0.000122 
+2048    0.015926     0.003747     0.006124     0.000538     0.000404     0.000259 
+4096    0.068364     0.014820     0.024517     0.001223     0.000766     0.000560 
+8192    0.297802     0.059323     0.096542     0.002600     0.001621     0.001210 
+16384    1.292862     0.237054     0.387811     0.005744     0.003477     0.002589 
+32768    5.447295     0.940218     1.529007     0.011976     0.007387     0.005633 
+65536   22.381420     3.750145     6.077047     0.025814     0.015393     0.011461 
+131072   90.148117    15.006889    24.332697     0.056085     0.032474     0.024955 
+262144  360.300842    60.139202    97.204895     0.123653     0.068468     0.052127 
+262144  365.338074    60.104935    97.029808     0.122866     0.068129     0.052254 
