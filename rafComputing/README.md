@@ -21,3 +21,5 @@ A ML-based system is used for estimating rComplexity in the case when the theore
 A complete, cross-platform solution to record, convert and stream audio and video.
 
 `ffmpeg -r 5 -n -i "result_%02d.png" output.m4v`
+
+`ffmpeg -r 5 -n -i "result_%02d.png" -vcodec h264 output.mp4`
