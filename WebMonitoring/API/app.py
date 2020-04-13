@@ -10,24 +10,37 @@ from WebMonitoring.API.add.add_website import add_website_wrapper
 from WebMonitoring.API.constants import PERIOD
 from WebMonitoring.API.delete.delete_resource import delete_resource_wrapper
 from WebMonitoring.API.delete.delete_website import delete_website_wrapper
-from WebMonitoring.API.resources.efficiency_metrics import get_results_resource_get_efficiency
+from WebMonitoring.API.resources.efficiency_metrics import (
+    get_results_resource_get_efficiency, )
 from WebMonitoring.API.resources.metrics_renderer import render_dict
 from WebMonitoring.API.resources.samples_size_resource import (
-    resources_get_samples_size_daily, resources_get_samples_size_monthly,
-    resources_get_samples_size_weekly)
+    resources_get_samples_size_daily,
+    resources_get_samples_size_monthly,
+    resources_get_samples_size_weekly,
+)
 from WebMonitoring.API.resources.samples_time_resource import (
-    resources_get_samples_time_daily, resources_get_samples_time_monthly,
-    resources_get_samples_time_weekly)
+    resources_get_samples_time_daily,
+    resources_get_samples_time_monthly,
+    resources_get_samples_time_weekly,
+)
 from WebMonitoring.API.resources.size_metrics import get_results_resource_get_size
 from WebMonitoring.API.resources.time_metrics import get_results_resource_get_time
-from WebMonitoring.API.settings import (MYSQL_DATABASE_HOST,
-                                        MYSQL_DATABASE_USER,
-                                        MYSQL_DATABASE_PASSWORD,
-                                        MYSQL_DATABASE_DB)
-from WebMonitoring.API.websites.samples_size_websites import websites_get_samples_size_daily, \
-    websites_get_samples_size_weekly, websites_get_samples_size_monthly
-from WebMonitoring.API.websites.samples_time_websites import websites_get_samples_time_daily, \
-    websites_get_samples_time_weekly, websites_get_samples_time_monthly
+from WebMonitoring.API.settings import (
+    MYSQL_DATABASE_HOST,
+    MYSQL_DATABASE_USER,
+    MYSQL_DATABASE_PASSWORD,
+    MYSQL_DATABASE_DB,
+)
+from WebMonitoring.API.websites.samples_size_websites import (
+    websites_get_samples_size_daily,
+    websites_get_samples_size_weekly,
+    websites_get_samples_size_monthly,
+)
+from WebMonitoring.API.websites.samples_time_websites import (
+    websites_get_samples_time_daily,
+    websites_get_samples_time_weekly,
+    websites_get_samples_time_monthly,
+)
 
 app = Flask(__name__)
 CORS(app)
@@ -35,23 +48,23 @@ CORS(app)
 mysql = MySQL()
 
 # MySQL configurations
-app.config['MYSQL_DATABASE_USER'] = MYSQL_DATABASE_USER
-app.config['MYSQL_DATABASE_PASSWORD'] = MYSQL_DATABASE_PASSWORD
-app.config['MYSQL_DATABASE_DB'] = MYSQL_DATABASE_DB
-app.config['MYSQL_DATABASE_HOST'] = MYSQL_DATABASE_HOST
+app.config["MYSQL_DATABASE_USER"] = MYSQL_DATABASE_USER
+app.config["MYSQL_DATABASE_PASSWORD"] = MYSQL_DATABASE_PASSWORD
+app.config["MYSQL_DATABASE_DB"] = MYSQL_DATABASE_DB
+app.config["MYSQL_DATABASE_HOST"] = MYSQL_DATABASE_HOST
 
 # Workaround for KeyError: MYSQL_DATABASE_SOCKET
-app.config['MYSQL_DATABASE_SOCKET'] = None
+app.config["MYSQL_DATABASE_SOCKET"] = None
 
 mysql.init_app(app)
 
 
-@app.route('/')
+@app.route("/")
 def index():
     return "Hello, world!"
 
 
-@app.route('/availableResources/<username>')
+@app.route("/availableResources/<username>")
 def available_resources(username):
     try:
         conn = mysql.connect()
@@ -65,7 +78,7 @@ def available_resources(username):
         count_id = 0
         for row in rows:
             resp.append(row)
-            resp[-1]['id'] = count_id
+            resp[-1]["id"] = count_id
             count_id = count_id + 1
 
         resp = jsonify(rows)
@@ -83,7 +96,7 @@ def available_resources(username):
             return resp
 
 
-@app.route('/availableWebsites/<username>')
+@app.route("/availableWebsites/<username>")
 def available_websites(username):
     try:
         conn = mysql.connect()
@@ -97,7 +110,7 @@ def available_websites(username):
         count_id = 0
         for row in rows:
             resp.append(row)
-            resp[-1]['id'] = count_id
+            resp[-1]["id"] = count_id
             count_id = count_id + 1
 
         resp = jsonify(rows)
@@ -115,41 +128,61 @@ def available_websites(username):
             return resp
 
 
-@app.route('/resources/metrics/<resource_name>')
+@app.route("/resources/metrics/<resource_name>")
 def resources_metrics(resource_name):
-    (result_args_get_time, result_args_old_get_time,
-     list_sample_time) = get_results_resource_get_time(mysql, resource_name)
-    (result_args_get_size, result_args_old_get_size,
-     list_sample_size) = get_results_resource_get_size(mysql, resource_name)
-    (result_args_get_efficiency, result_args_old_get_efficiency,
-     list_sample_efficiency) = get_results_resource_get_efficiency(
-         result_args_get_time, result_args_old_get_time, list_sample_time,
-         result_args_get_size, result_args_old_get_size, list_sample_size)
+    (
+        result_args_get_time,
+        result_args_old_get_time,
+        list_sample_time,
+    ) = get_results_resource_get_time(mysql, resource_name)
+    (
+        result_args_get_size,
+        result_args_old_get_size,
+        list_sample_size,
+    ) = get_results_resource_get_size(mysql, resource_name)
+    (
+        result_args_get_efficiency,
+        result_args_old_get_efficiency,
+        list_sample_efficiency,
+    ) = get_results_resource_get_efficiency(
+        result_args_get_time,
+        result_args_old_get_time,
+        list_sample_time,
+        result_args_get_size,
+        result_args_old_get_size,
+        list_sample_size,
+    )
     resp = jsonify([
-        render_dict(result_args_get_time,
-                    result_args_old_get_time,
-                    list_sample_time,
-                    "Request Time",
-                    "primary",
-                    roundDecimal=2),
-        render_dict(result_args_get_size,
-                    result_args_old_get_size,
-                    list_sample_size,
-                    "Response Size",
-                    "warning",
-                    roundDecimal=0),
-        render_dict(result_args_get_efficiency,
-                    result_args_old_get_efficiency,
-                    list_sample_efficiency,
-                    "Efficiency",
-                    "secondary",
-                    roundDecimal=0)
+        render_dict(
+            result_args_get_time,
+            result_args_old_get_time,
+            list_sample_time,
+            "Request Time",
+            "primary",
+            roundDecimal=2,
+        ),
+        render_dict(
+            result_args_get_size,
+            result_args_old_get_size,
+            list_sample_size,
+            "Response Size",
+            "warning",
+            roundDecimal=0,
+        ),
+        render_dict(
+            result_args_get_efficiency,
+            result_args_old_get_efficiency,
+            list_sample_efficiency,
+            "Efficiency",
+            "secondary",
+            roundDecimal=0,
+        ),
     ])
     resp.status_code = 200
     return resp
 
 
-@app.route('/resources/samples/time/<resource_id>/<period>')
+@app.route("/resources/samples/time/<resource_id>/<period>")
 def resources_get_samples_time(resource_id, period):
     samples = {}
     if period.lower() == PERIOD.DAILY:
@@ -164,7 +197,7 @@ def resources_get_samples_time(resource_id, period):
     return resp
 
 
-@app.route('/websites/samples/time/<website_id>/<period>')
+@app.route("/websites/samples/time/<website_id>/<period>")
 def websites_get_samples_time(website_id, period):
     samples = {}
     if period.lower() == PERIOD.DAILY:
@@ -179,7 +212,7 @@ def websites_get_samples_time(website_id, period):
     return resp
 
 
-@app.route('/resources/samples/size/<resource_id>/<period>')
+@app.route("/resources/samples/size/<resource_id>/<period>")
 def resources_get_samples_size(resource_id, period):
     samples = {}
     if period.lower() == PERIOD.DAILY:
@@ -194,7 +227,7 @@ def resources_get_samples_size(resource_id, period):
     return resp
 
 
-@app.route('/websites/samples/size/<website_id>/<period>')
+@app.route("/websites/samples/size/<website_id>/<period>")
 def websites_get_samples_size(website_id, period):
     samples = {}
     if period.lower() == PERIOD.DAILY:
@@ -209,7 +242,7 @@ def websites_get_samples_size(website_id, period):
     return resp
 
 
-@app.route('/resources/statistics')
+@app.route("/resources/statistics")
 def resources_statistics():
     try:
         conn = mysql.connect()
@@ -257,22 +290,22 @@ def resources_statistics():
         (requests_24_size) = fetch
 
         statistics = {
-            'requests_24': round(requests_24['requests_24'], 2),
-            'requests_all': round(requests_all['requests_all'], 2),
-            'time_24': round(requests_24['time_24'], 2),
-            'time_all': round(requests_all['time_all'], 2),
-            'average_time_24': round(requests_24['average_time_24'], 2),
-            'average_time_all': round(requests_all['average_time_all'], 2),
-            'sd_time_24': round(requests_24['standard_deviation_24'], 2),
-            'sd_time_all': round(requests_all['standard_deviation_all'], 2),
-            'size_24': round(requests_24_size['size_24'], 2),
-            'size_all': round(requests_all_size['size_all'], 2),
-            'average_size_24': round(requests_24_size['average_size_24'], 2),
-            'average_size_all': round(requests_all_size['average_size_all'],
+            "requests_24": round(requests_24["requests_24"], 2),
+            "requests_all": round(requests_all["requests_all"], 2),
+            "time_24": round(requests_24["time_24"], 2),
+            "time_all": round(requests_all["time_all"], 2),
+            "average_time_24": round(requests_24["average_time_24"], 2),
+            "average_time_all": round(requests_all["average_time_all"], 2),
+            "sd_time_24": round(requests_24["standard_deviation_24"], 2),
+            "sd_time_all": round(requests_all["standard_deviation_all"], 2),
+            "size_24": round(requests_24_size["size_24"], 2),
+            "size_all": round(requests_all_size["size_all"], 2),
+            "average_size_24": round(requests_24_size["average_size_24"], 2),
+            "average_size_all": round(requests_all_size["average_size_all"],
                                       2),
-            'sd_size_24': round(requests_24_size['standard_deviation_24'], 2),
-            'sd_size_all': round(requests_all_size['standard_deviation_all'],
-                                 2)
+            "sd_size_24": round(requests_24_size["standard_deviation_24"], 2),
+            "sd_size_all": round(requests_all_size["standard_deviation_all"],
+                                 2),
         }
         resp = jsonify(statistics)
         resp.status_code = 200
@@ -292,7 +325,7 @@ def resources_statistics():
             return resp
 
 
-@app.route('/websites/statistics')
+@app.route("/websites/statistics")
 def websites_statistics():
     try:
         conn = mysql.connect()
@@ -328,22 +361,22 @@ def websites_statistics():
         (requests_24_size) = fetch
 
         statistics = {
-            'requests_24': round(requests_24['requests_24'], 2),
-            'requests_all': round(requests_all['requests_all'], 2),
-            'time_24': round(requests_24['time_24'], 2),
-            'time_all': round(requests_all['time_all'], 2),
-            'average_time_24': round(requests_24['average_time_24'], 2),
-            'average_time_all': round(requests_all['average_time_all'], 2),
-            'sd_time_24': round(requests_24['standard_deviation_24'], 2),
-            'sd_time_all': round(requests_all['standard_deviation_all'], 2),
-            'size_24': round(requests_24_size['size_24'], 2),
-            'size_all': round(requests_all_size['size_all'], 2),
-            'average_size_24': round(requests_24_size['average_size_24'], 2),
-            'average_size_all': round(requests_all_size['average_size_all'],
+            "requests_24": round(requests_24["requests_24"], 2),
+            "requests_all": round(requests_all["requests_all"], 2),
+            "time_24": round(requests_24["time_24"], 2),
+            "time_all": round(requests_all["time_all"], 2),
+            "average_time_24": round(requests_24["average_time_24"], 2),
+            "average_time_all": round(requests_all["average_time_all"], 2),
+            "sd_time_24": round(requests_24["standard_deviation_24"], 2),
+            "sd_time_all": round(requests_all["standard_deviation_all"], 2),
+            "size_24": round(requests_24_size["size_24"], 2),
+            "size_all": round(requests_all_size["size_all"], 2),
+            "average_size_24": round(requests_24_size["average_size_24"], 2),
+            "average_size_all": round(requests_all_size["average_size_all"],
                                       2),
-            'sd_size_24': round(requests_24_size['standard_deviation_24'], 2),
-            'sd_size_all': round(requests_all_size['standard_deviation_all'],
-                                 2)
+            "sd_size_24": round(requests_24_size["standard_deviation_24"], 2),
+            "sd_size_all": round(requests_all_size["standard_deviation_all"],
+                                 2),
         }
         resp = jsonify(statistics)
         resp.status_code = 200
@@ -363,32 +396,29 @@ def websites_statistics():
             return resp
 
 
-@app.route('/addresource', methods=['POST'])
+@app.route("/addresource", methods=["POST"])
 def add_resource():
     return add_resource_wrapper(mysql, request)
 
 
-@app.route('/addwebsite', methods=['POST'])
+@app.route("/addwebsite", methods=["POST"])
 def add_website():
     return add_website_wrapper(mysql, request)
 
 
-@app.route('/deleteresource', methods=['POST'])
+@app.route("/deleteresource", methods=["POST"])
 def delete_resource():
     return delete_resource_wrapper(mysql, request)
 
 
-@app.route('/deletewebsite', methods=['POST'])
+@app.route("/deletewebsite", methods=["POST"])
 def delete_website():
     return delete_website_wrapper(mysql, request)
 
 
 @app.errorhandler(404)
 def not_found(error=None):
-    message = {
-        'status': 404,
-        'message': 'Not Found: ' + request.url,
-    }
+    message = {"status": 404, "message": "Not Found: " + request.url}
     resp = jsonify(message)
     resp.status_code = 404
 

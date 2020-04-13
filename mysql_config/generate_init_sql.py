@@ -12,7 +12,7 @@ def generate_init_sql():
     f.write("use WebMonitoring;\n\n\n")
 
     for tmpfile_name in SQL_INIT_FILES:
-        with open(tmpfile_name, 'r') as tmpfile:
+        with open(tmpfile_name, "r") as tmpfile:
             tmpfile_read = tmpfile.read()
             f.write(tmpfile_read)
             f.write("\n")

@@ -5,20 +5,32 @@ from numpy.polynomial import Polynomial as P
 from sklearn.metrics import mean_squared_error, r2_score
 
 from rafComputing.ML.RegressionEngine.LinearRegressionGD import LinearRegressionGD
-from rafComputing.ML.features.feature_types import POLYNOMIAL_FEATURE_TYPE, NO_FEATURE_TYPE, POWER_FEATURE_TYPE
+from rafComputing.ML.features.feature_types import (
+    POLYNOMIAL_FEATURE_TYPE,
+    NO_FEATURE_TYPE,
+    POWER_FEATURE_TYPE,
+)
 from rafComputing.ML.helpers.polynomial_to_latex import polynomial_to_LaTeX
 from rafComputing.ML.helpers.load_data import matrix_to_train_test
-from rafComputing.ML.CustomSettings.settings import MAX_ITER, ALPHA, DEFAULT_ITER_INCREASE_STEPS_LOG, \
-    DEFAULT_ITER_INCREASE_STEPS, \
-    DEFAULT_RANGE_, MAX_ITER_LinearRegressionTraining, ALPHA_LinearRegressionTraining, OUTPUT_PREFIX, OUTPUT_PREFIX_0, \
-    AUTO_DRIVER_DEFAULT_OUTPUT_NAME
+from rafComputing.ML.CustomSettings.settings import (
+    MAX_ITER,
+    ALPHA,
+    DEFAULT_ITER_INCREASE_STEPS_LOG,
+    DEFAULT_ITER_INCREASE_STEPS,
+    DEFAULT_RANGE_,
+    MAX_ITER_LinearRegressionTraining,
+    ALPHA_LinearRegressionTraining,
+    OUTPUT_PREFIX,
+    OUTPUT_PREFIX_0,
+    AUTO_DRIVER_DEFAULT_OUTPUT_NAME,
+)
 
-LINE_COLORS = ['blue', 'orange', 'green']
+LINE_COLORS = ["blue", "orange", "green"]
 
 # Light
-TRAIN_POINT_COLORS = ['#ADD8E6', '#FFCF9E', '#90ee90']
+TRAIN_POINT_COLORS = ["#ADD8E6", "#FFCF9E", "#90ee90"]
 # Dark
-TEST_POINT_COLORS = ['#00008B', '#b36200', '#006400']
+TEST_POINT_COLORS = ["#00008B", "#b36200", "#006400"]
 
 
 def LinearRegressionTrainingMoreGraphs(
@@ -27,10 +39,14 @@ def LinearRegressionTrainingMoreGraphs(
     n_iterations=MAX_ITER_LinearRegressionTraining,
     internal_counter=0,
     feature_type=NO_FEATURE_TYPE,
-    feature_val=1):
+    feature_val=1,
+):
     (x, orig_x), y, (X_train, orig_x_train), (
-        X_test, orig_x_test), y_train, y_test = matrix_to_train_test(
-            path=path, feature_type=feature_type, feature_val=feature_val)
+        X_test,
+        orig_x_test,
+    ), y_train, y_test = matrix_to_train_test(path=path,
+                                              feature_type=feature_type,
+                                              feature_val=feature_val)
 
     # Model initialization
     regression_model = LinearRegressionGD(alpha, n_iterations)
@@ -45,14 +61,14 @@ def LinearRegressionTrainingMoreGraphs(
     # Model evaluation training data
     rmse = mean_squared_error(y_train, y_predicted_train)
     r2 = r2_score(y_train, y_predicted_train)
-    print('[Training Set] Root mean squared error: ', rmse)
-    print('[Training Set] R2 score: ', r2)
+    print("[Training Set] Root mean squared error: ", rmse)
+    print("[Training Set] R2 score: ", r2)
 
     # Model evaluation test data
     rmse = mean_squared_error(y_test, y_predicted_test)
     r2 = r2_score(y_test, y_predicted_test)
-    print('[Test Set] Root mean squared error: ', rmse)
-    print('[Test Set] R2 score: ', r2)
+    print("[Test Set] Root mean squared error: ", rmse)
+    print("[Test Set] R2 score: ", r2)
 
     orig_y_train = y_train.flatten()
     orig_y_test = y_test.flatten()
@@ -66,8 +82,8 @@ def LinearRegressionTrainingMoreGraphs(
                 orig_y_test,
                 s=12,
                 color=TEST_POINT_COLORS[internal_counter])
-    plt.xlabel('Input size')
-    plt.ylabel('Time (seconds)')
+    plt.xlabel("Input size")
+    plt.ylabel("Time (seconds)")
 
     # Plotting predicted values
     orig_x = orig_x.flatten()
@@ -93,25 +109,27 @@ if __name__ == "__main__":
         if path == sys.argv[0]:
             continue
 
-        LinearRegressionTrainingMoreGraphs(path=path,
-                                           alpha=ALPHA,
-                                           n_iterations=MAX_ITER,
-                                           internal_counter=counter,
-                                           feature_type=POWER_FEATURE_TYPE,
-                                           feature_val=3)
+        LinearRegressionTrainingMoreGraphs(
+            path=path,
+            alpha=ALPHA,
+            n_iterations=MAX_ITER,
+            internal_counter=counter,
+            feature_type=POWER_FEATURE_TYPE,
+            feature_val=3,
+        )
 
         counter = counter + 1
 
     plt.legend([
-        'Regression line: Naive Matrix Multiplication',
-        'Regression line: Cache-friendly loop ordering',
-        'Regression line: Blocked Matrix Multiplication',
-        'Train data: Naive Matrix Multiplication',
-        'Test data:  Naive Matrix Multiplication',
-        'Train data: Cache-friendly loop ordering',
-        'Test data:  Cache-friendly loop ordering',
-        'Train data: Blocked Matrix Multiplication',
-        'Test data:  Blocked Matrix Multiplication',
+        "Regression line: Naive Matrix Multiplication",
+        "Regression line: Cache-friendly loop ordering",
+        "Regression line: Blocked Matrix Multiplication",
+        "Train data: Naive Matrix Multiplication",
+        "Test data:  Naive Matrix Multiplication",
+        "Train data: Cache-friendly loop ordering",
+        "Test data:  Cache-friendly loop ordering",
+        "Train data: Blocked Matrix Multiplication",
+        "Test data:  Blocked Matrix Multiplication",
     ])
 
     # Return figure

@@ -1,7 +1,7 @@
 class PERIOD:
-    DAILY = 'daily'
-    WEEKLY = 'weekly'
-    MONTHLY = 'monthly'
+    DAILY = "daily"
+    WEEKLY = "weekly"
+    MONTHLY = "monthly"
 
 
 # Converting BYTES to KB, MB, GB

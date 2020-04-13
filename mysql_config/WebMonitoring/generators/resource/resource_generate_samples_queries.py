@@ -5,19 +5,19 @@ def resource_generate_samples_queries(period):
     procedure_name = "get_" + period.lower() + "_samples"
 
     howmany = 24
-    GOBACK = 'HOUR'
+    GOBACK = "HOUR"
     COEF = 1
-    if period.lower() == 'daily':
+    if period.lower() == "daily":
         howmany = 24
-        GOBACK = 'HOUR'
+        GOBACK = "HOUR"
         COEF = 1
-    elif period.lower() == 'weekly':
+    elif period.lower() == "weekly":
         howmany = 7 * 4
-        GOBACK = 'HOUR'
+        GOBACK = "HOUR"
         COEF = 6
-    elif period.lower() == 'monthly':
+    elif period.lower() == "monthly":
         howmany = 31
-        GOBACK = 'DAY'
+        GOBACK = "DAY"
         COEF = 1
 
     print("delimiter //")
@@ -30,7 +30,7 @@ def resource_generate_samples_queries(period):
     print(" )")
 
     print("BEGIN")
-    if period.lower() == 'monthly':
+    if period.lower() == "monthly":
         print("    select DAY(now()) INTO start_hour;")
     else:
         print("    select HOUR(now()) INTO start_hour;")

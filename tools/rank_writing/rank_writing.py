@@ -1,5 +1,5 @@
-__author__ = ['[Brandon Amos](http://bamos.github.io)']
-__date__ = '2014.02.14'
+__author__ = ["[Brandon Amos](http://bamos.github.io)"]
+__date__ = "2014.02.14"
 """
 `rank-writing.py` ranks the writing quality of my
 blog's Markdown posts and my project's Markdown README files.
@@ -36,10 +36,10 @@ import shutil
 import sys
 
 parser = argparse.ArgumentParser()
-parser.add_argument('--aspell', action='store_true')
-parser.add_argument('--diction', action='store_true')
-parser.add_argument('--write-good', action='store_true')
-parser.add_argument('files', type=str, nargs='+')
+parser.add_argument("--aspell", action="store_true")
+parser.add_argument("--diction", action="store_true")
+parser.add_argument("--write-good", action="store_true")
+parser.add_argument("files", type=str, nargs="+")
 args = parser.parse_args()
 
 # If no arguments are provided, show everything.
@@ -62,7 +62,7 @@ for program in programs:
 
 def call(cmd, in_f=None):
     if in_f:
-        with open(in_f, 'r') as f:
+        with open(in_f, "r") as f:
             p = Popen(cmd, stdout=PIPE, stderr=PIPE, stdin=f)
     else:
         p = Popen(cmd, stdout=PIPE, stderr=PIPE)

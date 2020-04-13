@@ -1,4 +1,5 @@
-from WebMonitoring.API.resources.last_seven_entries_metrics import get_last_seven_entries_time
+from WebMonitoring.API.resources.last_seven_entries_metrics import (
+    get_last_seven_entries_time, )
 
 
 def get_results_resource_get_time(mysql, resource_name):
@@ -24,7 +25,7 @@ def get_results_resource_get_time(mysql, resource_name):
         """
         args = [resource_name, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 
-        cursor.callproc('resource_get_time', args)
+        cursor.callproc("resource_get_time", args)
         cursor.execute("SELECT @_resource_get_time_0, "
                        "@_resource_get_time_1, "
                        "@_resource_get_time_2, "
@@ -40,7 +41,7 @@ def get_results_resource_get_time(mysql, resource_name):
                        "@_resource_get_time_12 ")
         result_args_get_time = cursor.fetchone()
 
-        cursor.callproc('resource_get_old_time', args)
+        cursor.callproc("resource_get_old_time", args)
         cursor.execute("SELECT @_resource_get_old_time_0, "
                        "@_resource_get_old_time_1, "
                        "@_resource_get_old_time_2, "
@@ -59,7 +60,7 @@ def get_results_resource_get_time(mysql, resource_name):
         list_sample = []
         samples = get_last_seven_entries_time(mysql, resource_name)
         for sample in samples:
-            list_sample.append(int(1000 * sample['ResponseTime'] + 1))
+            list_sample.append(int(1000 * sample["ResponseTime"] + 1))
     except Exception as e:
         print(e)
     finally:

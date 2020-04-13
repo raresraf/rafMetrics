@@ -1,11 +1,14 @@
 from WebMonitoring.API.resources.numerical_helpers import div_0
 
 
-def get_results_resource_get_efficiency(result_args_get_time,
-                                        result_args_old_get_time,
-                                        list_sample_time, result_args_get_size,
-                                        result_args_old_get_size,
-                                        list_sample_size):
+def get_results_resource_get_efficiency(
+    result_args_get_time,
+    result_args_old_get_time,
+    list_sample_time,
+    result_args_get_size,
+    result_args_old_get_size,
+    list_sample_size,
+):
     result_args_get_efficiency = []
     result_args_old_get_efficiency = []
 
@@ -22,5 +25,8 @@ def get_results_resource_get_efficiency(result_args_get_time,
         list_sample_efficiency.append(
             div_0(list_sample_size[i], list_sample_time[i]))
 
-    return (result_args_get_efficiency, result_args_old_get_efficiency,
-            list_sample_efficiency)
+    return (
+        result_args_get_efficiency,
+        result_args_old_get_efficiency,
+        list_sample_efficiency,
+    )

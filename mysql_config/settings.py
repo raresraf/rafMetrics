@@ -36,5 +36,5 @@ SQL_INIT_FILES = [
     "./mysql_config/WebMonitoring/functions/resource_statistics_time/resource_statistics_all_time/resource_statistic_standard_deviation_time.sql",
     "./mysql_config/WebMonitoring/functions/resource_statistics_time/resource_statistics_all_time/resource_statistic_requests_time.sql",
     "./mysql_config/WebMonitoring/functions/resource_statistics_time/resource_statistics_all_time/resource_statistic_average_time.sql",
-    "./mysql_config/Login/triggers/trigger.sql"
+    "./mysql_config/Login/triggers/trigger.sql",
 ]

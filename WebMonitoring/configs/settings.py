@@ -8,19 +8,19 @@ SHOW_PROGRESS_MESSAGE = True
 
 # Default speedprofile script location inside repo
 # Original speedprofile code: https://github.com/parasdahal/speedprofile
-SPEEDPROFILE_LOCATION = './WebMonitoring/WebsiteMonitorHelpers/entrypoint.sh'
+SPEEDPROFILE_LOCATION = "./WebMonitoring/WebsiteMonitorHelpers/entrypoint.sh"
 
 # Define the sample time between two consecutive monitorings
 SAMPLE_TIME = 3600
 
 # JSON output location
-json_path = './output/har.json'
+json_path = "./output/har.json"
 
 # MySQL DB configs
-MYSQL_DATABASE_USER = 'root'
-MYSQL_DATABASE_PASSWORD = 'password'
-MYSQL_DATABASE_DB = 'WebMonitoring'
+MYSQL_DATABASE_USER = "root"
+MYSQL_DATABASE_PASSWORD = "password"
+MYSQL_DATABASE_DB = "WebMonitoring"
 if os.environ.get("DOCKER_COMPOSE_BUILD"):
-    MYSQL_DATABASE_HOST = 'mysql'
+    MYSQL_DATABASE_HOST = "mysql"
 else:
-    MYSQL_DATABASE_HOST = '10.96.0.2'
+    MYSQL_DATABASE_HOST = "10.96.0.2"

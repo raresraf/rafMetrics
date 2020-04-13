@@ -1,7 +1,10 @@
 import yaml
 
 from docker_config.generators.no_constraint_compose import remove_placement_contraints
-from docker_config.generators.tests.mocks import SAMPLE_DOCKER_COMPOSE, EXPECTED_DOCKER_COMPOSE
+from docker_config.generators.tests.mocks import (
+    SAMPLE_DOCKER_COMPOSE,
+    EXPECTED_DOCKER_COMPOSE,
+)
 
 
 def test_remove_placement_contraints():

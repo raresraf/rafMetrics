@@ -4,7 +4,7 @@ from WebMonitoring.configs.constants import DockerResults
 from WebMonitoring.configs.settings import SPEEDPROFILE_LOCATION
 
 
-class SpeedprofileClient():
+class SpeedprofileClient:
     """
     Client for https://github.com/parasdahal/speedprofile
 

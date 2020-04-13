@@ -1,6 +1,10 @@
 import numpy as np
 
-from rafComputing.ML.features.feature_types import POLYNOMIAL_FEATURE_TYPE, NO_FEATURE_TYPE, POWER_FEATURE_TYPE
+from rafComputing.ML.features.feature_types import (
+    POLYNOMIAL_FEATURE_TYPE,
+    NO_FEATURE_TYPE,
+    POWER_FEATURE_TYPE,
+)
 
 
 def extract_features(X=None,

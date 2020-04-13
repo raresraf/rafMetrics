@@ -20,11 +20,35 @@ def resources_get_samples_time_daily(mysql, resource_name):
         query using .execute() to get any OUT or INOUT values.
         """
         args = [
-            resource_name, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-            0, 0, 0, 0, 0, 0, 0, 0
+            resource_name,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
         ]
 
-        cursor.callproc('get_daily_samples', args)
+        cursor.callproc("get_daily_samples", args)
         cursor.execute("SELECT "
                        "@_get_daily_samples_0, "
                        "@_get_daily_samples_1, "
@@ -57,10 +81,10 @@ def resources_get_samples_time_daily(mysql, resource_name):
         result = []
         for i in range(len(result_args_get_time) - 2):
             result.append({
-                'custom_data':
+                "custom_data":
                 result_args_get_time[i + 1],
-                'label':
-                get_timestamp_query(PERIOD.DAILY, i, result_args_get_time[-1])
+                "label":
+                get_timestamp_query(PERIOD.DAILY, i, result_args_get_time[-1]),
             })
 
         return result
@@ -92,11 +116,39 @@ def resources_get_samples_time_weekly(mysql, resource_name):
         query using .execute() to get any OUT or INOUT values.
         """
         args = [
-            resource_name, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+            resource_name,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
         ]
 
-        cursor.callproc('get_weekly_samples', args)
+        cursor.callproc("get_weekly_samples", args)
         cursor.execute("SELECT "
                        "@_get_weekly_samples_0, "
                        "@_get_weekly_samples_1, "
@@ -133,10 +185,11 @@ def resources_get_samples_time_weekly(mysql, resource_name):
         result = []
         for i in range(len(result_args_get_time) - 2):
             result.append({
-                'custom_data':
+                "custom_data":
                 result_args_get_time[i + 1],
-                'label':
-                get_timestamp_query(PERIOD.WEEKLY, i, result_args_get_time[-1])
+                "label":
+                get_timestamp_query(PERIOD.WEEKLY, i,
+                                    result_args_get_time[-1]),
             })
         return result
     except Exception as e:
@@ -167,11 +220,42 @@ def resources_get_samples_time_monthly(mysql, resource_name):
         query using .execute() to get any OUT or INOUT values.
         """
         args = [
-            resource_name, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+            resource_name,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
         ]
 
-        cursor.callproc('get_monthly_samples', args)
+        cursor.callproc("get_monthly_samples", args)
         cursor.execute("SELECT "
                        "@_get_monthly_samples_0, "
                        "@_get_monthly_samples_1, "
@@ -211,11 +295,11 @@ def resources_get_samples_time_monthly(mysql, resource_name):
         result = []
         for i in range(len(result_args_get_time) - 2):
             result.append({
-                'custom_data':
+                "custom_data":
                 result_args_get_time[i + 1],
-                'label':
+                "label":
                 get_timestamp_query(PERIOD.MONTHLY, i,
-                                    result_args_get_time[-1])
+                                    result_args_get_time[-1]),
             })
         return result
     except Exception as e:

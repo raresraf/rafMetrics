@@ -17,10 +17,12 @@ def plot_points_from_file(filename, matrixCols):
 
     for i in range(1, matrixCols + 1):
         name = CONFIG.get(i, str(i))
-        plt.plot(matrix[:, 0],
-                 matrix[:, i],
-                 next(pool_plotting_points_symbols),
-                 label="Sample: " + name)
+        plt.plot(
+            matrix[:, 0],
+            matrix[:, i],
+            next(pool_plotting_points_symbols),
+            label="Sample: " + name,
+        )
 
     plt.legend()
     plt.show()

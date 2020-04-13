@@ -50,9 +50,9 @@ class WebsiteMonitor:
 
     def add_times(self, entry):
         """Calculate a total request time as startedDateTime + time"""
-        requestStartTime = arrow.get(entry['startedDateTime'])
+        requestStartTime = arrow.get(entry["startedDateTime"])
         requestEndTime = arrow.get(
-            entry['startedDateTime']).shift(microseconds=1000 * entry['time'])
+            entry["startedDateTime"]).shift(microseconds=1000 * entry["time"])
         self.startTimes.append(requestStartTime)
         self.endTimes.append(requestEndTime)
 
@@ -62,9 +62,9 @@ class WebsiteMonitor:
             return
 
         # If file has been generated, proceed to parsing
-        with open(json_path, encoding='utf-8') as json_file:
+        with open(json_path, encoding="utf-8") as json_file:
             data = json.load(json_file)
-            for entry in data['log']['entries']:
+            for entry in data["log"]["entries"]:
                 self.add_times(entry)
                 request_entry = parse_request(entry)
                 self.request_entry.append(request_entry)

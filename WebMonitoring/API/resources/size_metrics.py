@@ -1,4 +1,5 @@
-from WebMonitoring.API.resources.last_seven_entries_metrics import get_last_seven_entries_size
+from WebMonitoring.API.resources.last_seven_entries_metrics import (
+    get_last_seven_entries_size, )
 
 
 def get_results_resource_get_size(mysql, resource_name):
@@ -24,7 +25,7 @@ def get_results_resource_get_size(mysql, resource_name):
         """
         args = [resource_name, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 
-        cursor.callproc('resource_get_size', args)
+        cursor.callproc("resource_get_size", args)
         cursor.execute("SELECT @_resource_get_size_0, "
                        "@_resource_get_size_1, "
                        "@_resource_get_size_2, "
@@ -40,7 +41,7 @@ def get_results_resource_get_size(mysql, resource_name):
                        "@_resource_get_size_12 ")
         result_args_get_size = cursor.fetchone()
 
-        cursor.callproc('resource_get_old_size', args)
+        cursor.callproc("resource_get_old_size", args)
         cursor.execute("SELECT @_resource_get_old_size_0, "
                        "@_resource_get_old_size_1, "
                        "@_resource_get_old_size_2, "
@@ -59,7 +60,7 @@ def get_results_resource_get_size(mysql, resource_name):
         list_sample = []
         samples = get_last_seven_entries_size(mysql, resource_name)
         for sample in samples:
-            list_sample.append(sample['ResponseSize'])
+            list_sample.append(sample["ResponseSize"])
     except Exception as e:
         print(e)
     finally:

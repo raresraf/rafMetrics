@@ -42,6 +42,11 @@ def matrix_to_train_test(path,
     X_train = extract_features(orig_x_train, feature_type, feature_val)
     X_test = extract_features(orig_x_test, feature_type, feature_val)
 
-    return (x, orig_x), y, (X_train,
-                            orig_x_train), (X_test,
-                                            orig_x_test), y_train, y_test
+    return (
+        (x, orig_x),
+        y,
+        (X_train, orig_x_train),
+        (X_test, orig_x_test),
+        y_train,
+        y_test,
+    )

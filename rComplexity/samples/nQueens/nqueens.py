@@ -41,9 +41,9 @@ class NQueens:
         the previously placed queens (check column and diagonal positions)
         """
         for i in range(ocuppied_rows):
-            if positions[i] == column or \
-                    positions[i] - i == column - ocuppied_rows or \
-                    positions[i] + i == column + ocuppied_rows:
+            if (positions[i] == column
+                    or positions[i] - i == column - ocuppied_rows
+                    or positions[i] + i == column + ocuppied_rows):
 
                 return False
         return True

@@ -12,7 +12,7 @@ user1 = {
     "Username":
     "TestUsername",
     "hashedpassword":
-    "pbkdf2:sha256:150000$3LCL1PDp$dd4ad95d664ce4b6fc0b7c9fe5870e793c3d364160c83fbd67fb1589fc5ab486"
+    "pbkdf2:sha256:150000$3LCL1PDp$dd4ad95d664ce4b6fc0b7c9fe5870e793c3d364160c83fbd67fb1589fc5ab486",
 }
 
 user2 = {
@@ -29,7 +29,7 @@ user2 = {
     "Username":
     "flask_test_username",
     "hashedpassword":
-    "pbkdf2:sha256:150000$ZIYIaFBX$963996e4c5dbd588b4f24f7a08d4bf801fc0c495e22c779ae333a2901e3b1bd3"
+    "pbkdf2:sha256:150000$ZIYIaFBX$963996e4c5dbd588b4f24f7a08d4bf801fc0c495e22c779ae333a2901e3b1bd3",
 }
 
 users_dict = [user1, user2]

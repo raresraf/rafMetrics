@@ -11,48 +11,64 @@ def parse_request(entry):
     bodySize = get_body_size(entry)
 
     timing = get_timing(entry)
-    request_entry = RequestEntry(serverIPAddress, pageRef, startedDateTime,
-                                 time, responseStatus, headersSize, bodySize,
-                                 timing)
+    request_entry = RequestEntry(
+        serverIPAddress,
+        pageRef,
+        startedDateTime,
+        time,
+        responseStatus,
+        headersSize,
+        bodySize,
+        timing,
+    )
     request_entry.verbose()
     return request_entry
 
 
 def get_timing(entry):
-    return entry.get('timings', {})
+    return entry.get("timings", {})
 
 
 def get_server_ip(entry):
-    return entry.get('serverIPAddress', "")
+    return entry.get("serverIPAddress", "")
 
 
 def get_page_ref(entry):
-    return entry.get('pageref', "")
+    return entry.get("pageref", "")
 
 
 def get_started_date_time(entry):
-    return entry.get('startedDateTime', "")
+    return entry.get("startedDateTime", "")
 
 
 def get_time(entry):
-    return entry.get('time', "")
+    return entry.get("time", "")
 
 
 def get_response_status(entry):
-    return entry.get('response', {}).get('status', "")
+    return entry.get("response", {}).get("status", "")
 
 
 def get_headers_size(entry):
-    return entry.get('response', {}).get('headersSize', "")
+    return entry.get("response", {}).get("headersSize", "")
 
 
 def get_body_size(entry):
-    return entry.get('response', {}).get('bodySize', "")
+    return entry.get("response", {}).get("bodySize", "")
 
 
-class RequestEntry():
-    def __init__(self, serverIPAddress, pageRef, startedDateTime, time,
-                 responseStatus, headersSize, bodySize, timing):
+class RequestEntry:
+    def __init__(
+        self,
+        serverIPAddress,
+        pageRef,
+        startedDateTime,
+        time,
+        responseStatus,
+        headersSize,
+        bodySize,
+        timing,
+    ):
         self.serverIPAddress = serverIPAddress
         self.pageRef = pageRef
         self.startedDateTime = startedDateTime
@@ -77,18 +93,18 @@ class RequestEntry():
             self.timing.verbose()
 
 
-class TimingEntry():
+class TimingEntry:
     def __init__(self, timing):
         self.timing = self.parse_timing(timing)
 
     def parse_timing(self, timing):
-        self.receive = timing.get('receive', "")
-        self.send = timing.get('send', "")
-        self.ssl = timing.get('ssl', "")
-        self.connect = timing.get('connect', "")
-        self.dns = timing.get('dns', "")
-        self.blocked = timing.get('blocked', "")
-        self.wait = timing.get('wait', "")
+        self.receive = timing.get("receive", "")
+        self.send = timing.get("send", "")
+        self.ssl = timing.get("ssl", "")
+        self.connect = timing.get("connect", "")
+        self.dns = timing.get("dns", "")
+        self.blocked = timing.get("blocked", "")
+        self.wait = timing.get("wait", "")
 
     def get(self):
         return self

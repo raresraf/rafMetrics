@@ -16,7 +16,7 @@ class LinearRegressionGD:
     w_ : weights/ after fitting the model
     cost_ : total error of the model after each iteration
     """
-    def __init__(self, alpha=.1e-20, n_iterations=10000):
+    def __init__(self, alpha=0.1e-20, n_iterations=10000):
         self.alpha = alpha
         self.n_iterations = n_iterations
 
