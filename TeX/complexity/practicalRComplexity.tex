@@ -5,9 +5,12 @@ This section aims to present a simple methodology of calculating by hand the ass
 
 \subsection{N-Queens’ Problem}
 We will begin to solve this by making an observation about choosing the $N$ Queens on the board with the dimensions $n$ x $n$. In order not to have attacks between two Queens, it must not have two Queens on the same line or column. We define a Queen $Q$ by the pair on points $ (x, y) $, where $ x, y \leq n $, are the coordinates corresponding to the position on the chessboard.
+
 The problem can be solved by checking all possible permutations: $ Q (1) = (1, y_1) $ , 
 $ Q (2) = (2, y_2) $ ... , $ Q (n) = (n, y_n) $ \\
-where $ y_1, y_2, ..., y_n \ in \ { 1,2, ..., n \ } $ and $ y_1, y_2, ..., y_n $ distinct. In these conditions, the only action that still needs to be verified is that of the "diagonal attack" of Queens.
+where $ y_1, y_2, ..., y_n \ in \ { 1,2, ..., n \ } $ and $ y_1, y_2, ..., y_n $ distinct. 
+
+In these conditions, the only action that still needs to be verified is that of the "diagonal attack" of Queens.
 
 \begin{algorithm}[H]
 \caption{Exhaustive N-Queens’ Problem Pseudocode}
@@ -136,10 +139,14 @@ For the pseudocode:
 \end{algorithmic}
 In a broad manner, we can estimate that the cost for the inner snippet is $c_{computeOffset} + c_{readMemory} + c_{check=1}$, where in order to compute offset, we need to perform $i * ROWS + column$, so
 $ c_{computeOffset} = O_{1}(c_{addition} + c_{multiplication} + 3 * c_{readMemory})$.
-Looking in a x86 Cycle cost table for operation, we can estimate the primitives $c_{addition} = O_{1}(4)$ and $c_{multiplication} = O_{1}(4)$. For memory access, the time varies, on reasons based on cache mechanics, prefetch and other runtime mechanism for improvement in speed of read operations. A satisfying margin would be $c_{readMemory} = O_{1}(100)$. 
-Suppose for a complete check and jump in code $c_{check=1} = 10$
 
-Therefore, for the inner snippet using the abose estimations, the rComplexity would be $O_{1}(4 * 100 + 4 + 4 + 10) = O_{1}(418)$. Now, the whole snippet will have the complexity $O_{1}((418 + c_{for\_checks}) \cdot n)$, where  $c_{for\_checks} = c_{check=row} + c_{addition}$ is the associated cost for incrementing the index and other checks. Thus, the rComplexity of the snippet is $O_{1}((418 + 14) \cdot n) = O_{1}(432 \cdot n)$ using the abose estimations.
+Looking in a x86 Cycle cost table for operation, we can estimate the primitives $c_{addition} = O_{1}(4)$ and $c_{multiplication} = O_{1}(4)$. For memory access, the time varies, on reasons based on cache mechanics, prefetch and other runtime mechanism for improvement in speed of read operations. A satisfying margin would be $c_{readMemory} = O_{1}(100)$. 
+
+Suppose for a complete check and jump in code $c_{check=1} = 10$.
+
+Therefore, for the inner snippet using the abose estimations, the rComplexity would be $O_{1}(4 * 100 + 4 + 4 + 10) = O_{1}(418)$. Now, the whole snippet will have the complexity $O_{1}((418 + c_{for\_checks}) \cdot n)$, where  $c_{for\_checks} = c_{check=row} + c_{addition}$ is the associated cost for incrementing the index and other checks. 
+
+Thus, the rComplexity of the snippet is $O_{1}((418 + 14) \cdot n) = O_{1}(432 \cdot n)$ using the abose estimations.
 
  
 For an exact value, we need to check the associated generated assembly code for the architecture (example x86-32bit):
@@ -173,7 +180,11 @@ f:
 \end{verbatim}
 
 
-The inner loop calculus are provided inner $.L5$ label. Having this code and the x86 cycles/instructions table, we can calculate the ideal rComplexity $\Theta_{1}(n \cdot (c_{.L2} + c_{.L5}))$. Also, $c_{.L2} = c_{mov} + c_{cmp} + c_{li}$ and $c_{.L5} = c_{mov} + c_{imul} + c_{mov} +  c_{add} + c_{mov} + c_{mov} + c_{cmp} + c_{je} + c_{add} $. Using reflexivity, we conclude the rComplexity of the snippet 1 is \[f_{snippet_{1}} =  \Theta_{1}(n \cdot ( 5 * c_{mov} + c_{imul} + 2 * c_{add} +2 *  c_{cmp} + c_{je} + c_{li}))\]
+The inner loop calculus are provided inner $.L5$ label. Having this code and the x86 cycles/instructions table, we can calculate the ideal rComplexity $\Theta_{1}(n \cdot (c_{.L2} + c_{.L5}))$. 
+
+Also, $c_{.L2} = c_{mov} + c_{cmp} + c_{li}$ and $c_{.L5} = c_{mov} + c_{imul} + c_{mov} +  c_{add} + c_{mov} + c_{mov} + c_{cmp} + c_{je} + c_{add} $. 
+
+Using reflexivity, we conclude the rComplexity of the snippet 1 is \[f_{snippet_{1}} =  \Theta_{1}(n \cdot ( 5 * c_{mov} + c_{imul} + 2 * c_{add} +2 *  c_{cmp} + c_{je} + c_{li}))\]
 
 Having this snippet's associated complexity calculated, we can proceed to calculate the other independent for-loops in the noConflict function:
 \begin{algorithmic}[1]
@@ -202,7 +213,9 @@ We will associate the complexity function of this snippet with $f_{snippet_{2}}$
 \end{algorithmic}
 a complexity function will be obtained described by $f_{snippet_{3}}$.
 
-Using addition properties, the complexity function for the procedute noConflict will be $f_{snippet_{1}} + f_{snippet_{2}} + f_{snippet_{3}} = O_{1}(c_{noConflict} \cdot n)$., where $c_{noConflict} \cdot n$ is the architecture-dependant constant. For instance, for x86, we can approximate $c_{noConflict \cdot n} = 432 * 3 = 1296$ and $f_{snippet_{1}} + f_{snippet_{2}} + f_{snippet_{3}} = O_{1}(1296 \cdot n) $.
+Using addition properties, the complexity function for the procedute noConflict will be $f_{snippet_{1}} + f_{snippet_{2}} + f_{snippet_{3}} = O_{1}(c_{noConflict} \cdot n)$., where $c_{noConflict} \cdot n$ is the architecture-dependant constant.
+
+ For instance, for x86, we can approximate $c_{noConflict \cdot n} = 432 * 3 = 1296$ and $f_{snippet_{1}} + f_{snippet_{2}} + f_{snippet_{3}} = O_{1}(1296 \cdot n) $.
 
 
 
@@ -313,7 +326,7 @@ Training a linear regression model on this dataset would result in model with a 
 \makebox[\textwidth][c]{\parbox{1.2\textwidth}{%
   \begin{subfigure}{.6\textwidth}
       \includegraphics[width=\linewidth]{mm521_1.png}
-      \caption{Linear Regression Model trained with initial features}
+      \caption{Linear Regression Model trained with initial features $g(n) = n^1 $}
   \end{subfigure}%
   \begin{subfigure}{.6\textwidth}
       \includegraphics[width=\linewidth]{mm521_2.png}
@@ -328,8 +341,10 @@ Training a linear regression model on this dataset would result in model with a 
       \caption{Linear Regression Model trained with new features obtained using $g(n) = n^4$}
   \end{subfigure}
 }}
-\caption{Various prediction boundaries based on accommodated training dataset  using multiple relations $g$}
+\caption{Various prediction boundaries based on accommodated training dataset using multiple relations $g$. Training data are obtained for different input size for a naive matrix multiplication algorithm in $\mathbb{O}(n^{3})$}
 \end{figure}
+
+As an intuition, the natural fit was obtained when using $g(n) = n^3$ with consideration to generalization. If we choose bigger degree polynomial transformations, we may obtain better results on this datasets, but the models are becoming subject to overfit. The subject of Matrix multiplication is furthered discussed in a distinct section. 
 
 
 \subsection{Estimation for algorithms with unknown Bachmann–Landau Complexity}
@@ -337,9 +352,72 @@ Estimation for algorithms with unknown Bachmann–Landau Complexity becomes a lo
 
 A general polynomial Performance model normal form is presented in Chapter 2.1 Automatic Empirical Performance Modeling of Parallel Programs \cite{calotoiu2018automatic}. An enhance model for complexity functions should contain also an exponential behavior, which is often seen as a synergy between NP-Hard problems. Thus, we propose the following general expression:
 
-\[ f(n) =\sum\limits_{t=1}^{y}  \sum\limits_{k=1}^{x} c_{k} \cdot n^{p_{k}} \cdot log_{l_{k}}^{j_{k}}(n) \cdot e_{t}^{n} \]
+\[ f(n) =\sum\limits_{t=1}^{y}  \sum\limits_{k=1}^{x} c_{k} \cdot n^{p_{k}} \cdot log_{l_{k}}^{j_{k}}(n) \cdot e_{t}^{n} \cdot  \Gamma(n)^{g_{k}} \]
 This representation is, of course, not exhaustive, but it works in most practical schemes. An intuitive motivation is a consequence of how most computer algorithms are designed. \cite{calotoiu2018automatic}
 
 
 
 \section{Matrix multiplication}
+In this section, we aim to provide an example of estimation for matrix multiplication algorithms with known Bachmann–Landau Complexity.
+
+Matrix multiplication plays very important role in many scientific disciplines because of fact that it is considered as the main tool for many other computations in different areas, like those in seismic analysis, different simulations (like galactic simulations), aerodynamic computations, signal and images processing. \cite{4588528}
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.6\textwidth]{matrixC}
+\caption{Before 1969, all known matrix multiplication algorithm were in $O(n^3)$. After Volker Strassen first published this algorithm and proved that the naive algorithm wasn't optimal, various attempts to narrow down the exponent $\omega$ appeared. One big breakthrough was brought by Coppersmith–Winograd algorithm, with complexity $O(n^{2.375})$. }
+\end{figure}
+
+We analyzed various naive matrix multiplication algorithms $O(n^3)$ with memory-access improvements (cache-locality of loops, Blocked Matrix Multiplication) and an efficient implementation of Strassen algorithm.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{matrixn3all}
+\caption{The results above have been reported on an i5 3.2GHz, x86\_64 Architecture with L1d cache: 32K, L1i cache: 32K, L2 cache: 256K, L3 cache:  6144K. We do not postulate that the methods above cannot be enhanced
+ or the efficiency of the optimizations are in a specific order. We aim to provide various estimation for these implementations of matrix multiplication algorithms with known $O(n^3)$ Complexity. Please remark the natural distribution of the two cache-friendly algorithms presented on larger datasets vs the naive algorithm, susceptible to outliers. }
+\end{figure}
+
+
+Using the method described in estimating section, we can tailor an architecture-specific complexity function $ f(n)  = c \cdot n^3$.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{mmn3023}
+\caption{TODO}
+\end{figure}
+
+After training the regression models for each algorithm, we obtained the coefficients $c$, that defines the complexity function $f(n)  = c \cdot n^3$.
+\begin{table}[H]
+\centering
+\begin{tabular}{|
+>{\columncolor[HTML]{FFCCC9}}l |
+>{\columncolor[HTML]{32CB00}}l |}
+\hline
+\cellcolor[HTML]{C0C0C0}\textit{\textbf{Algorithm}} & \cellcolor[HTML]{C0C0C0}{\color[HTML]{000000} \textit{\textbf{\begin{tabular}[c]{@{}l@{}}Complexity\\ Function\end{tabular}}}} \\ \hline
+\textbf{Naive Matrix Multiplication}                & {$ 1.109 \cdot 10^{-8} \cdot n^3 $}                                                                                      \\ \hline
+\textbf{Cache-friendly loop ordering}               & {$4.472e \cdot 10^{-9} \cdot n^3 $ }                                                                                      \\ \hline
+\textbf{Blocked Matrix Multiplication}              & {$6.441e \cdot 10^{-9} \cdot n^3 $ }                                                                                      \\ \hline
+\end{tabular}
+\caption{The regression model was evaluating using the above metrics: Root Mean Square Error (RMSE) and $R^2$ (coefficient of determination) regression score function}
+\end{table}
+
+
+Furthermore, the model was evaluated adopting classical regression evaluation metrics, independently settled on training and testing data.
+\begin{table}[H]
+\begin{tabular}{|
+>{\columncolor[HTML]{FFCCC9}}l |
+>{\columncolor[HTML]{32CB00}}l |
+>{\columncolor[HTML]{FFFFFF}}l |
+>{\columncolor[HTML]{FFFFFF}}l |
+>{\columncolor[HTML]{FFFFFF}}l |
+>{\columncolor[HTML]{FFFFFF}}l |}
+\hline
+\cellcolor[HTML]{C0C0C0}\textit{\textbf{Algorithm}} & \cellcolor[HTML]{C0C0C0}{\color[HTML]{000000} \textit{\textbf{c}}} & \cellcolor[HTML]{C0C0C0}\textit{\begin{tabular}[c]{@{}l@{}}{[}Training{]}\\ RMSQ\end{tabular}} & \cellcolor[HTML]{C0C0C0}\textit{\begin{tabular}[c]{@{}l@{}}{[}Training{]}\\ R2 score\end{tabular}} & \cellcolor[HTML]{C0C0C0}\begin{tabular}[c]{@{}l@{}}{[}Test{]}\\ RMSQ:\end{tabular} & \cellcolor[HTML]{C0C0C0}\textit{\begin{tabular}[c]{@{}l@{}}{[}Test{]}\\ R2 score\end{tabular}} \\ \hline
+\textbf{Naive Matrix Multiplication}                & {\color[HTML]{000000} \textit{1.109e-08}}                          & {\color[HTML]{000000} 5740.95}                                                                     & 0.9886                                                                                                 & 6136.10                                                                                & {\color[HTML]{000000} 0.9912}                                                                      \\ \hline
+\textbf{Cache-friendly loop ordering}               & {\color[HTML]{000000} \textit{4.472e-09}}                          & {\color[HTML]{000000} 0.2517}                                                                      & 0.9999969                                                                                              & 0.2917                                                                                 & {\color[HTML]{000000} 0.999997}                                                                    \\ \hline
+\textbf{Blocked Matrix Multiplication}              & {\color[HTML]{000000} \textit{6.441e-09}}                          & 185.70                                                                                             & 0.9989                                                                                                 & 63.64                                                                                  & {\color[HTML]{000000} 0.99971}                                                                     \\ \hline
+
+\end{tabular}
+\caption{The regression model was evaluated using the above metrics: Root Mean Square Error (RMSE) and $R^2$ (coefficient of determination) regression score function}
+\end{table}

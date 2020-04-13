@@ -4,16 +4,23 @@ import sys
 
 from rComplexity.plotting.constants import pool_plotting_points_symbols
 
+CONFIG = {
+    1: "Naive Matrix Multiplication",
+    2: "Cache-friendly loop ordering",
+    3: "Blocked Matrix Multiplication",
+}
+
 
 def plot_points_from_file(filename, matrixCols):
     # Load Matrix
     matrix = np.loadtxt(filename, usecols=range(matrixCols + 1))
 
     for i in range(1, matrixCols + 1):
+        name = CONFIG.get(i, str(i))
         plt.plot(matrix[:, 0],
                  matrix[:, i],
                  next(pool_plotting_points_symbols),
-                 label="Sample: " + str(i))
+                 label="Sample: " + name)
 
     plt.legend()
     plt.show()
