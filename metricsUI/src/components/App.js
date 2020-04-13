@@ -1,36 +1,36 @@
 import React from "react";
-import { HashRouter, Redirect, Route, Switch } from "react-router-dom";
+import {HashRouter, Redirect, Route, Switch} from "react-router-dom";
 // components
 import Layout from "./Layout";
 // pages
 import Error from "../pages/error";
 import Login from "../pages/login";
 // context
-import { useUserState } from "../context/UserContext";
+import {useUserState} from "../context/UserContext";
 
 export default function App() {
   // global
-  var { isAuthenticated } = useUserState();
+  var {isAuthenticated} = useUserState();
 
   return (
     <HashRouter>
       <Switch>
-        <Route exact path="/" render={() => <Redirect to="/app/dashboard" />} />
+        <Route exact path="/" render={() => <Redirect to="/app/dashboard"/>}/>
         <Route
           exact
           path="/app"
-          render={() => <Redirect to="/app/dashboard" />}
+          render={() => <Redirect to="/app/dashboard"/>}
         />
-        <PrivateRoute path="/app" component={Layout} />
-        <PublicRoute path="/login" component={Login} />
-        <Route component={Error} />
+        <PrivateRoute path="/app" component={Layout}/>
+        <PublicRoute path="/login" component={Login}/>
+        <Route component={Error}/>
       </Switch>
     </HashRouter>
   );
 
   // #######################################################################
 
-  function PrivateRoute({ component, ...rest }) {
+  function PrivateRoute({component, ...rest}) {
     return (
       <Route
         {...rest}
@@ -52,7 +52,7 @@ export default function App() {
     );
   }
 
-  function PublicRoute({ component, ...rest }) {
+  function PublicRoute({component, ...rest}) {
     return (
       <Route
         {...rest}

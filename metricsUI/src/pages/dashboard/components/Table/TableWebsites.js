@@ -1,17 +1,8 @@
 import React from "react";
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableRow,
-} from "@material-ui/core";
+import {Table, TableBody, TableCell, TableHead, TableRow,} from "@material-ui/core";
 // components
-import { Button } from "../../../../components/Wrappers";
-import {
-  updateResource,
-  useResourceDispatch,
-} from "../../../../context/ResourceContext";
+import {Button} from "../../../../components/Wrappers";
+import {updateResource, useResourceDispatch,} from "../../../../context/ResourceContext";
 
 const states = {
   working: "success",
@@ -19,7 +10,7 @@ const states = {
   unavailable: "secondary",
 };
 
-export default function TableComponentWebsite({ data, p1, p2 }) {
+export default function TableComponentWebsite({data, p1, p2}) {
   var resourceDispatch = useResourceDispatch();
 
   var keys = Object.keys(data[0]).map((i) => i.toUpperCase());
@@ -37,7 +28,7 @@ export default function TableComponentWebsite({ data, p1, p2 }) {
         </TableRow>
       </TableHead>
       <TableBody>
-        {data.map(({ id, id_resource, name, command, firstadded, status }) => (
+        {data.map(({id, id_resource, name, command, firstadded, status}) => (
           <TableRow key={id}>
             <TableCell>{id_resource}</TableCell>
             <TableCell className="pl-3 fw-normal">{name}</TableCell>

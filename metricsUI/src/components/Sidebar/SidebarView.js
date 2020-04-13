@@ -1,5 +1,5 @@
 import React from "react";
-import { Drawer, IconButton, List, withStyles } from "@material-ui/core";
+import {Drawer, IconButton, List, withStyles} from "@material-ui/core";
 import {
   ArrowBack as ArrowBackIcon,
   FilterNone as UIElementsIcon,
@@ -15,50 +15,50 @@ import classNames from "classnames";
 import SidebarLink from "./components/SidebarLink/SidebarLinkContainer";
 
 const structure = [
-  { id: 0, label: "Dashboard", link: "/app/dashboard", icon: <HomeIcon /> },
+  {id: 0, label: "Dashboard", link: "/app/dashboard", icon: <HomeIcon/>},
   {
     id: 4,
     label: "UI Elements",
     link: "/app/ui",
-    icon: <UIElementsIcon />,
-    children: [{ label: "Icons", link: "/app/ui/icons" }],
+    icon: <UIElementsIcon/>,
+    children: [{label: "Icons", link: "/app/ui/icons"}],
   },
   {
     id: 5,
     label: "WebMonitoring",
     link: "/app/ui/resourcemanager",
-    icon: <WifiIcon />,
+    icon: <WifiIcon/>,
     children: [
-      { label: "Resource", link: "/app/ui/resourcemanager" },
-      { label: "Website", link: "/app/ui/websitemanager" },
+      {label: "Resource", link: "/app/ui/resourcemanager"},
+      {label: "Website", link: "/app/ui/websitemanager"},
     ],
   },
   {
     id: 6,
     label: "Statistics",
     link: "/app/ui/resourcemanagerstatistics",
-    icon: <WebMonitoringIcon />,
+    icon: <WebMonitoringIcon/>,
     children: [
-      { label: "Resource", link: "/app/ui/resourcemanagerstatistics" },
-      { label: "Website", link: "/app/ui/websitemanagerstatistics" },
+      {label: "Resource", link: "/app/ui/resourcemanagerstatistics"},
+      {label: "Website", link: "/app/ui/websitemanagerstatistics"},
     ],
   },
-  { id: 7, type: "divider" },
-  { id: 8, type: "title", label: "HELP" },
-  { id: 9, label: "Library", link: "", icon: <LibraryIcon /> },
-  { id: 10, label: "Support", link: "", icon: <SupportIcon /> },
-  { id: 11, label: "FAQ", link: "", icon: <FAQIcon /> },
-  { id: 12, type: "divider" },
+  {id: 7, type: "divider"},
+  {id: 8, type: "title", label: "HELP"},
+  {id: 9, label: "Library", link: "", icon: <LibraryIcon/>},
+  {id: 10, label: "Support", link: "", icon: <SupportIcon/>},
+  {id: 11, label: "FAQ", link: "", icon: <FAQIcon/>},
+  {id: 12, type: "divider"},
 ];
 
 const SidebarView = ({
-  classes,
-  theme,
-  toggleSidebar,
-  isSidebarOpened,
-  isPermanent,
-  location,
-}) => {
+                       classes,
+                       theme,
+                       toggleSidebar,
+                       isSidebarOpened,
+                       isPermanent,
+                       location,
+                     }) => {
   return (
     <Drawer
       variant={isPermanent ? "permanent" : "temporary"}
@@ -156,4 +156,4 @@ const styles = (theme) => ({
   },
 });
 
-export default withStyles(styles, { withTheme: true })(SidebarView);
+export default withStyles(styles, {withTheme: true})(SidebarView);

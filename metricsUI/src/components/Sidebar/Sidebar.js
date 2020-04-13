@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { Drawer, IconButton, List } from "@material-ui/core";
+import React, {useEffect, useState} from "react";
+import {Drawer, IconButton, List} from "@material-ui/core";
 import {
   ArrowBack as ArrowBackIcon,
   FilterNone as UIElementsIcon,
@@ -10,64 +10,60 @@ import {
   QuestionAnswer as SupportIcon,
   Web as WebMonitoringIcon,
 } from "@material-ui/icons";
-import { useTheme } from "@material-ui/styles";
-import { withRouter } from "react-router-dom";
+import {useTheme} from "@material-ui/styles";
+import {withRouter} from "react-router-dom";
 import classNames from "classnames";
 // styles
 import useStyles from "./styles";
 // components
 import SidebarLink from "./components/SidebarLink/SidebarLink";
 // context
-import {
-  toggleSidebar,
-  useLayoutDispatch,
-  useLayoutState,
-} from "../../context/LayoutContext";
+import {toggleSidebar, useLayoutDispatch, useLayoutState,} from "../../context/LayoutContext";
 
 const structure = [
-  { id: 0, label: "Dashboard", link: "/app/dashboard", icon: <HomeIcon /> },
+  {id: 0, label: "Dashboard", link: "/app/dashboard", icon: <HomeIcon/>},
 
   {
     id: 4,
     label: "UI Elements",
     link: "/app/ui",
-    icon: <UIElementsIcon />,
-    children: [{ label: "Icons", link: "/app/ui/icons" }],
+    icon: <UIElementsIcon/>,
+    children: [{label: "Icons", link: "/app/ui/icons"}],
   },
   {
     id: 5,
     label: "WebMonitoring",
     link: "/app/ui/resourcemanager",
-    icon: <WifiIcon />,
+    icon: <WifiIcon/>,
     children: [
-      { label: "Resource", link: "/app/ui/resourcemanager" },
-      { label: "Website", link: "/app/ui/websitemanager" },
+      {label: "Resource", link: "/app/ui/resourcemanager"},
+      {label: "Website", link: "/app/ui/websitemanager"},
     ],
   },
   {
     id: 6,
     label: "Statistics",
     link: "/app/ui/resourcemanagerstatistics",
-    icon: <WebMonitoringIcon />,
+    icon: <WebMonitoringIcon/>,
     children: [
-      { label: "Resource", link: "/app/ui/resourcemanagerstatistics" },
-      { label: "Website", link: "/app/ui/websitemanagerstatistics" },
+      {label: "Resource", link: "/app/ui/resourcemanagerstatistics"},
+      {label: "Website", link: "/app/ui/websitemanagerstatistics"},
     ],
   },
-  { id: 7, type: "divider" },
-  { id: 8, type: "title", label: "HELP" },
-  { id: 9, label: "Library", link: "", icon: <LibraryIcon /> },
-  { id: 10, label: "Support", link: "", icon: <SupportIcon /> },
-  { id: 11, label: "FAQ", link: "", icon: <FAQIcon /> },
-  { id: 12, type: "divider" },
+  {id: 7, type: "divider"},
+  {id: 8, type: "title", label: "HELP"},
+  {id: 9, label: "Library", link: "", icon: <LibraryIcon/>},
+  {id: 10, label: "Support", link: "", icon: <SupportIcon/>},
+  {id: 11, label: "FAQ", link: "", icon: <FAQIcon/>},
+  {id: 12, type: "divider"},
 ];
 
-function Sidebar({ location }) {
+function Sidebar({location}) {
   var classes = useStyles();
   var theme = useTheme();
 
   // global
-  var { isSidebarOpened } = useLayoutState();
+  var {isSidebarOpened} = useLayoutState();
   var layoutDispatch = useLayoutDispatch();
 
   // local
@@ -96,7 +92,7 @@ function Sidebar({ location }) {
       }}
       open={isSidebarOpened}
     >
-      <div className={classes.toolbar} />
+      <div className={classes.toolbar}/>
       <div className={classes.mobileBackButton}>
         <IconButton onClick={() => toggleSidebar(layoutDispatch)}>
           <ArrowBackIcon

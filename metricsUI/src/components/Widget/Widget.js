@@ -1,24 +1,24 @@
 import React from "react";
-import { IconButton, Paper, Typography } from "@material-ui/core";
-import { MoreVert as MoreIcon } from "@material-ui/icons";
+import {IconButton, Paper, Typography} from "@material-ui/core";
+import {MoreVert as MoreIcon} from "@material-ui/icons";
 import classnames from "classnames";
 // styles
 import useStyles from "./styles";
 
 export default function Widget({
-  children,
-  title,
-  noBodyPadding,
-  bodyClass,
-  disableWidgetMenu,
-  header,
-  ...props
-}) {
+                                 children,
+                                 title,
+                                 noBodyPadding,
+                                 bodyClass,
+                                 disableWidgetMenu,
+                                 header,
+                                 ...props
+                               }) {
   var classes = useStyles();
 
   return (
     <div className={classes.widgetWrapper}>
-      <Paper className={classes.paper} classes={{ root: classes.widgetRoot }}>
+      <Paper className={classes.paper} classes={{root: classes.widgetRoot}}>
         <div className={classes.widgetHeader}>
           {header ? (
             header
@@ -30,11 +30,11 @@ export default function Widget({
               {!disableWidgetMenu && (
                 <IconButton
                   color="primary"
-                  classes={{ root: classes.moreButton }}
+                  classes={{root: classes.moreButton}}
                   aria-owns="widget-menu"
                   aria-haspopup="true"
                 >
-                  <MoreIcon />
+                  <MoreIcon/>
                 </IconButton>
               )}
             </React.Fragment>

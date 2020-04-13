@@ -1,27 +1,20 @@
-import React, { useState } from "react";
-import { Grid, MenuItem, OutlinedInput, Select } from "@material-ui/core";
-import { useTheme } from "@material-ui/styles";
-import {
-  Area,
-  ComposedChart,
-  Line,
-  ResponsiveContainer,
-  XAxis,
-  YAxis,
-} from "recharts";
+import React, {useState} from "react";
+import {Grid, MenuItem, OutlinedInput, Select} from "@material-ui/core";
+import {useTheme} from "@material-ui/styles";
+import {Area, ComposedChart, Line, ResponsiveContainer, XAxis, YAxis,} from "recharts";
 // styles
 import useStyles from "./styles";
 // components
 import mock from "./mock";
 import Widget from "../../components/Widget";
 import PageTitle from "../../components/PageTitle";
-import { Typography } from "../../components/Wrappers";
+import {Typography} from "../../components/Wrappers";
 import Dot from "../../components/Sidebar/components/Dot";
 import TableResource from "./components/Table/TableResource";
 import BigStatResource from "./components/BigStat/BigStatResource";
-import { useUserState } from "../../context/UserContext";
-import { useResourceState } from "../../context/ResourceContext";
-import { backend_webmonitoringapi_ip } from "../../config";
+import {useUserState} from "../../context/UserContext";
+import {useResourceState} from "../../context/ResourceContext";
+import {backend_webmonitoringapi_ip} from "../../config";
 
 function getAvailableResources(username) {
   return new Promise((resolve, reject) => {
@@ -133,8 +126,8 @@ export default function DashboardResource(props) {
   const [getSamplesTimeLoaded, setSamplesTimeLoaded] = useState(false);
   const [getSamplesSizeLoaded, setSamplesSizeLoaded] = useState(false);
 
-  var { username } = useUserState();
-  var { resourceid } = useResourceState();
+  var {username} = useUserState();
+  var {resourceid} = useResourceState();
 
   if (!getAvailableResourcesLoaded) {
     setAvailableResourcesLoaded(true);
@@ -165,7 +158,7 @@ export default function DashboardResource(props) {
   }
   return (
     <>
-      <PageTitle title="Dashboard Resources" button="See all resources" />
+      <PageTitle title="Dashboard Resources" button="See all resources"/>
       <Grid container spacing={4}>
         <Grid item xs={12}>
           <Widget
@@ -197,7 +190,7 @@ export default function DashboardResource(props) {
                 </Typography>
                 <div className={classes.mainChartHeaderLabels}>
                   <div className={classes.mainChartHeaderLabel}>
-                    <Dot color="primary" />
+                    <Dot color="primary"/>
                     <Typography className={classes.mainChartLegentElement}>
                       Response Time (seconds)
                     </Typography>
@@ -234,17 +227,17 @@ export default function DashboardResource(props) {
           >
             <ResponsiveContainer width="100%" minWidth={500} height={350}>
               <ComposedChart
-                margin={{ top: 0, right: -15, left: -15, bottom: 0 }}
+                margin={{top: 0, right: -15, left: -15, bottom: 0}}
                 data={samplesTime}
               >
                 <YAxis
-                  tick={{ fill: theme.palette.text.hint + "80", fontSize: 14 }}
+                  tick={{fill: theme.palette.text.hint + "80", fontSize: 14}}
                   stroke={theme.palette.text.hint + "80"}
                   tickLine={false}
                 />
                 <XAxis
                   tickFormatter={(i) => samplesTime[i]["label"]}
-                  tick={{ fill: theme.palette.text.hint + "80", fontSize: 14 }}
+                  tick={{fill: theme.palette.text.hint + "80", fontSize: 14}}
                   stroke={theme.palette.text.hint + "80"}
                   tickLine={false}
                 />
@@ -285,7 +278,7 @@ export default function DashboardResource(props) {
                 </Typography>
                 <div className={classes.mainChartHeaderLabels}>
                   <div className={classes.mainChartHeaderLabel}>
-                    <Dot color="warning" />
+                    <Dot color="warning"/>
                     <Typography className={classes.mainChartLegentElement}>
                       Response Size
                     </Typography>
@@ -322,17 +315,17 @@ export default function DashboardResource(props) {
           >
             <ResponsiveContainer width="100%" minWidth={500} height={350}>
               <ComposedChart
-                margin={{ top: 0, right: -15, left: -15, bottom: 0 }}
+                margin={{top: 0, right: -15, left: -15, bottom: 0}}
                 data={samplesSize}
               >
                 <YAxis
-                  tick={{ fill: theme.palette.text.hint + "80", fontSize: 14 }}
+                  tick={{fill: theme.palette.text.hint + "80", fontSize: 14}}
                   stroke={theme.palette.text.hint + "80"}
                   tickLine={false}
                 />
                 <XAxis
                   tickFormatter={(i) => samplesSize[i]["label"]}
-                  tick={{ fill: theme.palette.text.hint + "80", fontSize: 14 }}
+                  tick={{fill: theme.palette.text.hint + "80", fontSize: 14}}
                   stroke={theme.palette.text.hint + "80"}
                   tickLine={false}
                 />

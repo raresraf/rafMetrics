@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Grid, Paper, Tab, Tabs, Typography } from "@material-ui/core";
+import React, {useState} from "react";
+import {Grid, Paper, Tab, Tabs, Typography} from "@material-ui/core";
 import * as Icons from "@material-ui/icons";
 // styles
 import useStyles from "./styles";
@@ -16,7 +16,7 @@ export default function IconsPage() {
 
   return (
     <>
-      <PageTitle title="Icons" button="Action" />
+      <PageTitle title="Icons" button="Action"/>
       <Paper className={classes.iconsContainer}>
         <Tabs
           indicatorColor="primary"
@@ -25,8 +25,8 @@ export default function IconsPage() {
           onChange={(e, id) => setActiveTabId(id)}
           className={classes.iconsBar}
         >
-          <Tab label="Material Icons" classes={{ root: classes.tab }} />
-          <Tab label="Font Awesome" classes={{ root: classes.tab }} />
+          <Tab label="Material Icons" classes={{root: classes.tab}}/>
+          <Tab label="Font Awesome" classes={{root: classes.tab}}/>
         </Tabs>
         {activeTabId === 0 && (
           <div>
@@ -39,7 +39,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.AccessAlarm />
+                <Icons.AccessAlarm/>
                 <Typography className={classes.materialIconText}>
                   AccessAlarm
                 </Typography>
@@ -52,7 +52,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.AccessAlarms />
+                <Icons.AccessAlarms/>
                 <Typography className={classes.materialIconText}>
                   AccessAlarms
                 </Typography>
@@ -65,7 +65,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Accessibility />
+                <Icons.Accessibility/>
                 <Typography className={classes.materialIconText}>
                   Accessibility
                 </Typography>
@@ -78,7 +78,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Accessible />
+                <Icons.Accessible/>
                 <Typography className={classes.materialIconText}>
                   Accessible
                 </Typography>
@@ -91,7 +91,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.AccessibleForward />
+                <Icons.AccessibleForward/>
                 <Typography className={classes.materialIconText}>
                   AccessibleForward
                 </Typography>
@@ -104,7 +104,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.AccessTime />
+                <Icons.AccessTime/>
                 <Typography className={classes.materialIconText}>
                   AccessTime
                 </Typography>
@@ -117,7 +117,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.AccountBalance />
+                <Icons.AccountBalance/>
                 <Typography className={classes.materialIconText}>
                   AccountBalance
                 </Typography>
@@ -130,7 +130,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.AccountBalanceWallet />
+                <Icons.AccountBalanceWallet/>
                 <Typography className={classes.materialIconText}>
                   AccountBalanceWallet
                 </Typography>
@@ -143,7 +143,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.AccountBox />
+                <Icons.AccountBox/>
                 <Typography className={classes.materialIconText}>
                   AccountBox
                 </Typography>
@@ -156,7 +156,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.AccountCircle />
+                <Icons.AccountCircle/>
                 <Typography className={classes.materialIconText}>
                   AccountCircle
                 </Typography>
@@ -169,7 +169,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.AcUnit />
+                <Icons.AcUnit/>
                 <Typography className={classes.materialIconText}>
                   AcUnit
                 </Typography>
@@ -182,7 +182,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Adb />
+                <Icons.Adb/>
                 <Typography className={classes.materialIconText}>
                   Adb
                 </Typography>
@@ -195,7 +195,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Adjust />
+                <Icons.Adjust/>
                 <Typography className={classes.materialIconText}>
                   Adjust
                 </Typography>
@@ -208,7 +208,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.AirlineSeatFlat />
+                <Icons.AirlineSeatFlat/>
                 <Typography className={classes.materialIconText}>
                   AirlineSeatFlat
                 </Typography>
@@ -221,7 +221,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.AirlineSeatFlatAngled />
+                <Icons.AirlineSeatFlatAngled/>
                 <Typography className={classes.materialIconText}>
                   AirlineSeatFlatAngled
                 </Typography>
@@ -234,7 +234,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.AirlineSeatIndividualSuite />
+                <Icons.AirlineSeatIndividualSuite/>
                 <Typography className={classes.materialIconText}>
                   AirlineSeatIndividualSuite
                 </Typography>
@@ -247,7 +247,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.AirlineSeatLegroomExtra />
+                <Icons.AirlineSeatLegroomExtra/>
                 <Typography className={classes.materialIconText}>
                   AirlineSeatLegroomExtra
                 </Typography>
@@ -260,7 +260,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.AirlineSeatLegroomNormal />
+                <Icons.AirlineSeatLegroomNormal/>
                 <Typography className={classes.materialIconText}>
                   AirlineSeatLegroomNormal
                 </Typography>
@@ -273,7 +273,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.AirlineSeatLegroomReduced />
+                <Icons.AirlineSeatLegroomReduced/>
                 <Typography className={classes.materialIconText}>
                   AirlineSeatLegroomReduced
                 </Typography>
@@ -286,7 +286,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.AirlineSeatReclineExtra />
+                <Icons.AirlineSeatReclineExtra/>
                 <Typography className={classes.materialIconText}>
                   AirlineSeatReclineExtra
                 </Typography>
@@ -299,7 +299,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.AirlineSeatReclineNormal />
+                <Icons.AirlineSeatReclineNormal/>
                 <Typography className={classes.materialIconText}>
                   AirlineSeatReclineNormal
                 </Typography>
@@ -312,7 +312,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.AirplanemodeActive />
+                <Icons.AirplanemodeActive/>
                 <Typography className={classes.materialIconText}>
                   AirplanemodeActive
                 </Typography>
@@ -325,7 +325,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.AirplanemodeInactive />
+                <Icons.AirplanemodeInactive/>
                 <Typography className={classes.materialIconText}>
                   AirplanemodeInactive
                 </Typography>
@@ -338,7 +338,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Airplay />
+                <Icons.Airplay/>
                 <Typography className={classes.materialIconText}>
                   Airplay
                 </Typography>
@@ -351,7 +351,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.AirportShuttle />
+                <Icons.AirportShuttle/>
                 <Typography className={classes.materialIconText}>
                   AirportShuttle
                 </Typography>
@@ -364,7 +364,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Alarm />
+                <Icons.Alarm/>
                 <Typography className={classes.materialIconText}>
                   Alarm
                 </Typography>
@@ -377,7 +377,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Album />
+                <Icons.Album/>
                 <Typography className={classes.materialIconText}>
                   Album
                 </Typography>
@@ -390,7 +390,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.AllInbox />
+                <Icons.AllInbox/>
                 <Typography className={classes.materialIconText}>
                   AllInbox
                 </Typography>
@@ -403,7 +403,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.AllInclusive />
+                <Icons.AllInclusive/>
                 <Typography className={classes.materialIconText}>
                   AllInclusive
                 </Typography>
@@ -416,7 +416,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.AllOut />
+                <Icons.AllOut/>
                 <Typography className={classes.materialIconText}>
                   AllOut
                 </Typography>
@@ -429,7 +429,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.AlternateEmail />
+                <Icons.AlternateEmail/>
                 <Typography className={classes.materialIconText}>
                   AlternateEmail
                 </Typography>
@@ -442,7 +442,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Android />
+                <Icons.Android/>
                 <Typography className={classes.materialIconText}>
                   Android
                 </Typography>
@@ -455,7 +455,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Announcement />
+                <Icons.Announcement/>
                 <Typography className={classes.materialIconText}>
                   Announcement
                 </Typography>
@@ -468,7 +468,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Apps />
+                <Icons.Apps/>
                 <Typography className={classes.materialIconText}>
                   Apps
                 </Typography>
@@ -481,7 +481,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Archive />
+                <Icons.Archive/>
                 <Typography className={classes.materialIconText}>
                   Archive
                 </Typography>
@@ -494,7 +494,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.ArrowBack />
+                <Icons.ArrowBack/>
                 <Typography className={classes.materialIconText}>
                   ArrowBack
                 </Typography>
@@ -507,7 +507,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.ArrowBackIos />
+                <Icons.ArrowBackIos/>
                 <Typography className={classes.materialIconText}>
                   ArrowBackIos
                 </Typography>
@@ -520,7 +520,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.ArrowDownward />
+                <Icons.ArrowDownward/>
                 <Typography className={classes.materialIconText}>
                   ArrowDownward
                 </Typography>
@@ -533,7 +533,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.ArrowDropDown />
+                <Icons.ArrowDropDown/>
                 <Typography className={classes.materialIconText}>
                   ArrowDropDown
                 </Typography>
@@ -546,7 +546,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.ArrowDropDownCircle />
+                <Icons.ArrowDropDownCircle/>
                 <Typography className={classes.materialIconText}>
                   ArrowDropDownCircle
                 </Typography>
@@ -559,7 +559,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.ArrowDropUp />
+                <Icons.ArrowDropUp/>
                 <Typography className={classes.materialIconText}>
                   ArrowDropUp
                 </Typography>
@@ -572,7 +572,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.ArrowForward />
+                <Icons.ArrowForward/>
                 <Typography className={classes.materialIconText}>
                   ArrowForward
                 </Typography>
@@ -585,7 +585,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.ArrowForwardIos />
+                <Icons.ArrowForwardIos/>
                 <Typography className={classes.materialIconText}>
                   ArrowForwardIos
                 </Typography>
@@ -598,7 +598,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.ArrowLeft />
+                <Icons.ArrowLeft/>
                 <Typography className={classes.materialIconText}>
                   ArrowLeft
                 </Typography>
@@ -611,7 +611,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.ArrowRight />
+                <Icons.ArrowRight/>
                 <Typography className={classes.materialIconText}>
                   ArrowRight
                 </Typography>
@@ -624,7 +624,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.ArrowRightAlt />
+                <Icons.ArrowRightAlt/>
                 <Typography className={classes.materialIconText}>
                   ArrowRightAlt
                 </Typography>
@@ -637,7 +637,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.ArrowUpward />
+                <Icons.ArrowUpward/>
                 <Typography className={classes.materialIconText}>
                   ArrowUpward
                 </Typography>
@@ -650,7 +650,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.ArtTrack />
+                <Icons.ArtTrack/>
                 <Typography className={classes.materialIconText}>
                   ArtTrack
                 </Typography>
@@ -663,7 +663,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.AspectRatio />
+                <Icons.AspectRatio/>
                 <Typography className={classes.materialIconText}>
                   AspectRatio
                 </Typography>
@@ -676,7 +676,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Assessment />
+                <Icons.Assessment/>
                 <Typography className={classes.materialIconText}>
                   Assessment
                 </Typography>
@@ -689,7 +689,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Assignment />
+                <Icons.Assignment/>
                 <Typography className={classes.materialIconText}>
                   Assignment
                 </Typography>
@@ -702,7 +702,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.AssignmentInd />
+                <Icons.AssignmentInd/>
                 <Typography className={classes.materialIconText}>
                   AssignmentInd
                 </Typography>
@@ -715,7 +715,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.AssignmentLate />
+                <Icons.AssignmentLate/>
                 <Typography className={classes.materialIconText}>
                   AssignmentLate
                 </Typography>
@@ -728,7 +728,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.AssignmentReturn />
+                <Icons.AssignmentReturn/>
                 <Typography className={classes.materialIconText}>
                   AssignmentReturn
                 </Typography>
@@ -741,7 +741,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.AssignmentReturned />
+                <Icons.AssignmentReturned/>
                 <Typography className={classes.materialIconText}>
                   AssignmentReturned
                 </Typography>
@@ -754,7 +754,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.AssignmentTurnedIn />
+                <Icons.AssignmentTurnedIn/>
                 <Typography className={classes.materialIconText}>
                   AssignmentTurnedIn
                 </Typography>
@@ -767,7 +767,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Assistant />
+                <Icons.Assistant/>
                 <Typography className={classes.materialIconText}>
                   Assistant
                 </Typography>
@@ -780,7 +780,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.AssistantPhoto />
+                <Icons.AssistantPhoto/>
                 <Typography className={classes.materialIconText}>
                   AssistantPhoto
                 </Typography>
@@ -793,7 +793,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Atm />
+                <Icons.Atm/>
                 <Typography className={classes.materialIconText}>
                   Atm
                 </Typography>
@@ -806,7 +806,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.AttachFile />
+                <Icons.AttachFile/>
                 <Typography className={classes.materialIconText}>
                   AttachFile
                 </Typography>
@@ -819,7 +819,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Attachment />
+                <Icons.Attachment/>
                 <Typography className={classes.materialIconText}>
                   Attachment
                 </Typography>
@@ -832,7 +832,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.AttachMoney />
+                <Icons.AttachMoney/>
                 <Typography className={classes.materialIconText}>
                   AttachMoney
                 </Typography>
@@ -845,7 +845,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Audiotrack />
+                <Icons.Audiotrack/>
                 <Typography className={classes.materialIconText}>
                   Audiotrack
                 </Typography>
@@ -858,7 +858,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Autorenew />
+                <Icons.Autorenew/>
                 <Typography className={classes.materialIconText}>
                   Autorenew
                 </Typography>
@@ -871,7 +871,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.AvTimer />
+                <Icons.AvTimer/>
                 <Typography className={classes.materialIconText}>
                   AvTimer
                 </Typography>
@@ -884,7 +884,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Backspace />
+                <Icons.Backspace/>
                 <Typography className={classes.materialIconText}>
                   Backspace
                 </Typography>
@@ -897,7 +897,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Backup />
+                <Icons.Backup/>
                 <Typography className={classes.materialIconText}>
                   Backup
                 </Typography>
@@ -910,7 +910,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Ballot />
+                <Icons.Ballot/>
                 <Typography className={classes.materialIconText}>
                   Ballot
                 </Typography>
@@ -923,7 +923,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.BarChart />
+                <Icons.BarChart/>
                 <Typography className={classes.materialIconText}>
                   BarChart
                 </Typography>
@@ -936,7 +936,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Battery20 />
+                <Icons.Battery20/>
                 <Typography className={classes.materialIconText}>
                   Battery20
                 </Typography>
@@ -949,7 +949,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Battery30 />
+                <Icons.Battery30/>
                 <Typography className={classes.materialIconText}>
                   Battery30
                 </Typography>
@@ -962,7 +962,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Battery50 />
+                <Icons.Battery50/>
                 <Typography className={classes.materialIconText}>
                   Battery50
                 </Typography>
@@ -975,7 +975,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Battery60 />
+                <Icons.Battery60/>
                 <Typography className={classes.materialIconText}>
                   Battery60
                 </Typography>
@@ -988,7 +988,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Battery80 />
+                <Icons.Battery80/>
                 <Typography className={classes.materialIconText}>
                   Battery80
                 </Typography>
@@ -1001,7 +1001,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Battery90 />
+                <Icons.Battery90/>
                 <Typography className={classes.materialIconText}>
                   Battery90
                 </Typography>
@@ -1014,7 +1014,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.BatteryAlert />
+                <Icons.BatteryAlert/>
                 <Typography className={classes.materialIconText}>
                   BatteryAlert
                 </Typography>
@@ -1027,7 +1027,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.BatteryCharging20 />
+                <Icons.BatteryCharging20/>
                 <Typography className={classes.materialIconText}>
                   BatteryCharging20
                 </Typography>
@@ -1040,7 +1040,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.BatteryCharging30 />
+                <Icons.BatteryCharging30/>
                 <Typography className={classes.materialIconText}>
                   BatteryCharging30
                 </Typography>
@@ -1053,7 +1053,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.BatteryCharging50 />
+                <Icons.BatteryCharging50/>
                 <Typography className={classes.materialIconText}>
                   BatteryCharging50
                 </Typography>
@@ -1066,7 +1066,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.BatteryCharging60 />
+                <Icons.BatteryCharging60/>
                 <Typography className={classes.materialIconText}>
                   BatteryCharging60
                 </Typography>
@@ -1079,7 +1079,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.BatteryCharging80 />
+                <Icons.BatteryCharging80/>
                 <Typography className={classes.materialIconText}>
                   BatteryCharging80
                 </Typography>
@@ -1092,7 +1092,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.BatteryCharging90 />
+                <Icons.BatteryCharging90/>
                 <Typography className={classes.materialIconText}>
                   BatteryCharging90
                 </Typography>
@@ -1105,7 +1105,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.BatteryChargingFull />
+                <Icons.BatteryChargingFull/>
                 <Typography className={classes.materialIconText}>
                   BatteryChargingFull
                 </Typography>
@@ -1118,7 +1118,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.BatteryFull />
+                <Icons.BatteryFull/>
                 <Typography className={classes.materialIconText}>
                   BatteryFull
                 </Typography>
@@ -1131,7 +1131,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.BatteryStd />
+                <Icons.BatteryStd/>
                 <Typography className={classes.materialIconText}>
                   BatteryStd
                 </Typography>
@@ -1144,7 +1144,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.BatteryUnknown />
+                <Icons.BatteryUnknown/>
                 <Typography className={classes.materialIconText}>
                   BatteryUnknown
                 </Typography>
@@ -1157,7 +1157,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.BeachAccess />
+                <Icons.BeachAccess/>
                 <Typography className={classes.materialIconText}>
                   BeachAccess
                 </Typography>
@@ -1170,7 +1170,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Beenhere />
+                <Icons.Beenhere/>
                 <Typography className={classes.materialIconText}>
                   Beenhere
                 </Typography>
@@ -1183,7 +1183,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Block />
+                <Icons.Block/>
                 <Typography className={classes.materialIconText}>
                   Block
                 </Typography>
@@ -1196,7 +1196,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Bluetooth />
+                <Icons.Bluetooth/>
                 <Typography className={classes.materialIconText}>
                   Bluetooth
                 </Typography>
@@ -1209,7 +1209,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.BluetoothAudio />
+                <Icons.BluetoothAudio/>
                 <Typography className={classes.materialIconText}>
                   BluetoothAudio
                 </Typography>
@@ -1222,7 +1222,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.BluetoothConnected />
+                <Icons.BluetoothConnected/>
                 <Typography className={classes.materialIconText}>
                   BluetoothConnected
                 </Typography>
@@ -1235,7 +1235,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.BluetoothDisabled />
+                <Icons.BluetoothDisabled/>
                 <Typography className={classes.materialIconText}>
                   BluetoothDisabled
                 </Typography>
@@ -1248,7 +1248,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.BluetoothSearching />
+                <Icons.BluetoothSearching/>
                 <Typography className={classes.materialIconText}>
                   BluetoothSearching
                 </Typography>
@@ -1261,7 +1261,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.BlurCircular />
+                <Icons.BlurCircular/>
                 <Typography className={classes.materialIconText}>
                   BlurCircular
                 </Typography>
@@ -1274,7 +1274,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.BlurLinear />
+                <Icons.BlurLinear/>
                 <Typography className={classes.materialIconText}>
                   BlurLinear
                 </Typography>
@@ -1287,7 +1287,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Book />
+                <Icons.Book/>
                 <Typography className={classes.materialIconText}>
                   Book
                 </Typography>
@@ -1300,7 +1300,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Bookmark />
+                <Icons.Bookmark/>
                 <Typography className={classes.materialIconText}>
                   Bookmark
                 </Typography>
@@ -1313,7 +1313,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.BookmarkBorder />
+                <Icons.BookmarkBorder/>
                 <Typography className={classes.materialIconText}>
                   BookmarkBorder
                 </Typography>
@@ -1326,7 +1326,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Bookmarks />
+                <Icons.Bookmarks/>
                 <Typography className={classes.materialIconText}>
                   Bookmarks
                 </Typography>
@@ -1339,7 +1339,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.BorderAll />
+                <Icons.BorderAll/>
                 <Typography className={classes.materialIconText}>
                   BorderAll
                 </Typography>
@@ -1352,7 +1352,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.BorderBottom />
+                <Icons.BorderBottom/>
                 <Typography className={classes.materialIconText}>
                   BorderBottom
                 </Typography>
@@ -1365,7 +1365,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.BorderClear />
+                <Icons.BorderClear/>
                 <Typography className={classes.materialIconText}>
                   BorderClear
                 </Typography>
@@ -1378,7 +1378,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.BorderColor />
+                <Icons.BorderColor/>
                 <Typography className={classes.materialIconText}>
                   BorderColor
                 </Typography>
@@ -1391,7 +1391,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.BorderHorizontal />
+                <Icons.BorderHorizontal/>
                 <Typography className={classes.materialIconText}>
                   BorderHorizontal
                 </Typography>
@@ -1404,7 +1404,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.BorderInner />
+                <Icons.BorderInner/>
                 <Typography className={classes.materialIconText}>
                   BorderInner
                 </Typography>
@@ -1417,7 +1417,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.BorderLeft />
+                <Icons.BorderLeft/>
                 <Typography className={classes.materialIconText}>
                   BorderLeft
                 </Typography>
@@ -1430,7 +1430,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.BorderOuter />
+                <Icons.BorderOuter/>
                 <Typography className={classes.materialIconText}>
                   BorderOuter
                 </Typography>
@@ -1443,7 +1443,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.BorderRight />
+                <Icons.BorderRight/>
                 <Typography className={classes.materialIconText}>
                   BorderRight
                 </Typography>
@@ -1456,7 +1456,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.BorderStyle />
+                <Icons.BorderStyle/>
                 <Typography className={classes.materialIconText}>
                   BorderStyle
                 </Typography>
@@ -1469,7 +1469,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.BorderTop />
+                <Icons.BorderTop/>
                 <Typography className={classes.materialIconText}>
                   BorderTop
                 </Typography>
@@ -1482,7 +1482,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.BorderVertical />
+                <Icons.BorderVertical/>
                 <Typography className={classes.materialIconText}>
                   BorderVertical
                 </Typography>
@@ -1495,7 +1495,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.BrandingWatermark />
+                <Icons.BrandingWatermark/>
                 <Typography className={classes.materialIconText}>
                   BrandingWatermark
                 </Typography>
@@ -1508,7 +1508,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Brightness1 />
+                <Icons.Brightness1/>
                 <Typography className={classes.materialIconText}>
                   Brightness1
                 </Typography>
@@ -1521,7 +1521,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Brightness2 />
+                <Icons.Brightness2/>
                 <Typography className={classes.materialIconText}>
                   Brightness2
                 </Typography>
@@ -1534,7 +1534,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Brightness3 />
+                <Icons.Brightness3/>
                 <Typography className={classes.materialIconText}>
                   Brightness3
                 </Typography>
@@ -1547,7 +1547,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Brightness4 />
+                <Icons.Brightness4/>
                 <Typography className={classes.materialIconText}>
                   Brightness4
                 </Typography>
@@ -1560,7 +1560,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Brightness5 />
+                <Icons.Brightness5/>
                 <Typography className={classes.materialIconText}>
                   Brightness5
                 </Typography>
@@ -1573,7 +1573,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Brightness6 />
+                <Icons.Brightness6/>
                 <Typography className={classes.materialIconText}>
                   Brightness6
                 </Typography>
@@ -1586,7 +1586,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Brightness7 />
+                <Icons.Brightness7/>
                 <Typography className={classes.materialIconText}>
                   Brightness7
                 </Typography>
@@ -1599,7 +1599,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.BrightnessAuto />
+                <Icons.BrightnessAuto/>
                 <Typography className={classes.materialIconText}>
                   BrightnessAuto
                 </Typography>
@@ -1612,7 +1612,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.BrightnessHigh />
+                <Icons.BrightnessHigh/>
                 <Typography className={classes.materialIconText}>
                   BrightnessHigh
                 </Typography>
@@ -1625,7 +1625,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.BrightnessLow />
+                <Icons.BrightnessLow/>
                 <Typography className={classes.materialIconText}>
                   BrightnessLow
                 </Typography>
@@ -1638,7 +1638,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.BrightnessMedium />
+                <Icons.BrightnessMedium/>
                 <Typography className={classes.materialIconText}>
                   BrightnessMedium
                 </Typography>
@@ -1651,7 +1651,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.BrokenImage />
+                <Icons.BrokenImage/>
                 <Typography className={classes.materialIconText}>
                   BrokenImage
                 </Typography>
@@ -1664,7 +1664,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Brush />
+                <Icons.Brush/>
                 <Typography className={classes.materialIconText}>
                   Brush
                 </Typography>
@@ -1677,7 +1677,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.BubbleChart />
+                <Icons.BubbleChart/>
                 <Typography className={classes.materialIconText}>
                   BubbleChart
                 </Typography>
@@ -1690,7 +1690,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.BugReport />
+                <Icons.BugReport/>
                 <Typography className={classes.materialIconText}>
                   BugReport
                 </Typography>
@@ -1703,7 +1703,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Build />
+                <Icons.Build/>
                 <Typography className={classes.materialIconText}>
                   Build
                 </Typography>
@@ -1716,7 +1716,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.BurstMode />
+                <Icons.BurstMode/>
                 <Typography className={classes.materialIconText}>
                   BurstMode
                 </Typography>
@@ -1729,7 +1729,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Business />
+                <Icons.Business/>
                 <Typography className={classes.materialIconText}>
                   Business
                 </Typography>
@@ -1742,7 +1742,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.BusinessCenter />
+                <Icons.BusinessCenter/>
                 <Typography className={classes.materialIconText}>
                   BusinessCenter
                 </Typography>
@@ -1755,7 +1755,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Cached />
+                <Icons.Cached/>
                 <Typography className={classes.materialIconText}>
                   Cached
                 </Typography>
@@ -1768,7 +1768,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Cake />
+                <Icons.Cake/>
                 <Typography className={classes.materialIconText}>
                   Cake
                 </Typography>
@@ -1781,7 +1781,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.CalendarToday />
+                <Icons.CalendarToday/>
                 <Typography className={classes.materialIconText}>
                   CalendarToday
                 </Typography>
@@ -1794,7 +1794,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.CalendarViewDay />
+                <Icons.CalendarViewDay/>
                 <Typography className={classes.materialIconText}>
                   CalendarViewDay
                 </Typography>
@@ -1807,7 +1807,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Call />
+                <Icons.Call/>
                 <Typography className={classes.materialIconText}>
                   Call
                 </Typography>
@@ -1820,7 +1820,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.CallEnd />
+                <Icons.CallEnd/>
                 <Typography className={classes.materialIconText}>
                   CallEnd
                 </Typography>
@@ -1833,7 +1833,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.CallMade />
+                <Icons.CallMade/>
                 <Typography className={classes.materialIconText}>
                   CallMade
                 </Typography>
@@ -1846,7 +1846,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.CallMerge />
+                <Icons.CallMerge/>
                 <Typography className={classes.materialIconText}>
                   CallMerge
                 </Typography>
@@ -1859,7 +1859,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.CallMissed />
+                <Icons.CallMissed/>
                 <Typography className={classes.materialIconText}>
                   CallMissed
                 </Typography>
@@ -1872,7 +1872,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.CallMissedOutgoing />
+                <Icons.CallMissedOutgoing/>
                 <Typography className={classes.materialIconText}>
                   CallMissedOutgoing
                 </Typography>
@@ -1885,7 +1885,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.CallReceived />
+                <Icons.CallReceived/>
                 <Typography className={classes.materialIconText}>
                   CallReceived
                 </Typography>
@@ -1898,7 +1898,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.CallSplit />
+                <Icons.CallSplit/>
                 <Typography className={classes.materialIconText}>
                   CallSplit
                 </Typography>
@@ -1911,7 +1911,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.CallToAction />
+                <Icons.CallToAction/>
                 <Typography className={classes.materialIconText}>
                   CallToAction
                 </Typography>
@@ -1924,7 +1924,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Camera />
+                <Icons.Camera/>
                 <Typography className={classes.materialIconText}>
                   Camera
                 </Typography>
@@ -1937,7 +1937,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.CameraAlt />
+                <Icons.CameraAlt/>
                 <Typography className={classes.materialIconText}>
                   CameraAlt
                 </Typography>
@@ -1950,7 +1950,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.CameraEnhance />
+                <Icons.CameraEnhance/>
                 <Typography className={classes.materialIconText}>
                   CameraEnhance
                 </Typography>
@@ -1963,7 +1963,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.CameraFront />
+                <Icons.CameraFront/>
                 <Typography className={classes.materialIconText}>
                   CameraFront
                 </Typography>
@@ -1976,7 +1976,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.CameraRear />
+                <Icons.CameraRear/>
                 <Typography className={classes.materialIconText}>
                   CameraRear
                 </Typography>
@@ -1989,7 +1989,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.CameraRoll />
+                <Icons.CameraRoll/>
                 <Typography className={classes.materialIconText}>
                   CameraRoll
                 </Typography>
@@ -2002,7 +2002,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Cancel />
+                <Icons.Cancel/>
                 <Typography className={classes.materialIconText}>
                   Cancel
                 </Typography>
@@ -2015,7 +2015,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.CancelPresentation />
+                <Icons.CancelPresentation/>
                 <Typography className={classes.materialIconText}>
                   CancelPresentation
                 </Typography>
@@ -2028,7 +2028,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.CardGiftcard />
+                <Icons.CardGiftcard/>
                 <Typography className={classes.materialIconText}>
                   CardGiftcard
                 </Typography>
@@ -2041,7 +2041,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.CardMembership />
+                <Icons.CardMembership/>
                 <Typography className={classes.materialIconText}>
                   CardMembership
                 </Typography>
@@ -2054,7 +2054,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.CardTravel />
+                <Icons.CardTravel/>
                 <Typography className={classes.materialIconText}>
                   CardTravel
                 </Typography>
@@ -2067,7 +2067,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Casino />
+                <Icons.Casino/>
                 <Typography className={classes.materialIconText}>
                   Casino
                 </Typography>
@@ -2080,7 +2080,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Cast />
+                <Icons.Cast/>
                 <Typography className={classes.materialIconText}>
                   Cast
                 </Typography>
@@ -2093,7 +2093,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.CastConnected />
+                <Icons.CastConnected/>
                 <Typography className={classes.materialIconText}>
                   CastConnected
                 </Typography>
@@ -2106,7 +2106,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.CastForEducation />
+                <Icons.CastForEducation/>
                 <Typography className={classes.materialIconText}>
                   CastForEducation
                 </Typography>
@@ -2119,7 +2119,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Category />
+                <Icons.Category/>
                 <Typography className={classes.materialIconText}>
                   Category
                 </Typography>
@@ -2132,7 +2132,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.CellWifi />
+                <Icons.CellWifi/>
                 <Typography className={classes.materialIconText}>
                   CellWifi
                 </Typography>
@@ -2145,7 +2145,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.CenterFocusStrong />
+                <Icons.CenterFocusStrong/>
                 <Typography className={classes.materialIconText}>
                   CenterFocusStrong
                 </Typography>
@@ -2158,7 +2158,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.CenterFocusWeak />
+                <Icons.CenterFocusWeak/>
                 <Typography className={classes.materialIconText}>
                   CenterFocusWeak
                 </Typography>
@@ -2171,7 +2171,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.ChangeHistory />
+                <Icons.ChangeHistory/>
                 <Typography className={classes.materialIconText}>
                   ChangeHistory
                 </Typography>
@@ -2184,7 +2184,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Chat />
+                <Icons.Chat/>
                 <Typography className={classes.materialIconText}>
                   Chat
                 </Typography>
@@ -2197,7 +2197,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.ChatBubble />
+                <Icons.ChatBubble/>
                 <Typography className={classes.materialIconText}>
                   ChatBubble
                 </Typography>
@@ -2210,7 +2210,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.ChatBubbleOutline />
+                <Icons.ChatBubbleOutline/>
                 <Typography className={classes.materialIconText}>
                   ChatBubbleOutline
                 </Typography>
@@ -2223,7 +2223,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Check />
+                <Icons.Check/>
                 <Typography className={classes.materialIconText}>
                   Check
                 </Typography>
@@ -2236,7 +2236,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.CheckBox />
+                <Icons.CheckBox/>
                 <Typography className={classes.materialIconText}>
                   CheckBox
                 </Typography>
@@ -2249,7 +2249,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.CheckBoxOutlineBlank />
+                <Icons.CheckBoxOutlineBlank/>
                 <Typography className={classes.materialIconText}>
                   CheckBoxOutlineBlank
                 </Typography>
@@ -2262,7 +2262,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.CheckCircle />
+                <Icons.CheckCircle/>
                 <Typography className={classes.materialIconText}>
                   CheckCircle
                 </Typography>
@@ -2275,7 +2275,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.CheckCircleOutline />
+                <Icons.CheckCircleOutline/>
                 <Typography className={classes.materialIconText}>
                   CheckCircleOutline
                 </Typography>
@@ -2288,7 +2288,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.ChevronLeft />
+                <Icons.ChevronLeft/>
                 <Typography className={classes.materialIconText}>
                   ChevronLeft
                 </Typography>
@@ -2301,7 +2301,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.ChevronRight />
+                <Icons.ChevronRight/>
                 <Typography className={classes.materialIconText}>
                   ChevronRight
                 </Typography>
@@ -2314,7 +2314,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.ChildCare />
+                <Icons.ChildCare/>
                 <Typography className={classes.materialIconText}>
                   ChildCare
                 </Typography>
@@ -2327,7 +2327,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.ChildFriendly />
+                <Icons.ChildFriendly/>
                 <Typography className={classes.materialIconText}>
                   ChildFriendly
                 </Typography>
@@ -2340,7 +2340,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.ChromeReaderMode />
+                <Icons.ChromeReaderMode/>
                 <Typography className={classes.materialIconText}>
                   ChromeReaderMode
                 </Typography>
@@ -2353,7 +2353,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Class />
+                <Icons.Class/>
                 <Typography className={classes.materialIconText}>
                   Class
                 </Typography>
@@ -2366,7 +2366,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Clear />
+                <Icons.Clear/>
                 <Typography className={classes.materialIconText}>
                   Clear
                 </Typography>
@@ -2379,7 +2379,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.ClearAll />
+                <Icons.ClearAll/>
                 <Typography className={classes.materialIconText}>
                   ClearAll
                 </Typography>
@@ -2392,7 +2392,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Close />
+                <Icons.Close/>
                 <Typography className={classes.materialIconText}>
                   Close
                 </Typography>
@@ -2405,7 +2405,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.ClosedCaption />
+                <Icons.ClosedCaption/>
                 <Typography className={classes.materialIconText}>
                   ClosedCaption
                 </Typography>
@@ -2418,7 +2418,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Cloud />
+                <Icons.Cloud/>
                 <Typography className={classes.materialIconText}>
                   Cloud
                 </Typography>
@@ -2431,7 +2431,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.CloudCircle />
+                <Icons.CloudCircle/>
                 <Typography className={classes.materialIconText}>
                   CloudCircle
                 </Typography>
@@ -2444,7 +2444,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.CloudDone />
+                <Icons.CloudDone/>
                 <Typography className={classes.materialIconText}>
                   CloudDone
                 </Typography>
@@ -2457,7 +2457,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.CloudDownload />
+                <Icons.CloudDownload/>
                 <Typography className={classes.materialIconText}>
                   CloudDownload
                 </Typography>
@@ -2470,7 +2470,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.CloudQueue />
+                <Icons.CloudQueue/>
                 <Typography className={classes.materialIconText}>
                   CloudQueue
                 </Typography>
@@ -2483,7 +2483,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.CloudUpload />
+                <Icons.CloudUpload/>
                 <Typography className={classes.materialIconText}>
                   CloudUpload
                 </Typography>
@@ -2496,7 +2496,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Code />
+                <Icons.Code/>
                 <Typography className={classes.materialIconText}>
                   Code
                 </Typography>
@@ -2509,7 +2509,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Collections />
+                <Icons.Collections/>
                 <Typography className={classes.materialIconText}>
                   Collections
                 </Typography>
@@ -2522,7 +2522,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.CollectionsBookmark />
+                <Icons.CollectionsBookmark/>
                 <Typography className={classes.materialIconText}>
                   CollectionsBookmark
                 </Typography>
@@ -2535,7 +2535,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Colorize />
+                <Icons.Colorize/>
                 <Typography className={classes.materialIconText}>
                   Colorize
                 </Typography>
@@ -2548,7 +2548,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.ColorLens />
+                <Icons.ColorLens/>
                 <Typography className={classes.materialIconText}>
                   ColorLens
                 </Typography>
@@ -2561,7 +2561,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Comment />
+                <Icons.Comment/>
                 <Typography className={classes.materialIconText}>
                   Comment
                 </Typography>
@@ -2574,7 +2574,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Commute />
+                <Icons.Commute/>
                 <Typography className={classes.materialIconText}>
                   Commute
                 </Typography>
@@ -2587,7 +2587,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Compare />
+                <Icons.Compare/>
                 <Typography className={classes.materialIconText}>
                   Compare
                 </Typography>
@@ -2600,7 +2600,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.CompareArrows />
+                <Icons.CompareArrows/>
                 <Typography className={classes.materialIconText}>
                   CompareArrows
                 </Typography>
@@ -2613,7 +2613,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.CompassCalibration />
+                <Icons.CompassCalibration/>
                 <Typography className={classes.materialIconText}>
                   CompassCalibration
                 </Typography>
@@ -2626,7 +2626,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Computer />
+                <Icons.Computer/>
                 <Typography className={classes.materialIconText}>
                   Computer
                 </Typography>
@@ -2639,7 +2639,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.ConfirmationNumber />
+                <Icons.ConfirmationNumber/>
                 <Typography className={classes.materialIconText}>
                   ConfirmationNumber
                 </Typography>
@@ -2652,7 +2652,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.ContactMail />
+                <Icons.ContactMail/>
                 <Typography className={classes.materialIconText}>
                   ContactMail
                 </Typography>
@@ -2665,7 +2665,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.ContactPhone />
+                <Icons.ContactPhone/>
                 <Typography className={classes.materialIconText}>
                   ContactPhone
                 </Typography>
@@ -2678,7 +2678,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Contacts />
+                <Icons.Contacts/>
                 <Typography className={classes.materialIconText}>
                   Contacts
                 </Typography>
@@ -2691,7 +2691,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.ContactSupport />
+                <Icons.ContactSupport/>
                 <Typography className={classes.materialIconText}>
                   ContactSupport
                 </Typography>
@@ -2704,7 +2704,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.ControlCamera />
+                <Icons.ControlCamera/>
                 <Typography className={classes.materialIconText}>
                   ControlCamera
                 </Typography>
@@ -2717,7 +2717,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.ControlPoint />
+                <Icons.ControlPoint/>
                 <Typography className={classes.materialIconText}>
                   ControlPoint
                 </Typography>
@@ -2730,7 +2730,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.ControlPointDuplicate />
+                <Icons.ControlPointDuplicate/>
                 <Typography className={classes.materialIconText}>
                   ControlPointDuplicate
                 </Typography>
@@ -2743,7 +2743,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Copyright />
+                <Icons.Copyright/>
                 <Typography className={classes.materialIconText}>
                   Copyright
                 </Typography>
@@ -2756,7 +2756,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Create />
+                <Icons.Create/>
                 <Typography className={classes.materialIconText}>
                   Create
                 </Typography>
@@ -2769,7 +2769,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.CreditCard />
+                <Icons.CreditCard/>
                 <Typography className={classes.materialIconText}>
                   CreditCard
                 </Typography>
@@ -2782,7 +2782,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Crop />
+                <Icons.Crop/>
                 <Typography className={classes.materialIconText}>
                   Crop
                 </Typography>
@@ -2795,7 +2795,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Crop169 />
+                <Icons.Crop169/>
                 <Typography className={classes.materialIconText}>
                   Crop169
                 </Typography>
@@ -2808,7 +2808,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Crop32 />
+                <Icons.Crop32/>
                 <Typography className={classes.materialIconText}>
                   Crop32
                 </Typography>
@@ -2821,7 +2821,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Crop54 />
+                <Icons.Crop54/>
                 <Typography className={classes.materialIconText}>
                   Crop54
                 </Typography>
@@ -2834,7 +2834,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Crop75 />
+                <Icons.Crop75/>
                 <Typography className={classes.materialIconText}>
                   Crop75
                 </Typography>
@@ -2847,7 +2847,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.CropDin />
+                <Icons.CropDin/>
                 <Typography className={classes.materialIconText}>
                   CropDin
                 </Typography>
@@ -2860,7 +2860,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.CropFree />
+                <Icons.CropFree/>
                 <Typography className={classes.materialIconText}>
                   CropFree
                 </Typography>
@@ -2873,7 +2873,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.CropLandscape />
+                <Icons.CropLandscape/>
                 <Typography className={classes.materialIconText}>
                   CropLandscape
                 </Typography>
@@ -2886,7 +2886,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.CropOriginal />
+                <Icons.CropOriginal/>
                 <Typography className={classes.materialIconText}>
                   CropOriginal
                 </Typography>
@@ -2899,7 +2899,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.CropPortrait />
+                <Icons.CropPortrait/>
                 <Typography className={classes.materialIconText}>
                   CropPortrait
                 </Typography>
@@ -2912,7 +2912,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.CropRotate />
+                <Icons.CropRotate/>
                 <Typography className={classes.materialIconText}>
                   CropRotate
                 </Typography>
@@ -2925,7 +2925,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.CropSquare />
+                <Icons.CropSquare/>
                 <Typography className={classes.materialIconText}>
                   CropSquare
                 </Typography>
@@ -2938,7 +2938,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Dashboard />
+                <Icons.Dashboard/>
                 <Typography className={classes.materialIconText}>
                   Dashboard
                 </Typography>
@@ -2951,7 +2951,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.DataUsage />
+                <Icons.DataUsage/>
                 <Typography className={classes.materialIconText}>
                   DataUsage
                 </Typography>
@@ -2964,7 +2964,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.DateRange />
+                <Icons.DateRange/>
                 <Typography className={classes.materialIconText}>
                   DateRange
                 </Typography>
@@ -2977,7 +2977,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Dehaze />
+                <Icons.Dehaze/>
                 <Typography className={classes.materialIconText}>
                   Dehaze
                 </Typography>
@@ -2990,7 +2990,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Delete />
+                <Icons.Delete/>
                 <Typography className={classes.materialIconText}>
                   Delete
                 </Typography>
@@ -3003,7 +3003,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.DeleteForever />
+                <Icons.DeleteForever/>
                 <Typography className={classes.materialIconText}>
                   DeleteForever
                 </Typography>
@@ -3016,7 +3016,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.DeleteOutline />
+                <Icons.DeleteOutline/>
                 <Typography className={classes.materialIconText}>
                   DeleteOutline
                 </Typography>
@@ -3029,7 +3029,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.DeleteSweep />
+                <Icons.DeleteSweep/>
                 <Typography className={classes.materialIconText}>
                   DeleteSweep
                 </Typography>
@@ -3042,7 +3042,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.DepartureBoard />
+                <Icons.DepartureBoard/>
                 <Typography className={classes.materialIconText}>
                   DepartureBoard
                 </Typography>
@@ -3055,7 +3055,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Description />
+                <Icons.Description/>
                 <Typography className={classes.materialIconText}>
                   Description
                 </Typography>
@@ -3068,7 +3068,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.DesktopAccessDisabled />
+                <Icons.DesktopAccessDisabled/>
                 <Typography className={classes.materialIconText}>
                   DesktopAccessDisabled
                 </Typography>
@@ -3081,7 +3081,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.DesktopMac />
+                <Icons.DesktopMac/>
                 <Typography className={classes.materialIconText}>
                   DesktopMac
                 </Typography>
@@ -3094,7 +3094,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.DesktopWindows />
+                <Icons.DesktopWindows/>
                 <Typography className={classes.materialIconText}>
                   DesktopWindows
                 </Typography>
@@ -3107,7 +3107,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Details />
+                <Icons.Details/>
                 <Typography className={classes.materialIconText}>
                   Details
                 </Typography>
@@ -3120,7 +3120,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.DeveloperBoard />
+                <Icons.DeveloperBoard/>
                 <Typography className={classes.materialIconText}>
                   DeveloperBoard
                 </Typography>
@@ -3133,7 +3133,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.DeveloperMode />
+                <Icons.DeveloperMode/>
                 <Typography className={classes.materialIconText}>
                   DeveloperMode
                 </Typography>
@@ -3146,7 +3146,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.DeviceHub />
+                <Icons.DeviceHub/>
                 <Typography className={classes.materialIconText}>
                   DeviceHub
                 </Typography>
@@ -3159,7 +3159,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Devices />
+                <Icons.Devices/>
                 <Typography className={classes.materialIconText}>
                   Devices
                 </Typography>
@@ -3172,7 +3172,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.DevicesOther />
+                <Icons.DevicesOther/>
                 <Typography className={classes.materialIconText}>
                   DevicesOther
                 </Typography>
@@ -3185,7 +3185,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.DeviceUnknown />
+                <Icons.DeviceUnknown/>
                 <Typography className={classes.materialIconText}>
                   DeviceUnknown
                 </Typography>
@@ -3198,7 +3198,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.DialerSip />
+                <Icons.DialerSip/>
                 <Typography className={classes.materialIconText}>
                   DialerSip
                 </Typography>
@@ -3211,7 +3211,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Dialpad />
+                <Icons.Dialpad/>
                 <Typography className={classes.materialIconText}>
                   Dialpad
                 </Typography>
@@ -3224,7 +3224,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Directions />
+                <Icons.Directions/>
                 <Typography className={classes.materialIconText}>
                   Directions
                 </Typography>
@@ -3237,7 +3237,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.DirectionsBike />
+                <Icons.DirectionsBike/>
                 <Typography className={classes.materialIconText}>
                   DirectionsBike
                 </Typography>
@@ -3250,7 +3250,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.DirectionsBoat />
+                <Icons.DirectionsBoat/>
                 <Typography className={classes.materialIconText}>
                   DirectionsBoat
                 </Typography>
@@ -3263,7 +3263,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.DirectionsBus />
+                <Icons.DirectionsBus/>
                 <Typography className={classes.materialIconText}>
                   DirectionsBus
                 </Typography>
@@ -3276,7 +3276,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.DirectionsCar />
+                <Icons.DirectionsCar/>
                 <Typography className={classes.materialIconText}>
                   DirectionsCar
                 </Typography>
@@ -3289,7 +3289,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.DirectionsRailway />
+                <Icons.DirectionsRailway/>
                 <Typography className={classes.materialIconText}>
                   DirectionsRailway
                 </Typography>
@@ -3302,7 +3302,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.DirectionsRun />
+                <Icons.DirectionsRun/>
                 <Typography className={classes.materialIconText}>
                   DirectionsRun
                 </Typography>
@@ -3315,7 +3315,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.DirectionsSubway />
+                <Icons.DirectionsSubway/>
                 <Typography className={classes.materialIconText}>
                   DirectionsSubway
                 </Typography>
@@ -3328,7 +3328,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.DirectionsTransit />
+                <Icons.DirectionsTransit/>
                 <Typography className={classes.materialIconText}>
                   DirectionsTransit
                 </Typography>
@@ -3341,7 +3341,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.DirectionsWalk />
+                <Icons.DirectionsWalk/>
                 <Typography className={classes.materialIconText}>
                   DirectionsWalk
                 </Typography>
@@ -3354,7 +3354,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.DiscFull />
+                <Icons.DiscFull/>
                 <Typography className={classes.materialIconText}>
                   DiscFull
                 </Typography>
@@ -3367,7 +3367,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Dns />
+                <Icons.Dns/>
                 <Typography className={classes.materialIconText}>
                   Dns
                 </Typography>
@@ -3380,7 +3380,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Dock />
+                <Icons.Dock/>
                 <Typography className={classes.materialIconText}>
                   Dock
                 </Typography>
@@ -3393,7 +3393,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Domain />
+                <Icons.Domain/>
                 <Typography className={classes.materialIconText}>
                   Domain
                 </Typography>
@@ -3406,7 +3406,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.DomainDisabled />
+                <Icons.DomainDisabled/>
                 <Typography className={classes.materialIconText}>
                   DomainDisabled
                 </Typography>
@@ -3419,7 +3419,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Done />
+                <Icons.Done/>
                 <Typography className={classes.materialIconText}>
                   Done
                 </Typography>
@@ -3432,7 +3432,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.DoneAll />
+                <Icons.DoneAll/>
                 <Typography className={classes.materialIconText}>
                   DoneAll
                 </Typography>
@@ -3445,7 +3445,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.DoneOutline />
+                <Icons.DoneOutline/>
                 <Typography className={classes.materialIconText}>
                   DoneOutline
                 </Typography>
@@ -3458,7 +3458,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.DonutLarge />
+                <Icons.DonutLarge/>
                 <Typography className={classes.materialIconText}>
                   DonutLarge
                 </Typography>
@@ -3471,7 +3471,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.DonutSmall />
+                <Icons.DonutSmall/>
                 <Typography className={classes.materialIconText}>
                   DonutSmall
                 </Typography>
@@ -3484,7 +3484,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Drafts />
+                <Icons.Drafts/>
                 <Typography className={classes.materialIconText}>
                   Drafts
                 </Typography>
@@ -3497,7 +3497,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.DragHandle />
+                <Icons.DragHandle/>
                 <Typography className={classes.materialIconText}>
                   DragHandle
                 </Typography>
@@ -3510,7 +3510,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.DragIndicator />
+                <Icons.DragIndicator/>
                 <Typography className={classes.materialIconText}>
                   DragIndicator
                 </Typography>
@@ -3523,7 +3523,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.DriveEta />
+                <Icons.DriveEta/>
                 <Typography className={classes.materialIconText}>
                   DriveEta
                 </Typography>
@@ -3536,7 +3536,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Duo />
+                <Icons.Duo/>
                 <Typography className={classes.materialIconText}>
                   Duo
                 </Typography>
@@ -3549,7 +3549,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Dvr />
+                <Icons.Dvr/>
                 <Typography className={classes.materialIconText}>
                   Dvr
                 </Typography>
@@ -3562,7 +3562,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Edit />
+                <Icons.Edit/>
                 <Typography className={classes.materialIconText}>
                   Edit
                 </Typography>
@@ -3575,7 +3575,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.EditAttributes />
+                <Icons.EditAttributes/>
                 <Typography className={classes.materialIconText}>
                   EditAttributes
                 </Typography>
@@ -3588,7 +3588,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.EditLocation />
+                <Icons.EditLocation/>
                 <Typography className={classes.materialIconText}>
                   EditLocation
                 </Typography>
@@ -3601,7 +3601,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Eject />
+                <Icons.Eject/>
                 <Typography className={classes.materialIconText}>
                   Eject
                 </Typography>
@@ -3614,7 +3614,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Email />
+                <Icons.Email/>
                 <Typography className={classes.materialIconText}>
                   Email
                 </Typography>
@@ -3627,7 +3627,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.EnhancedEncryption />
+                <Icons.EnhancedEncryption/>
                 <Typography className={classes.materialIconText}>
                   EnhancedEncryption
                 </Typography>
@@ -3640,7 +3640,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Equalizer />
+                <Icons.Equalizer/>
                 <Typography className={classes.materialIconText}>
                   Equalizer
                 </Typography>
@@ -3653,7 +3653,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Error />
+                <Icons.Error/>
                 <Typography className={classes.materialIconText}>
                   Error
                 </Typography>
@@ -3666,7 +3666,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.ErrorOutline />
+                <Icons.ErrorOutline/>
                 <Typography className={classes.materialIconText}>
                   ErrorOutline
                 </Typography>
@@ -3679,7 +3679,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.EuroSymbol />
+                <Icons.EuroSymbol/>
                 <Typography className={classes.materialIconText}>
                   EuroSymbol
                 </Typography>
@@ -3692,7 +3692,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Event />
+                <Icons.Event/>
                 <Typography className={classes.materialIconText}>
                   Event
                 </Typography>
@@ -3705,7 +3705,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.EventAvailable />
+                <Icons.EventAvailable/>
                 <Typography className={classes.materialIconText}>
                   EventAvailable
                 </Typography>
@@ -3718,7 +3718,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.EventBusy />
+                <Icons.EventBusy/>
                 <Typography className={classes.materialIconText}>
                   EventBusy
                 </Typography>
@@ -3731,7 +3731,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.EventNote />
+                <Icons.EventNote/>
                 <Typography className={classes.materialIconText}>
                   EventNote
                 </Typography>
@@ -3744,7 +3744,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.EventSeat />
+                <Icons.EventSeat/>
                 <Typography className={classes.materialIconText}>
                   EventSeat
                 </Typography>
@@ -3757,7 +3757,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.EvStation />
+                <Icons.EvStation/>
                 <Typography className={classes.materialIconText}>
                   EvStation
                 </Typography>
@@ -3770,7 +3770,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.ExitToApp />
+                <Icons.ExitToApp/>
                 <Typography className={classes.materialIconText}>
                   ExitToApp
                 </Typography>
@@ -3783,7 +3783,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.ExpandLess />
+                <Icons.ExpandLess/>
                 <Typography className={classes.materialIconText}>
                   ExpandLess
                 </Typography>
@@ -3796,7 +3796,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.ExpandMore />
+                <Icons.ExpandMore/>
                 <Typography className={classes.materialIconText}>
                   ExpandMore
                 </Typography>
@@ -3809,7 +3809,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Explicit />
+                <Icons.Explicit/>
                 <Typography className={classes.materialIconText}>
                   Explicit
                 </Typography>
@@ -3822,7 +3822,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Explore />
+                <Icons.Explore/>
                 <Typography className={classes.materialIconText}>
                   Explore
                 </Typography>
@@ -3835,7 +3835,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Exposure />
+                <Icons.Exposure/>
                 <Typography className={classes.materialIconText}>
                   Exposure
                 </Typography>
@@ -3848,7 +3848,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.ExposureNeg1 />
+                <Icons.ExposureNeg1/>
                 <Typography className={classes.materialIconText}>
                   ExposureNeg1
                 </Typography>
@@ -3861,7 +3861,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.ExposureNeg2 />
+                <Icons.ExposureNeg2/>
                 <Typography className={classes.materialIconText}>
                   ExposureNeg2
                 </Typography>
@@ -3874,7 +3874,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.ExposurePlus1 />
+                <Icons.ExposurePlus1/>
                 <Typography className={classes.materialIconText}>
                   ExposurePlus1
                 </Typography>
@@ -3887,7 +3887,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.ExposurePlus2 />
+                <Icons.ExposurePlus2/>
                 <Typography className={classes.materialIconText}>
                   ExposurePlus2
                 </Typography>
@@ -3900,7 +3900,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.ExposureZero />
+                <Icons.ExposureZero/>
                 <Typography className={classes.materialIconText}>
                   ExposureZero
                 </Typography>
@@ -3913,7 +3913,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Extension />
+                <Icons.Extension/>
                 <Typography className={classes.materialIconText}>
                   Extension
                 </Typography>
@@ -3926,7 +3926,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Face />
+                <Icons.Face/>
                 <Typography className={classes.materialIconText}>
                   Face
                 </Typography>
@@ -3939,7 +3939,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Fastfood />
+                <Icons.Fastfood/>
                 <Typography className={classes.materialIconText}>
                   Fastfood
                 </Typography>
@@ -3952,7 +3952,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.FastForward />
+                <Icons.FastForward/>
                 <Typography className={classes.materialIconText}>
                   FastForward
                 </Typography>
@@ -3965,7 +3965,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.FastRewind />
+                <Icons.FastRewind/>
                 <Typography className={classes.materialIconText}>
                   FastRewind
                 </Typography>
@@ -3978,7 +3978,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Favorite />
+                <Icons.Favorite/>
                 <Typography className={classes.materialIconText}>
                   Favorite
                 </Typography>
@@ -3991,7 +3991,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.FavoriteBorder />
+                <Icons.FavoriteBorder/>
                 <Typography className={classes.materialIconText}>
                   FavoriteBorder
                 </Typography>
@@ -4004,7 +4004,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.FeaturedPlayList />
+                <Icons.FeaturedPlayList/>
                 <Typography className={classes.materialIconText}>
                   FeaturedPlayList
                 </Typography>
@@ -4017,7 +4017,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.FeaturedVideo />
+                <Icons.FeaturedVideo/>
                 <Typography className={classes.materialIconText}>
                   FeaturedVideo
                 </Typography>
@@ -4030,7 +4030,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Feedback />
+                <Icons.Feedback/>
                 <Typography className={classes.materialIconText}>
                   Feedback
                 </Typography>
@@ -4043,7 +4043,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.FiberDvr />
+                <Icons.FiberDvr/>
                 <Typography className={classes.materialIconText}>
                   FiberDvr
                 </Typography>
@@ -4056,7 +4056,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.FiberManualRecord />
+                <Icons.FiberManualRecord/>
                 <Typography className={classes.materialIconText}>
                   FiberManualRecord
                 </Typography>
@@ -4069,7 +4069,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.FiberPin />
+                <Icons.FiberPin/>
                 <Typography className={classes.materialIconText}>
                   FiberPin
                 </Typography>
@@ -4082,7 +4082,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.FiberSmartRecord />
+                <Icons.FiberSmartRecord/>
                 <Typography className={classes.materialIconText}>
                   FiberSmartRecord
                 </Typography>
@@ -4095,7 +4095,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.FileCopy />
+                <Icons.FileCopy/>
                 <Typography className={classes.materialIconText}>
                   FileCopy
                 </Typography>
@@ -4108,7 +4108,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Filter />
+                <Icons.Filter/>
                 <Typography className={classes.materialIconText}>
                   Filter
                 </Typography>
@@ -4121,7 +4121,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Filter1 />
+                <Icons.Filter1/>
                 <Typography className={classes.materialIconText}>
                   Filter1
                 </Typography>
@@ -4134,7 +4134,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Filter2 />
+                <Icons.Filter2/>
                 <Typography className={classes.materialIconText}>
                   Filter2
                 </Typography>
@@ -4147,7 +4147,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Filter3 />
+                <Icons.Filter3/>
                 <Typography className={classes.materialIconText}>
                   Filter3
                 </Typography>
@@ -4160,7 +4160,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Filter4 />
+                <Icons.Filter4/>
                 <Typography className={classes.materialIconText}>
                   Filter4
                 </Typography>
@@ -4173,7 +4173,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Filter5 />
+                <Icons.Filter5/>
                 <Typography className={classes.materialIconText}>
                   Filter5
                 </Typography>
@@ -4186,7 +4186,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Filter6 />
+                <Icons.Filter6/>
                 <Typography className={classes.materialIconText}>
                   Filter6
                 </Typography>
@@ -4199,7 +4199,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Filter7 />
+                <Icons.Filter7/>
                 <Typography className={classes.materialIconText}>
                   Filter7
                 </Typography>
@@ -4212,7 +4212,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Filter8 />
+                <Icons.Filter8/>
                 <Typography className={classes.materialIconText}>
                   Filter8
                 </Typography>
@@ -4225,7 +4225,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Filter9 />
+                <Icons.Filter9/>
                 <Typography className={classes.materialIconText}>
                   Filter9
                 </Typography>
@@ -4238,7 +4238,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Filter9Plus />
+                <Icons.Filter9Plus/>
                 <Typography className={classes.materialIconText}>
                   Filter9Plus
                 </Typography>
@@ -4251,7 +4251,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.FilterBAndW />
+                <Icons.FilterBAndW/>
                 <Typography className={classes.materialIconText}>
                   FilterBAndW
                 </Typography>
@@ -4264,7 +4264,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.FilterCenterFocus />
+                <Icons.FilterCenterFocus/>
                 <Typography className={classes.materialIconText}>
                   FilterCenterFocus
                 </Typography>
@@ -4277,7 +4277,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.FilterDrama />
+                <Icons.FilterDrama/>
                 <Typography className={classes.materialIconText}>
                   FilterDrama
                 </Typography>
@@ -4290,7 +4290,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.FilterFrames />
+                <Icons.FilterFrames/>
                 <Typography className={classes.materialIconText}>
                   FilterFrames
                 </Typography>
@@ -4303,7 +4303,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.FilterHdr />
+                <Icons.FilterHdr/>
                 <Typography className={classes.materialIconText}>
                   FilterHdr
                 </Typography>
@@ -4316,7 +4316,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.FilterList />
+                <Icons.FilterList/>
                 <Typography className={classes.materialIconText}>
                   FilterList
                 </Typography>
@@ -4329,7 +4329,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.FilterNone />
+                <Icons.FilterNone/>
                 <Typography className={classes.materialIconText}>
                   FilterNone
                 </Typography>
@@ -4342,7 +4342,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.FilterTiltShift />
+                <Icons.FilterTiltShift/>
                 <Typography className={classes.materialIconText}>
                   FilterTiltShift
                 </Typography>
@@ -4355,7 +4355,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.FilterVintage />
+                <Icons.FilterVintage/>
                 <Typography className={classes.materialIconText}>
                   FilterVintage
                 </Typography>
@@ -4368,7 +4368,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.FindInPage />
+                <Icons.FindInPage/>
                 <Typography className={classes.materialIconText}>
                   FindInPage
                 </Typography>
@@ -4381,7 +4381,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.FindReplace />
+                <Icons.FindReplace/>
                 <Typography className={classes.materialIconText}>
                   FindReplace
                 </Typography>
@@ -4394,7 +4394,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Fingerprint />
+                <Icons.Fingerprint/>
                 <Typography className={classes.materialIconText}>
                   Fingerprint
                 </Typography>
@@ -4407,7 +4407,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.FirstPage />
+                <Icons.FirstPage/>
                 <Typography className={classes.materialIconText}>
                   FirstPage
                 </Typography>
@@ -4420,7 +4420,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.FitnessCenter />
+                <Icons.FitnessCenter/>
                 <Typography className={classes.materialIconText}>
                   FitnessCenter
                 </Typography>
@@ -4433,7 +4433,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Flag />
+                <Icons.Flag/>
                 <Typography className={classes.materialIconText}>
                   Flag
                 </Typography>
@@ -4446,7 +4446,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Flare />
+                <Icons.Flare/>
                 <Typography className={classes.materialIconText}>
                   Flare
                 </Typography>
@@ -4459,7 +4459,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.FlashAuto />
+                <Icons.FlashAuto/>
                 <Typography className={classes.materialIconText}>
                   FlashAuto
                 </Typography>
@@ -4472,7 +4472,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Flight />
+                <Icons.Flight/>
                 <Typography className={classes.materialIconText}>
                   Flight
                 </Typography>
@@ -4485,7 +4485,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.FlightLand />
+                <Icons.FlightLand/>
                 <Typography className={classes.materialIconText}>
                   FlightLand
                 </Typography>
@@ -4498,7 +4498,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.FlightTakeoff />
+                <Icons.FlightTakeoff/>
                 <Typography className={classes.materialIconText}>
                   FlightTakeoff
                 </Typography>
@@ -4511,7 +4511,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Flip />
+                <Icons.Flip/>
                 <Typography className={classes.materialIconText}>
                   Flip
                 </Typography>
@@ -4524,7 +4524,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.FlipToBack />
+                <Icons.FlipToBack/>
                 <Typography className={classes.materialIconText}>
                   FlipToBack
                 </Typography>
@@ -4537,7 +4537,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.FlipToFront />
+                <Icons.FlipToFront/>
                 <Typography className={classes.materialIconText}>
                   FlipToFront
                 </Typography>
@@ -4550,7 +4550,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Folder />
+                <Icons.Folder/>
                 <Typography className={classes.materialIconText}>
                   Folder
                 </Typography>
@@ -4563,7 +4563,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.FolderOpen />
+                <Icons.FolderOpen/>
                 <Typography className={classes.materialIconText}>
                   FolderOpen
                 </Typography>
@@ -4576,7 +4576,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.FolderShared />
+                <Icons.FolderShared/>
                 <Typography className={classes.materialIconText}>
                   FolderShared
                 </Typography>
@@ -4589,7 +4589,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.FolderSpecial />
+                <Icons.FolderSpecial/>
                 <Typography className={classes.materialIconText}>
                   FolderSpecial
                 </Typography>
@@ -4602,7 +4602,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.FontDownload />
+                <Icons.FontDownload/>
                 <Typography className={classes.materialIconText}>
                   FontDownload
                 </Typography>
@@ -4615,7 +4615,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.FormatAlignCenter />
+                <Icons.FormatAlignCenter/>
                 <Typography className={classes.materialIconText}>
                   FormatAlignCenter
                 </Typography>
@@ -4628,7 +4628,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.FormatAlignJustify />
+                <Icons.FormatAlignJustify/>
                 <Typography className={classes.materialIconText}>
                   FormatAlignJustify
                 </Typography>
@@ -4641,7 +4641,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.FormatAlignLeft />
+                <Icons.FormatAlignLeft/>
                 <Typography className={classes.materialIconText}>
                   FormatAlignLeft
                 </Typography>
@@ -4654,7 +4654,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.FormatAlignRight />
+                <Icons.FormatAlignRight/>
                 <Typography className={classes.materialIconText}>
                   FormatAlignRight
                 </Typography>
@@ -4667,7 +4667,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.FormatBold />
+                <Icons.FormatBold/>
                 <Typography className={classes.materialIconText}>
                   FormatBold
                 </Typography>
@@ -4680,7 +4680,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.FormatClear />
+                <Icons.FormatClear/>
                 <Typography className={classes.materialIconText}>
                   FormatClear
                 </Typography>
@@ -4693,7 +4693,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.FormatColorFill />
+                <Icons.FormatColorFill/>
                 <Typography className={classes.materialIconText}>
                   FormatColorFill
                 </Typography>
@@ -4706,7 +4706,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.FormatColorReset />
+                <Icons.FormatColorReset/>
                 <Typography className={classes.materialIconText}>
                   FormatColorReset
                 </Typography>
@@ -4719,7 +4719,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.FormatColorText />
+                <Icons.FormatColorText/>
                 <Typography className={classes.materialIconText}>
                   FormatColorText
                 </Typography>
@@ -4732,7 +4732,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.FormatIndentDecrease />
+                <Icons.FormatIndentDecrease/>
                 <Typography className={classes.materialIconText}>
                   FormatIndentDecrease
                 </Typography>
@@ -4745,7 +4745,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.FormatIndentIncrease />
+                <Icons.FormatIndentIncrease/>
                 <Typography className={classes.materialIconText}>
                   FormatIndentIncrease
                 </Typography>
@@ -4758,7 +4758,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.FormatItalic />
+                <Icons.FormatItalic/>
                 <Typography className={classes.materialIconText}>
                   FormatItalic
                 </Typography>
@@ -4771,7 +4771,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.FormatLineSpacing />
+                <Icons.FormatLineSpacing/>
                 <Typography className={classes.materialIconText}>
                   FormatLineSpacing
                 </Typography>
@@ -4784,7 +4784,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.FormatListBulleted />
+                <Icons.FormatListBulleted/>
                 <Typography className={classes.materialIconText}>
                   FormatListBulleted
                 </Typography>
@@ -4797,7 +4797,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.FormatListNumbered />
+                <Icons.FormatListNumbered/>
                 <Typography className={classes.materialIconText}>
                   FormatListNumbered
                 </Typography>
@@ -4810,7 +4810,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.FormatListNumberedRtl />
+                <Icons.FormatListNumberedRtl/>
                 <Typography className={classes.materialIconText}>
                   FormatListNumberedRtl
                 </Typography>
@@ -4823,7 +4823,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.FormatPaint />
+                <Icons.FormatPaint/>
                 <Typography className={classes.materialIconText}>
                   FormatPaint
                 </Typography>
@@ -4836,7 +4836,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.FormatQuote />
+                <Icons.FormatQuote/>
                 <Typography className={classes.materialIconText}>
                   FormatQuote
                 </Typography>
@@ -4849,7 +4849,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.FormatShapes />
+                <Icons.FormatShapes/>
                 <Typography className={classes.materialIconText}>
                   FormatShapes
                 </Typography>
@@ -4862,7 +4862,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.FormatSize />
+                <Icons.FormatSize/>
                 <Typography className={classes.materialIconText}>
                   FormatSize
                 </Typography>
@@ -4875,7 +4875,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.FormatStrikethrough />
+                <Icons.FormatStrikethrough/>
                 <Typography className={classes.materialIconText}>
                   FormatStrikethrough
                 </Typography>
@@ -4888,7 +4888,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.FormatTextdirectionLToR />
+                <Icons.FormatTextdirectionLToR/>
                 <Typography className={classes.materialIconText}>
                   FormatTextdirectionLToR
                 </Typography>
@@ -4901,7 +4901,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.FormatTextdirectionRToL />
+                <Icons.FormatTextdirectionRToL/>
                 <Typography className={classes.materialIconText}>
                   FormatTextdirectionRToL
                 </Typography>
@@ -4914,7 +4914,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.FormatUnderlined />
+                <Icons.FormatUnderlined/>
                 <Typography className={classes.materialIconText}>
                   FormatUnderlined
                 </Typography>
@@ -4927,7 +4927,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Forum />
+                <Icons.Forum/>
                 <Typography className={classes.materialIconText}>
                   Forum
                 </Typography>
@@ -4940,7 +4940,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Forward />
+                <Icons.Forward/>
                 <Typography className={classes.materialIconText}>
                   Forward
                 </Typography>
@@ -4953,7 +4953,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Forward10 />
+                <Icons.Forward10/>
                 <Typography className={classes.materialIconText}>
                   Forward10
                 </Typography>
@@ -4966,7 +4966,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Forward30 />
+                <Icons.Forward30/>
                 <Typography className={classes.materialIconText}>
                   Forward30
                 </Typography>
@@ -4979,7 +4979,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Forward5 />
+                <Icons.Forward5/>
                 <Typography className={classes.materialIconText}>
                   Forward5
                 </Typography>
@@ -4992,7 +4992,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.FourK />
+                <Icons.FourK/>
                 <Typography className={classes.materialIconText}>
                   FourK
                 </Typography>
@@ -5005,7 +5005,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.FreeBreakfast />
+                <Icons.FreeBreakfast/>
                 <Typography className={classes.materialIconText}>
                   FreeBreakfast
                 </Typography>
@@ -5018,7 +5018,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Fullscreen />
+                <Icons.Fullscreen/>
                 <Typography className={classes.materialIconText}>
                   Fullscreen
                 </Typography>
@@ -5031,7 +5031,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.FullscreenExit />
+                <Icons.FullscreenExit/>
                 <Typography className={classes.materialIconText}>
                   FullscreenExit
                 </Typography>
@@ -5044,7 +5044,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Functions />
+                <Icons.Functions/>
                 <Typography className={classes.materialIconText}>
                   Functions
                 </Typography>
@@ -5057,7 +5057,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Gamepad />
+                <Icons.Gamepad/>
                 <Typography className={classes.materialIconText}>
                   Gamepad
                 </Typography>
@@ -5070,7 +5070,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Games />
+                <Icons.Games/>
                 <Typography className={classes.materialIconText}>
                   Games
                 </Typography>
@@ -5083,7 +5083,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Gavel />
+                <Icons.Gavel/>
                 <Typography className={classes.materialIconText}>
                   Gavel
                 </Typography>
@@ -5096,7 +5096,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Gesture />
+                <Icons.Gesture/>
                 <Typography className={classes.materialIconText}>
                   Gesture
                 </Typography>
@@ -5109,7 +5109,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.GetApp />
+                <Icons.GetApp/>
                 <Typography className={classes.materialIconText}>
                   GetApp
                 </Typography>
@@ -5122,7 +5122,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Gif />
+                <Icons.Gif/>
                 <Typography className={classes.materialIconText}>
                   Gif
                 </Typography>
@@ -5135,7 +5135,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.GolfCourse />
+                <Icons.GolfCourse/>
                 <Typography className={classes.materialIconText}>
                   GolfCourse
                 </Typography>
@@ -5148,7 +5148,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.GpsFixed />
+                <Icons.GpsFixed/>
                 <Typography className={classes.materialIconText}>
                   GpsFixed
                 </Typography>
@@ -5161,7 +5161,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.GpsNotFixed />
+                <Icons.GpsNotFixed/>
                 <Typography className={classes.materialIconText}>
                   GpsNotFixed
                 </Typography>
@@ -5174,7 +5174,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Grade />
+                <Icons.Grade/>
                 <Typography className={classes.materialIconText}>
                   Grade
                 </Typography>
@@ -5187,7 +5187,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Gradient />
+                <Icons.Gradient/>
                 <Typography className={classes.materialIconText}>
                   Gradient
                 </Typography>
@@ -5200,7 +5200,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Grain />
+                <Icons.Grain/>
                 <Typography className={classes.materialIconText}>
                   Grain
                 </Typography>
@@ -5213,7 +5213,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.GraphicEq />
+                <Icons.GraphicEq/>
                 <Typography className={classes.materialIconText}>
                   GraphicEq
                 </Typography>
@@ -5226,7 +5226,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Group />
+                <Icons.Group/>
                 <Typography className={classes.materialIconText}>
                   Group
                 </Typography>
@@ -5239,7 +5239,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.GroupWork />
+                <Icons.GroupWork/>
                 <Typography className={classes.materialIconText}>
                   GroupWork
                 </Typography>
@@ -5252,7 +5252,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.GTranslate />
+                <Icons.GTranslate/>
                 <Typography className={classes.materialIconText}>
                   GTranslate
                 </Typography>
@@ -5265,7 +5265,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Hd />
+                <Icons.Hd/>
                 <Typography className={classes.materialIconText}>Hd</Typography>
               </Grid>
               <Grid
@@ -5276,7 +5276,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.HdrStrong />
+                <Icons.HdrStrong/>
                 <Typography className={classes.materialIconText}>
                   HdrStrong
                 </Typography>
@@ -5289,7 +5289,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.HdrWeak />
+                <Icons.HdrWeak/>
                 <Typography className={classes.materialIconText}>
                   HdrWeak
                 </Typography>
@@ -5302,7 +5302,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Headset />
+                <Icons.Headset/>
                 <Typography className={classes.materialIconText}>
                   Headset
                 </Typography>
@@ -5315,7 +5315,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.HeadsetMic />
+                <Icons.HeadsetMic/>
                 <Typography className={classes.materialIconText}>
                   HeadsetMic
                 </Typography>
@@ -5328,7 +5328,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Healing />
+                <Icons.Healing/>
                 <Typography className={classes.materialIconText}>
                   Healing
                 </Typography>
@@ -5341,7 +5341,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Hearing />
+                <Icons.Hearing/>
                 <Typography className={classes.materialIconText}>
                   Hearing
                 </Typography>
@@ -5354,7 +5354,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Help />
+                <Icons.Help/>
                 <Typography className={classes.materialIconText}>
                   Help
                 </Typography>
@@ -5367,7 +5367,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.HelpOutline />
+                <Icons.HelpOutline/>
                 <Typography className={classes.materialIconText}>
                   HelpOutline
                 </Typography>
@@ -5380,7 +5380,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Highlight />
+                <Icons.Highlight/>
                 <Typography className={classes.materialIconText}>
                   Highlight
                 </Typography>
@@ -5393,7 +5393,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.HighQuality />
+                <Icons.HighQuality/>
                 <Typography className={classes.materialIconText}>
                   HighQuality
                 </Typography>
@@ -5406,7 +5406,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.History />
+                <Icons.History/>
                 <Typography className={classes.materialIconText}>
                   History
                 </Typography>
@@ -5419,7 +5419,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Home />
+                <Icons.Home/>
                 <Typography className={classes.materialIconText}>
                   Home
                 </Typography>
@@ -5432,7 +5432,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.HorizontalSplit />
+                <Icons.HorizontalSplit/>
                 <Typography className={classes.materialIconText}>
                   HorizontalSplit
                 </Typography>
@@ -5445,7 +5445,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Hotel />
+                <Icons.Hotel/>
                 <Typography className={classes.materialIconText}>
                   Hotel
                 </Typography>
@@ -5458,7 +5458,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.HotTub />
+                <Icons.HotTub/>
                 <Typography className={classes.materialIconText}>
                   HotTub
                 </Typography>
@@ -5471,7 +5471,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.HourglassEmpty />
+                <Icons.HourglassEmpty/>
                 <Typography className={classes.materialIconText}>
                   HourglassEmpty
                 </Typography>
@@ -5484,7 +5484,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.HourglassFull />
+                <Icons.HourglassFull/>
                 <Typography className={classes.materialIconText}>
                   HourglassFull
                 </Typography>
@@ -5497,7 +5497,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.HowToReg />
+                <Icons.HowToReg/>
                 <Typography className={classes.materialIconText}>
                   HowToReg
                 </Typography>
@@ -5510,7 +5510,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.HowToVote />
+                <Icons.HowToVote/>
                 <Typography className={classes.materialIconText}>
                   HowToVote
                 </Typography>
@@ -5523,7 +5523,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Http />
+                <Icons.Http/>
                 <Typography className={classes.materialIconText}>
                   Http
                 </Typography>
@@ -5536,7 +5536,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Https />
+                <Icons.Https/>
                 <Typography className={classes.materialIconText}>
                   Https
                 </Typography>
@@ -5549,7 +5549,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Image />
+                <Icons.Image/>
                 <Typography className={classes.materialIconText}>
                   Image
                 </Typography>
@@ -5562,7 +5562,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.ImageAspectRatio />
+                <Icons.ImageAspectRatio/>
                 <Typography className={classes.materialIconText}>
                   ImageAspectRatio
                 </Typography>
@@ -5575,7 +5575,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.ImageSearch />
+                <Icons.ImageSearch/>
                 <Typography className={classes.materialIconText}>
                   ImageSearch
                 </Typography>
@@ -5588,7 +5588,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.ImportantDevices />
+                <Icons.ImportantDevices/>
                 <Typography className={classes.materialIconText}>
                   ImportantDevices
                 </Typography>
@@ -5601,7 +5601,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.ImportContacts />
+                <Icons.ImportContacts/>
                 <Typography className={classes.materialIconText}>
                   ImportContacts
                 </Typography>
@@ -5614,7 +5614,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.ImportExport />
+                <Icons.ImportExport/>
                 <Typography className={classes.materialIconText}>
                   ImportExport
                 </Typography>
@@ -5627,7 +5627,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Inbox />
+                <Icons.Inbox/>
                 <Typography className={classes.materialIconText}>
                   Inbox
                 </Typography>
@@ -5640,7 +5640,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.IndeterminateCheckBox />
+                <Icons.IndeterminateCheckBox/>
                 <Typography className={classes.materialIconText}>
                   IndeterminateCheckBox
                 </Typography>
@@ -5653,7 +5653,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Info />
+                <Icons.Info/>
                 <Typography className={classes.materialIconText}>
                   Info
                 </Typography>
@@ -5666,7 +5666,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Input />
+                <Icons.Input/>
                 <Typography className={classes.materialIconText}>
                   Input
                 </Typography>
@@ -5679,7 +5679,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.InsertChart />
+                <Icons.InsertChart/>
                 <Typography className={classes.materialIconText}>
                   InsertChart
                 </Typography>
@@ -5692,7 +5692,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.InsertComment />
+                <Icons.InsertComment/>
                 <Typography className={classes.materialIconText}>
                   InsertComment
                 </Typography>
@@ -5705,7 +5705,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.InsertDriveFile />
+                <Icons.InsertDriveFile/>
                 <Typography className={classes.materialIconText}>
                   InsertDriveFile
                 </Typography>
@@ -5718,7 +5718,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.InsertEmoticon />
+                <Icons.InsertEmoticon/>
                 <Typography className={classes.materialIconText}>
                   InsertEmoticon
                 </Typography>
@@ -5731,7 +5731,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.InsertInvitation />
+                <Icons.InsertInvitation/>
                 <Typography className={classes.materialIconText}>
                   InsertInvitation
                 </Typography>
@@ -5744,7 +5744,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.InsertLink />
+                <Icons.InsertLink/>
                 <Typography className={classes.materialIconText}>
                   InsertLink
                 </Typography>
@@ -5757,7 +5757,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.InsertPhoto />
+                <Icons.InsertPhoto/>
                 <Typography className={classes.materialIconText}>
                   InsertPhoto
                 </Typography>
@@ -5770,7 +5770,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.InvertColors />
+                <Icons.InvertColors/>
                 <Typography className={classes.materialIconText}>
                   InvertColors
                 </Typography>
@@ -5783,7 +5783,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Iso />
+                <Icons.Iso/>
                 <Typography className={classes.materialIconText}>
                   Iso
                 </Typography>
@@ -5796,7 +5796,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Keyboard />
+                <Icons.Keyboard/>
                 <Typography className={classes.materialIconText}>
                   Keyboard
                 </Typography>
@@ -5809,7 +5809,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.KeyboardArrowDown />
+                <Icons.KeyboardArrowDown/>
                 <Typography className={classes.materialIconText}>
                   KeyboardArrowDown
                 </Typography>
@@ -5822,7 +5822,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.KeyboardArrowLeft />
+                <Icons.KeyboardArrowLeft/>
                 <Typography className={classes.materialIconText}>
                   KeyboardArrowLeft
                 </Typography>
@@ -5835,7 +5835,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.KeyboardArrowRight />
+                <Icons.KeyboardArrowRight/>
                 <Typography className={classes.materialIconText}>
                   KeyboardArrowRight
                 </Typography>
@@ -5848,7 +5848,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.KeyboardArrowUp />
+                <Icons.KeyboardArrowUp/>
                 <Typography className={classes.materialIconText}>
                   KeyboardArrowUp
                 </Typography>
@@ -5861,7 +5861,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.KeyboardBackspace />
+                <Icons.KeyboardBackspace/>
                 <Typography className={classes.materialIconText}>
                   KeyboardBackspace
                 </Typography>
@@ -5874,7 +5874,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.KeyboardCapslock />
+                <Icons.KeyboardCapslock/>
                 <Typography className={classes.materialIconText}>
                   KeyboardCapslock
                 </Typography>
@@ -5887,7 +5887,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.KeyboardHide />
+                <Icons.KeyboardHide/>
                 <Typography className={classes.materialIconText}>
                   KeyboardHide
                 </Typography>
@@ -5900,7 +5900,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.KeyboardReturn />
+                <Icons.KeyboardReturn/>
                 <Typography className={classes.materialIconText}>
                   KeyboardReturn
                 </Typography>
@@ -5913,7 +5913,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.KeyboardTab />
+                <Icons.KeyboardTab/>
                 <Typography className={classes.materialIconText}>
                   KeyboardTab
                 </Typography>
@@ -5926,7 +5926,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.KeyboardVoice />
+                <Icons.KeyboardVoice/>
                 <Typography className={classes.materialIconText}>
                   KeyboardVoice
                 </Typography>
@@ -5939,7 +5939,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Kitchen />
+                <Icons.Kitchen/>
                 <Typography className={classes.materialIconText}>
                   Kitchen
                 </Typography>
@@ -5952,7 +5952,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Label />
+                <Icons.Label/>
                 <Typography className={classes.materialIconText}>
                   Label
                 </Typography>
@@ -5965,7 +5965,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.LabelImportant />
+                <Icons.LabelImportant/>
                 <Typography className={classes.materialIconText}>
                   LabelImportant
                 </Typography>
@@ -5978,7 +5978,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Landscape />
+                <Icons.Landscape/>
                 <Typography className={classes.materialIconText}>
                   Landscape
                 </Typography>
@@ -5991,7 +5991,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Language />
+                <Icons.Language/>
                 <Typography className={classes.materialIconText}>
                   Language
                 </Typography>
@@ -6004,7 +6004,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Laptop />
+                <Icons.Laptop/>
                 <Typography className={classes.materialIconText}>
                   Laptop
                 </Typography>
@@ -6017,7 +6017,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.LaptopChromebook />
+                <Icons.LaptopChromebook/>
                 <Typography className={classes.materialIconText}>
                   LaptopChromebook
                 </Typography>
@@ -6030,7 +6030,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.LaptopMac />
+                <Icons.LaptopMac/>
                 <Typography className={classes.materialIconText}>
                   LaptopMac
                 </Typography>
@@ -6043,7 +6043,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.LaptopWindows />
+                <Icons.LaptopWindows/>
                 <Typography className={classes.materialIconText}>
                   LaptopWindows
                 </Typography>
@@ -6056,7 +6056,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.LastPage />
+                <Icons.LastPage/>
                 <Typography className={classes.materialIconText}>
                   LastPage
                 </Typography>
@@ -6069,7 +6069,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Launch />
+                <Icons.Launch/>
                 <Typography className={classes.materialIconText}>
                   Launch
                 </Typography>
@@ -6082,7 +6082,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Layers />
+                <Icons.Layers/>
                 <Typography className={classes.materialIconText}>
                   Layers
                 </Typography>
@@ -6095,7 +6095,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.LayersClear />
+                <Icons.LayersClear/>
                 <Typography className={classes.materialIconText}>
                   LayersClear
                 </Typography>
@@ -6108,7 +6108,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.LeakRemove />
+                <Icons.LeakRemove/>
                 <Typography className={classes.materialIconText}>
                   LeakRemove
                 </Typography>
@@ -6121,7 +6121,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Lens />
+                <Icons.Lens/>
                 <Typography className={classes.materialIconText}>
                   Lens
                 </Typography>
@@ -6134,7 +6134,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.LibraryBooks />
+                <Icons.LibraryBooks/>
                 <Typography className={classes.materialIconText}>
                   LibraryBooks
                 </Typography>
@@ -6147,7 +6147,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.LibraryMusic />
+                <Icons.LibraryMusic/>
                 <Typography className={classes.materialIconText}>
                   LibraryMusic
                 </Typography>
@@ -6160,7 +6160,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.LinearScale />
+                <Icons.LinearScale/>
                 <Typography className={classes.materialIconText}>
                   LinearScale
                 </Typography>
@@ -6173,7 +6173,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.LineStyle />
+                <Icons.LineStyle/>
                 <Typography className={classes.materialIconText}>
                   LineStyle
                 </Typography>
@@ -6186,7 +6186,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.LineWeight />
+                <Icons.LineWeight/>
                 <Typography className={classes.materialIconText}>
                   LineWeight
                 </Typography>
@@ -6199,7 +6199,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Link />
+                <Icons.Link/>
                 <Typography className={classes.materialIconText}>
                   Link
                 </Typography>
@@ -6212,7 +6212,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.LinkedCamera />
+                <Icons.LinkedCamera/>
                 <Typography className={classes.materialIconText}>
                   LinkedCamera
                 </Typography>
@@ -6225,7 +6225,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.List />
+                <Icons.List/>
                 <Typography className={classes.materialIconText}>
                   List
                 </Typography>
@@ -6238,7 +6238,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.ListAlt />
+                <Icons.ListAlt/>
                 <Typography className={classes.materialIconText}>
                   ListAlt
                 </Typography>
@@ -6251,7 +6251,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.LiveHelp />
+                <Icons.LiveHelp/>
                 <Typography className={classes.materialIconText}>
                   LiveHelp
                 </Typography>
@@ -6264,7 +6264,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.LiveTv />
+                <Icons.LiveTv/>
                 <Typography className={classes.materialIconText}>
                   LiveTv
                 </Typography>
@@ -6277,7 +6277,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.LocalActivity />
+                <Icons.LocalActivity/>
                 <Typography className={classes.materialIconText}>
                   LocalActivity
                 </Typography>
@@ -6290,7 +6290,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.LocalAirport />
+                <Icons.LocalAirport/>
                 <Typography className={classes.materialIconText}>
                   LocalAirport
                 </Typography>
@@ -6303,7 +6303,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.LocalAtm />
+                <Icons.LocalAtm/>
                 <Typography className={classes.materialIconText}>
                   LocalAtm
                 </Typography>
@@ -6316,7 +6316,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.LocalBar />
+                <Icons.LocalBar/>
                 <Typography className={classes.materialIconText}>
                   LocalBar
                 </Typography>
@@ -6329,7 +6329,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.LocalCafe />
+                <Icons.LocalCafe/>
                 <Typography className={classes.materialIconText}>
                   LocalCafe
                 </Typography>
@@ -6342,7 +6342,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.LocalCarWash />
+                <Icons.LocalCarWash/>
                 <Typography className={classes.materialIconText}>
                   LocalCarWash
                 </Typography>
@@ -6355,7 +6355,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.LocalConvenienceStore />
+                <Icons.LocalConvenienceStore/>
                 <Typography className={classes.materialIconText}>
                   LocalConvenienceStore
                 </Typography>
@@ -6368,7 +6368,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.LocalDining />
+                <Icons.LocalDining/>
                 <Typography className={classes.materialIconText}>
                   LocalDining
                 </Typography>
@@ -6381,7 +6381,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.LocalDrink />
+                <Icons.LocalDrink/>
                 <Typography className={classes.materialIconText}>
                   LocalDrink
                 </Typography>
@@ -6394,7 +6394,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.LocalFlorist />
+                <Icons.LocalFlorist/>
                 <Typography className={classes.materialIconText}>
                   LocalFlorist
                 </Typography>
@@ -6407,7 +6407,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.LocalGasStation />
+                <Icons.LocalGasStation/>
                 <Typography className={classes.materialIconText}>
                   LocalGasStation
                 </Typography>
@@ -6420,7 +6420,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.LocalGroceryStore />
+                <Icons.LocalGroceryStore/>
                 <Typography className={classes.materialIconText}>
                   LocalGroceryStore
                 </Typography>
@@ -6433,7 +6433,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.LocalHospital />
+                <Icons.LocalHospital/>
                 <Typography className={classes.materialIconText}>
                   LocalHospital
                 </Typography>
@@ -6446,7 +6446,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.LocalHotel />
+                <Icons.LocalHotel/>
                 <Typography className={classes.materialIconText}>
                   LocalHotel
                 </Typography>
@@ -6459,7 +6459,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.LocalLaundryService />
+                <Icons.LocalLaundryService/>
                 <Typography className={classes.materialIconText}>
                   LocalLaundryService
                 </Typography>
@@ -6472,7 +6472,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.LocalLibrary />
+                <Icons.LocalLibrary/>
                 <Typography className={classes.materialIconText}>
                   LocalLibrary
                 </Typography>
@@ -6485,7 +6485,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.LocalMall />
+                <Icons.LocalMall/>
                 <Typography className={classes.materialIconText}>
                   LocalMall
                 </Typography>
@@ -6498,7 +6498,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.LocalMovies />
+                <Icons.LocalMovies/>
                 <Typography className={classes.materialIconText}>
                   LocalMovies
                 </Typography>
@@ -6511,7 +6511,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.LocalParking />
+                <Icons.LocalParking/>
                 <Typography className={classes.materialIconText}>
                   LocalParking
                 </Typography>
@@ -6524,7 +6524,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.LocalPharmacy />
+                <Icons.LocalPharmacy/>
                 <Typography className={classes.materialIconText}>
                   LocalPharmacy
                 </Typography>
@@ -6537,7 +6537,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.LocalPhone />
+                <Icons.LocalPhone/>
                 <Typography className={classes.materialIconText}>
                   LocalPhone
                 </Typography>
@@ -6550,7 +6550,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.LocalPizza />
+                <Icons.LocalPizza/>
                 <Typography className={classes.materialIconText}>
                   LocalPizza
                 </Typography>
@@ -6563,7 +6563,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.LocalPlay />
+                <Icons.LocalPlay/>
                 <Typography className={classes.materialIconText}>
                   LocalPlay
                 </Typography>
@@ -6576,7 +6576,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.LocalPrintshop />
+                <Icons.LocalPrintshop/>
                 <Typography className={classes.materialIconText}>
                   LocalPrintshop
                 </Typography>
@@ -6589,7 +6589,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.LocalSee />
+                <Icons.LocalSee/>
                 <Typography className={classes.materialIconText}>
                   LocalSee
                 </Typography>
@@ -6602,7 +6602,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.LocalShipping />
+                <Icons.LocalShipping/>
                 <Typography className={classes.materialIconText}>
                   LocalShipping
                 </Typography>
@@ -6615,7 +6615,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.LocalTaxi />
+                <Icons.LocalTaxi/>
                 <Typography className={classes.materialIconText}>
                   LocalTaxi
                 </Typography>
@@ -6628,7 +6628,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.LocationCity />
+                <Icons.LocationCity/>
                 <Typography className={classes.materialIconText}>
                   LocationCity
                 </Typography>
@@ -6641,7 +6641,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.LocationDisabled />
+                <Icons.LocationDisabled/>
                 <Typography className={classes.materialIconText}>
                   LocationDisabled
                 </Typography>
@@ -6654,7 +6654,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.LocationSearching />
+                <Icons.LocationSearching/>
                 <Typography className={classes.materialIconText}>
                   LocationSearching
                 </Typography>
@@ -6667,7 +6667,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Lock />
+                <Icons.Lock/>
                 <Typography className={classes.materialIconText}>
                   Lock
                 </Typography>
@@ -6680,7 +6680,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.LockOpen />
+                <Icons.LockOpen/>
                 <Typography className={classes.materialIconText}>
                   LockOpen
                 </Typography>
@@ -6693,7 +6693,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Looks />
+                <Icons.Looks/>
                 <Typography className={classes.materialIconText}>
                   Looks
                 </Typography>
@@ -6706,7 +6706,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Looks3 />
+                <Icons.Looks3/>
                 <Typography className={classes.materialIconText}>
                   Looks3
                 </Typography>
@@ -6719,7 +6719,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Looks4 />
+                <Icons.Looks4/>
                 <Typography className={classes.materialIconText}>
                   Looks4
                 </Typography>
@@ -6732,7 +6732,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Looks5 />
+                <Icons.Looks5/>
                 <Typography className={classes.materialIconText}>
                   Looks5
                 </Typography>
@@ -6745,7 +6745,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Looks6 />
+                <Icons.Looks6/>
                 <Typography className={classes.materialIconText}>
                   Looks6
                 </Typography>
@@ -6758,7 +6758,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.LooksTwo />
+                <Icons.LooksTwo/>
                 <Typography className={classes.materialIconText}>
                   LooksTwo
                 </Typography>
@@ -6771,7 +6771,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Loop />
+                <Icons.Loop/>
                 <Typography className={classes.materialIconText}>
                   Loop
                 </Typography>
@@ -6784,7 +6784,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Loupe />
+                <Icons.Loupe/>
                 <Typography className={classes.materialIconText}>
                   Loupe
                 </Typography>
@@ -6797,7 +6797,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.LowPriority />
+                <Icons.LowPriority/>
                 <Typography className={classes.materialIconText}>
                   LowPriority
                 </Typography>
@@ -6810,7 +6810,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Loyalty />
+                <Icons.Loyalty/>
                 <Typography className={classes.materialIconText}>
                   Loyalty
                 </Typography>
@@ -6823,7 +6823,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Mail />
+                <Icons.Mail/>
                 <Typography className={classes.materialIconText}>
                   Mail
                 </Typography>
@@ -6836,7 +6836,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.MailOutline />
+                <Icons.MailOutline/>
                 <Typography className={classes.materialIconText}>
                   MailOutline
                 </Typography>
@@ -6849,7 +6849,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Map />
+                <Icons.Map/>
                 <Typography className={classes.materialIconText}>
                   Map
                 </Typography>
@@ -6862,7 +6862,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Markunread />
+                <Icons.Markunread/>
                 <Typography className={classes.materialIconText}>
                   Markunread
                 </Typography>
@@ -6875,7 +6875,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.MarkunreadMailbox />
+                <Icons.MarkunreadMailbox/>
                 <Typography className={classes.materialIconText}>
                   MarkunreadMailbox
                 </Typography>
@@ -6888,7 +6888,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Maximize />
+                <Icons.Maximize/>
                 <Typography className={classes.materialIconText}>
                   Maximize
                 </Typography>
@@ -6901,7 +6901,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.MeetingRoom />
+                <Icons.MeetingRoom/>
                 <Typography className={classes.materialIconText}>
                   MeetingRoom
                 </Typography>
@@ -6914,7 +6914,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Memory />
+                <Icons.Memory/>
                 <Typography className={classes.materialIconText}>
                   Memory
                 </Typography>
@@ -6927,7 +6927,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Menu />
+                <Icons.Menu/>
                 <Typography className={classes.materialIconText}>
                   Menu
                 </Typography>
@@ -6940,7 +6940,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.MergeType />
+                <Icons.MergeType/>
                 <Typography className={classes.materialIconText}>
                   MergeType
                 </Typography>
@@ -6953,7 +6953,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Message />
+                <Icons.Message/>
                 <Typography className={classes.materialIconText}>
                   Message
                 </Typography>
@@ -6966,7 +6966,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Mic />
+                <Icons.Mic/>
                 <Typography className={classes.materialIconText}>
                   Mic
                 </Typography>
@@ -6979,7 +6979,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.MicNone />
+                <Icons.MicNone/>
                 <Typography className={classes.materialIconText}>
                   MicNone
                 </Typography>
@@ -6992,7 +6992,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Minimize />
+                <Icons.Minimize/>
                 <Typography className={classes.materialIconText}>
                   Minimize
                 </Typography>
@@ -7005,7 +7005,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.MissedVideoCall />
+                <Icons.MissedVideoCall/>
                 <Typography className={classes.materialIconText}>
                   MissedVideoCall
                 </Typography>
@@ -7018,7 +7018,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Mms />
+                <Icons.Mms/>
                 <Typography className={classes.materialIconText}>
                   Mms
                 </Typography>
@@ -7031,7 +7031,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.MobileFriendly />
+                <Icons.MobileFriendly/>
                 <Typography className={classes.materialIconText}>
                   MobileFriendly
                 </Typography>
@@ -7044,7 +7044,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.MobileScreenShare />
+                <Icons.MobileScreenShare/>
                 <Typography className={classes.materialIconText}>
                   MobileScreenShare
                 </Typography>
@@ -7057,7 +7057,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.ModeComment />
+                <Icons.ModeComment/>
                 <Typography className={classes.materialIconText}>
                   ModeComment
                 </Typography>
@@ -7070,7 +7070,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Money />
+                <Icons.Money/>
                 <Typography className={classes.materialIconText}>
                   Money
                 </Typography>
@@ -7083,7 +7083,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.MonochromePhotos />
+                <Icons.MonochromePhotos/>
                 <Typography className={classes.materialIconText}>
                   MonochromePhotos
                 </Typography>
@@ -7096,7 +7096,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Mood />
+                <Icons.Mood/>
                 <Typography className={classes.materialIconText}>
                   Mood
                 </Typography>
@@ -7109,7 +7109,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.MoodBad />
+                <Icons.MoodBad/>
                 <Typography className={classes.materialIconText}>
                   MoodBad
                 </Typography>
@@ -7122,7 +7122,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.More />
+                <Icons.More/>
                 <Typography className={classes.materialIconText}>
                   More
                 </Typography>
@@ -7135,7 +7135,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.MoreHoriz />
+                <Icons.MoreHoriz/>
                 <Typography className={classes.materialIconText}>
                   MoreHoriz
                 </Typography>
@@ -7148,7 +7148,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.MoreVert />
+                <Icons.MoreVert/>
                 <Typography className={classes.materialIconText}>
                   MoreVert
                 </Typography>
@@ -7161,7 +7161,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Motorcycle />
+                <Icons.Motorcycle/>
                 <Typography className={classes.materialIconText}>
                   Motorcycle
                 </Typography>
@@ -7174,7 +7174,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Mouse />
+                <Icons.Mouse/>
                 <Typography className={classes.materialIconText}>
                   Mouse
                 </Typography>
@@ -7187,7 +7187,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.MoveToInbox />
+                <Icons.MoveToInbox/>
                 <Typography className={classes.materialIconText}>
                   MoveToInbox
                 </Typography>
@@ -7200,7 +7200,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Movie />
+                <Icons.Movie/>
                 <Typography className={classes.materialIconText}>
                   Movie
                 </Typography>
@@ -7213,7 +7213,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.MovieCreation />
+                <Icons.MovieCreation/>
                 <Typography className={classes.materialIconText}>
                   MovieCreation
                 </Typography>
@@ -7226,7 +7226,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.MovieFilter />
+                <Icons.MovieFilter/>
                 <Typography className={classes.materialIconText}>
                   MovieFilter
                 </Typography>
@@ -7239,7 +7239,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.MultilineChart />
+                <Icons.MultilineChart/>
                 <Typography className={classes.materialIconText}>
                   MultilineChart
                 </Typography>
@@ -7252,7 +7252,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.MusicNote />
+                <Icons.MusicNote/>
                 <Typography className={classes.materialIconText}>
                   MusicNote
                 </Typography>
@@ -7265,7 +7265,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.MusicVideo />
+                <Icons.MusicVideo/>
                 <Typography className={classes.materialIconText}>
                   MusicVideo
                 </Typography>
@@ -7278,7 +7278,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.MyLocation />
+                <Icons.MyLocation/>
                 <Typography className={classes.materialIconText}>
                   MyLocation
                 </Typography>
@@ -7291,7 +7291,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Nature />
+                <Icons.Nature/>
                 <Typography className={classes.materialIconText}>
                   Nature
                 </Typography>
@@ -7304,7 +7304,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.NaturePeople />
+                <Icons.NaturePeople/>
                 <Typography className={classes.materialIconText}>
                   NaturePeople
                 </Typography>
@@ -7317,7 +7317,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.NavigateBefore />
+                <Icons.NavigateBefore/>
                 <Typography className={classes.materialIconText}>
                   NavigateBefore
                 </Typography>
@@ -7330,7 +7330,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.NavigateNext />
+                <Icons.NavigateNext/>
                 <Typography className={classes.materialIconText}>
                   NavigateNext
                 </Typography>
@@ -7343,7 +7343,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Navigation />
+                <Icons.Navigation/>
                 <Typography className={classes.materialIconText}>
                   Navigation
                 </Typography>
@@ -7356,7 +7356,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.NearMe />
+                <Icons.NearMe/>
                 <Typography className={classes.materialIconText}>
                   NearMe
                 </Typography>
@@ -7369,7 +7369,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.NetworkCell />
+                <Icons.NetworkCell/>
                 <Typography className={classes.materialIconText}>
                   NetworkCell
                 </Typography>
@@ -7382,7 +7382,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.NetworkCheck />
+                <Icons.NetworkCheck/>
                 <Typography className={classes.materialIconText}>
                   NetworkCheck
                 </Typography>
@@ -7395,7 +7395,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.NetworkLocked />
+                <Icons.NetworkLocked/>
                 <Typography className={classes.materialIconText}>
                   NetworkLocked
                 </Typography>
@@ -7408,7 +7408,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.NetworkWifi />
+                <Icons.NetworkWifi/>
                 <Typography className={classes.materialIconText}>
                   NetworkWifi
                 </Typography>
@@ -7421,7 +7421,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.NextWeek />
+                <Icons.NextWeek/>
                 <Typography className={classes.materialIconText}>
                   NextWeek
                 </Typography>
@@ -7434,7 +7434,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Nfc />
+                <Icons.Nfc/>
                 <Typography className={classes.materialIconText}>
                   Nfc
                 </Typography>
@@ -7447,7 +7447,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.NoEncryption />
+                <Icons.NoEncryption/>
                 <Typography className={classes.materialIconText}>
                   NoEncryption
                 </Typography>
@@ -7460,7 +7460,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.NoMeetingRoom />
+                <Icons.NoMeetingRoom/>
                 <Typography className={classes.materialIconText}>
                   NoMeetingRoom
                 </Typography>
@@ -7473,7 +7473,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.NoSim />
+                <Icons.NoSim/>
                 <Typography className={classes.materialIconText}>
                   NoSim
                 </Typography>
@@ -7486,7 +7486,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Note />
+                <Icons.Note/>
                 <Typography className={classes.materialIconText}>
                   Note
                 </Typography>
@@ -7499,7 +7499,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Notes />
+                <Icons.Notes/>
                 <Typography className={classes.materialIconText}>
                   Notes
                 </Typography>
@@ -7512,7 +7512,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.NotificationImportant />
+                <Icons.NotificationImportant/>
                 <Typography className={classes.materialIconText}>
                   NotificationImportant
                 </Typography>
@@ -7525,7 +7525,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Notifications />
+                <Icons.Notifications/>
                 <Typography className={classes.materialIconText}>
                   Notifications
                 </Typography>
@@ -7538,7 +7538,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.NotificationsActive />
+                <Icons.NotificationsActive/>
                 <Typography className={classes.materialIconText}>
                   NotificationsActive
                 </Typography>
@@ -7551,7 +7551,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.NotificationsNone />
+                <Icons.NotificationsNone/>
                 <Typography className={classes.materialIconText}>
                   NotificationsNone
                 </Typography>
@@ -7564,7 +7564,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.NotificationsPaused />
+                <Icons.NotificationsPaused/>
                 <Typography className={classes.materialIconText}>
                   NotificationsPaused
                 </Typography>
@@ -7577,7 +7577,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.NotInterested />
+                <Icons.NotInterested/>
                 <Typography className={classes.materialIconText}>
                   NotInterested
                 </Typography>
@@ -7590,7 +7590,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.NotListedLocation />
+                <Icons.NotListedLocation/>
                 <Typography className={classes.materialIconText}>
                   NotListedLocation
                 </Typography>
@@ -7603,7 +7603,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Opacity />
+                <Icons.Opacity/>
                 <Typography className={classes.materialIconText}>
                   Opacity
                 </Typography>
@@ -7616,7 +7616,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.OpenInBrowser />
+                <Icons.OpenInBrowser/>
                 <Typography className={classes.materialIconText}>
                   OpenInBrowser
                 </Typography>
@@ -7629,7 +7629,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.OpenWith />
+                <Icons.OpenWith/>
                 <Typography className={classes.materialIconText}>
                   OpenWith
                 </Typography>
@@ -7642,7 +7642,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Pages />
+                <Icons.Pages/>
                 <Typography className={classes.materialIconText}>
                   Pages
                 </Typography>
@@ -7655,7 +7655,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Pageview />
+                <Icons.Pageview/>
                 <Typography className={classes.materialIconText}>
                   Pageview
                 </Typography>
@@ -7668,7 +7668,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Palette />
+                <Icons.Palette/>
                 <Typography className={classes.materialIconText}>
                   Palette
                 </Typography>
@@ -7681,7 +7681,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Panorama />
+                <Icons.Panorama/>
                 <Typography className={classes.materialIconText}>
                   Panorama
                 </Typography>
@@ -7694,7 +7694,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.PanoramaFishEye />
+                <Icons.PanoramaFishEye/>
                 <Typography className={classes.materialIconText}>
                   PanoramaFishEye
                 </Typography>
@@ -7707,7 +7707,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.PanoramaHorizontal />
+                <Icons.PanoramaHorizontal/>
                 <Typography className={classes.materialIconText}>
                   PanoramaHorizontal
                 </Typography>
@@ -7720,7 +7720,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.PanoramaVertical />
+                <Icons.PanoramaVertical/>
                 <Typography className={classes.materialIconText}>
                   PanoramaVertical
                 </Typography>
@@ -7733,7 +7733,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.PanoramaWideAngle />
+                <Icons.PanoramaWideAngle/>
                 <Typography className={classes.materialIconText}>
                   PanoramaWideAngle
                 </Typography>
@@ -7746,7 +7746,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.PanTool />
+                <Icons.PanTool/>
                 <Typography className={classes.materialIconText}>
                   PanTool
                 </Typography>
@@ -7759,7 +7759,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.PartyMode />
+                <Icons.PartyMode/>
                 <Typography className={classes.materialIconText}>
                   PartyMode
                 </Typography>
@@ -7772,7 +7772,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Pause />
+                <Icons.Pause/>
                 <Typography className={classes.materialIconText}>
                   Pause
                 </Typography>
@@ -7785,7 +7785,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.PauseCircleFilled />
+                <Icons.PauseCircleFilled/>
                 <Typography className={classes.materialIconText}>
                   PauseCircleFilled
                 </Typography>
@@ -7798,7 +7798,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.PauseCircleOutline />
+                <Icons.PauseCircleOutline/>
                 <Typography className={classes.materialIconText}>
                   PauseCircleOutline
                 </Typography>
@@ -7811,7 +7811,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.PausePresentation />
+                <Icons.PausePresentation/>
                 <Typography className={classes.materialIconText}>
                   PausePresentation
                 </Typography>
@@ -7824,7 +7824,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Payment />
+                <Icons.Payment/>
                 <Typography className={classes.materialIconText}>
                   Payment
                 </Typography>
@@ -7837,7 +7837,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.People />
+                <Icons.People/>
                 <Typography className={classes.materialIconText}>
                   People
                 </Typography>
@@ -7850,7 +7850,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.PeopleOutline />
+                <Icons.PeopleOutline/>
                 <Typography className={classes.materialIconText}>
                   PeopleOutline
                 </Typography>
@@ -7863,7 +7863,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.PermCameraMic />
+                <Icons.PermCameraMic/>
                 <Typography className={classes.materialIconText}>
                   PermCameraMic
                 </Typography>
@@ -7876,7 +7876,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.PermContactCalendar />
+                <Icons.PermContactCalendar/>
                 <Typography className={classes.materialIconText}>
                   PermContactCalendar
                 </Typography>
@@ -7889,7 +7889,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.PermDataSetting />
+                <Icons.PermDataSetting/>
                 <Typography className={classes.materialIconText}>
                   PermDataSetting
                 </Typography>
@@ -7902,7 +7902,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.PermDeviceInformation />
+                <Icons.PermDeviceInformation/>
                 <Typography className={classes.materialIconText}>
                   PermDeviceInformation
                 </Typography>
@@ -7915,7 +7915,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.PermIdentity />
+                <Icons.PermIdentity/>
                 <Typography className={classes.materialIconText}>
                   PermIdentity
                 </Typography>
@@ -7928,7 +7928,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.PermMedia />
+                <Icons.PermMedia/>
                 <Typography className={classes.materialIconText}>
                   PermMedia
                 </Typography>
@@ -7941,7 +7941,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.PermPhoneMsg />
+                <Icons.PermPhoneMsg/>
                 <Typography className={classes.materialIconText}>
                   PermPhoneMsg
                 </Typography>
@@ -7954,7 +7954,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.PermScanWifi />
+                <Icons.PermScanWifi/>
                 <Typography className={classes.materialIconText}>
                   PermScanWifi
                 </Typography>
@@ -7967,7 +7967,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Person />
+                <Icons.Person/>
                 <Typography className={classes.materialIconText}>
                   Person
                 </Typography>
@@ -7980,7 +7980,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.PersonalVideo />
+                <Icons.PersonalVideo/>
                 <Typography className={classes.materialIconText}>
                   PersonalVideo
                 </Typography>
@@ -7993,7 +7993,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.PersonOutline />
+                <Icons.PersonOutline/>
                 <Typography className={classes.materialIconText}>
                   PersonOutline
                 </Typography>
@@ -8006,7 +8006,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.PersonPin />
+                <Icons.PersonPin/>
                 <Typography className={classes.materialIconText}>
                   PersonPin
                 </Typography>
@@ -8019,7 +8019,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.PersonPinCircle />
+                <Icons.PersonPinCircle/>
                 <Typography className={classes.materialIconText}>
                   PersonPinCircle
                 </Typography>
@@ -8032,7 +8032,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Pets />
+                <Icons.Pets/>
                 <Typography className={classes.materialIconText}>
                   Pets
                 </Typography>
@@ -8045,7 +8045,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Phone />
+                <Icons.Phone/>
                 <Typography className={classes.materialIconText}>
                   Phone
                 </Typography>
@@ -8058,7 +8058,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.PhoneAndroid />
+                <Icons.PhoneAndroid/>
                 <Typography className={classes.materialIconText}>
                   PhoneAndroid
                 </Typography>
@@ -8071,7 +8071,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.PhoneBluetoothSpeaker />
+                <Icons.PhoneBluetoothSpeaker/>
                 <Typography className={classes.materialIconText}>
                   PhoneBluetoothSpeaker
                 </Typography>
@@ -8084,7 +8084,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.PhoneCallback />
+                <Icons.PhoneCallback/>
                 <Typography className={classes.materialIconText}>
                   PhoneCallback
                 </Typography>
@@ -8097,7 +8097,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.PhoneForwarded />
+                <Icons.PhoneForwarded/>
                 <Typography className={classes.materialIconText}>
                   PhoneForwarded
                 </Typography>
@@ -8110,7 +8110,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.PhoneInTalk />
+                <Icons.PhoneInTalk/>
                 <Typography className={classes.materialIconText}>
                   PhoneInTalk
                 </Typography>
@@ -8123,7 +8123,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.PhoneIphone />
+                <Icons.PhoneIphone/>
                 <Typography className={classes.materialIconText}>
                   PhoneIphone
                 </Typography>
@@ -8136,7 +8136,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Phonelink />
+                <Icons.Phonelink/>
                 <Typography className={classes.materialIconText}>
                   Phonelink
                 </Typography>
@@ -8149,7 +8149,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.PhonelinkErase />
+                <Icons.PhonelinkErase/>
                 <Typography className={classes.materialIconText}>
                   PhonelinkErase
                 </Typography>
@@ -8162,7 +8162,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.PhonelinkLock />
+                <Icons.PhonelinkLock/>
                 <Typography className={classes.materialIconText}>
                   PhonelinkLock
                 </Typography>
@@ -8175,7 +8175,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.PhonelinkRing />
+                <Icons.PhonelinkRing/>
                 <Typography className={classes.materialIconText}>
                   PhonelinkRing
                 </Typography>
@@ -8188,7 +8188,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.PhonelinkSetup />
+                <Icons.PhonelinkSetup/>
                 <Typography className={classes.materialIconText}>
                   PhonelinkSetup
                 </Typography>
@@ -8201,7 +8201,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.PhoneLocked />
+                <Icons.PhoneLocked/>
                 <Typography className={classes.materialIconText}>
                   PhoneLocked
                 </Typography>
@@ -8214,7 +8214,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.PhoneMissed />
+                <Icons.PhoneMissed/>
                 <Typography className={classes.materialIconText}>
                   PhoneMissed
                 </Typography>
@@ -8227,7 +8227,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.PhonePaused />
+                <Icons.PhonePaused/>
                 <Typography className={classes.materialIconText}>
                   PhonePaused
                 </Typography>
@@ -8240,7 +8240,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Photo />
+                <Icons.Photo/>
                 <Typography className={classes.materialIconText}>
                   Photo
                 </Typography>
@@ -8253,7 +8253,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.PhotoAlbum />
+                <Icons.PhotoAlbum/>
                 <Typography className={classes.materialIconText}>
                   PhotoAlbum
                 </Typography>
@@ -8266,7 +8266,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.PhotoCamera />
+                <Icons.PhotoCamera/>
                 <Typography className={classes.materialIconText}>
                   PhotoCamera
                 </Typography>
@@ -8279,7 +8279,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.PhotoFilter />
+                <Icons.PhotoFilter/>
                 <Typography className={classes.materialIconText}>
                   PhotoFilter
                 </Typography>
@@ -8292,7 +8292,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.PhotoLibrary />
+                <Icons.PhotoLibrary/>
                 <Typography className={classes.materialIconText}>
                   PhotoLibrary
                 </Typography>
@@ -8305,7 +8305,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.PhotoSizeSelectActual />
+                <Icons.PhotoSizeSelectActual/>
                 <Typography className={classes.materialIconText}>
                   PhotoSizeSelectActual
                 </Typography>
@@ -8318,7 +8318,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.PhotoSizeSelectLarge />
+                <Icons.PhotoSizeSelectLarge/>
                 <Typography className={classes.materialIconText}>
                   PhotoSizeSelectLarge
                 </Typography>
@@ -8331,7 +8331,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.PhotoSizeSelectSmall />
+                <Icons.PhotoSizeSelectSmall/>
                 <Typography className={classes.materialIconText}>
                   PhotoSizeSelectSmall
                 </Typography>
@@ -8344,7 +8344,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.PictureAsPdf />
+                <Icons.PictureAsPdf/>
                 <Typography className={classes.materialIconText}>
                   PictureAsPdf
                 </Typography>
@@ -8357,7 +8357,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.PictureInPicture />
+                <Icons.PictureInPicture/>
                 <Typography className={classes.materialIconText}>
                   PictureInPicture
                 </Typography>
@@ -8370,7 +8370,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.PictureInPictureAlt />
+                <Icons.PictureInPictureAlt/>
                 <Typography className={classes.materialIconText}>
                   PictureInPictureAlt
                 </Typography>
@@ -8383,7 +8383,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.PieChart />
+                <Icons.PieChart/>
                 <Typography className={classes.materialIconText}>
                   PieChart
                 </Typography>
@@ -8396,7 +8396,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.PinDrop />
+                <Icons.PinDrop/>
                 <Typography className={classes.materialIconText}>
                   PinDrop
                 </Typography>
@@ -8409,7 +8409,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Place />
+                <Icons.Place/>
                 <Typography className={classes.materialIconText}>
                   Place
                 </Typography>
@@ -8422,7 +8422,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.PlayArrow />
+                <Icons.PlayArrow/>
                 <Typography className={classes.materialIconText}>
                   PlayArrow
                 </Typography>
@@ -8435,7 +8435,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.PlayCircleFilled />
+                <Icons.PlayCircleFilled/>
                 <Typography className={classes.materialIconText}>
                   PlayCircleFilled
                 </Typography>
@@ -8448,7 +8448,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.PlayCircleFilledWhite />
+                <Icons.PlayCircleFilledWhite/>
                 <Typography className={classes.materialIconText}>
                   PlayCircleFilledWhite
                 </Typography>
@@ -8461,7 +8461,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.PlayCircleOutline />
+                <Icons.PlayCircleOutline/>
                 <Typography className={classes.materialIconText}>
                   PlayCircleOutline
                 </Typography>
@@ -8474,7 +8474,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.PlayForWork />
+                <Icons.PlayForWork/>
                 <Typography className={classes.materialIconText}>
                   PlayForWork
                 </Typography>
@@ -8487,7 +8487,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.PlaylistPlay />
+                <Icons.PlaylistPlay/>
                 <Typography className={classes.materialIconText}>
                   PlaylistPlay
                 </Typography>
@@ -8500,7 +8500,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Poll />
+                <Icons.Poll/>
                 <Typography className={classes.materialIconText}>
                   Poll
                 </Typography>
@@ -8513,7 +8513,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Polymer />
+                <Icons.Polymer/>
                 <Typography className={classes.materialIconText}>
                   Polymer
                 </Typography>
@@ -8526,7 +8526,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Pool />
+                <Icons.Pool/>
                 <Typography className={classes.materialIconText}>
                   Pool
                 </Typography>
@@ -8539,7 +8539,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Portrait />
+                <Icons.Portrait/>
                 <Typography className={classes.materialIconText}>
                   Portrait
                 </Typography>
@@ -8552,7 +8552,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Power />
+                <Icons.Power/>
                 <Typography className={classes.materialIconText}>
                   Power
                 </Typography>
@@ -8565,7 +8565,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.PowerInput />
+                <Icons.PowerInput/>
                 <Typography className={classes.materialIconText}>
                   PowerInput
                 </Typography>
@@ -8578,7 +8578,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.PregnantWoman />
+                <Icons.PregnantWoman/>
                 <Typography className={classes.materialIconText}>
                   PregnantWoman
                 </Typography>
@@ -8591,7 +8591,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.PresentToAll />
+                <Icons.PresentToAll/>
                 <Typography className={classes.materialIconText}>
                   PresentToAll
                 </Typography>
@@ -8604,7 +8604,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Print />
+                <Icons.Print/>
                 <Typography className={classes.materialIconText}>
                   Print
                 </Typography>
@@ -8617,7 +8617,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.PrintDisabled />
+                <Icons.PrintDisabled/>
                 <Typography className={classes.materialIconText}>
                   PrintDisabled
                 </Typography>
@@ -8630,7 +8630,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.PriorityHigh />
+                <Icons.PriorityHigh/>
                 <Typography className={classes.materialIconText}>
                   PriorityHigh
                 </Typography>
@@ -8643,7 +8643,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Public />
+                <Icons.Public/>
                 <Typography className={classes.materialIconText}>
                   Public
                 </Typography>
@@ -8656,7 +8656,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Publish />
+                <Icons.Publish/>
                 <Typography className={classes.materialIconText}>
                   Publish
                 </Typography>
@@ -8669,7 +8669,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.QueryBuilder />
+                <Icons.QueryBuilder/>
                 <Typography className={classes.materialIconText}>
                   QueryBuilder
                 </Typography>
@@ -8682,7 +8682,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.QuestionAnswer />
+                <Icons.QuestionAnswer/>
                 <Typography className={classes.materialIconText}>
                   QuestionAnswer
                 </Typography>
@@ -8695,7 +8695,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Queue />
+                <Icons.Queue/>
                 <Typography className={classes.materialIconText}>
                   Queue
                 </Typography>
@@ -8708,7 +8708,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.QueueMusic />
+                <Icons.QueueMusic/>
                 <Typography className={classes.materialIconText}>
                   QueueMusic
                 </Typography>
@@ -8721,7 +8721,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.QueuePlayNext />
+                <Icons.QueuePlayNext/>
                 <Typography className={classes.materialIconText}>
                   QueuePlayNext
                 </Typography>
@@ -8734,7 +8734,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Radio />
+                <Icons.Radio/>
                 <Typography className={classes.materialIconText}>
                   Radio
                 </Typography>
@@ -8747,7 +8747,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.RadioButtonChecked />
+                <Icons.RadioButtonChecked/>
                 <Typography className={classes.materialIconText}>
                   RadioButtonChecked
                 </Typography>
@@ -8760,7 +8760,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.RadioButtonUnchecked />
+                <Icons.RadioButtonUnchecked/>
                 <Typography className={classes.materialIconText}>
                   RadioButtonUnchecked
                 </Typography>
@@ -8773,7 +8773,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.RateReview />
+                <Icons.RateReview/>
                 <Typography className={classes.materialIconText}>
                   RateReview
                 </Typography>
@@ -8786,7 +8786,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Receipt />
+                <Icons.Receipt/>
                 <Typography className={classes.materialIconText}>
                   Receipt
                 </Typography>
@@ -8799,7 +8799,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.RecentActors />
+                <Icons.RecentActors/>
                 <Typography className={classes.materialIconText}>
                   RecentActors
                 </Typography>
@@ -8812,7 +8812,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.RecordVoiceOver />
+                <Icons.RecordVoiceOver/>
                 <Typography className={classes.materialIconText}>
                   RecordVoiceOver
                 </Typography>
@@ -8825,7 +8825,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Redeem />
+                <Icons.Redeem/>
                 <Typography className={classes.materialIconText}>
                   Redeem
                 </Typography>
@@ -8838,7 +8838,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Redo />
+                <Icons.Redo/>
                 <Typography className={classes.materialIconText}>
                   Redo
                 </Typography>
@@ -8851,7 +8851,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Refresh />
+                <Icons.Refresh/>
                 <Typography className={classes.materialIconText}>
                   Refresh
                 </Typography>
@@ -8864,7 +8864,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Remove />
+                <Icons.Remove/>
                 <Typography className={classes.materialIconText}>
                   Remove
                 </Typography>
@@ -8877,7 +8877,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.RemoveCircle />
+                <Icons.RemoveCircle/>
                 <Typography className={classes.materialIconText}>
                   RemoveCircle
                 </Typography>
@@ -8890,7 +8890,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.RemoveCircleOutline />
+                <Icons.RemoveCircleOutline/>
                 <Typography className={classes.materialIconText}>
                   RemoveCircleOutline
                 </Typography>
@@ -8903,7 +8903,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.RemoveFromQueue />
+                <Icons.RemoveFromQueue/>
                 <Typography className={classes.materialIconText}>
                   RemoveFromQueue
                 </Typography>
@@ -8916,7 +8916,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.RemoveRedEye />
+                <Icons.RemoveRedEye/>
                 <Typography className={classes.materialIconText}>
                   RemoveRedEye
                 </Typography>
@@ -8929,7 +8929,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.RemoveShoppingCart />
+                <Icons.RemoveShoppingCart/>
                 <Typography className={classes.materialIconText}>
                   RemoveShoppingCart
                 </Typography>
@@ -8942,7 +8942,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Reorder />
+                <Icons.Reorder/>
                 <Typography className={classes.materialIconText}>
                   Reorder
                 </Typography>
@@ -8955,7 +8955,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Repeat />
+                <Icons.Repeat/>
                 <Typography className={classes.materialIconText}>
                   Repeat
                 </Typography>
@@ -8968,7 +8968,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Replay />
+                <Icons.Replay/>
                 <Typography className={classes.materialIconText}>
                   Replay
                 </Typography>
@@ -8981,7 +8981,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Replay10 />
+                <Icons.Replay10/>
                 <Typography className={classes.materialIconText}>
                   Replay10
                 </Typography>
@@ -8994,7 +8994,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Replay30 />
+                <Icons.Replay30/>
                 <Typography className={classes.materialIconText}>
                   Replay30
                 </Typography>
@@ -9007,7 +9007,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Replay5 />
+                <Icons.Replay5/>
                 <Typography className={classes.materialIconText}>
                   Replay5
                 </Typography>
@@ -9020,7 +9020,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Reply />
+                <Icons.Reply/>
                 <Typography className={classes.materialIconText}>
                   Reply
                 </Typography>
@@ -9033,7 +9033,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.ReplyAll />
+                <Icons.ReplyAll/>
                 <Typography className={classes.materialIconText}>
                   ReplyAll
                 </Typography>
@@ -9046,7 +9046,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Report />
+                <Icons.Report/>
                 <Typography className={classes.materialIconText}>
                   Report
                 </Typography>
@@ -9059,7 +9059,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.ReportProblem />
+                <Icons.ReportProblem/>
                 <Typography className={classes.materialIconText}>
                   ReportProblem
                 </Typography>
@@ -9072,7 +9072,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Restaurant />
+                <Icons.Restaurant/>
                 <Typography className={classes.materialIconText}>
                   Restaurant
                 </Typography>
@@ -9085,7 +9085,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.RestaurantMenu />
+                <Icons.RestaurantMenu/>
                 <Typography className={classes.materialIconText}>
                   RestaurantMenu
                 </Typography>
@@ -9098,7 +9098,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Restore />
+                <Icons.Restore/>
                 <Typography className={classes.materialIconText}>
                   Restore
                 </Typography>
@@ -9111,7 +9111,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.RestoreFromTrash />
+                <Icons.RestoreFromTrash/>
                 <Typography className={classes.materialIconText}>
                   RestoreFromTrash
                 </Typography>
@@ -9124,7 +9124,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.RestorePage />
+                <Icons.RestorePage/>
                 <Typography className={classes.materialIconText}>
                   RestorePage
                 </Typography>
@@ -9137,7 +9137,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.RingVolume />
+                <Icons.RingVolume/>
                 <Typography className={classes.materialIconText}>
                   RingVolume
                 </Typography>
@@ -9150,7 +9150,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Room />
+                <Icons.Room/>
                 <Typography className={classes.materialIconText}>
                   Room
                 </Typography>
@@ -9163,7 +9163,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.RoomService />
+                <Icons.RoomService/>
                 <Typography className={classes.materialIconText}>
                   RoomService
                 </Typography>
@@ -9176,7 +9176,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Rotate90DegreesCcw />
+                <Icons.Rotate90DegreesCcw/>
                 <Typography className={classes.materialIconText}>
                   Rotate90DegreesCcw
                 </Typography>
@@ -9189,7 +9189,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.RotateLeft />
+                <Icons.RotateLeft/>
                 <Typography className={classes.materialIconText}>
                   RotateLeft
                 </Typography>
@@ -9202,7 +9202,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.RotateRight />
+                <Icons.RotateRight/>
                 <Typography className={classes.materialIconText}>
                   RotateRight
                 </Typography>
@@ -9215,7 +9215,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Router />
+                <Icons.Router/>
                 <Typography className={classes.materialIconText}>
                   Router
                 </Typography>
@@ -9228,7 +9228,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Rowing />
+                <Icons.Rowing/>
                 <Typography className={classes.materialIconText}>
                   Rowing
                 </Typography>
@@ -9241,7 +9241,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.RssFeed />
+                <Icons.RssFeed/>
                 <Typography className={classes.materialIconText}>
                   RssFeed
                 </Typography>
@@ -9254,7 +9254,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.RvHookup />
+                <Icons.RvHookup/>
                 <Typography className={classes.materialIconText}>
                   RvHookup
                 </Typography>
@@ -9267,7 +9267,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Satellite />
+                <Icons.Satellite/>
                 <Typography className={classes.materialIconText}>
                   Satellite
                 </Typography>
@@ -9280,7 +9280,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Save />
+                <Icons.Save/>
                 <Typography className={classes.materialIconText}>
                   Save
                 </Typography>
@@ -9293,7 +9293,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.SaveAlt />
+                <Icons.SaveAlt/>
                 <Typography className={classes.materialIconText}>
                   SaveAlt
                 </Typography>
@@ -9306,7 +9306,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Scanner />
+                <Icons.Scanner/>
                 <Typography className={classes.materialIconText}>
                   Scanner
                 </Typography>
@@ -9319,7 +9319,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.ScatterPlot />
+                <Icons.ScatterPlot/>
                 <Typography className={classes.materialIconText}>
                   ScatterPlot
                 </Typography>
@@ -9332,7 +9332,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Schedule />
+                <Icons.Schedule/>
                 <Typography className={classes.materialIconText}>
                   Schedule
                 </Typography>
@@ -9345,7 +9345,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.School />
+                <Icons.School/>
                 <Typography className={classes.materialIconText}>
                   School
                 </Typography>
@@ -9358,7 +9358,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Score />
+                <Icons.Score/>
                 <Typography className={classes.materialIconText}>
                   Score
                 </Typography>
@@ -9371,7 +9371,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.ScreenLockLandscape />
+                <Icons.ScreenLockLandscape/>
                 <Typography className={classes.materialIconText}>
                   ScreenLockLandscape
                 </Typography>
@@ -9384,7 +9384,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.ScreenLockPortrait />
+                <Icons.ScreenLockPortrait/>
                 <Typography className={classes.materialIconText}>
                   ScreenLockPortrait
                 </Typography>
@@ -9397,7 +9397,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.ScreenLockRotation />
+                <Icons.ScreenLockRotation/>
                 <Typography className={classes.materialIconText}>
                   ScreenLockRotation
                 </Typography>
@@ -9410,7 +9410,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.ScreenRotation />
+                <Icons.ScreenRotation/>
                 <Typography className={classes.materialIconText}>
                   ScreenRotation
                 </Typography>
@@ -9423,7 +9423,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.ScreenShare />
+                <Icons.ScreenShare/>
                 <Typography className={classes.materialIconText}>
                   ScreenShare
                 </Typography>
@@ -9436,7 +9436,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.SdCard />
+                <Icons.SdCard/>
                 <Typography className={classes.materialIconText}>
                   SdCard
                 </Typography>
@@ -9449,7 +9449,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.SdStorage />
+                <Icons.SdStorage/>
                 <Typography className={classes.materialIconText}>
                   SdStorage
                 </Typography>
@@ -9462,7 +9462,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Search />
+                <Icons.Search/>
                 <Typography className={classes.materialIconText}>
                   Search
                 </Typography>
@@ -9475,7 +9475,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Security />
+                <Icons.Security/>
                 <Typography className={classes.materialIconText}>
                   Security
                 </Typography>
@@ -9488,7 +9488,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.SelectAll />
+                <Icons.SelectAll/>
                 <Typography className={classes.materialIconText}>
                   SelectAll
                 </Typography>
@@ -9501,7 +9501,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Send />
+                <Icons.Send/>
                 <Typography className={classes.materialIconText}>
                   Send
                 </Typography>
@@ -9514,7 +9514,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.SentimentDissatisfied />
+                <Icons.SentimentDissatisfied/>
                 <Typography className={classes.materialIconText}>
                   SentimentDissatisfied
                 </Typography>
@@ -9527,7 +9527,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.SentimentSatisfied />
+                <Icons.SentimentSatisfied/>
                 <Typography className={classes.materialIconText}>
                   SentimentSatisfied
                 </Typography>
@@ -9540,7 +9540,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.SentimentSatisfiedAlt />
+                <Icons.SentimentSatisfiedAlt/>
                 <Typography className={classes.materialIconText}>
                   SentimentSatisfiedAlt
                 </Typography>
@@ -9553,7 +9553,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.SentimentVeryDissatisfied />
+                <Icons.SentimentVeryDissatisfied/>
                 <Typography className={classes.materialIconText}>
                   SentimentVeryDissatisfied
                 </Typography>
@@ -9566,7 +9566,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.SentimentVerySatisfied />
+                <Icons.SentimentVerySatisfied/>
                 <Typography className={classes.materialIconText}>
                   SentimentVerySatisfied
                 </Typography>
@@ -9579,7 +9579,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Settings />
+                <Icons.Settings/>
                 <Typography className={classes.materialIconText}>
                   Settings
                 </Typography>
@@ -9592,7 +9592,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.SettingsApplications />
+                <Icons.SettingsApplications/>
                 <Typography className={classes.materialIconText}>
                   SettingsApplications
                 </Typography>
@@ -9605,7 +9605,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.SettingsBackupRestore />
+                <Icons.SettingsBackupRestore/>
                 <Typography className={classes.materialIconText}>
                   SettingsBackupRestore
                 </Typography>
@@ -9618,7 +9618,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.SettingsBluetooth />
+                <Icons.SettingsBluetooth/>
                 <Typography className={classes.materialIconText}>
                   SettingsBluetooth
                 </Typography>
@@ -9631,7 +9631,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.SettingsBrightness />
+                <Icons.SettingsBrightness/>
                 <Typography className={classes.materialIconText}>
                   SettingsBrightness
                 </Typography>
@@ -9644,7 +9644,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.SettingsCell />
+                <Icons.SettingsCell/>
                 <Typography className={classes.materialIconText}>
                   SettingsCell
                 </Typography>
@@ -9657,7 +9657,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.SettingsEthernet />
+                <Icons.SettingsEthernet/>
                 <Typography className={classes.materialIconText}>
                   SettingsEthernet
                 </Typography>
@@ -9670,7 +9670,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.SettingsInputAntenna />
+                <Icons.SettingsInputAntenna/>
                 <Typography className={classes.materialIconText}>
                   SettingsInputAntenna
                 </Typography>
@@ -9683,7 +9683,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.SettingsInputComponent />
+                <Icons.SettingsInputComponent/>
                 <Typography className={classes.materialIconText}>
                   SettingsInputComponent
                 </Typography>
@@ -9696,7 +9696,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.SettingsInputComposite />
+                <Icons.SettingsInputComposite/>
                 <Typography className={classes.materialIconText}>
                   SettingsInputComposite
                 </Typography>
@@ -9709,7 +9709,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.SettingsInputHdmi />
+                <Icons.SettingsInputHdmi/>
                 <Typography className={classes.materialIconText}>
                   SettingsInputHdmi
                 </Typography>
@@ -9722,7 +9722,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.SettingsInputSvideo />
+                <Icons.SettingsInputSvideo/>
                 <Typography className={classes.materialIconText}>
                   SettingsInputSvideo
                 </Typography>
@@ -9735,7 +9735,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.SettingsOverscan />
+                <Icons.SettingsOverscan/>
                 <Typography className={classes.materialIconText}>
                   SettingsOverscan
                 </Typography>
@@ -9748,7 +9748,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.SettingsPhone />
+                <Icons.SettingsPhone/>
                 <Typography className={classes.materialIconText}>
                   SettingsPhone
                 </Typography>
@@ -9761,7 +9761,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.SettingsPower />
+                <Icons.SettingsPower/>
                 <Typography className={classes.materialIconText}>
                   SettingsPower
                 </Typography>
@@ -9774,7 +9774,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.SettingsRemote />
+                <Icons.SettingsRemote/>
                 <Typography className={classes.materialIconText}>
                   SettingsRemote
                 </Typography>
@@ -9787,7 +9787,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.SettingsSystemDaydream />
+                <Icons.SettingsSystemDaydream/>
                 <Typography className={classes.materialIconText}>
                   SettingsSystemDaydream
                 </Typography>
@@ -9800,7 +9800,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.SettingsVoice />
+                <Icons.SettingsVoice/>
                 <Typography className={classes.materialIconText}>
                   SettingsVoice
                 </Typography>
@@ -9813,7 +9813,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Share />
+                <Icons.Share/>
                 <Typography className={classes.materialIconText}>
                   Share
                 </Typography>
@@ -9826,7 +9826,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Shop />
+                <Icons.Shop/>
                 <Typography className={classes.materialIconText}>
                   Shop
                 </Typography>
@@ -9839,7 +9839,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.ShoppingBasket />
+                <Icons.ShoppingBasket/>
                 <Typography className={classes.materialIconText}>
                   ShoppingBasket
                 </Typography>
@@ -9852,7 +9852,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.ShoppingCart />
+                <Icons.ShoppingCart/>
                 <Typography className={classes.materialIconText}>
                   ShoppingCart
                 </Typography>
@@ -9865,7 +9865,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.ShopTwo />
+                <Icons.ShopTwo/>
                 <Typography className={classes.materialIconText}>
                   ShopTwo
                 </Typography>
@@ -9878,7 +9878,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.ShortText />
+                <Icons.ShortText/>
                 <Typography className={classes.materialIconText}>
                   ShortText
                 </Typography>
@@ -9891,7 +9891,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.ShowChart />
+                <Icons.ShowChart/>
                 <Typography className={classes.materialIconText}>
                   ShowChart
                 </Typography>
@@ -9904,7 +9904,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Shuffle />
+                <Icons.Shuffle/>
                 <Typography className={classes.materialIconText}>
                   Shuffle
                 </Typography>
@@ -9917,7 +9917,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.ShutterSpeed />
+                <Icons.ShutterSpeed/>
                 <Typography className={classes.materialIconText}>
                   ShutterSpeed
                 </Typography>
@@ -9930,7 +9930,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.SignalCellular0Bar />
+                <Icons.SignalCellular0Bar/>
                 <Typography className={classes.materialIconText}>
                   SignalCellular0Bar
                 </Typography>
@@ -9943,7 +9943,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.SignalCellular1Bar />
+                <Icons.SignalCellular1Bar/>
                 <Typography className={classes.materialIconText}>
                   SignalCellular1Bar
                 </Typography>
@@ -9956,7 +9956,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.SignalCellular2Bar />
+                <Icons.SignalCellular2Bar/>
                 <Typography className={classes.materialIconText}>
                   SignalCellular2Bar
                 </Typography>
@@ -9969,7 +9969,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.SignalCellular3Bar />
+                <Icons.SignalCellular3Bar/>
                 <Typography className={classes.materialIconText}>
                   SignalCellular3Bar
                 </Typography>
@@ -9982,7 +9982,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.SignalCellular4Bar />
+                <Icons.SignalCellular4Bar/>
                 <Typography className={classes.materialIconText}>
                   SignalCellular4Bar
                 </Typography>
@@ -9995,7 +9995,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.SignalCellularAlt />
+                <Icons.SignalCellularAlt/>
                 <Typography className={classes.materialIconText}>
                   SignalCellularAlt
                 </Typography>
@@ -10008,7 +10008,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.SignalCellularConnectedNoInternet0Bar />
+                <Icons.SignalCellularConnectedNoInternet0Bar/>
                 <Typography className={classes.materialIconText}>
                   SignalCellularConnectedNoInternet0Bar
                 </Typography>
@@ -10021,7 +10021,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.SignalCellularConnectedNoInternet1Bar />
+                <Icons.SignalCellularConnectedNoInternet1Bar/>
                 <Typography className={classes.materialIconText}>
                   SignalCellularConnectedNoInternet1Bar
                 </Typography>
@@ -10034,7 +10034,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.SignalCellularConnectedNoInternet2Bar />
+                <Icons.SignalCellularConnectedNoInternet2Bar/>
                 <Typography className={classes.materialIconText}>
                   SignalCellularConnectedNoInternet2Bar
                 </Typography>
@@ -10047,7 +10047,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.SignalCellularConnectedNoInternet3Bar />
+                <Icons.SignalCellularConnectedNoInternet3Bar/>
                 <Typography className={classes.materialIconText}>
                   SignalCellularConnectedNoInternet3Bar
                 </Typography>
@@ -10060,7 +10060,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.SignalCellularConnectedNoInternet4Bar />
+                <Icons.SignalCellularConnectedNoInternet4Bar/>
                 <Typography className={classes.materialIconText}>
                   SignalCellularConnectedNoInternet4Bar
                 </Typography>
@@ -10073,7 +10073,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.SignalCellularNoSim />
+                <Icons.SignalCellularNoSim/>
                 <Typography className={classes.materialIconText}>
                   SignalCellularNoSim
                 </Typography>
@@ -10086,7 +10086,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.SignalCellularNull />
+                <Icons.SignalCellularNull/>
                 <Typography className={classes.materialIconText}>
                   SignalCellularNull
                 </Typography>
@@ -10099,7 +10099,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.SignalWifi0Bar />
+                <Icons.SignalWifi0Bar/>
                 <Typography className={classes.materialIconText}>
                   SignalWifi0Bar
                 </Typography>
@@ -10112,7 +10112,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.SignalWifi1Bar />
+                <Icons.SignalWifi1Bar/>
                 <Typography className={classes.materialIconText}>
                   SignalWifi1Bar
                 </Typography>
@@ -10125,7 +10125,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.SignalWifi1BarLock />
+                <Icons.SignalWifi1BarLock/>
                 <Typography className={classes.materialIconText}>
                   SignalWifi1BarLock
                 </Typography>
@@ -10138,7 +10138,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.SignalWifi2Bar />
+                <Icons.SignalWifi2Bar/>
                 <Typography className={classes.materialIconText}>
                   SignalWifi2Bar
                 </Typography>
@@ -10151,7 +10151,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.SignalWifi2BarLock />
+                <Icons.SignalWifi2BarLock/>
                 <Typography className={classes.materialIconText}>
                   SignalWifi2BarLock
                 </Typography>
@@ -10164,7 +10164,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.SignalWifi3Bar />
+                <Icons.SignalWifi3Bar/>
                 <Typography className={classes.materialIconText}>
                   SignalWifi3Bar
                 </Typography>
@@ -10177,7 +10177,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.SignalWifi3BarLock />
+                <Icons.SignalWifi3BarLock/>
                 <Typography className={classes.materialIconText}>
                   SignalWifi3BarLock
                 </Typography>
@@ -10190,7 +10190,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.SignalWifi4Bar />
+                <Icons.SignalWifi4Bar/>
                 <Typography className={classes.materialIconText}>
                   SignalWifi4Bar
                 </Typography>
@@ -10203,7 +10203,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.SignalWifi4BarLock />
+                <Icons.SignalWifi4BarLock/>
                 <Typography className={classes.materialIconText}>
                   SignalWifi4BarLock
                 </Typography>
@@ -10216,7 +10216,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.SimCard />
+                <Icons.SimCard/>
                 <Typography className={classes.materialIconText}>
                   SimCard
                 </Typography>
@@ -10229,7 +10229,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.SkipNext />
+                <Icons.SkipNext/>
                 <Typography className={classes.materialIconText}>
                   SkipNext
                 </Typography>
@@ -10242,7 +10242,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.SkipPrevious />
+                <Icons.SkipPrevious/>
                 <Typography className={classes.materialIconText}>
                   SkipPrevious
                 </Typography>
@@ -10255,7 +10255,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Slideshow />
+                <Icons.Slideshow/>
                 <Typography className={classes.materialIconText}>
                   Slideshow
                 </Typography>
@@ -10268,7 +10268,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.SlowMotionVideo />
+                <Icons.SlowMotionVideo/>
                 <Typography className={classes.materialIconText}>
                   SlowMotionVideo
                 </Typography>
@@ -10281,7 +10281,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Smartphone />
+                <Icons.Smartphone/>
                 <Typography className={classes.materialIconText}>
                   Smartphone
                 </Typography>
@@ -10294,7 +10294,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.SmokeFree />
+                <Icons.SmokeFree/>
                 <Typography className={classes.materialIconText}>
                   SmokeFree
                 </Typography>
@@ -10307,7 +10307,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.SmokingRooms />
+                <Icons.SmokingRooms/>
                 <Typography className={classes.materialIconText}>
                   SmokingRooms
                 </Typography>
@@ -10320,7 +10320,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Sms />
+                <Icons.Sms/>
                 <Typography className={classes.materialIconText}>
                   Sms
                 </Typography>
@@ -10333,7 +10333,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.SmsFailed />
+                <Icons.SmsFailed/>
                 <Typography className={classes.materialIconText}>
                   SmsFailed
                 </Typography>
@@ -10346,7 +10346,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Snooze />
+                <Icons.Snooze/>
                 <Typography className={classes.materialIconText}>
                   Snooze
                 </Typography>
@@ -10359,7 +10359,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Sort />
+                <Icons.Sort/>
                 <Typography className={classes.materialIconText}>
                   Sort
                 </Typography>
@@ -10372,7 +10372,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.SortByAlpha />
+                <Icons.SortByAlpha/>
                 <Typography className={classes.materialIconText}>
                   SortByAlpha
                 </Typography>
@@ -10385,7 +10385,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Spa />
+                <Icons.Spa/>
                 <Typography className={classes.materialIconText}>
                   Spa
                 </Typography>
@@ -10398,7 +10398,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.SpaceBar />
+                <Icons.SpaceBar/>
                 <Typography className={classes.materialIconText}>
                   SpaceBar
                 </Typography>
@@ -10411,7 +10411,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Speaker />
+                <Icons.Speaker/>
                 <Typography className={classes.materialIconText}>
                   Speaker
                 </Typography>
@@ -10424,7 +10424,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.SpeakerGroup />
+                <Icons.SpeakerGroup/>
                 <Typography className={classes.materialIconText}>
                   SpeakerGroup
                 </Typography>
@@ -10437,7 +10437,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.SpeakerNotes />
+                <Icons.SpeakerNotes/>
                 <Typography className={classes.materialIconText}>
                   SpeakerNotes
                 </Typography>
@@ -10450,7 +10450,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.SpeakerPhone />
+                <Icons.SpeakerPhone/>
                 <Typography className={classes.materialIconText}>
                   SpeakerPhone
                 </Typography>
@@ -10463,7 +10463,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Spellcheck />
+                <Icons.Spellcheck/>
                 <Typography className={classes.materialIconText}>
                   Spellcheck
                 </Typography>
@@ -10476,7 +10476,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Star />
+                <Icons.Star/>
                 <Typography className={classes.materialIconText}>
                   Star
                 </Typography>
@@ -10489,7 +10489,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.StarBorder />
+                <Icons.StarBorder/>
                 <Typography className={classes.materialIconText}>
                   StarBorder
                 </Typography>
@@ -10502,7 +10502,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.StarHalf />
+                <Icons.StarHalf/>
                 <Typography className={classes.materialIconText}>
                   StarHalf
                 </Typography>
@@ -10515,7 +10515,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.StarRate />
+                <Icons.StarRate/>
                 <Typography className={classes.materialIconText}>
                   StarRate
                 </Typography>
@@ -10528,7 +10528,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Stars />
+                <Icons.Stars/>
                 <Typography className={classes.materialIconText}>
                   Stars
                 </Typography>
@@ -10541,7 +10541,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.StayCurrentLandscape />
+                <Icons.StayCurrentLandscape/>
                 <Typography className={classes.materialIconText}>
                   StayCurrentLandscape
                 </Typography>
@@ -10554,7 +10554,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.StayCurrentPortrait />
+                <Icons.StayCurrentPortrait/>
                 <Typography className={classes.materialIconText}>
                   StayCurrentPortrait
                 </Typography>
@@ -10567,7 +10567,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.StayPrimaryLandscape />
+                <Icons.StayPrimaryLandscape/>
                 <Typography className={classes.materialIconText}>
                   StayPrimaryLandscape
                 </Typography>
@@ -10580,7 +10580,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.StayPrimaryPortrait />
+                <Icons.StayPrimaryPortrait/>
                 <Typography className={classes.materialIconText}>
                   StayPrimaryPortrait
                 </Typography>
@@ -10593,7 +10593,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Stop />
+                <Icons.Stop/>
                 <Typography className={classes.materialIconText}>
                   Stop
                 </Typography>
@@ -10606,7 +10606,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.StopScreenShare />
+                <Icons.StopScreenShare/>
                 <Typography className={classes.materialIconText}>
                   StopScreenShare
                 </Typography>
@@ -10619,7 +10619,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Storage />
+                <Icons.Storage/>
                 <Typography className={classes.materialIconText}>
                   Storage
                 </Typography>
@@ -10632,7 +10632,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Store />
+                <Icons.Store/>
                 <Typography className={classes.materialIconText}>
                   Store
                 </Typography>
@@ -10645,7 +10645,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.StoreMallDirectory />
+                <Icons.StoreMallDirectory/>
                 <Typography className={classes.materialIconText}>
                   StoreMallDirectory
                 </Typography>
@@ -10658,7 +10658,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Straighten />
+                <Icons.Straighten/>
                 <Typography className={classes.materialIconText}>
                   Straighten
                 </Typography>
@@ -10671,7 +10671,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Streetview />
+                <Icons.Streetview/>
                 <Typography className={classes.materialIconText}>
                   Streetview
                 </Typography>
@@ -10684,7 +10684,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.StrikethroughS />
+                <Icons.StrikethroughS/>
                 <Typography className={classes.materialIconText}>
                   StrikethroughS
                 </Typography>
@@ -10697,7 +10697,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Style />
+                <Icons.Style/>
                 <Typography className={classes.materialIconText}>
                   Style
                 </Typography>
@@ -10710,7 +10710,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.SubdirectoryArrowLeft />
+                <Icons.SubdirectoryArrowLeft/>
                 <Typography className={classes.materialIconText}>
                   SubdirectoryArrowLeft
                 </Typography>
@@ -10723,7 +10723,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.SubdirectoryArrowRight />
+                <Icons.SubdirectoryArrowRight/>
                 <Typography className={classes.materialIconText}>
                   SubdirectoryArrowRight
                 </Typography>
@@ -10736,7 +10736,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Subject />
+                <Icons.Subject/>
                 <Typography className={classes.materialIconText}>
                   Subject
                 </Typography>
@@ -10749,7 +10749,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Subscriptions />
+                <Icons.Subscriptions/>
                 <Typography className={classes.materialIconText}>
                   Subscriptions
                 </Typography>
@@ -10762,7 +10762,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Subtitles />
+                <Icons.Subtitles/>
                 <Typography className={classes.materialIconText}>
                   Subtitles
                 </Typography>
@@ -10775,7 +10775,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Subway />
+                <Icons.Subway/>
                 <Typography className={classes.materialIconText}>
                   Subway
                 </Typography>
@@ -10788,7 +10788,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.SupervisedUserCircle />
+                <Icons.SupervisedUserCircle/>
                 <Typography className={classes.materialIconText}>
                   SupervisedUserCircle
                 </Typography>
@@ -10801,7 +10801,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.SupervisorAccount />
+                <Icons.SupervisorAccount/>
                 <Typography className={classes.materialIconText}>
                   SupervisorAccount
                 </Typography>
@@ -10814,7 +10814,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.SurroundSound />
+                <Icons.SurroundSound/>
                 <Typography className={classes.materialIconText}>
                   SurroundSound
                 </Typography>
@@ -10827,7 +10827,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.SwapCalls />
+                <Icons.SwapCalls/>
                 <Typography className={classes.materialIconText}>
                   SwapCalls
                 </Typography>
@@ -10840,7 +10840,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.SwapHoriz />
+                <Icons.SwapHoriz/>
                 <Typography className={classes.materialIconText}>
                   SwapHoriz
                 </Typography>
@@ -10853,7 +10853,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.SwapHorizontalCircle />
+                <Icons.SwapHorizontalCircle/>
                 <Typography className={classes.materialIconText}>
                   SwapHorizontalCircle
                 </Typography>
@@ -10866,7 +10866,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.SwapVert />
+                <Icons.SwapVert/>
                 <Typography className={classes.materialIconText}>
                   SwapVert
                 </Typography>
@@ -10879,7 +10879,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.SwapVerticalCircle />
+                <Icons.SwapVerticalCircle/>
                 <Typography className={classes.materialIconText}>
                   SwapVerticalCircle
                 </Typography>
@@ -10892,7 +10892,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.SwitchCamera />
+                <Icons.SwitchCamera/>
                 <Typography className={classes.materialIconText}>
                   SwitchCamera
                 </Typography>
@@ -10905,7 +10905,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.SwitchVideo />
+                <Icons.SwitchVideo/>
                 <Typography className={classes.materialIconText}>
                   SwitchVideo
                 </Typography>
@@ -10918,7 +10918,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Sync />
+                <Icons.Sync/>
                 <Typography className={classes.materialIconText}>
                   Sync
                 </Typography>
@@ -10931,7 +10931,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.SyncDisabled />
+                <Icons.SyncDisabled/>
                 <Typography className={classes.materialIconText}>
                   SyncDisabled
                 </Typography>
@@ -10944,7 +10944,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.SyncProblem />
+                <Icons.SyncProblem/>
                 <Typography className={classes.materialIconText}>
                   SyncProblem
                 </Typography>
@@ -10957,7 +10957,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.SystemUpdate />
+                <Icons.SystemUpdate/>
                 <Typography className={classes.materialIconText}>
                   SystemUpdate
                 </Typography>
@@ -10970,7 +10970,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Tab />
+                <Icons.Tab/>
                 <Typography className={classes.materialIconText}>
                   Tab
                 </Typography>
@@ -10983,7 +10983,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.TableChart />
+                <Icons.TableChart/>
                 <Typography className={classes.materialIconText}>
                   TableChart
                 </Typography>
@@ -10996,7 +10996,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Tablet />
+                <Icons.Tablet/>
                 <Typography className={classes.materialIconText}>
                   Tablet
                 </Typography>
@@ -11009,7 +11009,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.TabletAndroid />
+                <Icons.TabletAndroid/>
                 <Typography className={classes.materialIconText}>
                   TabletAndroid
                 </Typography>
@@ -11022,7 +11022,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.TabletMac />
+                <Icons.TabletMac/>
                 <Typography className={classes.materialIconText}>
                   TabletMac
                 </Typography>
@@ -11035,7 +11035,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.TabUnselected />
+                <Icons.TabUnselected/>
                 <Typography className={classes.materialIconText}>
                   TabUnselected
                 </Typography>
@@ -11048,7 +11048,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.TagFaces />
+                <Icons.TagFaces/>
                 <Typography className={classes.materialIconText}>
                   TagFaces
                 </Typography>
@@ -11061,7 +11061,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.TapAndPlay />
+                <Icons.TapAndPlay/>
                 <Typography className={classes.materialIconText}>
                   TapAndPlay
                 </Typography>
@@ -11074,7 +11074,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Terrain />
+                <Icons.Terrain/>
                 <Typography className={classes.materialIconText}>
                   Terrain
                 </Typography>
@@ -11087,7 +11087,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.TextFields />
+                <Icons.TextFields/>
                 <Typography className={classes.materialIconText}>
                   TextFields
                 </Typography>
@@ -11100,7 +11100,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.TextFormat />
+                <Icons.TextFormat/>
                 <Typography className={classes.materialIconText}>
                   TextFormat
                 </Typography>
@@ -11113,7 +11113,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.TextRotateUp />
+                <Icons.TextRotateUp/>
                 <Typography className={classes.materialIconText}>
                   TextRotateUp
                 </Typography>
@@ -11126,7 +11126,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.TextRotateVertical />
+                <Icons.TextRotateVertical/>
                 <Typography className={classes.materialIconText}>
                   TextRotateVertical
                 </Typography>
@@ -11139,7 +11139,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.TextRotationDown />
+                <Icons.TextRotationDown/>
                 <Typography className={classes.materialIconText}>
                   TextRotationDown
                 </Typography>
@@ -11152,7 +11152,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.TextRotationNone />
+                <Icons.TextRotationNone/>
                 <Typography className={classes.materialIconText}>
                   TextRotationNone
                 </Typography>
@@ -11165,7 +11165,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Textsms />
+                <Icons.Textsms/>
                 <Typography className={classes.materialIconText}>
                   Textsms
                 </Typography>
@@ -11178,7 +11178,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Texture />
+                <Icons.Texture/>
                 <Typography className={classes.materialIconText}>
                   Texture
                 </Typography>
@@ -11191,7 +11191,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Theaters />
+                <Icons.Theaters/>
                 <Typography className={classes.materialIconText}>
                   Theaters
                 </Typography>
@@ -11204,7 +11204,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.ThreeDRotation />
+                <Icons.ThreeDRotation/>
                 <Typography className={classes.materialIconText}>
                   ThreeDRotation
                 </Typography>
@@ -11217,7 +11217,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.ThreeSixty />
+                <Icons.ThreeSixty/>
                 <Typography className={classes.materialIconText}>
                   ThreeSixty
                 </Typography>
@@ -11230,7 +11230,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.ThumbDown />
+                <Icons.ThumbDown/>
                 <Typography className={classes.materialIconText}>
                   ThumbDown
                 </Typography>
@@ -11243,7 +11243,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.ThumbDownAlt />
+                <Icons.ThumbDownAlt/>
                 <Typography className={classes.materialIconText}>
                   ThumbDownAlt
                 </Typography>
@@ -11256,7 +11256,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.ThumbsUpDown />
+                <Icons.ThumbsUpDown/>
                 <Typography className={classes.materialIconText}>
                   ThumbsUpDown
                 </Typography>
@@ -11269,7 +11269,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.ThumbUp />
+                <Icons.ThumbUp/>
                 <Typography className={classes.materialIconText}>
                   ThumbUp
                 </Typography>
@@ -11282,7 +11282,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.ThumbUpAlt />
+                <Icons.ThumbUpAlt/>
                 <Typography className={classes.materialIconText}>
                   ThumbUpAlt
                 </Typography>
@@ -11295,7 +11295,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Timelapse />
+                <Icons.Timelapse/>
                 <Typography className={classes.materialIconText}>
                   Timelapse
                 </Typography>
@@ -11308,7 +11308,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Timeline />
+                <Icons.Timeline/>
                 <Typography className={classes.materialIconText}>
                   Timeline
                 </Typography>
@@ -11321,7 +11321,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Timer />
+                <Icons.Timer/>
                 <Typography className={classes.materialIconText}>
                   Timer
                 </Typography>
@@ -11334,7 +11334,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Timer10 />
+                <Icons.Timer10/>
                 <Typography className={classes.materialIconText}>
                   Timer10
                 </Typography>
@@ -11347,7 +11347,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Timer3 />
+                <Icons.Timer3/>
                 <Typography className={classes.materialIconText}>
                   Timer3
                 </Typography>
@@ -11360,7 +11360,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.TimeToLeave />
+                <Icons.TimeToLeave/>
                 <Typography className={classes.materialIconText}>
                   TimeToLeave
                 </Typography>
@@ -11373,7 +11373,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Title />
+                <Icons.Title/>
                 <Typography className={classes.materialIconText}>
                   Title
                 </Typography>
@@ -11386,7 +11386,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Toc />
+                <Icons.Toc/>
                 <Typography className={classes.materialIconText}>
                   Toc
                 </Typography>
@@ -11399,7 +11399,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Today />
+                <Icons.Today/>
                 <Typography className={classes.materialIconText}>
                   Today
                 </Typography>
@@ -11412,7 +11412,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Toll />
+                <Icons.Toll/>
                 <Typography className={classes.materialIconText}>
                   Toll
                 </Typography>
@@ -11425,7 +11425,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Tonality />
+                <Icons.Tonality/>
                 <Typography className={classes.materialIconText}>
                   Tonality
                 </Typography>
@@ -11438,7 +11438,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.TouchApp />
+                <Icons.TouchApp/>
                 <Typography className={classes.materialIconText}>
                   TouchApp
                 </Typography>
@@ -11451,7 +11451,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Toys />
+                <Icons.Toys/>
                 <Typography className={classes.materialIconText}>
                   Toys
                 </Typography>
@@ -11464,7 +11464,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.TrackChanges />
+                <Icons.TrackChanges/>
                 <Typography className={classes.materialIconText}>
                   TrackChanges
                 </Typography>
@@ -11477,7 +11477,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Traffic />
+                <Icons.Traffic/>
                 <Typography className={classes.materialIconText}>
                   Traffic
                 </Typography>
@@ -11490,7 +11490,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Train />
+                <Icons.Train/>
                 <Typography className={classes.materialIconText}>
                   Train
                 </Typography>
@@ -11503,7 +11503,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Tram />
+                <Icons.Tram/>
                 <Typography className={classes.materialIconText}>
                   Tram
                 </Typography>
@@ -11516,7 +11516,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.TransferWithinAStation />
+                <Icons.TransferWithinAStation/>
                 <Typography className={classes.materialIconText}>
                   TransferWithinAStation
                 </Typography>
@@ -11529,7 +11529,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Transform />
+                <Icons.Transform/>
                 <Typography className={classes.materialIconText}>
                   Transform
                 </Typography>
@@ -11542,7 +11542,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.TransitEnterexit />
+                <Icons.TransitEnterexit/>
                 <Typography className={classes.materialIconText}>
                   TransitEnterexit
                 </Typography>
@@ -11555,7 +11555,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Translate />
+                <Icons.Translate/>
                 <Typography className={classes.materialIconText}>
                   Translate
                 </Typography>
@@ -11568,7 +11568,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.TrendingDown />
+                <Icons.TrendingDown/>
                 <Typography className={classes.materialIconText}>
                   TrendingDown
                 </Typography>
@@ -11581,7 +11581,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.TrendingFlat />
+                <Icons.TrendingFlat/>
                 <Typography className={classes.materialIconText}>
                   TrendingFlat
                 </Typography>
@@ -11594,7 +11594,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.TrendingUp />
+                <Icons.TrendingUp/>
                 <Typography className={classes.materialIconText}>
                   TrendingUp
                 </Typography>
@@ -11607,7 +11607,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.TripOrigin />
+                <Icons.TripOrigin/>
                 <Typography className={classes.materialIconText}>
                   TripOrigin
                 </Typography>
@@ -11620,7 +11620,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Tune />
+                <Icons.Tune/>
                 <Typography className={classes.materialIconText}>
                   Tune
                 </Typography>
@@ -11633,7 +11633,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.TurnedIn />
+                <Icons.TurnedIn/>
                 <Typography className={classes.materialIconText}>
                   TurnedIn
                 </Typography>
@@ -11646,7 +11646,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.TurnedInNot />
+                <Icons.TurnedInNot/>
                 <Typography className={classes.materialIconText}>
                   TurnedInNot
                 </Typography>
@@ -11659,7 +11659,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Tv />
+                <Icons.Tv/>
                 <Typography className={classes.materialIconText}>Tv</Typography>
               </Grid>
               <Grid
@@ -11670,7 +11670,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Unarchive />
+                <Icons.Unarchive/>
                 <Typography className={classes.materialIconText}>
                   Unarchive
                 </Typography>
@@ -11683,7 +11683,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Undo />
+                <Icons.Undo/>
                 <Typography className={classes.materialIconText}>
                   Undo
                 </Typography>
@@ -11696,7 +11696,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.UnfoldLess />
+                <Icons.UnfoldLess/>
                 <Typography className={classes.materialIconText}>
                   UnfoldLess
                 </Typography>
@@ -11709,7 +11709,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.UnfoldMore />
+                <Icons.UnfoldMore/>
                 <Typography className={classes.materialIconText}>
                   UnfoldMore
                 </Typography>
@@ -11722,7 +11722,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Unsubscribe />
+                <Icons.Unsubscribe/>
                 <Typography className={classes.materialIconText}>
                   Unsubscribe
                 </Typography>
@@ -11735,7 +11735,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Update />
+                <Icons.Update/>
                 <Typography className={classes.materialIconText}>
                   Update
                 </Typography>
@@ -11748,7 +11748,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Usb />
+                <Icons.Usb/>
                 <Typography className={classes.materialIconText}>
                   Usb
                 </Typography>
@@ -11761,7 +11761,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.VerifiedUser />
+                <Icons.VerifiedUser/>
                 <Typography className={classes.materialIconText}>
                   VerifiedUser
                 </Typography>
@@ -11774,7 +11774,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.VerticalAlignBottom />
+                <Icons.VerticalAlignBottom/>
                 <Typography className={classes.materialIconText}>
                   VerticalAlignBottom
                 </Typography>
@@ -11787,7 +11787,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.VerticalAlignCenter />
+                <Icons.VerticalAlignCenter/>
                 <Typography className={classes.materialIconText}>
                   VerticalAlignCenter
                 </Typography>
@@ -11800,7 +11800,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.VerticalAlignTop />
+                <Icons.VerticalAlignTop/>
                 <Typography className={classes.materialIconText}>
                   VerticalAlignTop
                 </Typography>
@@ -11813,7 +11813,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.VerticalSplit />
+                <Icons.VerticalSplit/>
                 <Typography className={classes.materialIconText}>
                   VerticalSplit
                 </Typography>
@@ -11826,7 +11826,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Vibration />
+                <Icons.Vibration/>
                 <Typography className={classes.materialIconText}>
                   Vibration
                 </Typography>
@@ -11839,7 +11839,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.VideoCall />
+                <Icons.VideoCall/>
                 <Typography className={classes.materialIconText}>
                   VideoCall
                 </Typography>
@@ -11852,7 +11852,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Videocam />
+                <Icons.Videocam/>
                 <Typography className={classes.materialIconText}>
                   Videocam
                 </Typography>
@@ -11865,7 +11865,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.VideogameAsset />
+                <Icons.VideogameAsset/>
                 <Typography className={classes.materialIconText}>
                   VideogameAsset
                 </Typography>
@@ -11878,7 +11878,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.VideoLabel />
+                <Icons.VideoLabel/>
                 <Typography className={classes.materialIconText}>
                   VideoLabel
                 </Typography>
@@ -11891,7 +11891,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.VideoLibrary />
+                <Icons.VideoLibrary/>
                 <Typography className={classes.materialIconText}>
                   VideoLibrary
                 </Typography>
@@ -11904,7 +11904,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.ViewAgenda />
+                <Icons.ViewAgenda/>
                 <Typography className={classes.materialIconText}>
                   ViewAgenda
                 </Typography>
@@ -11917,7 +11917,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.ViewArray />
+                <Icons.ViewArray/>
                 <Typography className={classes.materialIconText}>
                   ViewArray
                 </Typography>
@@ -11930,7 +11930,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.ViewCarousel />
+                <Icons.ViewCarousel/>
                 <Typography className={classes.materialIconText}>
                   ViewCarousel
                 </Typography>
@@ -11943,7 +11943,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.ViewColumn />
+                <Icons.ViewColumn/>
                 <Typography className={classes.materialIconText}>
                   ViewColumn
                 </Typography>
@@ -11956,7 +11956,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.ViewComfy />
+                <Icons.ViewComfy/>
                 <Typography className={classes.materialIconText}>
                   ViewComfy
                 </Typography>
@@ -11969,7 +11969,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.ViewCompact />
+                <Icons.ViewCompact/>
                 <Typography className={classes.materialIconText}>
                   ViewCompact
                 </Typography>
@@ -11982,7 +11982,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.ViewDay />
+                <Icons.ViewDay/>
                 <Typography className={classes.materialIconText}>
                   ViewDay
                 </Typography>
@@ -11995,7 +11995,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.ViewHeadline />
+                <Icons.ViewHeadline/>
                 <Typography className={classes.materialIconText}>
                   ViewHeadline
                 </Typography>
@@ -12008,7 +12008,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.ViewList />
+                <Icons.ViewList/>
                 <Typography className={classes.materialIconText}>
                   ViewList
                 </Typography>
@@ -12021,7 +12021,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.ViewModule />
+                <Icons.ViewModule/>
                 <Typography className={classes.materialIconText}>
                   ViewModule
                 </Typography>
@@ -12034,7 +12034,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.ViewQuilt />
+                <Icons.ViewQuilt/>
                 <Typography className={classes.materialIconText}>
                   ViewQuilt
                 </Typography>
@@ -12047,7 +12047,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.ViewStream />
+                <Icons.ViewStream/>
                 <Typography className={classes.materialIconText}>
                   ViewStream
                 </Typography>
@@ -12060,7 +12060,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.ViewWeek />
+                <Icons.ViewWeek/>
                 <Typography className={classes.materialIconText}>
                   ViewWeek
                 </Typography>
@@ -12073,7 +12073,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Vignette />
+                <Icons.Vignette/>
                 <Typography className={classes.materialIconText}>
                   Vignette
                 </Typography>
@@ -12086,7 +12086,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Visibility />
+                <Icons.Visibility/>
                 <Typography className={classes.materialIconText}>
                   Visibility
                 </Typography>
@@ -12099,7 +12099,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.VoiceChat />
+                <Icons.VoiceChat/>
                 <Typography className={classes.materialIconText}>
                   VoiceChat
                 </Typography>
@@ -12112,7 +12112,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Voicemail />
+                <Icons.Voicemail/>
                 <Typography className={classes.materialIconText}>
                   Voicemail
                 </Typography>
@@ -12125,7 +12125,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.VolumeDown />
+                <Icons.VolumeDown/>
                 <Typography className={classes.materialIconText}>
                   VolumeDown
                 </Typography>
@@ -12138,7 +12138,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.VolumeMute />
+                <Icons.VolumeMute/>
                 <Typography className={classes.materialIconText}>
                   VolumeMute
                 </Typography>
@@ -12151,7 +12151,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.VolumeUp />
+                <Icons.VolumeUp/>
                 <Typography className={classes.materialIconText}>
                   VolumeUp
                 </Typography>
@@ -12164,7 +12164,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.VpnKey />
+                <Icons.VpnKey/>
                 <Typography className={classes.materialIconText}>
                   VpnKey
                 </Typography>
@@ -12177,7 +12177,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.VpnLock />
+                <Icons.VpnLock/>
                 <Typography className={classes.materialIconText}>
                   VpnLock
                 </Typography>
@@ -12190,7 +12190,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Wallpaper />
+                <Icons.Wallpaper/>
                 <Typography className={classes.materialIconText}>
                   Wallpaper
                 </Typography>
@@ -12203,7 +12203,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Warning />
+                <Icons.Warning/>
                 <Typography className={classes.materialIconText}>
                   Warning
                 </Typography>
@@ -12216,7 +12216,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Watch />
+                <Icons.Watch/>
                 <Typography className={classes.materialIconText}>
                   Watch
                 </Typography>
@@ -12229,7 +12229,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.WatchLater />
+                <Icons.WatchLater/>
                 <Typography className={classes.materialIconText}>
                   WatchLater
                 </Typography>
@@ -12242,7 +12242,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Waves />
+                <Icons.Waves/>
                 <Typography className={classes.materialIconText}>
                   Waves
                 </Typography>
@@ -12255,7 +12255,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.WbAuto />
+                <Icons.WbAuto/>
                 <Typography className={classes.materialIconText}>
                   WbAuto
                 </Typography>
@@ -12268,7 +12268,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.WbCloudy />
+                <Icons.WbCloudy/>
                 <Typography className={classes.materialIconText}>
                   WbCloudy
                 </Typography>
@@ -12281,7 +12281,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.WbIncandescent />
+                <Icons.WbIncandescent/>
                 <Typography className={classes.materialIconText}>
                   WbIncandescent
                 </Typography>
@@ -12294,7 +12294,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.WbIridescent />
+                <Icons.WbIridescent/>
                 <Typography className={classes.materialIconText}>
                   WbIridescent
                 </Typography>
@@ -12307,7 +12307,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.WbSunny />
+                <Icons.WbSunny/>
                 <Typography className={classes.materialIconText}>
                   WbSunny
                 </Typography>
@@ -12320,7 +12320,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Wc />
+                <Icons.Wc/>
                 <Typography className={classes.materialIconText}>Wc</Typography>
               </Grid>
               <Grid
@@ -12331,7 +12331,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Web />
+                <Icons.Web/>
                 <Typography className={classes.materialIconText}>
                   Web
                 </Typography>
@@ -12344,7 +12344,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.WebAsset />
+                <Icons.WebAsset/>
                 <Typography className={classes.materialIconText}>
                   WebAsset
                 </Typography>
@@ -12357,7 +12357,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Weekend />
+                <Icons.Weekend/>
                 <Typography className={classes.materialIconText}>
                   Weekend
                 </Typography>
@@ -12370,7 +12370,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Whatshot />
+                <Icons.Whatshot/>
                 <Typography className={classes.materialIconText}>
                   Whatshot
                 </Typography>
@@ -12383,7 +12383,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.WhereToVote />
+                <Icons.WhereToVote/>
                 <Typography className={classes.materialIconText}>
                   WhereToVote
                 </Typography>
@@ -12396,7 +12396,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Widgets />
+                <Icons.Widgets/>
                 <Typography className={classes.materialIconText}>
                   Widgets
                 </Typography>
@@ -12409,7 +12409,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Wifi />
+                <Icons.Wifi/>
                 <Typography className={classes.materialIconText}>
                   Wifi
                 </Typography>
@@ -12422,7 +12422,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.WifiLock />
+                <Icons.WifiLock/>
                 <Typography className={classes.materialIconText}>
                   WifiLock
                 </Typography>
@@ -12435,7 +12435,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.WifiTethering />
+                <Icons.WifiTethering/>
                 <Typography className={classes.materialIconText}>
                   WifiTethering
                 </Typography>
@@ -12448,7 +12448,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.Work />
+                <Icons.Work/>
                 <Typography className={classes.materialIconText}>
                   Work
                 </Typography>
@@ -12461,7 +12461,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.WorkOutline />
+                <Icons.WorkOutline/>
                 <Typography className={classes.materialIconText}>
                   WorkOutline
                 </Typography>
@@ -12474,7 +12474,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.WrapText />
+                <Icons.WrapText/>
                 <Typography className={classes.materialIconText}>
                   WrapText
                 </Typography>
@@ -12487,7 +12487,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.YoutubeSearchedFor />
+                <Icons.YoutubeSearchedFor/>
                 <Typography className={classes.materialIconText}>
                   YoutubeSearchedFor
                 </Typography>
@@ -12500,7 +12500,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.ZoomIn />
+                <Icons.ZoomIn/>
                 <Typography className={classes.materialIconText}>
                   ZoomIn
                 </Typography>
@@ -12513,7 +12513,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.ZoomOut />
+                <Icons.ZoomOut/>
                 <Typography className={classes.materialIconText}>
                   ZoomOut
                 </Typography>
@@ -12526,7 +12526,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <Icons.ZoomOutMap />
+                <Icons.ZoomOutMap/>
                 <Typography className={classes.materialIconText}>
                   ZoomOutMap
                 </Typography>
@@ -12546,7 +12546,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <i className="fa fa-bed" />
+                <i className="fa fa-bed"/>
                 <Typography className={classes.materialIconText}>
                   Bed
                 </Typography>
@@ -12559,7 +12559,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <i className="fa fa-bank" />
+                <i className="fa fa-bank"/>
                 <Typography className={classes.materialIconText}>
                   Bank
                 </Typography>
@@ -12572,7 +12572,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <i className="fa fa-behance" />
+                <i className="fa fa-behance"/>
                 <Typography className={classes.materialIconText}>
                   Behance
                 </Typography>
@@ -12585,7 +12585,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <i className="fa fa-behance-square" />
+                <i className="fa fa-behance-square"/>
                 <Typography className={classes.materialIconText}>
                   Behance-square
                 </Typography>
@@ -12598,7 +12598,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <i className="fa fa-bomb" />
+                <i className="fa fa-bomb"/>
                 <Typography className={classes.materialIconText}>
                   Bomb
                 </Typography>
@@ -12611,7 +12611,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <i className="fa fa-building" />
+                <i className="fa fa-building"/>
                 <Typography className={classes.materialIconText}>
                   Building
                 </Typography>
@@ -12624,7 +12624,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <i className="fa fa-cab" />
+                <i className="fa fa-cab"/>
                 <Typography className={classes.materialIconText}>
                   Cab
                 </Typography>
@@ -12637,7 +12637,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <i className="fa fa-car" />
+                <i className="fa fa-car"/>
                 <Typography className={classes.materialIconText}>
                   Car
                 </Typography>
@@ -12650,7 +12650,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <i className="fa fa-child" />
+                <i className="fa fa-child"/>
                 <Typography className={classes.materialIconText}>
                   Child
                 </Typography>
@@ -12663,7 +12663,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <i className="fa fa-circle-o-notch" />
+                <i className="fa fa-circle-o-notch"/>
                 <Typography className={classes.materialIconText}>
                   Circle-o-notch
                 </Typography>
@@ -12676,7 +12676,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <i className="fa fa-circle-thin" />
+                <i className="fa fa-circle-thin"/>
                 <Typography className={classes.materialIconText}>
                   Circle-thin
                 </Typography>
@@ -12689,7 +12689,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <i className="fa fa-codepen" />
+                <i className="fa fa-codepen"/>
                 <Typography className={classes.materialIconText}>
                   Codepen
                 </Typography>
@@ -12702,7 +12702,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <i className="fa fa-cube" />
+                <i className="fa fa-cube"/>
                 <Typography className={classes.materialIconText}>
                   Cube
                 </Typography>
@@ -12715,7 +12715,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <i className="fa fa-cubes" />
+                <i className="fa fa-cubes"/>
                 <Typography className={classes.materialIconText}>
                   Cubes
                 </Typography>
@@ -12728,7 +12728,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <i className="fa fa-database" />
+                <i className="fa fa-database"/>
                 <Typography className={classes.materialIconText}>
                   Database
                 </Typography>
@@ -12741,7 +12741,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <i className="fa fa-delicious" />
+                <i className="fa fa-delicious"/>
                 <Typography className={classes.materialIconText}>
                   Delicious
                 </Typography>
@@ -12754,7 +12754,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <i className="fa fa-deviantart" />
+                <i className="fa fa-deviantart"/>
                 <Typography className={classes.materialIconText}>
                   Deviantart
                 </Typography>
@@ -12767,7 +12767,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <i className="fa fa-digg" />
+                <i className="fa fa-digg"/>
                 <Typography className={classes.materialIconText}>
                   Digg
                 </Typography>
@@ -12780,7 +12780,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <i className="fa fa-drupal" />
+                <i className="fa fa-drupal"/>
                 <Typography className={classes.materialIconText}>
                   Drupal
                 </Typography>
@@ -12793,7 +12793,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <i className="fa fa-empire" />
+                <i className="fa fa-empire"/>
                 <Typography className={classes.materialIconText}>
                   Empire
                 </Typography>
@@ -12806,7 +12806,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <i className="fa fa-envelope-square" />
+                <i className="fa fa-envelope-square"/>
                 <Typography className={classes.materialIconText}>
                   Envelope-square
                 </Typography>
@@ -12819,7 +12819,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <i className="fa fa-fax" />
+                <i className="fa fa-fax"/>
                 <Typography className={classes.materialIconText}>
                   Fax
                 </Typography>
@@ -12832,7 +12832,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <i className="fa fa-file-archive-o" />
+                <i className="fa fa-file-archive-o"/>
                 <Typography className={classes.materialIconText}>
                   File-archive-o
                 </Typography>
@@ -12845,7 +12845,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <i className="fa fa-file-audio-o" />
+                <i className="fa fa-file-audio-o"/>
                 <Typography className={classes.materialIconText}>
                   File-audio-o
                 </Typography>
@@ -12858,7 +12858,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <i className="fa fa-file-code-o" />
+                <i className="fa fa-file-code-o"/>
                 <Typography className={classes.materialIconText}>
                   Аile-code-o
                 </Typography>
@@ -12871,7 +12871,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <i className="fa fa-file-excel-o" />
+                <i className="fa fa-file-excel-o"/>
                 <Typography className={classes.materialIconText}>
                   Аile-excel-o
                 </Typography>
@@ -12884,7 +12884,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <i className="fa fa-file-image-o" />
+                <i className="fa fa-file-image-o"/>
                 <Typography className={classes.materialIconText}>
                   File-image-o
                 </Typography>
@@ -12897,7 +12897,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <i className="fa fa-file-movie-o" />
+                <i className="fa fa-file-movie-o"/>
                 <Typography className={classes.materialIconText}>
                   Аile-movie-o
                 </Typography>
@@ -12910,7 +12910,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <i className="fa fa-file-pdf-o" />
+                <i className="fa fa-file-pdf-o"/>
                 <Typography className={classes.materialIconText}>
                   File-pdf-o
                 </Typography>
@@ -12923,7 +12923,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <i className="fa fa-file-photo-o" />
+                <i className="fa fa-file-photo-o"/>
                 <Typography className={classes.materialIconText}>
                   File-photo-o
                 </Typography>
@@ -12936,7 +12936,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <i className="fa fa-file-picture-o" />
+                <i className="fa fa-file-picture-o"/>
                 <Typography className={classes.materialIconText}>
                   File-picture-o
                 </Typography>
@@ -12949,7 +12949,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <i className="fa fa-file-powerpoint-o" />
+                <i className="fa fa-file-powerpoint-o"/>
                 <Typography className={classes.materialIconText}>
                   File-powerpoint-o
                 </Typography>
@@ -12962,7 +12962,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <i className="fa fa-file-sound-o" />
+                <i className="fa fa-file-sound-o"/>
                 <Typography className={classes.materialIconText}>
                   File-sound-o
                 </Typography>
@@ -12975,7 +12975,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <i className="fa fa-file-video-o" />
+                <i className="fa fa-file-video-o"/>
                 <Typography className={classes.materialIconText}>
                   File-video-o
                 </Typography>
@@ -12988,7 +12988,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <i className="fa fa-file-word-o" />
+                <i className="fa fa-file-word-o"/>
                 <Typography className={classes.materialIconText}>
                   File-word-o
                 </Typography>
@@ -13001,7 +13001,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <i className="fa fa-file-zip-o" />
+                <i className="fa fa-file-zip-o"/>
                 <Typography className={classes.materialIconText}>
                   File-zip-o
                 </Typography>
@@ -13014,7 +13014,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <i className="fa fa-ge" />
+                <i className="fa fa-ge"/>
                 <Typography className={classes.materialIconText}>Ge</Typography>
               </Grid>
               <Grid
@@ -13025,7 +13025,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <i className="fa fa-git" />
+                <i className="fa fa-git"/>
                 <Typography className={classes.materialIconText}>
                   Git
                 </Typography>
@@ -13038,7 +13038,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <i className="fa fa-git-square" />
+                <i className="fa fa-git-square"/>
                 <Typography className={classes.materialIconText}>
                   Git-square
                 </Typography>
@@ -13051,7 +13051,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <i className="fa fa-google" />
+                <i className="fa fa-google"/>
                 <Typography className={classes.materialIconText}>
                   Google
                 </Typography>
@@ -13064,7 +13064,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <i className="fa fa-graduation-cap" />
+                <i className="fa fa-graduation-cap"/>
                 <Typography className={classes.materialIconText}>
                   Graduation-cap
                 </Typography>
@@ -13077,7 +13077,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <i className="fa fa-hacker-news" />
+                <i className="fa fa-hacker-news"/>
                 <Typography className={classes.materialIconText}>
                   Hacker-news
                 </Typography>
@@ -13090,7 +13090,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <i className="fa fa-header" />
+                <i className="fa fa-header"/>
                 <Typography className={classes.materialIconText}>
                   Header
                 </Typography>
@@ -13103,7 +13103,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <i className="fa fa-history" />
+                <i className="fa fa-history"/>
                 <Typography className={classes.materialIconText}>
                   History
                 </Typography>
@@ -13116,7 +13116,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <i className="fa fa-institution" />
+                <i className="fa fa-institution"/>
                 <Typography className={classes.materialIconText}>
                   Institution
                 </Typography>
@@ -13129,7 +13129,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <i className="fa fa-joomla" />
+                <i className="fa fa-joomla"/>
                 <Typography className={classes.materialIconText}>
                   Joomla
                 </Typography>
@@ -13142,7 +13142,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <i className="fa fa-jsfiddle" />
+                <i className="fa fa-jsfiddle"/>
                 <Typography className={classes.materialIconText}>
                   Jsfiddle
                 </Typography>
@@ -13155,7 +13155,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <i className="fa fa-language" />
+                <i className="fa fa-language"/>
                 <Typography className={classes.materialIconText}>
                   Language
                 </Typography>
@@ -13168,7 +13168,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <i className="fa fa-life-bouy" />
+                <i className="fa fa-life-bouy"/>
                 <Typography className={classes.materialIconText}>
                   Life-bouy
                 </Typography>
@@ -13181,7 +13181,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <i className="fa fa-life-ring" />
+                <i className="fa fa-life-ring"/>
                 <Typography className={classes.materialIconText}>
                   Life-ring
                 </Typography>
@@ -13194,7 +13194,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <i className="fa fa-life-saver" />
+                <i className="fa fa-life-saver"/>
                 <Typography className={classes.materialIconText}>
                   Life-saver
                 </Typography>
@@ -13207,7 +13207,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <i className="fa fa-mortar-board" />
+                <i className="fa fa-mortar-board"/>
                 <Typography className={classes.materialIconText}>
                   Mortar-board
                 </Typography>
@@ -13220,7 +13220,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <i className="fa fa-openid" />
+                <i className="fa fa-openid"/>
                 <Typography className={classes.materialIconText}>
                   Openid
                 </Typography>
@@ -13233,7 +13233,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <i className="fa fa-paper-plane" />
+                <i className="fa fa-paper-plane"/>
                 <Typography className={classes.materialIconText}>
                   Paper-plane
                 </Typography>
@@ -13246,7 +13246,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <i className="fa fa-paper-plane-o" />
+                <i className="fa fa-paper-plane-o"/>
                 <Typography className={classes.materialIconText}>
                   paper-plane-o
                 </Typography>
@@ -13259,7 +13259,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <i className="fa fa-paragraph" />
+                <i className="fa fa-paragraph"/>
                 <Typography className={classes.materialIconText}>
                   Paragraph
                 </Typography>
@@ -13272,7 +13272,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <i className="fa fa-paw" />
+                <i className="fa fa-paw"/>
                 <Typography className={classes.materialIconText}>
                   Paw
                 </Typography>
@@ -13285,7 +13285,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <i className="fa fa-pied-piper" />
+                <i className="fa fa-pied-piper"/>
                 <Typography className={classes.materialIconText}>
                   Pied-piper
                 </Typography>
@@ -13298,7 +13298,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <i className="fa fa-pied-piper-alt" />
+                <i className="fa fa-pied-piper-alt"/>
                 <Typography className={classes.materialIconText}>
                   Pied-piper-alt
                 </Typography>
@@ -13311,7 +13311,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <i className="fa fa-pied-piper-square" />
+                <i className="fa fa-pied-piper-square"/>
                 <Typography className={classes.materialIconText}>
                   Pied-piper-square
                 </Typography>
@@ -13324,7 +13324,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <i className="fa fa-qq" />
+                <i className="fa fa-qq"/>
                 <Typography className={classes.materialIconText}>Qq</Typography>
               </Grid>
               <Grid
@@ -13335,7 +13335,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <i className="fa fa-ra" />
+                <i className="fa fa-ra"/>
                 <Typography className={classes.materialIconText}>Ra</Typography>
               </Grid>
               <Grid
@@ -13346,7 +13346,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <i className="fa fa-rebel" />
+                <i className="fa fa-rebel"/>
                 <Typography className={classes.materialIconText}>
                   Rebel
                 </Typography>
@@ -13359,7 +13359,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <i className="fa fa-recycle" />
+                <i className="fa fa-recycle"/>
                 <Typography className={classes.materialIconText}>
                   Recycle
                 </Typography>
@@ -13372,7 +13372,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <i className="fa fa-reddit" />
+                <i className="fa fa-reddit"/>
                 <Typography className={classes.materialIconText}>
                   Reddit
                 </Typography>
@@ -13385,7 +13385,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <i className="fa fa-reddit-square" />
+                <i className="fa fa-reddit-square"/>
                 <Typography className={classes.materialIconText}>
                   Reddit-square
                 </Typography>
@@ -13398,7 +13398,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <i className="fa fa-send" />
+                <i className="fa fa-send"/>
                 <Typography className={classes.materialIconText}>
                   Send
                 </Typography>
@@ -13411,7 +13411,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <i className="fa fa-send-o" />
+                <i className="fa fa-send-o"/>
                 <Typography className={classes.materialIconText}>
                   Send-o
                 </Typography>
@@ -13424,7 +13424,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <i className="fa fa-share-alt" />
+                <i className="fa fa-share-alt"/>
                 <Typography className={classes.materialIconText}>
                   Share-alt
                 </Typography>
@@ -13437,7 +13437,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <i className="fa fa-share-alt-square" />
+                <i className="fa fa-share-alt-square"/>
                 <Typography className={classes.materialIconText}>
                   Share-alt-square
                 </Typography>
@@ -13450,7 +13450,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <i className="fa fa-slack" />
+                <i className="fa fa-slack"/>
                 <Typography className={classes.materialIconText}>
                   Slack
                 </Typography>
@@ -13463,7 +13463,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <i className="fa fa-sliders" />
+                <i className="fa fa-sliders"/>
                 <Typography className={classes.materialIconText}>
                   Sliders
                 </Typography>
@@ -13476,7 +13476,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <i className="fa fa-soundcloud" />
+                <i className="fa fa-soundcloud"/>
                 <Typography className={classes.materialIconText}>
                   Soundcloud
                 </Typography>
@@ -13489,7 +13489,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <i className="fa fa-space-shuttle" />
+                <i className="fa fa-space-shuttle"/>
                 <Typography className={classes.materialIconText}>
                   Space-shuttle
                 </Typography>
@@ -13502,7 +13502,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <i className="fa fa-spoon" />
+                <i className="fa fa-spoon"/>
                 <Typography className={classes.materialIconText}>
                   Spoon
                 </Typography>
@@ -13515,7 +13515,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <i className="fa fa-spotify" />
+                <i className="fa fa-spotify"/>
                 <Typography className={classes.materialIconText}>
                   Spotify
                 </Typography>
@@ -13528,7 +13528,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <i className="fa fa-steam" />
+                <i className="fa fa-steam"/>
                 <Typography className={classes.materialIconText}>
                   Steam
                 </Typography>
@@ -13541,7 +13541,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <i className="fa fa-steam-square" />
+                <i className="fa fa-steam-square"/>
                 <Typography className={classes.materialIconText}>
                   Steam-square
                 </Typography>
@@ -13554,7 +13554,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <i className="fa fa-stumbleupon" />
+                <i className="fa fa-stumbleupon"/>
                 <Typography className={classes.materialIconText}>
                   Stumbleupon
                 </Typography>
@@ -13567,7 +13567,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <i className="fa fa-stumbleupon-circle" />
+                <i className="fa fa-stumbleupon-circle"/>
                 <Typography className={classes.materialIconText}>
                   Stumbleupon-circle
                 </Typography>
@@ -13580,7 +13580,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <i className="fa fa-support" />
+                <i className="fa fa-support"/>
                 <Typography className={classes.materialIconText}>
                   Support
                 </Typography>
@@ -13593,7 +13593,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <i className="fa fa-taxi" />
+                <i className="fa fa-taxi"/>
                 <Typography className={classes.materialIconText}>
                   Taxi
                 </Typography>
@@ -13606,7 +13606,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <i className="fa fa-tencent-weibo" />
+                <i className="fa fa-tencent-weibo"/>
                 <Typography className={classes.materialIconText}>
                   Tencent-weibo
                 </Typography>
@@ -13619,7 +13619,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <i className="fa fa-tree" />
+                <i className="fa fa-tree"/>
                 <Typography className={classes.materialIconText}>
                   Tree
                 </Typography>
@@ -13632,7 +13632,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <i className="fa fa-university" />
+                <i className="fa fa-university"/>
                 <Typography className={classes.materialIconText}>
                   University
                 </Typography>
@@ -13645,7 +13645,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <i className="fa fa-vine" />
+                <i className="fa fa-vine"/>
                 <Typography className={classes.materialIconText}>
                   Vine
                 </Typography>
@@ -13658,7 +13658,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <i className="fa fa-wechat" />
+                <i className="fa fa-wechat"/>
                 <Typography className={classes.materialIconText}>
                   Wechat
                 </Typography>
@@ -13671,7 +13671,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <i className="fa fa-weixin" />
+                <i className="fa fa-weixin"/>
                 <Typography className={classes.materialIconText}>
                   Weixin
                 </Typography>
@@ -13684,7 +13684,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <i className="fa fa-wordpress" />
+                <i className="fa fa-wordpress"/>
                 <Typography className={classes.materialIconText}>
                   Wordpress
                 </Typography>
@@ -13697,7 +13697,7 @@ export default function IconsPage() {
                 sm={4}
                 xs={12}
               >
-                <i className="fa fa-yahoo" />
+                <i className="fa fa-yahoo"/>
                 <Typography className={classes.materialIconText}>
                   Yahoo
                 </Typography>

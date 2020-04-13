@@ -1,13 +1,7 @@
 import React from "react";
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableRow,
-} from "@material-ui/core";
+import {Table, TableBody, TableCell, TableHead, TableRow,} from "@material-ui/core";
 // components
-import { Button } from "../../../../components/Wrappers";
+import {Button} from "../../../../components/Wrappers";
 
 const states = {
   sent: "success",
@@ -15,7 +9,7 @@ const states = {
   declined: "secondary",
 };
 
-export default function TableComponent({ data }) {
+export default function TableComponent({data}) {
   var keys = Object.keys(data[0]).map((i) => i.toUpperCase());
   keys.shift(); // delete "id" key
 
@@ -29,7 +23,7 @@ export default function TableComponent({ data }) {
         </TableRow>
       </TableHead>
       <TableBody>
-        {data.map(({ id, name, email, product, price, date, city, status }) => (
+        {data.map(({id, name, email, product, price, date, city, status}) => (
           <TableRow key={id}>
             <TableCell className="pl-3 fw-normal">{name}</TableCell>
             <TableCell>{email}</TableCell>

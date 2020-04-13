@@ -1,17 +1,17 @@
-import React, { useState } from "react";
-import { Grid, Input, MenuItem, Select } from "@material-ui/core";
-import { ArrowForward as ArrowForwardIcon } from "@material-ui/icons";
-import { useTheme } from "@material-ui/styles";
-import { Bar, BarChart } from "recharts";
+import React, {useState} from "react";
+import {Grid, Input, MenuItem, Select} from "@material-ui/core";
+import {ArrowForward as ArrowForwardIcon} from "@material-ui/icons";
+import {useTheme} from "@material-ui/styles";
+import {Bar, BarChart} from "recharts";
 import classnames from "classnames";
 // styles
 import useStyles from "./styles";
 // components
 import Widget from "../../../../components/Widget";
-import { Typography } from "../../../../components/Wrappers";
+import {Typography} from "../../../../components/Wrappers";
 
 export default function BigStatResource(props) {
-  var { product, total, color, lowest, median, highest, samples } = props;
+  var {product, total, color, lowest, median, highest, samples} = props;
   var classes = useStyles();
   var theme = useTheme();
 
@@ -30,7 +30,7 @@ export default function BigStatResource(props) {
             input={
               <Input
                 disableUnderline
-                classes={{ input: classes.selectInput }}
+                classes={{input: classes.selectInput}}
               />
             }
             className={classes.select}
@@ -112,7 +112,7 @@ export default function BigStatResource(props) {
 function getDataBars(sample) {
   var ret_arr = new Array(7);
   for (var i = 0; i < 7; i++) {
-    ret_arr[i] = { value: sample[i] };
+    ret_arr[i] = {value: sample[i]};
   }
   return ret_arr;
 }

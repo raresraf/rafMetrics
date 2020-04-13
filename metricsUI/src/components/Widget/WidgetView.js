@@ -1,27 +1,21 @@
 import React from "react";
 import classnames from "classnames";
-import {
-  IconButton,
-  Menu,
-  MenuItem,
-  Paper,
-  withStyles,
-} from "@material-ui/core";
-import { MoreVert as MoreIcon } from "@material-ui/icons";
+import {IconButton, Menu, MenuItem, Paper, withStyles,} from "@material-ui/core";
+import {MoreVert as MoreIcon} from "@material-ui/icons";
 import Typography from "@material-ui/core/es/Typography/Typography";
 
 const Widget = ({
-  classes,
-  children,
-  title,
-  noBodyPadding,
-  bodyClass,
-  className,
-  disableWidgetMenu,
-  ...props
-}) => (
+                  classes,
+                  children,
+                  title,
+                  noBodyPadding,
+                  bodyClass,
+                  className,
+                  disableWidgetMenu,
+                  ...props
+                }) => (
   <div className={classes.widgetWrapper}>
-    <Paper className={classes.paper} classes={{ root: classes.widgetRoot }}>
+    <Paper className={classes.paper} classes={{root: classes.widgetRoot}}>
       <div className={classes.widgetHeader}>
         {props.header ? (
           props.header
@@ -33,13 +27,13 @@ const Widget = ({
             {!disableWidgetMenu && (
               <IconButton
                 color="primary"
-                classes={{ root: classes.moreButton }}
+                classes={{root: classes.moreButton}}
                 aria-owns="widget-menu"
                 aria-haspopup="true"
                 onClick={() => props.setMoreMenuOpen(true)}
                 buttonRef={props.setMoreButtonRef}
               >
-                <MoreIcon />
+                <MoreIcon/>
               </IconButton>
             )}
           </React.Fragment>
@@ -119,4 +113,4 @@ const styles = (theme) => ({
   },
 });
 
-export default withStyles(styles, { withTheme: true })(Widget);
+export default withStyles(styles, {withTheme: true})(Widget);
