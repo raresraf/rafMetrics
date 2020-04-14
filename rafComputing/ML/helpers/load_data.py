@@ -3,6 +3,7 @@ from sklearn.model_selection import train_test_split
 
 from rafComputing.ML.features.feature_transformation import extract_features
 from rafComputing.ML.features.feature_types import POLYNOMIAL_FEATURE_TYPE
+from rafComputing.ML.helpers.generate_larger_evaluation_set import generate_larger_evaluation_set
 
 
 def matrix_to_train_test(path,
@@ -49,4 +50,30 @@ def matrix_to_train_test(path,
         (X_test, orig_x_test),
         y_train,
         y_test,
+    )
+
+
+def matrix_to_train_test_w_generate_larger_evaluation_set(
+    path, feature_type=POLYNOMIAL_FEATURE_TYPE, feature_val=1):
+    """
+        Same as matrix_to_train_test but returns two test sets:
+        1. Same Test set as matrix_to_train_test
+        2. Unlabeled Test set:
+            (X_test2, orig_x_test2),
+    """
+    (x, orig_x), y, (X_train, orig_x_train), (
+        X_test, orig_x_test), y_train, y_test = matrix_to_train_test(
+            path, feature_type=feature_type, feature_val=feature_val)
+
+    orig_x_test2 = generate_larger_evaluation_set(orig_x)
+    X_test2 = extract_features(orig_x_test2, feature_type, feature_val)
+
+    return (
+        (x, orig_x),
+        y,
+        (X_train, orig_x_train),
+        (X_test, orig_x_test),
+        y_train,
+        y_test,
+        (X_test2, orig_x_test2),
     )
