@@ -4,7 +4,7 @@ PROGS = $(patsubst %.c,%,$(SRCS))
 all: $(PROGS)
 
 %: %.c
-	$(CC) $(CFLAGS) -o $@.out $<
+	$(CC) $(CFLAGS) -std=c99 -o $@.out $<
 
 clean:
 	rm *.out
