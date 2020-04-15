@@ -4,13 +4,6 @@ import sys
 from numpy.polynomial import Polynomial as P
 from sklearn.metrics import mean_squared_error, r2_score
 
-from rafComputing.ML.RegressionEngine.LinearRegressionGD import LinearRegressionGD
-from rafComputing.ML.features.feature_types import (
-    POLYNOMIAL_FEATURE_TYPE,
-    NO_FEATURE_TYPE,
-)
-from rafComputing.ML.helpers.polynomial_to_latex import polynomial_to_LaTeX
-from rafComputing.ML.helpers.load_data import matrix_to_train_test
 from rafComputing.ML.CustomSettings.settings import (
     MAX_ITER,
     ALPHA,
@@ -22,6 +15,13 @@ from rafComputing.ML.CustomSettings.settings import (
     OUTPUT_PREFIX,
     OUTPUT_PREFIX_0,
 )
+from rafComputing.ML.RegressionEngine.LinearRegressionGD import LinearRegressionGD
+from rafComputing.ML.features.feature_types import (
+    POLYNOMIAL_FEATURE_TYPE,
+    NO_FEATURE_TYPE,
+)
+from rafComputing.ML.helpers.load_data import matrix_to_train_test
+from rafComputing.ML.helpers.polynomial_to_latex import polynomial_to_LaTeX
 
 
 def LinearRegressionTraining(

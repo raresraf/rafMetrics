@@ -1,31 +1,20 @@
 import matplotlib.pyplot as plt
-import numpy as np
 import sys
-from numpy.polynomial import Polynomial as P
 from sklearn.metrics import mean_squared_error, r2_score
 
-from rafComputing.ML.RegressionEngine.LinearRegressionGD import LinearRegressionGD
-from rafComputing.ML.features.feature_types import (
-    POLYNOMIAL_FEATURE_TYPE,
-    NO_FEATURE_TYPE,
-    POWER_FEATURE_TYPE,
-)
-from rafComputing.ML.helpers.generate_larger_evaluation_set import generate_larger_evaluation_set
-from rafComputing.ML.helpers.polynomial_to_latex import polynomial_to_LaTeX
-from rafComputing.ML.helpers.load_data import matrix_to_train_test, \
-    matrix_to_train_test_w_generate_larger_evaluation_set
 from rafComputing.ML.CustomSettings.settings import (
     MAX_ITER,
     ALPHA,
-    DEFAULT_ITER_INCREASE_STEPS_LOG,
-    DEFAULT_ITER_INCREASE_STEPS,
-    DEFAULT_RANGE_,
     MAX_ITER_LinearRegressionTraining,
     ALPHA_LinearRegressionTraining,
-    OUTPUT_PREFIX,
-    OUTPUT_PREFIX_0,
     AUTO_DRIVER_DEFAULT_OUTPUT_NAME,
 )
+from rafComputing.ML.RegressionEngine.LinearRegressionGD import LinearRegressionGD
+from rafComputing.ML.features.feature_types import (
+    NO_FEATURE_TYPE,
+    POWER_FEATURE_TYPE,
+)
+from rafComputing.ML.helpers.load_data import matrix_to_train_test_w_generate_larger_evaluation_set
 
 LINE_COLORS = ["blue", "orange", "green"]
 
@@ -106,7 +95,8 @@ def LinearRegressionTrainingMoreGraphs(
     plt.plot(orig_x, y_predicted, color=LINE_COLORS[internal_counter])
     plt.plot(orig_x_test2,
              y_predicted_test2,
-             color=LINE_COLORS[internal_counter])
+             color=LINE_COLORS[internal_counter],
+             linestyle="--")
 
     if final:
         plt.legend([

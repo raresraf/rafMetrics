@@ -6,11 +6,9 @@ from sklearn.metrics import mean_squared_error, r2_score
 
 from rafComputing.ML.CustomSettings.settings import AUTO_DRIVER_DEFAULT_OUTPUT_NAME
 from rafComputing.ML.features.feature_types import (
-    POLYNOMIAL_FEATURE_TYPE,
-    NO_FEATURE_TYPE,
-)
-from rafComputing.ML.helpers.polynomial_to_latex import polynomial_to_LaTeX
+    NO_FEATURE_TYPE, )
 from rafComputing.ML.helpers.load_data import matrix_to_train_test
+from rafComputing.ML.helpers.polynomial_to_latex import polynomial_to_LaTeX
 
 
 def LinearRegressionTrainingAuto(
