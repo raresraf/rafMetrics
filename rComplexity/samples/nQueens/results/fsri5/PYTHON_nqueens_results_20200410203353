@@ -1,0 +1,37 @@
+Architecture:          x86_64
+CPU op-mode(s):        32-bit, 64-bit
+Byte Order:            Little Endian
+CPU(s):                4
+On-line CPU(s) list:   0-3
+Thread(s) per core:    1
+Core(s) per socket:    4
+Socket(s):             1
+NUMA node(s):          1
+Vendor ID:             GenuineIntel
+CPU family:            6
+Model:                 58
+Stepping:              9
+CPU MHz:               3201.000
+BogoMIPS:              6385.77
+Virtualization:        VT-x
+L1d cache:             32K
+L1i cache:             32K
+L2 cache:              256K
+L3 cache:              6144K
+NUMA node0 CPU(s):     0-3
+1 0.016
+2 0.017
+3 0.015
+4 0.017
+5 0.016
+6 0.016
+7 0.020
+8 0.030
+9 0.083
+10 0.358
+11 1.921
+12 11.623
+13 71.993
+14 476.779
+15 3412.812
+16 25231.758

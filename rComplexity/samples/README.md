@@ -7,8 +7,8 @@
 | Cache-friendly loop ordering          | N^3        | OK             | OK          | OK          |
 | Blocked Matrix Multiplication         | N^3        | OK             | OK          | OK          |
 | Strassen Matrix Multiplication        | N^2.8      | OK             | OK          | in-progress |
-| NQueens (C)                           | N^2 * N!   | OK             | in-progress |             |
-| NQueens (python)                      | N^2 * N!   | OK             | in-progress |             |
+| NQueens (C)                           | N^2 * N!   | OK             | OK          |             |
+| NQueens (python)                      | N^2 * N!   | OK             | OK          |             |
 | Bubble Sort                           | N^2        | OK             | in-progress |             |
 | Insertion Sort                        | N^2        | OK             | in-progress |             |
 | Selection Sort                        | N^2        | OK             | in-progress |             |
