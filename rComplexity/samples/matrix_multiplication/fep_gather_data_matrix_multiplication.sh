@@ -27,13 +27,8 @@ touch $FILENAME
 
 lscpu >> $FILENAME
 
-# Small samples tests
-matrix_samples 16
-matrix_samples 32
-matrix_samples 48
-
 # Larger input tests
-for ((i = 64 ; i <= 2048 ; i = i + 64 )); do
+for ((i = 16 ; i <= 1024 ; i = i + 16 )); do
   matrix_samples $i
 done
 
