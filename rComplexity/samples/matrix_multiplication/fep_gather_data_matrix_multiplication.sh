@@ -6,7 +6,6 @@ matrix_samples () {
 
   # Using Loop-ordering cache friendly
   /usr/bin/time --verbose ./n3_sample2.out $1 >> $FILENAME
-  echo "" >> $FILENAME
 
   # Using Strassen Algorithm
   /usr/bin/time --verbose ./n28074_sample1.out $1  >> $FILENAME
@@ -27,8 +26,18 @@ touch $FILENAME
 
 lscpu >> $FILENAME
 
+
+# Small tests
+matrix_samples 8
+matrix_samples 12
+matrix_samples 16
+matrix_samples 24
+matrix_samples 32
+matrix_samples 48
+
+
 # Larger input tests
-for ((i = 16 ; i <= 1024 ; i = i + 16 )); do
+for ((i = 64 ; i <= 2000 ; i = i + 64 )); do
   matrix_samples $i
 done
 
