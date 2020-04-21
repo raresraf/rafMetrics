@@ -1266,11 +1266,12 @@
     "@types/istanbul-reports" "^1.1.1"
     "@types/yargs" "^13.0.0"
 
-"@material-ui/core@^4.9.10":
-  version "4.9.10"
-  resolved "https://registry.yarnpkg.com/@material-ui/core/-/core-4.9.10.tgz#53f1d18bd274c258698b6cfdab3c4bee0edf7892"
+"@material-ui/core@^4.9.11":
+  version "4.9.11"
+  resolved "https://registry.yarnpkg.com/@material-ui/core/-/core-4.9.11.tgz#02f45f4dbea6db191fdc0d993323d64cfae613fd"
   dependencies:
     "@babel/runtime" "^7.4.4"
+    "@material-ui/react-transition-group" "^4.2.0"
     "@material-ui/styles" "^4.9.10"
     "@material-ui/system" "^4.9.10"
     "@material-ui/types" "^5.0.1"
@@ -1288,6 +1289,15 @@
   resolved "https://registry.yarnpkg.com/@material-ui/icons/-/icons-4.9.1.tgz#fdeadf8cb3d89208945b33dbc50c7c616d0bd665"
   dependencies:
     "@babel/runtime" "^7.4.4"
+
+"@material-ui/react-transition-group@^4.2.0":
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/@material-ui/react-transition-group/-/react-transition-group-4.2.0.tgz#afec833bbcc79f05a9b4d4828b3e07965cc7e321"
+  dependencies:
+    "@babel/runtime" "^7.4.5"
+    dom-helpers "^3.4.0"
+    loose-envify "^1.4.0"
+    prop-types "^15.6.2"
 
 "@material-ui/styles@^4.9.10":
   version "4.9.10"
