@@ -1,20 +1,14 @@
-import matplotlib.pyplot as plt
+import numpy as np
 import sys
 
-from rafComputing.ML.CustomSettings.settings import ALPHA, MAX_ITER, AUTO_DRIVER_DEFAULT_OUTPUT_NAME
+from rafComputing.ML.CustomSettings.settings import MAX_ITER
 from rafComputing.ML.features.feature_types import POWER_FEATURE_TYPE
-from rafComputing.ML.helpers.generate_larger_evaluation_set import generate_larger_evaluation_set
-from rafComputing.ML.helpers.load_data import matrix_to_train_test_w_generate_larger_evaluation_set
-from rafComputing.ML.snippets.MLdriver_more_graphs import LinearRegressionTrainingMoreGraphs
-from rafComputing.ML.snippets.MLdriver_more_graphs_prediction import LinearRegressionTrainingMoreGraphsPrediction
 from rafComputing.ML.snippets.demo.CustomStrassenLinearRegressionTrainingMoreGraphsPrediction import \
     CustomStrassenLinearRegressionTrainingMoreGraphsPrediction
 from rafComputing.ML.snippets.demo.ML_strassen_more_graphs import get_feature_val_from_path
-import numpy as np
 
 
 def strassen_generate_larger_evaluation_set(x):
-
     latest_element = np.max(x)
     extra_x = np.linspace(latest_element, 4e7, num=100)
     return extra_x

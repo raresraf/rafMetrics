@@ -1,17 +1,6 @@
-import pymysql
 from flask import Flask
-from flask import jsonify
 from flask import request
 from flask_cors import CORS
-from flaskext.mysql import MySQL
-from werkzeug.security import generate_password_hash, check_password_hash
-
-from Login.settings import (
-    MYSQL_DATABASE_USER,
-    MYSQL_DATABASE_PASSWORD,
-    MYSQL_DATABASE_DB,
-    MYSQL_DATABASE_HOST,
-)
 
 app = Flask(__name__)
 CORS(app)

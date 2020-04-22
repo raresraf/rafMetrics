@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import sys
 
-from rafComputing.ML.CustomSettings.settings import ALPHA, MAX_ITER, AUTO_DRIVER_DEFAULT_OUTPUT_NAME
+from rafComputing.ML.CustomSettings.settings import MAX_ITER, AUTO_DRIVER_DEFAULT_OUTPUT_NAME
 from rafComputing.ML.features.feature_types import POWER_FEATURE_TYPE
 from rafComputing.ML.snippets.MLdriver_more_graphs import LinearRegressionTrainingMoreGraphs
 

@@ -1,22 +1,17 @@
 import matplotlib.pyplot as plt
-import sys
 from sklearn.metrics import mean_squared_error, r2_score
-import numpy as np
+
 from rafComputing.ML.CustomSettings.settings import (
-    MAX_ITER,
-    ALPHA,
     MAX_ITER_LinearRegressionTraining,
     ALPHA_LinearRegressionTraining,
     AUTO_DRIVER_DEFAULT_OUTPUT_NAME,
 )
 from rafComputing.ML.RegressionEngine.LinearRegressionGD import LinearRegressionGD
 from rafComputing.ML.features.feature_types import (
-    NO_FEATURE_TYPE,
-    POWER_FEATURE_TYPE,
-)
+    NO_FEATURE_TYPE, )
 from rafComputing.ML.helpers.generate_larger_evaluation_set import generate_larger_evaluation_set
 from rafComputing.ML.helpers.load_data import matrix_to_train_test_w_generate_larger_evaluation_set
-from rafComputing.ML.snippets.MLdriver_more_graphs_prediction import TRAIN_POINT_COLORS, TEST_POINT_COLORS, LINE_COLORS
+from rafComputing.ML.snippets.MLdriver_more_graphs_prediction import TEST_POINT_COLORS, LINE_COLORS
 
 
 def CustomStrassenLinearRegressionTrainingMoreGraphsPrediction(
