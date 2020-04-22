@@ -18,10 +18,10 @@ def get_feature_val_from_path(path):
 if __name__ == "__main__":
     if len(sys.argv) <= 1:
         print(
-            "Usage v1: python3 rafComputing/ML/snippets/demo/ML_strassen_more_graphs.py <file_name1> <file_name2> <file_name3> ... "
+            "Usage v1: python3 rafComputing/ML/snippets/demo/strassen/ML_strassen_more_graphs.py <file_name1> <file_name2> <file_name3> ... "
         )
         print(
-            "Usage (e.g.): python3 rafComputing/ML/snippets/demo/ML_strassen_more_graphs.py rComplexity/samples/matrix_multiplication/results/sprmcrogpu-wn13/result_n3_20200417113226 rComplexity/samples/matrix_multiplication/results/sprmcrogpu-wn13/result_n28_20200417113226"
+            "Usage (e.g.): python3 rafComputing/ML/snippets/demo/strassen/ML_strassen_more_graphs.py rComplexity/samples/matrix_multiplication/results/sprmcrogpu-wn13/result_n3_20200417113226 rComplexity/samples/matrix_multiplication/results/sprmcrogpu-wn13/result_n28_20200417113226"
         )
         sys.exit(-1)
 

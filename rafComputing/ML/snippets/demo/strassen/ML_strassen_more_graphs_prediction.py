@@ -3,24 +3,24 @@ import sys
 
 from rafComputing.ML.CustomSettings.settings import MAX_ITER
 from rafComputing.ML.features.feature_types import POWER_FEATURE_TYPE
-from rafComputing.ML.snippets.demo.CustomStrassenLinearRegressionTrainingMoreGraphsPrediction import \
+from rafComputing.ML.snippets.demo.strassen.CustomStrassenLinearRegressionTrainingMoreGraphsPrediction import \
     CustomStrassenLinearRegressionTrainingMoreGraphsPrediction
-from rafComputing.ML.snippets.demo.ML_strassen_more_graphs import get_feature_val_from_path
+from rafComputing.ML.snippets.demo.strassen.ML_strassen_more_graphs import get_feature_val_from_path
 
 
 def strassen_generate_larger_evaluation_set(x):
     latest_element = np.max(x)
-    extra_x = np.linspace(latest_element, 4e7, num=100)
+    extra_x = np.linspace(latest_element, 1e8, num=100)
     return extra_x
 
 
 if __name__ == "__main__":
     if len(sys.argv) <= 1:
         print(
-            "Usage v1: python3 rafComputing/ML/snippets/demo/ML_strassen_more_graphs_prediction.py <file_name1> <file_name2> <file_name3> ... "
+            "Usage v1: python3 rafComputing/ML/snippets/demo/strassen/ML_strassen_more_graphs_prediction.py <file_name1> <file_name2> <file_name3> ... "
         )
         print(
-            "Usage (e.g.): python3 rafComputing/ML/snippets/demo/ML_strassen_more_graphs_prediction.py rComplexity/samples/matrix_multiplication/results/sprmcrogpu-wn13/result_n3_20200417113226 rComplexity/samples/matrix_multiplication/results/sprmcrogpu-wn13/result_n28_20200417113226"
+            "Usage (e.g.): python3 rafComputing/ML/snippets/demo/strassen/ML_strassen_more_graphs_prediction.py rComplexity/samples/matrix_multiplication/results/sprmcrogpu-wn13/result_n3_20200417113226 rComplexity/samples/matrix_multiplication/results/sprmcrogpu-wn13/result_n28_20200417113226"
         )
         sys.exit(-1)
 
