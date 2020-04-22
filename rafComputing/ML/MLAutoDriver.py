@@ -15,7 +15,7 @@ def LinearRegressionTrainingAuto(
     path,
     output_name=AUTO_DRIVER_DEFAULT_OUTPUT_NAME,
     feature_type=NO_FEATURE_TYPE,
-    feature_val=1,
+    feature_val=1.0,
 ):
     (x, orig_x), y, (X_train, orig_x_train), (
         X_test,
@@ -80,4 +80,4 @@ if __name__ == "__main__":
     LinearRegressionTrainingAuto(path,
                                  output_name=OUTPUT_NAME,
                                  feature_type=NO_FEATURE_TYPE,
-                                 feature_val=1)
+                                 feature_val=1.0)

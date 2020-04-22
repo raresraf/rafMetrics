@@ -8,7 +8,7 @@ from rafComputing.ML.helpers.generate_larger_evaluation_set import generate_larg
 
 def matrix_to_train_test(path,
                          feature_type=POLYNOMIAL_FEATURE_TYPE,
-                         feature_val=1):
+                         feature_val=1.0):
     """
         Loads a multiple-column space-separated matrix from @path,
         containing:
@@ -56,7 +56,7 @@ def matrix_to_train_test(path,
 def matrix_to_train_test_w_generate_larger_evaluation_set(
     path,
     feature_type=POLYNOMIAL_FEATURE_TYPE,
-    feature_val=1,
+    feature_val=1.0,
     custom_generate_larger_evaluation_set=generate_larger_evaluation_set):
     """
         Same as matrix_to_train_test but returns two test sets:

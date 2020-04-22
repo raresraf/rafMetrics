@@ -30,7 +30,7 @@ def LinearRegressionTrainingMoreGraphs(
     n_iterations=MAX_ITER_LinearRegressionTraining,
     internal_counter=0,
     feature_type=NO_FEATURE_TYPE,
-    feature_val=1,
+    feature_val=1.0,
 ):
     (x, orig_x), y, (X_train, orig_x_train), (
         X_test,
@@ -106,7 +106,7 @@ if __name__ == "__main__":
             n_iterations=MAX_ITER,
             internal_counter=counter,
             feature_type=POWER_FEATURE_TYPE,
-            feature_val=3,
+            feature_val=3.0,
         )
 
         counter = counter + 1

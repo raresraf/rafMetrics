@@ -1,13 +1,12 @@
 
-\chapter{Calculus in {\textit{1-Complexity}} }
+\chapter{Calculus in 1-Complexity}
 
 
 
 
-\section{Introduction}
+\section{Introduction and Motivation}
 This chapter will present a specific set of $rComplexity$ classes, highlighting \textbf{Big \textit{r-}Theta}, \textbf{Big \textit{r-}O} and \textbf{Big \textit{r-}Omega} with unitary parameter (i.e. $r = 1$) by providing useful properties for a more straightforward calculation. The last part of the chapter introduce a new concept for \textit{monotonic, continuous function}: \textbf{normal form representation} and defines a new workflow in $rComplexity$: \textbf{normalized rComplexity calculus}.
 
-\section{Motivation}
 Calculus in $rComplexity$ is dependent on the parameter $r \in \mathbb{R}_{+}$, and as a result a large number of operations may require rudimentary \textit{conversions} using relations described in \textit{Common properties} and \textit{Notable properties} chapters. Working with unitary $rComplexity$ classes comes effortless and brings an agile manner of operating ample
 calculus using this Complexity Model.
 
@@ -253,7 +252,7 @@ We will refer to a monotonic, continuous function $g$ that is in normal form usi
 Working in $1$-Complexity with functions in normal form will involve converting an arbitrary monotonic, continuous function into an atomic representation, given by the normal form $g_{1}(n)$, by applying the decomposition presented in the definition above.This step involve few additional overhead in calculus, but overall the conversions are accessible and simplifies a lot the progress of complexity detection for various algorithms. Nonetheless, it provides powerful benchmarkings solutions for comparing algorithms' efficiency. 
 \end{remark}
 
-\section{Normalized rComplexity Calculus}
+An useful subset of rComplexity Calculus is defined by Calculus using Normalized rComplexity class functions.
 \begin{definition}
 We will denote by: 
 \[ f(n) \in \Theta_{1}(g_{1}(n)) \]

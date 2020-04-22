@@ -4,7 +4,11 @@
 This section aims to present a simple methodology of calculating by hand the associated rComplexity class for any given algorithm, provided a predefined instruction set architecture and the correspondence between generic instructions and required time for execution as well as enhanced hardware designs details related to the total execution time (no. of stages of pipeline, scalability degree, etc.)\cite{hennessy2011computer}. Even if the process of calculating an exact rComplexity class associated to a real algorithm is unpractical, the method provided can be applied with colossal endeavor. Later on, we will present an automated method of estimating the rComplexity of a given algorithm.
 
 \subsection{N-Queens’ Problem}
-We will begin to solve this by making an observation about choosing the $N$ Queens on the board with the dimensions $n$ x $n$. In order not to have attacks between two Queens, it must not have two Queens on the same line or column. We define a Queen $Q$ by the pair on points $ (x, y) $, where $ x, y \leq n $, are the coordinates corresponding to the position on the chessboard.
+
+
+As a fundamental process-key in testing the capacity of the AI in solving various problems together with that of creating low-complexity algorithms, N queens counts as one of the most applicable and explored programmes in the field of mathematics and programming. Being initially designed as a solution of Max Bezzel’s 8 queens puzzle (proposed in 1848), that by Franz Nauck created the generalized puzzle for the known N-queens problem. Due to movement complexity of queens, the increased number of required computations as the size of the input increases(time complexity grows fast), and the vast number of possible board states, N-queens problem has been explored by mathematicians and programmers quite extensively.
+
+This subsection proposes a naive solution. In order to begin to solve this problem,an observation about choosing the $N$ Queens on the board with the dimensions $n$ x $n$ is needed. In order not to have attacks between two Queens, it must not have two Queens on the same line or column. We define a Queen $Q$ by the pair on points $ (x, y) $, where $ x, y \leq n $, are the coordinates corresponding to the position on the chessboard.
 
 The problem can be solved by checking all possible permutations: $ Q (1) = (1, y_1) $ , 
 $ Q (2) = (2, y_2) $ ... , $ Q (n) = (n, y_n) $ \\
@@ -32,6 +36,7 @@ In these conditions, the only action that still needs to be verified is that of 
 \EndProcedure
 \Procedure{Main}{$n$}
 
+
 \State $read\ n$
 \State $currentMatrix.initiate()$
 \State $currentMatrix.setrows(n)$
@@ -48,6 +53,13 @@ $\left[\begin{array}{ccccc}
 \EndProcedure
 \end{algorithmic}
 \end{algorithm}
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.4\textwidth]{nqueen_sol10}
+\caption{Possible solutions for $n=10$}
+\end{figure}
 
 \begin{algorithm}[H]
 \caption{noConflict Helper function}
@@ -101,6 +113,9 @@ Therefore:
 
 $QueenProblem(n) = n \cdot QueenProblem(n-1) + n \cdot O(n),\ O(1)=O(n^2)$ \\ 
 \noindent\rule{16cm}{0.4pt}
+Proceeding to solving this equation:
+
+
 $QueenProblem(n) = n \cdot QueenProblem(n-1) + n \cdot O(n) |\cdot\ 1$ \\
 $QueenProblem(n-1) = (n-1) \cdot QueenProblem(n-2) + (n-1) \cdot O(n-1) |\cdot\ n-0$ \\
 $QueenProblem(n-2) = (n-2) \cdot QueenProblem(n-3) + (n-2) \cdot O(n-2) |\cdot\ n\cdot (n-1)$ \\
@@ -365,17 +380,18 @@ Matrix multiplication plays very important role in many scientific disciplines b
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.6\textwidth]{matrixC}
+\includegraphics[width=0.4\textwidth]{matrixC}
 \caption{Before 1969, all known matrix multiplication algorithm were in $O(n^3)$. After Volker Strassen first published this algorithm and proved that the naive algorithm wasn't optimal, various attempts to narrow down the exponent $\omega$ appeared. One big breakthrough was brought by Coppersmith–Winograd algorithm, with complexity $O(n^{2.375})$. }
 \end{figure}
 
+\subsection{Naive and optimized implementations}
 We analyzed various naive matrix multiplication algorithms $O(n^3)$ with memory-access improvements (cache-locality of loops, Blocked Matrix Multiplication) and an efficient implementation of Strassen algorithm.
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.7\textwidth]{matrixn3all}
 \caption{The results above have been reported on an i5 3.2GHz, x86\_64 Architecture with L1d cache: 32K, L1i cache: 32K, L2 cache: 256K, L3 cache:  6144K. We do not postulate that the methods above cannot be enhanced
- or the efficiency of the optimizations are in a specific order. We aim to provide various estimation for these implementations of matrix multiplication algorithms with known $O(n^3)$ Complexity. Please remark the natural distribution of the two cache-friendly algorithms presented on larger datasets vs the naive algorithm, susceptible to outliers. }
+ or the efficiency of the optimizations are in a specific order. We aim to provide various estimation for these implementations of matrix multiplication algorithms with known $O(n^3)$ Complexity. Please remark the natural distribution of the two cache-friendly algorithms presented on larger datasets vs the naive algorithm, susceptible to outliers.}
 \end{figure}
 
 
@@ -394,12 +410,12 @@ After training the regression models for each algorithm, we obtained the coeffic
 >{\columncolor[HTML]{FFCCC9}}l |
 >{\columncolor[HTML]{32CB00}}l |}
 \hline
-\cellcolor[HTML]{C0C0C0}\textit{\textbf{Algorithm}} & \cellcolor[HTML]{C0C0C0}{\color[HTML]{000000} \textit{\textbf{\begin{tabular}[c]{@{}l@{}}Complexity\\ Function\end{tabular}}}} \\ \hline
-\textbf{Naive Matrix Multiplication}                & {$ 1.109 \cdot 10^{-8} \cdot n^3 $}                                                                                      \\ \hline
-\textbf{Cache-friendly loop ordering}               & {$4.472e \cdot 10^{-9} \cdot n^3 $ }                                                                                      \\ \hline
-\textbf{Blocked Matrix Multiplication}              & {$6.441e \cdot 10^{-9} \cdot n^3 $ }                                                                                      \\ \hline
+\cellcolor[HTML]{C0C0C0}\textit{\textbf{Algorithm}} & \cellcolor[HTML]{C0C0C0}{\color[HTML]{000000} \textit{\textbf{\begin{tabular}[c]{@{}l@{}}Complexity Function \end{tabular}}}} \\ \hline
+\textbf{Naive Matrix Multiplication}                & {$ O_{1}(1.109 \cdot 10^{-8} \cdot n^3 \cdot HZ) $}                                                                                      \\ \hline
+\textbf{Cache-friendly loop ordering}               & {$ O_{1}(4.472 \cdot 10^{-9} \cdot n^3 \cdot HZ) $ }                                                                                      \\ \hline
+\textbf{Blocked Matrix Multiplication}              & {$ O_{1}(6.441 \cdot 10^{-9} \cdot n^3 \cdot HZ) $ }                                                                                      \\ \hline
 \end{tabular}
-\caption{The regression model was evaluating using the above metrics: Root Mean Square Error (RMSE) and $R^2$ (coefficient of determination) regression score function}
+\caption{In this representation, the complexity function is scaled to produce output in seconds. In order to obtain rComplexity function, multiplying with processor frequency is mandatory $HZ \approx 3.2 \cdot 10^9 $. The regression model was evaluating using the above metrics: Root Mean Square Error (RMSE) and $R^2$ (coefficient of determination) regression score function}
 \end{table}
 
 
@@ -419,11 +435,113 @@ Furthermore, the model was evaluated adopting classical regression evaluation me
 \textbf{Blocked Matrix Multiplication}              & {\color[HTML]{000000} \textit{6.441e-09}}                          & 185.70                                                                                             & 0.9989                                                                                                 & 63.64                                                                                  & {\color[HTML]{000000} 0.99971}                                                                     \\ \hline
 
 \end{tabular}
-\caption{The regression model was evaluated using the above metrics: Root Mean Square Error (RMSE) and $R^2$ (coefficient of determination) regression score function}
+\caption{The regression model was evaluated using the above metrics: Root Mean Square Error (RMSE) and $R^2$ (coefficient of determination) regression score function.}
 \end{table}
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.8\textwidth]{mmn3023g}
 \caption{TODO}
+\end{figure}
+
+\subsection{Strassen implementation}
+
+For a while, we will leave the $O(n^3)$ matrix multiplication algorithms and focus on a new approach. As mentioned before, Strassen proposed a matrix multiplication algorithm with complexity $O(n^{log_{2}(7)}) \approx O(n^{2.80735})$. We aim at comparing this algorithm with the Cache-friendly loop ordering solution presented in the previous section. 
+
+In the traditional approach, without rComplexity analysis, we could not distinguish cases in which Strassen Algorithm could perform worse than any optimized $O(n^3)$ matrix multiplication solution.
+
+
+\begin{fallacy}
+Let $Alg1$ an algorithm with the complexity function $f_{1} \in \Theta(g_1(n))$  and $Alg2$ an algorithm with the complexity function $f_{2} \in \Theta(g_2(n))$. $Alg2$ must perform better than $Alg1$ \textit{for any size of input} in regard with the specified metric if $\lim_{n\to\infty} \dfrac{g_2(n)}{g_1(n)} = 0$.
+\end{fallacy}
+
+
+\begin{fallacy}
+Adapted version for matrix multiplication: 
+
+Let $Alg1$ an algorithm with the complexity function $f_{1} \in \Theta(n^3)$  and $Alg2$ an algorithm with the complexity function $f_{2} \in \Theta(n^{2.80735})$. $Alg2$ must perform better than $Alg1$ \textit{for any size of input} in regard with the specified metric.
+\end{fallacy}
+
+Working with traditional complexity do not imply an universal increase in performance for $Alg2$, but an asymptotic comparison, while the fallacies presented in the previous statements assumed an universal behavior.
+
+The correct manifest would be: $Alg2$ must perform better than $Alg1$ \textit{for sufficient large size of input} in regard with the specified metric if $\lim_{n\to\infty} \dfrac{g_2(n)}{g_1(n)} = 0$. 
+
+The collocation
+ \textit{"Sufficient large size of input"} is essential and it means that starting from a range of input size $n_{0}$ finite, better performances are obtained using $Alg2$.
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{mm328}
+\caption{The regression line corresponding to the Cache-friendly loop ordering matrix multiplication algorithm is described by $f(n) = 5.23 \cdot 10^{-9} \cdot n^{3} $, while the regression line corresponding to the the Strassen algorithm is described by $g(n) = 1.59 \cdot 10^{-7} \cdot n^{2.80} $ . \\  Even if the asymptotic behavior for the Strassen algorithm is desired in comparison with the cubic performance, for finite input size the Cache-friendly loop ordering matrix multiplication algorithm can perform better, despite $\lim_{n\to\infty} \dfrac{g(n)}{f(n)} = 0$.  \\ \\ Results recorded on a x86\_64 Intel(R) Xeon(R) Gold 5218 CPU @ 2.30GHz with L1d cache: 32K, L1i cache: 32K, L2 cache: 1024K, L3 cache: 22528K, CPU max frequency: 3.9GHz.}
+\end{figure}
+
+
+\begin{pitfall}
+Let $Alg1$ an algorithm with the complexity function $f_{1} \in \Theta(g_1(n))$  and $Alg2$ an algorithm with the complexity function $f_{2} \in \Theta(g_2(n))$ and $\lim_{n\to\infty} \dfrac{g_2(n)}{g_1(n)} = 0$.
+
+Even if the $Alg1$ may perform better than $Alg2$ for some cases, the nature of this behavior is superficial and, in general, for regular routines, $Alg2$ will still perform better.
+\end{pitfall}
+
+\begin{pitfall}
+Adapted version for matrix multiplication: 
+
+Even if the Cache-friendly loop ordering matrix multiplication algorithm may perform better than the Strassen algorithm for some cases, the nature of this behavior is superficial and, in general, for regular routines, the Strassen algorithm will still perform better.
+\end{pitfall}
+
+The key of the previous pitfalls is the meaning of \textit{"in general, for regular routines"}, because this phrase is extremely context-dependent. We will further calculate the separation point where the performances of Strassen algorithm catch up with (and overtake) the Cache-friendly loop ordering algorithm.
+
+The point is provided by equalizing the two complexity functions:
+
+$f(n) = 5.23 \cdot 10^{-9} \cdot n^{3} $ and $g(n) = 1.59 \cdot 10^{-7} \cdot n^{2.80} $
+
+The nontrivial solution $n_{0}$ is obtained by solving $ 159 * n_{0}^{2.8} = 5.23* n_{0}^3 $, where $n_{0} \neq 0$. The solution is $n_{0} \approx 25970312 \approx 2.5 \cdot 10^7$.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{mm328p}
+\caption{Predictions for the Cache-friendly loop ordering matrix multiplication algorithm and Strassen algorithm based on acquired data. Remark the \textit{"catch up point"} between the two polynomial function for input size $\approx 2.5 \cdot 10^7$. }
+\end{figure}
+
+For any matrix multiplication task with input size greater than $\approx 2.5 \cdot 10^7$ (25 million element matrices), better results will be obtained using Strassen algorithm.
+
+Remark that the total execution time (in seconds, on the tested computing machine) for 25 million element matrices, can be estimated to $g(2.5 \cdot 10^7) \approx f(2.5 \cdot 10^7) = 5.23 \cdot 10^{-9} \cdot (2.5 \cdot 10^7)^{3} \approx 8.13 \cdot 10^{13}$ seconds. This number $8.13 \cdot 10^{13} = 81300000000000 $ seconds is the equivalent of around 25 762 centuries. 
+
+If by "\textit{regular routines}" was meant multiplying 25 million element matrices and having the resources to await for 25 762 centuries for the result, than Strassen algorithm is the perfect solution for your problem \textit{(check also memory contraints, discussed in a short time)}. Otherwise, you should refer to a traditional approach.
+
+\begin{figure}[H]
+\makebox[\textwidth][c]{\parbox{1.2\textwidth}{%
+  \begin{subfigure}{.6\textwidth}
+      \includegraphics[width=\linewidth]{mm328p1.png}
+      \caption{Comparison between the two algorithms. \\Input size magnitude $\approx 10 ^ 6$}
+  \end{subfigure}%
+  \begin{subfigure}{.6\textwidth}
+      \includegraphics[width=\linewidth]{mm328p2.png}
+      \caption{Comparison between the two algorithms. \\Input size magnitude $\approx 10 ^ 9$}
+  \end{subfigure}
+
+}}
+\caption{Behaviour of Cache-friendly loop ordering matrix multiplication algorithm and Strassen algorithm based on predictions for different ranges of input.}
+\end{figure}
+
+
+\subsection{Memory considerations}
+
+Up to this point, the only metric described in the prediction process of tailoring a complexity function was the \textbf{time} complexity. However, this is not the only resource that is important when designing algorithms and computer programs. A close match is represented by the total memory usage or peak memory usage of a computer program during the execution. Even if nowadays, memory is generally large enough to accommodate most of the possible algorithms, there are special situations in which memory management is critical.
+
+The problem with the Strassen memory algorithm is that memory usage does not have a smooth improvement in growth. It varies in steps based on the powers of 2 (the cause is due to the recursion nature of the algorithm and at each iteration dividing in half).
+
+\begin{figure}[H]
+\makebox[\textwidth][c]{\parbox{1\textwidth}{%
+  \begin{subfigure}{.5\textwidth}
+      \includegraphics[width=\linewidth]{strassenusage2.png}
+      \caption{The total peak allocated memory usage \\ during the execution Strassen algorithm for \\  power-of-2 based input data}
+  \end{subfigure}%
+  \begin{subfigure}{.5\textwidth}
+      \includegraphics[width=\linewidth]{strassenusageall.png}
+      \caption{The total peak allocated memory usage \\ during the execution Strassen algorithm for\\  all recorded scenarios}
+  \end{subfigure}
+
+}}
+\caption{Peak memory usage - Strassen. Every double in input size produces a $7x$ increase in peak memory usage. Tailoring an complexity function of type $c \cdot n^{log_2(7)}$ provides a good evaluation. Using this appoximation, the maximum error at prediction is $7x$, while the average error is below $3x$.  Power-of-2 based input data provides exact approximation.}
 \end{figure}

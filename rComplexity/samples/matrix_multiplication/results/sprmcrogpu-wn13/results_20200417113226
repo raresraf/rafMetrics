@@ -61,3 +61,4 @@ Flags:                 fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca 
 1856   35.88830  185.90870
 1920   37.40183  193.93997
 1984   36.76092  192.16166
+2048   43.73592  1082.824585

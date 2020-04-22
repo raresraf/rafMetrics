@@ -20,7 +20,7 @@ def CustomStrassenLinearRegressionTrainingMoreGraphsPrediction(
     n_iterations=MAX_ITER_LinearRegressionTraining,
     internal_counter=0,
     feature_type=NO_FEATURE_TYPE,
-    feature_val=1,
+    feature_val=1.0,
     first=True,
     final=False,
     plt_legend=None,

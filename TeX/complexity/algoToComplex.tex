@@ -53,7 +53,7 @@ where:
 and $f = max - min + 1$, and $n_{0} = n_{min}, n_{f} = n_{max}$.
 \end{definition}
 
-\section{Comparing algorithms asymptotic performances based on Normalized rComplexity}
+\section{Comparing algorithms asymptotic performances}
 
 
 This section aims to compare two Algorithms ($Alg1$, $Alg2$) time-based performances based on associated Big r-Theta class from Normalized rComplexity model, by asymptotically correlating the characterized complexity functions $f, f'$. \\
@@ -113,7 +113,7 @@ If  $ \lim_{n\to\infty} \dfrac{g_{1}(n)}{g'_{1}(n)} = \infty $ , then $Alg1$ wil
 $\lim_{n\to\infty} \dfrac{g_{1}(n)}{g'_{1}(n)} = \infty \Rightarrow g_{1}(n) > g'_{1}(n)\ \forall n \geq n_{0} \Rightarrow f(n) > f'(n) \ \forall n \geq n_{0}'$
 \end{proof}
 
-\section{Comparing algorithms interval-based performances based on Normalized rComplexity}
+\section{Comparing algorithms interval-based performances}
 Comparing algorithms asymptotic performances based on Normalized rComplexity was a generic way of comparing two algorithms' asymptotic performances for unbounded large input. However, asymptotic performance is not always relevant for computer programs that have a settled \textit{(or a interval-based approximation, with or without weights on sub-specific intervals)} range of input size in order of solving a specific task. 
 \\ Consider an application responsible of scheduling a football league agenda for the next competitive season, avoiding conflicts and following specific objectives. This problem can be modeled and solved as a \textit{constraint satisfaction problem}(CSP) with different flavors.  An asymptotic performance analyzer would simply pick the lowest complexity function in consideration to asymptotic behavior. However, the application is not designed to run on extremely large input size, as the cardinal of the set of all teams part of a football league is a bounded well-known small integer (\textit{most leagues have between 14 and 20 teams}). Therefore, it may be a wise choice to have another method of comparing different algorithms with respect to finite upper bounded input.
 

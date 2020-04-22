@@ -9,7 +9,7 @@ from rafComputing.ML.features.feature_types import (
 
 def extract_features(X=None,
                      feature_type=POLYNOMIAL_FEATURE_TYPE,
-                     feature_val=1):
+                     feature_val=1.0):
     if X is None:
         return None
     if feature_type == POLYNOMIAL_FEATURE_TYPE:
@@ -21,6 +21,7 @@ def extract_features(X=None,
 
 
 def extract_polynomial_features(X, M):
+    M = int(M)
     phi = np.ones((X.size, M + 1))
     for i in range(X.size):
         for j in range(M + 1):
