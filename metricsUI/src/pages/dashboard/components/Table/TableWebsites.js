@@ -1,17 +1,8 @@
 import React from "react";
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableRow,
-} from "@material-ui/core";
+import {Table, TableBody, TableCell, TableHead, TableRow,} from "@material-ui/core";
 // components
-import { Button } from "../../../../components/Wrappers";
-import {
-  updateResource,
-  useResourceDispatch,
-} from "../../../../context/ResourceContext";
+import {Button} from "../../../../components/Wrappers";
+import {updateResource, useResourceDispatch,} from "../../../../context/ResourceContext";
 
 const states = {
   working: "success",

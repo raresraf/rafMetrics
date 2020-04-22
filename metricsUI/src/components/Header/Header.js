@@ -1,13 +1,5 @@
-import React, { useState } from "react";
-import {
-  AppBar,
-  Fab,
-  IconButton,
-  InputBase,
-  Menu,
-  MenuItem,
-  Toolbar,
-} from "@material-ui/core";
+import React, {useState} from "react";
+import {AppBar, Fab, IconButton, InputBase, Menu, MenuItem, Toolbar,} from "@material-ui/core";
 import {
   ArrowBack as ArrowBackIcon,
   Menu as MenuIcon,
@@ -19,14 +11,10 @@ import classNames from "classnames";
 // styles
 import useStyles from "./styles";
 // components
-import { Typography } from "../Wrappers/Wrappers";
+import {Typography} from "../Wrappers/Wrappers";
 // context
-import {
-  toggleSidebar,
-  useLayoutDispatch,
-  useLayoutState,
-} from "../../context/LayoutContext";
-import { signOut, useUserDispatch } from "../../context/UserContext";
+import {toggleSidebar, useLayoutDispatch, useLayoutState,} from "../../context/LayoutContext";
+import {signOut, useUserDispatch} from "../../context/UserContext";
 
 export default function Header(props) {
   var classes = useStyles();

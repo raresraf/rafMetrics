@@ -1,12 +1,12 @@
 import React from "react";
-import { HashRouter, Redirect, Route, Switch } from "react-router-dom";
+import {HashRouter, Redirect, Route, Switch} from "react-router-dom";
 // components
 import Layout from "./Layout";
 // pages
 import Error from "../pages/error";
 import Login from "../pages/login";
 // context
-import { useUserState } from "../context/UserContext";
+import {useUserState} from "../context/UserContext";
 
 export default function App() {
   // global

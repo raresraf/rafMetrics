@@ -1,21 +1,12 @@
-import React, { useState } from "react";
-import {
-  Button,
-  CircularProgress,
-  Fade,
-  Grid,
-  Tab,
-  Tabs,
-  TextField,
-  Typography,
-} from "@material-ui/core";
-import { withRouter } from "react-router-dom";
+import React, {useState} from "react";
+import {Button, CircularProgress, Fade, Grid, Tab, Tabs, TextField, Typography,} from "@material-ui/core";
+import {withRouter} from "react-router-dom";
 // styles
 import useStyles from "./styles";
 // logo
 import logo from "./logo.svg";
 // context
-import { loginUser, useUserDispatch } from "../../context/UserContext";
+import {loginUser, useUserDispatch} from "../../context/UserContext";
 
 function Login(props) {
   var classes = useStyles();

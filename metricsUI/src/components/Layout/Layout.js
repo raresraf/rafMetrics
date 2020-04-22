@@ -1,5 +1,5 @@
 import React from "react";
-import { Redirect, Route, Switch, withRouter } from "react-router-dom";
+import {Redirect, Route, Switch, withRouter} from "react-router-dom";
 import classnames from "classnames";
 // styles
 import useStyles from "./styles";
@@ -12,9 +12,8 @@ import DashboardResource from "../../pages/dashboard/DashboardResource";
 import DashboardWebsite from "../../pages/dashboard/DashboardWebsite";
 import DashboardResourceStatistics from "../../pages/dashboard/DashboardResourceStatistics";
 import DashboardWebsiteStatistics from "../../pages/dashboard/DashboardWebsiteStatistics";
-import Icons from "../../pages/icons";
 // context
-import { useLayoutState } from "../../context/LayoutContext";
+import {useLayoutState} from "../../context/LayoutContext";
 
 function Layout(props) {
   var classes = useStyles();

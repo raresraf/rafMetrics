@@ -1,16 +1,16 @@
-import React, { useState } from "react";
-import { Grid } from "@material-ui/core";
-import { useTheme } from "@material-ui/styles";
-import { Line, LineChart } from "recharts";
+import React, {useState} from "react";
+import {Grid} from "@material-ui/core";
+import {useTheme} from "@material-ui/styles";
+import {Line, LineChart} from "recharts";
 // styles
 import useStyles from "./styles";
 // components
 import mock from "./mock";
 import Widget from "../../components/Widget";
 import PageTitle from "../../components/PageTitle";
-import { Typography } from "../../components/Wrappers";
+import {Typography} from "../../components/Wrappers";
 
-import { backend_webmonitoringapi_ip } from "../../config";
+import {backend_webmonitoringapi_ip} from "../../config";
 
 function getDashboardWebsiteStatistics() {
   return new Promise((resolve, reject) => {

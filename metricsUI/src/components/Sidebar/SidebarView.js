@@ -1,8 +1,7 @@
 import React from "react";
-import { Drawer, IconButton, List, withStyles } from "@material-ui/core";
+import {Drawer, IconButton, List, withStyles} from "@material-ui/core";
 import {
   ArrowBack as ArrowBackIcon,
-  FilterNone as UIElementsIcon,
   HelpOutline as FAQIcon,
   Home as HomeIcon,
   LibraryBooks as LibraryIcon,

@@ -1,6 +1,6 @@
 import React from "react";
-import { IconButton, Paper, Typography } from "@material-ui/core";
-import { MoreVert as MoreIcon } from "@material-ui/icons";
+import {IconButton, Paper, Typography} from "@material-ui/core";
+import {MoreVert as MoreIcon} from "@material-ui/icons";
 import classnames from "classnames";
 // styles
 import useStyles from "./styles";

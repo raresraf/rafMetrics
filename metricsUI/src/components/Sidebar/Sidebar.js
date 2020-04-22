@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from "react";
-import { Drawer, IconButton, List } from "@material-ui/core";
+import React, {useEffect, useState} from "react";
+import {Drawer, IconButton, List} from "@material-ui/core";
 import {
   ArrowBack as ArrowBackIcon,
-  FilterNone as UIElementsIcon,
   HelpOutline as FAQIcon,
   Home as HomeIcon,
   LibraryBooks as LibraryIcon,
@@ -10,19 +9,15 @@ import {
   QuestionAnswer as SupportIcon,
   Web as WebMonitoringIcon,
 } from "@material-ui/icons";
-import { useTheme } from "@material-ui/styles";
-import { withRouter } from "react-router-dom";
+import {useTheme} from "@material-ui/styles";
+import {withRouter} from "react-router-dom";
 import classNames from "classnames";
 // styles
 import useStyles from "./styles";
 // components
 import SidebarLink from "./components/SidebarLink/SidebarLink";
 // context
-import {
-  toggleSidebar,
-  useLayoutDispatch,
-  useLayoutState,
-} from "../../context/LayoutContext";
+import {toggleSidebar, useLayoutDispatch, useLayoutState,} from "../../context/LayoutContext";
 
 const structure = [
   { id: 0, label: "Dashboard", link: "/app/dashboard", icon: <HomeIcon /> },
