@@ -1,6 +1,6 @@
 import React from "react";
-import {Button, Grid, Paper, Typography} from "@material-ui/core";
-import {Link} from "react-router-dom";
+import { Button, Grid, Paper, Typography } from "@material-ui/core";
+import { Link } from "react-router-dom";
 import classnames from "classnames";
 // styles
 import useStyles from "./styles";
@@ -13,12 +13,12 @@ export default function Error() {
   return (
     <Grid container className={classes.container}>
       <div className={classes.logotype}>
-        <img className={classes.logotypeIcon} src={logo} alt="logo"/>
+        <img className={classes.logotypeIcon} src={logo} alt="logo" />
         <Typography variant="h3" color="white" className={classes.logotypeText}>
           Material Admin
         </Typography>
       </div>
-      <Paper classes={{root: classes.paperRoot}}>
+      <Paper classes={{ root: classes.paperRoot }}>
         <Typography
           variant="h1"
           color="primary"

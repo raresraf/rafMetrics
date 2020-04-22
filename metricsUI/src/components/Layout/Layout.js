@@ -1,5 +1,5 @@
 import React from "react";
-import {Redirect, Route, Switch, withRouter} from "react-router-dom";
+import { Redirect, Route, Switch, withRouter } from "react-router-dom";
 import classnames from "classnames";
 // styles
 import useStyles from "./styles";
@@ -14,7 +14,7 @@ import DashboardResourceStatistics from "../../pages/dashboard/DashboardResource
 import DashboardWebsiteStatistics from "../../pages/dashboard/DashboardWebsiteStatistics";
 import Icons from "../../pages/icons";
 // context
-import {useLayoutState} from "../../context/LayoutContext";
+import { useLayoutState } from "../../context/LayoutContext";
 
 function Layout(props) {
   var classes = useStyles();
@@ -25,20 +25,20 @@ function Layout(props) {
   return (
     <div className={classes.root}>
       <>
-        <Header history={props.history}/>
-        <Sidebar/>
+        <Header history={props.history} />
+        <Sidebar />
         <div
           className={classnames(classes.content, {
             [classes.contentShift]: layoutState.isSidebarOpened,
           })}
         >
-          <div className={classes.fakeToolbar}/>
+          <div className={classes.fakeToolbar} />
           <Switch>
-            <Route path="/app/dashboard" component={Dashboard}/>
+            <Route path="/app/dashboard" component={Dashboard} />
             <Route
               exact
               path="/app/ui"
-              render={() => <Redirect to="/app/ui/resourcemanager"/>}
+              render={() => <Redirect to="/app/ui/resourcemanager" />}
             />
             <Route
               path="/app/ui/resourcemanager"
@@ -48,7 +48,7 @@ function Layout(props) {
               path="/app/ui/resourcemanagerstatistics"
               component={DashboardResourceStatistics}
             />
-            <Route path="/app/ui/websitemanager" component={DashboardWebsite}/>
+            <Route path="/app/ui/websitemanager" component={DashboardWebsite} />
             <Route
               path="/app/ui/websitemanagerstatistics"
               component={DashboardWebsiteStatistics}

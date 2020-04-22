@@ -1,5 +1,5 @@
 import React from "react";
-import {backend_login_ip} from "../config";
+import { backend_login_ip } from "../config";
 
 var UserStateContext = React.createContext();
 var UserDispatchContext = React.createContext();
@@ -31,7 +31,7 @@ function userReducer(state, action) {
   }
 }
 
-function UserProvider({children}) {
+function UserProvider({ children }) {
   var [state, dispatch] = React.useReducer(userReducer, {
     isAuthenticated: !!localStorage.getItem("id_token"),
     username: localStorage.getItem("username"),
@@ -62,7 +62,7 @@ function useUserDispatch() {
   return context;
 }
 
-export {UserProvider, useUserState, useUserDispatch, loginUser, signOut};
+export { UserProvider, useUserState, useUserDispatch, loginUser, signOut };
 
 // ###########################################################
 
@@ -92,14 +92,14 @@ async function loginUser(
     setTimeout(() => {
       localStorage.setItem("id_token", "1");
       localStorage.setItem("username", login);
-      dispatch({type: "LOGIN_SUCCESS"});
+      dispatch({ type: "LOGIN_SUCCESS" });
       setError(null);
       setIsLoading(false);
 
       history.push("/app/dashboard");
     }, 2000);
   } else {
-    dispatch({type: "LOGIN_FAILURE"});
+    dispatch({ type: "LOGIN_FAILURE" });
     setError(true);
     setIsLoading(false);
   }
@@ -107,6 +107,6 @@ async function loginUser(
 
 function signOut(dispatch, history) {
   localStorage.removeItem("id_token");
-  dispatch({type: "SIGN_OUT_SUCCESS"});
+  dispatch({ type: "SIGN_OUT_SUCCESS" });
   history.push("/login");
 }

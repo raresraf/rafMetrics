@@ -1,12 +1,21 @@
-import React, {useState} from "react";
-import {Button, CircularProgress, Fade, Grid, Tab, Tabs, TextField, Typography,} from "@material-ui/core";
-import {withRouter} from "react-router-dom";
+import React, { useState } from "react";
+import {
+  Button,
+  CircularProgress,
+  Fade,
+  Grid,
+  Tab,
+  Tabs,
+  TextField,
+  Typography,
+} from "@material-ui/core";
+import { withRouter } from "react-router-dom";
 // styles
 import useStyles from "./styles";
 // logo
 import logo from "./logo.svg";
 // context
-import {loginUser, useUserDispatch} from "../../context/UserContext";
+import { loginUser, useUserDispatch } from "../../context/UserContext";
 
 function Login(props) {
   var classes = useStyles();
@@ -35,7 +44,7 @@ function Login(props) {
   return (
     <Grid container className={classes.container}>
       <div className={classes.logotypeContainer}>
-        <img src={logo} alt="logo" className={classes.logotypeImage}/>
+        <img src={logo} alt="logo" className={classes.logotypeImage} />
         <Typography className={classes.logotypeText}>rafMetrics</Typography>
       </div>
       <div className={classes.formContainer}>
@@ -47,8 +56,8 @@ function Login(props) {
             textColor="primary"
             centered
           >
-            <Tab label="Login" classes={{root: classes.tab}}/>
-            <Tab label="New User" classes={{root: classes.tab}}/>
+            <Tab label="Login" classes={{ root: classes.tab }} />
+            <Tab label="New User" classes={{ root: classes.tab }} />
           </Tabs>
           {activeTabId === 0 && (
             <React.Fragment>
@@ -56,11 +65,11 @@ function Login(props) {
                 Hello!
               </Typography>
               <div className={classes.formDividerContainer}>
-                <div className={classes.formDivider}/>
+                <div className={classes.formDivider} />
                 <Typography className={classes.formDividerWord}>
                   Welcome to rafMetrics
                 </Typography>
-                <div className={classes.formDivider}/>
+                <div className={classes.formDivider} />
               </div>
               <Fade in={error}>
                 <Typography color="secondary" className={classes.errorMessage}>
@@ -99,7 +108,7 @@ function Login(props) {
               />
               <div className={classes.formButtons}>
                 {isLoading ? (
-                  <CircularProgress size={26} className={classes.loginLoader}/>
+                  <CircularProgress size={26} className={classes.loginLoader} />
                 ) : (
                   <Button
                     disabled={
@@ -223,7 +232,7 @@ function Login(props) {
               />
               <div className={classes.creatingButtonContainer}>
                 {isLoading ? (
-                  <CircularProgress size={26}/>
+                  <CircularProgress size={26} />
                 ) : (
                   <Button
                     onClick={() =>

@@ -1,5 +1,13 @@
-import React, {useState} from "react";
-import {AppBar, Fab, IconButton, InputBase, Menu, MenuItem, Toolbar,} from "@material-ui/core";
+import React, { useState } from "react";
+import {
+  AppBar,
+  Fab,
+  IconButton,
+  InputBase,
+  Menu,
+  MenuItem,
+  Toolbar,
+} from "@material-ui/core";
 import {
   ArrowBack as ArrowBackIcon,
   Menu as MenuIcon,
@@ -11,10 +19,14 @@ import classNames from "classnames";
 // styles
 import useStyles from "./styles";
 // components
-import {Typography} from "../Wrappers/Wrappers";
+import { Typography } from "../Wrappers/Wrappers";
 // context
-import {toggleSidebar, useLayoutDispatch, useLayoutState,} from "../../context/LayoutContext";
-import {signOut, useUserDispatch} from "../../context/UserContext";
+import {
+  toggleSidebar,
+  useLayoutDispatch,
+  useLayoutState,
+} from "../../context/LayoutContext";
+import { signOut, useUserDispatch } from "../../context/UserContext";
 
 export default function Header(props) {
   var classes = useStyles();
@@ -63,7 +75,7 @@ export default function Header(props) {
         <Typography variant="h6" weight="medium" className={classes.logotype}>
           rafMetrics Dashboard
         </Typography>
-        <div className={classes.grow}/>
+        <div className={classes.grow} />
         <div
           className={classNames(classes.search, {
             [classes.searchFocused]: isSearchOpen,
@@ -75,7 +87,7 @@ export default function Header(props) {
             })}
             onClick={() => setSearchOpen(!isSearchOpen)}
           >
-            <SearchIcon classes={{root: classes.headerIcon}}/>
+            <SearchIcon classes={{ root: classes.headerIcon }} />
           </div>
           <InputBase
             placeholder="Search…"
@@ -93,16 +105,16 @@ export default function Header(props) {
           aria-controls="profile-menu"
           onClick={(e) => setProfileMenu(e.currentTarget)}
         >
-          <AccountIcon classes={{root: classes.headerIcon}}/>
+          <AccountIcon classes={{ root: classes.headerIcon }} />
         </IconButton>
         <Menu
           id="mail-menu"
           open={Boolean(mailMenu)}
           anchorEl={mailMenu}
           onClose={() => setMailMenu(null)}
-          MenuListProps={{className: classes.headerMenuList}}
+          MenuListProps={{ className: classes.headerMenuList }}
           className={classes.headerMenu}
-          classes={{paper: classes.profileMenu}}
+          classes={{ paper: classes.profileMenu }}
           disableAutoFocusItem
         >
           <Fab
@@ -112,7 +124,7 @@ export default function Header(props) {
             className={classes.sendMessageButton}
           >
             Send New Message
-            <SendIcon className={classes.sendButtonIcon}/>
+            <SendIcon className={classes.sendButtonIcon} />
           </Fab>
         </Menu>
 
@@ -122,7 +134,7 @@ export default function Header(props) {
           anchorEl={profileMenu}
           onClose={() => setProfileMenu(null)}
           className={classes.headerMenu}
-          classes={{paper: classes.profileMenu}}
+          classes={{ paper: classes.profileMenu }}
           disableAutoFocusItem
         >
           <div className={classes.profileMenuUser}>
@@ -144,7 +156,7 @@ export default function Header(props) {
               classes.headerMenuItem
             )}
           >
-            <AccountIcon className={classes.profileMenuIcon}/> Profile
+            <AccountIcon className={classes.profileMenuIcon} /> Profile
           </MenuItem>
           <div className={classes.profileMenuUser}>
             <Typography

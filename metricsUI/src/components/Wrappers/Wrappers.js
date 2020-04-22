@@ -1,6 +1,11 @@
 import React from "react";
-import {Badge as BadgeBase, Button as ButtonBase, Typography as TypographyBase, withStyles,} from "@material-ui/core";
-import {makeStyles, useTheme} from "@material-ui/styles";
+import {
+  Badge as BadgeBase,
+  Button as ButtonBase,
+  Typography as TypographyBase,
+  withStyles,
+} from "@material-ui/core";
+import { makeStyles, useTheme } from "@material-ui/styles";
 import classnames from "classnames";
 
 // styles
@@ -12,7 +17,7 @@ var useStyles = makeStyles((theme) => ({
   },
 }));
 
-function Badge({children, colorBrightness, color, ...props}) {
+function Badge({ children, colorBrightness, color, ...props }) {
   var classes = useStyles();
   var theme = useTheme();
   var Styled = createStyled({
@@ -38,13 +43,13 @@ function Badge({children, colorBrightness, color, ...props}) {
 }
 
 function Typography({
-                      children,
-                      weight,
-                      size,
-                      colorBrightness,
-                      color,
-                      ...props
-                    }) {
+  children,
+  weight,
+  size,
+  colorBrightness,
+  color,
+  ...props
+}) {
   var theme = useTheme();
 
   return (
@@ -61,7 +66,7 @@ function Typography({
   );
 }
 
-function Button({children, color, ...props}) {
+function Button({ children, color, ...props }) {
   var theme = useTheme();
 
   var Styled = createStyled({
@@ -78,8 +83,8 @@ function Button({children, color, ...props}) {
 
   return (
     <Styled>
-      {({classes}) => (
-        <ButtonBase classes={{root: classes.button}} {...props}>
+      {({ classes }) => (
+        <ButtonBase classes={{ root: classes.button }} {...props}>
           {children}
         </ButtonBase>
       )}
@@ -87,7 +92,7 @@ function Button({children, color, ...props}) {
   );
 }
 
-export {Badge, Typography, Button};
+export { Badge, Typography, Button };
 
 // ########################################################################
 
@@ -141,7 +146,7 @@ function getFontSize(size, variant = "", theme) {
 
 function createStyled(styles, options) {
   var Styled = function (props) {
-    const {children, ...other} = props;
+    const { children, ...other } = props;
     return children(other);
   };
 

@@ -4,10 +4,10 @@ var ResourceStateContext = React.createContext();
 var ResourceDispatchContext = React.createContext();
 
 function resourceReducer(state) {
-  return {...state, resourceid: localStorage.getItem("resourceid")};
+  return { ...state, resourceid: localStorage.getItem("resourceid") };
 }
 
-function ResourceProvider({children}) {
+function ResourceProvider({ children }) {
   var [state, dispatch] = React.useReducer(resourceReducer, {
     resourceid: "1",
   });

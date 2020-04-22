@@ -1,9 +1,9 @@
 import React from "react";
-import {Button} from "@material-ui/core";
+import { Button } from "@material-ui/core";
 // styles
 import useStyles from "./styles";
 // components
-import {Typography} from "../Wrappers";
+import { Typography } from "../Wrappers";
 
 export default function PageTitle(props) {
   var classes = useStyles();
@@ -15,7 +15,7 @@ export default function PageTitle(props) {
       </Typography>
       {props.button && (
         <Button
-          classes={{root: classes.button}}
+          classes={{ root: classes.button }}
           variant="contained"
           size="large"
           color="secondary"

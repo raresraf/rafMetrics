@@ -1,5 +1,5 @@
 import React from "react";
-import {makeStyles, useTheme} from "@material-ui/styles";
+import { makeStyles, useTheme } from "@material-ui/styles";
 import classnames from "classnames";
 
 // styles
@@ -17,7 +17,7 @@ var useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Dot({size, color}) {
+export default function Dot({ size, color }) {
   var classes = useStyles();
   var theme = useTheme();
 

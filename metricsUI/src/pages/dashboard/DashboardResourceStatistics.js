@@ -1,15 +1,15 @@
-import React, {useState} from "react";
-import {Grid} from "@material-ui/core";
-import {useTheme} from "@material-ui/styles";
-import {Line, LineChart} from "recharts";
+import React, { useState } from "react";
+import { Grid } from "@material-ui/core";
+import { useTheme } from "@material-ui/styles";
+import { Line, LineChart } from "recharts";
 // styles
 import useStyles from "./styles";
 // components
 import mock from "./mock";
 import Widget from "../../components/Widget";
 import PageTitle from "../../components/PageTitle";
-import {Typography} from "../../components/Wrappers";
-import {backend_webmonitoringapi_ip} from "../../config";
+import { Typography } from "../../components/Wrappers";
+import { backend_webmonitoringapi_ip } from "../../config";
 
 function getDashboardResourceStatistics() {
   return new Promise((resolve, reject) => {
@@ -50,7 +50,7 @@ export default function DashboardResourceStatistics(props) {
 
   return (
     <>
-      <PageTitle title="Statistics Resource Manager"/>
+      <PageTitle title="Statistics Resource Manager" />
       <Grid container spacing={2}>
         <Grid item lg={6} md={6} sm={6} xs={12}>
           <Widget
@@ -70,13 +70,13 @@ export default function DashboardResourceStatistics(props) {
                 width={55}
                 height={30}
                 data={[
-                  {value: 10},
-                  {value: 15},
-                  {value: 10},
-                  {value: 17},
-                  {value: 18},
+                  { value: 10 },
+                  { value: 15 },
+                  { value: 10 },
+                  { value: 17 },
+                  { value: 18 },
                 ]}
-                margin={{left: theme.spacing(2)}}
+                margin={{ left: theme.spacing(2) }}
               >
                 <Line
                   type="natural"
@@ -138,13 +138,13 @@ export default function DashboardResourceStatistics(props) {
                 width={55}
                 height={30}
                 data={[
-                  {value: 10},
-                  {value: 15},
-                  {value: 10},
-                  {value: 17},
-                  {value: 18},
+                  { value: 10 },
+                  { value: 15 },
+                  { value: 10 },
+                  { value: 17 },
+                  { value: 18 },
                 ]}
-                margin={{left: theme.spacing(2)}}
+                margin={{ left: theme.spacing(2) }}
               >
                 <Line
                   type="natural"
@@ -207,13 +207,13 @@ export default function DashboardResourceStatistics(props) {
                 width={55}
                 height={30}
                 data={[
-                  {value: 10},
-                  {value: 15},
-                  {value: 10},
-                  {value: 17},
-                  {value: 18},
+                  { value: 10 },
+                  { value: 15 },
+                  { value: 10 },
+                  { value: 17 },
+                  { value: 18 },
                 ]}
-                margin={{left: theme.spacing(2)}}
+                margin={{ left: theme.spacing(2) }}
               >
                 <Line
                   type="natural"
@@ -266,13 +266,13 @@ export default function DashboardResourceStatistics(props) {
                 width={55}
                 height={30}
                 data={[
-                  {value: 10},
-                  {value: 15},
-                  {value: 10},
-                  {value: 17},
-                  {value: 18},
+                  { value: 10 },
+                  { value: 15 },
+                  { value: 10 },
+                  { value: 17 },
+                  { value: 18 },
                 ]}
-                margin={{left: theme.spacing(2)}}
+                margin={{ left: theme.spacing(2) }}
               >
                 <Line
                   type="natural"

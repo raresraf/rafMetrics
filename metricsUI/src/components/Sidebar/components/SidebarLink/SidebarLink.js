@@ -1,7 +1,15 @@
-import React, {useState} from "react";
-import {Collapse, Divider, List, ListItem, ListItemIcon, ListItemText, Typography,} from "@material-ui/core";
-import {Inbox as InboxIcon} from "@material-ui/icons";
-import {Link} from "react-router-dom";
+import React, { useState } from "react";
+import {
+  Collapse,
+  Divider,
+  List,
+  ListItem,
+  ListItemIcon,
+  ListItemText,
+  Typography,
+} from "@material-ui/core";
+import { Inbox as InboxIcon } from "@material-ui/icons";
+import { Link } from "react-router-dom";
 import classnames from "classnames";
 // styles
 import useStyles from "./styles";
@@ -9,15 +17,15 @@ import useStyles from "./styles";
 import Dot from "../Dot";
 
 export default function SidebarLink({
-                                      link,
-                                      icon,
-                                      label,
-                                      children,
-                                      location,
-                                      isSidebarOpened,
-                                      nested,
-                                      type,
-                                    }) {
+  link,
+  icon,
+  label,
+  children,
+  location,
+  isSidebarOpened,
+  nested,
+  type,
+}) {
   var classes = useStyles();
 
   // local
@@ -37,7 +45,7 @@ export default function SidebarLink({
       </Typography>
     );
 
-  if (type === "divider") return <Divider className={classes.divider}/>;
+  if (type === "divider") return <Divider className={classes.divider} />;
 
   if (!children)
     return (
@@ -59,7 +67,7 @@ export default function SidebarLink({
             [classes.linkIconActive]: isLinkActive,
           })}
         >
-          {nested ? <Dot color={isLinkActive && "primary"}/> : icon}
+          {nested ? <Dot color={isLinkActive && "primary"} /> : icon}
         </ListItemIcon>
         <ListItemText
           classes={{
@@ -88,7 +96,7 @@ export default function SidebarLink({
             [classes.linkIconActive]: isLinkActive,
           })}
         >
-          {icon ? icon : <InboxIcon/>}
+          {icon ? icon : <InboxIcon />}
         </ListItemIcon>
         <ListItemText
           classes={{
