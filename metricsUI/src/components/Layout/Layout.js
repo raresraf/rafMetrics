@@ -38,9 +38,8 @@ function Layout(props) {
             <Route
               exact
               path="/app/ui"
-              render={() => <Redirect to="/app/ui/icons"/>}
+              render={() => <Redirect to="/app/ui/resourcemanager"/>}
             />
-            <Route path="/app/ui/icons" component={Icons}/>
             <Route
               path="/app/ui/resourcemanager"
               component={DashboardResource}

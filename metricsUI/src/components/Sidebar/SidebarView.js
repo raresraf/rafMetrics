@@ -17,13 +17,6 @@ import SidebarLink from "./components/SidebarLink/SidebarLinkContainer";
 const structure = [
   {id: 0, label: "Dashboard", link: "/app/dashboard", icon: <HomeIcon/>},
   {
-    id: 4,
-    label: "UI Elements",
-    link: "/app/ui",
-    icon: <UIElementsIcon/>,
-    children: [{label: "Icons", link: "/app/ui/icons"}],
-  },
-  {
     id: 5,
     label: "WebMonitoring",
     link: "/app/ui/resourcemanager",
