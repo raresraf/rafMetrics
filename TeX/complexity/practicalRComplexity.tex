@@ -6,15 +6,26 @@ This section aims to present a simple methodology of calculating by hand the ass
 \subsection{N-Queens’ Problem}
 
 
-As a fundamental process-key in testing the capacity of the AI in solving various problems together with that of creating low-complexity algorithms, N queens counts as one of the most applicable and explored programmes in the field of mathematics and programming. Being initially designed as a solution of Max Bezzel’s 8 queens puzzle (proposed in 1848), that by Franz Nauck created the generalized puzzle for the known N-queens problem. Due to movement complexity of queens, the increased number of required computations as the size of the input increases(time complexity grows fast), and the vast number of possible board states, N-queens problem has been explored by mathematicians and programmers quite extensively.
+As a fundamental process-key in testing the capacity of the AI in solving various problems together with that of creating low-complexity algorithms, N queens counts as one of the most applicable and explored programmes in the field of mathematics and programming. Being initially designed as a solution of Max Bezzel’s 8 queens puzzle (proposed in 1848), that by Franz Nauck created the generalized puzzle for the known N-queens problem. 
 
-This subsection proposes a naive solution. In order to begin to solve this problem,an observation about choosing the $N$ Queens on the board with the dimensions $n$ x $n$ is needed. In order not to have attacks between two Queens, it must not have two Queens on the same line or column. We define a Queen $Q$ by the pair on points $ (x, y) $, where $ x, y \leq n $, are the coordinates corresponding to the position on the chessboard.
+Due to movement complexity of queens, the increased number of required computations as the size of the input increases(time complexity grows fast), and the vast number of possible board states, N-queens problem has been explored by mathematicians and programmers quite extensively.
 
-The problem can be solved by checking all possible permutations: $ Q (1) = (1, y_1) $ , 
-$ Q (2) = (2, y_2) $ ... , $ Q (n) = (n, y_n) $ \\
+This subsection proposes a naive solution. In order to begin to solve this problem,an observation about choosing the $N$ Queens on the board with the dimensions $n$ x $n$ is needed. In order not to have attacks between two Queens, it must not have two Queens on the same line or column. 
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.4\textwidth]{nqueen_sol10}
+\caption{Possible solutions for $n=10$}
+\end{figure}
+
+We define a Queen $Q$ by the pair on points $ (x, y) $, where $ x, y \leq n $, are the coordinates corresponding to the position on the chessboard.
+
+The problem can be solved by checking all possible permutations: 
+
+$ Q (1) = (1, y_1) $ , $ Q (2) = (2, y_2) $ ... , $ Q (n) = (n, y_n) $ \\
 where $ y_1, y_2, ..., y_n \ in \ { 1,2, ..., n \ } $ and $ y_1, y_2, ..., y_n $ distinct. 
 
-In these conditions, the only action that still needs to be verified is that of the "diagonal attack" of Queens.
+In these conditions, the only action that still needs to be verified is that of the \textit{"diagonal attack"} of any two Queens.
 
 \begin{algorithm}[H]
 \caption{Exhaustive N-Queens’ Problem Pseudocode}
@@ -54,12 +65,13 @@ $\left[\begin{array}{ccccc}
 \end{algorithmic}
 \end{algorithm}
 
+To begin with, here is a method of calculating traditional complexity using the classical model.
+To calculate the complexity of the QueenProblem algorithm, we will individually analyze the complexities of the operations in the QueenProblem function. We will note with $n$ the number of Queens to be completed at a time $ t $ of the algorithm.
 
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.4\textwidth]{nqueen_sol10}
-\caption{Possible solutions for $n=10$}
-\end{figure}
+The matrix display operation occupies $ O (n ^ 2) $.
+
+Each Queen Problem function calls other $ n $ instances, through recursive calls, of a smaller order with one unit ($ n-1 $).
+
 
 \begin{algorithm}[H]
 \caption{noConflict Helper function}
@@ -100,13 +112,6 @@ $\left[\begin{array}{ccccc}
 
 \end{algorithmic}
 \end{algorithm}
-
-To begin with, here is a method of calculating traditional complexity using the classical model.
-To calculate the complexity of the QueenProblem algorithm, we will individually analyze the complexities of the operations in the QueenProblem function. We will note with $n$ the number of Queens to be completed at a time $ t $ of the algorithm.
-
-The matrix display operation occupies $ O (n ^ 2) $.
-
-Each Queen Problem function calls other $ n $ instances, through recursive calls, of a smaller order with one unit ($ n-1 $).
 
 The forward and backtracking operations respectively are performed in $ O (1) $. The time consuming operation is the conflict checking operation (noConflict function) that is performed in linear time $ O (n) $, because this function iterates, individually (only to the left of the created matrix), after the lines of the matrix (in $ O (n) $), after a diagonal parallel to the secondary diagonal of the matrix (in $ O (n) $) and after a diagonal parallel to the main diagonal of the matrix (in $ O (n) $).
 Therefore:
@@ -341,19 +346,19 @@ Training a linear regression model on this dataset would result in model with a 
 \makebox[\textwidth][c]{\parbox{1.2\textwidth}{%
   \begin{subfigure}{.6\textwidth}
       \includegraphics[width=\linewidth]{mm521_1.png}
-      \caption{Linear Regression Model trained with initial features $g(n) = n^1 $}
+      \caption{Linear Regression Model trained with features \\ obtained using the transformation $g(n) = n^1 $}
   \end{subfigure}%
   \begin{subfigure}{.6\textwidth}
       \includegraphics[width=\linewidth]{mm521_2.png}
-      \caption{Linear Regression Model trained with new features obtained using $g(n) = n^2 $}
+      \caption{Linear Regression Model trained with features \\ obtained using the transformation $g(n) = n^2 $}
   \end{subfigure}
   \begin{subfigure}{.6\textwidth}
       \includegraphics[width=\linewidth]{mm521_3.png}
-      \caption{Linear Regression Model trained with new features obtained using $g(n) = n^3$}
+      \caption{Linear Regression Model trained with features \\ obtained using the transformation $g(n) = n^3$}
   \end{subfigure}%
   \begin{subfigure}{.6\textwidth}
       \includegraphics[width=\linewidth]{mm521_4.png}
-      \caption{Linear Regression Model trained with new features obtained using $g(n) = n^4$}
+      \caption{Linear Regression Model trained with features \\ obtained using the transformation $g(n) = n^4$}
   \end{subfigure}
 }}
 \caption{Various prediction boundaries based on accommodated training dataset using multiple relations $g$. Training data are obtained for different input size for a naive matrix multiplication algorithm in $\mathbb{O}(n^{3})$}
@@ -545,3 +550,47 @@ The problem with the Strassen memory algorithm is that memory usage does not hav
 }}
 \caption{Peak memory usage - Strassen. Every double in input size produces a $7x$ increase in peak memory usage. Tailoring an complexity function of type $c \cdot n^{log_2(7)}$ provides a good evaluation. Using this appoximation, the maximum error at prediction is $7x$, while the average error is below $3x$.  Power-of-2 based input data provides exact approximation.}
 \end{figure}
+
+\begin{pitfall}
+Let $Alg1$ an algorithm with the complexity function $f_{1} \in \Theta(g_1(n))$  and $Alg2$ an algorithm with the complexity function $f_{2} \in \Theta(g_2(n))$ and $\lim_{n\to\infty} \dfrac{g_2(n)}{g_1(n)} = 0$.
+
+Even if the $Alg1$ may perform better than $Alg2$ for some cases, for large input size, $Alg2$ will perform better and we shall thereby \textbf{always} use it.
+\end{pitfall}
+
+\begin{pitfall}
+Adapted version for matrix multiplication: 
+
+For regular routines, the Strassen algorithm will perform better than any $O(n^3)$ naive matrix-multiplication algorithm for extremely large input size and we shall thereby use it.
+\end{pitfall}
+
+In theory, a smaller time-complexity always produce better asymptotically performances. The problems arise when we address other architectural aspects. Consider that an various algorithms uses memory usage differentiated. In order to perform precisely, a required condition is that the peak memory usage during the execution of the algorithm is at most equal with the total storage capacity of the physical RAM (ignore additional issues such as operating system memory overhead or translation concerns as well as pagination). 
+
+
+\begin{figure}[H]
+\makebox[\textwidth][c]{\parbox{1\textwidth}{%
+  \begin{subfigure}{.5\textwidth}
+      \includegraphics[width=\linewidth]{mn3.png}
+      \caption{The total peak allocated memory usage \\ during the execution of the Cache-friendly loop \\ ordering matrix multiplication algorithm}
+  \end{subfigure}%
+  \begin{subfigure}{.5\textwidth}
+      \includegraphics[width=\linewidth]{mstrassen.png}
+      \caption{The total peak allocated memory usage  \\ (estimated) for the execution of the \\ Strassen algorithm}
+  \end{subfigure}
+
+}}
+\caption{ Consider the peak memory usage for the last two algorithms analyzed. The behavior can be tailored by the individual associated memory complexity function: \\ $f_{cache\ friendly} = 1.20 \cdot 10^{-8} \cdot n^2 $ and  $f_{strassen} = 7.89 \cdot 10^{-8} \cdot n^{2.7} $ } 
+\end{figure}
+
+Recall that the critical point in order to make Strassen algorithm perform better was estimated at around 25 million element matrices. For this value, the peak memory usage can be estimated at \textbf{7.43 ZB}. (7430000000000 GB)
+This amount of memory storage can be used to store \textbf{5 589 898} centuries of \textbf{1080p movies}. All this, in RAM memory.
+
+Further extensions of this, using sophisticated group theory, are the Coppersmith–Winograd algorithm it is stressed nevertheless that such improvements are only of theoretical interest, since the huge constants involved in the complexity of fast matrix multiplication usually make these algorithms impractical. \cite{le2012faster}.
+
+\begin{pitfall}
+Never ever use Strassen algorithm.
+\end{pitfall}
+All the analyzed data was obtained by analyzing a specific implementation of the Strassen's Matrix Multiplication Algorithm. Not all algorithmic implementation performs the same. There may be optimizing techniques to overpass some issues, especially the deep recursion problems that raised. Also, there exists memory management tricks that substantially decrease the peak memory usage. 
+
+In fact, this algorithm is not \textbf{galactic} and is used in practice. A galactic algorithm has the property that it is faster than other algorithm for inputs that are sufficiently large, but where sufficiently large is enormous such that that the algorithm is never used in practice. \cite{le2012faster}.
+
+All things summarized, the rComplexity metric provides powerful insights in comparison of different complexity algorithms and such example was observed in this chapter.

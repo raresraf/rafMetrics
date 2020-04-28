@@ -52,25 +52,17 @@ def LinearRegressionTraining(
 
     # Predict
     y_predicted = regression_model.predict(x)
-    # y_predicted_train = regression_model.predict(X_train)
-    # y_predicted_test = regression_model.predict(X_test)
+    y_predicted_train = regression_model.predict(x)
+    y_predicted_test = regression_model.predict(x)
 
     orig_y_train = y_train.flatten()
     orig_y_test = y_test.flatten()
 
     # Data points
-
     plt.scatter(np.concatenate([orig_x_train, orig_x_test]),
                 np.concatenate([orig_y_train, orig_y_test]),
                 s=20,
                 color="b")
-    """
-
-    plt.scatter(np.concatenate([orig_x_train, orig_x_test]),
-                np.concatenate([y_predicted_train, y_predicted_test]),
-                s=20,
-                color="r")
-    """
     plt.xlabel("Input size")
     plt.ylabel("Memory (Gb)")
 
@@ -80,10 +72,11 @@ def LinearRegressionTraining(
     # Predicted values
     y_predicted = y_predicted.flatten()
     plt.plot(support_x, support_y_predicted, color="g")
-    plt.legend(["Regression line", "Predictied datapoint"])
+    plt.legend(["Regression line", "Datapoint"])
 
     plt.title(
-        "Memory usage: Strassen algorithm. \nComplexity function = n^log2(7)")
+        "Memory usage: Naive Matrix Multiplication. \nComplexity function = n^2"
+    )
 
     # Return figure
     plt.savefig(output_name)
@@ -93,12 +86,10 @@ def LinearRegressionTraining(
 
 if __name__ == "__main__":
     if len(sys.argv) <= 1:
-        print("Usage v1: python3 MLdriver_strassen_memory.py <file_name> ")
+        print("Usage v1: python3 MLdriver_n3_memory.py <file_name> ")
+
         print(
-            "[DEPRECATED FOR MLdriver_strassen_memory] Usage v2: python3 MLdriver_strassen_memory.py <file_name> <ITER_INCREASE_STEPS_LOG = 0 default>"
-        )
-        print(
-            "Usage frequent: python3 rafComputing/ML/snippets/demo/strassen/MLdriver_strassen_memory.py rComplexity/samples/matrix_multiplication/results/sprmcrogpu-wn13/result_mem_n28_GB_20200417113226 "
+            "python3 rafComputing/ML/snippets/demo/strassen/MLdriver_n3_memory.py rComplexity/samples/matrix_multiplication/results/sprmcrogpu-wn13/result_mem_n3_20200417113226"
         )
 
         sys.exit(-1)
@@ -113,9 +104,9 @@ if __name__ == "__main__":
             ITER_INCREASE_STEPS_LOG)
         LinearRegressionTraining(
             path=path,
-            alpha=1e-18,
+            alpha=1e-13,
             n_iterations=int(MAX_ITER / ITER_INCREASE_STEPS * counter + 1),
             output_name=output_name,
             feature_type=POWER_FEATURE_TYPE,
-            feature_val=2.8,
+            feature_val=2,
         )
