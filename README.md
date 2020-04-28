@@ -1,4 +1,5 @@
 # rafMetrics
+[![CodeFactor](https://www.codefactor.io/repository/github/raresraf/rafmetrics/badge)](https://www.codefactor.io/repository/github/raresraf/rafmetrics)
 
 Metrics for evaluating the performance and complexity of computer programs
 
