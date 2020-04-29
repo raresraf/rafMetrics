@@ -6,7 +6,7 @@
 | Naive Matrix Multiplication(parallel) | N^3        |                |             |             |
 | Cache-friendly loop ordering          | N^3        | OK             | OK          | OK          |
 | Blocked Matrix Multiplication         | N^3        | OK             | OK          | OK          |
-| Strassen Matrix Multiplication        | N^2.8      | OK             | OK          | in-progress |
+| Strassen Matrix Multiplication        | N^2.8      | OK             | OK          | OK          |
 | NQueens (C)                           | N^2 * N!   | OK             | OK          |             |
 | NQueens (python)                      | N^2 * N!   | OK             | OK          |             |
 | Bubble Sort                           | N^2        | OK             | in-progress |             |
