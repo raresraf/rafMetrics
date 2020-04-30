@@ -1,10 +1,10 @@
-
-
 \chapter{Classical Computational Complexity Calculus }
 
 
 \section{Introduction and Motivation}
-This chapter will present the traditional methodology of calculus in the field of algorithm's computational complexity. The complexity will be expressed as a function $f:\mathbb{N}\longrightarrow\mathbb{R}$, where the function is characterized by the size of the input, while the evaluated value $f(n)$, for a given input size $n$, represents the amount of resources needed in order to compute the result. While the most often analyzed resource is time, expressed in elemental compute operations, the mathematical model is self-reliant for others natures of resources, including space reasoning or hybrid metrics. All the results of this chapter are well known in the literature and they represent the reference standard in calculating algorithm complexity in Computer Science. 
+This chapter will present the traditional methodology of calculus in the field of algorithm's computational complexity. The complexity will be expressed as a function $f:\mathbb{N}\longrightarrow\mathbb{R}$, where the function is characterized by the size of the input, while the evaluated value $f(n)$, for a given input size $n$, represents the amount of resources needed in order to compute the result. While the most often analyzed resource is time, expressed in primitive computational operations, the mathematical model is self-reliant for others natures of resources, including space reasoning or hybrid metrics.
+
+All the results of this chapter are well known in the literature and they represent the reference standard in calculating algorithm complexity in Computer Science. 
 
 Because of the difficulty of having a rigorous calculus of the complexity, an asymptotic computation approach for an algorithm's complexity offers a valuable insight about the real computational cost without requiring a precisely, flawless calculus.
 
@@ -32,7 +32,7 @@ The following function classes can be therefore defined for any function $g:\mat
 \end{definition}  
 
 \begin{lemma}
-  Another useful method of establishing a Big-Theta relationship, if the composed sequence defined by the ratio of the two functions exists and also $ \lim_{x\to\infty} \frac{f(x)}{g(x)}$ exists, is by applying the sufficient condition:
+  Another useful method of establishing a Big-Theta acceptance, if the composed sequence defined by the ratio of the two functions exists and also $ \lim_{x\to\infty} \frac{f(x)}{g(x)}$ exists, is by applying the sufficient condition:
     \[ f \in \Theta(g(n))\ \Leftrightarrow\ \lim_{x\to\infty} \frac{f(x)}{g(x)} = C \in (-\infty, 0) \cup (0,\infty) \]
 \end{lemma}
 
@@ -48,7 +48,7 @@ Iff $ r(x) = \frac{f(x)}{g(x)}\ $ exists, a sufficient condition can be defined 
   \[\mathcal{O}(g(n)) = \lbrace f \in \mathcal{F}\ |\ \exists c \in \mathbb{R}^{*}_{+}, \exists n_{0} \in \mathbb{N}^{*}\ s.t.\  f(n) \leq c \cdot g(n),\  \forall n \geq n_{0} \rbrace\]
   \end{definition}  
   \begin{lemma}
-  In order to establish a Big-O relationship, the sufficient condition is that the $ \lim_{x\to\infty} \frac{f(x)}{g(x)}$ exists and it is finite. 
+  In order to establish a Big-O acceptance, the sufficient condition is that the $ \lim_{x\to\infty} \frac{f(x)}{g(x)}$ exists and it is finite. 
   \[ f \in \mathcal{O}(g(n))\ \Leftrightarrow\ \lim_{x\to\infty} \frac{f(x)}{g(x)} = C \in (-\infty, \infty) \]
   \end{lemma}
 
@@ -59,10 +59,13 @@ Iff $ r(x) = \frac{f(x)}{g(x)}\ $ exists, a sufficient condition can be defined 
 \end{definition}  
 
   \begin{lemma}
-  In order to establish a Big-Omega relationship, a sufficient condition is one of the following:
-    \[  \lim_{x\to\infty} \frac{f(x)}{g(x)} = -\infty \Rightarrow f \in \Omega(g(n))\ \]
-    \[ \lim_{x\to\infty} \frac{f(x)}{g(x)} = \infty \Rightarrow f \in \Omega(g(n))\  \]
-     \[ \lim_{x\to\infty} \frac{f(x)}{g(x)} = C \in (-\infty, 0) \cup (0,\infty) \Rightarrow f \in \Omega(g(n))\ \]
+  In order to establish a Big-Omega acceptance, a sufficient condition is one of the following:
+    \begin{enumerate}[label=(\roman*)]
+
+   \item  \[  \lim_{x\to\infty} \frac{f(x)}{g(x)} = -\infty \Rightarrow f \in \Omega(g(n))\ \]
+   \item  \[ \lim_{x\to\infty} \frac{f(x)}{g(x)} = \infty \Rightarrow f \in \Omega(g(n))\  \]
+    \item  \[ \lim_{x\to\infty} \frac{f(x)}{g(x)} = C \in (-\infty, 0) \cup (0,\infty) \Rightarrow f \in \Omega(g(n))\ \]
+	\end{enumerate}
    \end{lemma}
    
 \begin{definition}   
@@ -72,7 +75,7 @@ Iff $ r(x) = \frac{f(x)}{g(x)}\ $ exists, a sufficient condition can be defined 
   \[o(g(n)) = \lbrace f \in \mathcal{F}\ |\ \forall c \in \mathbb{R}^{*}_{+}, \exists n_{0} \in \mathbb{N}^{*}\ s.t.\  f(n) < c \cdot g(n),\  \forall n \geq n_{0} \rbrace\]
   \end{definition}  
   \begin{lemma}
-In order to establish a Small-O relationship, the sufficient condition is that the $ \lim_{x\to\infty} \frac{f(x)}{g(x)}$ exists and it is finite. 
+In order to establish a Small-O acceptance, the sufficient condition is that the $ \lim_{x\to\infty} \frac{f(x)}{g(x)}$ exists and it is finite. 
   \[ f \in o(g(n))\ \Leftrightarrow\ \lim_{x\to\infty} \frac{f(x)}{g(x)} = 0 \]  
   \end{lemma}
   
@@ -83,46 +86,51 @@ In order to establish a Small-O relationship, the sufficient condition is that t
   \[\omega(g(n)) = \lbrace f \in \mathcal{F}\ |\ \forall c \in \mathbb{R}^{*}_{+}, \exists n_{0} \in \mathbb{N}^{*}\ s.t.\  f(n) > c \cdot g(n),\  \forall n \geq n_{0} \rbrace\]
   \end{definition}  
   \begin{lemma}
-In order to establish a Small-Omega relationship, the sufficient condition is that the $ \lim_{x\to\infty} \frac{f(x)}{g(x)}$ exists and one of the following occurs:
-  \[  \lim_{x\to\infty} \frac{f(x)}{g(x)} = +\infty \Rightarrow f \in \omega(g(n))\ \]   
-  \[  \lim_{x\to\infty} \frac{f(x)}{g(x)} = -\infty \Rightarrow f \in \omega(g(n))\ \]  
+In order to establish a Small-Omega acceptance, the sufficient condition is that the $ \lim_{x\to\infty} \frac{f(x)}{g(x)}$ exists and one of the following occurs:
+    \begin{enumerate}[label=(\roman*)]
+  \item \[  \lim_{x\to\infty} \frac{f(x)}{g(x)} = +\infty \Rightarrow f \in \omega(g(n))\ \]   
+ \item  \[  \lim_{x\to\infty} \frac{f(x)}{g(x)} = -\infty \Rightarrow f \in \omega(g(n))\ \]  
+	\end{enumerate}
   \end{lemma}
 
 \section{Common properties}
 We will study few aspects~\cite{mogocs2015new};
  with impact on defining equivalence relations over classes defined in \textit{Bachmann–Landau} notations.
  \hfill\break
- \begin{theorem} Reflexivity property holds for Big Theta, Big O and Big Omega notations.  \\  $ f \in \Theta(f(n)) $ \\$ f \in \mathcal{O}(f(n)) $ \\$ f \in \Omega(f(n)) $
+ \begin{theorem} The reflexivity property holds for Big Theta, Big O and Big Omega notations.  \\  $ f \in \Theta(f(n)) $ \\$ f \in \mathcal{O}(f(n)) $ \\$ f \in \Omega(f(n)) $
  \end{theorem}
 
-\begin{theorem} Reflexivity property does not hold for Small O and Small Omega notations \\
+\begin{remark} The reflexivity property does not hold for Small O and Small Omega notations \\
  $ f \notin \theta(f(n)) $ \\$ f \notin \omega(f(n)) $ 
-\end{theorem}
+\end{remark}
 
-\begin{theorem} Transitivity property holds for \textit{Bachmann–Landau} notations.  \\  $ f \in \Theta(g(n)),  g \in \Theta(h(n)) \Rightarrow  f \in \Theta(h(n))$ \\
+\begin{theorem} The transitivity property holds for \textit{Bachmann–Landau} notations.  \\  $ f \in \Theta(g(n)),  g \in \Theta(h(n)) \Rightarrow  f \in \Theta(h(n))$ \\
  $ f \in \mathcal{O}(g(n)),  g \in \mathcal{O}(h(n)) \Rightarrow  f \in \mathcal{O}(h(n))$ \\
  $ f \in \Omega(g(n)),  g \in \Omega(h(n)) \Rightarrow  f \in \Omega(h(n))$ \\
- $ f \in o(g(n)),  g \in o(h(n)) \Rightarrow  f \in o(h(n))$ \\
+ $ f \in o(g(n)),  g \in o(h(n)) \  \Rightarrow  f \in o(h(n))$ \\
  $ f \in \omega(g(n)),  g \in \omega(h(n)) \Rightarrow  f \in \omega(h(n))$
 \end{theorem} 
 
-\begin{theorem} Symmetry property holds for Big Theta notation. \\  $ f \in \Theta(g(n)) \Rightarrow g \in \Theta(f(n)) $
+\begin{theorem} The symmetry property holds for Big Theta notation. \\  $ f \in \Theta(g(n)) \Rightarrow g \in \Theta(f(n)) $
 \end{theorem} 
 
-\begin{theorem} Transpose symmetry property for \textit{Bachmann–Landau} notations.  \\  $ f \in \mathcal{O}(g(n)) \Leftrightarrow g \in \Omega(f(n)) $
+\begin{theorem} The transpose symmetry property for \textit{Bachmann–Landau} notations.  \\  $ f \in \mathcal{O}(g(n)) \Leftrightarrow g \in \Omega(f(n)) $
  \\  $ f \in o(g(n)) \Leftrightarrow g \in \omega(f(n)) $
 \end{theorem} 
  
-\begin{theorem} Projection property for Big Theta, Big O and Big Omega notations. \\  $ f \in \Theta(g(n)) \Leftrightarrow f \in \mathcal{O}(g(n)), f \in \Omega(g(n)) $
+\begin{theorem} The projection property for Big Theta, Big O and Big Omega notations. \\  $ f \in \Theta(g(n)) \Leftrightarrow f \in \mathcal{O}(g(n)), f \in \Omega(g(n)) $
 \end{theorem}
  
 \section{Addition properties}
-Calculus in $Bachmann-Landau$ notations (including Big-O arithmetic) is extremely powerful and obvious when it comes to addition operations. The following relations hold for any correctly defined functions $f, g, h:\mathbb{N}\longrightarrow\mathbb{R}$, where $ h(n) = f(n) + g(n)\  \forall n \in  \mathbb{N} $ and $\exists n_{0} \in \mathbb{N},\ s.t.\ \forall n \in \mathbb{N} \ \Rightarrow f(n) \leq g(n)$:
+Calculus in $Bachmann-Landau$ notations (including Big-O arithmetic) is extremely powerful and when it comes to addition operations, it is straightforward. The following relations hold for any correctly defined functions $f, g, h:\mathbb{N}\longrightarrow\mathbb{R}$ :
 
 
  
   \begin{lemma} Addition in \textbf{Big Theta}
- \[  h \in \Theta(g)\]
+
+If  $ h(n) = f(n) + g(n)\  \forall n \in  \mathbb{N} $ and $\exists n_{0} \in \mathbb{N},\ s.t.\ \forall n \in \mathbb{N} \ \Rightarrow f(n) \leq g(n)$, then:
+\[  h \in \Theta(g)\]
+
   \end{lemma}
   \begin{remark}
   For each theorem, we will expose a corollary using a relax notation (consider that by any $Bachmann-Landau$ class notation, we denote an arbitrary function part of the class), some relations that can be settled.
@@ -132,28 +140,40 @@ Calculus in $Bachmann-Landau$ notations (including Big-O arithmetic) is extremel
   \end{corollary}
   
   \begin{lemma} Addition in \textbf{Big O}: 
+
+If  $ h(n) = f(n) + g(n)\  \forall n \in  \mathbb{N} $ and $\exists n_{0} \in \mathbb{N},\ s.t.\ \forall n \in \mathbb{N} \ \Rightarrow f(n) \leq g(n)$, then:
  \[  h \in \mathcal{O}(g)\]
+ 
   \end{lemma}
    \begin{corollary} Addition in \textbf{Big O} using the relaxed notation: 
   \[  \mathcal{O}(f) + \mathcal{O}(g) = \mathcal{O}(g)\]
   \end{corollary}  
   
   \begin{lemma} Addition in \textbf{Big Omega}: 
+
+If  $ h(n) = f(n) + g(n)\  \forall n \in  \mathbb{N} $ and $\exists n_{0} \in \mathbb{N},\ s.t.\ \forall n \in \mathbb{N} \ \Rightarrow f(n) \leq g(n)$, then:
  \[  h \in \Omega(g)\]
+ 
   \end{lemma}
    \begin{corollary} Addition in \textbf{Big Omega} using the relaxed notation: 
   \[  \Omega(f) + \Omega(g) = \Omega(g)\]
   \end{corollary}
   
   \begin{lemma} Addition in \textbf{Small O}:
+
+If  $ h(n) = f(n) + g(n)\  \forall n \in  \mathbb{N} $ and $\exists n_{0} \in \mathbb{N},\ s.t.\ \forall n \in \mathbb{N} \ \Rightarrow f(n) \leq g(n)$, then:
  \[  h \in o(g)\]
+ 
   \end{lemma}
   \begin{corollary} Addition in \textbf{Small O} using the relaxed notation:
   \[  o(f) + o(g) = o(g)\]
   \end{corollary}  
   
   \begin{lemma} Addition in \textbf{Small Omega}:
+
+If  $ h(n) = f(n) + g(n)\  \forall n \in  \mathbb{N} $ and $\exists n_{0} \in \mathbb{N},\ s.t.\ \forall n \in \mathbb{N} \ \Rightarrow f(n) \leq g(n)$, then:
  \[  h \in \omega(g)\]
+ 
   \end{lemma}
   \begin{corollary} Addition in \textbf{Small Omega} using the relaxed notation:
   \[  \omega(f) + \omega(g) = \omega(g)\]

@@ -10,13 +10,14 @@ As a fundamental process-key in testing the capacity of the AI in solving variou
 
 Due to movement complexity of queens, the increased number of required computations as the size of the input increases(time complexity grows fast), and the vast number of possible board states, N-queens problem has been explored by mathematicians and programmers quite extensively.
 
-This subsection proposes a naive solution. In order to begin to solve this problem,an observation about choosing the $N$ Queens on the board with the dimensions $n$ x $n$ is needed. In order not to have attacks between two Queens, it must not have two Queens on the same line or column. 
-
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.4\textwidth]{nqueen_sol10}
+\includegraphics[width=0.5\textwidth]{nqueen_sol10}
 \caption{Possible solutions for $n=10$}
 \end{figure}
+
+This subsection proposes a naive solution. In order to begin to solve this problem,an observation about choosing the $N$ Queens on the board with the dimensions $n$ x $n$ is needed. In order not to have attacks between two Queens, it must not have two Queens on the same line or column. 
+
 
 We define a Queen $Q$ by the pair on points $ (x, y) $, where $ x, y \leq n $, are the coordinates corresponding to the position on the chessboard.
 
@@ -65,12 +66,12 @@ $\left[\begin{array}{ccccc}
 \end{algorithmic}
 \end{algorithm}
 
-To begin with, here is a method of calculating traditional complexity using the classical model.
+To begin with, a method of calculating traditional complexity using the classical model is presented hereby.
 To calculate the complexity of the QueenProblem algorithm, we will individually analyze the complexities of the operations in the QueenProblem function. We will note with $n$ the number of Queens to be completed at a time $ t $ of the algorithm.
 
-The matrix display operation occupies $ O (n ^ 2) $.
+The matrix display operation occupies $ O (n ^ 2) $ (it represents a simple lookup in a $n\ x\ n$ matrix)
 
-Each Queen Problem function calls other $ n $ instances, through recursive calls, of a smaller order with one unit ($ n-1 $).
+Each Queen Problem function calls other $ n $ instances, through recursive calls, of a smaller order with one unit complexity index ($ n-1 $).
 
 
 \begin{algorithm}[H]
@@ -113,7 +114,7 @@ Each Queen Problem function calls other $ n $ instances, through recursive calls
 \end{algorithmic}
 \end{algorithm}
 
-The forward and backtracking operations respectively are performed in $ O (1) $. The time consuming operation is the conflict checking operation (noConflict function) that is performed in linear time $ O (n) $, because this function iterates, individually (only to the left of the created matrix), after the lines of the matrix (in $ O (n) $), after a diagonal parallel to the secondary diagonal of the matrix (in $ O (n) $) and after a diagonal parallel to the main diagonal of the matrix (in $ O (n) $).
+The forward and backtracking operations respectively are performed in $ O (1) $. The time consuming operation is the conflict checking operation (refer to the noConflict function defined below) that is performed in linear time $ O (n) $, because this function iterates, individually (only to the left of the created matrix), after the lines of the matrix (in $ O (n) $), after a diagonal parallel to the secondary diagonal of the matrix (in $ O (n) $) and after a diagonal parallel to the main diagonal of the matrix (in $ O (n) $).
 Therefore:
 
 $QueenProblem(n) = n \cdot QueenProblem(n-1) + n \cdot O(n),\ O(1)=O(n^2)$ \\ 
@@ -128,23 +129,23 @@ $...$ \\
 $QueenProblem(3) = 3 \cdot QueenProblem(2) + 3 \cdot O(3) |\cdot\ n\cdot (n-1) \cdot ... \cdot 3$ \\
 $QueenProblem(2) = 2 \cdot QueenProblem(1) + 2 \cdot O(2) |\cdot\ n\cdot (n-1) \cdot ... \cdot 2$ \\
 \noindent\rule{16cm}{0.4pt}
+After computing the additions of the previously weighted equation, in a compact representation, the following result occurs:
+
 \[QueenProblem(n) = n! \cdot QueenProblem(1) + \sum_{i=2}^{n} i\cdot O(i) \] 
 $QueenProblem(n) = n! \cdot O(n^2) + \sum_{i=2}^{n} O(i^2)$ \\
 $QueenProblem(n) = n! \cdot O(n^2) +  O(\sum_{i=2}^{n} i^2)$ \\
 $QueenProblem(n) = n! \cdot O(n^2) +  O(\dfrac{n\cdot(n+1)\cdot(2n+1)}{6} - 1)$ \\
 $QueenProblem(n) = n! \cdot O(n^2) +  O(n^3)$ \\
-$QueenProblem(n) = O(n! \cdot n^2 + n^3) , n^3 = n \cdot n^2 < n! \cdot n^2$ \\
+$QueenProblem(n) = O(n! \cdot n^2 + n^3) $ \\
+
+Then, the Bachmann–Landau associated Big $O$-complexity class for the given algorithm is:
 \[QueenProblem(n) = O(n^2\cdot n!) \]
+
 \noindent\rule{16cm}{0.4pt}
 
 rComplexity calculus is similar, but it requires higher precision of class approximation and additional architectural aspects. 
 First change is that the noConflict function has it's performance dependent on the architecture, as not all CPU operations takes the same amount of CPU cycles. 
 
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.9\textwidth]{part101_infographics_v08}
-\caption{Operation Costs in CPU Clock Cycles\cite{archcost}}
-\end{figure}
 
 For instance, for an x86 CPU, the associated rComplexity class would be
 $ O_{1}(c_{noConflict} * n) $, where $c_{noConflict}$ is a constant corresponding to the no. of cycles required to perform the operations inner the for-loop.
@@ -160,13 +161,20 @@ For the pseudocode:
 In a broad manner, we can estimate that the cost for the inner snippet is $c_{computeOffset} + c_{readMemory} + c_{check=1}$, where in order to compute offset, we need to perform $i * ROWS + column$, so
 $ c_{computeOffset} = O_{1}(c_{addition} + c_{multiplication} + 3 * c_{readMemory})$.
 
-Looking in a x86 Cycle cost table for operation, we can estimate the primitives $c_{addition} = O_{1}(4)$ and $c_{multiplication} = O_{1}(4)$. For memory access, the time varies, on reasons based on cache mechanics, prefetch and other runtime mechanism for improvement in speed of read operations. A satisfying margin would be $c_{readMemory} = O_{1}(100)$. 
 
-Suppose for a complete check and jump in code $c_{check=1} = 10$.
+Seeking in a x86 Cycle cost table for various operations, we can estimate the primitives $c_{addition} = O_{1}(4)$ and $c_{multiplication} = O_{1}(4)$. For memory access, the time varies, on reasons based on cache mechanics, prefetch and other runtime mechanism for improvement in speed of read operations. A satisfying margin would be $c_{readMemory} = O_{1}(100)$. 
 
-Therefore, for the inner snippet using the abose estimations, the rComplexity would be $O_{1}(4 * 100 + 4 + 4 + 10) = O_{1}(418)$. Now, the whole snippet will have the complexity $O_{1}((418 + c_{for\_checks}) \cdot n)$, where  $c_{for\_checks} = c_{check=row} + c_{addition}$ is the associated cost for incrementing the index and other checks. 
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.95\textwidth]{part101_infographics_v08}
+\caption{Averages of the Costs (in CPU Clock Cycles) for the fundamental assembly instructions \cite{archcost}}
+\end{figure}
 
-Thus, the rComplexity of the snippet is $O_{1}((418 + 14) \cdot n) = O_{1}(432 \cdot n)$ using the abose estimations.
+Suppose for a complete check and jump at an pre-computed address $c_{check=1} = 10$.
+
+Therefore, for the inner snippet using the above estimations, the rComplexity would be $O_{1}(4 * 100 + 4 + 4 + 10) = O_{1}(418)$. Now, the whole snippet will have the complexity $O_{1}((418 + c_{for\_checks}) \cdot n)$, where  $c_{for\_checks} = c_{check=row} + c_{addition}$ is the associated cost for incrementing the index and other checks. 
+
+Thus, the rComplexity of the snippet is $O_{1}((418 + 14) \cdot n) = O_{1}(432 \cdot n)$ using the above estimations.
 
  
 For an exact value, we need to check the associated generated assembly code for the architecture (example x86-32bit):
@@ -179,7 +187,7 @@ f:
         jmp     .L2
 .L5:
         mov     eax, DWORD PTR [ebp-4]
-        imul    edx, eax, 400
+        imul    edx, eax, 400 # hardcoded 20x20 matrix
         mov     eax, DWORD PTR [ebp+16]
         add     edx, eax
         mov     eax, DWORD PTR [ebp+12]
@@ -233,13 +241,13 @@ We will associate the complexity function of this snippet with $f_{snippet_{2}}$
 \end{algorithmic}
 a complexity function will be obtained described by $f_{snippet_{3}}$.
 
-Using addition properties, the complexity function for the procedute noConflict will be $f_{snippet_{1}} + f_{snippet_{2}} + f_{snippet_{3}} = O_{1}(c_{noConflict} \cdot n)$., where $c_{noConflict} \cdot n$ is the architecture-dependant constant.
+Using addition properties, the complexity function for the procedute noConflict will be $f_{snippet_{1}} + f_{snippet_{2}} + f_{snippet_{3}} = O_{1}(c_{noConflict} \cdot n)$, where $c_{noConflict} \cdot n$ is the architecture-dependant constant.
 
  For instance, for x86, we can approximate $c_{noConflict \cdot n} = 432 * 3 = 1296$ and $f_{snippet_{1}} + f_{snippet_{2}} + f_{snippet_{3}} = O_{1}(1296 \cdot n) $.
 
 
 
-Going deeper tracing the flow, we can evaluate the complexity of QueenProblem procedure by checking all elements involved in the procedure.
+Going deeper, tracing the flow, we can evaluate the complexity of N-Queens Problem procedure by checking all elements involved in the procedure.
  \[QueenProblem(n) = O_{1}(recursiveCall) + O_{1}(noConflict) + O_{1}(overhead) + O_{1}(basecase) \]
 Therefore:
  \[\begin{cases} QueenProblem(n) = n \cdot QueenProblem(n-1) +  O_{1}(1296 \cdot n) (c_{overheadFor} + c_{setBitsMatrix}) \cdot O_{1}(n) \\ QueenProblem_{1}(1)=O_{1}(c_{printMatrix}) \end{cases}\]
@@ -248,7 +256,7 @@ Therefore:
 Using the previous estimation, we assume $c_{overheadFor} = 14$ and $c_{setBitsMatrix} = 108$. Thus, the recurrent equation looks as follows: 
 \[QueenProblem(n) = n \cdot QueenProblem(n-1) +  O_{1}(1418 \cdot n) \]
 
-For the base case, we need to find the complexity of printMatrix method.
+For the base case, we need to compute the rComplexity of the $printMatrix$ method.
 \[ \begin{cases} QueenProblem(1)=O_{1}(n^{2} \cdot  (c_{computeOffset} + c_{readMatrixElement})) \\ QueenProblem(1)=O_{1}(n^{2} \cdot  408) \end{cases}\]
 
 For simplicity, we can rewrite:
@@ -276,14 +284,14 @@ This section aims to present a solution for automation for calculating an approx
 \subsection{Estimation for algorithms with known Bachmann–Landau Complexity}
 Reckoning an associated rComplexity class ($f$) for an algorithm with established Bachmann–Landau Complexity ($g$) consists in the process of tailoring an suitable constant $c$, such that $f \approx \Theta_{1}(c \cdot g)$ or in Big-O calculus, $f \leq  \mathbb{O}_{1} (c \cdot g)$. The approach presented below is a particularized version of linear regression, which attempts to model the relationship between various variables by fitting a linear equation to observed data. Even if the model generally follows the classical pattern of a Machine Learning Process (training, predicting, etc.), where a training example consists of a pair ($inputSize$, $metricValue$).
 
-A trick is used to adjust the entry values if the Bachmann–Landau relationship between the $inputSize$ and the metric is known. In order to adjust the learning set to a more knowledgeable set, we can extract new features and replace all the ($inputSize$, $metricValue$) pairs with ($g(inputSize)$, $metricValue$), where $g$ is the known Bachmann–Landau Complexity function converted into Normal form.
+A trick (frequently used in data science) is used to adjust the entry values if the Bachmann–Landau relationship between the $inputSize$ and the metric is known. In order to adjust the learning set to a more knowledgeable set, we can extract new features and replace all the ($inputSize$, $metricValue$) pairs with ($g(inputSize)$, $metricValue$), where $g$ is the known Bachmann–Landau Complexity function converted into Normal form.
 
 
 The importance of this trick can be emphasized comparing the classical linear regression model with various learning datasets. For the matrix multiplication problem, a naive algorithm (with Bachmann–Landau Complexity $\mathbb{O}(n^{3})$) has been implemented. After testing, the algorithm has been deployed and executed matrix multiplications for various sizes of the matrixes. The execution has been audited and the results have been summarized in the following table, which represents the correspondance between matrix dimension and running time:
 
 \begin{table}[H]
 \begin{center}
-\scalebox{0.6}{
+\scalebox{0.5}{
 \begin{tabular}{|l|l|l|l|l|l|l|l|l|l|l|l|}
 \hline
 \begin{tabular}[c]{@{}l@{}}input\\ Size\end{tabular} & Time $(s)$     & \begin{tabular}[c]{@{}l@{}}input\\ Size\end{tabular} & Time $(s)$  & \begin{tabular}[c]{@{}l@{}}input\\ Size\end{tabular} & Time $(s)$  & \begin{tabular}[c]{@{}l@{}}input\\ Size\end{tabular} & Time $(s)$  & \begin{tabular}[c]{@{}l@{}}input\\ Size\end{tabular} & Time $(s)$   & \begin{tabular}[c]{@{}l@{}}input\\ Size\end{tabular} & Time $(s)$   \\ \hline
@@ -310,12 +318,14 @@ The importance of this trick can be emphasized comparing the classical linear re
 \caption{Reported timings for different input size for a naive matrix multiplication algorithm in $\mathbb{O}(n^{3})$. Results have been obtained on an i5 3.2GHz, x86\_64 Architecture with L1d cache: 32K, L1i cache: 32K, L2 cache: 256K, L3 cache:  6144K}
 \end{table}
 
-Training a linear regression model on this dataset would result in model with a linear equation to observed data, similar with the one below(a). Translation of the dataset can enhance fitting results for the regression. Examples for ($inputSize$, $metricValue$) $ \Rightarrow $ ($inputSize^{n}$, $metricValue$) are presented in (b) $n = 2$, (c) $n = 3$ and (d) $n = 4$.
+Training a linear regression model on this dataset would result in model with a linear equation to observed data, similar with the one below(a). Changes in the original dataset can enhance fitting results for the regression. 
+
+Examples for ($inputSize$, $metricValue$) $ \Rightarrow $ ($inputSize^{n}$, $metricValue$) are presented in (b) $n = 2$, (c) $n = 3$ and (d) $n = 4$.
 
 
 \begin{table}[H]
 \begin{center}
-\scalebox{0.6}{
+\scalebox{0.5}{
 \begin{tabular}{|l|l|l|l|l|l|l|l|l|l|l|l|}
 \hline
 \begin{tabular}[c]{@{}l@{}}input\\ Size$^3$ \end{tabular} & Time $(s)$     & \begin{tabular}[c]{@{}l@{}}input\\ Size$^3$\end{tabular} & Time $(s)$  & \begin{tabular}[c]{@{}l@{}}input\\ Size$^3$\end{tabular} & Time $(s)$  & \begin{tabular}[c]{@{}l@{}}input\\ Size$^3$\end{tabular} & Time $(s)$  & \begin{tabular}[c]{@{}l@{}}input\\ Size$^3$\end{tabular} & Time $(s)$   & \begin{tabular}[c]{@{}l@{}}input\\ Size$^3$\end{tabular} & Time $(s)$   \\ \hline
@@ -342,6 +352,11 @@ Training a linear regression model on this dataset would result in model with a 
 \caption{Training data for the linear regression model after mapping ($inputSize$, $metricValue$) pairs with ($inputSize^3$, $metricValue$)}
 \end{table}
 
+
+As an intuition (due to the associated complexity function $O(n^3)$ in the Bachmann–Landau Complexity model), the natural fit was obtained when using $g(n) = n^3$ with consideration to generalization. If we choose much much bigger degree polynomial transformations, we may obtain better results on this datasets, but the models are becoming subject to overfit. 
+
+The subject of Matrix multiplication is furthered discussed in a distinct section. 
+
 \begin{figure}[H]
 \makebox[\textwidth][c]{\parbox{1.2\textwidth}{%
   \begin{subfigure}{.6\textwidth}
@@ -364,7 +379,7 @@ Training a linear regression model on this dataset would result in model with a 
 \caption{Various prediction boundaries based on accommodated training dataset using multiple relations $g$. Training data are obtained for different input size for a naive matrix multiplication algorithm in $\mathbb{O}(n^{3})$}
 \end{figure}
 
-As an intuition, the natural fit was obtained when using $g(n) = n^3$ with consideration to generalization. If we choose bigger degree polynomial transformations, we may obtain better results on this datasets, but the models are becoming subject to overfit. The subject of Matrix multiplication is furthered discussed in a distinct section. 
+
 
 
 \subsection{Estimation for algorithms with unknown Bachmann–Landau Complexity}
@@ -440,7 +455,7 @@ Furthermore, the model was evaluated adopting classical regression evaluation me
 \textbf{Blocked Matrix Multiplication}              & {\color[HTML]{000000} \textit{6.441e-09}}                          & 185.70                                                                                             & 0.9989                                                                                                 & 63.64                                                                                  & {\color[HTML]{000000} 0.99971}                                                                     \\ \hline
 
 \end{tabular}
-\caption{The regression model was evaluated using the above metrics: Root Mean Square Error (RMSE) and $R^2$ (coefficient of determination) regression score function.}
+\caption{The regression model was evaluated using the above metrics: Root Mean Square Error (RMSE) and $R^2$ (coefficient of determination) regression score function. These high scores indicates that the regression line produces accurate estimations. }
 \end{table}
 
 \begin{figure}[H]
@@ -478,7 +493,7 @@ The collocation
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.8\textwidth]{mm328}
-\caption{The regression line corresponding to the Cache-friendly loop ordering matrix multiplication algorithm is described by $f(n) = 5.23 \cdot 10^{-9} \cdot n^{3} $, while the regression line corresponding to the the Strassen algorithm is described by $g(n) = 1.59 \cdot 10^{-7} \cdot n^{2.80} $ . \\  Even if the asymptotic behavior for the Strassen algorithm is desired in comparison with the cubic performance, for finite input size the Cache-friendly loop ordering matrix multiplication algorithm can perform better, despite $\lim_{n\to\infty} \dfrac{g(n)}{f(n)} = 0$.  \\ \\ Results recorded on a x86\_64 Intel(R) Xeon(R) Gold 5218 CPU @ 2.30GHz with L1d cache: 32K, L1i cache: 32K, L2 cache: 1024K, L3 cache: 22528K, CPU max frequency: 3.9GHz.}
+\caption{The regression line corresponding to the Cache-friendly loop ordering matrix multiplication algorithm is described by $f(n) = 5.23 \cdot 10^{-9} \cdot n^{3} $, while the regression line corresponding to the the Strassen algorithm is described by $g(n) = 1.59 \cdot 10^{-7} \cdot n^{2.80} $ . \\  Even if the asymptotic behavior for the Strassen algorithm is desired in comparison with the cubic performance, for finite input size the Cache-friendly loop ordering matrix multiplication algorithm can perform better, despite $\lim_{n\to\infty} \dfrac{g(n)}{f(n)} = 0$.  \\ The nature of the non-polynomial local behaviour of the Strassen algorithm is based on architecture considerations, such as the overhead introduced by specific function calls, stack manipulations and memory allocation and management computational cost. \\ \\ Results recorded on a x86\_64 Intel(R) Xeon(R) Gold 5218 CPU @ 2.30GHz with L1d cache: 32K, L1i cache: 32K, L2 cache: 1024K, L3 cache: 22528K, CPU max frequency: 3.9GHz.}
 \end{figure}
 
 
@@ -510,9 +525,9 @@ The nontrivial solution $n_{0}$ is obtained by solving $ 159 * n_{0}^{2.8} = 5.2
 
 For any matrix multiplication task with input size greater than $\approx 2.5 \cdot 10^7$ (25 million element matrices), better results will be obtained using Strassen algorithm.
 
-Remark that the total execution time (in seconds, on the tested computing machine) for 25 million element matrices, can be estimated to $g(2.5 \cdot 10^7) \approx f(2.5 \cdot 10^7) = 5.23 \cdot 10^{-9} \cdot (2.5 \cdot 10^7)^{3} \approx 8.13 \cdot 10^{13}$ seconds. This number $8.13 \cdot 10^{13} = 81300000000000 $ seconds is the equivalent of around 25 762 centuries. 
+Remark that the total execution time (in seconds, on the tested computing machine) for 25 million element matrices, can be estimated to $g(2.5 \cdot 10^7) \approx f(2.5 \cdot 10^7) = 5.23 \cdot 10^{-9} \cdot (2.5 \cdot 10^7)^{3} \approx 8.13 \cdot 10^{13}$ seconds. This number $8.13 \cdot 10^{13} $ seconds is the equivalent of around 25 762 centuries. 
 
-If by "\textit{regular routines}" was meant multiplying 25 million element matrices and having the resources to await for 25 762 centuries for the result, than Strassen algorithm is the perfect solution for your problem \textit{(check also memory contraints, discussed in a short time)}. Otherwise, you should refer to a traditional approach.
+If by "\textit{regular routines}" was meant multiplying \textit{25 million element matrices} and having the resources to await for 25 762 centuries for the result, than Strassen algorithm is the perfect solution for your problem \textit{(check also memory contraints, discussed in a short time)}. Otherwise, you should refer to a traditional approach.
 
 \begin{figure}[H]
 \makebox[\textwidth][c]{\parbox{1.2\textwidth}{%
@@ -535,6 +550,8 @@ If by "\textit{regular routines}" was meant multiplying 25 million element matri
 Up to this point, the only metric described in the prediction process of tailoring a complexity function was the \textbf{time} complexity. However, this is not the only resource that is important when designing algorithms and computer programs. A close match is represented by the total memory usage or peak memory usage of a computer program during the execution. Even if nowadays, memory is generally large enough to accommodate most of the possible algorithms, there are special situations in which memory management is critical.
 
 The problem with the Strassen memory algorithm is that memory usage does not have a smooth improvement in growth. It varies in steps based on the powers of 2 (the cause is due to the recursion nature of the algorithm and at each iteration dividing in half).
+
+Locally in intervals $[2^k, 2^{k+1} - 1]$, the memory increase in not huge, as the algorithm mentain a $n^2$ memory increase. However, generally the algorithm perform in a space complexity of $n^{log_{2}(7)}$.
 
 \begin{figure}[H]
 \makebox[\textwidth][c]{\parbox{1\textwidth}{%
@@ -581,8 +598,8 @@ In theory, a smaller time-complexity always produce better asymptotically perfor
 \caption{ Consider the peak memory usage for the last two algorithms analyzed. The behavior can be tailored by the individual associated memory complexity function: \\ $f_{cache\ friendly} = 1.20 \cdot 10^{-8} \cdot n^2 $ and  $f_{strassen} = 7.89 \cdot 10^{-8} \cdot n^{2.7} $ } 
 \end{figure}
 
-Recall that the critical point in order to make Strassen algorithm perform better was estimated at around 25 million element matrices. For this value, the peak memory usage can be estimated at \textbf{7.43 ZB}. (7430000000000 GB)
-This amount of memory storage can be used to store \textbf{5 589 898} centuries of \textbf{1080p movies}. All this, in RAM memory.
+Recall that the critical point in order to make Strassen algorithm perform better was estimated at around 25 million element matrices. For this value, the peak memory usage can be estimated at \textbf{7.43 ZB}. ($7.43 \cdot 10^{12}$ GB)
+This amount of memory storage can be used to store \textbf{5 589 898} centuries of \textbf{1080p} digital video content \textit{(at a rate of 1.5GB/hour).} All this, in RAM memory.
 
 Further extensions of this, using sophisticated group theory, are the Coppersmith–Winograd algorithm it is stressed nevertheless that such improvements are only of theoretical interest, since the huge constants involved in the complexity of fast matrix multiplication usually make these algorithms impractical. \cite{le2012faster}.
 

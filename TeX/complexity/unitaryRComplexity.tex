@@ -93,12 +93,12 @@ This chapter will present new implications in terms of reflexivity, transitivity
 
 
 The reflexivity does not hold \textbf{either} for Small \textit{1-}o and Small \textit{1-}Omega, as these two sets are equal with the classical sets defined in \textit{Bachmann–Landau notations}.
-\begin{theorem} Reflexivity in $1-Complexity$ - Small 1-o notation:
+\begin{remark} Reflexivity in $1-Complexity$ - Small 1-o notation:
 $ f \notin o_{1}(f(n)) $ 
-\end{theorem} 
-\begin{theorem} Reflexivity in $1-Complexity$ - Small 1-Omega notation:
+\end{remark} 
+\begin{remark} Reflexivity in $1-Complexity$ - Small 1-Omega notation:
 $ f \notin \omega_{1}(f(n)) $ 
-\end{theorem} 
+\end{remark} 
 
 \begin{theorem} Transitivity in $1-Complexity$ - Big 1-Theta notation:  \\  $ f \in \Theta_{1}(g(n)),  g \in \Theta_{1}(h(n)) \Rightarrow  f \in \Theta_{1}(h(n))$   
  \end{theorem} 
@@ -118,10 +118,10 @@ $ f \notin \omega_{1}(f(n)) $
 \begin{proof} 
    Let $r = 1$ and use Transitivity property for Big \textit{r-}Omega class in $rComplexity$ calculus.
 \end{proof} 
-\begin{theorem} Transitivity in $1-Complexity$ - small notations:
+\begin{lemma} Transitivity in $1-Complexity$ - small notations:
  \[ f \in o_{1}(g(n)),  g \in o_{1}(h(n)) \Rightarrow  f \in o_{1}(h(n)) \]
  \[ f \in \omega_{1}(g(n)),  g \in \omega_{1}(h(n)) \Rightarrow  f \in \omega_{1}(h(n)) \]
-\end{theorem} 
+\end{lemma} 
 \begin{proof} 
    Small \textit{1-}o and Small \textit{1-}Omega are equal with the classical sets defined in \textit{Bachmann–Landau notations} and thus they conserve transitivity properties
 \end{proof} 
@@ -228,6 +228,10 @@ If $\lim_{n\to\infty} \dfrac{f(n)}{g(n)} = t, \ t \in \mathbb{R}_{+}$:
 \end{itemize}
 \end{lemma}
 
+\begin{proof}
+All proofs are based on the particularizing $r=1$ and rewrite the addition properties from rComplexity.
+\end{proof}
+
 \section{Normal form functions}
 In this section, we will take further steps in simplifying calculus by introducing a new concept: the normal form of a monotonic, continuous function.
 \begin{definition}
@@ -262,4 +266,9 @@ a function f that is in the Big 1-Theta $1-$Complexity class defined by the func
 \begin{remark}
 Working in $r$-Complexity with the required conversions such that $r = 1$ and the functions defining complexity classes is in normal form $(g = g_{1})$ is the most simple
 calculus model while working with $r$-Complexity classes.
+\end{remark}
+
+
+\begin{remark}
+A practical use case of this notation will be distinguishable when discussing the N Queens problems analysis for asymptotic time metric while working with $r$-Complexity classes.
 \end{remark}

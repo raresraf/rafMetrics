@@ -8,30 +8,51 @@ Making use of a conventional inscription in order to specify an effective approa
 
 An algorithm that can be accepted by a calculus machine consists of a limited amount of instructions with accurate signification, that can be implemented by the machine in a restricted period of time in order to determine the answer of a problem.
 
-The definition of the algorithm reveals the crucial distinction between a function and an algorithm, which is, to be more specifically, the distinction between a functional representation of a problem and its effective solution. ~\cite{giumale2004introducere};
+The definition of the algorithm reveals the crucial distinction between a function and an algorithm, which is, to be more specifically, the distinction between a functional representation of a problem and its effective solution. ~\cite{giumale2004introducere}
 
+In this chapter, we will define various metrics for estimating an algorithm's performances in regard to a specific metric, such as: \textbf{RM1}, \textbf{RM2} with enhanced variations \textbf{ERM1}, \textbf{ERM2}.
 
-\section{From algorithm to complexity}
-Algorithms' Complexity Theory studies the static and dynamic performances of mechanical-solvable problems. Static performances aim the clarity of the evaluated algorithm or the abstraction level imposed by used operations, while, more interesting and comparable, the dynamic performances imposes a calculus regarding the amount of resources (e.g. total execution time, peak memory usage) required for executing the algorithm. ~\cite{giumale2004introducere}; Theoretical, such metrics can be exactly calculated for any given algorithm.
 
 \section{From algorithm to Normalized rComplexity}
-While the dynamic performances of an algorithm are precisely calculable, due to the high complexity of most computer programs, it is often more suitable an approximation. Such resemblance is provided by the classical model, with drastic compromise compared to the real behavior in a non-asymptotic analysis. A in-between solution for approximating the dynamic performances of an algorithm is provided by Normalized rComplexity Calculus Model, which aim to close the gap between the architecture of the computing machine and a generic-written algorithm for solving a problem.
+Algorithms' Complexity Theory studies the static and the dynamic performances of mechanical-solvable problems. Static performances aim the clarity of the evaluated algorithm or the abstraction level imposed by used operations, while, more interesting and comparable, the dynamic performances imposes a calculus regarding the amount of resources (e.g. total execution time, peak memory usage) required for executing the algorithm. ~\cite{giumale2004introducere}; Theoretical, such metrics can be exactly calculated for any given algorithm.
+
+\begin{remark}
+Mechanical-solvable problems inevitably makes us think to the related field in physics. An intuitive approach on the mechanical-solvable process is accessible
+ to understanding when considering massive motion elements rather than transistors in technologies as advanced as 7nm. 
+ 
+An example of an early mechanical solution (exhibited in 1862 at The International Exhibition in South Kensington, UK) to a mechanical-solvable problems is the Babbage's design for the difference engine, which is an automatic mechanical calculator designed to tabulate polynomial functions. 
+
+This was a solution for approximation some mathematical functions frequently used, including logarithmic and trigonometric functions, which could be approximated by polynomials.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.5\textwidth]{BabbageDifferenceEngine}
+\caption{An implementation built from Babbage's design of a difference engine exhibited at The London Science Museum}.
+\end{figure}
+
+\end{remark}
+
+While the dynamic performances of an algorithm are precisely calculable, due to the high complexity (By high complexity it is denoted that it is extremely difficult to exactly compute it) of most computer programs, it is often more suitable an approximation. Such resemblance is provided by the classical model, with drastic compromise compared to the real behavior in a non-asymptotic analysis. A in-between solution for approximating the dynamic performances of an algorithm is provided by Normalized rComplexity Calculus Model, which aim to close the gap between the architecture of the computing machine and a generic-written algorithm for solving a problem.
 
 \section{Estimating computational time based on Normalized rComplexity}
 Let an arbitrary algorithm $Alg$ characterized by the complexity function $f$ with a variable input dimension $n \in \mathcal{N}^{*}$. Consider that the input size is bounded such that $n \in [n_{min}, n_{max}]$. \\
 We aim to define various metrics for approximation an average computational time required based on the size of the input and the algorithm's complexity function  $T(n_{min}, n_{max})$.\\
 
-\begin{definition} Metric for time estimation based on arithmetic mean in Normalized rComplexity model is defined as follows:
+\begin{definition} \textbf{RM1}
+
+Defined as a metric for time estimation (capable of generalization to any other estimators) based on arithmetic mean in Normalized rComplexity model is defined as follows:
 \[  T(n_{min}, n_{max}) = \dfrac{\sum\limits_{n=n_{min}}^{n_{max}} g_{1}(n)}{n_{max} - n_{min} + 1}  \]
 \end{definition}
 
-\begin{definition} Metric for time estimation based on Mean-Value Theorem(Lagrange) using integrals in Normalized rComplexity model is defined as follows:
+\begin{definition} \textbf{RM2}
+
+Defined as a metric for time estimation (capable of generalization to any other estimators) based on Mean-Value Theorem(Lagrange) using integrals in Normalized rComplexity model is defined as follows:
 \[  T(n_{min}, n_{max}) = \dfrac{\int\limits_{n_{min}}^{n_{max}} g_{1}(n) dn}{n_{max} - n_{min}}  \]
 \end{definition}
 
 The previous two metrics are tailored for systems where the input size is bounded but there is no additional knowledge regarding the weights and probabilities of occurrence. If this information is available, we can redefine the previous metrics using the acquisition data.
 
-\begin{definition} Enhanced metric for time estimation based on arithmetic mean in Normalized rComplexity model is defined as follows:
+\begin{definition} \textbf{ERM1}, an enhanced metric for time estimation based on arithmetic mean in Normalized rComplexity model is defined as follows:
 \[  T(n_{min}, n_{max}) = \sum\limits_{n=0}^{f} p_{n} \cdot g_{1}(n + n_{min})  \]
 where:
 \begin{itemize}
@@ -42,7 +63,7 @@ where:
 and $f = max - min + 1$.
 \end{definition}
 
-\begin{definition} Enhanced metric for time estimation based on Mean-Value Theorem(Lagrange) using integrals in Normalized rComplexity model is defined as follows:
+\begin{definition} \textbf{ERM2}, an enhanced metric for time estimation based on Mean-Value Theorem(Lagrange) using integrals in Normalized rComplexity model is defined as follows:
 \[  T(n_{min}, n_{max}) =\sum\limits_{k=0}^{f-1} p_{k} \cdot \int\limits_{n_{k}}^{n_{k+1}} g_{1}(n) dn  \]
 where:
 \begin{itemize}
@@ -56,7 +77,10 @@ and $f = max - min + 1$, and $n_{0} = n_{min}, n_{f} = n_{max}$.
 \section{Comparing algorithms asymptotic performances}
 
 
-This section aims to compare two Algorithms ($Alg1$, $Alg2$) time-based performances based on associated Big r-Theta class from Normalized rComplexity model, by asymptotically correlating the characterized complexity functions $f, f'$. \\
+This section aims to compare two generic Algorithms ($Alg1$, $Alg2$) time-based performances based on associated Big r-Theta class from Normalized rComplexity model, by asymptotically correlating the characterized complexity functions $f, f'$. 
+
+For specific application of this theoretical work, please refer to the following chapter.
+
 Let $f \in \Theta_{1}(g_{1}(n))$ and $f' \in \Theta_{1}(g'_{1}(n))$.
 We can therefore compare the time-based performances of the two algorithms by evaluating:  \[\lim_{n\to\infty} \dfrac{g_{1}(n)}{g'_{1}(n)}\]
 
@@ -76,7 +100,7 @@ $\lim_{n\to\infty} \dfrac{g_{1}(n)}{g'_{1}(n)} = 0 \Rightarrow g_{1}(n) < g'_{1}
 
 \begin{definition}
 Let $f \in \Theta_{1}(g_{1}(n))$ and $f' \in \Theta_{1}(g'_{1}(n))$. $f$ is part of the same class as $f'$ iff $\lim_{n\to\infty} \dfrac{g_{1}(n)}{g'_{1}(n)} = r$ and $r \in \mathcal{R}_{+}$.
-If $f is part of the same class as f'$, we can distinguish the following cases:
+If $f$ is part of the same class as $f'$, we can distinguish the following cases:
 $$
 \lim_{n\to\infty} \dfrac{g_{1}(n)}{g'_{1}(n)} = 
 \begin{cases}
@@ -142,6 +166,10 @@ If $ \dfrac{T_{1}(n_{min}, n_{max})}{T_{2}(n_{min}, n_{max})} = r \in (1,\infty)
 \begin{remark}
 If  $ \dfrac{T_{1}(n_{min}, n_{max})}{T_{2}(n_{min}, n_{max})} = 1$, rComplexity calculus considers $Alg1$ and $Alg2$ equivalent from a computational cost-based perspective for a randomly distribution of input size $n \in [n_{min}, n_{max}]$.
 \end{remark}
+
+\begin{remark}
+If  $ \dfrac{T_{1}(n_{min}, n_{max})}{T_{2}(n_{min}, n_{max})} = 1$, a tiebreak can be done by a deep analysis of the less dominant features as described in the Enhanced rComplexity model feature extraction in the next chapter.
+\end{remark}s
 
 \begin{remark}
 Theorem stands likewise using Mean-Value Theorem(Lagrange), with 
