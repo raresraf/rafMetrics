@@ -6,11 +6,9 @@ This theoretical work includes a proof-of-concept software stack including vario
 
 The metrics that require data acquisition are based on web crawlers (interrogations as described in WebMonitoring tool), experimental data (gathered by computing and estimating running time computer algorithms for various input size in cloud-based systems) or symbolic calculus(for computing rComplexity calculus and calculating partial derivatives).
 
-Furthermore, a ML-based system is used for estimating rComplexity in the case when the theoretical mapping between the algorithm's function and the rComplexity Class is not known. For better performances, it should be inputted with the classic Big-Theta(for asymptotic behavior) Class or an acceptable classic Big-O Class approximation. However, this platform can approximate a good fitting for algorithms with unknown classic asymptotic behavior. 
+Furthermore, a ML-based system is used for estimating rComplexity in the case when the theoretical mapping between the algorithm's function and the rComplexity Class is not known. For better performances, it should be inputted with the classic Big-Theta(for asymptotic behavior) Class or an acceptable classic Big-O Class approximation. However, this platform can approximate a good fitting for algorithms with unknown classic asymptotic behavior.
 
 The process of automatically tailoring a suitable rComplexity Class is provided on-demand, using rafComputing Tool.
-
-
 
 
 \section{Codebase}
@@ -40,8 +38,6 @@ For time bug-free code a third-party library is used, arrow. This is a Python li
 
 For monitoring BE an open source analytic \& monitoring solution for the database is desired. Such an implementation is Grafana.
 
-
-
 \subsection{Frontend}
 The frontend is implemented using React – A JavaScript library for building user interfaces. The platform UI is based on Flatlogic Template: React Material Admin — Material-UI Dashboard. The application can be built using default Node package manager.
 
@@ -50,6 +46,7 @@ The frontend is implemented using React – A JavaScript library for building us
 Each component is containerized using Docker technologies which assures a secure build and unbounded sharing options.
 
 In order to perform a deployment of the Platform as an assembly, few orchestration systems can be used, including Docker Swarm or Kubernetes.
+
 
 \section{Networking}
 
@@ -61,10 +58,10 @@ different docker swarm nodes.
 In Kubernetes, there are four distinct networking problems to address ~\cite{authors2017kubernetes}:
 
 \begin{itemize}
-\item Highly-coupled container-to-container communications: this is solved by pods and localhost communications.
-\item Pod-to-Pod communications: every Pod gets its own IP address
-\item Pod-to-Service communications: this is covered by Kubernetes services.
-\item External-to-Service communications: this is covered by Kubernetes services.
+    \item Highly-coupled container-to-container communications: this is solved by pods and localhost communications.
+    \item Pod-to-Pod communications: every Pod gets its own IP address
+    \item Pod-to-Service communications: this is covered by Kubernetes services.
+    \item External-to-Service communications: this is covered by Kubernetes services.
 \end{itemize}
 
 The default node port range for Kubernetes is 30000 - 32767.
@@ -76,9 +73,9 @@ The default node port range for Kubernetes is 30000 - 32767.
 
 
 \begin{figure}[H]
-\centering
-\includegraphics[width=1\textwidth]{arch}
-\caption{An overview of the architecture of the rafMetrics' platform}
+    \centering
+    \includegraphics[width=1\textwidth]{arch}
+    \caption{An overview of the architecture of the rafMetrics' platform}
 \end{figure}
 
 \subsection{Components}
@@ -89,28 +86,29 @@ The ML-based tool implementing the process of automatically tailoring a suitable
 
 
 A suitable rComplexity Class set is defined by the group of mathematical functions similar in magnitude with  $g(n)$ in the study of asymptotic behavior. A set-based description of this group can be expressed as:
-  \[\begin{split} \Theta_{1}(g(n)) = \lbrace f \in \mathcal{F}\ |\ \forall c_{1}, c_{2} \in \mathbb{R}^{*}_{+} \ s.t.  c_{1} < 1 < c_{2} , \exists n_{0} \in \mathbb{N}^{*}\ \\ s.t.\ \ c_{1} \cdot g(n) \leq f(n) \leq c_{2} \cdot g(n)\ ,\  \forall n \geq n_{0} \rbrace \end{split} \]
-
+\[\begin{split}
+      \Theta_{1}(g(n)) = \lbrace f \in \mathcal{F}\ |\ \forall c_{1}, c_{2} \in \mathbb{R}^{*}_{+} \ s.t. c_{1} < 1 < c_{2} , \exists n_{0} \in \mathbb{N}^{*}\ \\ s.t.\ \ c_{1} \cdot g(n) \leq f(n) \leq c_{2} \cdot g(n)\ ,\  \forall n \geq n_{0} \rbrace
+\end{split} \]
 
 \subsubsection{WebMonitoring}
-A tool for monitoring multiple network resources and websites. 
+A tool for monitoring multiple network resources and websites.
 Gather data by periodically monitoring specific resources and websites and stores results in database.
 
 The following metrics are defined inner WebMonitoring Tool:
 \begin{itemize}
-	\item Resource Crunch (known as Resource, part of WebMonitioring Tool): Average Response Time (daily, weekly, monthly, custom), Average Response Size, Lowest, Medium, Median, Highest metric time, Efficiency Metric	
-	\item Website Crunch (known as Website, part of WebMonitioring Tool): Average Response Time (daily, weekly, monthly, custom), Average Response Size (daily, weekly, monthly, custom)
-	\item Statistics Resource Manager: Total time, Total number of Requests, Average Time, Average Size, Standard deviation acquired for last 24 hours or all time.
-	\item Statistics Website Manager: Total time, Total number of Requests, Average Time, Average Size, Standard deviation acquired for last 24 hours or all time.
+    \item Resource Crunch (known as Resource, part of WebMonitioring Tool): Average Response Time (daily, weekly, monthly, custom), Average Response Size, Lowest, Medium, Median, Highest metric time, Efficiency Metric
+    \item Website Crunch (known as Website, part of WebMonitioring Tool): Average Response Time (daily, weekly, monthly, custom), Average Response Size (daily, weekly, monthly, custom)
+    \item Statistics Resource Manager: Total time, Total number of Requests, Average Time, Average Size, Standard deviation acquired for last 24 hours or all time.
+    \item Statistics Website Manager: Total time, Total number of Requests, Average Time, Average Size, Standard deviation acquired for last 24 hours or all time.
 \end{itemize}
 
 \subsubsection{ResourceManager}
 Monitors all resources by periodically (timer set default at 1 hour interval) sending requests to existing resources.
-Store simple metrics like total time or total requests answer as entries in DB. 
+Store simple metrics like total time or total requests answer as entries in DB.
 
 \subsubsection{WebsiteManager}
 Monitors all websites by periodically (timer set default at 1 hour interval) generating a HAR (HTTP-Archieve data performance file) for loading metrics corresponding to a website, with Chrome using Browsermob-Proxy.
-Also parse and store valuable insights resulted from the HAR file into DB. 
+Also parse and store valuable insights resulted from the HAR file into DB.
 The service uses [speedprofile](https://github.com/parasdahal/speedprofile) engine.
 
 \subsubsection{WebMonitoring API}
@@ -118,12 +116,10 @@ Provide an API for interrogating useful metrics from DB.
 
 The routes defined can be checked in the documentation existing in the codebase.
 
-
 \subsubsection{Login}
 Backend implementation to provide a simple authentication, registration and management for users inside rafMetrics platform.
 
 The routes defined can be checked in the documentation existing in the codebase.
-
 
 \subsubsection{KubernetesConfig}
 Keeps track of all k8s settings.
@@ -136,13 +132,12 @@ Database used to store persistent data required by Login and WebMonitoring.
 All relations are kept in \textbf{Boyce-Codd Normal Form}.
 
 \begin{figure}[H]
-\centering
-\includegraphics[width=0.7\textwidth]{diagram}
-\caption{SQL table hierarchy used in WebMonitoring Tool}
+    \centering
+    \includegraphics[width=0.7\textwidth]{diagram}
+    \caption{SQL table hierarchy used in WebMonitoring Tool}
 \end{figure}
 
 The table semantics can be checked in the documentation existing in the codebase.
-
 
 \subsubsection{deploy\_repo.sh}
 Simple script to ensure dockerize and deployment in Kubernetes for all backend components.
