@@ -36,5 +36,5 @@ def extract_power_features(X, M):
     return phi
 
 
-def same_features(X, M):
+def same_features(X, _M):
     return X
