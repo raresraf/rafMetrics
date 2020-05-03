@@ -17,26 +17,32 @@ from mysql_config.WebMonitoring.generators.website.website_generate_samples_quer
 def test_website_generate_samples_queries(capfd):
     website_generate_samples_queries("daily")
     out, err = capfd.readouterr()
-    assert out == EXPECTED_DAILY_WEBSITE_GENERATE_SAMPLES_QUERIES
+    if out != EXPECTED_DAILY_WEBSITE_GENERATE_SAMPLES_QUERIES:
+        raise AssertionError
 
     website_generate_samples_queries("weekly")
     out, err = capfd.readouterr()
-    assert out == EXPECTED_WEEKLY_WEBSITE_GENERATE_SAMPLES_QUERIES
+    if out != EXPECTED_WEEKLY_WEBSITE_GENERATE_SAMPLES_QUERIES:
+        raise AssertionError
 
     website_generate_samples_queries("monthly")
     out, err = capfd.readouterr()
-    assert out == EXPECTED_MONTHLY_WEBSITE_GENERATE_SAMPLES_QUERIES
+    if out != EXPECTED_MONTHLY_WEBSITE_GENERATE_SAMPLES_QUERIES:
+        raise AssertionError
 
 
 def test_website_generate_samples_queries_size(capfd):
     website_generate_samples_queries_size("daily")
     out, err = capfd.readouterr()
-    assert out == EXPECTED_DAILY_WEBSITE_GENERATE_SAMPLES_QUERIES_SIZE
+    if out != EXPECTED_DAILY_WEBSITE_GENERATE_SAMPLES_QUERIES_SIZE:
+        raise AssertionError
 
     website_generate_samples_queries_size("weekly")
     out, err = capfd.readouterr()
-    assert out == EXPECTED_WEEKLY_WEBSITE_GENERATE_SAMPLES_QUERIES_SIZE
+    if out != EXPECTED_WEEKLY_WEBSITE_GENERATE_SAMPLES_QUERIES_SIZE:
+        raise AssertionError
 
     website_generate_samples_queries_size("monthly")
     out, err = capfd.readouterr()
-    assert out == EXPECTED_MONTHLY_WEBSITE_GENERATE_SAMPLES_QUERIES_SIZE
+    if out != EXPECTED_MONTHLY_WEBSITE_GENERATE_SAMPLES_QUERIES_SIZE:
+        raise AssertionError

@@ -26,7 +26,8 @@ from Login.tests.mocks import users_dict
 
 def test_index():
     ret_index_msg = index()
-    assert ret_index_msg == "Hello, world!"
+    if ret_index_msg != "Hello, world!":
+        raise AssertionError
 
 
 @mock.patch("Login.app.generate_password_hash")
@@ -77,8 +78,10 @@ def test_add_user(mocked_mysql_var, mocked_hash):
             ),
         )
         conn.commit.assert_called_once_with()
-        assert resp.status_code == 200
-        assert resp.json == "User added successfully!"
+        if resp.status_code != 200:
+            raise AssertionError
+        if resp.json != "User added successfully!":
+            raise AssertionError
         cursor.close.assert_called_once_with()
         conn.close.assert_called_once_with()
 
@@ -107,8 +110,10 @@ def test_users(mocked_mysql_var):
         mocked_mysql_var.connect.assert_called_once_with()
         conn.cursor.assert_called_once_with(pymysql.cursors.DictCursor)
         cursor.execute.assert_called_once_with("SELECT * FROM USERS")
-        assert resp.status_code == 200
-        assert resp.json == expected_json
+        if resp.status_code != 200:
+            raise AssertionError
+        if resp.json != expected_json:
+            raise AssertionError
         cursor.close.assert_called_once_with()
         conn.close.assert_called_once_with()
 
@@ -139,8 +144,10 @@ def test_user(mocked_mysql_var):
         conn.cursor.assert_called_once_with(pymysql.cursors.DictCursor)
         cursor.execute.assert_called_once_with(
             "SELECT * FROM USERS WHERE Username=%s", id)
-        assert resp.status_code == 200
-        assert resp.json == expected_json
+        if resp.status_code != 200:
+            raise AssertionError
+        if resp.json != expected_json:
+            raise AssertionError
         cursor.close.assert_called_once_with()
         conn.close.assert_called_once_with()
 
@@ -170,7 +177,8 @@ def test_user_id(mocked_mysql_var):
     conn.cursor.assert_called_once_with(pymysql.cursors.DictCursor)
     cursor.execute.assert_called_once_with(
         "SELECT * FROM USERS WHERE Username=%s", id)
-    assert resp == expected_json
+    if resp != expected_json:
+        raise AssertionError
     cursor.close.assert_called_once_with()
     conn.close.assert_called_once_with()
 
@@ -202,8 +210,10 @@ def test_auth_user_valid_password(mocked_mysql_var):
         conn.cursor.assert_called_once_with(pymysql.cursors.DictCursor)
         cursor.execute.assert_called_once_with(
             "SELECT * FROM USERS WHERE Username=%s", id)
-        assert resp.status_code == 200
-        assert resp.json == expected_json
+        if resp.status_code != 200:
+            raise AssertionError
+        if resp.json != expected_json:
+            raise AssertionError
         cursor.close.assert_called_once_with()
         conn.close.assert_called_once_with()
 
@@ -235,8 +245,10 @@ def test_auth_user_invalid_password(mocked_mysql_var):
         conn.cursor.assert_called_once_with(pymysql.cursors.DictCursor)
         cursor.execute.assert_called_once_with(
             "SELECT * FROM USERS WHERE Username=%s", id)
-        assert resp.status_code == 200
-        assert resp.json == expected_json
+        if resp.status_code != 200:
+            raise AssertionError
+        if resp.json != expected_json:
+            raise AssertionError
         cursor.close.assert_called_once_with()
         conn.close.assert_called_once_with()
 
@@ -290,8 +302,10 @@ def test_update_user(mocked_mysql_var, mocked_hash):
             ),
         )
         conn.commit.assert_called_once_with()
-        assert resp.status_code == 200
-        assert resp.json == "User updated successfully!"
+        if resp.status_code != 200:
+            raise AssertionError
+        if resp.json != "User updated successfully!":
+            raise AssertionError
         cursor.close.assert_called_once_with()
         conn.close.assert_called_once_with()
 
@@ -332,17 +346,24 @@ def test_delete(mocked_mysql_var, ):
         cursor.execute.assert_called_once_with(
             "DELETE FROM USERS WHERE Username=%s", (id, ))
         conn.commit.assert_called_once_with()
-        assert resp.status_code == 200
-        assert resp.json == "User deleted successfully!"
+        if resp.status_code != 200:
+            raise AssertionError
+        if resp.json != "User deleted successfully!":
+            raise AssertionError
         cursor.close.assert_called_once_with()
         conn.close.assert_called_once_with()
 
 
 def test_db_configs():
-    assert MYSQL_DATABASE_USER == "root"
-    assert MYSQL_DATABASE_PASSWORD == "password"
-    assert MYSQL_DATABASE_DB == "WebMonitoring"
+    if MYSQL_DATABASE_USER != "root":
+        raise AssertionError
+    if MYSQL_DATABASE_PASSWORD != "password":
+        raise AssertionError
+    if MYSQL_DATABASE_DB != "WebMonitoring":
+        raise AssertionError
     if os.environ.get("DOCKER_COMPOSE_BUILD"):
-        assert MYSQL_DATABASE_HOST == "mysql"
+        if MYSQL_DATABASE_HOST != "mysql":
+            raise AssertionError
     else:
-        assert MYSQL_DATABASE_HOST == "10.96.0.2"
+        if MYSQL_DATABASE_HOST != "10.96.0.2":
+            raise AssertionError

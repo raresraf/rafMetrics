@@ -6,4 +6,5 @@ def test_init_complete():
     generate_init_sql()
     with open("./mysql_config/init.sql", "r") as init_file:
         init_file_content = init_file.read()
-        assert init_file_content == MOCK_SQL_INIT
+        if init_file_content != MOCK_SQL_INIT:
+            raise AssertionError

@@ -11,4 +11,5 @@ def test_remove_placement_contraints():
     dict = yaml.safe_load(SAMPLE_DOCKER_COMPOSE)
     dict = remove_placement_contraints(dict)
     out_dict = yaml.dump(dict, default_flow_style=False, allow_unicode=True)
-    assert out_dict == EXPECTED_DOCKER_COMPOSE
+    if out_dict != EXPECTED_DOCKER_COMPOSE:
+        raise AssertionError

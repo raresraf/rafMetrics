@@ -5,11 +5,16 @@ from rComplexity.plotting.plot_points import plot_points_from_file
 
 
 def test_pool_plotting_points_symbols():
-    assert next(pool_plotting_points_symbols) == "o"
-    assert next(pool_plotting_points_symbols) == "x"
-    assert next(pool_plotting_points_symbols) == "o"
-    assert next(pool_plotting_points_symbols) == "x"
-    assert next(pool_plotting_points_symbols) == "o"
+    if next(pool_plotting_points_symbols) != "o":
+        raise AssertionError
+    if next(pool_plotting_points_symbols) != "x":
+        raise AssertionError
+    if next(pool_plotting_points_symbols) != "o":
+        raise AssertionError
+    if next(pool_plotting_points_symbols) != "x":
+        raise AssertionError
+    if next(pool_plotting_points_symbols) != "o":
+        raise AssertionError
 
 
 @mock.patch("matplotlib.pyplot.show")
@@ -19,6 +24,7 @@ def test_plot_points_from_file(plt_mock_plot, plt_mock_legend, plt_mock_show):
     plot_points_from_file("rComplexity/plotting/tests/result_file_testing.txt",
                           5)
 
-    assert plt_mock_plot.call_count == 5
+    if plt_mock_plot.call_count != 5:
+        raise AssertionError
     plt_mock_legend.assert_called_once_with()
     plt_mock_show.assert_called_once_with()

@@ -12,4 +12,5 @@ def test_same_gitignore_dockerignore():
                 tofile="hosts1",
             )
             for line in diff:
-                assert line == None
+                if line != None:
+                    raise AssertionError
