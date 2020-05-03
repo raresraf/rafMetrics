@@ -34,7 +34,7 @@ class ResourceManager:
                 % resource.resource_url)
             cursor.execute(query)
 
-            for (resource_id, resource_name) in cursor:
+            for (resource_id, _) in cursor:
                 query = (
                     "INSERT INTO PING(Resourceid, ResponseTime, ResponseSize) "
                     "VALUES (%d, %lf, %d)") % (resource_id,
