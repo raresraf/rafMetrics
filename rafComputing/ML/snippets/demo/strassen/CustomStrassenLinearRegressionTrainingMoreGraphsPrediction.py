@@ -21,7 +21,7 @@ def CustomStrassenLinearRegressionTrainingMoreGraphsPrediction(
     internal_counter=0,
     feature_type=NO_FEATURE_TYPE,
     feature_val=1.0,
-    first=True,
+    _first=True,
     final=False,
     plt_legend=None,
     custom_generate_larger_evaluation_set=generate_larger_evaluation_set,
