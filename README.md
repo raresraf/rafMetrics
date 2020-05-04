@@ -1,7 +1,7 @@
 # rafMetrics
 [![CodeFactor](https://www.codefactor.io/repository/github/raresraf/rafmetrics/badge)](https://www.codefactor.io/repository/github/raresraf/rafmetrics)
 [![codecov](https://codecov.io/gh/raresraf/rafMetrics/branch/master/graph/badge.svg)](https://codecov.io/gh/raresraf/rafMetrics)
-[![DeepSource](https://static.deepsource.io/deepsource-badge-dark-mini.svg)](https://deepsource.io/gh/raresraf/rafMetrics/?ref=repository-badge)
+[![DeepSource](https://static.deepsource.io/deepsource-badge-light-mini.svg)](https://deepsource.io/gh/raresraf/rafMetrics/?ref=repository-badge)
 
 Metrics for evaluating the performance and complexity of computer programs
 
