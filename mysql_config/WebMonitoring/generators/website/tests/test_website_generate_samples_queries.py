@@ -16,7 +16,7 @@ from mysql_config.WebMonitoring.generators.website.website_generate_samples_quer
 
 def test_website_generate_samples_queries(capfd):
     website_generate_samples_queries("daily")
-    out, err = capfd.readouterr()
+    out, _ = capfd.readouterr()
     assert out == EXPECTED_DAILY_WEBSITE_GENERATE_SAMPLES_QUERIES
 
     website_generate_samples_queries("weekly")
@@ -30,7 +30,7 @@ def test_website_generate_samples_queries(capfd):
 
 def test_website_generate_samples_queries_size(capfd):
     website_generate_samples_queries_size("daily")
-    out, err = capfd.readouterr()
+    out, _ = capfd.readouterr()
     assert out == EXPECTED_DAILY_WEBSITE_GENERATE_SAMPLES_QUERIES_SIZE
 
     website_generate_samples_queries_size("weekly")

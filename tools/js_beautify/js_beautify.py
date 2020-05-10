@@ -12,7 +12,7 @@ opts.indent_size = 2
 def jsbeautifier_driver():
     # Set options
 
-    for root, dirs, files in os.walk("."):
+    for root, _, files in os.walk("."):
         for file in files:
             if file.endswith(".js"):
                 print(os.path.join(root, file))
