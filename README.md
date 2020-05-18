@@ -1,5 +1,12 @@
 # rafMetrics
 ![Python application](https://github.com/raresraf/rafMetrics/workflows/Python%20application/badge.svg)
+![Codecov](https://github.com/raresraf/rafMetrics/workflows/Codecov/badge.svg)
+
+
+[![CodeFactor](https://www.codefactor.io/repository/github/raresraf/rafmetrics/badge)](https://www.codefactor.io/repository/github/raresraf/rafmetrics)
+[![codecov](https://codecov.io/gh/raresraf/rafMetrics/branch/master/graph/badge.svg)](https://codecov.io/gh/raresraf/rafMetrics)
+[![DeepSource](https://static.deepsource.io/deepsource-badge-light-mini.svg)](https://deepsource.io/gh/raresraf/rafMetrics/?ref=repository-badge)
+
 
 Metrics for evaluating the performance and complexity of computer programs
 
@@ -53,9 +60,3 @@ Simple script to ensure dockerize and deployment in Kubernetes for all backend c
 ### metricsUI
 
 Frontend implementation of rafMetrics platform based on Flatlogic Template: React Material Admin — Material-UI Dashboard
-
-
-
-[![CodeFactor](https://www.codefactor.io/repository/github/raresraf/rafmetrics/badge)](https://www.codefactor.io/repository/github/raresraf/rafmetrics)
-[![codecov](https://codecov.io/gh/raresraf/rafMetrics/branch/master/graph/badge.svg)](https://codecov.io/gh/raresraf/rafMetrics)
-[![DeepSource](https://static.deepsource.io/deepsource-badge-light-mini.svg)](https://deepsource.io/gh/raresraf/rafMetrics/?ref=repository-badge)
