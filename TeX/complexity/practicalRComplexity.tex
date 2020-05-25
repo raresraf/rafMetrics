@@ -440,13 +440,12 @@ We analyzed various naive matrix multiplication algorithms $O(n^3)$ with memory-
     or the efficiency of the optimizations are in a specific order. We aim to provide various estimation for these implementations of matrix multiplication algorithms with known $O(n^3)$ Complexity. Please remark the natural distribution of the two cache-friendly algorithms presented on larger datasets vs the naive algorithm, susceptible to outliers.}
 \end{figure}
 
-
 Using the method described in estimating section, we can tailor an architecture-specific complexity function $ f(n)  = c \cdot n^3$.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.7\textwidth]{mmn3023}
-    \caption{TODO}
+    \caption{Regression lines corresponding to each of the matrix-multiplication algorithms}
 \end{figure}
 
 After training the regression models for each algorithm, we obtained the coefficients $c$, that defines the complexity function $f(n)  = c \cdot n^3$.
@@ -490,7 +489,7 @@ Furthermore, the model was evaluated adopting classical regression evaluation me
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.8\textwidth]{mmn3023g}
-\caption{TODO}
+\caption{Estimations based on the generalizations of the model tailored on the aquired dataset}
 \end{figure}
 
 \subsection{Strassen implementation}
