@@ -1,0 +1,20 @@
+\chapter{The web of complexities}
+
+\section{Modern means of computing}
+The world of computing has been vastly changed by modern means of inter-components communication, allowing computing systems to geographically extend at an affordable overhead. This allowed the emergence of new software services as well as new means of programming. 
+
+Undoubtedly, the internet has become a massive source of power and with this new technology the information is able to spread really quickly around the world.
+
+While there are many notable achievements in software services that were created over networks, including e-commerce platforms, social media services or e-Gov apps, the focus of this chapter is to embrace the new paradigm of distributed computing and web development on complexity calculus and present means of computing an estimated complexity for complex applications that require new features such as mechanisms for networking handling which have not been analyzed yet.
+
+\section{HTTP requests and algorithm complexity}
+
+There are numerous way of inter-system communication, provided by powerful protocols. Undoubtable, the most used communication protocol between software systems is \textbf{HTTP} (Hypertext Transfer Protocol), an application-level protocol for distributed, collaborative, hypermedia information systems. HTTP operates as a request – response protocol in the client – server computing model.
+
+The scenario of development when the client sends a request to the server and the server send an associated response is frequently encountered in web applications development. We will analyze how to integrate this overhead in the complexity model presented.
+
+Consider the following scenario: The results of this paper appears to be interesting and you may want to re-use them and further analyze them. You built your custom computer program and you want to acquire all practical results provided so far. Note that the development might still be in progress, so you would like that every time you run the software, an up-to-date version of all results should be available. Luckily, these can be achieved via HTTP-requests, as all of the results are stored publicly on GitHub. Therefore, you can use GitHub Developer API , to view the latest published full release for the repository.
+
+\begin{verbatim}
+GET /repos/:owner/:repo/releases/latest
+\end{verbatim}
