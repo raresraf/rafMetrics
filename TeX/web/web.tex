@@ -13,8 +13,75 @@ There are numerous way of inter-system communication, provided by powerful proto
 
 The scenario of development when the client sends a request to the server and the server send an associated response is frequently encountered in web applications development. We will analyze how to integrate this overhead in the complexity model presented.
 
-Consider the following scenario: The results of this paper appears to be interesting and you may want to re-use them and further analyze them. You built your custom computer program and you want to acquire all practical results provided so far. Note that the development might still be in progress, so you would like that every time you run the software, an up-to-date version of all results should be available. Luckily, these can be achieved via HTTP-requests, as all of the results are stored publicly on GitHub. Therefore, you can use GitHub Developer API , to view the latest published full release for the repository.
+Consider the following scenario: The results of this paper appears to be interesting and you may want to re-use them and further analyze them. You built your custom computer program and you want to acquire all practical results provided so far. Note that the development might still be in progress, so you would like that every time you run the software, an up-to-date version of all results should be available. Luckily, these can be achieved via HTTP-requests, as all of the results are stored publicly on GitHub. Therefore, you can use GitHub Developer API, to view the latest published full release for the repository.
 
 \begin{verbatim}
-GET /repos/:owner/:repo/releases/latest
+GET /repos/:owner/:repo/releases/
 \end{verbatim}
+
+In Python, the code required to achieve this would reduce to an one-liner, using requests,  an elegant and simple HTTP library for Python.
+
+\begin{verbatim}
+r = requests.get('https://api.github.com/repos/raresraf/rafmetrics/releases')
+\end{verbatim}
+
+The response of the server will contain the required information, formatted as a JSON:
+\begin{lstlisting}[language=json,firstnumber=1]
+[{
+    "url":
+    "https://api.github.com/repos/raresraf/rafMetrics/releases/26933384",
+    "assets_url":
+    "https://api.github.com/repos/raresraf/rafMetrics/releases/26933384/assets",
+    "upload_url":
+    "https://uploads.github.com/repos/raresraf/rafMetrics/releases/26933384/assets{?name,label}",
+    "html_url":
+    "https://github.com/raresraf/rafMetrics/releases/tag/v0.1-alpha",
+    "id": 26933384,
+    "node_id": "MDc6UmVsZWFzZTI2OTMzMzg0",
+    "tag_name": "v0.1-alpha",
+    "target_commitish": "master",
+    "name": "Alpha Baby rafMetrics",
+    "draft": false,
+    "author": {
+        "login": "raresraf",
+        "id": 30867783,
+        "node_id": "MDQ6VXNlcjMwODY3Nzgz",
+        "avatar_url": "https://avatars0.githubusercontent.com/u/30867783?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/raresraf",
+        "html_url": "https://github.com/raresraf",
+        "followers_url": "https://api.github.com/users/raresraf/followers",
+        "following_url":
+        "https://api.github.com/users/raresraf/following{/other_user}",
+        "gists_url": "https://api.github.com/users/raresraf/gists{/gist_id}",
+        "starred_url":
+        "https://api.github.com/users/raresraf/starred{/owner}{/repo}",
+        "subscriptions_url":
+        "https://api.github.com/users/raresraf/subscriptions",
+        "organizations_url": "https://api.github.com/users/raresraf/orgs",
+        "repos_url": "https://api.github.com/users/raresraf/repos",
+        "events_url": "https://api.github.com/users/raresraf/events{/privacy}",
+        "received_events_url":
+        "https://api.github.com/users/raresraf/received_events",
+        "type": "User",
+        "site_admin": false
+    },
+    "prerelease": true,
+    "created_at": "2020-05-27T08:43:19Z",
+    "published_at": "2020-05-27T08:48:24Z",
+    "assets": [],
+    "tarball_url":
+    "https://api.github.com/repos/raresraf/rafMetrics/tarball/v0.1-alpha",
+    "zipball_url":
+    "https://api.github.com/repos/raresraf/rafMetrics/zipball/v0.1-alpha",
+    "body": "`rafMetrics` v0.1-alpha release"
+}]
+\end{lstlisting}
+
+We aim to provide a solution to estimate the time-complexity for the Python-snippet that makes an HTTP request and theoretically, in the traditional complexity model, the operation should take constant time (computing well-defined finite header, simple system call to networking drivers, constant number of steps): $O(1)$. However, it is intuitive that this operation will take much more time to completely execute rather than an instruction such as $xor\ eax,\ eax$. And the r-Complexity excels at this kind of comparisons w.r.t. discrete analysis.
+
+Therefore, we aim to create a mapping between any call $r = requests.get(url)$ to an $O_{1}(X)$, where $X$ is the estimated overhead introduced by this procedure call. In Python, this can be achieved by $r.elapsed.total\_seconds()$. For instance, the previous example has a total elapsed time equal with 0.467 seconds, i.e. the associated r-Complexity class would therefore be $O_{1}(0.467 \cdot CPS)$ (CPS = cycle per second). 
+
+Of course, this value will not be unique, as each run may provide different outcomes. Therefore, for better estimations we created WebMonitoring tool, an easy-to-use empiric estimator for computing projections for the associated r-Complexity classes of HTTP requests. The platform is described in-detail in the next chapter.
+
+
