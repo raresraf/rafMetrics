@@ -14,6 +14,6 @@ else {
 }
 */
 
-var backend_ip = "http://ec2-18-130-52-84.eu-west-2.compute.amazonaws.com";
+var backend_ip = "http://ec2-3-8-172-193.eu-west-2.compute.amazonaws.com";
 backend_login_ip = backend_ip + ":31001";
 backend_webmonitoringapi_ip = backend_ip + ":31002";
