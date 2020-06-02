@@ -1266,12 +1266,12 @@
     "@types/istanbul-reports" "^1.1.1"
     "@types/yargs" "^13.0.0"
 
-"@material-ui/core@^4.10.0":
-  version "4.10.0"
-  resolved "https://registry.yarnpkg.com/@material-ui/core/-/core-4.10.0.tgz#e214e8f7981ff7975a918404b94508418642e463"
+"@material-ui/core@^4.9.14":
+  version "4.9.14"
+  resolved "https://registry.yarnpkg.com/@material-ui/core/-/core-4.9.14.tgz#4388f82cf94554cd3a935774fc12820f3c607a8a"
   dependencies:
     "@babel/runtime" "^7.4.4"
-    "@material-ui/styles" "^4.10.0"
+    "@material-ui/styles" "^4.9.14"
     "@material-ui/system" "^4.9.14"
     "@material-ui/types" "^5.1.0"
     "@material-ui/utils" "^4.9.12"
@@ -1289,9 +1289,9 @@
   dependencies:
     "@babel/runtime" "^7.4.4"
 
-"@material-ui/styles@^4.10.0", "@material-ui/styles@^4.9.14":
-  version "4.10.0"
-  resolved "https://registry.yarnpkg.com/@material-ui/styles/-/styles-4.10.0.tgz#2406dc23aa358217aa8cc772e6237bd7f0544071"
+"@material-ui/styles@^4.9.14":
+  version "4.9.14"
+  resolved "https://registry.yarnpkg.com/@material-ui/styles/-/styles-4.9.14.tgz#0a9e93a2bf24e8daa0811411a6f3dabdafbe9a07"
   dependencies:
     "@babel/runtime" "^7.4.4"
     "@emotion/hash" "^0.8.0"
@@ -1885,9 +1885,9 @@ anymatch@~3.1.1:
     normalize-path "^3.0.0"
     picomatch "^2.0.4"
 
-apexcharts@^3.19.2:
-  version "3.19.2"
-  resolved "https://registry.yarnpkg.com/apexcharts/-/apexcharts-3.19.2.tgz#d46113bf253e79f15e67d00721e5bb12af73914e"
+apexcharts@^3.19.0:
+  version "3.19.0"
+  resolved "https://registry.yarnpkg.com/apexcharts/-/apexcharts-3.19.0.tgz#388265227e230c342390c47979898d5a0d4d7640"
   dependencies:
     svg.draggable.js "^2.2.2"
     svg.easing.js "^2.0.0"
@@ -8483,9 +8483,9 @@ react-to-print@^2.0.0-alpha.7:
   dependencies:
     prop-types "^15.7.2"
 
-react-toastify@^6.0.5:
-  version "6.0.5"
-  resolved "https://registry.yarnpkg.com/react-toastify/-/react-toastify-6.0.5.tgz#6435b2bf6a298863bc71342dcc88e8283cdb4630"
+react-toastify@^6.0.4:
+  version "6.0.4"
+  resolved "https://registry.yarnpkg.com/react-toastify/-/react-toastify-6.0.4.tgz#5a06f9ef29b9f257813fd0ab7c5b1f2aa9e33551"
   dependencies:
     classnames "^2.2.6"
     prop-types "^15.7.2"
