@@ -180,15 +180,15 @@ Thus, the rComplexity of the snippet is $O_{1}((418 + 14) \cdot n) = O_{1}(432 \
 
 For an exact value, we need to check the associated generated assembly code for the architecture (example x86-32bit):
 \begin{verbatim}
-    f:
+f:
     push ebp
     mov ebp, esp
     sub esp, 16
     mov DWORD PTR [ebp-4], 0
     jmp .L2
-    .L5:
+.L5:
     mov eax, DWORD PTR [ebp-4]
-    imul edx, eax, 400 # hardcoded 20x20 matrix
+    imul edx, eax, 400 # for a 20x20 board
     mov eax, DWORD PTR [ebp+16]
     add edx, eax
     mov eax, DWORD PTR [ebp+12]
@@ -196,14 +196,14 @@ For an exact value, we need to check the associated generated assembly code for 
     cmp eax, 1
     je .L6
     add DWORD PTR [ebp-4], 1
-    .L2:
+.L2:
     mov eax, DWORD PTR [ebp-4]
     cmp eax, DWORD PTR [ebp+8]
     jl .L5
     jmp .L1
-    .L6:
+.L6:
     nop
-    .L1:
+.L1:
     leave
     ret
 \end{verbatim}
