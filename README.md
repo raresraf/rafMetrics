@@ -10,6 +10,10 @@
 
 Metrics for evaluating the performance and complexity of computer programs
 
+
+![rafMetrics](doc/logo.jpg?raw=true "rComplexity")
+
+
 ## Components:
 
 ### rafComputing
