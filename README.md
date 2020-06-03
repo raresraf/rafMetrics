@@ -10,8 +10,8 @@
 
 Metrics for evaluating the performance and complexity of computer programs.
 
-- Presentation: [here]("/docs/SCS2020/SCS 2020 Rares Folea Presentation.pdf")
-- Material: [here]("/docs/SCS2020/SCS 2020 Rares Folea Material.pdf")
+- Presentation: [here](docs/SCS2020/SCS\ 2020\ Rares\ Folea\ Presentation.pdf)
+- Material: [here](docs/SCS2020/SCS\ 2020\ Rares\ Folea\ Material.pdf)
 
 
 
