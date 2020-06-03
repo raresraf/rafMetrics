@@ -8,10 +8,14 @@
 [![DeepSource](https://static.deepsource.io/deepsource-badge-light-mini.svg)](https://deepsource.io/gh/raresraf/rafMetrics/?ref=repository-badge)
 
 
-Metrics for evaluating the performance and complexity of computer programs
+Metrics for evaluating the performance and complexity of computer programs.
+
+- Presentation: [here](docs/SCS2020/SCS 2020 Rares Folea Presentation.pdf)
+- Material: [here](docs/SCS2020/SCS 2020 Rares Folea Material.pdf)
 
 
-![rafMetrics](doc/logo.jpg?raw=true "rComplexity")
+
+![rafMetrics](docs/logo.jpg?raw=true "rComplexity")
 
 
 ## Components:
@@ -19,6 +23,8 @@ Metrics for evaluating the performance and complexity of computer programs
 ### rafComputing
 
 The ML-based tool implementing the process of automatically tailoring a suitable rComplexity Class for an algorithm.
+
+![rafMetrics](docs/bigtheta.png?raw=true "rComplexity")
 
 ### WebMonitoring
 
