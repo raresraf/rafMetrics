@@ -4,6 +4,7 @@
 |---------------------------------------|------------|----------------|-------------|-------------|
 | Naive Matrix Multiplication           | N^3        | OK             | OK          | OK          |
 | Naive Matrix Multiplication(parallel) | N^3        |                |             |             |
+| Naive Matrix Multiplication(p, opt  ) | N^3        |                |             |             |
 | Cache-friendly loop ordering          | N^3        | OK             | OK          | OK          |
 | Blocked Matrix Multiplication         | N^3        | OK             | OK          | OK          |
 | Strassen Matrix Multiplication        | N^2.8      | OK             | OK          | OK          |
