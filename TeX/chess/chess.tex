@@ -62,4 +62,24 @@ Previous work of Claude Shannon was building the foundation of information theor
 Further work showed that, based on an average branching factor of 35 and an average game length of 80, the lower bound for the chess game-tree is around $10^{123}$. Victor Allis: ~\cite{allis1994searching}
 
 \section{Chess in r-Complexity}
-TODO
+As we previously stated, the perfect algorithm for chess is part of the $O(1)$ complexity class, as its input values are finite-bounded. Thus, the associated r-Complexity class would be $O_{1}(c)$, where $c$ in a real finite constant. A human-driven calculus of r-Complexity is not feasible, as there are various run-time aspects that are difficult to be taken into consideration and an exact calculus would imply a even greater effort than solving straightforward the chess problem. Thus, we propose an automatic estimation for this algorithm, that has its Bachmann–Landau Complexity known.
+
+The first step was acquiring data on few game-simulation. Using gym framework, we tracked the time-complexity for various number of episodes with different number of steps per each episodes.
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=1\textwidth]{chesssim}
+        \caption{The plot shows the total computing time based on the variation of parameters corresponding to the total number of games and the average length of a game. Results gathered on a 2.3 GHz Intel Core i5 processor using a serial implementation in Python, using Gym framework. }
+    \end{figure}
+
+Using an average game length of 80, the chess-solving problem becomes a one-parameter problem that involves the total number of episodes to be generated. This value is lower-bounded by the value of $10^{123}$. A brute-force solution for this algorithm would act almost linearly in terms of number of episodes to be generated.
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.7\textwidth]{chesslin}
+        \caption{The relationship between the total time required to generate a specific number of games appears to be linear (actual results obtained for an average game length of 80)}
+    \end{figure}
+ 
+Of course, many optimization can reduce the total time by even two orders of magnitude. Regardless of the optimization process, for an input of $10^{123}$, the total estimated time using this algorithm would be $0.855 \cdot 10^{123}$ seconds and thus the r-Complexity would be $O_{1}(0.855 \cdot 10^{123} \cdot HZ)$, where $HZ \approx 2.3 \cdot 10^9$.
+
+Such a huge time limit is a result of the greatness of the lower bound for chess. Recall that this is by over 40-orders of magnitude greater that the total estimated number of atoms in the universe.
