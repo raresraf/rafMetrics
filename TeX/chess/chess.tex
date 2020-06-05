@@ -2,7 +2,7 @@
 
 \section{The game of chess}
 
-Chess is a two-player turn-based strategy game played on a checkered board with bounded dimensions: 64 squares arranged in an 8×8 grid, where each player has a set of initial pieces arranged in a specific order aiming to conquer an specific opponent piece: The King.
+Chess is a two-player turn-based strategy game played on a checkered board with bounded dimensions: 64 squares arranged in an 8x8 grid, where each player has a set of initial pieces arranged in a specific order aiming to conquer an specific opponent piece: The King.
 
 In game-theory, Chess is classified in the cluster of games with perfect information in which the players move alternately and the game is not subject to randomization.
 
@@ -83,3 +83,30 @@ Using an average game length of 80, the chess-solving problem becomes a one-para
 Of course, many optimization can reduce the total time by even two orders of magnitude. Regardless of the optimization process, for an input of $10^{123}$, the total estimated time using this algorithm would be $0.855 \cdot 10^{123}$ seconds and thus the r-Complexity would be $O_{1}(0.855 \cdot 10^{123} \cdot HZ)$, where $HZ \approx 2.3 \cdot 10^9$.
 
 Such a huge time limit is a result of the greatness of the lower bound for chess. Recall that this is by over 40-orders of magnitude greater that the total estimated number of atoms in the universe.
+
+\subsection{The dream of the perfect algorithm}
+All means of computing in 2020 are at an enormous gap from what it would be needed in order to find the perfect algorithm of chess using brute-force solutions. 
+
+Based on the estimated r-Complexity (i.e. $O_{1}(0.855 \cdot 10^{123} \cdot HZ)$, where $HZ \approx 2.3 \cdot 10^9$) we present few scenarios describing what it would take to compute:
+\begin{enumerate}[label=\roman*]
+  \item \textbf{Scenario 1} 
+  
+  Assume that each atom in the universe is the state-of-the-art computing core of a modern processor, that operates at a frequency of 5GHz. Assume that the perfect algorithm of chess defies Amdahl's Law by assuming a theoretical unbounded speedup in the latency of the execution. Assume we have 0 latency between inter-process communication. So far, we built an system consisting of $10^{80}$ (this is, the estimate the total number of fundamental particles in the observable universe) computing units operating at $HZ_0 \approx 5 \cdot 10^9$, with zero latency that needs to solve an algorithm with associated complexity of $O_{1}(0.855 \cdot 10^{123} \cdot 2.3 \cdot 10^9)$. That is, assuming perfect distribution and zero overhead, each unit would require approx $10^{42}$ seconds. This is far greater than any estimation of the universe lifespan.
+  \item \textbf{Scenario 2} 
+  
+  Moore's law might come to rescue the hope. Ignoring any physical consideration of the minimum MOSFET scaling process, one might assume that the law might scale indefinitely (even though even Gordon Moore himself foresaw that the rate of progress would eventually reach saturation). 
+  
+Assume that, the number of transistors in an integrated circuit doubles about every two years and this results in doubling of the transistors implies a doubling in the computing power as well. (ignore the total amount of energy spent and all other considerations). Say that, if today a computing unit would solve the problem in $0.855 \cdot 10^{123}$ seconds, in two-year times, the new computing unit would solve the problem in $\dfrac{0.855 \cdot 10^{123}}{2}$.
+  
+Similarly, in four-year times, the new unit would solve the problem in $\dfrac{0.855 \cdot 10^{123}}{2^2}$ and in six-year times, it would solve the problem in $\dfrac{0.855 \cdot 10^{123}}{2^3}$. This decrease in time is logarithmic and, theoretical, it reaches after $2 \cdot log_{2}(0.855 \cdot 10^{123})$ years to a point in which the total time for solving chess would be just under 1 second. 
+
+That is, if Moore's law would scale indefinitely, after 816 years, we would be able to solve by brute-force, the game of chess. However, this would also mean that the system would require $2^{408}$ more transistors than the current number of transistors in modern computers (tens of billions), reaching a peak number of transistors of $10^{132}$. 
+
+Unless each fundamental particle in the observable universe could act as $10^{52}$ MOSFET-transistors, this scenario is impracticable.
+
+  \item \textbf{Scenario 3} 
+  
+  A new, groundbreaking technology appeared and computing is no longer an issue. The algorithm would still require to store at least $10^{123}$ games. Assume the most efficient compression, even though unfeasible, each unique position can be stored by only one brand new memory unit. This would mean that each atom in the universe should be able to store at least $10^{43}$ storing units. This appears to be pretty difficult.
+\end{enumerate}
+
+We could further extend our philosophical discussion with many more scenarios, but the point is clear. Perfectly solving the game of chess is a problem far to complicated. And yet, we, as humans, with limited computing power, can naturally play the game of chess charmingly well.

@@ -1,0 +1,263 @@
+\documentclass[12pt,a4paper]{report}
+
+
+\usepackage[utf8]{inputenc} % pentru suport diacritice
+\usepackage[english]{babel} % setări pentru limba română 
+\renewcommand\familydefault{\sfdefault} % sans serif
+
+\usepackage[margin=2.54cm]{geometry}	% dimensiuni pagină și margini
+\usepackage{graphicx} % support the \includegraphics command and options
+\graphicspath{ {./img/} }
+
+% formatting sections and subsections
+\usepackage{textcase}
+\usepackage[titletoc, title]{appendix}
+\usepackage{titlesec}
+\titleformat{\chapter}{\large\bfseries\MakeUppercase}{\thechapter}{2ex}{}[\vspace*{-1.5cm}]
+\titleformat*{\section}{\large\bfseries}
+\titleformat*{\subsection}{\large\bfseries}
+\titleformat*{\subsubsection}{\large\bfseries}
+
+\usepackage{chngcntr}
+\counterwithout{figure}{chapter} % no chapter number in figure labels
+\counterwithout{equation}{chapter} % no chapter number in equation labels
+
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{sectsty}
+\chapterfont{\color{black}}  % sets colour of chapters
+\sectionfont{\color{black}}  % sets colour of sections
+
+\usepackage{booktabs} % for much better looking tables
+\usepackage{url} % Useful for inserting web links nicely
+\usepackage[bookmarks,unicode,hidelinks]{hyperref}
+
+
+\usepackage{array} % for better arrays (eg matrices) in maths
+\usepackage{paralist} % very flexible & customisable lists (eg. enumerate/itemize, etc.)
+\usepackage{verbatim} % adds environment for commenting out blocks of text & for better verbatim
+\usepackage{subcaption} 
+\usepackage{enumitem}
+\usepackage{adjustbox}
+
+\usepackage{amsmath}
+\usepackage{amsfonts} 
+\usepackage{amsthm} 
+\usepackage[ruled]{algorithm}
+\usepackage{algpseudocode}
+\usepackage{enumitem}   
+
+
+%jsons
+\usepackage{listings}
+
+\colorlet{punct}{red!60!black}
+\definecolor{background}{HTML}{EEEEEE}
+\definecolor{delim}{RGB}{20,105,176}
+\colorlet{numb}{magenta!60!black}
+
+\lstdefinelanguage{json}{
+    basicstyle=\normalfont\ttfamily,
+    numbers=left,
+    numberstyle=\scriptsize,
+    stepnumber=1,
+    numbersep=8pt,
+    showstringspaces=false,
+    breaklines=true,
+    frame=lines,
+    backgroundcolor=\color{background},
+    literate=
+     *{0}{{{\color{numb}0}}}{1}
+      {1}{{{\color{numb}1}}}{1}
+      {2}{{{\color{numb}2}}}{1}
+      {3}{{{\color{numb}3}}}{1}
+      {4}{{{\color{numb}4}}}{1}
+      {5}{{{\color{numb}5}}}{1}
+      {6}{{{\color{numb}6}}}{1}
+      {7}{{{\color{numb}7}}}{1}
+      {8}{{{\color{numb}8}}}{1}
+      {9}{{{\color{numb}9}}}{1}
+      {:}{{{\color{punct}{:}}}}{1}
+      {,}{{{\color{punct}{,}}}}{1}
+      {\{}{{{\color{delim}{\{}}}}{1}
+      {\}}{{{\color{delim}{\}}}}}{1}
+      {[}{{{\color{delim}{[}}}}{1}
+      {]}{{{\color{delim}{]}}}}{1},
+}
+%end of jsons
+
+
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{definition}{Definition}[section]
+\newtheorem*{remark}{Remark}
+
+\newtheorem{pitfall}{Pitfall}[theorem]
+\newtheorem{fallacy}{Fallacy}[theorem]
+
+
+\setlist{noitemsep}
+
+%%% HEADERS & FOOTERS
+\usepackage{fancyhdr}
+\pagestyle{empty}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\lhead{}\chead{}\rhead{}
+\lfoot{}\cfoot{\thepage}\rfoot{}
+\newcommand{\alg}{\texttt{algorithmicx}}
+\newcommand{\old}{\texttt{algorithmic}}
+\newcommand{\euk}{Euclid}
+\newcommand\ASTART{\bigskip\noindent\begin{minipage}[b]{0.5\linewidth}}
+\newcommand\ACONTINUE{\end{minipage}\begin{minipage}[b]{0.5\linewidth}}
+\newcommand\AENDSKIP{\end{minipage}\bigskip}
+\newcommand\AEND{\end{minipage}}
+
+\renewcommand{\qedsymbol}{\rule{0.7em}{0.7em}}
+
+
+
+\newcommand{\HeaderLineSpace}{-0.25cm}
+\newcommand{\UniTextRO}{UNIVERSITATEA POLITEHNICA DIN BUCUREȘTI \\[\HeaderLineSpace] 
+FACULTATEA DE AUTOMATICĂ ȘI CALCULATOARE \\[\HeaderLineSpace]
+DEPARTAMENTUL DE CALCULATOARE\\}
+\newcommand{\DiplomaRO}{PROIECT DE DIPLOMĂ}
+\newcommand{\AdvisorRO}{Coordonator științific:}
+\newcommand{\BucRO}{BUCUREȘTI}
+
+\newcommand{\UniTextEN}{UNIVERSITY POLITEHNICA OF BUCHAREST \\[\HeaderLineSpace]
+FACULTY OF AUTOMATIC CONTROL AND COMPUTERS \\[\HeaderLineSpace]
+COMPUTER SCIENCE AND ENGINEERING DEPARTMENT\\}
+\newcommand{\DiplomaEN}{DIPLOMA PROJECT}
+\newcommand{\AdvisorEN}{Thesis advisor:}
+\newcommand{\BucEN}{BUCHAREST}
+
+\newcommand{\frontPage}[6]{
+\begin{titlepage}
+\begin{center}
+{\Large #1}  % header (university, faculty, department)
+\vspace{50pt}
+\begin{tabular}{p{6cm}p{4cm}}
+\includegraphics[scale=0.8]{pics/upb-logo.jpg} &
+	\includegraphics[scale=0.5,trim={14cm 11cm 2cm 5cm},clip=true]{pics/cs-logo.pdf}
+\end{tabular}
+
+\vspace{105pt}
+{\Huge #2}\\                           % diploma project text
+\vspace{40pt}
+{\Large #3}\\ \vspace{0pt}  % project title
+{\Large #4}\\                          % project subtitle
+\vspace{40pt}
+{\LARGE \Name}\\                   % student name
+\end{center}
+\vspace{60pt}
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}p{6cm}r}
+&{\large\textbf{#5}}\vspace{10pt}\\      % scientific advisor
+&{\large \Advisor}                                    % advisor name
+\end{tabular*}
+\vspace{20pt}
+\begin{center}
+{\large\textbf{#6}}\\                                % bucharest
+\vspace{0pt}
+{\normalsize \Year}
+\end{center}
+\end{titlepage}
+}
+
+\newcommand{\frontPageRO}{\frontPage{\UniTextRO}{\DiplomaRO}{\LARGE \ProjectTitleRO }{\small \ProjectSubtitleRO}{\AdvisorRO}{\BucRO}}
+\newcommand{\frontPageEN}{\frontPage{\UniTextEN}{\DiplomaEN}{\LARGE \ProjectTitleEN}{\small \ProjectSubtitleEN}{\AdvisorEN}{\BucEN}}
+
+\linespread{1.15}
+\setlength\parindent{0pt}
+\setlength\parskip{.28cm}
+
+%% Abstract macro
+\newcommand{\AbstractPage}{
+\begin{titlepage}
+\textbf{\large SINOPSIS}\par
+\AbstractRO\par\vfill
+\textbf{\large ABSTRACT}\par
+\AbstractEN \vfill
+\end{titlepage}
+}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   
+%%
+%%          End of template definitions
+%%   
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%% Puteți elimina aceste linii din lucrare, servesc numai pentru template.
+\newcommand{\worktype}[1]{[\textit{#1}] }
+\newcommand{\dezvoltare}{\worktype{Dezvoltare de produs}}
+\newcommand{\cercetare}{\worktype{Cercetare}}
+\newcommand{\ambele}{\worktype{Ambele}}
+%%%
+
+
+%%
+%%   Campurile de mai jos trebuie modificate de autor. Modificati doar continutul, nu si numele fiecarei definitii
+%%
+\newcommand{\ProjectTitleRO}{Metrici de evaluare a performanțelor și complexității pentru programele de calculatoare}
+\newcommand{\ProjectSubtitleRO}{O noua abordare asupra modalitatilor traditionale de masurare a complexitatii algoritmilor si estimare a timpilor de rulare in raport cu arhitectura aleasa, in contextul infrastructurii dinamice}
+\newcommand{\ProjectTitleEN}{Metrics for evaluating the performance and complexity of computer programs}
+\newcommand{\ProjectSubtitleEN}{A new approach to the traditional ways of measuring complexity of algorithms and estimating running times given the chosen architecture, in the context of dynamic infrastructure}
+\newcommand{\Name}{Rares Folea}
+\newcommand{\Advisor}{Prof. Emil-Ioan Slusanschi}
+\newcommand{\Year}{2020}
+
+% Setări document
+\title{Proiect de diplomă}
+\author{\Name}
+\date{\Year}
+
+%%
+%%   Campurile aferente rezumatului
+%%
+\newcommand{\AbstractRO}{TODO}
+
+\newcommand{\AbstractEN}{TODO}
+
+\begin{document}
+
+\frontPageRO
+\frontPageEN
+
+\begingroup
+\linespread{1}
+\tableofcontents
+\endgroup
+
+\AbstractPage
+
+
+% Textul licentei incepe de aici 
+\pagestyle{fancy}
+
+
+
+
+\input{complexity/complexity.tex}
+\input{complexity/rComplexity.tex}
+\input{complexity/unitaryRComplexity.tex}
+\input{complexity/algoToComplex.tex}
+\input{complexity/practicalRComplexity.tex}
+\input{web/web.tex}
+\input{platform/platform.tex}
+\input{chess/chess.tex}
+
+
+
+% Asa se specifica folosirea unui fisier cu referinte bibliografice:
+\bibliographystyle{plain}
+\bibliography{bibliography}
+
+%\newpage
+
+
+\end{document}
