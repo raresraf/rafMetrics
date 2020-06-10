@@ -10,8 +10,9 @@
 
 Metrics for evaluating the performance and complexity of computer programs.
 
+- Written Material: [here](TeX/diploma-proiect-template.pdf)
 - Presentation: [here](docs/SCS2020/SCS2020RaresFoleaPresentation.pdf)
-- Material: [here](docs/SCS2020/SCS2020RaresFoleaMaterial.pdf)
+- Short Material: [here](docs/SCS2020/SCS2020RaresFoleaMaterial.pdf)
 
 
 
