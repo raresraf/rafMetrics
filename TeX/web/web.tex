@@ -1,25 +1,25 @@
 \chapter{The web of complexities}
 
 \section{Modern means of computing}
-The world of computing has been vastly changed by modern means of inter-components communication, allowing computing systems to geographically extend at an affordable overhead. This allowed the emergence of new software services as well as new means of programming. 
+\textbf{The world of computing} has been \textit{vastly} changed by \textit{modern means of inter-components communication}, allowing computing systems to \textit{geographically} extend at an affordable overhead. This allowed the emergence of new software services as well as \textbf{new means of programming}. 
 
-Undoubtedly, the internet has become a massive source of power and with this new technology the information is able to spread really quickly around the world.
+Undoubtedly, \textit{the internet} has become a massive source of power and with this new technology the information is able to spread really quickly around the world.
 
-While there are many notable achievements in software services that were created over networks, including e-commerce platforms, social media services or e-Gov apps, the focus of this chapter is to embrace the new paradigm of distributed computing and web development on complexity calculus and present means of computing an estimated complexity for complex applications that require new features such as mechanisms for networking handling which have not been analyzed yet.
+While there are many notable achievements in software services that were created over networks, \textit{including e-commerce platforms, social media services or e-Gov apps}, the focus of this chapter is to embrace the new paradigm of \textbf{distributed computing and web development} on \textbf{complexity calculus} and \textit{present means of computing} an estimated complexity for complex applications that require new features such as mechanisms for \textit{networking handling} which have not been analyzed yet.
 
 \section{HTTP requests and algorithm complexity}
 
-There are numerous way of inter-system communication, provided by powerful protocols. Undoubtable, the most used communication protocol between software systems is \textbf{HTTP} (Hypertext Transfer Protocol), an application-level protocol for distributed, collaborative, hypermedia information systems. HTTP operates as a request – response protocol in the client – server computing model.
+There are numerous way of inter-system communication, provided by powerful protocols. Undoubtable, the most used communication protocol between software systems is \textbf{HTTP} (Hypertext Transfer Protocol), an application-level protocol for distributed, collaborative, hypermedia information systems. HTTP operates as a \textit{request - response protocol} in the \textit{client - server  model}.
 
-The scenario of development when the client sends a request to the server and the server send an associated response is frequently encountered in web applications development. We will analyze how to integrate this overhead in the complexity model presented.
+The \textit{scenario of development} when the client sends a request to the server and the server send an associated response is frequently encountered in \textit{web applications development}. We will analyze how to integrate this \textit{overhead} in the complexity model presented.
 
-Consider the following scenario: The results of this paper appears to be interesting and you may want to re-use them and further analyze them. You built your custom computer program and you want to acquire all practical results provided so far. Note that the development might still be in progress, so you would like that every time you run the software, an up-to-date version of all results should be available. Luckily, these can be achieved via HTTP-requests, as all of the results are stored publicly on GitHub. Therefore, you can use GitHub Developer API, to view the latest published full release for the repository.
+Consider the following \textit{scenario}: The results of this paper appears to be interesting and you may want to re-use them and further analyze them. You built your custom computer program and you want to acquire all practical results provided so far. Note that the development might still be in progress, so you would like that every time you run the software, an up-to-date version of all results should be available. Luckily, these can be achieved via HTTP-requests, as all of the results are stored publicly on GitHub. Therefore, you can use GitHub Developer API, to view the latest published full release for the repository.
 
 \begin{verbatim}
 GET /repos/:owner/:repo/releases/
 \end{verbatim}
 
-In Python, the code required to achieve this would reduce to an one-liner, using requests,  an elegant and simple HTTP library for Python.
+In \textbf{Python}, the code required to achieve this would reduce to an one-liner, using requests, an elegant and simple HTTP library for Python.
 
 \begin{verbatim}
 r = requests.get('https://api.github.com/repos/raresraf/rafmetrics/releases')
@@ -82,7 +82,7 @@ We aim to provide a solution to estimate the time-complexity for the Python-snip
 
 Therefore, we aim to create a mapping between any call $r = requests.get(url)$ to an $O_{1}(X)$, where $X$ is the estimated overhead introduced by this procedure call. In Python, this can be achieved by $r.elapsed.total\_seconds()$. For instance, the previous example has a total elapsed time equal with 0.467 seconds, i.e. the associated r-Complexity class would therefore be $O_{1}(0.467 \cdot CPS)$ (CPS = cycle per second). 
 
-Of course, this value will not be unique, as each run may provide different outcomes. Therefore, for better estimations we created WebMonitoring tool, an easy-to-use empiric estimator for computing projections for the associated r-Complexity classes of HTTP requests. The platform is described in-detail in the next chapter.
+Of course, this value will not be unique, as each run may provide different outcomes. Therefore, for better estimations we created WebMonitoring tool, an easy-to-use empiric estimator for computing projections for the associated r-Complexity classes of HTTP requests. The platform is described \textit{in-detail} in the next chapter.
 
 
 \section{Empirical Big r-Complexity estimations for web resources}
@@ -91,16 +91,16 @@ Of course, this value will not be unique, as each run may provide different outc
 The current work propose the following associations between Big r-Complexity estimations for web resources and recorded entries: 
 
 \begin{enumerate}
-\item \textbf{Big \textit{r-}O}notation for a given request with $O_{1}(highest)$
+\item \textbf{Big \textit{r-}O} notation for a given request with $O_{1}(highest)$
 \item \textbf{Big \textit{r-}Omega} notation for a given request with $\Omega_{1}(lowest))$
-\item \textbf{Big \textit{r-}Theta} notation for a given request with $\Theta_{1}(avg)$ or $\Theta_{1}(median)$ or $\Theta_{1}(max(avg,\ median))$
+\item \textbf{Big \textit{r-}Theta} notation for a given request with $\Theta_{1}(avg)$ or $\Theta_{1}(median)$
 \end{enumerate}
 
-Note that these results are empirical and might significantly differ.
+Note that these results are \textbf{empirical} and might significantly differ. Better approximations are obtained using continuously updating data, acquired in an environment that closely simulate the actual \textbf{targeted} habitat.
 \begin{table}[H]
 \begin{tabular}{|l|l|l|l|l|}
 \hline
-\textbf{\begin{tabular}[c]{@{}l@{}}Resouce\\ (GET Requests)\end{tabular}} &
+\textbf{\begin{tabular}[c]{@{}l@{}}Resource\\ (GET Requests)\end{tabular}} &
   \textbf{\begin{tabular}[c]{@{}l@{}}Avg\\ (s)\end{tabular}} &
   \textbf{\begin{tabular}[c]{@{}l@{}}Lowest\\ (s)\end{tabular}} &
   \textbf{\begin{tabular}[c]{@{}l@{}}Median\\ (s)\end{tabular}} &
@@ -112,7 +112,7 @@ https://google.com                                                          & 0.
 \begin{tabular}[c]{@{}l@{}}E-commerce website 3\\ (eMag)\end{tabular}       & 0.42 & 0.37 & 0.41 & 0.5  \\ \hline
 https://www.piday.org/                                                      & 0.87 & 0.78 & 0.87 & 0.98 \\ \hline
 \end{tabular}
-\caption {Different metrics for computing Big r-Complexity estimations for the presented web resources. Results acquired during May 2020.}
+\caption {Different metrics for computing Big r-Complexity estimations for the presented web resources. Results acquired during late May 2020.}
 \end{table}
 
 All the results are obtained using the rafMetrics platform described in the following chapter.
@@ -132,7 +132,7 @@ https://google.com                                                          & 2.
 \begin{tabular}[c]{@{}l@{}}E-commerce website 3\\ (eMag)\end{tabular}       & 6.3  & 4.34 & 5.99 & 11.2  \\ \hline
 https://www.piday.org/                                                      & 8.32 & 2.33 & 6.51 & 12.4  \\ \hline
 \end{tabular}
-\caption {Different metrics for computing Big r-Complexity estimations for the presented webpages. Results acquired during May 2020.}
+\caption {Different metrics for computing Big r-Complexity estimations for the presented webpages. Results acquired during late May 2020.}
 \end{table}
 
-The analysis can be done using other metrics such as Response Size of the request, custom defined efficiency or throughput.
+The analysis can be done using other metrics such as Response Size of the request, custom defined metrics for efficiency or throughput.

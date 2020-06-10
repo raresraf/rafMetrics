@@ -27,12 +27,12 @@ Algorithms' Complexity Theory studies the static and the dynamic performances of
     \begin{figure}[H]
         \centering
         \includegraphics[width=0.5\textwidth]{BabbageDifferenceEngine}
-        \caption{An implementation built from Babbage's design of a difference engine exhibited at The London Science Museum}.
+        \caption{A computing machine built from Babbage's design of a difference engine exhibited at The London Science Museum.}
     \end{figure}
 
 \end{remark}
 
-While the dynamic performances of an algorithm are precisely calculable, due to the high complexity (By high complexity it is denoted that it is extremely difficult to exactly compute it) of most computer programs, it is often more suitable an approximation. Such resemblance is provided by the classical model, with drastic compromise compared to the real behavior in a non-asymptotic analysis. A in-between solution for approximating the dynamic performances of an algorithm is provided by Normalized rComplexity Calculus Model, which aim to close the gap between the architecture of the computing machine and a generic-written algorithm for solving a problem.
+While the dynamic performances of an algorithm are precisely calculable, due to the high complexity \textit{(by high complexity it is denoted that it is extremely difficult to exactly compute it)} of most computer programs, it is often more suitable an approximation. Such resemblance is provided by the classical model, with drastic compromise compared to the real behavior in a non-asymptotic analysis. A in-between solution for approximating the dynamic performances of an algorithm is provided by \textbf{Normalized rComplexity Calculus Model}, whose aim is to close the gap between the architecture of the computing machine and a \textit{generic-written} algorithm for solving a problem.
 
 
 \section{Estimating computational time based on Normalized rComplexity}
@@ -53,7 +53,7 @@ We aim to define various metrics for approximation an average computational time
     \[  T(n_{min}, n_{max}) = \dfrac{\int\limits_{n_{min}}^{n_{max}} g_{1}(n) dn}{n_{max} - n_{min}}  \]
 \end{definition}
 
-The previous two metrics are tailored for systems where the input size is bounded but there is no additional knowledge regarding the weights and probabilities of occurrence. If this information is available, we can redefine the previous metrics using the acquisition data.
+The previous two metrics are tailored for systems where the input size is bounded but there is no additional knowledge regarding the weights and probabilities of occurrence. If this information is available, we can redefine the previous metrics using the acquired data.
 
 \begin{definition}
     \textbf{ERM1}, an enhanced metric for time estimation based on arithmetic mean in Normalized rComplexity model is defined as follows:

@@ -24,7 +24,7 @@ An easy-to-use, dockerized implementation, can be found at DockerHub within rare
 \section{Technologies}
 
 \subsection{Backend}
-The main Platform engine is written in Python3, an interpreted, high-level, general-purpose programming language. \\
+The main Platform engine is written in Python3, an interpreted, high-level, general-purpose programming language.
 
 The WebMonitoring tool and the Login service have been created using Flask framework for a quick and easy API definition. The connection between the Platform and the mySQL database is provided by the official mySQL connectors provided in the mysql-connector-python packages.
 
@@ -78,11 +78,11 @@ The default node port range for Kubernetes is 30000 - 32767.
 \section{Architecture}
 
 \subsection{Architecture overview}
-The platform was built on a microservice architecture, which is an approach to developing a single application as a suite of small services, each running in its own process and communicating with lightweight mechanisms, often an HTTP resource API.
+The platform was built on a micro-service architecture, which is an approach to developing a single application as a suite of small services, each running in its own process and communicating with lightweight mechanisms, often an HTTP resource API.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{arch}
+    \includegraphics[width=0.65\textwidth]{arch}
     \caption{An overview of the architecture of the rafMetrics' platform}
 \end{figure}
 
@@ -115,7 +115,7 @@ Monitors all resources by periodically (timer set default at 1 hour interval) se
 Store simple metrics like total time or total requests answer as entries in DB.
 
 \subsubsection{WebsiteManager}
-Monitors all websites by periodically (timer set default at 1 hour interval) generating a HAR (HTTP-Archieve data performance file) for loading metrics corresponding to a website, with Chrome using Browsermob-Proxy.
+Monitors all websites by periodically (timer set default at 1 hour interval) generating a HAR (HTTP-Archive data performance file) for loading metrics corresponding to a website, with Chrome using Browsermob-Proxy.
 Also parse and store valuable insights resulted from the HAR file into DB.
 The service uses [speedprofile](https://github.com/parasdahal/speedprofile) engine.
 
@@ -141,7 +141,7 @@ All relations are kept in \textbf{Boyce-Codd Normal Form}.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.7\textwidth]{diagram}
+    \includegraphics[width=0.5\textwidth]{diagram}
     \caption{SQL table hierarchy used in WebMonitoring Tool}
 \end{figure}
 
@@ -151,7 +151,7 @@ The table semantics can be checked in the documentation existing in the codebase
 Simple script to ensure dockerize and deployment in Kubernetes for all backend components.
 
 \subsubsection{metricsUI}
-Frontend implementation of rafMetrics platform based on Flatlogic Template: React Material Admin — Material-UI Dashboard. This component is responsable for rendering UI part of WebMonitoring Tool.
+Frontend implementation of rafMetrics platform based on Flatlogic Template: React Material Admin — Material-UI Dashboard. This component is responsible for rendering UI part of WebMonitoring Tool.
 
 \subsubsection{Grafana}
 Grafana ships with a built-in MySQL data source plugin that allow to query any visualize data from a MySQL compatible database.
