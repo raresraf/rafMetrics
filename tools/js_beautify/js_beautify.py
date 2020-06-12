@@ -2,6 +2,7 @@
 # Consult README.md
 
 import os
+
 import jsbeautifier
 
 opts = jsbeautifier.default_options()

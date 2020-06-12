@@ -1,6 +1,6 @@
-import gym
-import gym_chess
 from pprint import pprint
+
+import gym
 
 env = gym.make('ChessVsRandomBot-v0')
 

@@ -1,12 +1,9 @@
 import matplotlib.pyplot as plt
 import numpy as np
 import sys
-from numpy.polynomial import Polynomial as P
-from sklearn.metrics import mean_squared_error, r2_score
 
 from rafComputing.ML.CustomSettings.settings import (
     MAX_ITER,
-    ALPHA,
     DEFAULT_ITER_INCREASE_STEPS_LOG,
     DEFAULT_ITER_INCREASE_STEPS,
     DEFAULT_RANGE_,
@@ -17,11 +14,9 @@ from rafComputing.ML.CustomSettings.settings import (
 )
 from rafComputing.ML.RegressionEngine.LinearRegressionGD import LinearRegressionGD
 from rafComputing.ML.features.feature_transformation import extract_features
-from rafComputing.ML.features.feature_types import (POLYNOMIAL_FEATURE_TYPE,
-                                                    NO_FEATURE_TYPE,
+from rafComputing.ML.features.feature_types import (NO_FEATURE_TYPE,
                                                     POWER_FEATURE_TYPE)
 from rafComputing.ML.helpers.load_data import matrix_to_train_test
-from rafComputing.ML.helpers.polynomial_to_latex import polynomial_to_LaTeX
 
 
 def LinearRegressionTraining(

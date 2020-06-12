@@ -31,8 +31,9 @@ Total: 0
 
 import argparse
 import re
-from subprocess import Popen, PIPE
 import shutil
+from subprocess import Popen, PIPE
+
 import sys
 
 parser = argparse.ArgumentParser()

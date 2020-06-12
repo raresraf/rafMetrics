@@ -1,9 +1,7 @@
-import sys
 import random
-import numpy as np
 
 import gym
-import gym_chess
+import sys
 
 if __name__ == "__main__":
     if len(sys.argv) != 3:
