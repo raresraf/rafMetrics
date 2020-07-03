@@ -14,6 +14,10 @@ Metrics for evaluating the performance and complexity of computer programs.
 - Presentation: [here](docs/SCS2020/SCS2020RaresFoleaPresentation.pdf)
 - Short Material: [here](docs/SCS2020/SCS2020RaresFoleaMaterial.pdf)
 
+Part of Bachelor Thesis @ CS
+- Full Material: [here](docs/LICENTA2020/Licenta2020-Rares_Folea.pdf)
+- Presentation (ro): [here](docs/LICENTA2020/proiect_licenta_acs_Folea_O_Rares_98884.pdf)
+- Short demo: [link](https://www.youtube.com/watch?v=2XpVoseXwvo)
 
 
 ![rafMetrics](docs/logo.jpg?raw=true "rComplexity")
