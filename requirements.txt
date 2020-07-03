@@ -7,7 +7,7 @@ Flask==1.1.2
 Werkzeug==1.0.1
 PyMySQL==0.9.3
 requests==2.24.0
-arrow==0.15.6
+arrow==0.15.7
 browsermob_proxy==0.8.0
 Flask_Bcrypt==0.7.1
 flask_cors==3.0.8
@@ -19,10 +19,10 @@ flask-mysql==1.5.1
 pytest-mock==3.1.1
 mock==4.0.2
 mysql-connector-python==8.0.19
-ipython==7.15.0
+ipython==7.16.1
 simplejson==3.17.0
 flask-shell-ipython==0.4.1
-numpy==1.18.5
+numpy==1.19.0
 matplotlib==3.2.2
 PyYAML==5.3.1
 sklearn
