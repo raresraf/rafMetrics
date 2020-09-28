@@ -1,0 +1,17 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/metricsUI"
+  schedule:
+    interval: daily
+  open-pull-requests-limit: 50
+- package-ecosystem: pip
+  directory: "/"
+  schedule:
+    interval: daily
+  open-pull-requests-limit: 50
+  ignore:
+  - dependency-name: mysql-connector-python
+    versions:
+    - "> 8.0.19"
+    - "< 9"
