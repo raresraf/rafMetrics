@@ -8481,9 +8481,9 @@ react-to-print@^2.0.0-alpha.7:
   dependencies:
     prop-types "^15.7.2"
 
-react-toastify@^6.0.4:
-  version "6.0.4"
-  resolved "https://registry.yarnpkg.com/react-toastify/-/react-toastify-6.0.4.tgz#5a06f9ef29b9f257813fd0ab7c5b1f2aa9e33551"
+react-toastify@^6.0.8:
+  version "6.0.8"
+  resolved "https://registry.yarnpkg.com/react-toastify/-/react-toastify-6.0.8.tgz#84625d81d0fd01902a7f4c6f317eb074cb3bba67"
   dependencies:
     classnames "^2.2.6"
     prop-types "^15.7.2"
