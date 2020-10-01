@@ -1,1 +1,1 @@
-WIP
+# rafMetrics Contributing Guide 
