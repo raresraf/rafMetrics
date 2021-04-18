@@ -8,7 +8,7 @@ with open('requirements.txt') as f:
 
 setuptools.setup(
     name="rafmetrics",                     # This is the name of the package
-    version="0.0.2",                        # The initial release version
+    version="0.0.3",                        # The initial release version
     author="Rares Folea",                     # Full name of the author
     description="Metrics for evaluating the performance and complexity of computer programs",
     long_description=long_description,      # Long description read from the the readme file
