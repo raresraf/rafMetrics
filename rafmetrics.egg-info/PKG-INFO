@@ -1,0 +1,91 @@
+Metadata-Version: 2.1
+Name: rafmetrics
+Version: 0.0.1
+Summary: Metrics for evaluating the performance and complexity of computer programs
+Home-page: UNKNOWN
+Author: Rares Folea
+License: UNKNOWN
+Description: # rafMetrics
+        ![Python application](https://github.com/raresraf/rafMetrics/workflows/Python%20application/badge.svg)
+        ![Codecov](https://github.com/raresraf/rafMetrics/workflows/Codecov/badge.svg)
+        ![Code scanning - action](https://github.com/raresraf/rafMetrics/workflows/Code%20scanning%20-%20action/badge.svg)
+        
+        
+        [![CodeFactor](https://www.codefactor.io/repository/github/raresraf/rafmetrics/badge)](https://www.codefactor.io/repository/github/raresraf/rafmetrics)
+        [![codecov](https://codecov.io/gh/raresraf/rafMetrics/branch/master/graph/badge.svg)](https://codecov.io/gh/raresraf/rafMetrics)
+        [![DeepSource](https://static.deepsource.io/deepsource-badge-light-mini.svg)](https://deepsource.io/gh/raresraf/rafMetrics/?ref=repository-badge)
+        
+        Metrics for evaluating the performance and complexity of computer programs.
+        
+        - Written Material: [here](TeX/diploma-proiect-template.pdf)
+        - Presentation: [here](docs/SCS2020/SCS2020RaresFoleaPresentation.pdf)
+        - Short Material: [here](docs/SCS2020/SCS2020RaresFoleaMaterial.pdf)
+        
+        Part of Bachelor Thesis @ CS
+        - Full Material: [here](docs/LICENTA2020/Licenta2020-Rares_Folea.pdf)
+        - Presentation (ro): [here](docs/LICENTA2020/proiect_licenta_acs_Folea_O_Rares_98884.pdf)
+        - Short demo: [link](https://www.youtube.com/watch?v=2XpVoseXwvo)
+        
+        
+        ![rafMetrics](docs/logo.jpg?raw=true "rComplexity")
+        
+        
+        ## Components:
+        
+        ### rafComputing
+        
+        The ML-based tool implementing the process of automatically tailoring a suitable rComplexity Class for an algorithm.
+        
+        ![rafMetrics](docs/bigtheta.png?raw=true "rComplexity")
+        
+        ### WebMonitoring
+        
+        A tool for monitoring multiple network resources and websites.
+        Gather data by periodically monitoring specific resources and websites and stores results in database.
+        
+        #### ResourceManager
+        
+        Monitors all resources by periodically (timer set default at 1 hour interval) sending requests to existing resources.
+        Store simple metrics like total time or total requests answer as entries in DB.
+        
+        #### WebsiteManager
+        
+        Monitors all websites by periodically (timer set default at 1 hour interval) generating a HAR (HTTP-Archieve data performance file) for loading metrics corresponding to a website, with Chrome using Browsermob-Proxy.
+        Also parse and store valuable insights resulted from the HAR file into DB.
+        The service uses [speedprofile](https://github.com/parasdahal/speedprofile) engine.
+        
+        #### WebMonitoring API
+        
+        Provide an API for interrogating useful metrics from DB.
+        
+        ### Login
+        
+        Backend implementation to provide a simple authentication, registration and management for users inside rafMetrics platform.
+        
+        ### DockerConfig
+        
+        Keeps track of all Docker Compose/Docker Swarm settings and configurations.
+        
+        ### KubernetesConfig
+        
+        Keeps track of all k8s settings
+        
+        ### MySQL
+        
+        Database used to store persistent data required by Login and WebMonitoring.
+        All relations are kept in **Boyce-Codd Normal Form**.
+        
+        ### deploy_repo.sh
+        
+        Simple script to ensure dockerize and deployment in Kubernetes for all backend components
+        
+        ### metricsUI
+        
+        Frontend implementation of rafMetrics platform based on Flatlogic Template: React Material Admin — Material-UI Dashboard
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
