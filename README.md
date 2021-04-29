@@ -31,6 +31,8 @@ The ML-based tool implementing the process of automatically tailoring a suitable
 
 ![rafMetrics](docs/bigtheta.png?raw=true "rComplexity")
 
+NOTE: Improved version: https://github.com/raresraf/rafPipeline/tree/master/rComplexity
+
 ### WebMonitoring
 
 A tool for monitoring multiple network resources and websites.
