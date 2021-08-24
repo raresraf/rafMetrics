@@ -1,0 +1,8 @@
+@inproceedings{folea2021new,
+  title={A new metric for evaluating the performance and complexity of computer programs: A new approach to the traditional ways of measuring the complexity of algorithms and estimating running times},
+  author={Folea, Rares and Slusanschi, Emil-Ioan},
+  booktitle={2021 23rd International Conference on Control Systems and Computer Science (CSCS)},
+  pages={157--164},
+  year={2021},
+  organization={IEEE}
+}
