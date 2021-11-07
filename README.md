@@ -1,4 +1,10 @@
 # rafMetrics
+
+
+**Now published**: [A new metric for evaluating the performance and complexity of computer programs: A new approach to the traditional ways of measuring the complexity of algorithms and estimating running times](https://ieeexplore.ieee.org/abstract/document/9481065) at the 2021 23rd International Conference on Control Systems and Computer Science (CSCS)
+
+---
+
 ![Python application](https://github.com/raresraf/rafMetrics/workflows/Python%20application/badge.svg)
 ![Codecov](https://github.com/raresraf/rafMetrics/workflows/Codecov/badge.svg)
 ![Code scanning - action](https://github.com/raresraf/rafMetrics/workflows/Code%20scanning%20-%20action/badge.svg)
@@ -9,6 +15,7 @@
 [![DeepSource](https://static.deepsource.io/deepsource-badge-light-mini.svg)](https://deepsource.io/gh/raresraf/rafMetrics/?ref=repository-badge)
 
 Metrics for evaluating the performance and complexity of computer programs.
+
 
 - Written Material: [here](TeX/diploma-proiect-template.pdf)
 - Presentation: [here](docs/SCS2020/SCS2020RaresFoleaPresentation.pdf)
