@@ -1,7 +1,23 @@
 # rafMetrics
 
 
-**Now published**: [A new metric for evaluating the performance and complexity of computer programs: A new approach to the traditional ways of measuring the complexity of algorithms and estimating running times](https://ieeexplore.ieee.org/abstract/document/9481065) at the 2021 23rd International Conference on Control Systems and Computer Science (CSCS)
+**Now published**: [A new metric for evaluating the performance and complexity of computer programs: A new approach to the traditional ways of measuring the complexity of algorithms and estimating running times](https://ieeexplore.ieee.org/abstract/document/9481065) at the 2021 23rd International Conference on Control Systems and Computer Science (CSCS).
+
+```
+@INPROCEEDINGS{9481065,
+  author={Folea, Rares and Slusanschi, Emil-Ioan},
+  booktitle={2021 23rd International Conference on Control Systems and Computer Science (CSCS)}, 
+  title={A new metric for evaluating the performance and complexity of computer programs: A new approach to the traditional ways of measuring the complexity of algorithms and estimating running times}, 
+  year={2021},
+  volume={},
+  number={},
+  pages={157-164},
+  abstract={This paper presents a refined complexity calculus model: r-Complexity, a new asymptotic notation that offers better complexity feedback for similar programs than the traditional Bachmann-Landau notation, providing subtle insights even for algorithms that are part of the same conventional complexity class. The architecture-dependent metric represents an enhancement that provides better sensitivity with respect to discrete analysis.},
+  keywords={},
+  doi={10.1109/CSCS52396.2021.00033},
+  ISSN={2379-0482},
+  month={May},}
+```
 
 ---
 
