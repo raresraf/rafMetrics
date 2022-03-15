@@ -16,7 +16,7 @@
     "react-google-maps": "^9.4.5",
     "react-router-dom": "^5.2.0",
     "react-scripts": "^3.4.1",
-    "react-syntax-highlighter": "^12.2.1",
+    "react-syntax-highlighter": "^15.5.0",
     "react-toastify": "^6.0.4",
     "recharts": "^1.6.2",
     "tinycolor2": "^1.4.1"
