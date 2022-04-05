@@ -9,7 +9,7 @@ PyMySQL==0.9.3
 requests==2.24.0
 arrow==0.16.0
 browsermob_proxy==0.8.0
-Flask_Bcrypt==0.7.1
+Flask_Bcrypt==1.0.1
 flask_cors==3.0.8
 selenium==3.141.0
 xvfbwrapper==0.2.9
