@@ -17,7 +17,7 @@ xvfbwrapper==0.2.9
 # Manually added
 flask-mysql==1.5.1
 pytest-mock==3.3.1
-mock==4.0.2
+mock==5.0.0
 mysql-connector-python==8.0.19
 simplejson==3.17.2
 flask-shell-ipython==0.4.1
