@@ -19,7 +19,7 @@
     "react-syntax-highlighter": "^12.2.1",
     "react-toastify": "^6.0.4",
     "recharts": "^1.6.2",
-    "tinycolor2": "^1.4.1"
+    "tinycolor2": "^1.5.2"
   },
   "scripts": {
     "start": "react-scripts start",
