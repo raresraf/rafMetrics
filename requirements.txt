@@ -19,7 +19,7 @@ flask-mysql==1.5.1
 pytest-mock==3.3.1
 mock==4.0.2
 mysql-connector-python==8.0.19
-simplejson==3.17.2
+simplejson==3.18.4
 flask-shell-ipython==0.4.1
 numpy==1.19.5
 matplotlib==3.3.1
