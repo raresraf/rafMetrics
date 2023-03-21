@@ -1885,9 +1885,9 @@ anymatch@~3.1.1:
     normalize-path "^3.0.0"
     picomatch "^2.0.4"
 
-apexcharts@^3.19.0:
-  version "3.19.0"
-  resolved "https://registry.yarnpkg.com/apexcharts/-/apexcharts-3.19.0.tgz#388265227e230c342390c47979898d5a0d4d7640"
+apexcharts@^3.37.2:
+  version "3.37.2"
+  resolved "https://registry.yarnpkg.com/apexcharts/-/apexcharts-3.37.2.tgz#ade373bda05b2041ae61aaaa2579529b0a0dad10"
   dependencies:
     svg.draggable.js "^2.2.2"
     svg.easing.js "^2.0.0"
