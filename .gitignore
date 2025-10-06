@@ -100,3 +100,4 @@ node_modules/
 
 # K8s deploy
 nohup.out
+experimental/a.out
